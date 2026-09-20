@@ -37,6 +37,12 @@
 			<li><a href="#config">配置要点</a></li>
 			<li><a href="#perms">权限</a></li>
 			<li><a href="#dev">开发者与环境</a></li>
+			<li><a href="#gameplay">核心玩法</a></li>
+			<li><a href="#antiexploit">防刷与反利用</a></li>
+			<li><a href="#hardcore">Hardcore</a></li>
+			<li><a href="#xp-papi">经验与 PAPI</a></li>
+			<li><a href="#items-misc">物品与其它</a></li>
+			<li><a href="#endgame">满级与终局</a></li>
 		</ul>
 	</aside>
 	<main class="wiki-content">
@@ -116,6 +122,46 @@
 		<ul class="bullets"><li>仓库：github.com/mcMMO-Dev/mcMMO · 官方 Wiki：wiki.mcmmo.org</li><li>构建：<code>mvn clean install</code>（输出 target/mcMMO.jar）</li><li>Maven 坐标：<code>com.gmail.nossr50.mcMMO:mcMMO</code></li><li>测试：JUnit 5；SQL 相关需 Docker（Testcontainers）</li><li>调度须使用 <strong>FoliaLib</strong>；API 包：ExperienceAPI、PartyAPI、AbilityAPI 等</li><li>发行渠道：Spigot（spigot.mcmmo.org）· Polymart</li></ul><div class="note">本页依据服务器内 <code>mcmmo/mcMMO-master.zip</code> 源码整理；具体数值以实际安装的 jar 与配置为准。</div>
 	</article>
 
+
+	<article class="article" id="gameplay" data-search="核心玩法循环 How mcMMO plays 玩法 生存 采集 战斗 循环 RPG">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 核心玩法循环</div>
+		<div class="article-header"><h1>核心玩法循环</h1><div class="sub">How mcMMO plays</div></div>
+		
+		<p>mcMMO 不改原版生存主循环，而是在其上叠加<strong>技能等级、被动触发、主动超能力、队伍协作与成长目标</strong>。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>环节</th><th>玩家做什么</th><th>mcMMO 反馈</th></tr><tr><td>采集</td><td>挖矿、砍树、锄地、钓鱼、铲土</td><td>对应技能 XP；双倍/三倍掉落；母矿、繁茂恩赐等被动</td></tr><tr><td>战斗</td><td>剑/斧/弓/弩/空手/驯兽等</td><td>技巧射击、暴击、撕裂、缴械等子技能；极限突破 PVP</td></tr><tr><td>主动技能</td><td>手持工具右键就绪</td><td>超能力：三倍挖矿、整树砍倒、狂暴、斩首者等</td></tr><tr><td>成长</td><td>升级、解锁子技能</td><td>子技能 Rank；超能力解锁（如 5/50 级）</td></tr><tr><td>社交</td><td>组队打怪/刷本</td><td>队伍经验加成、共享、传送、物品分配</td></tr><tr><td>目标</td><td>冲榜、精通、Hardcore</td><td>/mctop 排行；力量等级；死亡扣级或击杀吸级</td></tr></table></div><ul class="bullets"><li>技能详情命令如 <code>/mining</code> <code>/swords</code> 可随时查看 XP 与子技能</li><li>被动几乎不打断操作；主动超能力有冷却，需规划战斗/采集节奏</li><li>服务器常用 PlaceholderAPI 排行榜、记分板（默认关）展示成长</li></ul>
+	</article>
+
+	<article class="article" id="antiexploit" data-search="防刷与反利用 Anti-farm / Exploit fixes 防刷 反利用 exploit XP 刷怪笼 收益递减 经验上限">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 防刷与反利用</div>
+		<div class="article-header"><h1>防刷与反利用</h1><div class="sub">Anti-farm / Exploit fixes</div></div>
+		
+		<p>mcMMO 在 <code>experience.yml</code> 与 <code>config.yml</code> 中内置多套<strong>防刷 / 防滥用</strong>机制，避免用刷怪笼、活塞、雪傀儡等「无风险」方式刷技能。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>默认</th><th>作用</th></tr><tr><td><code>Experience_Values.ExploitFix.Combat.XPCeiling.Enabled</code></td><td>true</td><td>单次伤害经验上限，<code>Damage_Limit: 100</code>，防止高伤秒怪刷爆战斗技能</td></tr><tr><td><code>Mobspawners.Multiplier</code></td><td>0</td><td>刷怪笼生物经验倍率 0 → 不给（或极低）技能 XP</td></tr><tr><td><code>Eggs.Multiplier</code></td><td>0</td><td>刷怪蛋生成的生物不给技能 XP</td></tr><tr><td><code>Player_Tamed.Multiplier</code></td><td>0</td><td>玩家已驯服生物相关 XP 规则收紧</td></tr><tr><td><code>EarlyGameBoost.Enabled</code></td><td>true</td><td>前期升级加速，降低开荒枯燥感（非防刷，但是成长曲线）</td></tr><tr><td><code>Diminished_Returns</code></td><td>默认 false</td><td>开启后：短时间大量重复动作 XP 递减（阈值约 20000 / 10 分钟，最低保留约 5%）</td></tr><tr><td>钓鱼滥用修复</td><td>ExploitFix.* true</td><td>限制异常钓鱼刷淘金/魔法猎人</td></tr><tr><td>杂技刷 XP 修复</td><td>true</td><td>防止故意摔落/传送刷杂技</td></tr><tr><td>活塞 / 红石相关修复</td><td>true</td><td>防止活塞反复破坏方块刷采集</td></tr><tr><td>树锯 / 雪傀儡 / 盔甲架等</td><td>true</td><td>限制非常规途径刷伐木、挖矿、交互 XP</td></tr><tr><td>过高作物 / NPC 交互限制</td><td>true</td><td>限制异常种植与刷 NPC</td></tr><tr><td><code>Skills.Herbalism.Prevent_AFK_Leveling</code></td><td>true</td><td>防 AFK 刷草药学</td></tr><tr><td><code>Hardcore</code> 惩罚</td><td>全关</td><td>死亡扣技能 / 击杀吸取（见 Hardcore 章）</td></tr></table></div><ul class="bullets"><li>管理员可将 Global / 单技能 XP 倍率调高，但防刷项建议保持默认，除非服务器有替代成长方式</li><li>数据库类命令有防刷冷却：玩家相关约 <strong>1750 ms</strong>（config，不可低于该值）</li><li>热重载仅支持语言文件 <code>/mcmmoreloadlocale</code>；改 config 需重启</li></ul>
+	</article>
+
+	<article class="article" id="hardcore" data-search="Hardcore 与死亡惩罚 Hardcore / Vampirism Hardcore 死亡 惩罚 吸血 Vampirism">
+		<div class="breadcrumbs"><a href="#top">首页</a> › Hardcore 与死亡惩罚</div>
+		<div class="article-header"><h1>Hardcore 与死亡惩罚</h1><div class="sub">Hardcore / Vampirism</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>模式</th><th>配置路径</th><th>默认</th><th>效果</th></tr><tr><td>死亡技能损失 Death Stat Loss</td><td><code>Hardcore.Death_Stat_Loss</code></td><td>各技能 Enabled=false</td><td>死亡时按 <code>Penalty_Percentage</code>（默认 75%）扣除技能等级/进度；可设等级门槛</td></tr><tr><td>吸血 Vampirism</td><td><code>Hardcore.Vampirism</code></td><td>各技能 false</td><td>击杀他人时吸取对方技能百分比（默认 <code>Leech_Percentage: 5</code>）</td></tr></table></div><ul class="bullets"><li>旁路权限：<code>mcmmo.bypass.hardcoremode</code></li><li>默认关闭；若在 PVP 服开启，需与规则公告、新玩家保护一并考虑</li><li>与防刷互补：防止「死亡无成本」或「击杀滚雪球」过强</li></ul>
+	</article>
+
+	<article class="article" id="xp-papi" data-search="经验数值与 PlaceholderAPI XP samples &amp; PAPI 经验 XP PlaceholderAPI 排行 mctop">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 经验与 PAPI</div>
+		<div class="article-header"><h1>经验数值与 PlaceholderAPI</h1><div class="sub">XP samples & PAPI</div></div>
+		<h3>经验数值抽样（Experience_Values）</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>来源</th><th>XP（默认）</th></tr><tr><td>杂技 Dodge / Roll / Fall</td><td>800 / 600 / 600（羽落靴可 ×2）</td></tr><tr><td>炼金 Stage 1→4</td><td>666 / 1111 / 1750 / 2250</td></tr><tr><td>钓鱼 鳕鱼/鲑鱼/热带鱼/河豚/抖动</td><td>100 / 600 / 10000 / 2400 / 50</td></tr><tr><td>挖掘 泥土/沙/黏土/雪/灵魂土</td><td>约 20–40（泥可更高）</td></tr><tr><td>伐木 橡木/樱花/苍白橡木/红树木原木</td><td>70 / 105 / 130 / 95</td></tr><tr><td>箭术距离加成</td><td>Distance_Multiplier 0.025</td></tr></table></div><h3>PlaceholderAPI 常用占位符</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>占位符</th><th>含义</th></tr><tr><td><code>%mcmmo_skillname_mining%</code></td><td>技能显示名（挖矿）</td></tr><tr><td><code>%mcmmo_mctop_mining:1%</code></td><td>挖矿榜第 1 名的等级</td></tr><tr><td><code>%mcmmo_mctop_name_mining:1%</code></td><td>挖矿榜第 1 名玩家名</td></tr><tr><td><code>%mcmmo_mctop_powerlevel:25%</code></td><td>总等级榜第 25 名等级</td></tr></table></div><ul class="bullets"><li>排行榜缓存：PlaceholderAPI 最多跟踪约 100 名；SQL 刷新约 60s</li><li>侧边栏记分板默认关闭；可配合 <code>/mcscoreboard</code></li></ul>
+	</article>
+
+	<article class="article" id="items-misc" data-search="特色物品与其它系统 Items &amp; extras 物品 奇美拉之翼 MOTD 数据库 Folia 兼容">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 特色物品与其它系统</div>
+		<div class="article-header"><h1>特色物品与其它系统</h1><div class="sub">Items & extras</div></div>
+		<ul class="bullets"><li><strong>奇美拉之翼（Chimaera Wing）</strong>：飞行/传送类道具；冷却约 240s，预热 5s，受伤后冷却约 60s；地下使用受限（<code>Prevent_Use_Underground: true</code>）；权限 <code>mcmmo.item.chimaerawing</code></li><li><strong>焰铸镐 / Flux</strong>：与冶炼「祝融之镐」等相关挖矿即熔炼玩法</li><li><strong>生物血条</strong>：<code>Mob_Healthbar</code> 默认开启（如心形，短暂显示）</li><li><strong>MOTD / 升级广播 / 升级音效</strong>：可在 config 开关</li><li><strong>数据存储</strong>：FlatFile 或 MySQL（前缀 <code>mcmmo_</code>）；方块记录在 <code>mcmmo_regions/*.mcm</code></li><li><strong>兼容</strong>：WorldGuard、CombatTag、HealthBar、PlaceholderAPI、ProtocolLib、ViaVersion（软依赖）</li><li><strong>Folia</strong>：支持 Folia 线程模型；调度使用 FoliaLib</li><li><strong>Hardcore / Scoreboard / 四月愚人节</strong> 等活动与开关：见 config 注释</li></ul>
+	</article>
+
+	<article class="article" id="endgame" data-search="满级与终局目标 Progression goals 满级 终局 排行 联动 成长">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 满级与终局</div>
+		<div class="article-header"><h1>满级与终局目标</h1><div class="sub">Progression goals</div></div>
+		<ol class="numbered"><li>各技能冲满（Retro 1000 / Standard 100，部分后期技能更高）</li><li>解锁全部子技能 Rank 与 Limit Break</li><li>超能力熟练运用：CD 规划 + 采集/战斗爆发窗口</li><li>Hardcore 服挑战：死亡损失 / 击杀吸级规则下的生存</li><li>排行榜：/mctop 与力量等级榜；PAPI 集成到计分板/称号插件</li><li>与其它插件联动：公会、经济、地牢（如本服数据包）——mcMMO 提供成长线，数据包提供内容线</li></ol><div class="note">与服务器其它 Wiki 的关系：数据包（墓石地牢、DnT、Incendium 等）提供<strong>内容与掉落</strong>；mcMMO 提供<strong>角色成长与防刷平衡</strong>。二者组合即 WenServer 的玩法骨架。</div>
+	</article>
 	</main>
 </div>
 
