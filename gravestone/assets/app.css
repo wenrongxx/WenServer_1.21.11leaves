@@ -954,3 +954,81 @@ a.back-home:active {
   background: #fff;
   object-fit: contain;
 }
+
+/* 3x3 crafting table (MC-wiki style) */
+.craft-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0.75rem 0 1rem;
+  padding: 0.85rem;
+  background: var(--infobox-bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.craft-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 36px);
+  grid-template-rows: repeat(3, 36px);
+  gap: 2px;
+  padding: 4px;
+  background: #c6c6c6;
+  border: 2px solid #555;
+  image-rendering: pixelated;
+}
+.craft-slot {
+  width: 36px;
+  height: 36px;
+  background: #8b8b8b;
+  border-top: 2px solid #373737;
+  border-left: 2px solid #373737;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.craft-slot img {
+  width: 28px;
+  height: 28px;
+  image-rendering: pixelated;
+}
+.craft-slot .ph {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  color: #222;
+  background: #b0b0b0;
+  border: 1px dashed #666;
+  line-height: 1.1;
+  text-align: center;
+  padding: 1px;
+}
+.craft-arrow {
+  font-size: 1.4rem;
+  color: var(--ink-2);
+  font-weight: 700;
+}
+.craft-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 100px;
+  text-align: center;
+  font-weight: 600;
+}
+.craft-result img {
+  width: 40px;
+  height: 40px;
+  image-rendering: pixelated;
+  background: #8b8b8b;
+  border: 2px solid #555;
+  padding: 4px;
+}
+.craft-meta { font-size: 0.82rem; color: var(--ink-2); max-width: 280px; }
