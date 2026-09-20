@@ -986,15 +986,15 @@ a.back-home:active {
   image-rendering: pixelated;
   display: inline-block;
   vertical-align: middle;
+  object-fit: contain;
 }
 .craft-table-wrap { display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap; }
 .craft-meta { flex: 1; min-width: 200px; font-size: 0.85rem; color: var(--ink-2, #54595d); }
 .craft-note { font-size: 0.88rem; color: var(--ink-2, #54595d); margin: 0.4rem 0 0.8rem; }
 .craft-grid { display: none !important; }
 
-/* slots shared */
 .slot-ico {
-  width: 36px; height: 36px;
+  width: 40px; height: 40px;
   background: #8b8b8b;
   border: 2px solid #555;
   box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #373737;
@@ -1002,9 +1002,10 @@ a.back-home:active {
   position: relative;
 }
 .slot-ico img {
-  width: 28px; height: 28px;
+  width: 32px; height: 32px;
   image-rendering: pixelated;
   display: block;
+  object-fit: contain;
 }
 .craft-arrow {
   font-size: 1.6rem; font-weight: 700;
@@ -1024,6 +1025,29 @@ a.back-home:active {
 .craft-result .slot img {
   width: 36px; height: 36px;
   image-rendering: pixelated;
+  object-fit: contain;
+}
+
+/* multi outputs right of arrow */
+.out-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+.out-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  min-width: 52px;
+}
+.out-item .cnt {
+  color: var(--ink-2, #54595d);
+  font-weight: 700;
 }
 
 /* --- Crafting table 3x3 --- */
@@ -1044,14 +1068,15 @@ a.back-home:active {
   width: 32px; height: 32px;
   image-rendering: pixelated;
   display: block; margin: 0 auto;
+  object-fit: contain;
 }
 
-/* --- Furnace / blast / smoker --- */
+/* --- Furnace family --- */
 .station-furnace .furnace-box,
 .station-blast .furnace-box,
 .station-smoker .furnace-box {
   display: grid;
-  grid-template-columns: 48px 28px 18px 48px;
+  grid-template-columns: 48px 28px 18px auto;
   grid-template-rows: 48px 48px;
   gap: 4px 6px;
   align-items: center;
@@ -1066,30 +1091,31 @@ a.back-home:active {
   grid-column: 2; grid-row: 2;
   width: 22px; height: 22px;
   image-rendering: pixelated;
-  opacity: 0.95;
+  object-fit: contain;
 }
 .furnace-box .f-arrow {
   grid-column: 3; grid-row: 1 / span 2;
   font-size: 1.35rem; color: #333; font-weight: 700;
   text-align: center;
 }
-.furnace-box .f-result { grid-column: 4; grid-row: 1 / span 2; }
+.furnace-box .f-out { grid-column: 4; grid-row: 1 / span 2; }
 
-/* --- Stonecutter --- */
+/* --- Stonecutter: input | saw | → | outputs --- */
 .station-stonecutter .stone-box {
   display: flex; align-items: center; gap: 8px;
   background: #c6c6c6; border: 2px solid #555;
   padding: 10px 12px; border-radius: 4px;
 }
 .stone-box .sc-blade {
-  width: 28px; height: 40px;
+  width: 28px; height: 36px;
   image-rendering: pixelated;
+  object-fit: contain;
 }
 
 /* --- Smithing table --- */
 .station-smithing .smith-box {
   display: grid;
-  grid-template-columns: 48px 48px 48px 20px 48px;
+  grid-template-columns: 48px 48px 48px 20px auto;
   grid-template-rows: 48px 48px;
   gap: 6px 8px;
   background: #3d3a36;
@@ -1105,7 +1131,7 @@ a.back-home:active {
   grid-column: 4; grid-row: 1 / span 2;
   color: #ddd; font-weight: 700; text-align: center; font-size: 1.2rem;
 }
-.smith-box .s-result { grid-column: 5; grid-row: 1 / span 2; }
+.smith-box .s-out { grid-column: 5; grid-row: 1 / span 2; }
 .smith-box .slot-ico {
   background: #1e1c1a;
   border-color: #666;
@@ -1118,9 +1144,8 @@ a.back-home:active {
   background: #c6c6c6; border: 2px solid #555;
   padding: 10px 12px; border-radius: 4px;
 }
-.camp-box .c-fire { width: 28px; height: 28px; image-rendering: pixelated; }
+.camp-box .c-fire { width: 28px; height: 28px; image-rendering: pixelated; object-fit: contain; }
 
-/* --- Shapeless badge --- */
 .craft-badge {
   display: inline-block;
   font-size: 0.72rem;

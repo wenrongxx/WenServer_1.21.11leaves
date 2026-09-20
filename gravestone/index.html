@@ -870,9 +870,9 @@
 
 	<article class="article" id="recipes" data-search="合成 配方 工作台 锻造台 切石机 熔炉 3x3 craft">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 合成配方</div>
-		<div class="article-header"><h1>合成配方</h1><div class="sub">分合成台界面 · 数据包 recipe + 物品纹理图标</div></div>
-		<p>配方来自 <code>gd_main/recipe</code> / <code>gd_alchemy/recipe</code>。比较器、中继器等红石元件使用<strong>物品栏图标</strong>，不再用方块俯视贴图。</p>
-		<p class="craft-note">界面对齐中文 Minecraft Wiki：<strong>工作台 / 锻造台 / 切石机 / 高炉 / 营火</strong> 使用不同合成台 UI。物品优先使用<strong>物品纹理</strong>（比较器、中继器等）；方块材料才用方块贴图。图标取自 1.21.11.jar 与服务器资源包。</p>
+		<div class="article-header"><h1>合成配方</h1><div class="sub">物品栏 invicon · 分合成台 UI</div></div>
+		<p>配方来自墓石地牢数据包。方块类材料/结果均使用<strong>物品栏图标</strong>（非方块面纹理）。</p>
+		<p class="craft-note">图标使用<strong>物品栏 invicon</strong>（来自 Minecraft Wiki / 1.21.11），不再用方块面贴图。合成台 UI 按<strong>工作台 / 切石机 / 锻造台 / 营火</strong>区分；切石机多产物直接显示在箭头右侧。</p>
 <div class="craft-block station-crafting">
   <div class="craft-name">紫水晶箭 <span class="craft-badge">无序</span></div>
   <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">工作台</div>
@@ -936,7 +936,7 @@
     <div class="craft-arrow">→</div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_stone_longsword.png" alt="石制长剑"></div><div>石制长剑</div></div>
   </div>
-  <div class="craft-meta">有序工作台：材料竖两格 + 底排「材料-木棍-材料」。石质材料（#stone_tool_materials）。长剑伤害高、攻速慢，带横扫。</div>
+  <div class="craft-meta">有序工作台。石质材料。</div>
 </div>
 
 <div class="craft-block station-crafting">
@@ -947,7 +947,7 @@
     <div class="craft-arrow">→</div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_copper_longsword.png" alt="铜制长剑"></div><div>铜制长剑</div></div>
   </div>
-  <div class="craft-meta">有序工作台：材料竖两格 + 底排「材料-木棍-材料」。铜锭。长剑伤害高、攻速慢，带横扫。</div>
+  <div class="craft-meta">有序工作台。铜锭。</div>
 </div>
 
 <div class="craft-block station-crafting">
@@ -958,7 +958,7 @@
     <div class="craft-arrow">→</div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_golden_longsword.png" alt="金制长剑"></div><div>金制长剑</div></div>
   </div>
-  <div class="craft-meta">有序工作台：材料竖两格 + 底排「材料-木棍-材料」。金锭。长剑伤害高、攻速慢，带横扫。</div>
+  <div class="craft-meta">有序工作台。金锭。</div>
 </div>
 
 <div class="craft-block station-crafting">
@@ -969,7 +969,7 @@
     <div class="craft-arrow">→</div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_iron_longsword.png" alt="铁制长剑"></div><div>铁制长剑</div></div>
   </div>
-  <div class="craft-meta">有序工作台：材料竖两格 + 底排「材料-木棍-材料」。铁锭。长剑伤害高、攻速慢，带横扫。</div>
+  <div class="craft-meta">有序工作台。铁锭。</div>
 </div>
 
 <div class="craft-block station-crafting">
@@ -980,7 +980,7 @@
     <div class="craft-arrow">→</div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_diamond_longsword.png" alt="钻石长剑"></div><div>钻石长剑</div></div>
   </div>
-  <div class="craft-meta">有序工作台：材料竖两格 + 底排「材料-木棍-材料」。钻石。长剑伤害高、攻速慢，带横扫。</div>
+  <div class="craft-meta">有序工作台。钻石。</div>
 </div>
 
 <div class="craft-block station-crafting">
@@ -991,7 +991,7 @@
     <div class="craft-arrow">→</div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_netherite_longsword.png" alt="下界合金长剑"></div><div>下界合金长剑</div></div>
   </div>
-  <div class="craft-meta">有序工作台：材料竖两格 + 底排「材料-木棍-材料」。下界合金锭；底排两侧钻石。长剑伤害高、攻速慢，带横扫。</div>
+  <div class="craft-meta">有序工作台。下界合金锭；底排两侧钻石。</div>
 </div>
 
 <div class="craft-block station-crafting">
@@ -1002,7 +1002,7 @@
     <div class="craft-arrow">→</div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_stone_shortsword.png" alt="石制匕首"></div><div>石制匕首</div></div>
   </div>
-  <div class="craft-meta">有序工作台：中列「材料 / 木棍」。匕首攻速快、无横扫、距离更短。</div>
+  <div class="craft-meta">有序工作台：中列材料/木棍。</div>
 </div>
 
 <div class="craft-block station-crafting">
@@ -1013,7 +1013,7 @@
     <div class="craft-arrow">→</div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_copper_shortsword.png" alt="铜制匕首"></div><div>铜制匕首</div></div>
   </div>
-  <div class="craft-meta">有序工作台：中列「材料 / 木棍」。匕首攻速快、无横扫、距离更短。</div>
+  <div class="craft-meta">有序工作台：中列材料/木棍。</div>
 </div>
 
 <div class="craft-block station-crafting">
@@ -1024,7 +1024,7 @@
     <div class="craft-arrow">→</div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_golden_shortsword.png" alt="金制匕首"></div><div>金制匕首</div></div>
   </div>
-  <div class="craft-meta">有序工作台：中列「材料 / 木棍」。匕首攻速快、无横扫、距离更短。</div>
+  <div class="craft-meta">有序工作台：中列材料/木棍。</div>
 </div>
 
 <div class="craft-block station-crafting">
@@ -1035,7 +1035,7 @@
     <div class="craft-arrow">→</div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_iron_shortsword.png" alt="铁制匕首"></div><div>铁制匕首</div></div>
   </div>
-  <div class="craft-meta">有序工作台：中列「材料 / 木棍」。匕首攻速快、无横扫、距离更短。</div>
+  <div class="craft-meta">有序工作台：中列材料/木棍。</div>
 </div>
 
 <div class="craft-block station-crafting">
@@ -1046,7 +1046,7 @@
     <div class="craft-arrow">→</div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_diamond_shortsword.png" alt="钻石匕首"></div><div>钻石匕首</div></div>
   </div>
-  <div class="craft-meta">有序工作台：中列「材料 / 木棍」。匕首攻速快、无横扫、距离更短。</div>
+  <div class="craft-meta">有序工作台：中列材料/木棍。</div>
 </div>
 
 <div class="craft-block station-crafting">
@@ -1057,7 +1057,7 @@
     <div class="craft-arrow">→</div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_netherite_shortsword.png" alt="下界合金匕首"></div><div>下界合金匕首</div></div>
   </div>
-  <div class="craft-meta">有序工作台：中列「材料 / 木棍」。匕首攻速快、无横扫、距离更短。</div>
+  <div class="craft-meta">有序工作台：中列材料/木棍。</div>
 </div>
 
 <div class="craft-block station-crafting">
@@ -1079,7 +1079,7 @@
     <div class="craft-arrow">→</div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_shield_wood.png" alt="木盾"></div><div>木盾</div></div>
   </div>
-  <div class="craft-meta">有序：木板围住木棍（同原版盾形）。耐久 168。结果图为服务器木盾物品图标。</div>
+  <div class="craft-meta">有序：木板围木棍（同原版盾）。耐久 168。材料用木板 invicon。</div>
 </div>
 
 <div class="craft-block station-crafting">
@@ -1090,7 +1090,7 @@
     <div class="craft-arrow">→</div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/trident.png" alt="木叉"></div><div>木叉</div></div>
   </div>
-  <div class="craft-meta">有序：燧石上、木棍中下。耐久 25。</div>
+  <div class="craft-meta">有序：燧石 + 木棍。耐久 25。</div>
 </div>
 
 <div class="craft-block station-crafting">
@@ -1101,7 +1101,7 @@
     <div class="craft-arrow">→</div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_ale.png" alt="麦酒"></div><div>麦酒</div></div>
   </div>
-  <div class="craft-meta">无序 9 格：下界疣×3 + 蜂蜜瓶 + 烈焰粉×2 + 金胡萝卜×3。急迫 III 5 分钟 + 伤害吸收 + 短暂反胃。堆叠 3。</div>
+  <div class="craft-meta">无序 9 格。急迫 III + 伤害吸收 + 短暂反胃。</div>
 </div>
 
 <div class="craft-block station-crafting">
@@ -1116,22 +1116,21 @@
 </div>
 
 <div class="craft-block station-stonecutter">
-  <div class="craft-name">货架 / 木板类（切石机）</div>
+  <div class="craft-name">原木 → 木板 / 货架等</div>
   <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_stonecutter.png" alt="">切石机</div>
   <div class="craft-table-wrap">
     <div class="stone-box">
-      <div class="slot-ico"><img src="assets/img/craft/oak_planks.png" alt="oak_planks" title="oak_planks"></div>
+      <div class="slot-ico"><img src="assets/img/craft/oak_log.png" alt="oak_log" title="oak_log"></div>
       <img class="sc-blade" src="assets/img/craft/ui_saw.png" alt="锯刃">
       <div class="craft-arrow">→</div>
-      <div class="slot-ico"><img src="assets/img/craft/oak_planks.png" alt="货架等" title="货架等"></div>
+      <div class="out-row"><div class="out-item"><div class="slot-ico"><img src="assets/img/craft/oak_planks.png" alt="橡木木板"></div><div>橡木木板</div><div class="cnt">×4</div></div><div class="out-item"><div class="slot-ico"><img src="assets/img/craft/oak_planks.png" alt="货架等"></div><div>货架等</div><div class="cnt">×1</div></div><div class="out-item"><div class="slot-ico"><img src="assets/img/craft/oak_planks.png" alt="门/楼梯等"></div><div>门/楼梯等</div><div class="cnt">见包内</div></div></div>
     </div>
-    <div class="craft-result"><div class="slot"><img src="assets/img/craft/oak_planks.png" alt="货架等"></div><div>货架等</div></div>
   </div>
-  <div class="craft-meta">各木种原木在<strong>切石机</strong>加工为货架、木板、门、楼梯等（gd_main 添加切石配方，不是工作台）。材料图标为木板方块物品。</div>
+  <div class="craft-meta">gd_main 切石配方：各木种原木 → 木板×4、货架×1、门/告示牌/楼梯等（数量以包内 JSON 为准）。产物直接列在箭头右侧。</div>
 </div>
 
 <div class="craft-block station-campfire">
-  <div class="craft-name">腐肉 → 兔皮（营火 / 熔炉类）</div>
+  <div class="craft-name">腐肉 → 兔皮</div>
   <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_campfire.png" alt="">营火</div>
   <div class="craft-table-wrap">
     <div class="camp-box">
@@ -1142,7 +1141,7 @@
     </div>
     <div class="craft-result"><div class="slot"><img src="assets/img/craft/rabbit_hide.png" alt="兔皮"></div><div>兔皮</div></div>
   </div>
-  <div class="craft-meta">营火烹饪 6000 刻（300 秒）：腐肉 → 兔皮 ×1。也可熔炉/烟熏炉。图标为物品纹理。</div>
+  <div class="craft-meta">营火烹饪 6000 刻（300 秒）：腐肉 → 兔皮 ×1。也可熔炉/烟熏炉。图标为物品栏 invicon。</div>
 </div>
 
 		<div class="categories">分类：<a href="#recipes">配方</a></div>
