@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>mcMMO Wiki — RPG 技能插件百科</title>
+<meta name="description" content="mcMMO 插件中文百科：技能、子技能、超能力、命令与配置。"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/app.css" />
+</head>
+<body>
+
+<header class="wiki-header">
+	<div class="inner">
+		<img src="assets/pack-icon.png" alt="" class="hub-logo-icon" width="28" height="28" />
+		<a class="wiki-logo" href="../index.html">mcMMO Wiki<span>RPG Skill Plugin</span></a>
+		<div class="wiki-search">
+			<input type="search" id="searchBox" placeholder="搜索条目…" aria-label="搜索" />
+			<button type="button" id="searchBtn">搜索</button>
+		</div>
+	</div>
+</header>
+
+<div class="wiki-shell" id="top">
+	<aside class="wiki-sidebar" id="wikiSidebar">
+		<div class="sb-title">目录</div>
+		<ul>
+			<li><a href="#overview">概述</a></li>
+			<li><a href="#levels">等级与模式</a></li>
+			<li><a href="#skills">技能总表</a></li>
+			<li><a href="#abilities">超能力</a></li>
+			<li><a href="#subskills">子技能详解</a></li>
+			<li><a href="#party">队伍系统</a></li>
+			<li><a href="#commands">命令</a></li>
+			<li><a href="#config">配置要点</a></li>
+			<li><a href="#perms">权限</a></li>
+			<li><a href="#dev">开发者与环境</a></li>
+		</ul>
+	</aside>
+	<main class="wiki-content">
+	<div id="searchPanel" class="search-panel" hidden>
+		<div class="sr-head"><strong>搜索结果</strong><span id="searchMeta" class="sr-meta"></span>
+		<button type="button" id="searchClear" class="sr-clear">清除</button></div>
+		<p class="sr-hint">输入时只更新列表，不隐藏正文、不滚动。</p>
+		<ol id="searchList" class="sr-list"></ol>
+	</div>
+	<div id="searchEmpty" class="search-empty" hidden>没有找到匹配的条目。</div>
+
+		<div class="back-bar">
+			<a class="back-home" href="../index.html">← 返回首页</a>
+			<span class="back-hub">WenServer Wiki</span>
+		</div>
+
+
+	<article class="article" id="overview" data-search="mcMMO RPG Skill Plugin mcMMO RPG 插件 技能 nosr50 Folia 2.3">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 概述</div>
+		<div class="article-header"><h1>mcMMO</h1><div class="sub">RPG Skill Plugin</div></div>
+		<div class="infobox"><div class="ib-title">mcMMO</div><table><tr><td class="k">名称</td><td class="v">mcMMO</td></tr><tr><td class="k">版本</td><td class="v"><code>2.3.001-SNAPSHOT</code>（pom.xml）</td></tr><tr><td class="k">主作者</td><td class="v">nossr50（及 GJ、NuclearW、bm01 等历史贡献者）</td></tr><tr><td class="k">官网</td><td class="v">mcmmo.org · wiki.mcmmo.org</td></tr><tr><td class="k">GitHub</td><td class="v">mcMMO-Dev/mcMMO</td></tr><tr><td class="k">平台</td><td class="v">Spigot / Paper / <strong>Folia</strong></td></tr><tr><td class="k">API</td><td class="v">api-version <strong>1.20.5</strong> · Java <strong>17</strong></td></tr><tr><td class="k">主类</td><td class="v"><code>com.gmail.nossr50.mcMMO</code></td></tr><tr><td class="k">软依赖</td><td class="v">WorldGuard · CombatTag · HealthBar · PlaceholderAPI · ProtocolLib · ViaVersion</td></tr><tr><td class="k">技能数</td><td class="v"><strong>19</strong> 项 PrimarySkillType（README 旧称 13/14）</td></tr><tr><td class="k">中文</td><td class="v">内置 <code>locale_zh_CN.properties</code>（约 1242 行）</td></tr><tr><td class="k">加载</td><td class="v">POSTWORLD</td></tr></table></div><p>mcMMO 把挖矿、伐木、战斗、钓鱼等核心玩法做成可升级的 RPG 技能：练级解锁子技能，部分技能可触发<strong>超能力</strong>，并支持<strong>队伍</strong>经验分享与传送。</p><ul class="bullets"><li>默认 <strong>Retro 模式</strong>（0–1000）；可在 config 切换 Standard（0–100）</li><li>力量等级 = 非子技能等级之和；单技能上限默认 0（不限制）</li><li>数据：FlatFile 或 MySQL（表前缀 <code>mcmmo_</code>）；区块数据在世界目录 <code>mcmmo_regions</code></li><li>公共 API：ExperienceAPI · PartyAPI · AbilityAPI · SkillAPI · ChatAPI · DatabaseAPI</li><li>服务器可在 <code>General.Locale: zh_CN</code> 启用简中；运行时 <code>/mcmmoreloadlocale</code> 热重载语言</li></ul>
+	</article>
+
+	<article class="article" id="levels" data-search="等级与模式 Retro vs Standard · XP 公式 等级 Retro Standard XP 公式 力量等级 PowerLevel LINEAR">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 等级与模式</div>
+		<div class="article-header"><h1>等级与模式</h1><div class="sub">Retro vs Standard · XP 公式</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项目</th><th>Retro 模式（默认 true）</th><th>Standard 模式</th></tr><tr><td>技能范围</td><td>多数 0–1000（部分后期技能可达 10000）</td><td>多数 0–100（部分可到 1000）</td></tr><tr><td>升级手感</td><td>频繁小升级</td><td>较少大升级</td></tr><tr><td>满级耗时</td><td>相同（数值 ×10 同步）</td><td>相同</td></tr><tr><td>技能分类</td><td>采集 / 战斗 / 杂项；分解与冶炼为<strong>子技能</strong>（无独立等级，XP 由父技能均分）</td><td>同左</td></tr></table></div><h3>XP 公式（experience.yml + FormulaManager）</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>模式</th><th>公式</th><th>默认参数</th><th>满级示例</th></tr><tr><td>LINEAR（默认）</td><td><code>base + level × multiplier</code></td><td>base=1020, multiplier=20</td><td>Retro 从 0→1000 线性累积</td></tr><tr><td>EXPONENTIAL</td><td><code>multiplier × level^exponent + base</code></td><td>0.1×level^1.80 + 2000</td><td>后期更陡</td></tr><tr><td>Standard 换算</td><td>标准级 N ≈ Retro 区间 (N×10+1)…(N×10+10) 之和</td><td>—</td><td>—</td></tr></table></div><ul class="bullets"><li><strong>力量等级 Power Level</strong> = 全部<strong>非子技能</strong>等级之和（分解/冶炼不计入）</li><li>全局倍率：<code>Experience_Formula.Multiplier.Global</code>（默认 1.0）；PVP 倍率独立</li><li>默认开启前期加速、战斗 XP 上限（单次伤害 100）；刷怪笼/刷蛋生物 XP 默认 0</li><li>收益递减 <code>Diminished_Returns</code> 默认关闭；开启后阈值约 20000 XP/10 分钟，最低保留 5%</li><li>升级里程碑广播默认每 <strong>100</strong> 级</li></ul><h3>技能分类（源码 SkillTools）</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>类别</th><th>技能</th></tr><tr><td>采集 Gathering</td><td>挖掘、钓鱼、草药学、挖矿、伐木</td></tr><tr><td>战斗 Combat</td><td>箭术、斧技、弩术、重锤术、剑术、矛术、驯兽、三叉戟术、格斗</td></tr><tr><td>杂项 Misc</td><td>杂技、炼金、修理</td></tr><tr><td>子技能 Child</td><td>分解（父：修理/钓鱼）、冶炼（父：挖矿/修理）</td></tr></table></div>
+	</article>
+
+	<article class="article" id="skills" data-search="技能总表 19 Skills 技能 采集 战斗 杂技 挖矿 伐木 剑术">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 技能总表</div>
+		<div class="article-header"><h1>技能总表</h1><div class="sub">19 Skills</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>技能</th><th>类型</th><th>主要工具/情境</th><th>代表子技能</th><th>主动超能力</th></tr><tr><td><div class="table-stack"><strong>杂技</strong><span class="sub">Acrobatics</span></div></td><td>战斗</td><td>摔落 / 受击</td><td>翻滚 · 优雅翻滚 · 闪避</td><td>华尔兹般的降落（被动触发）</td></tr><tr><td><div class="table-stack"><strong>炼金</strong><span class="sub">Alchemy</span></div></td><td>其他</td><td>药水 / 催化</td><td>催化 · 混合</td><td>—</td></tr><tr><td><div class="table-stack"><strong>箭术</strong><span class="sub">Archery</span></div></td><td>战斗</td><td>弓</td><td>技巧射击 · 击晕 · 箭矢回收 · 高爆射击 · 极限突破</td><td>高爆射击</td></tr><tr><td><div class="table-stack"><strong>斧技</strong><span class="sub">Axes</span></div></td><td>战斗</td><td>斧</td><td>斩首者 · 暴击 · 斧头精通 · 破甲 · 强烈冲击 · 极限突破</td><td><strong>斩首者</strong></td></tr><tr><td><div class="table-stack"><strong>弩术</strong><span class="sub">Crossbows</span></div></td><td>战斗</td><td>弩</td><td>强力射击 · 巧射 · 超级霰弹枪 · 极限突破</td><td><strong>超级霰弹枪</strong></td></tr><tr><td><div class="table-stack"><strong>挖掘</strong><span class="sub">Excavation</span></div></td><td>采集</td><td>锹</td><td>暴走钻头 · 考古学</td><td><strong>暴走钻头</strong></td></tr><tr><td><div class="table-stack"><strong>钓鱼</strong><span class="sub">Fishing</span></div></td><td>采集</td><td>钓鱼竿</td><td>淘金者 · 魔法猎人 · 抖动 · 渔夫的食谱 · 冰钓 · 钓鱼大师</td><td>抖动 / 冰钓等</td></tr><tr><td><div class="table-stack"><strong>草药学</strong><span class="sub">Herbalism</span></div></td><td>采集</td><td>锄 / 骨粉</td><td>大地祝福 · 园艺大师 · 农夫食谱 · 双倍掉落 · 繁茂恩赐 · 海拉尔的祝福 · 菌丝化</td><td>大地祝福</td></tr><tr><td><div class="table-stack"><strong>挖矿</strong><span class="sub">Mining</span></div></td><td>采集</td><td>镐</td><td>超级碎石机 · 双倍掉落 · 母矿 · 爆破开采 · 大号炸弹 · 爆破专家</td><td><strong>超级碎石机</strong></td></tr><tr><td><div class="table-stack"><strong>修理</strong><span class="sub">Repair</span></div></td><td>其他</td><td>铁砧类工具</td><td>修理 · 金/铁/石/钻石修理 · 修理精通 · 超级修理 · 秘法锻造</td><td>超级修理（被动）</td></tr><tr><td><div class="table-stack"><strong>分解</strong><span class="sub">Salvage</span></div></td><td>其他</td><td>分解台 / 工具</td><td>分解精通 · 废料回收 · 奥术分解</td><td>—</td></tr><tr><td><div class="table-stack"><strong>冶炼</strong><span class="sub">Smelting</span></div></td><td>其他</td><td>镐 / 原矿</td><td>冶炼精通 · 燃料效率 · 二次熔炼 · 祝融之镐</td><td>祝融之镐</td></tr><tr><td><div class="table-stack"><strong>剑术</strong><span class="sub">Swords</span></div></td><td>战斗</td><td>剑</td><td>反击 · 利刃突刺 · 撕裂 · 穿刺 · 极限突破</td><td><strong>利刃突刺</strong></td></tr><tr><td><div class="table-stack"><strong>驯兽</strong><span class="sub">Taming</span></div></td><td>战斗</td><td>驯服动物</td><td>野兽信息 · 冲击抗性 · 野性的召唤 · 快餐服务 · 犬神的庇护 · 嗜血 · 利爪 · 环境感知 · 毛皮强化 · 猛击</td><td>野性的召唤</td></tr><tr><td><div class="table-stack"><strong>三叉戟术</strong><span class="sub">Tridents</span></div></td><td>战斗</td><td>三叉戟</td><td>贯穿 · 极限突破 · 三叉戟技能（开发中）</td><td>开发中</td></tr><tr><td><div class="table-stack"><strong>矛术</strong><span class="sub">Spears</span></div></td><td>战斗</td><td>矛</td><td>动量 · 矛术精通 · 极限突破 · 矛技能（开发中）</td><td>开发中</td></tr><tr><td><div class="table-stack"><strong>重锤术</strong><span class="sub">Maces</span></div></td><td>战斗</td><td>重锤</td><td>碾碎 · 致残 · 极限突破</td><td>—</td></tr><tr><td><div class="table-stack"><strong>格斗</strong><span class="sub">Unarmed</span></div></td><td>战斗</td><td>空手</td><td>狂暴 · 缴械 · 铁臂式 · 箭矢偏向 · 铁腕 · 方块粉碎机 · 极限突破</td><td><strong>狂暴</strong></td></tr><tr><td><div class="table-stack"><strong>伐木</strong><span class="sub">Woodcutting</span></div></td><td>采集</td><td>斧</td><td>伐木工 · 秋风扫落叶 · 走运 · 树木丰收 · 充分砍伐 · 粉碎 · 树木外科医生 · 大自然的恩惠</td><td><strong>伐木工</strong></td></tr></table></div>
+	</article>
+
+	<article class="article" id="abilities" data-search="超能力与主动技能 Super Abilities 超能力 主动技能 斩首者 超级碎石机 伐木工 狂暴 冷却 240">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 超能力</div>
+		<div class="article-header"><h1>超能力与主动技能</h1><div class="sub">Super Abilities</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>名称</th><th>所属技能</th><th>解锁 (标准/复古)</th><th>冷却</th><th>满级持续*</th><th>效果</th></tr><tr><td>狂暴</td><td>格斗 Unarmed</td><td>5 / 50</td><td>240s</td><td>约 22s</td><td>+50% 伤害，可瞬间破坏部分方块</td></tr><tr><td>超级碎石机</td><td>挖矿 Mining</td><td>5 / 50</td><td>240s</td><td>约 22s</td><td>三倍掉落 + 挖矿速度提升（AllowTripleDrops）</td></tr><tr><td>暴走钻头</td><td>挖掘 Excavation</td><td>5 / 50</td><td>240s</td><td>约 22s</td><td>三倍掉落、三倍经验、挖掘加速</td></tr><tr><td>大地祝福</td><td>草药学 Herbalism</td><td>5 / 50</td><td>240s</td><td>约 22s</td><td>约 3 倍掉率，可让方块长苔</td></tr><tr><td>斩首者</td><td>斧技 Axes</td><td>5 / 50</td><td>240s</td><td>约 22s</td><td>造成范围伤害</td></tr><tr><td>伐木工</td><td>伐木 Woodcutting</td><td>5 / 50</td><td>240s</td><td>约 22s</td><td>爆发式砍倒整树；阈值 1000 方块</td></tr><tr><td>利刃突刺</td><td>剑术 Swords</td><td>5 / 50</td><td>240s</td><td>约 22s</td><td>横扫范围伤害，可能附加撕裂</td></tr><tr><td>爆破开采</td><td>挖矿 Mining</td><td>10 / 100</td><td><strong>60s</strong></td><td>技能相关</td><td>TNT 采掘增益；远程引爆距离 100</td></tr><tr><td>高爆射击</td><td>箭术 Archery</td><td>—</td><td>—</td><td>—</td><td>爆炸箭（权限默认未启用）</td></tr><tr><td>超级霰弹枪 / 三叉戟等</td><td>弩术 / 矛 / 三叉戟</td><td>—</td><td>—</td><td>—</td><td>部分为占位 / 开发中</td></tr></table></div><p class="muted">* 持续时间公式：<code>2 + min(上限, 技能等级) ÷ 步进</code>（标准：Cap 100 / 步进 5 → 满级 22 秒；复古：Cap 1000 / 步进 50）。</p><ul class="bullets"><li>激活：手持对应工具<strong>右键就绪</strong>；<code>/mcability</code> 可关闭右键就绪</li><li>冷却后提示「技能冷却完毕!」；查看 <code>/mccooldown</code></li><li>VIP 权限可延长持续 +4/+8/+12 秒，或减少冷却 1/3、1/2、1/4</li><li>伐木工失败：「那棵树太大了!」；耐久失败：「你的斧头变成了一堆碎片!」</li><li>超能力结束后可选刷新区块（<code>General.Refresh_Chunks</code>，默认关）</li></ul>
+	</article>
+
+	<article class="article" id="subskills" data-search="子技能详解 Subskills by skill 子技能 翻滚 淘金者 极限突破 秘法锻造">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 子技能详解</div>
+		<div class="article-header"><h1>子技能详解</h1><div class="sub">Subskills by skill</div></div>
+		<h3>杂技 <span class="mc-gray">Acrobatics</span></h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>子技能</th><th>英文键</th><th>机制说明</th></tr><tr><td><strong>翻滚</strong></td><td>Roll</td><td>摔落减伤/免伤，潜行可加倍几率与减伤</td></tr><tr><td><strong>优雅翻滚</strong></td><td>GracefulRoll</td><td>更高阶翻滚，减伤上限更高</td></tr><tr><td><strong>闪避</strong></td><td>Dodge</td><td>战斗中几率闪避</td></tr></table></div><h3>炼金 <span class="mc-gray">Alchemy</span></h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>子技能</th><th>英文键</th><th>机制说明</th></tr><tr><td><strong>催化</strong></td><td>Catalysis</td><td>催化相关，等级门槛解锁</td></tr><tr><td><strong>混合</strong></td><td>Concoctions</td><td>混合配方；标准模式 Rank1–8：0/10/20/35/50/75/90/100</td></tr></table></div><h3>箭术 <span class="mc-gray">Archery</span></h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>子技能</th><th>英文键</th><th>机制说明</th></tr><tr><td><strong>技巧射击</strong></td><td>SkillShot</td><td>随等级提升弓伤害</td></tr><tr><td><strong>击晕</strong></td><td>Daze</td><td>箭矢可能使目标失能</td></tr><tr><td><strong>箭矢回收</strong></td><td>ArrowRetrieval</td><td>箭矢可回收</td></tr><tr><td><strong>高爆射击</strong></td><td>ExplosiveShot</td><td>主动：爆炸箭</td></tr><tr><td><strong>箭术极限突破</strong></td><td>ArcheryLimitBreak</td><td>突破原版伤害上限（10 阶，标准 10–100）</td></tr></table></div><h3>斧技 <span class="mc-gray">Axes</span></h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>子技能</th><th>英文键</th><th>机制说明</th></tr><tr><td><strong>斩首者</strong></td><td>SkullSplitter</td><td><strong>主动超能力</strong></td></tr><tr><td><strong>暴击</strong></td><td>CriticalStrikes</td><td>斧击暴击</td></tr><tr><td><strong>斧头精通</strong></td><td>AxeMastery</td><td>斧伤害加成</td></tr><tr><td><strong>破甲 / 强烈冲击</strong></td><td>ArmorImpact / GreaterImpact</td><td>对护甲/无甲敌人额外伤害</td></tr><tr><td><strong>斧技极限突破</strong></td><td>AxesLimitBreak</td><td>突破伤害上限</td></tr></table></div><h3>挖矿 <span class="mc-gray">Mining</span></h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>子技能</th><th>英文键</th><th>机制说明</th></tr><tr><td><strong>超级碎石机</strong></td><td>SuperBreaker</td><td>三倍掉落 + 挖速</td></tr><tr><td><strong>双倍掉落 / 母矿</strong></td><td>DoubleDrops / MotherLode</td><td>更多矿物</td></tr><tr><td><strong>爆破开采 / 大号炸弹 / 爆破专家</strong></td><td>BlastMining 系列</td><td>爆炸采掘与更大范围</td></tr></table></div><h3>草药学 <span class="mc-gray">Herbalism</span></h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>子技能</th><th>英文键</th><th>机制说明</th></tr><tr><td><strong>大地祝福</strong></td><td>GreenTerra</td><td>田地增益 / 绿化</td></tr><tr><td><strong>园艺大师</strong></td><td>GreenThumb</td><td>种植强化</td></tr><tr><td><strong>农夫食谱</strong></td><td>FarmersDiet</td><td>食物增益</td></tr><tr><td><strong>双倍掉落</strong></td><td>DoubleDrops</td><td>作物双倍</td></tr><tr><td><strong>繁茂恩赐 / 海拉尔的祝福 / 菌丝化</strong></td><td>VerdantBounty / HylianLuck / ShroomThumb</td><td>进阶采集</td></tr></table></div><h3>剑术 <span class="mc-gray">Swords</span></h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>子技能</th><th>英文键</th><th>机制说明</th></tr><tr><td><strong>反击</strong></td><td>CounterAttack</td><td>格挡/受击反击</td></tr><tr><td><strong>利刃突刺</strong></td><td>SerratedStrikes</td><td>主动超能力</td></tr><tr><td><strong>撕裂 / 穿刺</strong></td><td>Rupture / Stab</td><td>流血 / 穿刺伤害</td></tr><tr><td><strong>剑术极限突破</strong></td><td>SwordsLimitBreak</td><td>突破伤害上限</td></tr></table></div><h3>格斗 <span class="mc-gray">Unarmed</span></h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>子技能</th><th>英文键</th><th>机制说明</th></tr><tr><td><strong>狂暴</strong></td><td>Berserk</td><td>主动超能力</td></tr><tr><td><strong>缴械 / 铁腕</strong></td><td>Disarm / IronGrip</td><td>缴械与防缴械</td></tr><tr><td><strong>铁臂式</strong></td><td>SteelArmStyle</td><td>空手伤害加成</td></tr><tr><td><strong>箭矢偏向 / 方块粉碎机</strong></td><td>ArrowDeflect / BlockCracker</td><td>防御与破盾/破方块</td></tr></table></div><h3>伐木 <span class="mc-gray">Woodcutting</span></h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>子技能</th><th>英文键</th><th>机制说明</th></tr><tr><td><strong>伐木工</strong></td><td>TreeFeller</td><td>主动：整树砍倒</td></tr><tr><td><strong>秋风扫落叶 / 走运</strong></td><td>LeafBlower / KnockOnWood</td><td>树叶与幸运</td></tr><tr><td><strong>树木丰收 / 大自然的恩惠</strong></td><td>HarvestLumber / NaturesBounty</td><td>木材增产</td></tr></table></div><h3>钓鱼 <span class="mc-gray">Fishing</span></h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>子技能</th><th>英文键</th><th>机制说明</th></tr><tr><td><strong>淘金者 / 魔法猎人</strong></td><td>TreasureHunter / MagicHunter</td><td>宝物与魔法掉落</td></tr><tr><td><strong>抖动 / 冰钓</strong></td><td>Shake / IceFishing</td><td>特殊钓鱼时机</td></tr><tr><td><strong>渔夫的食谱 / 钓鱼大师</strong></td><td>FishermansDiet / MasterAngler</td><td>食物与钓技</td></tr></table></div><h3>修理 / 分解 / 冶炼 <span class="mc-gray">Repair / Salvage / Smelting</span></h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>子技能</th><th>英文键</th><th>机制说明</th></tr><tr><td><strong>修理精通 / 超级修理 / 秘法锻造</strong></td><td>Repair 系列</td><td>按材料分阶解锁修理；超级修理双倍效果</td></tr><tr><td><strong>分解精通 / 废料回收 / 奥术分解</strong></td><td>Salvage 系列</td><td>分解装备回收材料</td></tr><tr><td><strong>冶炼精通 / 燃料效率 / 二次熔炼 / 祝融之镐</strong></td><td>Smelting 系列</td><td>原矿自动熔炼类效果</td></tr></table></div><h3>驯兽 / 弩术 / 重锤 / 矛 / 三叉戟 <span class="mc-gray">Taming / Crossbows / Maces / Spears / Tridents</span></h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>子技能</th><th>英文键</th><th>机制说明</th></tr><tr><td><strong>驯兽被动包</strong></td><td>Taming.Bonus 0–11</td><td>环境感知、毛皮、冲击抗性、利爪、快餐、犬神的庇护等（随等级解锁）</td></tr><tr><td><strong>弩术</strong></td><td>PoweredShot / TrickShot / SuperShotgun / LimitBreak</td><td>弩类战斗</td></tr><tr><td><strong>重锤术</strong></td><td>Crush / Cripple / LimitBreak</td><td>重锤控制与爆发</td></tr><tr><td><strong>矛术 / 三叉戟</strong></td><td>Momentum / Impale 等</td><td>部分技能标注「开发中」</td></tr></table></div>
+	</article>
+
+	<article class="article" id="party" data-search="队伍系统 Party · XP 分享 队伍 party ptp 经验共享 分享公式 聊天">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 队伍系统</div>
+		<div class="article-header"><h1>队伍系统</h1><div class="sub">Party · XP 分享</div></div>
+		<p>组队共享经验、聊天、传送与物品分配。<code>Party.Enabled</code> 默认 true；人数上限默认 <code>MaxSize: -1</code>（无限）。</p><h3>队伍经验分享公式</h3><pre class="hub-code" style="font-family:var(--font-mono);background:var(--sidebar);padding:.65rem;border:1px solid var(--line-soft);border-radius:6px;overflow-x:auto;font-size:.82rem">shareBonus = min(1.1 + 队伍人数 × 1.05, 1.5)
+每人获得 XP = 总 XP ÷ 人数 × shareBonus
+（仅 EQUAL 模式；分享半径默认 75 格）</pre><h3>队伍等级解锁（config.yml）</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>队伍等级</th><th>解锁功能</th></tr><tr><td>1</td><td>队伍聊天</td></tr><tr><td>2</td><td>队伍传送 /ptp</td></tr><tr><td>5</td><td>队伍同盟 Alliance</td></tr><tr><td>8</td><td>物品共享 ItemShare</td></tr><tr><td>10</td><td>经验共享 XpShare（上限 Level_Cap=10）</td></tr></table></div><h3>传送配置</h3><ul class="bullets"><li><code>/ptp</code> 冷却 120s，预热 5s，受伤后冷却 60s，请求超时 300s</li><li>需对方接受（Accept_Required）；管理员可 <code>/mcchatspy</code> 监视队伍聊天</li></ul><div class="wiki-table-wrap"><table class="wiki"><tr><th>命令</th><th>说明</th></tr><tr><td><code>/party create &lt;名称&gt;</code></td><td>创建队伍</td></tr><tr><td><code>/party invite &lt;玩家&gt;</code></td><td>邀请玩家</td></tr><tr><td><code>/party accept</code></td><td>接受邀请</td></tr><tr><td><code>/party join &lt;名称&gt; [密码]</code></td><td>加入队伍</td></tr><tr><td><code>/party quit / disband</code></td><td>退出 / 解散</td></tr><tr><td><code>/party info</code></td><td>队伍信息</td></tr><tr><td><code>/party kick &lt;玩家&gt;</code></td><td>踢出成员</td></tr><tr><td><code>/party lock / unlock</code></td><td>锁定 / 解锁加入</td></tr><tr><td><code>/party owner &lt;玩家&gt;</code></td><td>转让队长</td></tr><tr><td><code>/party password &lt;密码&gt;</code></td><td>设置密码</td></tr><tr><td><code>/party rename &lt;名称&gt;</code></td><td>重命名</td></tr><tr><td><code>/party xpshare</code></td><td>经验分配设置</td></tr><tr><td><code>/party itemshare</code></td><td>物品分配设置</td></tr><tr><td><code>/party alliance</code></td><td>队伍同盟</td></tr><tr><td><code>/partychat 或 /p</code></td><td>队伍聊天</td></tr><tr><td><code>/ptp &lt;玩家&gt;</code></td><td>传送到队友</td></tr><tr><td><code>/ptp accept / acceptall / toggle</code></td><td>传送请求相关</td></tr></table></div><p class="muted">自动踢人：默认约 7 天未上线（检查间隔 12 小时）。队伍友伤需双方均拥有 <code>mcmmo.party.friendlyfire</code>。</p>
+	</article>
+
+	<article class="article" id="commands" data-search="命令 Commands 命令 mcstats mctop mmoedit party">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 命令</div>
+		<div class="article-header"><h1>命令</h1><div class="sub">Commands</div></div>
+		<h3>玩家</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>命令</th><th>说明</th></tr><tr><td><code>/mcstats 或 /stats</code></td><td>查看技能等级与 XP</td></tr><tr><td><code>/mcmmo</code></td><td>插件简介</td></tr><tr><td><code>/mctop [技能] [页码]</code></td><td>技能排行榜</td></tr><tr><td><code>/mcrank &lt;玩家&gt;</code></td><td>查看某玩家排名</td></tr><tr><td><code>/mccooldown</code></td><td>查看能力冷却</td></tr><tr><td><code>/mcability</code></td><td>切换右键激活能力 开/关</td></tr><tr><td><code>/mmoxpbar 或 /xpbarsettings</code></td><td>经验条显示设置</td></tr><tr><td><code>/mmoinfo 或 /mcinfo</code></td><td>信息页</td></tr><tr><td><code>/&lt;技能名&gt; 如 /mining</code></td><td>查看该技能详情与 XP</td></tr><tr><td><code>/skillreset [技能]</code></td><td>重置技能等级（若有权限）</td></tr><tr><td><code>/xprate</code></td><td>查看/修改全服经验倍率（权限）</td></tr></table></div><h3>各技能详情命令</h3><p>每个技能都有同名命令，例如 <code>/mining</code> <code>/swords</code> <code>/woodcutting</code> <code>/fishing</code> <code>/alchemy</code> 等，用于查看该技能等级、XP 与子技能。</p><h3>管理员</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>命令</th><th>说明</th></tr><tr><td><code>/mmoedit &lt;玩家&gt; &lt;技能&gt; &lt;等级&gt;</code></td><td>编辑玩家技能等级</td></tr><tr><td><code>/addxp &lt;玩家&gt; &lt;技能&gt; &lt;数值&gt;</code></td><td>增加经验</td></tr><tr><td><code>/addlevels &lt;玩家&gt; &lt;技能&gt; &lt;数值&gt;</code></td><td>增加等级</td></tr><tr><td><code>/mcrefresh</code></td><td>刷新冷却</td></tr><tr><td><code>/mcremove &lt;玩家&gt;</code></td><td>从数据库删除玩家数据</td></tr><tr><td><code>/mcgod</code></td><td>mcMMO 无敌模式开关</td></tr><tr><td><code>/mcchatspy</code></td><td>监视队伍聊天</td></tr><tr><td><code>/inspect &lt;玩家&gt;</code></td><td>检查玩家数据</td></tr><tr><td><code>/mmoshowdb</code></td><td>数据库信息</td></tr><tr><td><code>/mcconvert</code></td><td>数据转换</td></tr><tr><td><code>/mcpurge</code></td><td>清理数据</td></tr><tr><td><code>/mcmmoreloadlocale</code></td><td>重载语言文件</td></tr><tr><td><code>/mmodebug</code></td><td>调试模式</td></tr><tr><td><code>/mcscoreboard</code></td><td>计分板设置</td></tr><tr><td><code>/adminchat</code></td><td>管理频道聊天</td></tr></table></div>
+	</article>
+
+	<article class="article" id="config" data-search="配置要点 config.yml / skillranks.yml 配置 config skillranks Retro Locale 广播">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 配置要点</div>
+		<div class="article-header"><h1>配置要点</h1><div class="sub">config.yml / skillranks.yml</div></div>
+		<ul class="bullets"><li><code>General.RetroMode.Enabled</code>：Retro / Standard 模式</li><li><code>General.Locale</code>：语言（服务器可改为 <code>zh_CN</code>）</li><li><code>General.Level_Up_Chat_Broadcasts</code>：升级广播与里程碑间隔</li><li><code>General.Save_Interval</code>：玩家数据保存间隔（分钟，默认 10）</li><li><code>General.Power_Level_Cap</code>：力量等级上限（0 表示不限制）</li><li><code>General.Refresh_Chunks</code>：超级碎石机等结束后刷新区块（性能换正确性）</li><li><code>coreskills.yml</code>：按技能开关子技能（如 Acrobatics.Roll.Enabled）</li><li><code>skillranks.yml</code>：子技能解锁等级（Standard 与 RetroMode 分列）</li><li><code>config.yml</code> 在启动时加载一次，运行时不支持 <code>/reload</code>（可用 <code>mcmmoreloadlocale</code> 重载语言）</li></ul><h3>skillranks 示例（Standard / Retro）</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>子技能</th><th>标准模式解锁</th><th>Retro 模式</th></tr><tr><td>炼金·混合 Rank1–8</td><td>0 / 10 / 20 / 35 / 50 / 75 / 90 / 100</td><td>0 / 100 / … / 1000</td></tr><tr><td>箭术·极限突破 Rank1–10</td><td>10→100（每阶 +10）</td><td>100→1000</td></tr><tr><td>箭术·技巧射击</td><td>自 1 级起多阶解锁</td><td>×10</td></tr></table></div><p class="muted">服务器管理员可在 skillranks.yml 将全部 Rank 调为 0，使子技能开局即全部可用。</p>
+	</article>
+
+	<article class="article" id="perms" data-search="权限节点 Permissions 权限 permission mmoedit party">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 权限</div>
+		<div class="article-header"><h1>权限节点</h1><div class="sub">Permissions</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>权限</th><th>用途</th></tr><tr><td><code>mcmmo.commands.mcstats</code> / <code>mctop</code> / <code>mcrank</code></td><td>查看状态与排行</td></tr><tr><td><code>mcmmo.commands.party.all</code></td><td>队伍子命令集合</td></tr><tr><td><code>mcmmo.commands.ptp.all</code></td><td>队伍传送相关</td></tr><tr><td><code>mcmmo.chat.partychat</code></td><td>队伍聊天</td></tr><tr><td><code>mcmmo.commands.mmoedit</code> / <code>mmoedit.others</code></td><td>编辑技能</td></tr><tr><td><code>mcmmo.bypass.partylimit</code></td><td>绕过队伍人数限制</td></tr><tr><td><code>mcmmo.bypass.hardcoremode</code></td><td>绕过 Hardcore 惩罚</td></tr><tr><td><code>mcmmo.commands.skillreset.all</code></td><td>技能重置</td></tr><tr><td><code>mcmmo.commands.xprate</code></td><td>修改经验倍率</td></tr></table></div><p>默认玩家组通常含 <code>mcmmo.commands.defaults</code>、<code>mcmmo.motd</code>、<code>mcmmo.party.all</code> 等。</p>
+	</article>
+
+	<article class="article" id="dev" data-search="开发者与环境 Build &amp; API 构建 maven API Folia Spigot">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 开发者与环境</div>
+		<div class="article-header"><h1>开发者与环境</h1><div class="sub">Build & API</div></div>
+		<ul class="bullets"><li>仓库：github.com/mcMMO-Dev/mcMMO · 官方 Wiki：wiki.mcmmo.org</li><li>构建：<code>mvn clean install</code>（输出 target/mcMMO.jar）</li><li>Maven 坐标：<code>com.gmail.nossr50.mcMMO:mcMMO</code></li><li>测试：JUnit 5；SQL 相关需 Docker（Testcontainers）</li><li>调度须使用 <strong>FoliaLib</strong>；API 包：ExperienceAPI、PartyAPI、AbilityAPI 等</li><li>发行渠道：Spigot（spigot.mcmmo.org）· Polymart</li></ul><div class="note">本页依据服务器内 <code>mcmmo/mcMMO-master.zip</code> 源码整理；具体数值以实际安装的 jar 与配置为准。</div>
+	</article>
+
+	</main>
+</div>
+
+<footer class="wiki-footer">mcMMO Wiki · 源码 locale_zh_CN + plugin.yml · 风格同 WenServer Wiki</footer>
+<script>
+
+(function () {
+	var sidebar = document.getElementById("wikiSidebar");
+	var toggle = document.getElementById("tocToggle");
+	var links = Array.prototype.slice.call(document.querySelectorAll(".wiki-sidebar a"));
+	var navTargets = links.map(function (a) {
+		var id = a.getAttribute("href");
+		return id && id.charAt(0) === "#" ? document.querySelector(id) : null;
+	});
+	function onScroll() {
+		var y = (document.documentElement.scrollTop || document.body.scrollTop) + 100;
+		var idx = 0;
+		for (var i = 0; i < navTargets.length; i++) {
+			if (navTargets[i] && !navTargets[i].classList.contains("hidden-by-search") && navTargets[i].offsetTop <= y) idx = i;
+		}
+		links.forEach(function (a, i) {
+			a.classList.toggle("active", i === idx);
+			var t = navTargets[i];
+			if (t) a.classList.toggle("dimmed", t.classList.contains("hidden-by-search"));
+		});
+	}
+	window.addEventListener("scroll", onScroll, { passive: true });
+	onScroll();
+	var box = document.getElementById("searchBox");
+	var btn = document.getElementById("searchBtn");
+	var panel = document.getElementById("searchPanel");
+	var list = document.getElementById("searchList");
+	var meta = document.getElementById("searchMeta");
+	var clearBtn = document.getElementById("searchClear");
+	var emptyBox = document.getElementById("searchEmpty");
+	var allArticles = Array.prototype.slice.call(document.querySelectorAll("main .article"));
+	var timer = null, lastHits = [];
+	function titleOf(art) {
+		var h = art.querySelector(".article-header h1") || art.querySelector("h1") || art.querySelector("h2");
+		return h ? h.textContent.replace(/\s+/g, " ").trim() : (art.id || "未命名");
+	}
+	function snippetOf(art, q) {
+		var text = (art.textContent || "").replace(/\s+/g, " ");
+		var i = text.toLowerCase().indexOf(q);
+		if (i < 0) return text.slice(0, 80);
+		var start = Math.max(0, i - 24), end = Math.min(text.length, i + q.length + 36);
+		return (start > 0 ? "…" : "") + text.slice(start, end) + (end < text.length ? "…" : "");
+	}
+	var index = allArticles.map(function (art) {
+		var title = titleOf(art);
+		var body = (art.textContent || "").replace(/\s+/g, " ");
+		var data = art.getAttribute("data-search") || "";
+		return { el: art, id: art.id, title: title,
+			hay: (title + " " + data + " " + body).toLowerCase(),
+			titleLower: title.toLowerCase(), dataLower: data.toLowerCase() };
+	});
+	function scoreOf(item, q) {
+		if (item.titleLower.indexOf(q) !== -1) return 3;
+		if (item.dataLower.indexOf(q) !== -1) return 2;
+		if (item.hay.indexOf(q) !== -1) return 1;
+		return 0;
+	}
+	function showAll() { index.forEach(function (it) { it.el.classList.remove("hidden-by-search"); }); }
+	function render(q, hits) {
+		if (!panel || !list || !meta) return;
+		if (!q) { panel.hidden = true; if (emptyBox) emptyBox.hidden = true; list.innerHTML = ""; lastHits = []; return; }
+		if (!hits.length) {
+			panel.hidden = true;
+			if (emptyBox) { emptyBox.hidden = false; emptyBox.textContent = "没有找到「" + q + "」。"; }
+			lastHits = []; return;
+		}
+		if (emptyBox) emptyBox.hidden = true;
+		panel.hidden = false;
+		meta.textContent = "「" + q + "」 · " + hits.length + " 条";
+		list.innerHTML = "";
+		hits.forEach(function (h) {
+			var li = document.createElement("li");
+			var a = document.createElement("a");
+			a.href = "#" + h.item.id; a.textContent = h.item.title; a.title = h.snippet;
+			var sn = document.createElement("div"); sn.className = "sr-snip"; sn.textContent = h.snippet;
+			li.appendChild(a); li.appendChild(sn);
+			a.addEventListener("click", function (e) {
+				e.preventDefault();
+				var el = document.getElementById(h.item.id);
+				if (el) el.scrollIntoView({ block: "start" });
+			});
+			list.appendChild(li);
+		});
+		lastHits = hits;
+	}
+	function update() {
+		var q = (box.value || "").trim().toLowerCase().replace(/\s+/g, " ");
+		showAll();
+		if (!q) { render("", []); onScroll(); return; }
+		var hits = [];
+		index.forEach(function (it) {
+			var s = scoreOf(it, q);
+			if (s > 0) hits.push({ item: it, score: s, snippet: snippetOf(it.el, q) });
+		});
+		hits.sort(function (a, b) { return b.score - a.score; });
+		render(q, hits);
+	}
+	function goTo() {
+		update();
+		if (!lastHits.length) {
+			if (emptyBox && !emptyBox.hidden)
+				window.scrollTo(0, Math.max(0, emptyBox.getBoundingClientRect().top + window.pageYOffset - 72));
+			return;
+		}
+		if (panel && !panel.hidden) {
+			window.scrollTo(0, Math.max(0, panel.getBoundingClientRect().top + window.pageYOffset - 72));
+			return;
+		}
+		var el = document.getElementById(lastHits[0].item.id);
+		if (el) window.scrollTo(0, el.getBoundingClientRect().top + window.pageYOffset - 72);
+	}
+	if (box) {
+		box.addEventListener("input", function () { if (timer) clearTimeout(timer); timer = setTimeout(update, 180); });
+		box.addEventListener("keydown", function (e) {
+			if (e.key === "Enter") { e.preventDefault(); if (timer) clearTimeout(timer); goTo(); }
+		});
+	}
+	if (btn) btn.addEventListener("click", function (e) { e.preventDefault(); if (timer) clearTimeout(timer); goTo(); });
+	if (clearBtn) clearBtn.addEventListener("click", function () {
+		if (box) box.value = "";
+		showAll(); render("", []); onScroll();
+	});
+})();
+
+</script>
+</body>
+</html>
