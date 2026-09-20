@@ -24,7 +24,7 @@
 </header>
 
 <div class="wiki-shell" id="top">
-							<aside class="wiki-sidebar" id="wikiSidebar">
+								<aside class="wiki-sidebar" id="wikiSidebar">
 		<div class="sb-title">目录</div>
 		<ul>
 			<li><a href="#overview">概述</a></li>
@@ -89,6 +89,25 @@
 		<div class="breadcrumbs"><a href="#top">首页</a> › 等级与模式</div>
 		<div class="article-header"><h1>等级与模式</h1><div class="sub">Retro vs Standard · XP 公式</div></div>
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项目</th><th>Retro 模式（默认 true）</th><th>Standard 模式</th></tr><tr><td>技能范围</td><td>多数 0–1000（部分后期技能可达 10000）</td><td>多数 0–100（部分可到 1000）</td></tr><tr><td>升级手感</td><td>频繁小升级</td><td>较少大升级</td></tr><tr><td>满级耗时</td><td>相同（数值 ×10 同步）</td><td>相同</td></tr><tr><td>技能分类</td><td>采集 / 战斗 / 杂项；分解与冶炼为<strong>子技能</strong>（无独立等级，XP 由父技能均分）</td><td>同左</td></tr></table></div><h3>XP 公式（experience.yml + FormulaManager）</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>模式</th><th>公式</th><th>默认参数</th><th>满级示例</th></tr><tr><td>LINEAR（默认）</td><td><code>base + level × multiplier</code></td><td>base=1020, multiplier=20</td><td>Retro 从 0→1000 线性累积</td></tr><tr><td>EXPONENTIAL</td><td><code>multiplier × level^exponent + base</code></td><td>0.1×level^1.80 + 2000</td><td>后期更陡</td></tr><tr><td>Standard 换算</td><td>标准级 N ≈ Retro 区间 (N×10+1)…(N×10+10) 之和</td><td>—</td><td>—</td></tr></table></div><ul class="bullets"><li><strong>力量等级 Power Level</strong> = 全部<strong>非子技能</strong>等级之和（分解/冶炼不计入）</li><li>全局倍率：<code>Experience_Formula.Multiplier.Global</code>（默认 1.0）；PVP 倍率独立</li><li>默认开启前期加速、战斗 XP 上限（单次伤害 100）；刷怪笼/刷蛋生物 XP 默认 0</li><li>收益递减 <code>Diminished_Returns</code> 默认关闭；开启后阈值约 20000 XP/10 分钟，最低保留 5%</li><li>升级里程碑广播默认每 <strong>100</strong> 级</li></ul><h3>技能分类（源码 SkillTools）</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>类别</th><th>技能</th></tr><tr><td>采集 Gathering</td><td>挖掘、钓鱼、草药学、挖矿、伐木</td></tr><tr><td>战斗 Combat</td><td>箭术、斧技、弩术、重锤术、剑术、矛术、驯兽、三叉戟术、格斗</td></tr><tr><td>杂项 Misc</td><td>杂技、炼金、修理</td></tr><tr><td>子技能 Child</td><td>分解（父：修理/钓鱼）、冶炼（父：挖矿/修理）</td></tr></table></div>
+	</article>
+	<article class="article" id="xp-formula" data-search="经验公式 XP LINEAR 1020 倍率链 累计">
+		<div class="breadcrumbs"><a href="#top">首页</a> › XP 计算公式</div>
+		<div class="article-header"><h1>XP 计算公式</h1><div class="sub">FormulaManager · 倍率链 · 累计经验</div></div>
+		<h3>升级所需经验</h3>
+		<div class="wiki-table-wrap"><table class="wiki">
+		<tr><th>曲线</th><th>公式</th><th>默认</th></tr>
+		<tr><td><strong>LINEAR</strong>（默认）</td><td><code>need = base + level × multiplier</code></td><td>1020 + 20×level；下限 1</td></tr>
+		<tr><td>EXPONENTIAL</td><td><code>need = multiplier × level^exponent + base</code></td><td>0.1×level^1.80 + 2000</td></tr>
+		</table></div>
+		<p>累计约：Retro <strong>100 级 ≈ 20.1 万</strong> XP，<strong>1000 级 ≈ 1101 万</strong> XP。Retro/Standard 切换不改变总肝度。</p>
+		<h3>倍率链</h3>
+		<pre style="background:var(--sidebar);border:1px solid var(--line-soft);padding:.65rem;border-radius:6px;font-family:var(--font-mono);font-size:.82rem">最终XP = 原始XP × Skill_Multiplier × max(Global, /xprate) × CustomXPPerk(默认1.25)</pre>
+		<ul class="bullets">
+			<li><code>/xprate</code> 与 Global <strong>取 max</strong>，不叠加</li>
+			<li>等级或力量等级到 Cap → 不再给经验</li>
+			<li><code>Cumulative_Curve</code> 建议保持 false；曲线建议 LINEAR</li>
+		</ul>
+		<div class="categories">分类：<a href="#xp-formula">公式</a></div>
 	</article>
 	<article class="article" id="skills" data-search="技能总表 19 Skills 技能 采集 战斗 杂技 挖矿 伐木 剑术">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 技能总表</div>
