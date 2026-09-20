@@ -168,29 +168,104 @@
 		<p>进入结构后常被切换为冒险模式，离开还原生存模式。多数结构可向 <strong>埃尔德丽德</strong> 或<strong>制图师</strong>购买探索地图；地图盒以木盒 / 灵柩命名，内含对应结构地图。</p>
 		<div class="shot-grid">
 			<div class="shot-card"><img src="assets/img/custom/structure_direwood.png" alt=""><div class="cap"><div class="t">暗木要塞</div><div class="s">商人枢纽 · 进度「一点都不空」</div></div></div>
-			<div class="shot-card"><img src="assets/img/custom/structure_emberstone_bastion.png" alt=""><div class="cap"><div class="t">余烬石堡垒</div><div class="s">下界浮岩 · <a href="#morbex">莫贝克斯</a> · Y≈125</div></div></div>
+			<div class="shot-card"><img src="assets/img/custom/structure_emberstone_bastion.png" alt=""><div class="cap"><div class="t">余烬石堡垒</div><div class="s">主世界海洋上空 · <a href="#morbex">莫贝克斯</a> · start_height +125</div></div></div>
 			<div class="shot-card"><img src="assets/img/custom/structure_monastery_of_highpeak.png" alt=""><div class="cap"><div class="t">高峰修道院</div><div class="s">格里姆加 · 进度「漂亮的建筑」</div></div></div>
 			<div class="shot-card"><img src="assets/img/custom/structure_cloud_nomads.png" alt=""><div class="cap"><div class="t">云游氏族</div><div class="s">三派系首领 · 进度「高处的路」</div></div></div>
 			<div class="shot-card"><img src="assets/img/custom/structure_mirehaven_caves.png" alt=""><div class="cap"><div class="t">泥湾蔓生洞穴</div><div class="s">枯萎骨髓 · 进度「白骨与砖石」</div></div></div>
 			<div class="shot-card"><img src="assets/img/custom/structure_edinborough_fair.png" alt=""><div class="cap"><div class="t">埃丁伯勒集市</div><div class="s">竞技场 · 进度「恶棍与小丑」</div></div></div>
 			<div class="shot-card"><img src="assets/img/custom/structure_blackstone_maze.png" alt=""><div class="cap"><div class="t">黑石迷宫</div><div class="s">下界 · 炽焰恶魔 · 进度「下面还有更多」</div></div></div>
 		</div>
-		<div class="wiki-table-wrap">
+				<div class="wiki-table-wrap">
 		<table class="wiki">
-			<tr><th>结构</th><th>生成高度 Y</th><th>生物群系（tag）</th><th>关联首领</th></tr>
-			<tr><td>暗木要塞</td><td>≈17</td><td>温带+丛林等（<code>direwood_biome</code>）</td><td class="muted">商人枢纽</td></tr>
-			<tr><td><a href="#morbex">余烬石堡垒</a></td><td><strong>≈125</strong> 浮空</td><td><strong>仅</strong> 河流 / 冻洋 / 暖海</td><td><a href="#morbex">莫贝克斯</a></td></tr>
-			<tr><td>高峰修道院（教堂）</td><td>≈−5</td><td>雪原 + 温带（<code>church_biome</code>）</td><td>格里姆加</td></tr>
-			<tr><td>云游氏族</td><td><strong>≈140</strong> 高空</td><td>极广：寒冷/温带/丛林/炎热皆可</td><td class="muted">三派系首领</td></tr>
-			<tr><td>泥湾蔓生洞穴</td><td>≈41</td><td>暗林/沼泽/丛林/草原（<code>m_caves</code>）</td><td>枯萎骨髓</td></tr>
-			<tr><td>灰石矿场</td><td>—</td><td>温带系</td><td>育母之喉</td></tr>
-			<tr><td>黑石迷宫</td><td>≈−51</td><td><strong>仅</strong> 下界荒地</td><td>炽焰恶魔</td></tr>
-			<tr><td>黑井墓穴</td><td><strong>≈−72</strong> 深地下</td><td>温带+丛林等</td><td>暗影</td></tr>
-			<tr><td>女巫小屋</td><td>≈−14</td><td>温带（<code>witch_biome</code>）</td><td>水晶女巫会</td></tr>
-			<tr><td>埃丁伯勒集市</td><td>≈−13</td><td>寒冷+温带</td><td>竞技场（门票触发）</td></tr>
+			<tr><th>结构</th><th>配置高度 <code>start_height</code></th><th>投影</th><th>生物群系 tag</th><th>关联首领</th></tr>
+			<tr>
+				<td>暗木要塞 <code>gd:direwood</code></td>
+				<td><strong>+17</strong></td>
+				<td><code>WORLD_SURFACE</code></td>
+				<td><code>direwood_biome</code>：平原/森林/丛林/沼泽等温带系</td>
+				<td class="muted">商人枢纽</td>
+			</tr>
+			<tr>
+				<td><a href="#morbex">余烬石堡垒</a> <code>gd:netherrock</code></td>
+				<td><strong>+125</strong>（高空）</td>
+				<td><code>WORLD_SURFACE</code></td>
+				<td><code>netherrock_biome</code>：<strong>仅主世界</strong>河流 / 冻洋 / 暖海（<strong>不是下界维度</strong>）</td>
+				<td><a href="#morbex">莫贝克斯</a></td>
+			</tr>
+			<tr>
+				<td>高峰修道院 <code>gd:church</code></td>
+				<td><strong>−5</strong></td>
+				<td><code>WORLD_SURFACE</code></td>
+				<td><code>church_biome</code>：雪原/针叶林等寒冷 + 平原/森林/橡木林等温带</td>
+				<td>格里姆加</td>
+			</tr>
+			<tr>
+				<td>云游氏族 <code>gd:cloud_nomads</code></td>
+				<td><strong>+140</strong>（高空）</td>
+				<td><code>WORLD_SURFACE</code></td>
+				<td><code>cloud_nomads_biome</code>：极广（寒冷/温带/丛林/草原/沙漠/河流与部分海洋等）</td>
+				<td class="muted">三派系首领</td>
+			</tr>
+			<tr>
+				<td>泥湾蔓生洞穴 <code>gd:m_caves</code></td>
+				<td><strong>+41</strong></td>
+				<td><code>WORLD_SURFACE</code></td>
+				<td><code>m_caves_biome</code>：暗林/沼泽/红树林/丛林/稀疏丛林/<strong>热带草原</strong>（无普通平原）</td>
+				<td>枯萎骨髓</td>
+			</tr>
+			<tr>
+				<td>灰石矿场 <code>gd:mineshaft_temp</code></td>
+				<td><strong>−65 ～ −85</strong>（uniform）</td>
+				<td><code>WORLD_SURFACE</code></td>
+				<td><code>temp</code>：温带/丛林/草原/沼泽等</td>
+				<td>育母之喉</td>
+			</tr>
+			<tr>
+				<td>黑石迷宫 <code>gd:maze</code></td>
+				<td><strong>−51</strong></td>
+				<td><code>WORLD_SURFACE</code></td>
+				<td><code>maze_biome</code>：<strong>仅</strong> <code>nether_wastes</code> 下界荒地</td>
+				<td>炽焰恶魔</td>
+			</tr>
+			<tr>
+				<td>黑井墓穴 <code>gd:catacombs</code></td>
+				<td><strong>−72</strong>（深地下）</td>
+				<td><code>WORLD_SURFACE</code></td>
+				<td><code>catacombs_biome</code>：平原/森林/丛林/沼泽等温带系</td>
+				<td>暗影</td>
+			</tr>
+			<tr>
+				<td>女巫小屋 <code>gd:witch</code></td>
+				<td><strong>−14</strong></td>
+				<td><code>WORLD_SURFACE</code></td>
+				<td><code>witch_biome</code>：平原/森林/黑森林/沼泽等温带</td>
+				<td>水晶女巫会</td>
+			</tr>
+			<tr>
+				<td>埃丁伯勒集市 <code>gd:fair</code></td>
+				<td><strong>−13</strong></td>
+				<td><code>WORLD_SURFACE</code></td>
+				<td><code>fair_biome</code>：寒冷（雪原/针叶林/冰封）+ 温带（平原/森林/橡木林等）</td>
+				<td>竞技场（门票触发）</td>
+			</tr>
 		</table>
 		</div>
-		<p class="muted">结构集 <code>l_dungeon</code>（教堂/矿洞/要塞/堡垒/墓穴）间距约 90、间隔 60；云游氏族间距 120。均为 jigsaw，<code>surface_structures</code>。</p>
+		<p class="muted"><strong>高度读法（来自 <code>data/gd/worldgen/structure/*.json</code>）：</strong>
+		表中数值为数据包 <code>start_height.absolute</code>（矿场为 uniform −65～−85）。上列结构均设置
+		<code>project_start_to_heightmap: WORLD_SURFACE</code>，在游戏内生成高度约等于<strong>该维度地表高度 + 配置值</strong>，不是固定世界坐标的绝对 Y。
+		余烬石堡垒生物群系为主世界海洋/河流（剧情为被撕入主世界天空）；黑石迷宫才是下界结构。
+		奥术节点/商人等 POI：温带 <code>temps</code> −26 / <code>templ</code> −33，寒冷 <code>colds</code> −26 / <code>coldl</code> −33，炎热 <code>hots</code> −26 / <code>hotl</code> −33（均 WORLD_SURFACE）。</p>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>结构集</th><th>成员</th><th>spacing / separation</th></tr>
+			<tr><td><code>l_dungeon</code></td><td>教堂、泥湾洞穴、暗木要塞、余烬石堡垒、黑井墓穴（<strong>不含</strong>矿场/迷宫/集市/女巫/云游）</td><td><strong>90 / 60</strong></td></tr>
+			<tr><td><code>cloud_nomads</code></td><td>云游氏族</td><td><strong>120 / 80</strong></td></tr>
+			<tr><td><code>fair</code></td><td>埃丁伯勒集市</td><td><strong>80 / 50</strong></td></tr>
+			<tr><td><code>l_dungeon_nether</code></td><td>黑石迷宫</td><td><strong>80 / 40</strong></td></tr>
+			<tr><td><code>mineshaft_temp</code></td><td>灰石矿场</td><td><strong>40 / 20</strong></td></tr>
+			<tr><td><code>witch</code></td><td>女巫小屋</td><td><strong>40 / 20</strong></td></tr>
+		</table>
+		</div>
 		<div class="categories">分类：<a href="#structures">结构</a></div>
 	</article>
 
@@ -336,7 +411,7 @@
 				<tr><td class="k">攻击冷却</td><td class="v">约 250 / 230 / 210 tick</td></tr>
 				<tr><td class="k">血条</td><td class="v">紫色 notched_20</td></tr>
 				<tr><td class="k">音乐</td><td class="v"><code>devouring_serpent_morbex</code></td></tr>
-				<tr><td class="k">结构</td><td class="v"><code>gd:netherrock</code> · 下界 · Y≈125</td></tr>
+				<tr><td class="k">结构</td><td class="v"><code>gd:netherrock</code> · 主世界海洋上空 · start_height <strong>+125</strong> · 投影 WORLD_SURFACE</td></tr>
 				<tr><td class="k">进度链</td><td class="v">失而复得 → 让他重回正轨 → 悲剧命运</td></tr>
 			</table>
 		</div>
@@ -345,7 +420,7 @@
 		<h3 id="morbex-summon">召唤方法</h3>
 		<ol class="steps">
 			<li><strong>抵达余烬石堡垒</strong>
-				<div class="detail">下界拼图结构，起始件 <code>netherrock_11</code>，拼图尺寸 7，起始高度约 <strong>Y=125</strong>。地图：埃尔德丽德「华饰余烬石盒」或制图师同名盒。进入解锁进度「失而复得」。</div>
+				<div class="detail">拼图结构（剧情为被撕入主世界天空），起始池 <code>gd:netherrock_start</code>，size 7；数据包 <code>start_height.absolute = 125</code>，<code>project_start_to_heightmap = WORLD_SURFACE</code>，生成于<strong>主世界河流/冻洋/暖海</strong>上空（约地表 +125，非固定绝对 Y=125）。地图：埃尔德丽德「华饰余烬石盒」或制图师同名盒。进入解锁进度「失而复得」。</div>
 			</li>
 			<li><strong>在祭坛房对话</strong>
 				<div class="detail">祭坛/囚禁房模板 <code>netherrock_15</code>：特征为<strong>黑色混凝土</strong>、讲台、加固深板岩一带。靠近约 8 格触发随机对话（灵魂被拆成三份、带到祭坛合而为一）。</div>

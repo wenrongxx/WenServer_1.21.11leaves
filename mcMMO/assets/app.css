@@ -299,62 +299,104 @@ code, .mono {
 
 .article ul.bullets li, .article ol.numbered li { margin: 0.15rem 0; }
 
-/* Infobox — right float like MC wiki */
+
+/* Infobox float layout fixes — prevent content boxes overlapping the float */
+.article::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .infobox {
   float: right;
-  width: min(280px, 100%);
-  margin: 0 0 0.75rem 1rem;
+  width: min(300px, 100%);
+  margin: 0 0 0.85rem 1rem;
   border: 1px solid var(--line);
   background: var(--infobox-bg);
   font-size: 0.84rem;
   line-height: 1.45;
+  clear: right;
+  position: relative;
+  z-index: 1;
 }
-
 .infobox .ib-title {
   background: var(--table-head);
   border-bottom: 1px solid var(--line);
-  padding: 0.4rem 0.55rem;
+  padding: 0.45rem 0.55rem;
   font-weight: 700;
   text-align: center;
   font-size: 0.95rem;
 }
-
 .infobox .ib-img {
   text-align: center;
   padding: 0.55rem;
   background: #fff;
   border-bottom: 1px solid var(--line-soft);
+  overflow: hidden;
 }
-
 .infobox .ib-img img {
   max-width: 100%;
+  width: auto;
   height: auto;
+  max-height: 150px;
+  object-fit: contain;
   image-rendering: pixelated;
-  max-height: 120px;
+  display: inline-block;
+  vertical-align: middle;
 }
-
 .infobox table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
-
 .infobox td {
-  padding: 0.28rem 0.5rem;
+  padding: 0.3rem 0.5rem;
   border-bottom: 1px solid var(--line-soft);
   vertical-align: top;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
-
 .infobox tr:last-child td { border-bottom: none; }
-
 .infobox td.k {
-  width: 38%;
+  width: 36%;
   color: var(--muted);
   font-weight: 600;
 }
-
 .infobox td.v { color: var(--ink); }
+.infobox td.v code {
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
 
-/* Clearfix after infobox */
+/* Headings and structured blocks sit below the float, not under it */
+.article > h3,
+.article > .steps,
+.article > .wiki-table-wrap,
+.article > .dialogue,
+.article > .shot-grid,
+.article > .clear {
+  clear: both;
+}
+.article > p { overflow-wrap: break-word; }
+
+.steps {
+  clear: both;
+  counter-reset: step;
+  list-style: none;
+  margin: 0.55rem 0;
+  padding: 0;
+  overflow: hidden;
+}
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 0.45rem 0.55rem 0.45rem 2.4rem;
+  margin: 0.35rem 0;
+  border: 1px solid var(--line-soft);
+  background: #fff;
+  overflow-wrap: break-word;
+}
+.steps li .detail { overflow-wrap: break-word; }
+
 .clear { clear: both; }
 
 /* Notes */
