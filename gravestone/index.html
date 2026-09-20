@@ -877,26 +877,127 @@
 	</article>
 
 	<!-- ============ 食物 ============ -->
-	<article class="article" id="food" data-search="食物 炖菜 麦酒 蜂蜜酒 热红酒 配方 效果">
+	<article class="article" id="food" data-search="食物 炖菜 麦酒 蜂蜜酒 热红酒 配方 效果 craft">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 食物与酒饮</div>
-		<div class="article-header"><h1>食物与酒饮</h1></div>
-		<p>均为 9 格无序合成。炖菜 Lore 标明效果；酒饮为药水基底并含直接效果。</p>
+		<div class="article-header"><h1>食物与酒饮</h1><div class="sub">gd_main 食物配方 · 工作台 3×3 无序合成</div></div>
+		<p>来源 <code>data/gd_main/recipe/food/*.json</code>。酒饮与炖菜均可在<strong>工作台</strong>无序合成，无需酿造台/营火。商人菲奥娜处也可直接购买成品。</p>
 		<div class="wiki-table-wrap">
 		<table class="wiki">
-			<tr><th>名称</th><th>材料</th><th>效果 / Lore</th></tr>
-			<tr><td>牛肉炖菜</td><td>胡萝卜×3、甜浆果、马铃薯×2、牛肉×2、碗</td><td>急迫 I · 力量 I（+饱和类脚本效果）</td></tr>
-			<tr><td>鸡肉蔬菜炖菜</td><td>胡萝卜×2、蘑菇、甜菜、马铃薯×2、鸡肉×2、碗</td><td>生命恢复 I · 速度 I</td></tr>
-			<tr><td>渔夫炖菜</td><td>甜菜×2、海带×2、甜浆果×2、鲑鱼、鳕鱼、碗</td><td>海豚的恩惠 I</td></tr>
-			<tr><td>羊肉大麦炖菜</td><td>胡萝卜×2、甜浆果、蜂蜜、小麦×2、羊肉×2、碗</td><td>生命提升 I · 抗性 I</td></tr>
-			<tr><td>豆香肠炖菜</td><td>胡萝卜×3、蘑菇×2、猪肉×2、可可豆、碗</td><td>速度 I · 跳跃提升 I</td></tr>
-			<tr><td>鹿肉炖菜</td><td>胡萝卜、蘑菇×2、蜂蜜、甜浆果×2、羊肉、牛肉、碗</td><td>力量 I · 抗性 I</td></tr>
-			<tr><td>麦酒</td><td>下界疣×3、蜂蜜、烈焰粉×2、金胡萝卜×3</td><td>急迫 II 5 分 · 伤害吸收 3 分 · 反胃</td></tr>
-			<tr><td>蜂蜜酒</td><td>下界疣×3、蜂蜜、小麦×2、发光浆果×3</td><td>力量 II 3 分 · 抗性 I 3 分 · 缓慢 II · 反胃</td></tr>
-			<tr><td>热红酒</td><td>下界疣×3、蜂蜜、恶魂之泪、闪烁西瓜、甜浆果×3</td><td>生命恢复 III 1 分 · 生命提升 I · 反胃</td></tr>
-			<tr><td>嚎叫者烈酒</td><td>猎犬师购买（3 银）</td><td>Lore：给男人和它最好的朋友带来饱食</td></tr>
+			<tr><th>物品</th><th>配方（无序 9 格）</th><th>主要效果（JSON）</th></tr>
+			<tr><td>牛肉炖菜</td><td>胡萝卜×3、甜浆果、马铃薯×2、生牛肉×2、碗</td><td>急迫 I · 力量 I · 饱和（另有短暂缓慢/虚弱）</td></tr>
+			<tr><td>鸡肉蔬菜炖菜</td><td>胡萝卜×2、棕色蘑菇、甜菜根、马铃薯×2、生鸡肉×2、碗</td><td>速度 I · 生命恢复 I · 饱和</td></tr>
+			<tr><td>渔夫炖菜</td><td>甜菜根×2、干海带×2、甜浆果×2、鲑鱼、鳕鱼、碗</td><td>海豚的恩惠 · 饱和</td></tr>
+			<tr><td>羊肉大麦炖菜</td><td>胡萝卜×2、甜浆果、蜂蜜瓶、小麦×2、生羊肉×2、碗</td><td>生命提升 I · 抗性 I（短暂反胃）</td></tr>
+			<tr><td>豆香肠炖菜</td><td>胡萝卜×3、棕色蘑菇×2、生猪排×2、可可豆、碗</td><td>速度 I · 跳跃提升 I · 饱和</td></tr>
+			<tr><td>鹿肉炖菜</td><td>胡萝卜、棕色蘑菇×2、蜂蜜瓶、甜浆果×2、生羊肉、生牛肉、碗</td><td>力量 I · 抗性 I · 饱和</td></tr>
+			<tr><td>麦酒</td><td>下界疣×3、蜂蜜瓶、烈焰粉×2、金胡萝卜×3</td><td><strong>急迫 III</strong> 5 分 · 伤害吸收 I 3 分 · 反胃</td></tr>
+			<tr><td>蜂蜜酒</td><td>下界疣×3、蜂蜜瓶、小麦×2、发光浆果×3</td><td>力量 II 3 分 · 抗性 I 3 分 · 缓慢 II · 反胃</td></tr>
+			<tr><td>热红酒</td><td>下界疣×3、蜂蜜瓶、恶魂之泪、闪烁西瓜片、甜浆果×3</td><td>生命恢复 III 1 分 · 生命提升 I 1 分 · 反胃</td></tr>
 		</table>
 		</div>
-		<div class="categories">分类：<a href="#food">食物</a></div>
+		<p class="muted">炖菜基底为<strong>可疑的汤</strong>（带自定义名称与 CMD），酒饮基底为<strong>药水</strong>（自定义药水效果）。最大堆叠均为 <strong>3</strong>。下方为工作台 3×3 网格。</p>
+
+<p class="craft-note">下列均为数据包 <code>gd_main/recipe/food/*.json</code> 中的 <strong>9 格无序工作台</strong>配方。图标为物品栏 invicon / 资源包食物贴图；效果时长按 tick→分钟换算（20 tick = 1 秒）。</p>
+<div class="craft-block station-crafting">
+  <div class="craft-name">麦酒 Ale <span class="craft-badge">无序</span></div>
+  <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">工作台</div>
+  <div class="craft-table-wrap">
+    <table class="craft-3"><tr><td><img src="assets/img/craft/nether_wart.png" alt="nether_wart" title="nether_wart"></td><td><img src="assets/img/craft/nether_wart.png" alt="nether_wart" title="nether_wart"></td><td><img src="assets/img/craft/nether_wart.png" alt="nether_wart" title="nether_wart"></td></tr><tr><td><img src="assets/img/craft/blaze_powder.png" alt="blaze_powder" title="blaze_powder"></td><td><img src="assets/img/craft/honey_bottle.png" alt="honey_bottle" title="honey_bottle"></td><td><img src="assets/img/craft/blaze_powder.png" alt="blaze_powder" title="blaze_powder"></td></tr><tr><td><img src="assets/img/craft/golden_carrot.png" alt="golden_carrot" title="golden_carrot"></td><td><img src="assets/img/craft/golden_carrot.png" alt="golden_carrot" title="golden_carrot"></td><td><img src="assets/img/craft/golden_carrot.png" alt="golden_carrot" title="golden_carrot"></td></tr></table>
+    <div class="craft-arrow">→</div>
+    <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_ale.png" alt="麦酒"></div><div>麦酒</div></div>
+  </div>
+  <div class="craft-meta">无序 9 格。<strong>急迫 III</strong> 5 分钟（amplifier 2）· 伤害吸收 I 3 分钟 · 反胃 I 15 秒。堆叠 3。</div>
+</div>
+
+<div class="craft-block station-crafting">
+  <div class="craft-name">蜂蜜酒 Mead <span class="craft-badge">无序</span></div>
+  <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">工作台</div>
+  <div class="craft-table-wrap">
+    <table class="craft-3"><tr><td><img src="assets/img/craft/nether_wart.png" alt="nether_wart" title="nether_wart"></td><td><img src="assets/img/craft/nether_wart.png" alt="nether_wart" title="nether_wart"></td><td><img src="assets/img/craft/nether_wart.png" alt="nether_wart" title="nether_wart"></td></tr><tr><td><img src="assets/img/craft/glow_berries.png" alt="glow_berries" title="glow_berries"></td><td><img src="assets/img/craft/honey_bottle.png" alt="honey_bottle" title="honey_bottle"></td><td><img src="assets/img/craft/glow_berries.png" alt="glow_berries" title="glow_berries"></td></tr><tr><td><img src="assets/img/craft/wheat.png" alt="wheat" title="wheat"></td><td><img src="assets/img/craft/wheat.png" alt="wheat" title="wheat"></td><td><img src="assets/img/craft/glow_berries.png" alt="glow_berries" title="glow_berries"></td></tr></table>
+    <div class="craft-arrow">→</div>
+    <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_mead.png" alt="蜂蜜酒"></div><div>蜂蜜酒</div></div>
+  </div>
+  <div class="craft-meta">无序：下界疣×3 + 蜂蜜瓶 + 小麦×2 + 发光浆果×3。<strong>力量 II</strong> 3 分 · 抗性 I 3 分 · 缓慢 II 30 秒 · 反胃 I 15 秒。堆叠 3。</div>
+</div>
+
+<div class="craft-block station-crafting">
+  <div class="craft-name">热红酒 Mulled Wine <span class="craft-badge">无序</span></div>
+  <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">工作台</div>
+  <div class="craft-table-wrap">
+    <table class="craft-3"><tr><td><img src="assets/img/craft/nether_wart.png" alt="nether_wart" title="nether_wart"></td><td><img src="assets/img/craft/nether_wart.png" alt="nether_wart" title="nether_wart"></td><td><img src="assets/img/craft/nether_wart.png" alt="nether_wart" title="nether_wart"></td></tr><tr><td><img src="assets/img/craft/sweet_berries.png" alt="sweet_berries" title="sweet_berries"></td><td><img src="assets/img/craft/honey_bottle.png" alt="honey_bottle" title="honey_bottle"></td><td><img src="assets/img/craft/sweet_berries.png" alt="sweet_berries" title="sweet_berries"></td></tr><tr><td><img src="assets/img/craft/ghast_tear.png" alt="ghast_tear" title="ghast_tear"></td><td><img src="assets/img/craft/glistering_melon_slice.png" alt="glistering_melon_slice" title="glistering_melon_slice"></td><td><img src="assets/img/craft/sweet_berries.png" alt="sweet_berries" title="sweet_berries"></td></tr></table>
+    <div class="craft-arrow">→</div>
+    <div class="craft-result"><div class="slot"><img src="assets/img/craft/potion.png" alt="热红酒"></div><div>热红酒</div></div>
+  </div>
+  <div class="craft-meta">无序：下界疣×3 + 蜂蜜瓶 + 恶魂之泪 + 闪烁的西瓜片 + 甜浆果×3。<strong>生命恢复 III</strong> 1 分钟 · 生命提升 I 1 分钟 · 反胃 I 15 秒。堆叠 3。</div>
+</div>
+
+<div class="craft-block station-crafting">
+  <div class="craft-name">牛肉炖菜 <span class="craft-badge">无序</span></div>
+  <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">工作台</div>
+  <div class="craft-table-wrap">
+    <table class="craft-3"><tr><td><img src="assets/img/craft/carrot.png" alt="carrot" title="carrot"></td><td><img src="assets/img/craft/carrot.png" alt="carrot" title="carrot"></td><td><img src="assets/img/craft/carrot.png" alt="carrot" title="carrot"></td></tr><tr><td><img src="assets/img/craft/sweet_berries.png" alt="sweet_berries" title="sweet_berries"></td><td><img src="assets/img/craft/bowl.png" alt="bowl" title="bowl"></td><td><img src="assets/img/craft/potato.png" alt="potato" title="potato"></td></tr><tr><td><img src="assets/img/craft/beef.png" alt="beef" title="beef"></td><td><img src="assets/img/craft/beef.png" alt="beef" title="beef"></td><td><img src="assets/img/craft/potato.png" alt="potato" title="potato"></td></tr></table>
+    <div class="craft-arrow">→</div>
+    <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_stew_beef.png" alt="牛肉炖菜"></div><div>牛肉炖菜</div></div>
+  </div>
+  <div class="craft-meta">无序：胡萝卜×3 + 甜浆果 + 马铃薯×2 + 生牛肉×2 + 碗。急迫 I 8 分 · 力量 I 8 分 · 缓慢 I 1 分 · 虚弱短暂 · 饱和短暂。堆叠 3。</div>
+</div>
+
+<div class="craft-block station-crafting">
+  <div class="craft-name">鸡肉蔬菜炖菜 <span class="craft-badge">无序</span></div>
+  <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">工作台</div>
+  <div class="craft-table-wrap">
+    <table class="craft-3"><tr><td><img src="assets/img/craft/carrot.png" alt="carrot" title="carrot"></td><td><img src="assets/img/craft/carrot.png" alt="carrot" title="carrot"></td><td><img src="assets/img/craft/brown_mushroom.png" alt="brown_mushroom" title="brown_mushroom"></td></tr><tr><td><img src="assets/img/craft/beetroot.png" alt="beetroot" title="beetroot"></td><td><img src="assets/img/craft/bowl.png" alt="bowl" title="bowl"></td><td><img src="assets/img/craft/potato.png" alt="potato" title="potato"></td></tr><tr><td><img src="assets/img/craft/chicken.png" alt="chicken" title="chicken"></td><td><img src="assets/img/craft/chicken.png" alt="chicken" title="chicken"></td><td><img src="assets/img/craft/potato.png" alt="potato" title="potato"></td></tr></table>
+    <div class="craft-arrow">→</div>
+    <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_stew_chicken.png" alt="鸡肉蔬菜炖菜"></div><div>鸡肉蔬菜炖菜</div></div>
+  </div>
+  <div class="craft-meta">无序：胡萝卜×2 + 棕色蘑菇 + 甜菜根 + 马铃薯×2 + 生鸡肉×2 + 碗。饱和短暂 · 速度 I 8 分 · 生命恢复 I 8 分。堆叠 3。</div>
+</div>
+
+<div class="craft-block station-crafting">
+  <div class="craft-name">渔夫炖菜 <span class="craft-badge">无序</span></div>
+  <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">工作台</div>
+  <div class="craft-table-wrap">
+    <table class="craft-3"><tr><td><img src="assets/img/craft/beetroot.png" alt="beetroot" title="beetroot"></td><td><img src="assets/img/craft/beetroot.png" alt="beetroot" title="beetroot"></td><td><img src="assets/img/craft/dried_kelp.png" alt="dried_kelp" title="dried_kelp"></td></tr><tr><td><img src="assets/img/craft/dried_kelp.png" alt="dried_kelp" title="dried_kelp"></td><td><img src="assets/img/craft/bowl.png" alt="bowl" title="bowl"></td><td><img src="assets/img/craft/sweet_berries.png" alt="sweet_berries" title="sweet_berries"></td></tr><tr><td><img src="assets/img/craft/salmon.png" alt="salmon" title="salmon"></td><td><img src="assets/img/craft/cod.png" alt="cod" title="cod"></td><td><img src="assets/img/craft/sweet_berries.png" alt="sweet_berries" title="sweet_berries"></td></tr></table>
+    <div class="craft-arrow">→</div>
+    <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_stew_fish.png" alt="渔夫炖菜"></div><div>渔夫炖菜</div></div>
+  </div>
+  <div class="craft-meta">无序：甜菜根×2 + 干海带×2 + 甜浆果×2 + 生鲑鱼 + 生鳕鱼 + 碗。<strong>海豚的恩惠</strong> 8 分 · 饱和短暂。堆叠 3。</div>
+</div>
+
+<div class="craft-block station-crafting">
+  <div class="craft-name">羊肉大麦炖菜 <span class="craft-badge">无序</span></div>
+  <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">工作台</div>
+  <div class="craft-table-wrap">
+    <table class="craft-3"><tr><td><img src="assets/img/craft/carrot.png" alt="carrot" title="carrot"></td><td><img src="assets/img/craft/carrot.png" alt="carrot" title="carrot"></td><td><img src="assets/img/craft/sweet_berries.png" alt="sweet_berries" title="sweet_berries"></td></tr><tr><td><img src="assets/img/craft/wheat.png" alt="wheat" title="wheat"></td><td><img src="assets/img/craft/bowl.png" alt="bowl" title="bowl"></td><td><img src="assets/img/craft/honey_bottle.png" alt="honey_bottle" title="honey_bottle"></td></tr><tr><td><img src="assets/img/craft/mutton.png" alt="mutton" title="mutton"></td><td><img src="assets/img/craft/mutton.png" alt="mutton" title="mutton"></td><td><img src="assets/img/craft/wheat.png" alt="wheat" title="wheat"></td></tr></table>
+    <div class="craft-arrow">→</div>
+    <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_stew_lamb.png" alt="羊肉大麦炖菜"></div><div>羊肉大麦炖菜</div></div>
+  </div>
+  <div class="craft-meta">无序：胡萝卜×2 + 甜浆果 + 蜂蜜瓶 + 小麦×2 + 生羊肉×2 + 碗。抗性 I 8 分 · 生命提升 I 8 分 · 反胃 I 15 秒。堆叠 3。</div>
+</div>
+
+<div class="craft-block station-crafting">
+  <div class="craft-name">豆香肠炖菜 <span class="craft-badge">无序</span></div>
+  <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">工作台</div>
+  <div class="craft-table-wrap">
+    <table class="craft-3"><tr><td><img src="assets/img/craft/carrot.png" alt="carrot" title="carrot"></td><td><img src="assets/img/craft/carrot.png" alt="carrot" title="carrot"></td><td><img src="assets/img/craft/carrot.png" alt="carrot" title="carrot"></td></tr><tr><td><img src="assets/img/craft/brown_mushroom.png" alt="brown_mushroom" title="brown_mushroom"></td><td><img src="assets/img/craft/bowl.png" alt="bowl" title="bowl"></td><td><img src="assets/img/craft/brown_mushroom.png" alt="brown_mushroom" title="brown_mushroom"></td></tr><tr><td><img src="assets/img/craft/porkchop.png" alt="porkchop" title="porkchop"></td><td><img src="assets/img/craft/porkchop.png" alt="porkchop" title="porkchop"></td><td><img src="assets/img/craft/cocoa_beans.png" alt="cocoa_beans" title="cocoa_beans"></td></tr></table>
+    <div class="craft-arrow">→</div>
+    <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_stew_sausage.png" alt="豆香肠炖菜"></div><div>豆香肠炖菜</div></div>
+  </div>
+  <div class="craft-meta">无序：胡萝卜×3 + 棕色蘑菇×2 + 生猪排×2 + 可可豆 + 碗。饱和短暂 · 挖掘疲劳短暂 · 速度 I 8 分 · 跳跃提升 I 8 分。堆叠 3。</div>
+</div>
+
+<div class="craft-block station-crafting">
+  <div class="craft-name">鹿肉炖菜 <span class="craft-badge">无序</span></div>
+  <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">工作台</div>
+  <div class="craft-table-wrap">
+    <table class="craft-3"><tr><td><img src="assets/img/craft/carrot.png" alt="carrot" title="carrot"></td><td><img src="assets/img/craft/brown_mushroom.png" alt="brown_mushroom" title="brown_mushroom"></td><td><img src="assets/img/craft/brown_mushroom.png" alt="brown_mushroom" title="brown_mushroom"></td></tr><tr><td><img src="assets/img/craft/sweet_berries.png" alt="sweet_berries" title="sweet_berries"></td><td><img src="assets/img/craft/bowl.png" alt="bowl" title="bowl"></td><td><img src="assets/img/craft/honey_bottle.png" alt="honey_bottle" title="honey_bottle"></td></tr><tr><td><img src="assets/img/craft/mutton.png" alt="mutton" title="mutton"></td><td><img src="assets/img/craft/beef.png" alt="beef" title="beef"></td><td><img src="assets/img/craft/sweet_berries.png" alt="sweet_berries" title="sweet_berries"></td></tr></table>
+    <div class="craft-arrow">→</div>
+    <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_stew_venison.png" alt="鹿肉炖菜"></div><div>鹿肉炖菜</div></div>
+  </div>
+  <div class="craft-meta">无序：胡萝卜 + 棕色蘑菇×2 + 蜂蜜瓶 + 甜浆果×2 + 生羊肉 + 生牛肉 + 碗。饱和短暂 · 力量 I 8 分 · 抗性 I 8 分 · 缓慢 I 1 分。堆叠 3。</div>
+</div>
+
+		<div class="categories">分类：<a href="#food">食物</a>｜<a href="#recipes">配方</a></div>
 	</article>
 
 	<!-- ============ 词缀强化货币 ============ -->
@@ -945,7 +1046,8 @@
 
 	<article class="article" id="recipes" data-search="合成 配方 工作台 锻造台 切石机 熔炉 3x3 craft">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 合成配方</div>
-		<div class="article-header"><h1>合成配方</h1><div class="sub">物品栏 invicon · 分合成台 UI</div></div>
+		<div class="article-header"><h1>合成配方</h1><div class="sub">武器 / 木工 · 食物见「食物与酒饮」</div></div>
+		<p class="craft-note">本页为<strong>武器与木工/切石</strong>配方。麦酒、蜂蜜酒、热红酒与六种炖菜的 3×3 网格见 <a href="#food">食物与酒饮</a>。</p>
 		<p>配方来自墓石地牢数据包。方块类材料/结果均使用<strong>物品栏图标</strong>（非方块面纹理）。</p>
 		<p class="craft-note">图标使用<strong>物品栏 invicon</strong>（来自 Minecraft Wiki / 1.21.11），不再用方块面贴图。合成台 UI 按<strong>工作台 / 切石机 / 锻造台 / 营火</strong>区分；切石机多产物直接显示在箭头右侧。</p>
 <div class="craft-block station-crafting">
