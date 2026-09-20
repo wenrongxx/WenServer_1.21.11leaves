@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>致命地牢 Wiki</title>
+<meta name="description" content="致命地牢（Deadly Deadly Dungeon）中文百科 · WenServer 服务器数据包"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/app.css" />
+</head>
+<body>
+
+<header class="wiki-header">
+	<div class="inner">
+		<a class="wiki-logo" href="../index.html">致命地牢 Wiki<span>Deadly Deadly Dungeon</span></a>
+		<button type="button" class="toc-toggle" id="tocToggle">目录</button>
+		<div class="wiki-search">
+			<input type="search" id="searchBox" placeholder="搜索条目…" aria-label="搜索" />
+			<button type="button" id="searchBtn">搜索</button>
+		</div>
+	</div>
+</header>
+
+<div class="wiki-shell" id="top">
+	<aside class="wiki-sidebar" id="wikiSidebar">
+		<div class="sb-title">目录</div>
+		<ul>
+			<li><a href="#introduction">简介</a></li>
+			<li><a href="#structures">结构</a></li>
+			<li><a href="#keys">试炼钥匙</a></li>
+			<li><a href="#loot">Boss 战利品</a></li>
+			<li><a href="#advancements">进度</a></li>
+			<li><a href="#mechanics">机制摘要</a></li>
+			<li><a href="#loot-probs">掉落概率</a></li>
+		</ul>
+	</aside>
+	<main class="wiki-content">
+		<div class="back-bar">
+			<a class="back-home" href="../index.html">← 返回首页</a>
+			<span class="back-hub">WenServer Wiki</span>
+		</div>
+
+	<div id="searchPanel" class="search-panel" hidden>
+		<div class="sr-head">
+			<strong>搜索结果</strong>
+			<span id="searchMeta" class="sr-meta"></span>
+			<button type="button" id="searchClear" class="sr-clear">清除</button>
+		</div>
+		<p class="sr-hint">输入时只更新本列表，不会隐藏正文、也不会滚动页面。</p>
+		<ol id="searchList" class="sr-list"></ol>
+	</div>
+	<div id="searchEmpty" class="search-empty" hidden>没有找到匹配的条目。</div>
+
+	<article class="article" id="introduction" data-search="致命地牢 Deadly Deadly Dungeon · 噩梦燃料 地牢 deadly dungeon 试炼钥匙 boss">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 简介</div>
+		<div class="article-header"><h1>致命地牢</h1><div class="sub">Deadly Deadly Dungeon · 噩梦燃料</div></div>
+		<div class="infobox"><div class="ib-title">致命地牢</div><table><tr><td class="k">英文名</td><td class="v">Deadly Deadly Dungeon 1.0.6</td></tr><tr><td class="k">描述</td><td class="v">噩梦燃料</td></tr><tr><td class="k">作者</td><td class="v">Caesius_Leo</td></tr><tr><td class="k">命名空间</td><td class="v"><code>ddd</code> · pack_format 81–99</td></tr><tr><td class="k">加载器</td><td class="v">Fabric / Quilt / Forge（Modrinth）</td></tr><tr><td class="k">语言文件</td><td class="v">无 lang；中文硬编码于成就与战利品</td></tr><tr><td class="k">结构件</td><td class="v">约 1179 个 NBT</td></tr><tr><td class="k">战利品表</td><td class="v">78 个（vault / trial_spawner / equipment / chests / mobs）</td></tr><tr><td class="k">许可</td><td class="v">私有 Limited Rights — 禁单独再分发与商用</td></tr></table></div><p>大型随机生成地牢：多级难度、试炼钥匙开启保险库、Boss 与分层刷怪（liv1–4）。兼容 Terralith / BoP / Biomes We've Gone 等群系标签。</p>
+	</article>
+
+	<article class="article" id="structures" data-search="结构 Dungeons / Lairs / Towers 结构 地牢 巢穴 孤塔 巫师塔 群系">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 结构</div>
+		<div class="article-header"><h1>结构</h1><div class="sub">Dungeons / Lairs / Towers</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>结构 ID</th><th>中文名</th><th>类型</th><th>备注</th></tr><tr><td><code>ddd:major_dungeon_plains</code></td><td><strong>大型平原地牢</strong></td><td>地下 size 20</td><td>成就标签引用；未进 structure_set 权重</td></tr><tr><td><code>ddd:minor_dungeon_plains</code></td><td><strong>小型平原地牢</strong></td><td>地下 size 8</td><td>structure_set 权重 1+7</td></tr><tr><td><code>ddd:major_dungeon_desert</code></td><td><strong>大型沙漠地牢</strong></td><td>地下 size 20</td><td>成就标签引用</td></tr><tr><td><code>ddd:minor_dungeon_desert</code></td><td><strong>小型沙漠地牢</strong></td><td>地下 size 8</td><td>权重 1+7</td></tr><tr><td><code>ddd:major_dungeon_frozen</code></td><td><strong>大型冰原地牢</strong></td><td>地下 size 20</td><td>成就标签引用</td></tr><tr><td><code>ddd:minor_dungeon_frozen</code></td><td><strong>小型冰原地牢</strong></td><td>地下 size 8</td><td>权重 1+9</td></tr><tr><td><code>ddd:spider_lair</code></td><td><strong>蜘蛛巢穴</strong></td><td>地下 size 8</td><td>洞穴蜘蛛 3–6 · 权重 2</td></tr><tr><td><code>ddd:monolithic_tower</code></td><td><strong>孤塔</strong></td><td>地表 size 4</td><td>塔集权重 8</td></tr><tr><td><code>ddd:wizard_tower</code></td><td><strong>巫师塔</strong></td><td>地表 size 8</td><td>塔集权重 2</td></tr></table></div><h3>群系标签</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>主题</th><th>主要群系</th></tr><tr><td>平原地牢</td><td>plains · sunflower_plains · savanna · sparse_jungle + Terralith/BoP 等</td></tr><tr><td>沙漠地牢</td><td>desert · badlands + 模组沙漠群系</td></tr><tr><td>冰原地牢</td><td>snowy_plains · ice_spikes + 模组雪原</td></tr><tr><td>蜘蛛巢穴</td><td>plains · sunflower · sparse_jungle · desert · badlands + 高原/沙漠</td></tr><tr><td>孤塔 / 巫师塔</td><td>forest · birch · old_growth_* · savanna · meadow · taiga + 模组森林</td></tr></table></div><div class="note">生成集 <code>dddungeons</code>（spacing 50 / sep 40）当前权重以<strong>小型</strong>地牢与蜘蛛巢为主；<code>dddtowers</code>（spacing 43 / sep 32）为孤塔 8 : 巫师塔 2。大型地牢 JSON 存在且被成就标签 <code>#ddd:dungeon</code> 引用，但未进入 structure_set 权重表。与原版<strong>试炼密室</strong>生成集互斥。</div>
+	</article>
+
+	<article class="article" id="keys" data-search="试炼钥匙 Trial keys 钥匙 试炼 保险库 不祥 trial_key">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 试炼钥匙</div>
+		<div class="article-header"><h1>试炼钥匙</h1><div class="sub">Trial keys</div></div>
+		<p>试炼刷怪笼（trial_spawner）掉落定制 trial_key / ominous_trial_key（改名 + CMD 模型），用对应<strong>保险库</strong>开启 Boss 奖励。</p><div class="wiki-table-wrap"><table class="wiki"><tr><th>CMD 标识</th><th>中文物名</th><th>来源</th><th>用途</th></tr><tr><td><code>golden_key</code></td><td><strong>黄金钥匙</strong></td><td>普通 Billy</td><td>Billy 的保险库</td></tr><tr><td><code>scorching_key</code></td><td><strong>灼热钥匙</strong></td><td>普通 Bob</td><td>Bob 的保险库</td></tr><tr><td><code>rotten_key</code></td><td><strong>腐坏钥匙</strong></td><td>普通 Pig</td><td>下界风格保险库</td></tr><tr><td><code>spider_key</code></td><td><strong>蜘蛛钥匙</strong></td><td>普通 Spider</td><td>蜘蛛 Boss</td></tr><tr><td><code>knight_key</code></td><td><strong>骑士钥匙</strong></td><td>普通 Tomb</td><td>坟墓 / 骑士</td></tr><tr><td><code>tower_key</code></td><td><strong>高塔钥匙</strong></td><td>普通塔 Boss</td><td>塔顶宝箱</td></tr><tr><td><code>wizard_key</code></td><td><strong>巫师钥匙</strong></td><td>普通巫师 Boss</td><td>巫师塔</td></tr></table></div><p>每个 Boss 另有 <strong>不详（ominous）</strong>钥匙变体，战利品更强。</p>
+	</article>
+
+	<article class="article" id="loot" data-search="Boss 战利品 Boss loot 战利品 Boss 毒液 灵药 不祥">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 战利品</div>
+		<div class="article-header"><h1>Boss 战利品</h1><div class="sub">Boss loot</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>中文物名</th><th>基底</th><th>来源</th><th>效果</th></tr><tr><td>烈焰之死</td><td>钻石斧</td><td>Bob</td><td>锋利 4 · 火焰附加 1 · 耐久 3 · CMD fiery_axe</td></tr><tr><td>闪亮之死</td><td>钻石斧</td><td>不详 Bob</td><td>锋利 5 · 火焰 2 · 耐久 3 · 经验修补</td></tr><tr><td>比利的惩戒</td><td>木棍</td><td>Billy</td><td>击退 8 · rarity epic</td></tr><tr><td>比利的铲子</td><td>钻石铲</td><td>不详 Billy</td><td>经验修补 · epic</td></tr><tr><td>灵药</td><td>药水</td><td>巫师</td><td>瞬间治疗 V + 再生 + 力量/速度/急迫</td></tr><tr><td>上等灵药</td><td>药水</td><td>不详巫师</td><td>强化版灵药</td></tr><tr><td>结晶毒液</td><td>滞留药水</td><td>蜘蛛</td><td>中毒 500t</td></tr><tr><td>强力毒素</td><td>滞留药水</td><td>蜘蛛</td><td>中毒+反胃+饥饿+失明+虚弱+缓慢+挖掘疲劳</td></tr><tr><td>强效结晶毒液</td><td>滞留药水</td><td>蜘蛛</td><td>中毒 III 400t</td></tr><tr><td>腐朽结晶毒液</td><td>滞留药水</td><td>地牢蜘蛛箱</td><td>中毒 300t</td></tr></table></div><h3>装备 / 怪物线索</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>名称</th><th>装备特征</th><th>来源</th></tr><tr><td>Mad Bob</td><td>钻石套 + 火焰斧</td><td>normal / ominous</td></tr><tr><td>Little Billy</td><td>钻石套 + 击退棍/铲</td><td>normal / ominous</td></tr><tr><td>Fallen Archer</td><td>钻石套 + 弓 + 盾</td><td>equipment</td></tr><tr><td>Knight / Praetorian</td><td>骑士系</td><td>对应骑士钥匙</td></tr><tr><td>Wizard Boss / Tower Boss</td><td>巫师 / 塔</td><td>对应宝箱</td></tr><tr><td>The Rotten One</td><td>腐朽者</td><td>皮革/骨头/书 + 附魔装备</td></tr><tr><td>ghost_armor_tier 1–4</td><td>幽灵甲分级</td><td>equipment</td></tr></table></div><h3>其他宝箱主题</h3><ul class="bullets"><li>地牢 liv1–4 / 坟墓（含不详）/ 蜘蛛各层 / 铸造厂 / 图书馆 / 传送门 / 药水 / 矿物</li><li>塔 Boss 箱：钻石块/金块/铁块/青金石块、金苹果、不死图腾、矿物、钻石工具</li><li>Pig 保险库：下界金矿、金块、萤石、下界砖、岩浆块、TNT、哭泣黑曜石、石英、附魔金苹果</li><li>彩蛋箱：billy_stuff · bob_stuff · cianfrusaglie</li></ul>
+	</article>
+
+	<article class="article" id="advancements" data-search="进度 Advancements 进度 成就 地牢 巢穴 塔">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 进度</div>
+		<div class="article-header"><h1>进度</h1><div class="sub">Advancements</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>键</th><th>标题</th><th>描述</th><th>XP</th></tr><tr><td><code>ddd:adventure/find_dungeon</code></td><td><strong>致命至极的地牢</strong></td><td>找到远古遗迹</td><td>20</td></tr><tr><td><code>ddd:adventure/find_lair</code></td><td><strong>错综复杂的局面</strong></td><td>找到蜘蛛巢穴</td><td>20</td></tr><tr><td><code>ddd:adventure/find_tower</code></td><td><strong>反向塔防</strong></td><td>找到孤塔</td><td>20</td></tr><tr><td><code>ddd:adventure/find_wizard</code></td><td><strong>霍格沃茨已满</strong></td><td>找到巫师塔</td><td>20</td></tr></table></div>
+	</article>
+
+	<article class="article" id="mechanics" data-search="机制摘要 Gameplay 机制 试炼 分层 不祥 许可">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 机制</div>
+		<div class="article-header"><h1>机制摘要</h1><div class="sub">Gameplay</div></div>
+		<ol class="numbered"><li><strong>试炼钥匙 → 保险库</strong>：normal / ominous 双轨难度</li><li><strong>分层地牢 liv1–4</strong>：敌人装备从皮革升级到钻石</li><li>函数仅：创建 tower 队伍、关闭指令输出、结构清理；Boss AI 多在 NBT 命令方块内</li><li>加载钩子：<code>ddd:tower_team</code> + <code>ddd:command_hide</code></li><li>兼容 Terralith / BoP / Biomes We've Gone / Terrestria 群系标签（required:false）</li><li>许可：私有 Limited Rights — 允许个人非商业与含署名整合包/服务器；禁止单独再分发、修改逆向、商业用途</li></ol>
+	</article>
+
+
+	<article class="article" id="loot-probs" data-search="宝箱与宝库掉落概率 Loot probabilities 概率 宝箱 宝库 战利品 掉落 试炼钥匙">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 掉落概率</div>
+		<div class="article-header"><h1>宝箱与宝库掉落概率</h1><div class="sub">Loot probabilities</div></div>
+		
+		<p>概率为战利品表 <strong>weight 占比</strong>（单次 roll 条目内）。宝库多为<strong>固定掉落</strong>；地牢箱为分层加权。</p>
+
+		<h3>试炼刷怪笼 → 钥匙（固定）</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>刷怪笼</th><th>掉落</th><th>概率</th></tr><tr><td>normal_billy / bob / pig / spider / tomb / tower_boss / wizard_boss</td><td>试炼钥匙</td><td>100%</td></tr><tr><td>ominous_* 全部变体</td><td>不祥试炼钥匙</td><td>100%</td></tr></table></div>
+
+		<h3>保险库（Vault）固定掉落</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>保险库</th><th>掉落内容</th><th>说明</th></tr><tr><td>normal_billy</td><td>钻石头盔 + 钻石胸甲 + 钻石护腿 + 钻石靴 + 木棍（比利的惩戒）</td><td>五池各 100%</td></tr><tr><td>normal_bob</td><td>钻石四件套 + 烈焰之死（钻石斧）</td><td>各池 100%</td></tr><tr><td>ominous_billy</td><td>头/胸 50/50；腿/靴 50/50；钻石铲（比利的铲子）100%</td><td>部分二选一</td></tr><tr><td>ominous_bob</td><td>钻石四件套 + 闪亮之死（强化斧）</td><td>高概率固定装</td></tr></table></div>
+
+		<h3>地牢宝箱 liv1（示例加权）</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>物品</th><th>数量</th><th>weight</th><th>概率</th></tr><tr><td>苹果</td><td>1–5</td><td>10</td><td>19.6%</td></tr><tr><td>金苹果</td><td>1</td><td>10</td><td>19.6%</td></tr><tr><td>发光浆果</td><td>1–6</td><td>10</td><td>19.6%</td></tr><tr><td>面包</td><td>1–4</td><td>10</td><td>19.6%</td></tr><tr><td>曲奇</td><td>1–12</td><td>10</td><td>19.6%</td></tr><tr><td>附魔金苹果</td><td>1</td><td>1</td><td><strong>2.0%</strong></td></tr></table></div>
+		<p class="muted">同层矿物池（rolls 0–3）：钻石 2.6% · 绿宝石 5.3% · 金锭 5.3% · 铜锭/砖 13.2% · 铁粒/金粒/燧石 10.5% 等。</p>
+
+		<h3>分层宝箱趋势</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>层级</th><th>附魔金苹果</th><th>不死图腾</th><th>矿物池 rolls</th><th>高价值提示</th></tr><tr><td>liv1</td><td>2.0%</td><td>—</td><td>0–3</td><td>铜/砖为主</td></tr><tr><td>liv2</td><td>5.7%</td><td>—</td><td>1–3</td><td>金粒权重上升</td></tr><tr><td>liv3</td><td>8.6%</td><td>5.2%</td><td>1–4</td><td>钻石/铁锭权重升</td></tr><tr><td>liv4</td><td>15.4%</td><td>7.7%</td><td>2–5</td><td>钻石 4–24、金锭 12–64 等</td></tr></table></div>
+
+		<h3>塔 Boss 箱</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>池</th><th>内容</th><th>概率</th></tr><tr><td>矿块 1–3 次</td><td>钻石块 / 金块 / 铁块（塔）或 钻石块/金块/青金石块/红石块（巫师）</td><td>各 ~25%</td></tr><tr><td>书 0–2 次</td><td>书</td><td>100%（若 roll）</td></tr><tr><td>食物 3–5 次</td><td>附魔金苹果 / 金苹果 / 面包 / 蛋糕或烈焰粉 / 不死图腾</td><td>各 20%</td></tr><tr><td>矿物 2–4 次</td><td>钻石·绿宝石·金锭·铁锭等</td><td>钻石约 11%，金/铁约 15%</td></tr></table></div>
+
+		<h3>怪物 / Boss 掉落</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>怪物</th><th>机制要点</th><th>掉落概率</th></tr><tr><td>腐朽者 The Rotten One</td><td>亡灵 Boss 级；装备随机附魔</td><td>皮革 8–18 必掉；骷髅头颅/骨头 50/50；第三池：鞍/铁马铠/钻石工具/钻甲 各约 7.4%，书 20–40 约 3.7%</td></tr><tr><td>Mad Bob / 不详 Bob</td><td>钻石套保护附魔 + 火焰斧；ominous 更强</td><td>见保险库表（装备固定）</td></tr><tr><td>Little Billy</td><td>钻石套 + 击退 8 木棍</td><td>见保险库表</td></tr><tr><td>蜘蛛 Boss</td><td>毒液系滞留药水</td><td>结晶毒液等（Boss 箱/实体表）</td></tr><tr><td>巫师 / 塔 Boss</td><td>药水与矿块宝箱</td><td>见上表</td></tr></table></div>
+		<p class="note">概率按 loot JSON 的 weight 计算；rolls 为区间时实际次数随机。世界生成与不祥试炼会影响刷怪笼表选择。</p>
+	
+	</article>
+	</main>
+</div>
+
+<footer class="wiki-footer">
+	致命地牢 Wiki · 仿中文 Minecraft Wiki 版式 · 服务器数据包资料
+</footer>
+
+<script>
+(function () {
+	var sidebar = document.getElementById("wikiSidebar");
+	var toggle = document.getElementById("tocToggle");
+	var links = Array.prototype.slice.call(document.querySelectorAll(".wiki-sidebar a"));
+	var navTargets = links.map(function (a) {
+		var id = a.getAttribute("href");
+		return id && id.charAt(0) === "#" ? document.querySelector(id) : null;
+	});
+	function onScroll() {
+		var y = (document.documentElement.scrollTop || document.body.scrollTop) + 100;
+		var idx = 0;
+		for (var i = 0; i < navTargets.length; i++) {
+			var t = navTargets[i];
+			if (t && !t.classList.contains("hidden-by-search") && t.offsetTop <= y) idx = i;
+		}
+		links.forEach(function (a, i) {
+			a.classList.toggle("active", i === idx);
+			var t = navTargets[i];
+			if (t) a.classList.toggle("dimmed", t.classList.contains("hidden-by-search"));
+		});
+	}
+	window.addEventListener("scroll", onScroll, { passive: true });
+	onScroll();
+	if (toggle && sidebar) {
+		if (window.matchMedia("(max-width: 800px)").matches) sidebar.classList.add("collapsed");
+		toggle.addEventListener("click", function () { sidebar.classList.toggle("collapsed"); });
+	}
+	var box = document.getElementById("searchBox");
+	var btn = document.getElementById("searchBtn");
+	var panel = document.getElementById("searchPanel");
+	var list = document.getElementById("searchList");
+	var meta = document.getElementById("searchMeta");
+	var clearBtn = document.getElementById("searchClear");
+	var emptyBox = document.getElementById("searchEmpty");
+	var allArticles = Array.prototype.slice.call(document.querySelectorAll("main .article"));
+	var timer = null;
+	var lastHits = [];
+	function titleOf(art) {
+		var h = art.querySelector(".article-header h1") || art.querySelector("h1") || art.querySelector("h2");
+		return h ? h.textContent.replace(/\s+/g, " ").trim() : (art.id || "未命名");
+	}
+	function snippetOf(art, q) {
+		var text = (art.textContent || "").replace(/\s+/g, " ");
+		var i = text.toLowerCase().indexOf(q);
+		if (i < 0) return text.slice(0, 80) + (text.length > 80 ? "…" : "");
+		var start = Math.max(0, i - 24);
+		var end = Math.min(text.length, i + q.length + 36);
+		return (start > 0 ? "…" : "") + text.slice(start, end) + (end < text.length ? "…" : "");
+	}
+	var index = allArticles.map(function (art) {
+		var title = titleOf(art);
+		var body = (art.textContent || "").replace(/\s+/g, " ");
+		var data = art.getAttribute("data-search") || "";
+		return { el: art, id: art.id, title: title,
+			hay: (title + " " + data + " " + body).toLowerCase(),
+			titleLower: title.toLowerCase(), dataLower: data.toLowerCase() };
+	});
+	function scoreOf(item, q) {
+		if (item.titleLower.indexOf(q) !== -1) return 3;
+		if (item.dataLower.indexOf(q) !== -1) return 2;
+		if (item.hay.indexOf(q) !== -1) return 1;
+		return 0;
+	}
+	function showAllArticles() {
+		index.forEach(function (it) { it.el.classList.remove("hidden-by-search"); });
+	}
+	function renderPanel(q, hits) {
+		if (!panel || !list || !meta) return;
+		if (!q) { panel.hidden = true; if (emptyBox) emptyBox.hidden = true; list.innerHTML = ""; lastHits = []; return; }
+		if (!hits.length) {
+			panel.hidden = true;
+			if (emptyBox) { emptyBox.hidden = false; emptyBox.textContent = "没有找到「" + q + "」。"; }
+			lastHits = []; return;
+		}
+		if (emptyBox) emptyBox.hidden = true;
+		panel.hidden = false;
+		meta.textContent = "「" + q + "」 · " + hits.length + " 条";
+		list.innerHTML = "";
+		hits.forEach(function (h) {
+			var li = document.createElement("li");
+			var a = document.createElement("a");
+			a.href = "#" + h.item.id; a.textContent = h.item.title; a.title = h.snippet;
+			var sn = document.createElement("div"); sn.className = "sr-snip"; sn.textContent = h.snippet;
+			li.appendChild(a); li.appendChild(sn);
+			a.addEventListener("click", function (e) {
+				e.preventDefault();
+				var el = document.getElementById(h.item.id);
+				if (el) el.scrollIntoView({ block: "start" });
+			});
+			list.appendChild(li);
+		});
+		lastHits = hits;
+	}
+	function updateResultsOnInput() {
+		var q = (box.value || "").trim().toLowerCase().replace(/\s+/g, " ");
+		showAllArticles();
+		if (!q) { renderPanel("", []); onScroll(); return; }
+		var hits = [];
+		index.forEach(function (it) {
+			var s = scoreOf(it, q);
+			if (s > 0) hits.push({ item: it, score: s, snippet: snippetOf(it.el, q) });
+		});
+		hits.sort(function (a, b) {
+			if (b.score !== a.score) return b.score - a.score;
+			return index.indexOf(a.item) - index.indexOf(b.item);
+		});
+		renderPanel(q, hits);
+	}
+	function jumpTo(el) {
+		if (!el) return;
+		el.classList.remove("hidden-by-search");
+		window.scrollTo(0, Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - 72));
+	}
+	function goToResults() {
+		updateResultsOnInput();
+		if (!lastHits.length) {
+			if (emptyBox && !emptyBox.hidden)
+				window.scrollTo(0, Math.max(0, emptyBox.getBoundingClientRect().top + window.pageYOffset - 72));
+			return;
+		}
+		if (panel && !panel.hidden) {
+			window.scrollTo(0, Math.max(0, panel.getBoundingClientRect().top + window.pageYOffset - 72));
+			return;
+		}
+		jumpTo(lastHits[0].item.el);
+	}
+	if (box) {
+		box.addEventListener("input", function () {
+			if (timer) clearTimeout(timer);
+			timer = setTimeout(updateResultsOnInput, 180);
+		});
+		box.addEventListener("keydown", function (e) {
+			if (e.key === "Enter") { e.preventDefault(); if (timer) clearTimeout(timer); goToResults(); }
+			else if (e.key === "Escape") {
+				e.preventDefault(); box.value = "";
+				if (timer) clearTimeout(timer);
+				showAllArticles(); renderPanel("", []); onScroll(); box.blur();
+			}
+		});
+	}
+	if (btn) btn.addEventListener("click", function (e) { e.preventDefault(); if (timer) clearTimeout(timer); goToResults(); });
+	if (clearBtn) clearBtn.addEventListener("click", function () {
+		if (box) box.value = "";
+		if (timer) clearTimeout(timer);
+		showAllArticles(); renderPanel("", []); onScroll();
+		if (box) box.focus();
+	});
+})();
+</script>
+</body>
+</html>

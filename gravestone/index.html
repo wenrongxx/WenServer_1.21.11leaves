@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>墓石地牢 – 中文 Minecraft Wiki 风格百科</title>
+<meta name="description" content="Gravestone Dungeons（墓石地牢）数据包 1.7 中文百科：机制、数值、交易、附魔、首领与召唤流程。"/>
+<link rel="manifest" href="site.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/app.css" />
+</head>
+<body>
+
+<header class="wiki-header">
+	<div class="inner">
+		<a class="wiki-logo" href="../index.html">墓石地牢 Wiki<span>Gravestone Dungeons 1.7</span></a>
+		<button type="button" class="toc-toggle" id="tocToggle">目录</button>
+		<div class="wiki-search">
+			<input type="search" id="searchBox" placeholder="搜索条目…" aria-label="搜索" />
+			<button type="button" id="searchBtn">搜索</button>
+		</div>
+	</div>
+</header>
+
+<div class="wiki-shell" id="top">
+	<aside class="wiki-sidebar" id="wikiSidebar">
+		<div class="sb-title">导航</div>
+		<ul>
+			<li><a href="#introduction">什么是墓石地牢</a></li>
+			<li><a href="#systems">核心系统</a></li>
+			<li><a href="#structures">建筑结构</a></li>
+			<li><a href="#characters">角色与交易</a></li>
+		</ul>
+		<div class="sb-title">生物</div>
+		<ul>
+			<li><a href="#bosses">首领</a></li>
+			<li><a href="#morbex">虚空行者莫贝克斯</a></li>
+			<li><a href="#enemies">敌人与试炼</a></li>
+			<li><a href="#companions">同伴与坐骑</a></li>
+		</ul>
+		<div class="sb-title">物品</div>
+		<ul>
+			<li><a href="#enchantments">附魔</a></li>
+			<li><a href="#oils">武器油</a></li>
+			<li><a href="#runes">符文</a></li>
+			<li><a href="#arrows">箭矢</a></li>
+			<li><a href="#potions">药水</a></li>
+			<li><a href="#weapons">武器</a></li>
+			<li><a href="#armor">盔甲</a></li>
+			<li><a href="#artifacts">神器与戒指</a></li>
+			<li><a href="#food">食物与酒饮</a></li>
+			<li><a href="#trinkets">饰品</a></li>
+		</ul>
+		<div class="sb-title">机制</div>
+		<ul>
+			<li><a href="#spells">法术与能力</a></li>
+			<li><a href="#modifier">词缀与强化</a></li>
+			<li><a href="#currency">货币</a></li>
+			<li><a href="#recipes">合成配方</a></li>
+			<li><a href="#arcane">奥术节点</a></li>
+			<li><a href="#moon">月相事件</a></li>
+			<li><a href="#lore-books">地牢典籍</a></li>
+			<li><a href="#advancements">进度一览</a></li>
+		</ul>
+	</aside>
+
+	<main class="wiki-content">
+		<div class="back-bar">
+			<a class="back-home" href="../index.html">← 返回首页</a>
+			<span class="back-hub">WenServer Wiki</span>
+		</div>
+
+
+	<div id="searchPanel" class="search-panel" hidden>
+		<div class="sr-head">
+			<strong>搜索结果</strong>
+			<span id="searchMeta" class="sr-meta"></span>
+			<button type="button" id="searchClear" class="sr-clear">清除</button>
+		</div>
+		<p class="sr-hint">输入时只更新本列表，不会隐藏正文、也不会滚动页面。点击标题跳转到对应条目。</p>
+		<ol id="searchList" class="sr-list"></ol>
+	</div>
+
+	<div id="searchEmpty" class="search-empty" hidden>没有找到匹配的条目。可尝试「莫贝克斯」「符文」「药水」「首领」等关键词。</div>
+
+	<article class="article" id="introduction" data-search="简介 数据包 Gravestone Dungeons 暗木要塞 中世纪">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 简介</div>
+		<div class="article-header">
+			<h1>墓石地牢</h1>
+			<div class="sub">Gravestone Dungeons 1.7 · ZaccMaster &amp; HeadBodyScript · pack id <code>gd_dp</code></div>
+		</div>
+		<div class="hatnote">本文为数据包 <b>Gravestone Dungeons 1.7</b> 的中文百科。数值与机制取自数据包源文件（function / recipe / advancement / loot_table / structure NBT）。</div>
+		<div class="toc-box">
+			<div class="toc-title">目录</div>
+			<ol>
+				<li><span class="toc-num">1</span><a href="#systems">核心系统</a></li>
+				<li><span class="toc-num">2</span><a href="#characters">角色与交易</a></li>
+				<li><span class="toc-num">3</span><a href="#morbex">虚空行者莫贝克斯</a></li>
+				<li><span class="toc-num">4</span><a href="#enchantments">附魔</a></li>
+				<li><span class="toc-num">5</span><a href="#runes">符文</a></li>
+				<li><span class="toc-num">6</span><a href="#potions">药水</a></li>
+				<li><span class="toc-num">7</span><a href="#oils">武器油</a></li>
+				<li><span class="toc-num">8</span><a href="#weapons">武器</a></li>
+				<li><span class="toc-num">9</span><a href="#armor">盔甲</a></li>
+				<li><span class="toc-num">10</span><a href="#spells">法术与能力</a></li>
+			</ol>
+		</div>
+		<p>剑光交错，暗影翻涌。地牢遍布各生物群系与维度：试炼刷怪笼、自定义首领、附魔之刃、奥术遗物与不可合成的元素工具构成核心玩法。舞台中心是<strong>暗木要塞</strong>——以银币与金币结算的商旅枢纽。</p>
+		<p class="note">本页在官方 Wiki 基础上，按数据包 1.7 源文件补全并校正了大量数值。若游戏内资源包汉化与此处不一致，以资源包为准。</p>
+		<div class="categories">分类：<a href="#top">数据包</a>｜<a href="#contributors">元数据</a></div>
+	</article>
+
+	<!-- ============ 核心系统 ============ -->
+	<article class="article" id="systems" data-search="魔力 mana 食物 再生 不祥 试炼 系统 冷却 能量槽 gauge">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 核心系统</div>
+		<div class="article-header"><h1>核心系统</h1><div class="sub">魔力 · 食物 · 能量槽 · 不祥试炼</div></div>
+
+		<div class="infobox">
+			<div class="ib-title">玩家默认参数</div>
+			<table>
+				<tr><td class="k">初始最大魔力</td><td class="v"><strong>2000</strong></td></tr>
+				<tr><td class="k">最大魔力上限</td><td class="v"><strong>20000</strong>（符文可堆至）</td></tr>
+				<tr><td class="k">最大同伴数</td><td class="v">1 → 最多 <strong>3</strong></td></tr>
+				<tr><td class="k">符文属性上限</td><td class="v">见 <a href="#runes">符文</a></td></tr>
+				<tr><td class="k">货币</td><td class="v">银币 96 堆叠 · 金币 96 堆叠</td></tr>
+			</table>
+		</div>
+
+		<h3>魔力（Magicka）</h3>
+		<ul class="bullets">
+			<li>初始最大魔力 <strong>2000</strong>，符文可堆至 <strong>20000</strong>。</li>
+			<li><strong>再生：</strong>食物等级 ≥8 时 <strong>+1/tick（20/秒）</strong>；有魔力加速时额外 +1 → <strong>+2/tick（40/秒）</strong>。</li>
+			<li>加速来源：奥术节点被动（约 60s）、祝福 <code>an_mag</code>（代码 72000t≈60 分）、满级魔力+节点、药水（1/2/4/8 分）、骏马套装等。</li>
+			<li>满月会几乎清空魔力加速；技能附魔可返还 25% 已耗魔力。</li>
+			<li>量表条（自定义字体）同时显示魔力、加速、技能 CD 与 8 种油/叠层充能。</li>
+		</ul>
+		<h3>技能 / 套装魔力一览</h3>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>消耗</th><th>来源</th></tr>
+			<tr><td>200</td><td>念力、紫颂虚空、丝线投掷、地居者套装</td></tr>
+			<tr><td>400–800</td><td>星之碎片单发、烈焰爆裂、烈焰鞘翅</td></tr>
+			<tr><td>1000–2000</td><td>唤骨/照明/巨剑；偏转/尖牙/落雷/光波/切腹；紫水晶套装、守卫套装</td></tr>
+			<tr><td>4000</td><td>缴械</td></tr>
+			<tr><td>600</td><td>犰狳套装</td></tr>
+			<tr><td>8000</td><td>流星雨、繁育仪式（CD 20 分钟）</td></tr>
+			<tr><td>16000</td><td>虚空之球、破雾者维度传送</td></tr>
+		</table>
+		</div>
+
+		<h3>能量槽 / 充能附魔</h3>
+		<p>部分附魔靠<strong>命中叠层</strong>或<strong>格挡充能</strong>（见 <a href="#enchantments">附魔</a>）。反击脉冲需格挡 100 次后潜行蓄力释放。</p>
+
+		<h3>不祥试炼（Ominous）</h3>
+		<ul class="bullets">
+			<li>携带不祥进入地牢时，试炼刷怪笼敌人强化，奖励提高；可能携带数据包附魔。</li>
+			<li>不祥战利品表区分主世界 / 下界 / Boss 变体。</li>
+		</ul>
+		<div class="categories">分类：<a href="#systems">机制</a></div>
+	</article>
+
+	<!-- ============ 结构 ============ -->
+	<article class="article" id="structures" data-search="结构 余烬石堡垒 黑石迷宫 云游 高峰修道院 黑井 泥湾 灰石 女巫 暗木要塞 地图">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 建筑结构</div>
+		<div class="article-header"><h1>建筑结构</h1></div>
+		<p>进入结构后常被切换为冒险模式，离开还原生存模式。多数结构可向 <strong>埃尔德丽德</strong> 或<strong>制图师</strong>购买探索地图；地图盒以木盒 / 灵柩命名，内含对应结构地图。</p>
+		<div class="shot-grid">
+			<div class="shot-card"><img src="assets/img/custom/structure_direwood.png" alt=""><div class="cap"><div class="t">暗木要塞</div><div class="s">商人枢纽 · 进度「一点都不空」</div></div></div>
+			<div class="shot-card"><img src="assets/img/custom/structure_emberstone_bastion.png" alt=""><div class="cap"><div class="t">余烬石堡垒</div><div class="s">下界浮岩 · <a href="#morbex">莫贝克斯</a> · Y≈125</div></div></div>
+			<div class="shot-card"><img src="assets/img/custom/structure_monastery_of_highpeak.png" alt=""><div class="cap"><div class="t">高峰修道院</div><div class="s">格里姆加 · 进度「漂亮的建筑」</div></div></div>
+			<div class="shot-card"><img src="assets/img/custom/structure_cloud_nomads.png" alt=""><div class="cap"><div class="t">云游氏族</div><div class="s">三派系首领 · 进度「高处的路」</div></div></div>
+			<div class="shot-card"><img src="assets/img/custom/structure_mirehaven_caves.png" alt=""><div class="cap"><div class="t">泥湾蔓生洞穴</div><div class="s">枯萎骨髓 · 进度「白骨与砖石」</div></div></div>
+			<div class="shot-card"><img src="assets/img/custom/structure_edinborough_fair.png" alt=""><div class="cap"><div class="t">埃丁伯勒集市</div><div class="s">竞技场 · 进度「恶棍与小丑」</div></div></div>
+			<div class="shot-card"><img src="assets/img/custom/structure_blackstone_maze.png" alt=""><div class="cap"><div class="t">黑石迷宫</div><div class="s">下界 · 炽焰恶魔 · 进度「下面还有更多」</div></div></div>
+		</div>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>结构</th><th>生成高度 Y</th><th>生物群系（tag）</th><th>关联首领</th></tr>
+			<tr><td>暗木要塞</td><td>≈17</td><td>温带+丛林等（<code>direwood_biome</code>）</td><td class="muted">商人枢纽</td></tr>
+			<tr><td><a href="#morbex">余烬石堡垒</a></td><td><strong>≈125</strong> 浮空</td><td><strong>仅</strong> 河流 / 冻洋 / 暖海</td><td><a href="#morbex">莫贝克斯</a></td></tr>
+			<tr><td>高峰修道院（教堂）</td><td>≈−5</td><td>雪原 + 温带（<code>church_biome</code>）</td><td>格里姆加</td></tr>
+			<tr><td>云游氏族</td><td><strong>≈140</strong> 高空</td><td>极广：寒冷/温带/丛林/炎热皆可</td><td class="muted">三派系首领</td></tr>
+			<tr><td>泥湾蔓生洞穴</td><td>≈41</td><td>暗林/沼泽/丛林/草原（<code>m_caves</code>）</td><td>枯萎骨髓</td></tr>
+			<tr><td>灰石矿场</td><td>—</td><td>温带系</td><td>育母之喉</td></tr>
+			<tr><td>黑石迷宫</td><td>≈−51</td><td><strong>仅</strong> 下界荒地</td><td>炽焰恶魔</td></tr>
+			<tr><td>黑井墓穴</td><td><strong>≈−72</strong> 深地下</td><td>温带+丛林等</td><td>暗影</td></tr>
+			<tr><td>女巫小屋</td><td>≈−14</td><td>温带（<code>witch_biome</code>）</td><td>水晶女巫会</td></tr>
+			<tr><td>埃丁伯勒集市</td><td>≈−13</td><td>寒冷+温带</td><td>竞技场（门票触发）</td></tr>
+		</table>
+		</div>
+		<p class="muted">结构集 <code>l_dungeon</code>（教堂/矿洞/要塞/堡垒/墓穴）间距约 90、间隔 60；云游氏族间距 120。均为 jigsaw，<code>surface_structures</code>。</p>
+		<div class="categories">分类：<a href="#structures">结构</a></div>
+	</article>
+
+	<!-- ============ 角色与交易 ============ -->
+	<article class="article" id="characters" data-search="NPC 商人 交易 阿拉里克 扎卡里乌斯 伊森伯特 埃尔德丽德 云游 菲奥娜 拉格纳 价格">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 角色与交易</div>
+		<div class="article-header"><h1>角色与交易</h1><div class="sub">银币=铁粒 · 金币=金粒 · 1 金 = 96 银（法恩迪尔兑换）</div></div>
+		<p>多数村民有<strong>多套随机货架</strong>（reload 后切换）。下表列出数据包中出现的主要商品与标价（<strong>银</strong>=银币，<strong>金</strong>=金币）。</p>
+
+		<h3>暗木要塞</h3>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>NPC</th><th>主要商品</th></tr>
+			<tr>
+				<td><strong>法恩迪尔</strong><br>行政官</td>
+				<td>货币兑换：1 金 → 96 银；96 银 → 1 金。<br>
+					<strong>回收灵魂之泪：</strong>次级 2 金 · 普通 6 金 · 高级 10 金 · 远古 14 金</td>
+			</tr>
+			<tr>
+				<td><strong>伊森伯特</strong><br>杂物收购</td>
+				<td>回收饰品与生物皮革：山羊皮 2 银、红/棕哞菇皮 3–4 银、狐/白狐皮 8–10 银、熊猫皮 20 银、嗅探兽皮 25 银、北极熊皮 1 金</td>
+			</tr>
+			<tr>
+				<td><strong>扎卡里乌斯修士</strong><br>图书馆</td>
+				<td>收购附魔书；出售<strong>奥术魔法书</strong>等；<strong>符文</strong>：强健之石 / 魔力之石 / 减伤坠落 / 悠长呼吸 / 更高交互距离 / 同伴之石（多为 <strong>2 金</strong>）；部分货架含附魔书（箭袋、岩浆行者、跃迁一击、照明、弹射物偏转、巨剑术防御、唤骨术、缴械等）</td>
+			</tr>
+			<tr>
+				<td><strong>阿拉里克</strong><br>宫廷法师</td>
+				<td>收购各类头颅；出售：<strong>特殊箭矢</strong>（变形/催眠/冲击波等 3 银 8 支）、<strong>传送法术书</strong>（24 银）、<strong>一次性领域法术</strong>（雷霆/力场等 24 银）、<strong>雷系同伴召唤</strong>、<strong>烈焰爆裂附魔书</strong>（2 金，魔力 800/次）、次级电击喷溅药水、附魔金苹果等</td>
+			</tr>
+			<tr>
+				<td><strong>炼金师 / 莱拉</strong><br>炼金</td>
+				<td>收购炼金材料；出售<strong>鱼油</strong>（3 银）、各档<strong>武器油 / 护甲油</strong>（见 <a href="#oils">武器油</a>）；部分货架含丰沛级药水</td>
+			</tr>
+			<tr>
+				<td><strong>酿酒师</strong><br>菲奥娜相关</td>
+				<td>出售次级/正式/丰沛药水（蛮牛、耐力等）；龙息 6 银；附魔之瓶 3 银 8 个</td>
+			</tr>
+			<tr>
+				<td><strong>厨师</strong><br>菲奥娜</td>
+				<td>收购生肉；出售蜂蜜酒、各炖菜（约 6 银）</td>
+			</tr>
+			<tr>
+				<td><strong>制箭师拉格纳</strong></td>
+				<td>出售弩（低/中/高耐久）、特殊箭（眩晕/剧毒/漂浮/凋零/织网）、大量普通箭；收购羽毛、紫水晶、金属</td>
+			</tr>
+			<tr>
+				<td><strong>铁匠 / 护甲匠 / 工具匠</strong></td>
+				<td>命名武器护甲工具（匕首、刺剑、阔剑、晨星锤、破岩者套装、各类镐斧铲锄）；<strong>强化工具</strong>：磨刀石（武器）、锻造锤（盾/鞘翅盔甲）、锻造钳（工具）、制箭师的锉刀（弓弩）——多为 1 金</td>
+			</tr>
+			<tr>
+				<td><strong>竞技场主人</strong></td>
+				<td><strong>竞技场门票</strong>：64 银 ·「副手持票进入竞技场开始战斗」</td>
+			</tr>
+			<tr>
+				<td><strong>马贩哈兰</strong></td>
+				<td>皮革/竞速马鞍、轻型/钢制/重型马铠、多种命名马匹（法拉贝拉矮马、安达卢西亚、比利时温血/挽马、诺曼矮马、冰岛矮马、阿拉伯马、利皮扎马、弗里斯兰马等）</td>
+			</tr>
+			<tr>
+				<td><strong>养蜂人 / 农夫 / 猎犬师</strong></td>
+				<td>蜂箱、特制蜂蜜；始祖动物、耕种附魔书（48 银）；战狼（斯卡恩/诺克斯/荆棘/米什卡/獠牙/雅加/莫罗兹等，含活力耐力力量与能力标签）、嚎叫者烈酒、狼铠</td>
+			</tr>
+			<tr>
+				<td><strong>吟游诗人塞德里克</strong></td>
+				<td>音乐唱片（16 银）与签名纸条</td>
+			</tr>
+		</table>
+		</div>
+
+		<h3>云游氏族（奥多 / 伊莎贝尔 / 杰罗姆）</h3>
+		<ul class="bullets">
+			<li><strong>符文</strong>：强健之石、魔力之石、减伤坠落、更高交互距离、同伴之石等，约 2 金</li>
+			<li><strong>元素同伴召唤法术</strong>（一次性）：烈焰/寒霜/剧毒系狂暴傀儡（1 金）、对应剑守卫 / 弓守卫（48 银）</li>
+			<li><strong>鞘翅</strong>：迷彩 / 烈焰 / 薄如蝉翼的鞘翅（48 金；烈焰鞘翅潜行激活，魔力 800/次）</li>
+			<li>极强力烟花火箭（飞行时间×3，12 银 12 支）、各色蛙明灯、陶片</li>
+			<li>烈焰爆裂附魔书（2 金）；稀有战狼与弩手/女巫召唤（见阿拉里克货架）</li>
+		</ul>
+
+		<h3>游商（埃丁伯勒 / 弗兰德系统）</h3>
+		<p>用<strong>铜锭</strong>购买盲盒木箱：箭矢箱、马具与要塞地图箱、酒食箱、武器强化工具箱、始祖动物箱等。</p>
+
+		<div class="categories">分类：<a href="#characters">NPC</a>｜<a href="#currency">货币</a></div>
+	</article>
+
+	<!-- ============ 首领总览 ============ -->
+	<article class="article" id="bosses" data-search="首领 Boss 格里姆加 暗影 枯萎 炽焰 女巫 育母 竞技场 血条 难度">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 首领</div>
+		<div class="article-header"><h1>首领</h1></div>
+		<div class="hatnote">详细任务链见 <a href="#morbex">虚空行者莫贝克斯</a>。</div>
+		<h3>通用机制</h3>
+		<ul class="bullets">
+			<li>进入首领房触发；同地牢玩家被传送进房。玩家离场、死亡或首领死亡则结束。</li>
+			<li>和平模式不触发；属性随难度与房内玩家数缩放。</li>
+			<li>Boss 血条由 <code>gd_main:init</code> 注册；击杀后发放对应档位经验（见下）。</li>
+		</ul>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>首领</th><th>难度</th><th>HP<br>简单/普通/困难</th><th>基底</th><th>阶段</th><th>经验*</th><th>要点 / 掉落</th></tr>
+			<tr><td>竞技场挑战者</td><td class="d-easy">简单</td><td>100 / 200 / 400</td><td>随机 10 种</td><td>—</td><td>普通</td><td>副手<strong>竞技场门票</strong>（亚瑟处 64 银×3）；击杀仅给经验，无固定战利品</td></tr>
+			<tr><td>水晶女巫会</td><td class="d-mid">中等</td><td>200 / 300 / 500</td><td>女巫×3 随机 1/3</td><td>2</td><td>强敌</td><td>凯达娅（水晶+3 交互）/ 玛丽菲卡娅（重力−0.07）/ 西尔瓦娜娅（挖掘效率+1）；桶→<code>witch_loot</code>；普通灵魂之泪</td></tr>
+			<tr><td>育母之喉</td><td class="d-hard">困难</td><td>200 / 300 / 500</td><td>蜘蛛 scale 2.5</td><td>2</td><td>强敌</td><td>铁剑剧毒+击退；掉落<strong>吐丝器弩</strong>（织网枪，耐久 965，安全坠落+15）+ 丝腺桶 + 普通泪</td></tr>
+			<tr><td>格里姆加</td><td class="d-hard">困难</td><td>300 / 400 / 600</td><td>唤魔者 +3 图腾</td><td>6</td><td>大敌</td><td>亡灵大军→死亡领主→本体；掉落<strong>亡灵法师面具</strong>（盔甲+10）、炼金袋（<strong>唤魔者尖牙</strong>）、高级泪；<strong>解锁僧侣纪尧姆</strong></td></tr>
+			<tr><td>枯萎骨髓</td><td class="d-hard">困难</td><td>300 / 400 / 600</td><td>凋灵骷髅+盾</td><td>4</td><td>大敌</td><td>灵魂灯场；精英守卫（赫拉夫尼尔/比约恩/贡纳尔/西格伦）；掉落<strong>至爱</strong>（凋零玫瑰·流血）、钱袋、高级泪；<strong>解锁塞德里克唱片商</strong></td></tr>
+			<tr><td>暗影</td><td class="d-hard">困难</td><td>300 / 400 / 600</td><td>凋灵骷髅</td><td>2</td><td>大敌</td><td>夜间瞬伤、雷雨抗性、浮冰场地；掉落<strong>暗影刃</strong>（钻石剑耐久 3561，+24 伤害，内蕴回响）、袋子（霜冻油）、高级泪</td></tr>
+			<tr><td>炽焰恶魔</td><td class="d-hc">极限</td><td>400 / 500 / 700</td><td>烈焰人</td><td>2</td><td>传说</td><td>16 向火浪 10 燃烧伤、岩浆怪、刷怪笼；掉落<strong>发光棒</strong>（火焰附加 8、燃烧时间−1）、宝藏桶（<strong>流星雨</strong>）、远古泪</td></tr>
+			<tr><td><a href="#morbex">莫贝克斯</a></td><td class="d-hc">极限</td><td>400 / 500 / 700</td><td>幻术师</td><td>2</td><td>传说</td><td>任务链后决战；掉落戒指、袋子（<strong>虚空之球</strong>）、远古泪</td></tr>
+		</table>
+		</div>
+		<p class="mc-gray">* 经验函数召唤 <strong>15</strong> 枚经验球/次：普通 90×15=<strong>1350</strong>；强敌 180×15=<strong>2700</strong>；大敌 360×15=<strong>5400</strong>；传说 720×15=<strong>10800</strong>。</p>
+		<h3>灵魂之泪（Boss 通用掉落）</h3>
+		<p>Lore：「蕴含着一名倒下敌人的灵魂。」基底为恶魂之泪，带消失/绑定诅咒，可堆叠 16。法恩迪尔高价回收：</p>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>品级</th><th>颜色</th><th>数据</th><th>回收价</th><th>主要来源</th></tr>
+			<tr><td>次级灵魂之泪</td><td>#94DBFF</td><td><code>boss_lvl_1</code></td><td>2 金</td><td>低阶 / 部分战利品</td></tr>
+			<tr><td>普通灵魂之泪</td><td>#ACFF30</td><td><code>boss_lvl_2</code></td><td>6 金</td><td>女巫会、育母之喉</td></tr>
+			<tr><td>高级灵魂之泪</td><td>#9940FF</td><td><code>boss_lvl_3</code></td><td>10 金</td><td>格里姆加、枯萎骨髓、暗影</td></tr>
+			<tr><td>远古灵魂之泪</td><td>#BA1806</td><td><code>boss_lvl_4</code></td><td>14 金</td><td>炽焰恶魔、莫贝克斯</td></tr>
+		</table>
+		</div>
+		<p class="muted">全部带<strong>绑定诅咒</strong>，堆叠上限 16，lore「蕴含着一名倒下敌人的灵魂。」</p>
+		<h3>经验值档位（脚本 · 15 球/次）</h3>
+		<ul class="bullets">
+			<li>普通敌人：90×15 ≈ <strong>1350 XP</strong>（竞技场）</li>
+			<li>强敌：180×15 ≈ <strong>2700 XP</strong>（女巫会、育母之喉）</li>
+			<li>大敌：360×15 ≈ <strong>5400 XP</strong>（格里姆加、枯萎骨髓、暗影）</li>
+			<li>传说敌人：720×15 ≈ <strong>10800 XP</strong>（炽焰恶魔、莫贝克斯）</li>
+		</ul>
+		<div class="categories">分类：<a href="#bosses">首领</a></div>
+	</article>
+
+	<!-- ============ 莫贝克斯 ============ -->
+	<article class="article" id="morbex" data-search="莫贝克斯 Morbex 余烬石堡垒 灵魂碎片 召唤 祭坛 netherrock 戒指 任务">
+		<div class="breadcrumbs"><a href="#top">首页</a> › <a href="#bosses">首领</a> › 虚空行者莫贝克斯</div>
+		<div class="article-header"><h1>虚空行者莫贝克斯</h1><div class="sub">Morbex the Voidwalker</div></div>
+		<div class="infobox">
+			<div class="ib-title">虚空行者莫贝克斯</div>
+			<div class="ib-img"><img src="assets/img/custom/structure_emberstone_bastion.png" alt="余烬石堡垒"></div>
+			<table>
+				<tr><td class="k">难度</td><td class="v"><span class="d-hc">极限</span></td></tr>
+				<tr><td class="k">基底</td><td class="v">幻术师 Illusioner</td></tr>
+				<tr><td class="k">生命值</td><td class="v">简单 400 / 普通 500 / 困难 700</td></tr>
+				<tr><td class="k">攻击冷却</td><td class="v">约 250 / 230 / 210 tick</td></tr>
+				<tr><td class="k">血条</td><td class="v">紫色 notched_20</td></tr>
+				<tr><td class="k">音乐</td><td class="v"><code>devouring_serpent_morbex</code></td></tr>
+				<tr><td class="k">结构</td><td class="v"><code>gd:netherrock</code> · 下界 · Y≈125</td></tr>
+				<tr><td class="k">进度链</td><td class="v">失而复得 → 让他重回正轨 → 悲剧命运</td></tr>
+			</table>
+		</div>
+		<p>传说莫贝克斯以咒语将整座余烬石堡垒从下界撕入主世界天空。其后被囚禁，灵魂拆成三份藏进堡垒房间。</p>
+
+		<h3 id="morbex-summon">召唤方法</h3>
+		<ol class="steps">
+			<li><strong>抵达余烬石堡垒</strong>
+				<div class="detail">下界拼图结构，起始件 <code>netherrock_11</code>，拼图尺寸 7，起始高度约 <strong>Y=125</strong>。地图：埃尔德丽德「华饰余烬石盒」或制图师同名盒。进入解锁进度「失而复得」。</div>
+			</li>
+			<li><strong>在祭坛房对话</strong>
+				<div class="detail">祭坛/囚禁房模板 <code>netherrock_15</code>：特征为<strong>黑色混凝土</strong>、讲台、加固深板岩一带。靠近约 8 格触发随机对话（灵魂被拆成三份、带到祭坛合而为一）。</div>
+			</li>
+			<li><strong>收集三枚灵魂碎片</strong>
+				<div class="detail">均在<strong>固定结构模板的容器</strong>中，基底石英 + 附魔光效 + 自定义数据，详见下表。</div>
+			</li>
+			<li><strong>返回祭坛启动仪式</strong>
+				<div class="detail">同一玩家背包/快捷栏<strong>同时持有三枚</strong>且距祭坛约 <strong>5 格</strong>内 → 系统清除碎片并进入阶段一：「你找到它们了！我自由了！！！！」三枚石英残影汇入祭坛后开打。曾成功解锁后，约 <strong>8.5 格</strong>内可<strong>免碎片</strong>再触发。</div>
+			</li>
+		</ol>
+
+		<h3 id="morbex-crystals">灵魂碎片获取（按 NBT）</h3>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>碎片</th><th>标识 / 颜色</th><th>模板</th><th>房间特征</th><th>同容器</th></tr>
+			<tr>
+				<td>其一</td>
+				<td><code>morbex_1</code><br><span style="color:#b8860b;font-weight:700">#FFCC00</span></td>
+				<td><code>netherrock_2</code></td>
+				<td>工坊/起居：酿造台、末影箱、炼药锅、紫水晶芽、灵魂灯、磨制黑石</td>
+				<td><strong>金锭</strong></td>
+			</tr>
+			<tr>
+				<td>其二</td>
+				<td><code>morbex_2</code><br><span style="color:#0066ff;font-weight:700">#0066FF</span></td>
+				<td><code>netherrock_16</code></td>
+				<td>书库：讲台 + <strong>《莫贝克斯的笔记》</strong>（<code>morbex_journal</code>）、雕纹书架、灵魂火、金块</td>
+				<td><strong>铁锭</strong></td>
+			</tr>
+			<tr>
+				<td>其三</td>
+				<td><code>morbex_3</code><br><span style="color:#ff3300;font-weight:700">#FF3300</span></td>
+				<td><code>netherrock_17</code></td>
+				<td>储藏厅：讲台、雕纹书架、多箱/桶、紫玻璃、绯红木板、下界疣</td>
+				<td><strong>铜锭</strong></td>
+			</tr>
+		</table>
+		</div>
+		<ul class="bullets">
+			<li>在容器中看到<strong>与金属锭同格、带附魔光效的石英</strong>即为碎片；普通下界石英矿石不可用。</li>
+			<li>任意一枚即解锁进度「让他重回正轨」（磁石图标，+50 XP）。</li>
+			<li>拼图随机拼接：若本次生成缺模板，需换实例或扩大搜索。相关房间常伴有箭矢/药水/食物战利品。</li>
+			<li>同一建筑群另见 <code>netherrock_18</code>：可能有<strong>破雾者附魔书</strong>、末影水晶、肋甲纹饰模板等。</li>
+		</ul>
+
+		<h3>战斗与技能</h3>
+		<p>阶段一为释放与剧情（三石英汇聚），阶段二攻击循环。血条紫色；撤离/团灭重置。</p>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>技能</th><th>说明</th></tr>
+			<tr><td>虚空之球</td><td>大型黑洞，吸引挤压附近实体；烟雾 + 幽匿灵魂粒子；碰撞伤害</td></tr>
+			<tr><td>虚空弹 / 箭</td><td>远程投射物</td></tr>
+			<tr><td>虚空之环 / 戏法 / 传送</td><td>范围与位移干扰</td></tr>
+			<tr><td>召唤 / 猪灵</td><td>随从干扰</td></tr>
+			<tr><td>药水术 0–3</td><td>多阶段药水投掷</td></tr>
+			<tr><td>漂浮</td><td>祭坛区域上升气流</td></tr>
+		</table>
+		</div>
+		<div class="dialogue">
+			<div class="line"><span class="who morbex">莫贝克斯</span>：他们用诅咒法术把我的灵魂分成三份，藏在了这块岩石上的某处。</div>
+			<div class="line"><span class="who morbex">莫贝克斯</span>：只要它们没有在这个祭坛上合而为一，我就无法解脱。</div>
+			<div class="line"><span class="who morbex">莫贝克斯</span>：你找到它们了！我自由了！！！！</div>
+			<div class="line"><span class="who morbex">莫贝克斯</span>：你这蠢货！我的宝藏概不外借！</div>
+			<div class="line"><span class="who morbex">莫贝克斯</span>：不可能！你这只臭老鼠怎么可能打败我！？</div>
+			<div class="line"><span class="who player">玩家</span>：这是什么？一枚戒指。他的戒指！如果我……会发生什么？</div>
+		</div>
+
+		<h3>战利品</h3>
+		<ul class="bullets">
+			<li><strong>莫贝克斯的戒指</strong>（绿宝石，消失诅咒）：主手 +12 伤害、体型放大、台阶/跳跃/移速提升；副手为相反修正（可缩小）。Lore：铁证：虚空行者已被击败。</li>
+			<li><strong>莫贝克斯的袋子</strong>：木桶，战利品表含<strong>虚空之球附魔书</strong>（狼牙棒用，魔力 16000/次）、典籍、符文、药水、特殊箭矢等</li>
+			<li><strong>远古灵魂之泪</strong> · 传说敌人经验</li>
+		</ul>
+		<div class="categories">分类：<a href="#bosses">首领</a>｜<a href="#structures">结构</a>｜<a href="#artifacts">神器</a></div>
+	</article>
+
+	<!-- ============ 敌人 ============ -->
+	<article class="article" id="enemies" data-search="敌人 试炼 刷怪笼 不祥 Ominous">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 敌人与试炼</div>
+		<div class="article-header"><h1>敌人与试炼</h1></div>
+		<p>各地牢由<strong>试炼刷怪笼</strong>生成特色敌人，通关发放战利品。不祥效果下强化难度与奖励；敌人可能携带数据包附魔。经验按敌档发放（见 <a href="#bosses">首领</a>）。</p>
+		<div class="categories">分类：<a href="#enemies">生物</a></div>
+	</article>
+
+	<!-- ============ 附魔 ============ -->
+	<article class="article" id="enchantments" data-search="附魔 魔力 流血 引雷 巨剑 虚空 切腹 互斥 强化 技能书 戒指">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 附魔</div>
+		<div class="article-header"><h1>附魔</h1></div>
+		<p>机制分<strong>被动</strong>、<strong>主动</strong>（消耗魔力）、<strong>能量槽</strong>（命中叠层/格挡充能）。下列魔力数值优先采自<strong>游戏内附魔书 Lore</strong>（图书馆 / 云游货架）。</p>
+
+		<h3>主动附魔：魔力与冷却</h3>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>附魔</th><th>魔力</th><th>冷却</th><th>要点</th></tr>
+			<tr><td>念力 / 紫颂虚空 / 丝线投掷</td><td>200</td><td>20t / —</td><td>拉取掉落物；潜行射末影箭 / 织网·蜘蛛箭</td></tr>
+			<tr><td>星之碎片</td><td>400 / 2000</td><td>30t / 120t</td><td>单发 4/14 伤；潜行五连发</td></tr>
+			<tr><td>烈焰爆裂</td><td>800</td><td>250t</td><td>举盾潜行蓄力；三段火伤+点燃</td></tr>
+			<tr><td>唤骨术 / 照明 / 巨剑术防御</td><td>1000</td><td>140 / 100 / 40t</td><td>3–7 把飞剑可齐射</td></tr>
+			<tr><td>偏转 / 尖牙 / 落雷 / 光之波 / 切腹</td><td>2000</td><td>见附魔一览</td><td>落雷需见天；切腹自损 18 伤</td></tr>
+			<tr><td>缴械</td><td>4000</td><td>100t</td><td>夺走目标主手</td></tr>
+			<tr><td>流星雨</td><td>8000</td><td>1600t</td><td>约 11 枚流星×10 伤</td></tr>
+			<tr><td>虚空之球 / 破雾者</td><td>16000</td><td>1200 / 600t</td><td>黑洞吸入；跨维度传送</td></tr>
+		</table>
+		</div>
+		<p class="muted">叠层阈值：普通生物 <strong>3</strong> 层 / Boss·玩家 <strong>10</strong> 层爆发；圣化对亡灵 3 层。附魔可返还 25% 已耗魔力。右键附魔：副手举盾+潜行。</p>
+
+		<h3>附魔书稀有度（地牢宝箱）</h3>
+		<ul class="bullets">
+			<li><strong>不常见：</strong>箭袋、经验增幅、照明、跃迁一击、念力、耕种、熔炼之触</li>
+			<li><strong>稀有：</strong>流血、岩浆行者、飞刀袋、烈焰爆裂、偏转、紫颂虚空、巨剑术、引雷、悬赏追讨、海生</li>
+			<li><strong>史诗：</strong>唤骨术、火舌、缴械、尖牙、星之碎片、反击脉冲、切腹、黑刺箭、落雷</li>
+			<li><strong>传说：</strong>流星雨（恶魔）、虚空之球（莫贝克斯）、光之波、破雾者</li>
+		</ul>
+
+		<h3>附魔一览</h3>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>名称</th><th>类型</th><th>效果（综合数据包）</th><th>互斥</th><th>最高等级</th><th>适用</th></tr>
+			<tr><td>经验增幅</td><td>被动</td><td>生物/方块经验 ×(1.5+0.75/级)</td><td>内蕴回响</td><td>3</td><td>近战+远程</td></tr>
+			<tr><td>内蕴回响</td><td>被动+主动</td><td>命中触发；经验 ×1.5；神秘语音</td><td>经验增幅、横扫</td><td>1</td><td>剑</td></tr>
+			<tr><td>引雷</td><td>被动</td><td>可见天空时约 33% 召唤闪电；抗性短暂提升</td><td>弓系组</td><td>3</td><td>弓/锤</td></tr>
+			<tr><td>熔炼之触</td><td>被动</td><td>矿石→锭、原木→木炭；方块经验 0</td><td>精准采集</td><td>1</td><td>挖掘工具</td></tr>
+			<tr><td>耕种</td><td>被动</td><td>自动收获并播种</td><td>主动组</td><td>1</td><td>锄</td></tr>
+			<tr><td>悬赏追讨</td><td>被动</td><td>提高袭击生物银币掉落</td><td>—</td><td>1</td><td>利器</td></tr>
+			<tr><td>紫颂虚空 / 火舌 / 黑刺箭 / 织网丝线</td><td>被动</td><td>箭矢变异（末影/火/凋零/网）</td><td>弓系组</td><td>1</td><td>弓弩</td></tr>
+			<tr><td>流血</td><td>能量槽</td><td>命中+1 层；6 层：缓慢 6 1 + 12 物理伤</td><td>漂浮等</td><td>1</td><td>利器</td></tr>
+			<tr><td>漂浮 / 霜冻 / 电击 / 剧毒 / 凋零 / 圣化 / 余烬防御</td><td>能量槽</td><td>命中叠层，满层触发对应效果/反击</td><td>能量槽组</td><td>1</td><td>利器/盔甲</td></tr>
+			<tr><td>唤骨术</td><td>主动</td><td>召唤环绕骷髅头，凋零+缓慢</td><td>主动组</td><td>2</td><td>利器</td></tr>
+			<tr><td>缴械</td><td>主动</td><td>非首领敌人丢武器 · 4000 魔力</td><td>主动组</td><td>1</td><td>武器</td></tr>
+			<tr><td>唤魔者尖牙</td><td>主动</td><td>尖牙波，6 魔法伤</td><td>主动组</td><td>2</td><td>武器</td></tr>
+			<tr><td>照明</td><td>主动</td><td>发光+缓慢附近目标 · 1000 魔力</td><td>主动组</td><td>2</td><td>武器</td></tr>
+			<tr><td>落雷 / 虚空之球</td><td>主动</td><td>扩张闪电 / 黑洞；互为死对</td><td>gd_mace 组</td><td>1</td><td>狼牙棒</td></tr>
+			<tr><td>星之碎片 / 流星雨 / 光之波 / 切腹</td><td>主动</td><td>14 伤追踪 / 耀斑 / 光墙 / 献血换力量</td><td>主动组</td><td>1</td><td>武器</td></tr>
+			<tr><td>巨剑术防御</td><td>主动</td><td>召唤 3–7 把魔法剑，潜行齐射 · 1000 魔力</td><td>主动组</td><td>3</td><td>武器</td></tr>
+			<tr><td>飞刀袋</td><td>主动</td><td>投出剑的复制品</td><td>主动组</td><td>1</td><td>剑</td></tr>
+			<tr><td>弹射物偏转 / 反击脉冲 / 烈焰爆裂 / 漂浮术</td><td>主动/充能</td><td>力场 / 格挡停弹 30s / 火焰束 / 漂浮</td><td>盾牌等组</td><td>1</td><td>盾/武器</td></tr>
+			<tr><td>念力</td><td>主动</td><td>周围掉落物传送至玩家</td><td>主动组</td><td>1</td><td>挖掘工具</td></tr>
+			<tr><td>跃迁一击</td><td>被动</td><td>传送到三叉戟落点</td><td>引导、激流</td><td>1</td><td>三叉戟</td></tr>
+			<tr><td>海生</td><td>被动</td><td>水/雨增强，旱地相反</td><td>—</td><td>1</td><td>三叉戟</td></tr>
+			<tr><td>岩浆行者</td><td>被动</td><td>脚下方块岩浆→玄武岩，半径随级</td><td>—</td><td>2</td><td>靴子</td></tr>
+			<tr><td>骏马 I/II/III</td><td>被动</td><td>骑行相关强化（三级独立）</td><td>—</td><td>1/级</td><td>靴子</td></tr>
+			<tr><td>破雾者</td><td>主动</td><td>持维度物品跨维度传送</td><td>经验修补</td><td>1</td><td>鞘翅</td></tr>
+			<tr><td>箭袋 / 药水袋</td><td>被动</td><td>提高对应物品堆叠上限</td><td>彼此互斥</td><td>1</td><td>胸甲</td></tr>
+			<tr><td>技能书</td><td>被动</td><td>书本载体，最高 6 级</td><td>—</td><td>6</td><td>书</td></tr>
+			<tr><td>戒指附魔×4</td><td>被动</td><td>魔力再生 / 隐形 / 生命羁绊 / 魔力效率</td><td>—</td><td>1</td><td>绿宝石戒指</td></tr>
+		</table>
+		</div>
+
+		<h3>附魔书稀有度（地牢宝箱表）</h3>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>档位</th><th>附魔书</th></tr>
+			<tr><td>不常见</td><td>箭袋、经验增幅、照明、跃迁一击、念力、耕种、熔炼之触</td></tr>
+			<tr><td>稀有</td><td>流血、岩浆行者、飞刀袋、烈焰爆裂、弹射物偏转、紫颂虚空、巨剑术、引雷、悬赏追讨、海生</td></tr>
+			<tr><td>史诗</td><td>唤骨术、火舌、缴械、唤魔者尖牙、星之碎片、反击脉冲、切腹、黑刺箭、落雷</td></tr>
+			<tr><td>传说</td><td><strong>流星雨</strong>（恶魔桶）、<strong>虚空之球</strong>（莫贝克斯桶）、<strong>光之波</strong>、<strong>破雾者</strong></td></tr>
+		</table>
+		</div>
+		<h3>强化类附魔（锻造，最高 5 级）</h3>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>附魔</th><th>每级主要加成</th></tr>
+			<tr><td>近战武器强化</td><td>+1 伤害 · +0.1 攻速 · +0.4 击退</td></tr>
+			<tr><td>工具强化</td><td>+0.15 破坏速度 · +0.1 水下挖掘 · +0.5 交互距离 · +0.1 潜行速度</td></tr>
+			<tr><td>远程武器强化</td><td>+0.005 移速 · +0.05 跳跃 · +0.1 台阶</td></tr>
+			<tr><td>盔甲强化</td><td>+1 盔甲 · +0.001 移速 · +0.02 跳跃 · +1 最大生命</td></tr>
+			<tr><td>盾牌强化</td><td>+1 盔甲 · +0.001 移速 · +0.02 跳跃 · +1 伤害</td></tr>
+			<tr><td>马铠强化</td><td>+2 盔甲 · +2 最大生命 · +0.1 击退抗性 · +2 安全坠落</td></tr>
+			<tr><td>马鞍强化</td><td>+0.025 移速 · +0.05 跳跃 · +0.2 台阶 · +0.1 水中移动</td></tr>
+		</table>
+		</div>
+		<div class="categories">分类：<a href="#enchantments">附魔</a></div>
+	</article>
+
+	<!-- ============ 油 ============ -->
+	<article class="article" id="oils" data-search="武器油 护甲油 鱼油 弱效 中效 强效 炼金 锅">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 武器油 / 护甲油</div>
+		<div class="article-header"><h1>武器油与护甲油</h1></div>
+		<p><strong>用法（物品 Lore）：</strong>副手持油，右键武器（或护甲）；一武一油。油可从炼金师购买，或用<strong>鱼油</strong> + 对应药水在炼药锅制作。</p>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>档位</th><th>银币</th><th>充能（武器/护甲）</th><th>炼金奖励加成</th></tr>
+			<tr><td>弱效</td><td>5 银</td><td><strong>+100</strong> / +100</td><td>+50</td></tr>
+			<tr><td>中效</td><td>10 银</td><td><strong>+250</strong> / +250</td><td>+125</td></tr>
+			<tr><td>强效</td><td>15 银</td><td><strong>+500</strong> / +500</td><td>+250</td></tr>
+		</table>
+		</div>
+		<p><strong>充能上限：</strong>武器油 <code>oil.max_weapon_MAX = 2000</code>；护甲油 <code>oil.max_armor_MAX = 6000</code>。Actionbar 显示「N 次××攻击剩余」；满充提示「已达××充能上限」。</p>
+		<p><strong>武器油：</strong>剧毒、圣化、霜冻、漂浮、凋零、电击。<strong>护甲油：</strong>余烬。鱼油炼金师 3 银。</p>
+		<div class="categories">分类：<a href="#oils">炼金</a></div>
+	</article>
+
+	<!-- ============ 符文 ============ -->
+	<article class="article" id="runes" data-search="符文 生命 魔力 上限 呼吸 坠落 交互 同伴 重置 哨兵 纹饰">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 符文</div>
+		<div class="article-header"><h1>符文</h1><div class="sub">基底：哨兵盔甲纹饰模板 · 主手持用</div></div>
+		<p>符文物品基底为 <code>sentry_armor_trim_smithing_template</code>，带 custom_data 与可食用设置。手持时 actionbar 显示「当前修正：X / Y」；点击使用后<strong>消耗</strong>并永久写入属性。达上限提示「已达最大修正。」</p>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>符文</th><th>custom_data</th><th>每次增量</th><th>默认上限</th><th>参考售价</th></tr>
+			<tr><td>强健之石符文</td><td><code>health1</code></td><td><strong>+2</strong> 最大生命</td><td><strong>20</strong></td><td>2 金</td></tr>
+			<tr><td>魔力之石符文</td><td><code>magicka1</code></td><td><strong>+1000</strong> 最大魔力</td><td><strong>20000</strong></td><td>2 金</td></tr>
+			<tr><td>减伤坠落之石符文</td><td><code>falldistance1</code></td><td>+1 安全坠落距离</td><td>10</td><td>2 金</td></tr>
+			<tr><td>悠长呼吸之石符文</td><td><code>oxygen1</code></td><td>+1 氧气加成（约 +20%）</td><td>10（约 200%）</td><td>2 金</td></tr>
+			<tr><td>更高交互距离石符文</td><td><code>range1</code></td><td>+1 方块交互距离</td><td>10</td><td>2 金</td></tr>
+			<tr><td>同伴之石 / 和谐之石</td><td><code>companion1</code> / 重置</td><td>+1 最大同伴 / 重置全部符文</td><td>同伴 ≤3</td><td>2 金</td></tr>
+		</table>
+		</div>
+		<p><strong>和谐之石（重置）：</strong>交互/生命/氧气/坠落清 0；<strong>魔力回到 2000</strong>；同伴回到 1。属性 modifier 同步移除。</p>
+		<p class="note">上限定义于 <code>gd_main:function/check/edit_me.mcfunction</code>，服主可改。出售渠道：图书馆、云游三首领等。</p>
+		<h3>满级额外奖励</h3>
+		<ul class="bullets">
+			<li>同伴 = 3：随机同伴获得力量 12s</li>
+			<li>交互 = 10：玩家急迫 1s</li>
+			<li>生命 = 20：玩家抗性 1s</li>
+			<li>魔力 = 20000 且在奥术节点：魔力加速极长</li>
+			<li>氧气 = 10 且在水中：夜视 12s</li>
+			<li>安全坠落 = 10 且在史莱姆上：跳跃提升</li>
+		</ul>
+		<div class="categories">分类：<a href="#runes">符文</a></div>
+	</article>
+
+	<!-- ============ 箭矢 ============ -->
+	<article class="article" id="arrows" data-search="箭 紫水晶 铜 铁 钻石 下界合金 特殊箭 合成">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 箭矢</div>
+		<div class="article-header"><h1>箭矢</h1></div>
+		<p>基础箭：<strong>无序</strong>「箭 + 材料」→ <strong>2 支</strong>，带自定义模型与名称。</p>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>箭</th><th>材料</th><th>效果</th></tr>
+			<tr><td>紫水晶箭</td><td>紫水晶碎片</td><td>使目标流血</td></tr>
+			<tr><td>铜箭</td><td>铜锭</td><td>+33% 伤害</td></tr>
+			<tr><td>铁箭</td><td>铁锭</td><td>+66% 伤害</td></tr>
+			<tr><td>钻石箭</td><td>钻石</td><td>+100% 伤害</td></tr>
+			<tr><td>下界合金箭</td><td>下界合金碎片</td><td>+133% 伤害</td></tr>
+		</table>
+		</div>
+		<h3>特殊箭矢（购买）</h3>
+		<div class="mini-grid">
+			<div class="mini-item"><div class="t">诅咒之箭</div><div class="d">非首领变随机生物</div></div>
+			<div class="mini-item"><div class="t">冲击波箭</div><div class="d">击退并短暂麻痹</div></div>
+			<div class="mini-item"><div class="t">篝火箭 / 火焰箭</div><div class="d">箭雨 / 点燃</div></div>
+			<div class="mini-item"><div class="t">末影箭</div><div class="d">传送至落点</div></div>
+			<div class="mini-item"><div class="t">霜冻箭</div><div class="d">冰牢 / 冰冻数秒</div></div>
+			<div class="mini-item"><div class="t">闪电箭</div><div class="d">落点召唤闪电</div></div>
+			<div class="mini-item"><div class="t">变形箭</div><div class="d">敌人变植物</div></div>
+			<div class="mini-item"><div class="t">催眠箭</div><div class="d">低级敌人变同伴 25 秒</div></div>
+			<div class="mini-item"><div class="t">织网箭</div><div class="d">落点蜘蛛网</div></div>
+			<div class="mini-item"><div class="t">眩晕 / 剧毒 / 漂浮 / 凋零箭</div><div class="d">制箭师货架 · 常为 3 银 / 8 或 32 支</div></div>
+		</div>
+		<div class="categories">分类：<a href="#arrows">弹射物</a></div>
+	</article>
+
+	<!-- ============ 药水 ============ -->
+	<article class="article" id="potions" data-search="药水 次级 正式 丰沛 魔力 炼金 配方 发光浆果 下界疣">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 药水</div>
+		<div class="article-header"><h1>药水</h1></div>
+		<p><strong>配方通式</strong>（无序）：</p>
+		<ul class="bullets">
+			<li><strong>次级</strong>：玻璃瓶 + 发光浆果 + 催化剂（合成台）</li>
+			<li><strong>正式</strong>：玻璃瓶 + 下界疣 + 普通萤石粉 + 催化剂</li>
+			<li><strong>丰沛</strong>：下界疣 + <strong>精炼萤石粉</strong> + 烈焰粉 + 催化剂（炼药锅+营火，约 5.5s 动画）</li>
+			<li><strong>强劲</strong>：下界疣 + <strong>强效萤石粉</strong> + <strong>烈焰棒</strong> + 催化剂</li>
+			<li>精炼荧石：萤石粉高炉 10 分钟；强效：萤石块高炉 20 分钟（堆叠 6）</li>
+			<li>火药 → 喷溅；龙息 → 滞留</li>
+		</ul>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>药水</th><th>催化剂</th><th>次级 / 正式（节选）</th><th>丰沛 / 强劲（炼药锅）</th></tr>
+			<tr><td>幸运</td><td>荧光墨囊</td><td>幸运 I/III · 10 分</td><td>幸运 4 / 6 · 10 分</td></tr>
+			<tr><td>水下速掘</td><td>海晶碎片</td><td>海豚恩惠+水下呼吸 150s/300s</td><td>同 450s / 600s（饥饿更短）</td></tr>
+			<tr><td>蛮牛之力</td><td>闪烁西瓜</td><td>力量 I/II + 抗性 + 吸收 · 3 分</td><td>力量 2/3 + 抗性 1 + 吸收 1/2</td></tr>
+			<tr><td>耐力</td><td>幻翼膜</td><td>速度+跳跃 I/II</td><td>速度/跳跃 2/3 · 450–600s</td></tr>
+			<tr><td>橡木之肤</td><td>树脂砖</td><td>抗性 I + 缓慢 II · 60–90s</td><td>抗性 1/2 · 120–150s</td></tr>
+			<tr><td>采矿</td><td>下界石英</td><td>急迫+夜视 + 黑暗</td><td>急迫 1/2 · 450s</td></tr>
+			<tr><td>魅力</td><td>金苹果</td><td>村庄英雄 + 不幸 + 反胃</td><td>英雄 4/6 · 300s</td></tr>
+			<tr><td>绝望</td><td>腐肉</td><td>虚弱+失明+饥饿 · 15s</td><td>虚弱/饥饿 2/3</td></tr>
+			<tr><td>无敌</td><td>爆裂紫颂果</td><td>虚弱 XI+抗性 XI+缓慢 VII · 5–8s</td><td>同 11–14s</td></tr>
+			<tr><td>魔力药水</td><td>青金石</td><td>恢复 <strong>1000 / 2000</strong></td><td><strong>4000 / 8000</strong>（药师加成最高 12000）</td></tr>
+			<tr><td>魔力再生</td><td>紫水晶碎片</td><td>1 / 2 分钟</td><td><strong>4 / 8 分钟</strong></td></tr>
+		</table>
+		</div>
+		<h3>对敌技能型药水（炼药锅 · 隐藏发光编码）</h3>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>药水</th><th>次级</th><th>正式</th><th>丰沛</th><th>强劲</th></tr>
+			<tr><td>余烬</td><td>点燃 5s + 2 伤</td><td>10s + 4 伤</td><td>20s + 8 伤</td><td>40s + 16 伤</td></tr>
+			<tr><td>霜冻</td><td>缓慢+冻结 2 伤</td><td>4 伤</td><td>8 伤 + 槽+2</td><td>16 伤 + 槽+3</td></tr>
+			<tr><td>剧毒 / 凋零</td><td>中毒/凋零 + 2 伤</td><td>2–4 伤</td><td>4–8 伤</td><td>8–16 伤</td></tr>
+			<tr><td>圣化</td><td>亡灵缓慢+虚弱+2 伤；活体吸收+清负面</td><td>4 伤</td><td>8 伤</td><td>16 伤</td></tr>
+			<tr><td>漂浮</td><td>漂浮 0+缓降+虚弱</td><td>漂浮 2</td><td>漂浮 4</td><td>漂浮 6</td></tr>
+			<tr><td>电击</td><td>反胃 + 1 道闪电</td><td>2 道</td><td>3 道</td><td>4 道</td></tr>
+		</table>
+		</div>
+		<h3>炼金材料</h3>
+		<ul class="bullets">
+			<li><strong>灵魂水晶</strong>（高炉）：绿宝石块→次级（耐久 250）· 钻石块→普通（500）· 下界合金块→高级（1000），均带经验修补</li>
+			<li><strong>精炼荧石粉</strong>：萤石粉高炉 · 用于丰沛；<strong>强效荧石粉</strong>：萤石块 · 用于强劲</li>
+			<li>鱼油：炼金师 3 银，制油原料</li>
+		</ul>
+		<div class="categories">分类：<a href="#potions">药水</a></div>
+	</article>
+
+	<!-- ============ 武器 ============ -->
+	<article class="article" id="weapons" data-search="武器 长剑 匕首 木棒 木盾 木叉 属性 合成">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 武器</div>
+		<div class="article-header"><h1>武器</h1></div>
+		<p><strong>长剑</strong>有序：材料×2 竖排 + 木棍（下界合金底排用钻石）。<strong>匕首</strong>：单材料 + 木棍。</p>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>长剑</th><th>伤害</th><th>攻速</th><th>横扫</th><th>移速</th><th>交互</th></tr>
+			<tr><td>石制 / 铜制</td><td class="mc-blue">+10</td><td class="mc-red">−3.3</td><td class="mc-blue">+0.5</td><td class="mc-red">−0.02</td><td class="mc-blue">+0.5</td></tr>
+			<tr><td>金制</td><td class="mc-blue">+8</td><td class="mc-red">−3.3</td><td class="mc-blue">+0.5</td><td class="mc-red">−0.02</td><td class="mc-blue">+0.5</td></tr>
+			<tr><td>铁制</td><td class="mc-blue">+12</td><td class="mc-red">−3.3</td><td class="mc-blue">+0.5</td><td class="mc-red">−0.02</td><td class="mc-blue">+0.5</td></tr>
+			<tr><td>钻石</td><td class="mc-blue">+14</td><td class="mc-red">−3.3</td><td class="mc-blue">+0.5</td><td class="mc-red">−0.02</td><td class="mc-blue">+0.5</td></tr>
+			<tr><td>下界合金</td><td class="mc-blue">+16</td><td class="mc-red">−3.3</td><td class="mc-blue">+0.5</td><td class="mc-red">−0.02</td><td class="mc-blue">+0.5</td></tr>
+		</table>
+		</div>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>匕首</th><th>伤害</th><th>攻速</th><th>横扫</th><th>移速</th><th>交互</th></tr>
+			<tr><td>石制 / 铜制</td><td class="mc-blue">+2.5</td><td class="mc-red">−1.7</td><td class="mc-red">−0.5</td><td class="mc-blue">+0.01</td><td class="mc-red">−1</td></tr>
+			<tr><td>金制</td><td class="mc-blue">+2</td><td class="mc-red">−1.7</td><td class="mc-red">−0.5</td><td class="mc-blue">+0.01</td><td class="mc-red">−1</td></tr>
+			<tr><td>铁制</td><td class="mc-blue">+3</td><td class="mc-red">−1.7</td><td class="mc-red">−0.5</td><td class="mc-blue">+0.01</td><td class="mc-red">−1</td></tr>
+			<tr><td>钻石</td><td class="mc-blue">+3.5</td><td class="mc-red">−1.7</td><td class="mc-red">−0.5</td><td class="mc-blue">+0.01</td><td class="mc-red">−1</td></tr>
+			<tr><td>下界合金</td><td class="mc-blue">+4</td><td class="mc-red">−1.7</td><td class="mc-red">−0.5</td><td class="mc-blue">+0.01</td><td class="mc-red">−1</td></tr>
+		</table>
+		</div>
+		<p><strong>木质兵器（极低耐久）：</strong>木棒 75 · 木盾 168 · 木叉 25。</p>
+		<p>铁匠货架另售命名武器：匕首、刺剑、阔剑、直剑、晨星锤、巨棍、倒刺三叉戟等，按低/中/高耐久标价（48 银 – 数金）。</p>
+		<div class="categories">分类：<a href="#weapons">武器</a></div>
+	</article>
+
+	<!-- ============ 盔甲 ============ -->
+	<article class="article" id="armor" data-search="盔甲 公会 骑士团 套装 机制 魔力 清除负面 跳跃">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 盔甲</div>
+		<div class="article-header"><h1>盔甲</h1></div>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>套装</th><th>属性加成</th><th>全套机制（脚本）</th></tr>
+			<tr><td>公羊公会</td><td>+0.15 跳跃 · +5 安全坠落</td><td>蓄力跳跃：约 100t 后 Jump Boost III → VI → IX → XI…，每档耗 100 魔力，actionbar 显示</td></tr>
+			<tr><td>美西螈公会</td><td>+3 氧气 · +0.25 水中移动</td><td>约每 20t 赋予海豚的恩惠 3s</td></tr>
+			<tr><td>骏马公会</td><td>+0.03 速度 · +0.25 台阶</td><td>食物≥8 时每 tick <strong>+1 魔力</strong></td></tr>
+			<tr><td>地居者公会</td><td>+0.25 潜行 · +0.25 破坏</td><td>30 格内有掉落物时触发念力（有 CD）</td></tr>
+			<tr><td>商人公会</td><td>+2 幸运</td><td>持续村庄英雄 3s</td></tr>
+			<tr><td>犰狳骑士团</td><td>+3 生命 · +4 韧性</td><td>耗 600 魔力：抗性 IV 4s + 缓慢 VI + 失明；2 格内敌人凋灵 2s</td></tr>
+			<tr><td>守卫骑士团</td><td>+1 伤害 · +0.25 击退</td><td>8 格内有敌人时充能，约 60t 后触发弹射物偏转（CD）</td></tr>
+			<tr><td>凋零骑士团</td><td>+2.5 击退抗性 · −0.25 燃烧</td><td>清除凋灵；有食物时再生 III 3s + 饥饿 V</td></tr>
+			<tr><td>紫水晶骑士团</td><td>+2.5 击退抗性 · +0.25 爆炸抗性</td><td>充能约 68t 且魔力≥1000：清除 18 种负面（中毒/凋灵/失明/漂浮/不祥等）耗 1000 魔力</td></tr>
+		</table>
+		</div>
+		<p>护甲匠货架出售「破岩者」锁链套装（中等耐久）等命名护甲；锻造锤可强化域外护甲。</p>
+		<h3>剧情解锁</h3>
+		<ul class="bullets">
+			<li>击败<strong>格里姆加</strong> → 修道院解锁<strong>僧侣纪尧姆</strong>（交易含「风化的集市钟」，持有时幸运+1，提示商人补货）</li>
+			<li>击败<strong>枯萎骨髓</strong> → 解锁<strong>塞德里克</strong>（进度 <code>save_cedric</code>），回暗木要塞售卖唱片（16 银/张）</li>
+			<li>具名 NPC（拉格纳/哈兰/菲奥娜/阿拉里克等）的货架部分烘焙在<strong>建筑 NBT</strong> 中，游戏内以实际货架为准</li>
+		</ul>
+		<div class="categories">分类：<a href="#armor">盔甲</a>｜<a href="#characters">NPC</a></div>
+	</article>
+
+	<!-- ============ 法术能力 ============ -->
+	<article class="article" id="spells" data-search="法术 余烬 寒冰 雷霆 力场 传送 繁育 破雾者 领域">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 法术与能力</div>
+		<div class="article-header"><h1>法术与能力</h1></div>
+		<h3>领域法术（阿拉里克等处购买 / 一次性）</h3>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>法术</th><th>范围/机制</th><th>持续</th></tr>
+			<tr><td>余烬之域</td><td>半径 5：每秒 1 点燃烧伤 + 点燃 15s；箭矢点燃</td><td>600t = 30s</td></tr>
+			<tr><td>寒冰之域</td><td>半径 5：每秒 0.5 冻结伤 + 缓慢 III 3s；火箭熄灭</td><td>30s</td></tr>
+			<tr><td>雷霆之域</td><td>半径 5：每秒 1/8 几率对附近敌人召唤闪电（落点可至 7 格）</td><td>30s</td></tr>
+			<tr><td>力场</td><td>半径 5 推斥非玩家；弹射物停止；玩家抗性 III 3s（半径 7）</td><td>30s</td></tr>
+			<tr><td>传送法术书</td><td>锚点 forceload + 绑定 link；仪式 250t；可带坐骑 + 最多 3 同伴 + TELEPORT 实体（须 24 格内）；消耗 1 本传送书</td><td>—</td></tr>
+		</table>
+		</div>
+		<p class="muted">场类技能统一免疫友方（队伍 DIREWOOD / companion 标签）。提示语：「已创建新的传送地点。」/「未创建地点。」</p>
+		<h3>内置能力</h3>
+		<ul class="bullets">
+			<li><strong>维度传送</strong>（破雾者，16000 魔力）：0=域外之地（主世界）1=熔岩深渊（下界）2=暗影之地（末地）；过低 Y 抬升；附缓降 15s</li>
+			<li><strong>繁育之石</strong>：魔力 <strong>8000</strong>、CD <strong>20 分钟</strong>；10 格内成年动物 InLove；30 格内动物被吸引；持续 30s</li>
+			<li><strong>鞘翅能力</strong>：烈焰鞘翅潜行激活，魔力 800/次</li>
+			<li><strong>生物群系试炼</strong>（需服主开启）：炎热叠层→火舌；寒冷叠层→霜冻；沙丘之子/霜裔可豁免</li>
+		</ul>
+		<div class="categories">分类：<a href="#spells">法术</a></div>
+	</article>
+
+	<!-- ============ 同伴坐骑 ============ -->
+	<article class="article" id="companions" data-search="同伴 傀儡 守卫 战狼 猎犬师 神秘马 马鞍 马铠 召唤 15 分钟 娜迦 芬尼克 炼狱夜行公马 乌木魂驹">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 同伴与坐骑</div>
+		<div class="article-header"><h1>同伴与坐骑</h1></div>
+		<p>召唤法术多为<strong>一次性</strong>，持续约 <strong>15 分钟</strong>。最大同时同伴数由符文决定（默认 1，上限 3）。</p>
+		<div class="mini-grid">
+			<div class="mini-item"><div class="t">元素狂暴傀儡</div><div class="d">冰/火/毒/雷 · 约 1 金 · 附加 II</div></div>
+			<div class="mini-item"><div class="t">剑/弓守卫</div><div class="d">焰/霜/毒/雷/充能 · 约 48 银</div></div>
+			<div class="mini-item"><div class="t">火花蜘蛛 / 烈焰蜘蛛</div><div class="d">电系 / 火系</div></div>
+			<div class="mini-item"><div class="t">烈焰元素</div><div class="d">Flame Atronach</div></div>
+			<div class="mini-item"><div class="t">恐熊 / 凶暴狼</div><div class="d">Dire Bear / Dire Wolf</div></div>
+			<div class="mini-item"><div class="t">娜迦女巫</div><div class="d">治疗 + 药水 · 24 银</div></div>
+			<div class="mini-item"><div class="t">芬尼克弩手</div><div class="d">远程协助 · 24 银</div></div>
+		</div>
+		<h3>可购战狼（狗舍 / 猎犬师）</h3>
+		<p>带活力/耐力/力量标签与能力（冰霜附加、火焰附加、治疗光环、击退、狂战士、流血、蜘蛛/生灵/亡灵克星等），价格 48 银 – 24 金；狼铠：皮革 / 板甲 / 防火 / 下界合金等。</p>
+		<h3>神秘坐骑与马具线</h3>
+		<ul class="bullets">
+			<li><strong>炼狱夜行公马</strong>：火/岩浆上加速与再生</li>
+			<li><strong>乌木魂驹</strong>：蓝焰寒体；踏灵魂沙/蓝冰加速；岩浆凝为玄武岩</li>
+			<li><strong>灰烬玄武攀兽</strong>：驴基底；跳跃强、安全坠落 16</li>
+			<li>脚本标注可能<strong>当前未启用</strong>；莫贝克斯笔记中的「神秘之心」可在铁砧强化马鞍/马铠</li>
+		<h3>马具数值（战利品表）</h3>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>马鞍</th><th>移速</th><th>跳跃</th><th>马铠</th></tr>
+			<tr><td>皮革</td><td>+0.025</td><td>+0.1</td><td rowspan="5">轻型 → 钢制 → 重型 → 板甲 → 下界合金</td></tr>
+			<tr><td>竞速</td><td>+0.05</td><td>+0.2</td></tr>
+			<tr><td>卓越</td><td>+0.075</td><td>+0.3</td></tr>
+			<tr><td>大师</td><td>+0.1</td><td>+0.4</td></tr>
+			<tr><td>神圣</td><td>+0.125</td><td>+0.5</td></tr>
+		</table>
+		</div>
+		<p class="muted">神秘马脚本标注当前禁用；马蹄铁附魔 horse_1/2/3 分别对应灵魂火加速、烈焰火加速抗性、玄武岩跳跃再生。生成率约 9/800（若启用）。</p>
+			<li>马贩另售多品种命名马（法拉贝拉矮马、安达卢西亚、比利时温血/挽马、阿拉伯马、利皮扎马等）</li>
+		</ul>
+		<div class="categories">分类：<a href="#companions">同伴</a></div>
+	</article>
+
+	<!-- ============ 神器 ============ -->
+	<article class="article" id="artifacts" data-search="神器 戒指 战锤 暗月 月纱 夜影 水晶盾 莫贝克斯 埃拉佐">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 神器与戒指</div>
+		<div class="article-header"><h1>神器与戒指</h1></div>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>名称</th><th>绑定 / 附魔</th><th>主要属性</th></tr>
+			<tr><td>重型战锤</td><td>落雷 · 公羊</td><td>+14 伤害 · −3.4 攻速 · +0.5 跳跃</td></tr>
+			<tr><td>深渊回响</td><td>海生 · 美西螈</td><td>+16 伤害 · −3.1 攻速 · +1 横扫</td></tr>
+			<tr><td>暗月巨剑（+铭刻）</td><td>巨剑术 · 骏马</td><td>+26 伤害 · −3.3 攻速 · +2 击退</td></tr>
+			<tr><td>矿工之爪（+铭刻）</td><td>地居者</td><td>+12 伤害 · +3 交互 · 破坏与潜行加成</td></tr>
+			<tr><td>鎏金匕首</td><td>悬赏追讨 · 商人</td><td>+7 伤害 · −1.7 攻速 · 潜行加速</td></tr>
+			<tr><td>噬魂者</td><td>力量/穿透 · 犰狳</td><td>+100% 盔甲 · +8 安全坠落</td></tr>
+			<tr><td>月纱武士刀（+铭刻）</td><td>流血+切腹 · 守卫</td><td>+8 伤害 · −1.8 攻速</td></tr>
+			<tr><td>夜影弓</td><td>黑刺箭 · 凋零骑士团</td><td>+50% 盔甲 · +0.25 跳跃 · +1 台阶</td></tr>
+			<tr><td>水晶盾</td><td>反击脉冲 · 紫水晶</td><td>+10 盔甲 · +4 最大生命</td></tr>
+			<tr><td>莫贝克斯的戒指</td><td><a href="#morbex">首领掉落</a></td><td>主手巨化增伤；副手缩小减益</td></tr>
+		</table>
+		</div>
+		<h3>云游神器戒指（绿宝石，96 金）</h3>
+		<ul class="bullets">
+			<li><strong>全视者埃拉佐之戒</strong>：提升魔力再生（装备时生效）</li>
+			<li><strong>热忱者西尔法里昂之戒</strong>：所受伤害转化为生命；需魔力</li>
+			<li><strong>精准者伊西尔德拉之戒</strong>：施法魔力消耗 <strong>−25%</strong></li>
+		</ul>
+		<div class="categories">分类：<a href="#artifacts">神器</a></div>
+	</article>
+
+	<!-- ============ 食物 ============ -->
+	<article class="article" id="food" data-search="食物 炖菜 麦酒 蜂蜜酒 热红酒 配方 效果">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 食物与酒饮</div>
+		<div class="article-header"><h1>食物与酒饮</h1></div>
+		<p>均为 9 格无序合成。炖菜 Lore 标明效果；酒饮为药水基底并含直接效果。</p>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>名称</th><th>材料</th><th>效果 / Lore</th></tr>
+			<tr><td>牛肉炖菜</td><td>胡萝卜×3、甜浆果、马铃薯×2、牛肉×2、碗</td><td>急迫 I · 力量 I（+饱和类脚本效果）</td></tr>
+			<tr><td>鸡肉蔬菜炖菜</td><td>胡萝卜×2、蘑菇、甜菜、马铃薯×2、鸡肉×2、碗</td><td>生命恢复 I · 速度 I</td></tr>
+			<tr><td>渔夫炖菜</td><td>甜菜×2、海带×2、甜浆果×2、鲑鱼、鳕鱼、碗</td><td>海豚的恩惠 I</td></tr>
+			<tr><td>羊肉大麦炖菜</td><td>胡萝卜×2、甜浆果、蜂蜜、小麦×2、羊肉×2、碗</td><td>生命提升 I · 抗性 I</td></tr>
+			<tr><td>豆香肠炖菜</td><td>胡萝卜×3、蘑菇×2、猪肉×2、可可豆、碗</td><td>速度 I · 跳跃提升 I</td></tr>
+			<tr><td>鹿肉炖菜</td><td>胡萝卜、蘑菇×2、蜂蜜、甜浆果×2、羊肉、牛肉、碗</td><td>力量 I · 抗性 I</td></tr>
+			<tr><td>麦酒</td><td>下界疣×3、蜂蜜、烈焰粉×2、金胡萝卜×3</td><td>急迫 II 5 分 · 伤害吸收 3 分 · 反胃</td></tr>
+			<tr><td>蜂蜜酒</td><td>下界疣×3、蜂蜜、小麦×2、发光浆果×3</td><td>力量 II 3 分 · 抗性 I 3 分 · 缓慢 II · 反胃</td></tr>
+			<tr><td>热红酒</td><td>下界疣×3、蜂蜜、恶魂之泪、闪烁西瓜、甜浆果×3</td><td>生命恢复 III 1 分 · 生命提升 I · 反胃</td></tr>
+			<tr><td>嚎叫者烈酒</td><td>猎犬师购买（3 银）</td><td>Lore：给男人和它最好的朋友带来饱食</td></tr>
+		</table>
+		</div>
+		<div class="categories">分类：<a href="#food">食物</a></div>
+	</article>
+
+	<!-- ============ 词缀强化货币 ============ -->
+	<article class="article" id="modifier" data-search="词缀 强化 耐久 锻造 磨刀石 锻造锤 锻造钳 0.5 4x 8x">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 词缀与强化</div>
+		<div class="article-header"><h1>词缀与强化</h1></div>
+		<h3>词缀品级</h3>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>品级</th><th>词缀</th></tr>
+			<tr><td>普通</td><td>易碎、劣质、脆弱、单薄、寻常、可靠</td></tr>
+			<tr><td>罕见</td><td>单薄、寻常、可靠、沉重、锋利、精磨</td></tr>
+			<tr><td>稀有</td><td>沉重、锋利、精磨、强化、纯净、卓越</td></tr>
+			<tr><td>史诗</td><td>大师之作、精美、传奇、神圣</td></tr>
+		</table>
+		</div>
+		<h3>耐久强化</h3>
+		<p>档位倍率：极低 0.5× · 低 1× · 中等 2× · 高 4× · 极高 8×。锻造台：金锭=中等，钻石=高，下界合金=极高。</p>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>物品</th><th>中等</th><th>高</th><th>极高</th></tr>
+			<tr><td>铁剑</td><td>500</td><td>750</td><td>1250</td></tr>
+			<tr><td>钻石剑</td><td>2061</td><td>2561</td><td>3561</td></tr>
+			<tr><td>下界合金剑</td><td>3031</td><td>4031</td><td>6031</td></tr>
+			<tr><td>弓 / 弩</td><td>634 / 715</td><td>884 / 965</td><td>1384 / 1465</td></tr>
+			<tr><td>重锤</td><td>1000</td><td>1500</td><td>2500</td></tr>
+			<tr><td>三叉戟</td><td>750</td><td>1250</td><td>2250（防火）</td></tr>
+			<tr><td>盾牌</td><td>836</td><td>1336</td><td>2336</td></tr>
+		</table>
+		</div>
+		<p><strong>强化工具（商人购买，约 1 金）：</strong>磨刀石（武器）· 锻造锤（盾/鞘翅盔甲）· 锻造钳（工具）· 制箭师的锉刀（弓弩）。Lore 注明「用于强化来自域外之地的…」。</p>
+		<div class="categories">分类：<a href="#modifier">强化</a></div>
+	</article>
+
+	<article class="article" id="currency" data-search="货币 银币 金币 换算 96">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 货币</div>
+		<div class="article-header"><h1>货币</h1></div>
+		<ul class="bullets">
+			<li><strong>银币</strong>＝铁粒堆叠 96；<strong>金币</strong>＝金粒堆叠 96</li>
+			<li>法恩迪尔：<strong>1 金 ↔ 96 银</strong></li>
+			<li>来源：地牢战利品、交易、首领、「悬赏追讨」附魔</li>
+			<li>进度：一组银币「小囤积者」；一组金币「大囤积者」</li>
+		</ul>
+		<div class="categories">分类：<a href="#currency">货币</a></div>
+	</article>
+
+	<article class="article" id="recipes" data-search="合成 配方 无限熔炉 木材 铜 种子 锁链 切石机">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 合成配方</div>
+		<div class="article-header"><h1>合成配方</h1></div>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>产物</th><th>配方</th></tr>
+			<tr><td>无限熔炉 / 高炉 / 烟熏炉</td><td>末影水晶×6 + 下界之星 + 下界合金锭×2 + 对应炉（近永久燃烧）</td></tr>
+			<tr><td>木炭块</td><td>木炭×9</td></tr>
+			<tr><td>镀金黑石</td><td>金粒×8 + 黑石</td></tr>
+			<tr><td>锁链盔甲</td><td>使用 <code>iron_chain</code> 合成四件</td></tr>
+			<tr><td>线 ← 白羊毛</td><td>无序</td></tr>
+			<tr><td>腐肉 → 兔皮</td><td>营火烧烤</td></tr>
+			<tr><td>种子方块系列</td><td>小麦种子 → 切石机（草/蕨/睡莲/滴水烛等）</td></tr>
+			<tr><td>平滑石英/砂岩/石等</td><td>高炉烧制</td></tr>
+		</table>
+		</div>
+		<p><strong>木材/铜切石机：</strong>12 种木材原木→木板/置物架/箱桶门；木板→楼梯台阶栅栏告示牌等；铜块四氧化阶段→门/活板门/栏杆/锁链。</p>
+		<div class="categories">分类：<a href="#recipes">配方</a></div>
+	</article>
+
+	<article class="article" id="trinkets" data-search="饰品 皮 戒指 护身符 回收 伊森伯特">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 饰品</div>
+		<div class="article-header"><h1>饰品</h1></div>
+		<p>主要向 <a href="#characters">伊森伯特</a> 出售；敌人类与生物类详见该节价格表。金戒指 5 金、护身符 4 银、银戒指 2 银、全家福/焦黑羽毛 1 银。</p>
+		<div class="categories">分类：<a href="#trinkets">物品</a></div>
+	</article>
+
+	<article class="article" id="arcane" data-search="奥术节点 祝福 神罚 潜行">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 奥术节点</div>
+		<div class="article-header"><h1>奥术节点</h1></div>
+		<h3>奥术节点祝福（潜行触发，CD 15 秒，失败率 10%）</h3>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>祝福</th><th>效果（代码）</th><th>失败惩罚示例</th></tr>
+			<tr><td>火焰抗性之兆</td><td>抗火 3 分钟</td><td>脚下放火</td></tr>
+			<tr><td>生命延长之兆</td><td>生命提升 4 · 3 分钟</td><td>虚弱 II 15s</td></tr>
+			<tr><td>快速治疗之兆</td><td>生命恢复 3 分钟</td><td>饥饿 II 15s</td></tr>
+			<tr><td>水下呼吸 / 夜视 / 强化抗性</td><td>对应效果 3 分钟</td><td>反胃 / 失明 / 凋零 3s</td></tr>
+			<tr><td>敏捷 / 力量之兆</td><td>速度 II / 力量 II · 3 分钟</td><td>缓慢 III / 挖掘疲劳 II 15s</td></tr>
+			<tr><td>魔力快速再生之兆</td><td>魔力加速极长（文案「20 分钟」，代码 72000t≈60 分，以游戏为准）</td><td>寄生 6s</td></tr>
+			<tr><td>霜裔 / 沙丘之子</td><td>寒冷/炎热群系中每秒生命提升+抗性+速度</td><td>触发霜冻/火舌 VFX</td></tr>
+		</table>
+		</div>
+		<p>节点 12 格内可获被动魔力加速约 60 秒。失败信息：「诸神的怒火将降临于你，因你的行径令他们不悦。」切换祝福会清除上一祝福。</p>
+		<div class="categories">分类：<a href="#arcane">魔法</a></div>
+	</article>
+
+	<article class="article" id="moon" data-search="月相 新月 满月 亡灵 作物 魔力加速">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 月相事件</div>
+		<div class="article-header"><h1>月相事件</h1></div>
+		<div class="wiki-table-wrap">
+		<table class="wiki">
+			<tr><th>月相</th><th>效果（脚本）</th></tr>
+			<tr><td class="mc-purple">新月</td><td>随机在亡灵/蜘蛛/幻翼/史莱姆处召唤隐身同类；10% 使怪物追踪距离升至 64；幻翼体型可放大约至 7.25，特殊个体可强制骑乘玩家 3s；按难度给敌人穿 lunar 套装强化</td></tr>
+			<tr><td class="mc-gold">满月</td><td><code>random_tick_speed=20</code>（作物疯长）；魔力加速几乎清零；幻翼点燃；约 10% 随机怪物虚弱 3s</td></tr>
+		</table>
+		</div>
+		<p>典籍《月相事件与天体的魔法本质》详述八相。生物群系试炼：炎热→火舌；寒冷→霜冻（服主开启 survival.mode 伤害时生效）。</p>
+		<div class="categories">分类：<a href="#moon">世界事件</a></div>
+	</article>
+
+	<article class="article" id="lore-books" data-search="典籍 图书 扎卡里乌斯 世界观">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 地牢典籍</div>
+		<div class="article-header"><h1>地牢典籍</h1></div>
+		<p>要塞图书馆可交互获取，作者多为扎卡里乌斯修士。</p>
+		<div class="mini-grid">
+			<div class="mini-item"><div class="t">论地牢与遗迹 / 论野兽之形</div><div class="d">废墟、试炼、不祥之兆</div></div>
+			<div class="mini-item"><div class="t">余烬石堡垒</div><div class="d">莫贝克斯咒语与浮岩要塞</div></div>
+			<div class="mini-item"><div class="t">黑石迷宫 / 黑井墓穴 / 灰石矿场</div><div class="d">各地牢背景</div></div>
+			<div class="mini-item"><div class="t">高峰修道院 / 泥湾蔓生洞穴</div><div class="d">圣树与水没墓穴</div></div>
+			<div class="mini-item"><div class="t">水晶女巫会 / 云游氏族</div><div class="d">三姐妹与三魔法派系</div></div>
+			<div class="mini-item"><div class="t">奥术节点 / 炼金术 / 月相事件</div><div class="d">祝福、药水等级、天体</div></div>
+			<div class="mini-item"><div class="t">莫贝克斯的笔记——熔岩深渊</div><div class="d">神秘之马与传送门计划</div></div>
+			<div class="mini-item"><div class="t">日志</div><div class="d">远古器物的低语</div></div>
+		</div>
+		<div class="categories">分类：<a href="#lore-books">背景</a></div>
+	</article>
+
+	<article class="article" id="advancements" data-search="进度 成就 列表">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 进度一览</div>
+		<div class="article-header"><h1>进度一览</h1></div>
+		<div class="adv-grid">
+			<div class="adv-item"><span></span><div><div class="t">墓石地牢</div><div class="d">故事就此开始……</div></div></div>
+			<div class="adv-item"><span></span><div><div class="t">这是个魔法世界</div><div class="d">你发现了一座失落的地牢</div></div></div>
+			<div class="adv-item"><span></span><div><div class="t">失而复得</div><div class="d">抵达余烬石堡垒</div></div></div>
+			<div class="adv-item"><span></span><div><div class="t">让他重回正轨</div><div class="d">找到灵魂碎片之一 · +50 XP</div></div></div>
+			<div class="adv-item"><span></span><div><div class="t">悲剧命运</div><div class="d">击败莫贝克斯</div></div></div>
+			<div class="adv-item"><span></span><div><div class="t">形形色色的商人</div><div class="d">要塞商人齐 · +500 XP</div></div></div>
+			<div class="adv-item"><span></span><div><div class="t">游商 / 全部 3 个派系</div><div class="d">吉普赛商人 · 云游首领</div></div></div>
+			<div class="adv-item"><span></span><div><div class="t">小 / 大囤积者</div><div class="d">96 银 / 96 金</div></div></div>
+			<div class="adv-item"><span></span><div><div class="t">强化工具</div><div class="d">集齐全部强化附魔</div></div></div>
+			<div class="adv-item"><span></span><div><div class="t">域外之地神器</div><div class="d">集齐全部神器</div></div></div>
+			<div class="adv-item"><span></span><div><div class="t">迷宫中心 / 真是一场苦战</div><div class="d">炽焰恶魔 / 格里姆加</div></div></div>
+			<div class="adv-item"><span></span><div><div class="t">八条腿 / 不再捉迷藏 / 旧骨</div><div class="d">育母之喉 / 暗影 / 枯萎骨髓</div></div></div>
+		</div>
+		<div class="categories">分类：<a href="#advancements">进度</a></div>
+	</article>
+
+	<article class="article" id="contributors" data-search="致谢 作者 Zacc headbodyscript 汉化">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 致谢</div>
+		<div class="article-header"><h1>致谢</h1></div>
+		<p>Zacc / ZaccMaster ｜ <a href="https://www.planetminecraft.com/member/headbodyscript/">headbodyscript</a></p>
+		<p class="mc-gray">Gravestone Dungeons 1.7 · pack id <code>gd_dp</code> · pack_format 15–94.1</p>
+		<p class="note">社区中文百科：版式仿 zh.minecraft.wiki；内容综合官方 Wiki 与数据包 1.7 源文件（function / recipe / loot / structure NBT / villager offers）。非官方作品。</p>
+		<div class="categories">分类：<a href="#contributors">元数据</a></div>
+	</article>
+
+	</main>
+</div>
+
+<footer class="wiki-footer">
+	墓石地牢 Wiki（仿中文 Minecraft Wiki）· 数据包 1.7 机制整理版
+</footer>
+
+<script>
+(function () {
+	/* —— 侧栏 —— */
+	var sidebar = document.getElementById("wikiSidebar");
+	var toggle = document.getElementById("tocToggle");
+	var links = Array.prototype.slice.call(document.querySelectorAll(".wiki-sidebar a"));
+	var navTargets = links.map(function (a) {
+		var id = a.getAttribute("href");
+		return id && id.charAt(0) === "#" ? document.querySelector(id) : null;
+	});
+
+	function onScroll() {
+		var y = (document.documentElement.scrollTop || document.body.scrollTop) + 100;
+		var idx = 0;
+		for (var i = 0; i < navTargets.length; i++) {
+			var t = navTargets[i];
+			if (t && !t.classList.contains("hidden-by-search") && t.offsetTop <= y) idx = i;
+		}
+		links.forEach(function (a, i) {
+			a.classList.toggle("active", i === idx);
+			var t = navTargets[i];
+			if (t) a.classList.toggle("dimmed", t.classList.contains("hidden-by-search"));
+		});
+	}
+	window.addEventListener("scroll", onScroll, { passive: true });
+	onScroll();
+
+	if (toggle && sidebar) {
+		if (window.matchMedia("(max-width: 800px)").matches) sidebar.classList.add("collapsed");
+		toggle.addEventListener("click", function () { sidebar.classList.toggle("collapsed"); });
+		sidebar.addEventListener("click", function (e) {
+			if (e.target.tagName === "A" && window.matchMedia("(max-width: 800px)").matches) {
+				sidebar.classList.add("collapsed");
+			}
+		});
+	}
+
+	/* —— 搜索（回滚后的简单实现）——
+	   1) 输入时只更新顶部结果列表，不隐藏正文、不滚动
+	   2) 索引含正文全文（标题页下方文字也能搜到）
+	   3) 回车/点击搜索：滚到结果区或第一个命中段落
+	*/
+	var box = document.getElementById("searchBox");
+	var btn = document.getElementById("searchBtn");
+	var panel = document.getElementById("searchPanel");
+	var list = document.getElementById("searchList");
+	var meta = document.getElementById("searchMeta");
+	var clearBtn = document.getElementById("searchClear");
+	var emptyBox = document.getElementById("searchEmpty");
+	var allArticles = Array.prototype.slice.call(document.querySelectorAll("main .article"));
+	var timer = null;
+	var lastHits = [];
+
+	function titleOf(art) {
+		var h = art.querySelector(".article-header h1") || art.querySelector("h1") || art.querySelector("h2");
+		return h ? h.textContent.replace(/\s+/g, " ").trim() : (art.id || "未命名");
+	}
+
+	function snippetOf(art, q) {
+		var text = (art.textContent || "").replace(/\s+/g, " ");
+		var i = text.toLowerCase().indexOf(q);
+		if (i < 0) {
+			var head = text.slice(0, 80);
+			return head + (text.length > 80 ? "…" : "");
+		}
+		var start = Math.max(0, i - 24);
+		var end = Math.min(text.length, i + q.length + 36);
+		return (start > 0 ? "…" : "") + text.slice(start, end) + (end < text.length ? "…" : "");
+	}
+
+	function escapeHtml(s) {
+		return String(s).replace(/[&<>"']/g, function (c) {
+			return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+		});
+	}
+
+	/* 全文索引：data-search + 整篇正文 */
+	var index = allArticles.map(function (art) {
+		var title = titleOf(art);
+		var body = (art.textContent || "").replace(/\s+/g, " ");
+		var data = art.getAttribute("data-search") || "";
+		return {
+			el: art,
+			id: art.id,
+			title: title,
+			hay: (title + " " + data + " " + body).toLowerCase(),
+			titleLower: title.toLowerCase(),
+			dataLower: data.toLowerCase(),
+			art: art
+		};
+	});
+
+	function scoreOf(item, q) {
+		if (item.titleLower.indexOf(q) !== -1) return 3;
+		if (item.dataLower.indexOf(q) !== -1) return 2;
+		if (item.hay.indexOf(q) !== -1) return 1;
+		return 0;
+	}
+
+	function showAllArticles() {
+		index.forEach(function (it) { it.el.classList.remove("hidden-by-search"); });
+	}
+
+	function renderPanel(q, hits) {
+		if (!panel || !list || !meta) return;
+
+		if (!q) {
+			panel.hidden = true;
+			if (emptyBox) emptyBox.hidden = true;
+			list.innerHTML = "";
+			lastHits = [];
+			return;
+		}
+
+		if (!hits.length) {
+			panel.hidden = true;
+			if (emptyBox) {
+				emptyBox.hidden = false;
+				emptyBox.textContent = "没有找到「" + q + "」。可尝试：莫贝克斯、符文、药水、首领、战狼。";
+			}
+			lastHits = [];
+			return;
+		}
+
+		if (emptyBox) emptyBox.hidden = true;
+		panel.hidden = false;
+		meta.textContent = "「" + q + "」 · " + hits.length + " 条（按标题 → 关键词 → 正文）";
+		list.innerHTML = "";
+
+		hits.forEach(function (h) {
+			var li = document.createElement("li");
+			var a = document.createElement("a");
+			a.href = "#" + h.item.id;
+			a.textContent = h.item.title;
+			a.title = h.snippet;
+			var sn = document.createElement("div");
+			sn.className = "sr-snip";
+			sn.textContent = h.snippet;
+			li.appendChild(a);
+			li.appendChild(sn);
+			a.addEventListener("click", function (e) {
+				e.preventDefault();
+				jumpTo(h.item.el);
+			});
+			list.appendChild(li);
+		});
+		lastHits = hits;
+	}
+
+	function jumpTo(el) {
+		if (!el) return;
+		el.classList.remove("hidden-by-search");
+		var top = el.getBoundingClientRect().top + window.pageYOffset - 72;
+		window.scrollTo(0, Math.max(0, top));
+	}
+
+	/* 输入：只算结果 + 画列表，禁止任何 scrollTo / 隐藏正文 */
+	function updateResultsOnInput() {
+		var q = (box.value || "").trim().toLowerCase().replace(/\s+/g, " ");
+		showAllArticles();
+		if (!q) {
+			renderPanel("", []);
+			onScroll();
+			return;
+		}
+		var hits = [];
+		index.forEach(function (it) {
+			var s = scoreOf(it, q);
+			if (s > 0) {
+				hits.push({
+					item: it,
+					score: s,
+					snippet: snippetOf(it.el, q)
+				});
+			}
+		});
+		hits.sort(function (a, b) {
+			if (b.score !== a.score) return b.score - a.score;
+			return index.indexOf(a.item) - index.indexOf(b.item);
+		});
+		renderPanel(q, hits);
+		/* 不滚动、不隐藏 —— 这是“输入时页面上跳”的根因修复 */
+	}
+
+	function goToResults() {
+		var q = (box.value || "").trim().toLowerCase().replace(/\s+/g, " ");
+		updateResultsOnInput();
+		if (!lastHits.length) {
+			if (emptyBox && !emptyBox.hidden) {
+				var t0 = emptyBox.getBoundingClientRect().top + window.pageYOffset - 72;
+				window.scrollTo(0, Math.max(0, t0));
+			}
+			return;
+		}
+		/* 优先滚到顶部结果面板 */
+		if (panel && !panel.hidden) {
+			var t1 = panel.getBoundingClientRect().top + window.pageYOffset - 72;
+			window.scrollTo(0, Math.max(0, t1));
+			return;
+		}
+		jumpTo(lastHits[0].item.el);
+	}
+
+	if (box) {
+		box.addEventListener("input", function () {
+			if (timer) clearTimeout(timer);
+			timer = setTimeout(updateResultsOnInput, 180);
+		});
+		box.addEventListener("keydown", function (e) {
+			if (e.key === "Enter") {
+				e.preventDefault();
+				if (timer) clearTimeout(timer);
+				goToResults();
+			} else if (e.key === "Escape") {
+				e.preventDefault();
+				box.value = "";
+				if (timer) clearTimeout(timer);
+				showAllArticles();
+				renderPanel("", []);
+				onScroll();
+				box.blur();
+			}
+		});
+	}
+	if (btn) {
+		btn.addEventListener("click", function (e) {
+			e.preventDefault();
+			if (timer) clearTimeout(timer);
+			goToResults();
+		});
+	}
+	if (clearBtn) {
+		clearBtn.addEventListener("click", function () {
+			if (box) box.value = "";
+			if (timer) clearTimeout(timer);
+			showAllArticles();
+			renderPanel("", []);
+			onScroll();
+			if (box) box.focus();
+		});
+	}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>废弃矿井大修 Wiki</title>
+<meta name="description" content="废弃矿井大修（Dungeons and Taverns — Mineshaft Overhaul）中文百科 · WenServer 服务器数据包"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/app.css" />
+</head>
+<body>
+
+<header class="wiki-header">
+	<div class="inner">
+		<a class="wiki-logo" href="../index.html">废弃矿井大修 Wiki<span>Dungeons and Taverns — Mineshaft Overhaul</span></a>
+		<button type="button" class="toc-toggle" id="tocToggle">目录</button>
+		<div class="wiki-search">
+			<input type="search" id="searchBox" placeholder="搜索条目…" aria-label="搜索" />
+			<button type="button" id="searchBtn">搜索</button>
+		</div>
+	</div>
+</header>
+
+<div class="wiki-shell" id="top">
+	<aside class="wiki-sidebar" id="wikiSidebar">
+		<div class="sb-title">目录</div>
+		<ul>
+			<li><a href="#introduction">简介</a></li>
+			<li><a href="#structures">结构变体</a></li>
+			<li><a href="#pieces">结构部件</a></li>
+			<li><a href="#notes">说明与兼容</a></li>
+			<li><a href="#loot-probs">掉落概率</a></li>
+		</ul>
+	</aside>
+	<main class="wiki-content">
+		<div class="back-bar">
+			<a class="back-home" href="../index.html">← 返回首页</a>
+			<span class="back-hub">WenServer Wiki</span>
+		</div>
+
+	<div id="searchPanel" class="search-panel" hidden>
+		<div class="sr-head">
+			<strong>搜索结果</strong>
+			<span id="searchMeta" class="sr-meta"></span>
+			<button type="button" id="searchClear" class="sr-clear">清除</button>
+		</div>
+		<p class="sr-hint">输入时只更新本列表，不会隐藏正文、也不会滚动页面。</p>
+		<ol id="searchList" class="sr-list"></ol>
+	</div>
+	<div id="searchEmpty" class="search-empty" hidden>没有找到匹配的条目。</div>
+
+	<article class="article" id="introduction" data-search="废弃矿井大修 Mineshaft Overhaul 矿井 mineshaft 大修">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 简介</div>
+		<div class="article-header"><h1>废弃矿井大修</h1><div class="sub">Mineshaft Overhaul</div></div>
+		<div class="infobox"><div class="ib-title">废弃矿井大修</div><table><tr><td class="k">英文名</td><td class="v">Dungeons and Taverns — Mineshaft Overhaul</td></tr><tr><td class="k">描述</td><td class="v">Structure datapack overhauling the Mineshafts</td></tr><tr><td class="k">pack_format</td><td class="v">[101, 1]（新格式）</td></tr><tr><td class="k">覆盖原版</td><td class="v">mineshaft · mineshaft_mesa</td></tr><tr><td class="k">新增稀有</td><td class="v">地表 / 锯齿山峰 / 石峰 矿井</td></tr><tr><td class="k">进度 / 函数 / lang</td><td class="v">无（纯结构与战利品包）</td></tr><tr><td class="k">Modrinth</td><td class="v">dungeons-and-taverns-mineshaft-overhaul</td></tr><tr><td class="k">作者</td><td class="v">NovaWostra</td></tr></table></div><p>独立替换/扩充原版<strong>废弃矿井</strong>：覆盖常规与恶地矿井，并为山峰与地表增加稀有变体。模组描述称新增 4 种稀有矿井。</p>
+	</article>
+
+	<article class="article" id="structures" data-search="结构变体 Mineshaft variants 矿井 恶地 山峰 地表 structure_set">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 结构变体</div>
+		<div class="article-header"><h1>结构变体</h1><div class="sub">Mineshaft variants</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>结构 ID</th><th>建议中文</th><th>群系</th><th>结构集 spacing / sep</th></tr><tr><td><code>minecraft:mineshaft</code></td><td>废弃矿井（大修）</td><td><code>#nova_structures:mineshaft</code></td><td>mineshafts · 15 / 5 · salt 594839393</td></tr><tr><td><code>minecraft:mineshaft_mesa</code></td><td>恶地矿井（大修）</td><td>badlands 集合</td><td>special · 25 / 10</td></tr><tr><td><code>mineshaft_jaggedpeak</code></td><td>锯齿山峰矿井</td><td>jagged / frozen peaks</td><td>special · 25 / 10</td></tr><tr><td><code>mineshaft_stonepeak</code></td><td>石峰矿井</td><td>stony peaks</td><td>special · 25 / 10</td></tr><tr><td><code>mineshaft_surface</code></td><td>地表矿井</td><td>mineshaft 群系标签</td><td>surface · 70 / 30 · salt 89594003</td></tr></table></div><p>排除区：特殊与地表矿井组均有村庄 exclusion（chunk_count 15）。</p><h3>群系标签 <code>#nova_structures:mineshaft</code></h3><ul class="bullets"><li>is_beach / is_river / is_taiga / is_forest / is_badlands / is_hill / is_jungle / is_savanna</li><li>mushroom_fields · ice_spikes · dripstone_caves · lush_caves · snowy_plains · plains · sunflower_plains · desert</li></ul>
+	</article>
+
+	<article class="article" id="pieces" data-search="结构部件 Template pieces 部件 刷怪笼 战利品 陶罐 考古">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 结构部件</div>
+		<div class="article-header"><h1>结构部件</h1><div class="sub">Template pieces</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>主题</th><th>内容</th></tr><tr><td>normal 常规矿井</td><td>spawner_skeleton / zombie / spider</td></tr><tr><td>badland 恶地</td><td>dirtroom_1–4、刷怪笼、走廊/交叉/死路/特殊矿脉、deco、sideroom</td></tr><tr><td>jaggedpeak 锯齿山峰</td><td>dirtroom_1–4、刷怪笼、mineshaft / deco / sideroom</td></tr><tr><td>stonepeak 石峰</td><td>dirtroom_1–4、刷怪笼、sideroom</td></tr><tr><td>surface 地表</td><td>dirtroom_1–4、主线 mainline、特殊房（金/铁/铜/青金/红石）、deco、sideroom</td></tr></table></div><h3>战利品</h3><ul class="bullets"><li><code>chests/mineshaft_overhaul/barrel</code>：钻石、绿宝石、青金石、粗金/铁/铜、发光浆果、土豆、铁轨系列、火把、煤、沙、火药、圆石</li><li><code>pots/mineshaft_overhaul/pot</code>：矿井陶罐</li><li><code>archeology/mineshaft_rubble</code>：附魔书、唱片 13/11/cat/blocks、耐久附魔钻石镐/锹</li></ul>
+	</article>
+
+	<article class="article" id="notes" data-search="说明与兼容 Notes 兼容 lang 新建世界">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 说明</div>
+		<div class="article-header"><h1>说明与兼容</h1><div class="sub">Notes</div></div>
+		<ul class="bullets"><li>本包<strong>无</strong>自带 lang / 进度 / 函数；中文名为 Wiki 建议译名</li><li>worldgen 仅在新建世界时读取</li><li>与主包 DnT 5.1.0 可共存（命名空间同为 nova_structures）</li><li>NeoForge / Fabric 等多加载器打包（META-INF）</li></ul>
+	</article>
+
+
+	<article class="article" id="loot-probs" data-search="宝箱概率与刷怪 Loot &amp; spawners 概率 矿井 宝箱 刷怪笼 陶罐">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 掉落概率</div>
+		<div class="article-header"><h1>宝箱概率与刷怪</h1><div class="sub">Loot & spawners</div></div>
+		
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>表</th><th>内容</th><th>概率说明</th></tr><tr><td>mineshaft_overhaul/barrel</td><td>钻石、绿宝石、青金石、粗金/铁/铜、发光浆果、土豆、铁轨系列、火把、煤、沙、火药、圆石</td><td>加权掉落，粗矿权重在 DnT 体系中偏高</td></tr><tr><td>pots/mineshaft_overhaul/pot</td><td>矿井陶罐</td><td>小型掉落</td></tr><tr><td>archeology/mineshaft_rubble</td><td>附魔书、唱片 13/11/cat/blocks、耐久附魔钻石镐/锹</td><td>考古刷取</td></tr></table></div>
+		<h3>怪物机制</h3>
+		<ul class="bullets">
+			<li>各变体结构含<strong>骷髅 / 僵尸 / 蜘蛛</strong>刷怪笼片段</li>
+			<li>地表矿井特殊房：金/铁/铜/青金/红石矿脉房</li>
+			<li>无自定义 Boss 逻辑（纯结构包）</li>
+		</ul>
+	
+	</article>
+	</main>
+</div>
+
+<footer class="wiki-footer">
+	废弃矿井大修 Wiki · 仿中文 Minecraft Wiki 版式 · 服务器数据包资料
+</footer>
+
+<script>
+(function () {
+	var sidebar = document.getElementById("wikiSidebar");
+	var toggle = document.getElementById("tocToggle");
+	var links = Array.prototype.slice.call(document.querySelectorAll(".wiki-sidebar a"));
+	var navTargets = links.map(function (a) {
+		var id = a.getAttribute("href");
+		return id && id.charAt(0) === "#" ? document.querySelector(id) : null;
+	});
+	function onScroll() {
+		var y = (document.documentElement.scrollTop || document.body.scrollTop) + 100;
+		var idx = 0;
+		for (var i = 0; i < navTargets.length; i++) {
+			var t = navTargets[i];
+			if (t && !t.classList.contains("hidden-by-search") && t.offsetTop <= y) idx = i;
+		}
+		links.forEach(function (a, i) {
+			a.classList.toggle("active", i === idx);
+			var t = navTargets[i];
+			if (t) a.classList.toggle("dimmed", t.classList.contains("hidden-by-search"));
+		});
+	}
+	window.addEventListener("scroll", onScroll, { passive: true });
+	onScroll();
+	if (toggle && sidebar) {
+		if (window.matchMedia("(max-width: 800px)").matches) sidebar.classList.add("collapsed");
+		toggle.addEventListener("click", function () { sidebar.classList.toggle("collapsed"); });
+	}
+	var box = document.getElementById("searchBox");
+	var btn = document.getElementById("searchBtn");
+	var panel = document.getElementById("searchPanel");
+	var list = document.getElementById("searchList");
+	var meta = document.getElementById("searchMeta");
+	var clearBtn = document.getElementById("searchClear");
+	var emptyBox = document.getElementById("searchEmpty");
+	var allArticles = Array.prototype.slice.call(document.querySelectorAll("main .article"));
+	var timer = null;
+	var lastHits = [];
+	function titleOf(art) {
+		var h = art.querySelector(".article-header h1") || art.querySelector("h1") || art.querySelector("h2");
+		return h ? h.textContent.replace(/\s+/g, " ").trim() : (art.id || "未命名");
+	}
+	function snippetOf(art, q) {
+		var text = (art.textContent || "").replace(/\s+/g, " ");
+		var i = text.toLowerCase().indexOf(q);
+		if (i < 0) return text.slice(0, 80) + (text.length > 80 ? "…" : "");
+		var start = Math.max(0, i - 24);
+		var end = Math.min(text.length, i + q.length + 36);
+		return (start > 0 ? "…" : "") + text.slice(start, end) + (end < text.length ? "…" : "");
+	}
+	var index = allArticles.map(function (art) {
+		var title = titleOf(art);
+		var body = (art.textContent || "").replace(/\s+/g, " ");
+		var data = art.getAttribute("data-search") || "";
+		return { el: art, id: art.id, title: title,
+			hay: (title + " " + data + " " + body).toLowerCase(),
+			titleLower: title.toLowerCase(), dataLower: data.toLowerCase() };
+	});
+	function scoreOf(item, q) {
+		if (item.titleLower.indexOf(q) !== -1) return 3;
+		if (item.dataLower.indexOf(q) !== -1) return 2;
+		if (item.hay.indexOf(q) !== -1) return 1;
+		return 0;
+	}
+	function showAllArticles() {
+		index.forEach(function (it) { it.el.classList.remove("hidden-by-search"); });
+	}
+	function renderPanel(q, hits) {
+		if (!panel || !list || !meta) return;
+		if (!q) { panel.hidden = true; if (emptyBox) emptyBox.hidden = true; list.innerHTML = ""; lastHits = []; return; }
+		if (!hits.length) {
+			panel.hidden = true;
+			if (emptyBox) { emptyBox.hidden = false; emptyBox.textContent = "没有找到「" + q + "」。"; }
+			lastHits = []; return;
+		}
+		if (emptyBox) emptyBox.hidden = true;
+		panel.hidden = false;
+		meta.textContent = "「" + q + "」 · " + hits.length + " 条";
+		list.innerHTML = "";
+		hits.forEach(function (h) {
+			var li = document.createElement("li");
+			var a = document.createElement("a");
+			a.href = "#" + h.item.id; a.textContent = h.item.title; a.title = h.snippet;
+			var sn = document.createElement("div"); sn.className = "sr-snip"; sn.textContent = h.snippet;
+			li.appendChild(a); li.appendChild(sn);
+			a.addEventListener("click", function (e) {
+				e.preventDefault();
+				var el = document.getElementById(h.item.id);
+				if (el) el.scrollIntoView({ block: "start" });
+			});
+			list.appendChild(li);
+		});
+		lastHits = hits;
+	}
+	function updateResultsOnInput() {
+		var q = (box.value || "").trim().toLowerCase().replace(/\s+/g, " ");
+		showAllArticles();
+		if (!q) { renderPanel("", []); onScroll(); return; }
+		var hits = [];
+		index.forEach(function (it) {
+			var s = scoreOf(it, q);
+			if (s > 0) hits.push({ item: it, score: s, snippet: snippetOf(it.el, q) });
+		});
+		hits.sort(function (a, b) {
+			if (b.score !== a.score) return b.score - a.score;
+			return index.indexOf(a.item) - index.indexOf(b.item);
+		});
+		renderPanel(q, hits);
+	}
+	function jumpTo(el) {
+		if (!el) return;
+		el.classList.remove("hidden-by-search");
+		window.scrollTo(0, Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - 72));
+	}
+	function goToResults() {
+		updateResultsOnInput();
+		if (!lastHits.length) {
+			if (emptyBox && !emptyBox.hidden)
+				window.scrollTo(0, Math.max(0, emptyBox.getBoundingClientRect().top + window.pageYOffset - 72));
+			return;
+		}
+		if (panel && !panel.hidden) {
+			window.scrollTo(0, Math.max(0, panel.getBoundingClientRect().top + window.pageYOffset - 72));
+			return;
+		}
+		jumpTo(lastHits[0].item.el);
+	}
+	if (box) {
+		box.addEventListener("input", function () {
+			if (timer) clearTimeout(timer);
+			timer = setTimeout(updateResultsOnInput, 180);
+		});
+		box.addEventListener("keydown", function (e) {
+			if (e.key === "Enter") { e.preventDefault(); if (timer) clearTimeout(timer); goToResults(); }
+			else if (e.key === "Escape") {
+				e.preventDefault(); box.value = "";
+				if (timer) clearTimeout(timer);
+				showAllArticles(); renderPanel("", []); onScroll(); box.blur();
+			}
+		});
+	}
+	if (btn) btn.addEventListener("click", function (e) { e.preventDefault(); if (timer) clearTimeout(timer); goToResults(); });
+	if (clearBtn) clearBtn.addEventListener("click", function () {
+		if (box) box.value = "";
+		if (timer) clearTimeout(timer);
+		showAllArticles(); renderPanel("", []); onScroll();
+		if (box) box.focus();
+	});
+})();
+</script>
+</body>
+</html>

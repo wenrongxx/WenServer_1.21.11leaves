@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Reda 更多结构 Wiki</title>
+<meta name="description" content="Reda 更多结构（Red&#x27;s More Structures）中文百科 · WenServer 服务器数据包"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/app.css" />
+</head>
+<body>
+
+<header class="wiki-header">
+	<div class="inner">
+		<a class="wiki-logo" href="../index.html">Reda 更多结构 Wiki<span>Red&#x27;s More Structures</span></a>
+		<button type="button" class="toc-toggle" id="tocToggle">目录</button>
+		<div class="wiki-search">
+			<input type="search" id="searchBox" placeholder="搜索条目…" aria-label="搜索" />
+			<button type="button" id="searchBtn">搜索</button>
+		</div>
+	</div>
+</header>
+
+<div class="wiki-shell" id="top">
+	<aside class="wiki-sidebar" id="wikiSidebar">
+		<div class="sb-title">目录</div>
+		<ul>
+			<li><a href="#introduction">简介</a></li>
+			<li><a href="#structures">结构一览</a></li>
+			<li><a href="#loot">战利品</a></li>
+			<li><a href="#config">配置指南</a></li>
+			<li><a href="#loot-probs">掉落概率</a></li>
+		</ul>
+	</aside>
+	<main class="wiki-content">
+		<div class="back-bar">
+			<a class="back-home" href="../index.html">← 返回首页</a>
+			<span class="back-hub">WenServer Wiki</span>
+		</div>
+
+	<div id="searchPanel" class="search-panel" hidden>
+		<div class="sr-head">
+			<strong>搜索结果</strong>
+			<span id="searchMeta" class="sr-meta"></span>
+			<button type="button" id="searchClear" class="sr-clear">清除</button>
+		</div>
+		<p class="sr-hint">输入时只更新本列表，不会隐藏正文、也不会滚动页面。</p>
+		<ol id="searchList" class="sr-list"></ol>
+	</div>
+	<div id="searchEmpty" class="search-empty" hidden>没有找到匹配的条目。</div>
+
+	<article class="article" id="introduction" data-search="Reda 更多结构 Red&#x27;s More Structures 1.1.1 Reda structures 神谕 金字塔 Herobrine 采伐">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 简介</div>
+		<div class="article-header"><h1>Reda 更多结构</h1><div class="sub">Red's More Structures 1.1.1</div></div>
+		<div class="infobox"><div class="ib-title">Reda 更多结构</div><table><tr><td class="k">英文名</td><td class="v">Red's More Structures 1.1.1</td></tr><tr><td class="k">数据包描述</td><td class="v">Reds More Structures 1.21.11</td></tr><tr><td class="k">作者</td><td class="v">RedStone Games（redstonegamesb）</td></tr><tr><td class="k">命名空间</td><td class="v"><code>redsmorestructures</code>（v1.1.1 由 <code>red</code> 迁移）</td></tr><tr><td class="k">兼容</td><td class="v">Minecraft 1.21.9 – 1.21.11 · pack_format 94.1</td></tr><tr><td class="k">结构</td><td class="v">20 个 worldgen + 模板池变体</td></tr><tr><td class="k">战利品表</td><td class="v">loot · loot2 · lootb · lootbl · lootbo · tower1 · tower2</td></tr><tr><td class="k">语言文件</td><td class="v">无；中文名为百科译名</td></tr><tr><td class="k">Modrinth</td><td class="v">reds-more-structures</td></tr></table></div><p>补充主世界兴趣点：神谕所、金字塔、狮身人面像、采伐场、掠夺者营地与雕像。无自定义进度与函数，属「刷点兴趣点」型结构包。changelog 标注 2026-04-03 发布。</p>
+	</article>
+
+	<article class="article" id="structures" data-search="结构一览 20 structures 结构 神谕 采伐场 雕像 掠夺者 金字塔 Herobrine">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 结构一览</div>
+		<div class="article-header"><h1>结构一览</h1><div class="sub">20 structures</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><colgroup><col style="width:32%"><col style="width:24%"><col style="width:14%"><col style="width:30%"></colgroup><tr><th>结构（ID）</th><th>主要群系</th><th>spacing/sep</th><th>备注</th></tr><tr><td><div class="cell-stack"><strong>废弃房屋</strong><span class="id-line">redsmorestructures:abandoned_house</span></div></td><td>多森林/平原</td><td>32/26</td><td>女巫 2–3 · 排除村庄</td></tr><tr><td><div class="cell-stack"><strong>海滩房屋</strong><span class="id-line">redsmorestructures:beach_house</span></div></td><td>海滩/石滩/雪滩</td><td>12/10</td><td>—</td></tr><tr><td><div class="cell-stack"><strong>大型神谕所</strong><span class="id-line">redsmorestructures:big_oracle</span></div></td><td>山峰/树林/雪坡</td><td>24/12</td><td>排除 Herobrine 雕像</td></tr><tr><td><div class="cell-stack"><strong>白桦林砍伐地</strong><span class="id-line">redsmorestructures:birch_deforestation</span></div></td><td>白桦林</td><td>38/36</td><td>排除村庄/塔/废弃屋</td></tr><tr><td><div class="cell-stack"><strong>黑暗之塔</strong><span class="id-line">redsmorestructures:dark_tower</span></div></td><td>森林等 13 群系</td><td>42/24</td><td>掠夺者 2–3 · freq 0.5</td></tr><tr><td><div class="cell-stack"><strong>沙漠金字塔</strong><span class="id-line">redsmorestructures:desert_pyramid</span></div></td><td>沙漠</td><td>32/26</td><td>排除村庄</td></tr><tr><td><div class="cell-stack"><strong>花海神谕所</strong><span class="id-line">redsmorestructures:flower_oracle</span></div></td><td>草甸/花林/向日葵平原</td><td>24/18</td><td>排除村庄</td></tr><tr><td><div class="cell-stack"><strong>森林砍伐地</strong><span class="id-line">redsmorestructures:forest_deforestation</span></div></td><td>森林</td><td>38/36</td><td>排除村庄/塔/废弃屋</td></tr><tr><td><div class="cell-stack"><strong>Herobrine 雕像</strong><span class="id-line">redsmorestructures:herobrine_statue</span></div></td><td>山地/热带草原</td><td>34/18</td><td>—</td></tr><tr><td><div class="cell-stack"><strong>丛林砍伐地</strong><span class="id-line">redsmorestructures:jungle_deforestation</span></div></td><td>丛林</td><td>38/36</td><td>排除村庄/塔/废弃屋</td></tr><tr><td><div class="cell-stack"><strong>丛林金字塔</strong><span class="id-line">redsmorestructures:jungle_pyramid</span></div></td><td>丛林/竹林</td><td>28/18</td><td>bury · Y −15~−10</td></tr><tr><td><div class="cell-stack"><strong>万神殿</strong><span class="id-line">redsmorestructures:patheon</span></div></td><td>沙漠</td><td>32/26</td><td>排除村庄/沙漠金字塔</td></tr><tr><td><div class="cell-stack"><strong>平原神谕所</strong><span class="id-line">redsmorestructures:plains_oracle</span></div></td><td>平原</td><td>36/24</td><td>freq 0.6 · 排除村庄</td></tr><tr><td><div class="cell-stack"><strong>雪原神谕所</strong><span class="id-line">redsmorestructures:snowy_oracle</span></div></td><td>雪原/峡谷/针叶林</td><td>26/24</td><td>排除村庄 chunk3</td></tr><tr><td><div class="cell-stack"><strong>狮身人面像</strong><span class="id-line">redsmorestructures:sphinx</span></div></td><td>沙漠</td><td>26/20</td><td>—</td></tr><tr><td><div class="cell-stack"><strong>雕像</strong><span class="id-line">redsmorestructures:statue</span></div></td><td>多森林/平原 16 群系</td><td>48/46</td><td>排除村庄/塔/神谕</td></tr><tr><td><div class="cell-stack"><strong>雕像 II</strong><span class="id-line">redsmorestructures:statue2</span></div></td><td>山峰/树林/迎风丘</td><td>36/30</td><td>—</td></tr><tr><td><div class="cell-stack"><strong>沼泽掠夺者营地</strong><span class="id-line">redsmorestructures:swamp_pillager</span></div></td><td>沼泽</td><td>32/16</td><td>排除村庄/塔/废弃屋</td></tr><tr><td><div class="cell-stack"><strong>红树林掠夺者营地</strong><span class="id-line">redsmorestructures:swamp_pillager_mangrove</span></div></td><td>红树林沼泽</td><td>32/16</td><td>同上</td></tr><tr><td><div class="cell-stack"><strong>针叶林砍伐地</strong><span class="id-line">redsmorestructures:taiga_deforestation</span></div></td><td>针叶林</td><td>38/36</td><td>排除村庄/塔/废弃屋</td></tr></table></div><h3>模板池变体（无独立 worldgen JSON）</h3><div class="mini-grid"><div class="mini-item"><div class="t">darktower2</div><div class="d">黑暗之塔 II</div></div><div class="mini-item"><div class="t">pyramid2</div><div class="d">金字塔 II</div></div><div class="mini-item"><div class="t">patheon2</div><div class="d">万神殿 II</div></div><div class="mini-item"><div class="t">swamp_pillager2</div><div class="d">沼泽掠夺者 II</div></div><div class="mini-item"><div class="t">swamp_pillager_m2</div><div class="d">红树林掠夺者 II</div></div></div><p class="muted">v1.1.1 调整：废弃房屋 36/18→32/26；平原神谕 separation 18→24、frequency 0.4→0.6；全部结构新 salt。</p>
+	</article>
+
+	<article class="article" id="loot" data-search="战利品 Loot 战利品 宝箱 塔">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 战利品</div>
+		<div class="article-header"><h1>战利品</h1><div class="sub">Loot</div></div>
+		<ul class="bullets"><li><code>loot</code> / <code>loot2</code>：通用宝箱 — 钻石、金苹果/附魔金苹果、铁/金锭、绿宝石、青金石、钻石装备 + 随机附魔书</li><li><code>lootb</code> / <code>lootbl</code> / <code>lootbo</code>：变体宝箱</li><li><code>tower1</code> / <code>tower2</code>：塔层 — 弓/弩/命名牌/锁链甲/皮甲等</li><li>v1.1.1 平衡：粗铁 40→55 · 粗金 25→40 · 粗铜 35→50；锭类与铁制工具/盾权重下调</li></ul>
+	</article>
+
+	<article class="article" id="config" data-search="配置指南 Config config spacing separation 禁用 结构">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 配置</div>
+		<div class="article-header"><h1>配置指南</h1><div class="sub">Config</div></div>
+		<p>路径：<code>data/redsmorestructures/worldgen/structure_set/</code></p><div class="wiki-table-wrap"><table class="wiki"><tr><th>参数</th><th>含义</th><th>示例</th></tr><tr><td><code>spacing</code></td><td>生成尝试间距（区块），越大越稀有</td><td>32</td></tr><tr><td><code>separation</code></td><td>两结构最小间距（区块）</td><td>26</td></tr><tr><td><code>chunk_count</code></td><td>排除区大小（区块）</td><td>5</td></tr><tr><td><code>weight</code></td><td>结构集内相对概率</td><td>1</td></tr></table></div><h3>推荐频率</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>频率</th><th>spacing</th><th>separation</th></tr><tr><td>非常常见</td><td>16</td><td>12</td></tr><tr><td>常见</td><td>24</td><td>18</td></tr><tr><td>默认</td><td>32</td><td>26</td></tr><tr><td>稀有</td><td>48</td><td>36</td></tr><tr><td>非常稀有</td><td>64</td><td>48</td></tr></table></div><h3>禁用结构</h3><ol class="numbered"><li>从 structure_set JSON 的 <code>structures</code> 数组移除条目</li><li>直接删除 <code>structure_set/NAME.json</code></li><li>在 <code>worldgen/structure/NAME.json</code> 中改 <code>biomes</code> 为无效群系（如 <code>minecraft:the_end</code>）</li></ol><div class="note">worldgen 仅在<strong>新建世界</strong>时读取；改 JSON 前请备份并校验合法性。config.txt 文档与磁盘 JSON 可能不完全一致（文档写合并集，实际多为单结构文件），以文件为准。</div>
+	</article>
+
+
+	<article class="article" id="loot-probs" data-search="宝箱概率与怪物 Loot &amp; mobs 概率 宝箱 掉落 女巫 掠夺者">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 掉落概率</div>
+		<div class="article-header"><h1>宝箱概率与怪物</h1><div class="sub">Loot & mobs</div></div>
+		
+		<h3>宝箱表概率（约）</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>表</th><th>典型内容</th><th>说明</th></tr><tr><td>loot / loot2</td><td>钻石、金苹果/附魔金苹果、铁/金锭、绿宝石、青金石、钻石装备+随机附魔书</td><td>通用宝箱</td></tr><tr><td>lootb / lootbl / lootbo</td><td>变体宝箱</td><td>同主题不同权重</td></tr><tr><td>tower1 / tower2</td><td>弓/弩/命名牌/锁链甲/皮甲</td><td>塔类 2–4 rolls</td></tr></table></div>
+		<p>v1.1.1 权重调整：粗铁 40→55、粗金 25→40、粗铜 35→50；锭类与铁制工具/盾下调——探索时<strong>更易获得粗矿</strong>。</p>
+		<h3>怪物机制</h3>
+		<ul class="bullets">
+			<li><strong>废弃房屋</strong>：刷怪覆盖女巫 2–3</li>
+			<li><strong>黑暗之塔</strong>：掠夺者 2–3</li>
+			<li>其余兴趣点多为建筑/雕像，无特殊 Boss 脚本</li>
+		</ul>
+	
+	</article>
+	</main>
+</div>
+
+<footer class="wiki-footer">
+	Reda 更多结构 Wiki · 仿中文 Minecraft Wiki 版式 · 服务器数据包资料
+</footer>
+
+<script>
+(function () {
+	var sidebar = document.getElementById("wikiSidebar");
+	var toggle = document.getElementById("tocToggle");
+	var links = Array.prototype.slice.call(document.querySelectorAll(".wiki-sidebar a"));
+	var navTargets = links.map(function (a) {
+		var id = a.getAttribute("href");
+		return id && id.charAt(0) === "#" ? document.querySelector(id) : null;
+	});
+	function onScroll() {
+		var y = (document.documentElement.scrollTop || document.body.scrollTop) + 100;
+		var idx = 0;
+		for (var i = 0; i < navTargets.length; i++) {
+			var t = navTargets[i];
+			if (t && !t.classList.contains("hidden-by-search") && t.offsetTop <= y) idx = i;
+		}
+		links.forEach(function (a, i) {
+			a.classList.toggle("active", i === idx);
+			var t = navTargets[i];
+			if (t) a.classList.toggle("dimmed", t.classList.contains("hidden-by-search"));
+		});
+	}
+	window.addEventListener("scroll", onScroll, { passive: true });
+	onScroll();
+	if (toggle && sidebar) {
+		if (window.matchMedia("(max-width: 800px)").matches) sidebar.classList.add("collapsed");
+		toggle.addEventListener("click", function () { sidebar.classList.toggle("collapsed"); });
+	}
+	var box = document.getElementById("searchBox");
+	var btn = document.getElementById("searchBtn");
+	var panel = document.getElementById("searchPanel");
+	var list = document.getElementById("searchList");
+	var meta = document.getElementById("searchMeta");
+	var clearBtn = document.getElementById("searchClear");
+	var emptyBox = document.getElementById("searchEmpty");
+	var allArticles = Array.prototype.slice.call(document.querySelectorAll("main .article"));
+	var timer = null;
+	var lastHits = [];
+	function titleOf(art) {
+		var h = art.querySelector(".article-header h1") || art.querySelector("h1") || art.querySelector("h2");
+		return h ? h.textContent.replace(/\s+/g, " ").trim() : (art.id || "未命名");
+	}
+	function snippetOf(art, q) {
+		var text = (art.textContent || "").replace(/\s+/g, " ");
+		var i = text.toLowerCase().indexOf(q);
+		if (i < 0) return text.slice(0, 80) + (text.length > 80 ? "…" : "");
+		var start = Math.max(0, i - 24);
+		var end = Math.min(text.length, i + q.length + 36);
+		return (start > 0 ? "…" : "") + text.slice(start, end) + (end < text.length ? "…" : "");
+	}
+	var index = allArticles.map(function (art) {
+		var title = titleOf(art);
+		var body = (art.textContent || "").replace(/\s+/g, " ");
+		var data = art.getAttribute("data-search") || "";
+		return { el: art, id: art.id, title: title,
+			hay: (title + " " + data + " " + body).toLowerCase(),
+			titleLower: title.toLowerCase(), dataLower: data.toLowerCase() };
+	});
+	function scoreOf(item, q) {
+		if (item.titleLower.indexOf(q) !== -1) return 3;
+		if (item.dataLower.indexOf(q) !== -1) return 2;
+		if (item.hay.indexOf(q) !== -1) return 1;
+		return 0;
+	}
+	function showAllArticles() {
+		index.forEach(function (it) { it.el.classList.remove("hidden-by-search"); });
+	}
+	function renderPanel(q, hits) {
+		if (!panel || !list || !meta) return;
+		if (!q) { panel.hidden = true; if (emptyBox) emptyBox.hidden = true; list.innerHTML = ""; lastHits = []; return; }
+		if (!hits.length) {
+			panel.hidden = true;
+			if (emptyBox) { emptyBox.hidden = false; emptyBox.textContent = "没有找到「" + q + "」。"; }
+			lastHits = []; return;
+		}
+		if (emptyBox) emptyBox.hidden = true;
+		panel.hidden = false;
+		meta.textContent = "「" + q + "」 · " + hits.length + " 条";
+		list.innerHTML = "";
+		hits.forEach(function (h) {
+			var li = document.createElement("li");
+			var a = document.createElement("a");
+			a.href = "#" + h.item.id; a.textContent = h.item.title; a.title = h.snippet;
+			var sn = document.createElement("div"); sn.className = "sr-snip"; sn.textContent = h.snippet;
+			li.appendChild(a); li.appendChild(sn);
+			a.addEventListener("click", function (e) {
+				e.preventDefault();
+				var el = document.getElementById(h.item.id);
+				if (el) el.scrollIntoView({ block: "start" });
+			});
+			list.appendChild(li);
+		});
+		lastHits = hits;
+	}
+	function updateResultsOnInput() {
+		var q = (box.value || "").trim().toLowerCase().replace(/\s+/g, " ");
+		showAllArticles();
+		if (!q) { renderPanel("", []); onScroll(); return; }
+		var hits = [];
+		index.forEach(function (it) {
+			var s = scoreOf(it, q);
+			if (s > 0) hits.push({ item: it, score: s, snippet: snippetOf(it.el, q) });
+		});
+		hits.sort(function (a, b) {
+			if (b.score !== a.score) return b.score - a.score;
+			return index.indexOf(a.item) - index.indexOf(b.item);
+		});
+		renderPanel(q, hits);
+	}
+	function jumpTo(el) {
+		if (!el) return;
+		el.classList.remove("hidden-by-search");
+		window.scrollTo(0, Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - 72));
+	}
+	function goToResults() {
+		updateResultsOnInput();
+		if (!lastHits.length) {
+			if (emptyBox && !emptyBox.hidden)
+				window.scrollTo(0, Math.max(0, emptyBox.getBoundingClientRect().top + window.pageYOffset - 72));
+			return;
+		}
+		if (panel && !panel.hidden) {
+			window.scrollTo(0, Math.max(0, panel.getBoundingClientRect().top + window.pageYOffset - 72));
+			return;
+		}
+		jumpTo(lastHits[0].item.el);
+	}
+	if (box) {
+		box.addEventListener("input", function () {
+			if (timer) clearTimeout(timer);
+			timer = setTimeout(updateResultsOnInput, 180);
+		});
+		box.addEventListener("keydown", function (e) {
+			if (e.key === "Enter") { e.preventDefault(); if (timer) clearTimeout(timer); goToResults(); }
+			else if (e.key === "Escape") {
+				e.preventDefault(); box.value = "";
+				if (timer) clearTimeout(timer);
+				showAllArticles(); renderPanel("", []); onScroll(); box.blur();
+			}
+		});
+	}
+	if (btn) btn.addEventListener("click", function (e) { e.preventDefault(); if (timer) clearTimeout(timer); goToResults(); });
+	if (clearBtn) clearBtn.addEventListener("click", function () {
+		if (box) box.value = "";
+		if (timer) clearTimeout(timer);
+		showAllArticles(); renderPanel("", []); onScroll();
+		if (box) box.focus();
+	});
+})();
+</script>
+</body>
+</html>

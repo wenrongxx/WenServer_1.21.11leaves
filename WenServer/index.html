@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>WenServer 汉化材质包 Wiki</title>
+<meta name="description" content="WenServer 汉化材质包（WenServer Resource Pack）中文百科 · WenServer 服务器数据包"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/app.css" />
+</head>
+<body>
+
+<header class="wiki-header">
+	<div class="inner">
+		<a class="wiki-logo" href="../index.html">WenServer 汉化材质包 Wiki<span>WenServer Resource Pack</span></a>
+		<button type="button" class="toc-toggle" id="tocToggle">目录</button>
+		<div class="wiki-search">
+			<input type="search" id="searchBox" placeholder="搜索条目…" aria-label="搜索" />
+			<button type="button" id="searchBtn">搜索</button>
+		</div>
+	</div>
+</header>
+
+<div class="wiki-shell" id="top">
+	<aside class="wiki-sidebar" id="wikiSidebar">
+		<div class="sb-title">目录</div>
+		<ul>
+			<li><a href="#introduction">简介</a></li>
+			<li><a href="#namespaces">合并的命名空间</a></li>
+			<li><a href="#overlays">版本 Overlay</a></li>
+			<li><a href="#usage">服务器使用说明</a></li>
+		</ul>
+	</aside>
+	<main class="wiki-content">
+		<div class="back-bar">
+			<a class="back-home" href="../index.html">← 返回首页</a>
+			<span class="back-hub">WenServer Wiki</span>
+		</div>
+
+	<div id="searchPanel" class="search-panel" hidden>
+		<div class="sr-head">
+			<strong>搜索结果</strong>
+			<span id="searchMeta" class="sr-meta"></span>
+			<button type="button" id="searchClear" class="sr-clear">清除</button>
+		</div>
+		<p class="sr-hint">输入时只更新本列表，不会隐藏正文、也不会滚动页面。</p>
+		<ol id="searchList" class="sr-list"></ol>
+	</div>
+	<div id="searchEmpty" class="search-empty" hidden>没有找到匹配的条目。</div>
+
+	<article class="article" id="introduction" data-search="WenServer 汉化材质包 Merged resource pack for server datapacks WenServer 汉化 材质 资源包 lang">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 简介</div>
+		<div class="article-header"><h1>WenServer 汉化材质包</h1><div class="sub">Merged resource pack for server datapacks</div></div>
+		<div class="infobox"><div class="ib-title">WenServer 材质包</div><table><tr><td class="k">描述</td><td class="v">一款适用于WenServer的材质包，合并了多个数据包的材质包</td></tr><tr><td class="k">类型</td><td class="v">资源包（材质 + 语言 + OptiFine CIT）</td></tr><tr><td class="k">pack_format</td><td class="v">75 · supported 15–500</td></tr><tr><td class="k">lang 命名空间</td><td class="v">dnt · incendium · minecraft · terralith · structory · structory_towers · nullscape</td></tr><tr><td class="k">中文键合计</td><td class="v">约 1800+</td></tr><tr><td class="k">未覆盖</td><td class="v">RedasMoreStructures · DeadlyDeadlyDungeon · gravestone（无对应 lang）</td></tr></table></div><p>WenServer 汉化材质包将各数据包的 <code>lang</code> 与材质合并，使客户端在服务器上看到统一的中文结构名、物品名与进度标题，并为 Incendium / DnT 等提供物品模型。</p><p class="muted">overlay 目录内无独立 pack.mcmeta，元信息集中在主 pack 的 <code>overlays.entries</code>。</p>
+	</article>
+
+	<article class="article" id="namespaces" data-search="合并的命名空间 Lang coverage 汉化 lang 命名空间 结构名 DnT Incendium">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 命名空间</div>
+		<div class="article-header"><h1>合并的命名空间</h1><div class="sub">Lang coverage</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>命名空间</th><th>对应内容</th><th>zh_cn 约数</th><th>说明</th></tr><tr><td><code>dnt</code></td><td>地牢与酒馆 / 末地城堡</td><td>~434</td><td>结构名约 110 条全译；钥匙/卷轴/附魔/进度</td></tr><tr><td><code>incendium</code></td><td>Incendium 下界扩展</td><td>~344</td><td>群系/生物/物品/成就已译；structure 键仍英文</td></tr><tr><td><code>minecraft</code></td><td>原版覆盖 / 服务端玩法条目</td><td>~897</td><td>附魔书、对话、自定义物品</td></tr><tr><td><code>terralith</code></td><td>Terralith（若安装）</td><td>~124</td><td>群系与地下结构</td></tr><tr><td><code>structory</code></td><td>Structory（若安装）</td><td>~15</td><td>结构名</td></tr><tr><td><code>structory_towers</code></td><td>Structory Towers</td><td>~21</td><td>塔结构名（少数未译）</td></tr><tr><td><code>nullscape</code></td><td>Nullscape 末地（若安装）</td><td>~4</td><td>群系与龙骸</td></tr></table></div><h3>DnT 译名示例</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>键</th><th>中文</th></tr><tr><td><code>structure.dnt.tavern_oak</code></td><td>森林酒馆</td></tr><tr><td><code>structure.dnt.sealing_halls</code></td><td>禁锢之厅</td></tr><tr><td><code>structure.dnt.end_castle</code></td><td>末地城堡</td></tr><tr><td><code>structure.dnt.nether_keep</code></td><td>下界监牢</td></tr><tr><td><code>structure.dnt.lone_citadel</code></td><td>孤寂要塞</td></tr><tr><td><code>item.dnt.end_castle_key</code></td><td>末地城堡钥匙</td></tr><tr><td><code>item.dnt.chart.description</code></td><td>交互以生成地图</td></tr><tr><td><code>advancement.dnt.adventure.bookworm.title</code></td><td>书虫</td></tr><tr><td><code>enchantment.dnt.wax_wings</code></td><td>蜡翅</td></tr></table></div><h3>Incendium 译名示例</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>键</th><th>中文 / 状态</th></tr><tr><td><code>biome.incendium.ash_barrens</code></td><td>灰烬荒原</td></tr><tr><td><code>biome.incendium.infernal_dunes</code></td><td>炼狱沙丘</td></tr><tr><td><code>biome.incendium.toxic_heap</code></td><td>毒料堆</td></tr><tr><td><code>incendium.mob.inferno.inferno.name</code></td><td>炼狱游者</td></tr><tr><td><code>incendium.item.ragnarok.name</code></td><td>诸神黄昏</td></tr><tr><td><code>incendium.item.firestorm.name</code></td><td>火焰风暴</td></tr><tr><td><code>incendium.advancement.ash_barrens.enter_castle.title</code></td><td>在猪魔王的宫殿里</td></tr><tr><td><code>structure.incendium.forbidden_castle</code></td><td>Forbidden Castle（未译）</td></tr></table></div><h3>其他命名空间示例</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>键</th><th>中文</th></tr><tr><td><code>structure.terralith.spire</code></td><td>尖塔</td></tr><tr><td><code>structure.terralith.glacial_hut</code></td><td>冰川小屋</td></tr><tr><td><code>structure.structory.graveyard</code></td><td>墓地</td></tr><tr><td><code>structure.structory.old_manor</code></td><td>破旧庄园</td></tr><tr><td><code>structure.structory_towers.lighthouse</code></td><td>灯塔</td></tr><tr><td><code>biome.nullscape.shadowlands</code></td><td>阴影之地</td></tr><tr><td><code>structure.nullscape.dragon_skeleton</code></td><td>龙骸</td></tr></table></div>
+	</article>
+
+	<article class="article" id="overlays" data-search="版本 Overlay Version overlays overlay 版本 pack_format 1.21 26-1">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 版本 Overlay</div>
+		<div class="article-header"><h1>版本 Overlay</h1><div class="sub">Version overlays</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>Overlay 目录</th><th>pack_format</th><th>推断 MC 版本</th><th>覆盖内容</th></tr><tr><td>1-20-5-overlay</td><td>15–22</td><td>1.20.5–1.20.x</td><td>OptiFine CIT：Incendium 盾牌、实体随机皮肤、模型</td></tr><tr><td>wolf-overlay</td><td>15–22</td><td>1.20.5–1.20.x</td><td>狼随机实体纹理</td></tr><tr><td>1-21-4-overlay</td><td>56–88</td><td>1.21.4–1.21.8</td><td>中期 items JSON + Incendium 纹理 + OptiFine</td></tr><tr><td>1-21-5-plus-overlay</td><td>64–500</td><td>1.21.5+</td><td>新版 items 组件格式（工具/武器/UI 等）</td></tr><tr><td>1-21-9-overlay</td><td>69–88</td><td>1.21.9+</td><td>三叉戟 items</td></tr><tr><td>1-21-11-overlay</td><td>75–500</td><td>1.21.11+</td><td>三叉戟 + 玩家头颅新格式</td></tr><tr><td>26-1-overlay</td><td>76–88</td><td>26.1 系列</td><td>三叉戟 + 盾牌</td></tr><tr><td>26-1-2-overlay</td><td>84–500</td><td>26.1.2+</td><td>三叉戟 + 玩家头颅</td></tr></table></div><p>资源包通过 pack overlay 在不同 Minecraft 版本下加载对应 assets，避免旧版解析失败。</p>
+	</article>
+
+	<article class="article" id="usage" data-search="服务器使用说明 How to use 安装 使用 服务器 汉化 缺口">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 使用说明</div>
+		<div class="article-header"><h1>服务器使用说明</h1><div class="sub">How to use</div></div>
+		<ol class="numbered"><li>客户端安装 WenServer.zip（或由服务器资源包链接自动下发）。</li><li>服务器同时安装对应<strong>数据包</strong>（DnT、Incendium 等）。</li><li>进入游戏后，结构名、物品名、进度标题应显示为中文。</li><li>若某结构仍为英文：检查该包是否自带 lang，或 lang 键是否本就未译（如 Incendium 的 <code>structure.incendium.*</code>）。</li><li>Redas / Deadly 等包无 lang，需依赖 Wiki 译名或后续自定义语言文件。</li></ol><h3>缺口说明</h3><ul class="bullets"><li>WenServer 中<strong>没有</strong> <code>redsmorestructures</code> / <code>ddd</code> / <code>gravestone</code> 命名空间 lang</li><li>Incendium 结构键未译，可参考本工作区 Incendium Wiki 的中文推导名</li><li>DnT 结构名以 5.1.0 zh_cn 为权威</li></ul><div class="note">本工作区各数据包 Wiki 中的中文名优先采用 WenServer / 数据包自带 zh_cn。</div>
+	</article>
+
+	</main>
+</div>
+
+<footer class="wiki-footer">
+	WenServer 汉化材质包 Wiki · 仿中文 Minecraft Wiki 版式 · 服务器数据包资料
+</footer>
+
+<script>
+(function () {
+	var sidebar = document.getElementById("wikiSidebar");
+	var toggle = document.getElementById("tocToggle");
+	var links = Array.prototype.slice.call(document.querySelectorAll(".wiki-sidebar a"));
+	var navTargets = links.map(function (a) {
+		var id = a.getAttribute("href");
+		return id && id.charAt(0) === "#" ? document.querySelector(id) : null;
+	});
+	function onScroll() {
+		var y = (document.documentElement.scrollTop || document.body.scrollTop) + 100;
+		var idx = 0;
+		for (var i = 0; i < navTargets.length; i++) {
+			var t = navTargets[i];
+			if (t && !t.classList.contains("hidden-by-search") && t.offsetTop <= y) idx = i;
+		}
+		links.forEach(function (a, i) {
+			a.classList.toggle("active", i === idx);
+			var t = navTargets[i];
+			if (t) a.classList.toggle("dimmed", t.classList.contains("hidden-by-search"));
+		});
+	}
+	window.addEventListener("scroll", onScroll, { passive: true });
+	onScroll();
+	if (toggle && sidebar) {
+		if (window.matchMedia("(max-width: 800px)").matches) sidebar.classList.add("collapsed");
+		toggle.addEventListener("click", function () { sidebar.classList.toggle("collapsed"); });
+	}
+	var box = document.getElementById("searchBox");
+	var btn = document.getElementById("searchBtn");
+	var panel = document.getElementById("searchPanel");
+	var list = document.getElementById("searchList");
+	var meta = document.getElementById("searchMeta");
+	var clearBtn = document.getElementById("searchClear");
+	var emptyBox = document.getElementById("searchEmpty");
+	var allArticles = Array.prototype.slice.call(document.querySelectorAll("main .article"));
+	var timer = null;
+	var lastHits = [];
+	function titleOf(art) {
+		var h = art.querySelector(".article-header h1") || art.querySelector("h1") || art.querySelector("h2");
+		return h ? h.textContent.replace(/\s+/g, " ").trim() : (art.id || "未命名");
+	}
+	function snippetOf(art, q) {
+		var text = (art.textContent || "").replace(/\s+/g, " ");
+		var i = text.toLowerCase().indexOf(q);
+		if (i < 0) return text.slice(0, 80) + (text.length > 80 ? "…" : "");
+		var start = Math.max(0, i - 24);
+		var end = Math.min(text.length, i + q.length + 36);
+		return (start > 0 ? "…" : "") + text.slice(start, end) + (end < text.length ? "…" : "");
+	}
+	var index = allArticles.map(function (art) {
+		var title = titleOf(art);
+		var body = (art.textContent || "").replace(/\s+/g, " ");
+		var data = art.getAttribute("data-search") || "";
+		return { el: art, id: art.id, title: title,
+			hay: (title + " " + data + " " + body).toLowerCase(),
+			titleLower: title.toLowerCase(), dataLower: data.toLowerCase() };
+	});
+	function scoreOf(item, q) {
+		if (item.titleLower.indexOf(q) !== -1) return 3;
+		if (item.dataLower.indexOf(q) !== -1) return 2;
+		if (item.hay.indexOf(q) !== -1) return 1;
+		return 0;
+	}
+	function showAllArticles() {
+		index.forEach(function (it) { it.el.classList.remove("hidden-by-search"); });
+	}
+	function renderPanel(q, hits) {
+		if (!panel || !list || !meta) return;
+		if (!q) { panel.hidden = true; if (emptyBox) emptyBox.hidden = true; list.innerHTML = ""; lastHits = []; return; }
+		if (!hits.length) {
+			panel.hidden = true;
+			if (emptyBox) { emptyBox.hidden = false; emptyBox.textContent = "没有找到「" + q + "」。"; }
+			lastHits = []; return;
+		}
+		if (emptyBox) emptyBox.hidden = true;
+		panel.hidden = false;
+		meta.textContent = "「" + q + "」 · " + hits.length + " 条";
+		list.innerHTML = "";
+		hits.forEach(function (h) {
+			var li = document.createElement("li");
+			var a = document.createElement("a");
+			a.href = "#" + h.item.id; a.textContent = h.item.title; a.title = h.snippet;
+			var sn = document.createElement("div"); sn.className = "sr-snip"; sn.textContent = h.snippet;
+			li.appendChild(a); li.appendChild(sn);
+			a.addEventListener("click", function (e) {
+				e.preventDefault();
+				var el = document.getElementById(h.item.id);
+				if (el) el.scrollIntoView({ block: "start" });
+			});
+			list.appendChild(li);
+		});
+		lastHits = hits;
+	}
+	function updateResultsOnInput() {
+		var q = (box.value || "").trim().toLowerCase().replace(/\s+/g, " ");
+		showAllArticles();
+		if (!q) { renderPanel("", []); onScroll(); return; }
+		var hits = [];
+		index.forEach(function (it) {
+			var s = scoreOf(it, q);
+			if (s > 0) hits.push({ item: it, score: s, snippet: snippetOf(it.el, q) });
+		});
+		hits.sort(function (a, b) {
+			if (b.score !== a.score) return b.score - a.score;
+			return index.indexOf(a.item) - index.indexOf(b.item);
+		});
+		renderPanel(q, hits);
+	}
+	function jumpTo(el) {
+		if (!el) return;
+		el.classList.remove("hidden-by-search");
+		window.scrollTo(0, Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - 72));
+	}
+	function goToResults() {
+		updateResultsOnInput();
+		if (!lastHits.length) {
+			if (emptyBox && !emptyBox.hidden)
+				window.scrollTo(0, Math.max(0, emptyBox.getBoundingClientRect().top + window.pageYOffset - 72));
+			return;
+		}
+		if (panel && !panel.hidden) {
+			window.scrollTo(0, Math.max(0, panel.getBoundingClientRect().top + window.pageYOffset - 72));
+			return;
+		}
+		jumpTo(lastHits[0].item.el);
+	}
+	if (box) {
+		box.addEventListener("input", function () {
+			if (timer) clearTimeout(timer);
+			timer = setTimeout(updateResultsOnInput, 180);
+		});
+		box.addEventListener("keydown", function (e) {
+			if (e.key === "Enter") { e.preventDefault(); if (timer) clearTimeout(timer); goToResults(); }
+			else if (e.key === "Escape") {
+				e.preventDefault(); box.value = "";
+				if (timer) clearTimeout(timer);
+				showAllArticles(); renderPanel("", []); onScroll(); box.blur();
+			}
+		});
+	}
+	if (btn) btn.addEventListener("click", function (e) { e.preventDefault(); if (timer) clearTimeout(timer); goToResults(); });
+	if (clearBtn) clearBtn.addEventListener("click", function () {
+		if (box) box.value = "";
+		if (timer) clearTimeout(timer);
+		showAllArticles(); renderPanel("", []); onScroll();
+		if (box) box.focus();
+	});
+})();
+</script>
+</body>
+</html>

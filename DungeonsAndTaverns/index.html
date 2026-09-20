@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>地牢与酒馆 Wiki</title>
+<meta name="description" content="地牢与酒馆（Dungeons and Taverns v5.1.0）中文百科 · WenServer 服务器数据包"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/app.css" />
+</head>
+<body>
+
+<header class="wiki-header">
+	<div class="inner">
+		<a class="wiki-logo" href="../index.html">地牢与酒馆 Wiki<span>Dungeons and Taverns v5.1.0</span></a>
+		<button type="button" class="toc-toggle" id="tocToggle">目录</button>
+		<div class="wiki-search">
+			<input type="search" id="searchBox" placeholder="搜索条目…" aria-label="搜索" />
+			<button type="button" id="searchBtn">搜索</button>
+		</div>
+	</div>
+</header>
+
+<div class="wiki-shell" id="top">
+	<aside class="wiki-sidebar" id="wikiSidebar">
+		<div class="sb-title">目录</div>
+		<ul>
+			<li><a href="#introduction">简介</a></li>
+			<li><a href="#systems">核心系统</a></li>
+			<li><a href="#structures">主要结构</a></li>
+			<li><a href="#taverns">酒馆与看火塔</a></li>
+			<li><a href="#ruins">废墟与村庄</a></li>
+			<li><a href="#shrine">神殿试炼</a></li>
+			<li><a href="#keys">钥匙与地图卷轴</a></li>
+			<li><a href="#enchantments">自定义附魔</a></li>
+			<li><a href="#spacing">生成密度</a></li>
+			<li><a href="#advancements">进度一览</a></li>
+			<li><a href="#loot">战利品体系</a></li>
+			<li><a href="#related">关联数据包</a></li>
+			<li><a href="#mob-loot">怪物与掉落</a></li>
+		</ul>
+	</aside>
+	<main class="wiki-content">
+		<div class="back-bar">
+			<a class="back-home" href="../index.html">← 返回首页</a>
+			<span class="back-hub">WenServer Wiki</span>
+		</div>
+
+	<div id="searchPanel" class="search-panel" hidden>
+		<div class="sr-head">
+			<strong>搜索结果</strong>
+			<span id="searchMeta" class="sr-meta"></span>
+			<button type="button" id="searchClear" class="sr-clear">清除</button>
+		</div>
+		<p class="sr-hint">输入时只更新本列表，不会隐藏正文、也不会滚动页面。</p>
+		<ol id="searchList" class="sr-list"></ol>
+	</div>
+	<div id="searchEmpty" class="search-empty" hidden>没有找到匹配的条目。</div>
+
+	<article class="article" id="introduction" data-search="地牢与酒馆 Dungeons and Taverns v5.1.0 DnT 地牢 酒馆 Nova structures 任务 制图师">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 简介</div>
+		<div class="article-header"><h1>地牢与酒馆</h1><div class="sub">Dungeons and Taverns v5.1.0</div></div>
+		<div class="infobox"><div class="ib-title">地牢与酒馆</div><table><tr><td class="k">英文名</td><td class="v">Dungeons and Taverns v5.1.0</td></tr><tr><td class="k">命名空间</td><td class="v"><code>nova_structures</code> / lang <code>dnt</code></td></tr><tr><td class="k">结构数</td><td class="v">约 113 个自定义结构（+ 原版结构重制）</td></tr><tr><td class="k">附魔</td><td class="v">17+ 玩家附魔 + 函数用错误魔咒</td></tr><tr><td class="k">钥匙</td><td class="v">21 把（含不详变体）</td></tr><tr><td class="k">进度</td><td class="v">冒险 / 下界 / 末地 / 故事线 全中文</td></tr><tr><td class="k">简中翻译</td><td class="v">佐佐木明里、吊人魔术师（繁中：雪碧）</td></tr><tr><td class="k">主开发</td><td class="v">Nova Wostra · Whity Lee · Konci · Walls 等</td></tr><tr><td class="k">汉化合并</td><td class="v">WenServer 材质包</td></tr><tr><td class="k">关联包</td><td class="v">末地城堡独立包 · 废弃矿井大修</td></tr></table></div><p>《地牢与酒馆》（Dungeons and Taverns，DnT）大规模扩充主世界、下界与末地：酒馆、灾厄据点、猪灵聚落、神殿试炼、末地城堡、禁锢之厅等，并加入<strong>地图卷轴</strong>、<strong>钥匙宝库</strong>与<strong>酒馆任务制图师</strong>系统。</p><div class="note">中文名以数据包自带 <code>assets/dnt/lang/zh_cn.json</code>（5.1.0）为准。旧版 End-Castle 独立包中「孤独堡垒 / 末地船」等译名，本 Wiki 统一采用 5.1.0 的「孤寂要塞 / 末地船舶 / 下界监牢」。</div><h3>核心玩法</h3><ol class="numbered"><li>探索结构 → 获得<strong>地图卷轴</strong>或钥匙</li><li>在酒馆升级制图师，换取目标结构卷轴</li><li>用钥匙开启对应宝库（神殿 / 城堡 / 监牢等）</li><li>在秘密图书管理员处兑换专属附魔书</li><li>挑战头目并完成进度线</li></ol>
+	</article>
+
+	<article class="article" id="systems" data-search="核心系统 Mechanics 机制 任务 卷轴 钥匙 图书管理员 头目">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 核心系统</div>
+		<div class="article-header"><h1>核心系统</h1><div class="sub">Mechanics</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>系统</th><th>说明</th></tr><tr><td>酒馆任务制图师</td><td>与新手制图师交易 → 升级后获得地图卷轴；专家级可接终极任务（进度「全境制图」）</td></tr><tr><td>地图卷轴</td><td>lore「交互以生成地图」；展开 actionbar「地图正在展开……」；错误维度提示「此地图卷轴无法在当前维度展开……」</td></tr><tr><td>钥匙宝库</td><td>21 把钥匙对应神殿/监牢/城堡/巢穴等宝库；不详（ominous）钥匙对应强化宝库</td></tr><tr><td>秘密图书管理员</td><td>结构中隐藏图书管理员，交易专属附魔书（进度「书虫」及各结构 librarian 进度）</td></tr><tr><td>头目</td><td>寒冰旋风人、洞穴蜘蛛、远古守卫者、禁锢恶魂、幻翼头目等；进度「地下城城主」需击败全部种类</td></tr><tr><td>快乐恶魂</td><td>可骑乘；染料可给挽具染色；附魔「迅猛翱翔」等与其相关</td></tr><tr><td>悦灵→恼鬼</td><td>Konci 实现的转化系统（credits）</td></tr><tr><td>函数用错误魔咒</td><td>仅函数调用的附魔会在玩家物品栏中被替换为节肢杀手</td></tr></table></div><h3>卷轴展开提示</h3><ul class="bullets"><li>「地图正在展开……」（<code>title.dnt.chart_unfold</code>）</li><li>「此地图卷轴无法在当前维度展开……」（失败）</li><li>lore：「交互以生成地图」</li></ul>
+	</article>
+
+	<article class="article" id="structures" data-search="主要结构 Overworld / Nether / End 结构 城堡 矿工 灾厄 猪灵 末地 禁锢之厅 地下墓穴">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 主要结构</div>
+		<div class="article-header"><h1>主要结构</h1><div class="sub">Overworld / Nether / End</div></div>
+		<p>非酒馆类主要结构（lang 权威中文名）：</p><div class="wiki-table-wrap"><table class="wiki"><tr><th>结构 ID</th><th>中文名</th><th>群系提示</th></tr><tr><td><code>nova_structures:badlands_miner_outpost</code></td><td><strong>恶地矿工前哨站</strong></td><td>恶地</td></tr><tr><td><code>nova_structures:bunker</code></td><td><strong>裸露的要塞</strong></td><td>陆地</td></tr><tr><td><code>nova_structures:catacomb</code></td><td><strong>地下墓穴</strong></td><td>雪原洞穴</td></tr><tr><td><code>nova_structures:cave_chamber</code></td><td><strong>洞室</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:cave_chamber_archeology_ruins</code></td><td><strong>洞室古迹废墟</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:cave_chamber_colony</code></td><td><strong>洞室矿井</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:cave_chamber_dungeon_colony</code></td><td><strong>洞室矿井地牢</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:cave_hut</code></td><td><strong>地底居所</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:conduit_ruin</code></td><td><strong>废弃潮涌核心</strong></td><td>海洋</td></tr><tr><td><code>nova_structures:creeping_crypt</code></td><td><strong>苦力怕地穴</strong></td><td>针叶林</td></tr><tr><td><code>nova_structures:deepslate_camp</code></td><td><strong>深板岩营地</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:desert_ruins</code></td><td><strong>沙漠遗迹</strong></td><td>沙漠</td></tr><tr><td><code>nova_structures:end_castle</code></td><td><strong>末地城堡</strong></td><td>末地虚空</td></tr><tr><td><code>nova_structures:end_lighthouse</code></td><td><strong>末地灯塔</strong></td><td>末地外环</td></tr><tr><td><code>nova_structures:end_ship</code></td><td><strong>末地船舶</strong></td><td>末地外环</td></tr><tr><td><code>nova_structures:hamlet</code></td><td><strong>猪灵小村</strong></td><td>堡垒遗迹群系</td></tr><tr><td><code>nova_structures:illager_camp</code></td><td><strong>灾厄营地</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:illager_hideout</code></td><td><strong>灾厄村民藏身处</strong></td><td>灾厄藏身处群系</td></tr><tr><td><code>nova_structures:illager_manor</code></td><td><strong>灾厄庄园</strong></td><td>阴暗针叶林</td></tr><tr><td><code>nova_structures:jungle_ruins</code></td><td><strong>丛林遗迹</strong></td><td>丛林</td></tr><tr><td><code>nova_structures:lone_citadel</code></td><td><strong>孤寂要塞</strong></td><td>雪原</td></tr><tr><td><code>nova_structures:mangrove_witch_hut</code></td><td><strong>红树林沼泽小屋</strong></td><td>红树林沼泽</td></tr><tr><td><code>nova_structures:nether_keep</code></td><td><strong>下界监牢</strong></td><td>下界要塞群系</td></tr><tr><td><code>nova_structures:nether_port</code></td><td><strong>下界港口</strong></td><td>下界要塞群系</td></tr><tr><td><code>nova_structures:pale_residence</code></td><td><strong>苍白聚落</strong></td><td>苍白之园</td></tr><tr><td><code>nova_structures:piglin_camp</code></td><td><strong>猪灵营地</strong></td><td>堡垒遗迹群系</td></tr><tr><td><code>nova_structures:piglin_camp_collony</code></td><td><strong>猪灵殖民地</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:piglin_donjon</code></td><td><strong>猪灵城堡</strong></td><td>堡垒遗迹群系</td></tr><tr><td><code>nova_structures:piglin_outstation</code></td><td><strong>猪灵边防哨</strong></td><td>堡垒遗迹群系</td></tr><tr><td><code>nova_structures:sealing_halls</code></td><td><strong>禁锢之厅</strong></td><td>下界要塞群系</td></tr><tr><td><code>nova_structures:shrine_tower</code></td><td><strong>神殿塔</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:stray_fort</code></td><td><strong>流浪者要塞</strong></td><td>雪原</td></tr><tr><td><code>nova_structures:stray_outlook</code></td><td><strong>流浪者边防哨</strong></td><td>雪原</td></tr><tr><td><code>nova_structures:toxic_lair</code></td><td><strong>剧毒巢穴</strong></td><td>沼泽</td></tr><tr><td><code>nova_structures:trial_dungeon</code></td><td><strong>试炼地牢</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:trident_trial_monument</code></td><td><strong>三叉戟试炼神殿</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:undead_crypt</code></td><td><strong>亡灵地牢</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:underground_house</code></td><td><strong>地下房屋</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:village_birch</code></td><td><strong>桦木森林村庄</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:village_jungle</code></td><td><strong>丛林村庄</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:village_swamp</code></td><td><strong>沼泽村庄</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:wild_ruin</code></td><td><strong>荒野废墟</strong></td><td>陆地</td></tr><tr><td><code>nova_structures:ruin_town</code></td><td><strong>城镇废墟</strong></td><td>陆地</td></tr><tr><td><code>nova_structures:witch_villa</code></td><td><strong>女巫别墅</strong></td><td>见结构集 / 群系标签</td></tr></table></div>
+	</article>
+
+	<article class="article" id="taverns" data-search="酒馆与看火塔 Taverns &amp; Firewatch 酒馆 看火塔 水井 制图师">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 酒馆与看火塔</div>
+		<div class="article-header"><h1>酒馆与看火塔</h1><div class="sub">Taverns & Firewatch</div></div>
+		<h3>酒馆（12 种群系）</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>结构 ID</th><th>中文名</th><th>群系</th></tr><tr><td><code>nova_structures:tavern_oak</code></td><td><strong>森林酒馆</strong></td><td>森林</td></tr><tr><td><code>nova_structures:tavern_birch</code></td><td><strong>桦木森林酒馆</strong></td><td>桦木林</td></tr><tr><td><code>nova_structures:tavern_spruce</code></td><td><strong>针叶林酒馆</strong></td><td>针叶林</td></tr><tr><td><code>nova_structures:tavern_jungle</code></td><td><strong>丛林酒馆</strong></td><td>丛林</td></tr><tr><td><code>nova_structures:tavern_acacia</code></td><td><strong>热带草原酒馆</strong></td><td>热带草原</td></tr><tr><td><code>nova_structures:tavern_dark_oak</code></td><td><strong>黑森林酒馆</strong></td><td>黑森林</td></tr><tr><td><code>nova_structures:tavern_mangrove</code></td><td><strong>红树林沼泽酒馆</strong></td><td>红树林</td></tr><tr><td><code>nova_structures:tavern_cherry</code></td><td><strong>樱花树林酒馆</strong></td><td>樱花林</td></tr><tr><td><code>nova_structures:tavern_pale</code></td><td><strong>苍白酒馆</strong></td><td>苍白之园</td></tr><tr><td><code>nova_structures:tavern_desert</code></td><td><strong>沙漠酒馆</strong></td><td>沙漠</td></tr><tr><td><code>nova_structures:tavern_snowy</code></td><td><strong>雪原酒馆</strong></td><td>雪原</td></tr><tr><td><code>nova_structures:tavern_swamp</code></td><td><strong>沼泽酒馆</strong></td><td>沼泽</td></tr></table></div><p>酒馆内制图师任务链：新手 → 专家；进度「冒险召唤」「情报网络」「全境制图」。</p><h3>森林看火塔（10 种）</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>结构 ID</th><th>中文名</th><th>群系</th></tr><tr><td><code>nova_structures:firewatch_tower_forest</code></td><td><strong>森林看火塔</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:firewatch_tower_birch</code></td><td><strong>桦木森林看火塔</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:firewatch_tower_taiga</code></td><td><strong>针叶林看火塔</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:firewatch_tower_jungle</code></td><td><strong>丛林看火塔</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:firewatch_tower_swamp</code></td><td><strong>沼泽看火塔</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:firewatch_tower_mangrove</code></td><td><strong>红树林沼泽看火塔</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:firewatch_tower_dark_oak</code></td><td><strong>黑森林看火塔</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:firewatch_tower_cherry</code></td><td><strong>樱花树林看火塔</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:firewatch_tower_pale</code></td><td><strong>苍白之园看火塔</strong></td><td>见结构集 / 群系标签</td></tr></table></div><h3>水井</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>结构 ID</th><th>中文名</th><th>群系</th></tr><tr><td><code>nova_structures:well_oak</code></td><td><strong>森林水井</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:well_birch</code></td><td><strong>桦木森林水井</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:well_spruce</code></td><td><strong>针叶林水井</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:well_dark_oak</code></td><td><strong>黑森林水井</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:well_jungle</code></td><td><strong>丛林水井</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:well_savana</code></td><td><strong>热带草原水井</strong></td><td>见结构集 / 群系标签</td></tr></table></div>
+	</article>
+
+	<article class="article" id="ruins" data-search="废墟与村庄 Remnants &amp; villages 废墟 墓园 铁匠 村庄">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 废墟与村庄</div>
+		<div class="article-header"><h1>废墟与村庄</h1><div class="sub">Remnants & villages</div></div>
+		<p>废墟（remnant_*）随结构集生成，适合早期探索与资源点：</p><div class="wiki-table-wrap"><table class="wiki"><tr><th>结构 ID</th><th>中文名</th></tr><tr><td><code>nova_structures:remnant_bee_keeper</code></td><td>废弃养蜂小屋</td></tr><tr><td><code>nova_structures:remnant_big_remnant</code></td><td>大型废墟</td></tr><tr><td><code>nova_structures:remnant_big_remnant2</code></td><td>广型废墟</td></tr><tr><td><code>nova_structures:remnant_big_remnant3</code></td><td>巨型废墟</td></tr><tr><td><code>nova_structures:remnant_birch_graveyard</code></td><td>白桦木墓园</td></tr><tr><td><code>nova_structures:remnant_bridge_remnant</code></td><td>断桥</td></tr><tr><td><code>nova_structures:remnant_bundle_tent</code></td><td>布帐篷</td></tr><tr><td><code>nova_structures:remnant_bunny_base</code></td><td>兔子基地</td></tr><tr><td><code>nova_structures:remnant_classic_village</code></td><td>废弃经典村庄</td></tr><tr><td><code>nova_structures:remnant_desert_remnant</code></td><td>沙漠古迹废墟</td></tr><tr><td><code>nova_structures:remnant_forest_smith</code></td><td>森林铁匠铺</td></tr><tr><td><code>nova_structures:remnant_frog_ranch</code></td><td>青蛙牧场</td></tr><tr><td><code>nova_structures:remnant_graveyard</code></td><td>墓园</td></tr><tr><td><code>nova_structures:remnant_lava_chicken</code></td><td>熔岩烤鸡站</td></tr><tr><td><code>nova_structures:remnant_medium_remnant</code></td><td>普通废墟</td></tr><tr><td><code>nova_structures:remnant_medium_remnant2</code></td><td>中型废墟</td></tr><tr><td><code>nova_structures:remnant_miner_hut</code></td><td>矿工小屋</td></tr><tr><td><code>nova_structures:remnant_mud_brick_constructor</code></td><td>泥砖工坊</td></tr><tr><td><code>nova_structures:remnant_ominous_shop</code></td><td>不详商店</td></tr><tr><td><code>nova_structures:remnant_ruin_farmer</code></td><td>废弃农场</td></tr><tr><td><code>nova_structures:remnant_ruin_smith</code></td><td>废弃铁匠铺</td></tr><tr><td><code>nova_structures:remnant_sawmill</code></td><td>废弃锯木厂</td></tr><tr><td><code>nova_structures:remnant_school_remnant</code></td><td>废弃学校</td></tr><tr><td><code>nova_structures:remnant_taiga_castle</code></td><td>针叶林城堡</td></tr><tr><td><code>nova_structures:remnant_woodland_hud</code></td><td>林地小屋</td></tr><tr><td><code>nova_structures:remnant_zombie_horse_ranch</code></td><td>僵尸马场</td></tr></table></div><h3>村庄变体</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>结构 ID</th><th>中文名</th></tr><tr><td><code>nova_structures:village_birch</code></td><td><strong>桦木森林村庄</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:village_jungle</code></td><td><strong>丛林村庄</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:village_swamp</code></td><td><strong>沼泽村庄</strong></td><td>见结构集 / 群系标签</td></tr></table></div>
+	</article>
+
+	<article class="article" id="shrine" data-search="神殿试炼 Shrines &amp; bosses 神殿 试炼 钥匙 头目 宝库 猪灵 下界">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 神殿试炼</div>
+		<div class="article-header"><h1>神殿试炼</h1><div class="sub">Shrines & bosses</div></div>
+		<p>神殿密室按阶位生成，配合钥匙开启宝库；可遭遇头目。进度：力之试炼 / 力之试炼+ · 地下城城主 · 寒风呼啸 · 上古守卫者 · 无毒巢穴 · 捉魂敢死队！</p><div class="wiki-table-wrap"><table class="wiki"><tr><th>结构 ID</th><th>中文名</th></tr><tr><td><code>nova_structures:shrine_biome_tier_1</code></td><td><strong>I 阶神殿生物群系试炼密室</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:shrine_biome_tier_2</code></td><td><strong>II 阶神殿生物群系试炼密室</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:shrine_biome_tier_3</code></td><td><strong>III 阶神殿生物群系试炼密室</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:shrine_biome_tier_4</code></td><td><strong>IV 阶神殿生物群系试炼密室</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:shrine_biome_tier_5</code></td><td><strong>V 阶神殿生物群系试炼密室</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:shrine_combat_tier_1</code></td><td><strong>I 阶神殿试炼密室</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:shrine_combat_tier_2</code></td><td><strong>II 阶神殿试炼密室</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:shrine_combat_tier_3</code></td><td><strong>III 阶神殿试炼密室</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:shrine_combat_tier_4</code></td><td><strong>IV 阶神殿试炼密室</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:shrine_combat_tier_5</code></td><td><strong>V 阶神殿试炼密室</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:shrine_combat_tier_6</code></td><td><strong>VI 阶神殿试炼密室</strong></td><td>见结构集 / 群系标签</td></tr><tr><td><code>nova_structures:shrine_tower</code></td><td><strong>神殿塔</strong></td><td>见结构集 / 群系标签</td></tr></table></div><h3>头目线索</h3><ul class="bullets"><li><strong>寒冰旋风人头目</strong> — 进度「寒风呼啸」</li><li><strong>洞穴蜘蛛头目</strong> — 进度「无毒巢穴」</li><li><strong>远古守卫者头目</strong> — 进度「上古守卫者」</li><li><strong>禁锢恶魂</strong> — 禁锢之厅头目宝库</li><li><strong>幻翼头目</strong> — 末地城堡（见末地城堡 Wiki）</li></ul><h3>下界 / 末地专项进度</h3><ul class="bullets"><li>猎猪：拜访猪灵营地、殖民地、边防哨、城堡</li><li>骷髅收藏家：四种骷髅塔 + 港口 + 要塞 + 监牢 + 禁锢之厅</li><li>垒中之堡 / 学问渊博的猪灵 / 熔岩港湾 / 骨泪纵横</li><li>隔城有眼 / 航行中…… / 在游戏尽头的一束光 / 恐高吗？</li></ul>
+	</article>
+
+	<article class="article" id="keys" data-search="钥匙与地图卷轴 Keys &amp; charts 钥匙 卷轴 地图 末地城堡 神殿 猪灵">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 钥匙与卷轴</div>
+		<div class="article-header"><h1>钥匙与地图卷轴</h1><div class="sub">Keys & charts</div></div>
+		<h3>钥匙（21）</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>键</th><th>中文名</th></tr><tr><td><code>boss_sealing_key</code></td><td><strong>头目禁锢钥匙</strong></td></tr><tr><td><code>cave_chamber_key</code></td><td><strong>洞室钥匙</strong></td></tr><tr><td><code>citadel_boss_key</code></td><td><strong>孤寂要塞头目钥匙</strong></td></tr><tr><td><code>citadel_key</code></td><td><strong>孤寂要塞钥匙</strong></td></tr><tr><td><code>creeper_key</code></td><td><strong>苦力怕地穴钥匙</strong></td></tr><tr><td><code>end_castle_key</code></td><td><strong>末地城堡钥匙</strong></td></tr><tr><td><code>end_ship_key</code></td><td><strong>末地船舶钥匙</strong></td></tr><tr><td><code>hamlet_key</code></td><td><strong>猪灵小村钥匙</strong></td></tr><tr><td><code>nether_keep_key</code></td><td><strong>下界监牢钥匙</strong></td></tr><tr><td><code>nether_port_key</code></td><td><strong>下界港口钥匙</strong></td></tr><tr><td><code>ominous_sealing_key</code></td><td><strong>不详禁锢钥匙</strong></td></tr><tr><td><code>ominous_shrine_key</code></td><td><strong>不详神殿钥匙</strong></td></tr><tr><td><code>ominous_toxic_key</code></td><td><strong>不详剧毒钥匙</strong></td></tr><tr><td><code>piglin_donjon_key</code></td><td><strong>猪灵城堡钥匙</strong></td></tr><tr><td><code>piglin_outstation_key</code></td><td><strong>猪灵边防哨钥匙</strong></td></tr><tr><td><code>sealing_key</code></td><td><strong>禁锢钥匙</strong></td></tr><tr><td><code>shrine_key</code></td><td><strong>神殿钥匙</strong></td></tr><tr><td><code>toxic_boss_key</code></td><td><strong>剧毒巢穴头目钥匙</strong></td></tr><tr><td><code>toxic_key</code></td><td><strong>剧毒巢穴钥匙</strong></td></tr><tr><td><code>trident_trial_boss_key</code></td><td><strong>三叉戟头目试炼钥匙</strong></td></tr><tr><td><code>trident_trial_key</code></td><td><strong>三叉戟试炼钥匙</strong></td></tr></table></div><h3>地图卷轴</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>键</th><th>中文名</th></tr><tr><td><code>ancient_city</code></td><td>暗域探险家地图卷轴</td></tr><tr><td><code>any_village</code></td><td>村庄地图卷轴</td></tr><tr><td><code>badlands_miner_outpost</code></td><td>恶地矿工前哨站地图卷轴</td></tr><tr><td><code>bastion_remnant</code></td><td>堡垒遗迹地图卷轴</td></tr><tr><td><code>catacomb</code></td><td>地下墓穴地图卷轴</td></tr><tr><td><code>cave_chamber_colony</code></td><td>洞室聚落地图卷轴</td></tr><tr><td><code>conduit_ruin</code></td><td>潮涌核心废墟地图卷轴</td></tr><tr><td><code>creeping_crypt</code></td><td>苦力怕地穴地图卷轴</td></tr><tr><td><code>desert_ruin</code></td><td>沙漠废墟地图卷轴</td></tr><tr><td><code>end_castle</code></td><td>末地城堡地图卷轴</td></tr><tr><td><code>end_lighthouse</code></td><td>末地灯塔地图卷轴</td></tr><tr><td><code>illager_hideout</code></td><td>灾厄村民藏身处地图卷轴</td></tr><tr><td><code>illager_manor</code></td><td>灾厄庄园地图卷轴</td></tr><tr><td><code>jungle_ruin</code></td><td>丛林废墟地图卷轴</td></tr><tr><td><code>lone_citadel</code></td><td>孤寂要塞地图卷轴</td></tr><tr><td><code>mangrove_witch_hut</code></td><td>红树林沼泽小屋地图卷轴</td></tr><tr><td><code>nether_fortress</code></td><td>下界要塞地图卷轴</td></tr><tr><td><code>nether_keep</code></td><td>下界监牢地图卷轴</td></tr><tr><td><code>nether_port</code></td><td>下界港口地图卷轴</td></tr><tr><td><code>nether_skeleton_tower</code></td><td>下界骷髅塔地图卷轴</td></tr><tr><td><code>ocean_ruins</code></td><td>海洋废墟地图卷轴</td></tr><tr><td><code>pale_residence</code></td><td>苍白聚落地图卷轴</td></tr><tr><td><code>piglin_donjon</code></td><td>猪灵城堡地图卷轴</td></tr><tr><td><code>piglin_hamlet</code></td><td>猪灵小村地图卷轴</td></tr><tr><td><code>piglin_outstation</code></td><td>猪灵边防哨地图卷轴</td></tr><tr><td><code>pillager_outpost</code></td><td>掠夺者前哨站地图卷轴</td></tr><tr><td><code>ruin_town</code></td><td>废墟城镇地图卷轴</td></tr><tr><td><code>sealing_halls</code></td><td>禁锢之厅地图卷轴</td></tr><tr><td><code>shrine_all_normal</code></td><td>神殿地图卷轴</td></tr><tr><td><code>shrine_tier_1</code></td><td>I 阶神殿地图卷轴</td></tr><tr><td><code>shrine_tier_2</code></td><td>II 阶神殿地图卷轴</td></tr><tr><td><code>shrine_tier_3</code></td><td>III 阶神殿地图卷轴</td></tr><tr><td><code>shrine_tier_4</code></td><td>IV 阶神殿地图卷轴</td></tr><tr><td><code>shrine_tier_5</code></td><td>V 阶神殿地图卷轴</td></tr><tr><td><code>shrine_tier_6</code></td><td>VI 阶神殿地图卷轴</td></tr><tr><td><code>shrine_tower</code></td><td>神殿塔地图卷轴</td></tr><tr><td><code>stray_fortress</code></td><td>流浪者要塞地图卷轴</td></tr><tr><td><code>stray_outlook</code></td><td>流浪者边防哨地图卷轴</td></tr><tr><td><code>tavern_acacia</code></td><td>热带草原酒馆地图卷轴</td></tr><tr><td><code>tavern_birch</code></td><td>桦木森林酒馆地图卷轴</td></tr><tr><td><code>tavern_cherry</code></td><td>樱花树林酒馆地图卷轴</td></tr><tr><td><code>tavern_dark_oak</code></td><td>黑森林酒馆地图卷轴</td></tr><tr><td><code>tavern_desert</code></td><td>沙漠酒馆地图卷轴</td></tr><tr><td><code>tavern_jungle</code></td><td>丛林酒馆地图卷轴</td></tr><tr><td><code>tavern_mangrove</code></td><td>红树林酒馆地图卷轴</td></tr><tr><td><code>tavern_oak</code></td><td>森林酒馆地图卷轴</td></tr><tr><td><code>tavern_pale</code></td><td>苍白酒馆地图卷轴</td></tr><tr><td><code>tavern_snowy</code></td><td>雪原酒馆地图卷轴</td></tr><tr><td><code>tavern_spruce</code></td><td>针叶林酒馆地图卷轴</td></tr><tr><td><code>tavern_swamp</code></td><td>沼泽酒馆地图卷轴</td></tr><tr><td><code>toxic_lair</code></td><td>剧毒巢穴地图卷轴</td></tr><tr><td><code>trail_ruins</code></td><td>古迹废墟地图卷轴</td></tr><tr><td><code>trial_dungeon</code></td><td>试炼地牢地图卷轴</td></tr><tr><td><code>trident_trial_monument</code></td><td>海洋试炼探险家地图卷轴</td></tr><tr><td><code>undead_crypt</code></td><td>亡灵地牢地图卷轴</td></tr><tr><td><code>village_birch</code></td><td>白桦木村庄地图卷轴</td></tr><tr><td><code>village_jungle</code></td><td>丛林村庄地图卷轴</td></tr><tr><td><code>village_swamp</code></td><td>沼泽村庄地图卷轴</td></tr><tr><td><code>witch_villa</code></td><td>女巫别墅地图卷轴</td></tr></table></div><p class="muted">特殊战利品中另有硬编码中文物品名「海豚之力，突突突！」「瓶中的的远古诅咒」等。</p>
+	</article>
+
+	<article class="article" id="enchantments" data-search="自定义附魔 Enchantments 附魔 引力 蜡翅 魂矢 灾厄杀手 迅猛翱翔">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 自定义附魔</div>
+		<div class="article-header"><h1>自定义附魔</h1><div class="sub">Enchantments</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>键</th><th>中文名</th><th>说明</th></tr><tr><td><code>enchantment.dnt.aerials_bane</code></td><td><strong>空中杀手</strong></td><td>对空中生物额外伤害</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>对空中生物造成额外伤害。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.antidote</code></td><td><strong>剧毒免疫</strong></td><td>免疫中毒，返还胸甲耐久</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>免疫中毒伤害并将其返还至胸甲的耐久度。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.boss_behaviour</code></td><td><strong>错误魔咒 #1</strong></td><td></td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>这是一个不应该出现的魔咒，将被自动替换为节肢杀手。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.boss_nether</code></td><td><strong>错误魔咒 #2</strong></td><td></td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>这是一个不应该出现的魔咒，将被自动替换为节肢杀手。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.conductivity_curse</code></td><td><strong>导电诅咒</strong></td><td>雷暴时吸引闪电</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>玩家在雷暴时将吸引闪电。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.ghasted</code></td><td><strong>魂矢</strong></td><td>箭矢变为强化恶魂火球</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>将箭矢转换为强化过的恶魂火球。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.gravity</code></td><td><strong>引力</strong></td><td>箭矢牵引附近实体</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>射出能牵引附近实体的箭矢。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.hydro_veil</code></td><td><strong>水之护佑</strong></td><td>快乐恶魂获火/爆保护与治疗</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>给予快乐恶魂火焰保护和爆炸保护，并提升治疗效果</strong></td><td></td></tr><tr><td><code>enchantment.dnt.illagers_bane</code></td><td><strong>灾厄杀手</strong></td><td>对灾厄村民与女巫额外伤害</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>对灾厄村民和女巫造成额外伤害。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.librarian_level_checker</code></td><td><strong>错误魔咒 #3</strong></td><td></td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>这是一个不应该出现的魔咒，将被自动替换为节肢杀手。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.multishot</code></td><td><strong>三重射击</strong></td><td>弓一次射 3 箭</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>发射额外的弓箭。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.outreach</code></td><td><strong>延展</strong></td><td>更远距离交互方块</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>允许玩家与更远的方块交互。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.photosynthesis</code></td><td><strong>光合作用</strong></td><td>阳光下缓慢修补耐久</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>在阳光下缓慢修补工具和盔甲的耐久度。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.piercing</code></td><td><strong>刺穿</strong></td><td>弓箭穿透生物</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>允许弓箭穿透生物。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.power</code></td><td><strong>威力</strong></td><td>增加弩箭伤害</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>增加弩箭的伤害。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.shulker_boss</code></td><td><strong>错误魔咒 #4</strong></td><td></td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>这是一个不应该出现的魔咒，将被自动替换为节肢杀手。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.shulker_miniboss</code></td><td><strong>错误魔咒 #5</strong></td><td></td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>这是一个不应该出现的魔咒，将被自动替换为节肢杀手。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.spawn_chicken_jockey</code></td><td><strong>错误魔咒 #6</strong></td><td></td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>这是一个不应该出现的魔咒，将被自动替换为节肢杀手。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.spawn_stray_horseman</code></td><td><strong>错误魔咒 #7</strong></td><td></td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>这是一个不应该出现的魔咒，将被自动替换为节肢杀手。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.spiteful</code></td><td><strong>怨恨</strong></td><td>低生命近战加成；受击概率力量</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>提高玩家在低生命值（低于2.5颗心）时造成的近战伤害（每级+2近战伤害）；
+当被生物攻击时有30%（每级+15%）几率获得1-3s的力量I效果。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.swift_soar</code></td><td><strong>迅猛翱翔</strong></td><td>骑乘疾跑提高快乐恶魂速度</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>当骑乘者疾跑时提高快乐恶魂的飞行速度。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.tavern_level_checker</code></td><td><strong>错误魔咒 #8</strong></td><td></td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>这是一个不应该出现的魔咒，将被自动替换为节肢杀手。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.traveler</code></td><td><strong>旅行者</strong></td><td>疾跑与跳跃移动速度提升</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>提高玩家疾跑和跳跃时的移动速度。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.wax_wings</code></td><td><strong>蜡翅</strong></td><td>鞘翅慢滑不耗耐久，快滑双倍消耗</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>鞘翅在缓慢滑行时不会消耗耐久度，但在快速滑行时加倍耐久度消耗速率。</strong></td><td></td></tr><tr><td><code>enchantment.dnt.wither_coated</code></td><td><strong>凋零侵染</strong></td><td>附加凋零，耐久消耗加倍</td></tr><tr><td><code>enchantment.dnt.desc</code></td><td><strong>攻击生物时造成额外的凋零效果（耐久度消耗速率加倍）。</strong></td><td></td></tr></table></div><p class="muted">函数用「错误魔咒」#1–#8（boss_behaviour、shulker_boss、librarian_level_checker 等）会自动替换为节肢杀手。</p>
+	</article>
+
+	<article class="article" id="spacing" data-search="生成密度 Structure sets 生成 密度 spacing structure_set salt">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 生成密度</div>
+		<div class="article-header"><h1>生成密度</h1><div class="sub">Structure sets</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>结构集</th><th>spacing / separation</th><th>salt</th><th>成员</th></tr><tr><td>酒馆 taverns</td><td>50 / 30</td><td>salt 783</td><td>12 种生物群系酒馆</td></tr><tr><td>神殿 shrines</td><td>70 / 26</td><td>salt 78409300</td><td>群系密室 I–V + 战斗密室 I–VI</td></tr><tr><td>神殿塔 shrine_tower</td><td>250 / 150</td><td>salt 78409300</td><td>神殿塔</td></tr><tr><td>看火塔 firewatch_towers</td><td>50 / 15</td><td>salt 123</td><td>10 种群系看火塔</td></tr><tr><td>废墟 remnants</td><td>80 / 30</td><td>salt 9785…</td><td>全部 remnant_*</td></tr><tr><td>水井 wells</td><td>40 / 15</td><td>salt 430930</td><td>6 种群系水井</td></tr><tr><td>村庄变体</td><td>34 / 8</td><td>salt 10387312</td><td>桦木 / 丛林 / 沼泽</td></tr><tr><td>灾厄庄园</td><td>180 / 90</td><td>salt 10387319</td><td>illager_manor</td></tr><tr><td>灾厄营地 / 藏身处</td><td>50/32 · 200/12</td><td>—</td><td>illager_camp / hideout</td></tr><tr><td>洞室系列</td><td>32 / 12</td><td>salt 7998…</td><td>洞室、矿井、试炼地牢等</td></tr><tr><td>地下墓穴 / 苦力怕 / 亡灵</td><td>70/16 · 100/10 · 100/20</td><td>—</td><td>地牢主题</td></tr><tr><td>下界营地 / 主结构</td><td>32/16 · 90/40</td><td>—</td><td>骷髅塔、猪灵、监牢、港口、禁锢之厅</td></tr><tr><td>末地城堡 / 船 / 灯塔</td><td>同心环 · 70/10 · 70/22</td><td>salt 0 / 795…</td><td>end_*</td></tr><tr><td>恶地矿工前哨</td><td>60 / 12</td><td>salt 783</td><td>badlands_miner_outpost</td></tr><tr><td>三叉戟试炼神殿</td><td>200 / 190</td><td>salt 6984…</td><td>trident_trial_monument</td></tr><tr><td>潮涌核心废墟</td><td>140 / 90</td><td>salt 394</td><td>conduit_ruin</td></tr><tr><td>苍白聚落 / 红树林女巫小屋</td><td>60/15 · 32/8</td><td>—</td><td>pale_residence / hut</td></tr></table></div>
+	</article>
+
+	<article class="article" id="advancements" data-search="进度一览 Advancements 进度 成就 书虫 制图师 地下城城主">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 进度</div>
+		<div class="article-header"><h1>进度一览</h1><div class="sub">Advancements</div></div>
+		<p>完整中文进度（节选）：</p><div class="wiki-table-wrap"><table class="wiki"><tr><th>键</th><th>标题</th><th>描述</th></tr><tr><td><code>root</code></td><td><strong>欢迎来到《地下城与酒馆》</strong></td><td>简体中文翻译由佐佐木明里、雪碧与吊人魔术师贡献
+主开发者：Nova Wostra
+开发者：Whity, Konci, MiziraGamez 和 Walls
+贡献者：badooga</td></tr><tr><td><code>loot_bug_enchant</code></td><td><strong>为什么会在这里呢？</strong></td><td>你拿到了一本包含仅用于函数调用魔咒的附魔书。由于它并不适用于玩家，相关魔咒在你的物品栏中被替换成了节肢杀手！</td></tr><tr><td><code>adventure.conquer_miner_outpost</code></td><td><strong>铀点儿麻烦</strong></td><td>征服一个恶地矿工前哨站</td></tr><tr><td><code>adventure.cure_zillager_pale_residence</code></td><td><strong>苍白自噬</strong></td><td>在苍白聚落内治愈一名僵尸村民</td></tr><tr><td><code>adventure.find_all_illager_structures</code></td><td><strong>民风淳朴</strong></td><td>拜访所有种类的灾厄村民结构与女巫结构</td></tr><tr><td><code>adventure.find_all_taverns</code></td><td><strong>情报网络</strong></td><td>探索并搭配地图卷轴拜访所有种类的酒馆</td></tr><tr><td><code>adventure.find_ancient_city</code></td><td><strong>危机四伏</strong></td><td>潜入远古城市</td></tr><tr><td><code>adventure.find_catacomb</code></td><td><strong>零层之下</strong></td><td>你挖得太深，并找到了一座地下墓穴</td></tr><tr><td><code>adventure.find_desert_ruins</code></td><td><strong>时之沙</strong></td><td>发掘沙漠遗迹</td></tr><tr><td><code>adventure.find_illager_manor</code></td><td><strong>注意礼仪</strong></td><td>找到灾厄庄园</td></tr><tr><td><code>adventure.find_illager_mansion</code></td><td><strong>黑森林的深处</strong></td><td>进入林地府邸</td></tr><tr><td><code>adventure.find_jungle_ruins</code></td><td><strong>葱郁遗迹</strong></td><td>发现丛林遗迹</td></tr><tr><td><code>adventure.find_lone_citadel</code></td><td><strong>冰封遗迹</strong></td><td>进入孤寂要塞</td></tr><tr><td><code>adventure.find_pale_residence</code></td><td><strong>生化危机</strong></td><td>接近苍白聚落</td></tr><tr><td><code>adventure.find_pillager_outpost</code></td><td><strong>侵入者警告</strong></td><td>闯入掠夺者前哨站</td></tr><tr><td><code>adventure.find_shrine</code></td><td><strong>力之试炼</strong></td><td>进入神殿</td></tr><tr><td><code>adventure.find_shrine_6</code></td><td><strong>力之试炼+</strong></td><td>事有蹊跷……</td></tr><tr><td><code>adventure.find_stray_fort</code></td><td><strong>若凛冬未至……</strong></td><td>……我们将赴凛冬
+（找到流浪者要塞）</td></tr><tr><td><code>adventure.find_stray_outlook</code></td><td><strong>觅见寒踪</strong></td><td>找到流浪者边防哨</td></tr><tr><td><code>adventure.find_swamp_village</code></td><td><strong>家有女巫</strong></td><td>拜访沼泽村庄</td></tr><tr><td><code>adventure.find_tavern</code></td><td><strong>地牢避风港</strong></td><td>寻找酒馆的庇护</td></tr><tr><td><code>adventure.find_toxic_lair</code></td><td><strong>毒沼泽爱好者狂喜！</strong></td><td>进入剧毒巢穴</td></tr><tr><td><code>adventure.find_trident_trial_monument</code></td><td><strong>叹为观止</strong></td><td>深吸一口气，并进入三叉戟试炼神殿</td></tr><tr><td><code>adventure.find_witch_villa</code></td><td><strong>麻烦酝酿中</strong></td><td>找到女巫别墅</td></tr><tr><td><code>adventure.kill_all_minibosses</code></td><td><strong>地下城城主</strong></td><td>杀死每一种《地下城与酒馆》中的头目</td></tr><tr><td><code>adventure.kill_breeze_boss</code></td><td><strong>寒风呼啸</strong></td><td>杀死寒冰旋风人头目</td></tr><tr><td><code>adventure.kill_cave_spider_boss</code></td><td><strong>无毒巢穴</strong></td><td>苍蝇吃蜘蛛</td></tr><tr><td><code>adventure.kill_guardian_boss</code></td><td><strong>上古守卫者</strong></td><td>杀死远古守卫者头目</td></tr><tr><td><code>adventure.loot_illager_hideout</code></td><td><strong>捉迷藏</strong></td><td>解放灾厄村民藏身处的赃物</td></tr><tr><td><code>adventure.master_quest_trader</code></td><td><strong>全境制图</strong></td><td>在酒馆中，将一名制图师升级至专家，并接受其给你的终极任务</td></tr><tr><td><code>adventure.raid_pale_residence</code></td><td><strong>自我吞食</strong></td><td>在苍白聚落触发袭击事件</td></tr><tr><td><code>adventure.tavern_quest</code></td><td><strong>冒险召唤</strong></td><td>在酒馆中，与一名新手制图师交易，并在其升级后再次交易以获得地图卷轴</td></tr><tr><td><code>end.find_end_castle</code></td><td><strong>隔城有眼</strong></td><td>挑战末地城堡</td></tr><tr><td><code>end.find_end_lighthouse</code></td><td><strong>在游戏尽头的一束光</strong></td><td>找到末地灯塔</td></tr><tr><td><code>end.find_end_ship</code></td><td><strong>航行中……</strong></td><td>找到一艘孤独的末地船舶</td></tr><tr><td><code>end.kill_phantom_boss</code></td><td><strong>恐高吗？</strong></td><td>杀死末地城堡的幻翼头目</td></tr><tr><td><code>nether.find_donjon</code></td><td><strong>垒中之堡</strong></td><td>找到猪灵城堡</td></tr><tr><td><code>nether.find_hamlet</code></td><td><strong>学问渊博的猪灵</strong></td><td>迈入猪灵小村</td></tr><tr><td><code>nether.find_keep</code></td><td><strong>Concrete Halls</strong></td><td>偶然找到下界监牢</td></tr><tr><td><code>nether.find_nether_skeleton</code></td><td><strong>骷髅收藏家</strong></td><td>拜访所有种类的包含骷髅的下界结构
+（四种下界骷髅塔、下界港口、下界要塞、下界监牢以及禁锢之厅）</td></tr><tr><td><code>nether.find_piglin_camps</code></td><td><strong>黄金争夺战</strong></td><td>找到猪灵营地或猪灵殖民地</td></tr><tr><td><code>nether.find_piglin_outpost</code></td><td><strong>黄金大劫案</strong></td><td>潜入猪灵边防哨</td></tr><tr><td><code>nether.find_piglins</code></td><td><strong>猎猪</strong></td><td>拜访所有种类的猪灵结构
+（猪灵营地、猪灵边防哨、猪灵小村以及猪灵城堡）</td></tr><tr><td><code>nether.find_port</code></td><td><strong>熔岩港湾</strong></td><td>在下界港口停靠</td></tr><tr><td><code>nether.find_sealing_halls</code></td><td><strong>骨泪纵横</strong></td><td>在探索禁锢之厅的过程中尽情狩猎恶魂吧</td></tr><tr><td><code>nether.find_skeleton_tower</code></td><td><strong>碎骨者</strong></td><td>拜访所有四种下界骷髅塔</td></tr><tr><td><code>nether.give_netherite_piglin_gold_armor</code></td><td><strong>时尚灾难</strong></td><td>使一只身着下界合金盔甲的猪灵重新考虑它的猪生抉择</td></tr><tr><td><code>nether.powder_snow_keep</code></td><td><strong>冷静一下</strong></td><td>在下界监牢中沐浴细雪</td></tr><tr><td><code>nether.use_sealing_boss_key</code></td><td><strong>捉魂敢死队！</strong></td><td>打开禁锢之厅的头目宝库以证明你的狩猎恶魂技巧</td></tr><tr><td><code>story.bookworm</code></td><td><strong>书虫</strong></td><td>找到所有藏匿于结构中的秘密图书管理员，并与他们交易独特的附魔书</td></tr></table></div>
+	</article>
+
+	<article class="article" id="loot" data-search="战利品体系 Loot system 战利品 图书管理员 附魔书 药水">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 战利品</div>
+		<div class="article-header"><h1>战利品体系</h1><div class="sub">Loot system</div></div>
+		<ul class="bullets"><li><code>keys/*</code> — 21 把钥匙（含不详变体）</li><li><code>charts/*</code> + <code>maps/*</code> — 地图卷轴与填充地图</li><li><code>special_items/*</code> — wither/漂浮/眩晕/衰变等药水与箭矢</li><li><code>villagers/*_librarian</code>、<code>tavern_quest_*</code> — 图书管理员与酒馆任务</li><li><code>mob/*</code> — spider_boss、elder_guardian、sealing_ghast、piglin 系列、shrine_blaze 等</li><li>覆盖原版：下界要塞内部、林地府邸分房、沼泽/丛林村庄房屋、考古遗迹</li></ul><h3>秘密图书管理员（结构专属）</h3><div class="mini-grid"><div class="mini-item"><div class="t">远古城市</div><div class="d">幽匿低语</div></div><div class="mini-item"><div class="t">沙漠遗迹</div><div class="d">沙漠古卷</div></div><div class="mini-item"><div class="t">末地城堡</div><div class="d">虚空之书</div></div><div class="mini-item"><div class="t">灾厄藏身处 / 庄园</div><div class="d">灾厄密档</div></div><div class="mini-item"><div class="t">丛林遗迹</div><div class="d">丛林典籍</div></div><div class="mini-item"><div class="t">孤寂要塞</div><div class="d">雪原书卷</div></div><div class="mini-item"><div class="t">下界监牢 / 港口</div><div class="d">监牢之卷 · 港口日志</div></div><div class="mini-item"><div class="t">苍白聚落</div><div class="d">闹鬼词典</div></div><div class="mini-item"><div class="t">猪灵城堡</div><div class="d">镀金档案</div></div><div class="mini-item"><div class="t">禁锢之厅</div><div class="d">哭泣之卷</div></div><div class="mini-item"><div class="t">剧毒巢穴</div><div class="d">毒沼秘术</div></div><div class="mini-item"><div class="t">神殿 / 塔 / 要塞</div><div class="d">旅人日记</div></div><div class="mini-item"><div class="t">女巫别墅</div><div class="d">诡秘卷轴</div></div></div>
+	</article>
+
+	<article class="article" id="related" data-search="关联数据包 Server bundle 关联 服务器 数据包列表">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 关联数据包</div>
+		<div class="article-header"><h1>关联数据包</h1><div class="sub">Server bundle</div></div>
+		<ul class="bullets"><li><strong>末地城堡独立包</strong>（DnT End Castle）— 仅末地向结构、钥匙与进度</li><li><strong>废弃矿井大修</strong> — 覆盖原版矿井并新增稀有变体</li><li><strong>WenServer 汉化材质包</strong> — 合并 DnT / Incendium 等 lang 与材质</li><li><strong>Incendium</strong> / <strong>Red's More Structures</strong> / <strong>Deadly Deadly Dungeon</strong></li></ul><p>各包在工作区中均有独立 Wiki 文件夹（含 <code>web/</code> 部署根）。简中译者：佐佐木明里、吊人魔术师。</p>
+	</article>
+
+
+	<article class="article" id="mob-loot" data-search="怪物机制与战利品 Mobs &amp; loot 怪物 头目 战利品 钥匙 恶魂 旋风人">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 怪物与掉落</div>
+		<div class="article-header"><h1>怪物机制与战利品</h1><div class="sub">Mobs & loot</div></div>
+		
+		<h3>头目 / 特殊怪物机制</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>怪物</th><th>机制要点</th><th>掉落 / 战利品</th></tr><tr><td>寒冰旋风人头目</td><td>进度「寒风呼啸」</td><td>mob 表 / 结构宝箱</td></tr><tr><td>洞穴蜘蛛头目</td><td>进度「无毒巢穴」</td><td>毒液相关</td></tr><tr><td>远古守卫者头目</td><td>进度「上古守卫者」</td><td>水下/守卫主题箱</td></tr><tr><td>禁锢恶魂 / 头目</td><td>禁锢之厅；头目宝库需头目钥匙</td><td>sealing 战利品</td></tr><tr><td>幻翼头目</td><td>末地城堡</td><td>见末地城堡 Wiki</td></tr><tr><td>快乐恶魂</td><td>可骑乘；染料染挽具；附魔协同</td><td>染色挽具配方</td></tr><tr><td>圣所/灾厄系</td><td>结构内敌对 NPC</td><td>librarian / 结构箱</td></tr></table></div>
+		<h3>宝箱与钥匙概率要点</h3>
+		<ul class="bullets">
+			<li>钥匙：试炼类改名物品，开对应宝库（神殿/监牢/城堡/巢穴）；不详钥匙对应强化库</li>
+			<li>地图卷轴：交互生成地图；错误维度提示失败</li>
+			<li>结构箱嵌套大量 <code>nova_structures:*</code> 与原版覆盖表（要塞、林地府邸、村庄、考古）</li>
+			<li>头目掉落走 <code>mob/*</code> 与结构箱，具体 weight 随版本可能调整</li>
+		</ul>
+		<p class="note">末地城堡高级箱完整 weight 表见「末地城堡」Wiki 的「掉落概率」章节。</p>
+	
+	</article>
+	</main>
+</div>
+
+<footer class="wiki-footer">
+	地牢与酒馆 Wiki · 仿中文 Minecraft Wiki 版式 · 服务器数据包资料
+</footer>
+
+<script>
+(function () {
+	var sidebar = document.getElementById("wikiSidebar");
+	var toggle = document.getElementById("tocToggle");
+	var links = Array.prototype.slice.call(document.querySelectorAll(".wiki-sidebar a"));
+	var navTargets = links.map(function (a) {
+		var id = a.getAttribute("href");
+		return id && id.charAt(0) === "#" ? document.querySelector(id) : null;
+	});
+	function onScroll() {
+		var y = (document.documentElement.scrollTop || document.body.scrollTop) + 100;
+		var idx = 0;
+		for (var i = 0; i < navTargets.length; i++) {
+			var t = navTargets[i];
+			if (t && !t.classList.contains("hidden-by-search") && t.offsetTop <= y) idx = i;
+		}
+		links.forEach(function (a, i) {
+			a.classList.toggle("active", i === idx);
+			var t = navTargets[i];
+			if (t) a.classList.toggle("dimmed", t.classList.contains("hidden-by-search"));
+		});
+	}
+	window.addEventListener("scroll", onScroll, { passive: true });
+	onScroll();
+	if (toggle && sidebar) {
+		if (window.matchMedia("(max-width: 800px)").matches) sidebar.classList.add("collapsed");
+		toggle.addEventListener("click", function () { sidebar.classList.toggle("collapsed"); });
+	}
+	var box = document.getElementById("searchBox");
+	var btn = document.getElementById("searchBtn");
+	var panel = document.getElementById("searchPanel");
+	var list = document.getElementById("searchList");
+	var meta = document.getElementById("searchMeta");
+	var clearBtn = document.getElementById("searchClear");
+	var emptyBox = document.getElementById("searchEmpty");
+	var allArticles = Array.prototype.slice.call(document.querySelectorAll("main .article"));
+	var timer = null;
+	var lastHits = [];
+	function titleOf(art) {
+		var h = art.querySelector(".article-header h1") || art.querySelector("h1") || art.querySelector("h2");
+		return h ? h.textContent.replace(/\s+/g, " ").trim() : (art.id || "未命名");
+	}
+	function snippetOf(art, q) {
+		var text = (art.textContent || "").replace(/\s+/g, " ");
+		var i = text.toLowerCase().indexOf(q);
+		if (i < 0) return text.slice(0, 80) + (text.length > 80 ? "…" : "");
+		var start = Math.max(0, i - 24);
+		var end = Math.min(text.length, i + q.length + 36);
+		return (start > 0 ? "…" : "") + text.slice(start, end) + (end < text.length ? "…" : "");
+	}
+	var index = allArticles.map(function (art) {
+		var title = titleOf(art);
+		var body = (art.textContent || "").replace(/\s+/g, " ");
+		var data = art.getAttribute("data-search") || "";
+		return { el: art, id: art.id, title: title,
+			hay: (title + " " + data + " " + body).toLowerCase(),
+			titleLower: title.toLowerCase(), dataLower: data.toLowerCase() };
+	});
+	function scoreOf(item, q) {
+		if (item.titleLower.indexOf(q) !== -1) return 3;
+		if (item.dataLower.indexOf(q) !== -1) return 2;
+		if (item.hay.indexOf(q) !== -1) return 1;
+		return 0;
+	}
+	function showAllArticles() {
+		index.forEach(function (it) { it.el.classList.remove("hidden-by-search"); });
+	}
+	function renderPanel(q, hits) {
+		if (!panel || !list || !meta) return;
+		if (!q) { panel.hidden = true; if (emptyBox) emptyBox.hidden = true; list.innerHTML = ""; lastHits = []; return; }
+		if (!hits.length) {
+			panel.hidden = true;
+			if (emptyBox) { emptyBox.hidden = false; emptyBox.textContent = "没有找到「" + q + "」。"; }
+			lastHits = []; return;
+		}
+		if (emptyBox) emptyBox.hidden = true;
+		panel.hidden = false;
+		meta.textContent = "「" + q + "」 · " + hits.length + " 条";
+		list.innerHTML = "";
+		hits.forEach(function (h) {
+			var li = document.createElement("li");
+			var a = document.createElement("a");
+			a.href = "#" + h.item.id; a.textContent = h.item.title; a.title = h.snippet;
+			var sn = document.createElement("div"); sn.className = "sr-snip"; sn.textContent = h.snippet;
+			li.appendChild(a); li.appendChild(sn);
+			a.addEventListener("click", function (e) {
+				e.preventDefault();
+				var el = document.getElementById(h.item.id);
+				if (el) el.scrollIntoView({ block: "start" });
+			});
+			list.appendChild(li);
+		});
+		lastHits = hits;
+	}
+	function updateResultsOnInput() {
+		var q = (box.value || "").trim().toLowerCase().replace(/\s+/g, " ");
+		showAllArticles();
+		if (!q) { renderPanel("", []); onScroll(); return; }
+		var hits = [];
+		index.forEach(function (it) {
+			var s = scoreOf(it, q);
+			if (s > 0) hits.push({ item: it, score: s, snippet: snippetOf(it.el, q) });
+		});
+		hits.sort(function (a, b) {
+			if (b.score !== a.score) return b.score - a.score;
+			return index.indexOf(a.item) - index.indexOf(b.item);
+		});
+		renderPanel(q, hits);
+	}
+	function jumpTo(el) {
+		if (!el) return;
+		el.classList.remove("hidden-by-search");
+		window.scrollTo(0, Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - 72));
+	}
+	function goToResults() {
+		updateResultsOnInput();
+		if (!lastHits.length) {
+			if (emptyBox && !emptyBox.hidden)
+				window.scrollTo(0, Math.max(0, emptyBox.getBoundingClientRect().top + window.pageYOffset - 72));
+			return;
+		}
+		if (panel && !panel.hidden) {
+			window.scrollTo(0, Math.max(0, panel.getBoundingClientRect().top + window.pageYOffset - 72));
+			return;
+		}
+		jumpTo(lastHits[0].item.el);
+	}
+	if (box) {
+		box.addEventListener("input", function () {
+			if (timer) clearTimeout(timer);
+			timer = setTimeout(updateResultsOnInput, 180);
+		});
+		box.addEventListener("keydown", function (e) {
+			if (e.key === "Enter") { e.preventDefault(); if (timer) clearTimeout(timer); goToResults(); }
+			else if (e.key === "Escape") {
+				e.preventDefault(); box.value = "";
+				if (timer) clearTimeout(timer);
+				showAllArticles(); renderPanel("", []); onScroll(); box.blur();
+			}
+		});
+	}
+	if (btn) btn.addEventListener("click", function (e) { e.preventDefault(); if (timer) clearTimeout(timer); goToResults(); });
+	if (clearBtn) clearBtn.addEventListener("click", function () {
+		if (box) box.value = "";
+		if (timer) clearTimeout(timer);
+		showAllArticles(); renderPanel("", []); onScroll();
+		if (box) box.focus();
+	});
+})();
+</script>
+</body>
+</html>

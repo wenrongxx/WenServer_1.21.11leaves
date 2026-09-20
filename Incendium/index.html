@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Incendium 下界扩展 Wiki</title>
+<meta name="description" content="Incendium 下界扩展（Incendium — Nether Expansion）中文百科 · WenServer 服务器数据包"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/app.css" />
+</head>
+<body>
+
+<header class="wiki-header">
+	<div class="inner">
+		<a class="wiki-logo" href="../index.html">Incendium 下界扩展 Wiki<span>Incendium — Nether Expansion</span></a>
+		<button type="button" class="toc-toggle" id="tocToggle">目录</button>
+		<div class="wiki-search">
+			<input type="search" id="searchBox" placeholder="搜索条目…" aria-label="搜索" />
+			<button type="button" id="searchBtn">搜索</button>
+		</div>
+	</div>
+</header>
+
+<div class="wiki-shell" id="top">
+	<aside class="wiki-sidebar" id="wikiSidebar">
+		<div class="sb-title">目录</div>
+		<ul>
+			<li><a href="#introduction">简介</a></li>
+			<li><a href="#biomes">生物群系</a></li>
+			<li><a href="#structures">结构</a></li>
+			<li><a href="#inferno">炼狱游者</a></li>
+			<li><a href="#artifacts">自定义物品与神器</a></li>
+			<li><a href="#mobs">自定义生物</a></li>
+			<li><a href="#advancements">进度一览</a></li>
+			<li><a href="#loot">战利品</a></li>
+			<li><a href="#mob-loot">怪物与掉落</a></li>
+		</ul>
+	</aside>
+	<main class="wiki-content">
+		<div class="back-bar">
+			<a class="back-home" href="../index.html">← 返回首页</a>
+			<span class="back-hub">WenServer Wiki</span>
+		</div>
+
+	<div id="searchPanel" class="search-panel" hidden>
+		<div class="sr-head">
+			<strong>搜索结果</strong>
+			<span id="searchMeta" class="sr-meta"></span>
+			<button type="button" id="searchClear" class="sr-clear">清除</button>
+		</div>
+		<p class="sr-hint">输入时只更新本列表，不会隐藏正文、也不会滚动页面。</p>
+		<ol id="searchList" class="sr-list"></ol>
+	</div>
+	<div id="searchEmpty" class="search-empty" hidden>没有找到匹配的条目。</div>
+
+	<article class="article" id="introduction" data-search="Incendium 下界扩展 Nether Expansion · Stardust Labs Incendium 下界 nether Stardust 炼狱">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 简介</div>
+		<div class="article-header"><h1>Incendium 下界扩展</h1><div class="sub">Nether Expansion · Stardust Labs</div></div>
+		<div class="infobox"><div class="ib-title">Incendium</div><table><tr><td class="k">英文名</td><td class="v">Incendium — Nether Expansion</td></tr><tr><td class="k">作者</td><td class="v">Stardust Labs（Starmute 等）</td></tr><tr><td class="k">版本</td><td class="v">26.1 v5.4.12 · pack 94.1–101.1 + 26-1-overlay</td></tr><tr><td class="k">命名空间</td><td class="v"><code>incendium</code> · <code>minecraft</code> · <code>c</code> · <code>load</code> · <code>forge</code></td></tr><tr><td class="k">汉化</td><td class="v">WenServer <code>incendium/lang/zh_cn.json</code>（~344 键）</td></tr><tr><td class="k">群系</td><td class="v">8 个自定义下界群系</td></tr><tr><td class="k">结构</td><td class="v">9 座新结构 + 3 处原版重定义</td></tr><tr><td class="k">支持状态</td><td class="v"><span class="d-hard">UNSUPPORTED</span>（重写版进行中）</td></tr></table></div><p>Incendium 大幅扩展下界：新生物群系、结构、神器武器与「炼狱游者」事件 Boss。</p><div class="warning"><strong>升级警告：</strong>官方 DISCLAIMER：当前为不受支持版本；Stardust Labs 正在制作 rewrite。未来从本 port 升级到 rewrite <strong>可能无法完成，或需重置下界维度</strong>。</div><p class="note">许可（Stardust Labs）：允许个人/服务器/整合包（须署名）；禁止独立再分发、修改版公开分发、datapack-pack；<strong>明确禁止将素材用于 AI/神经网络训练</strong>。</p>
+	</article>
+
+	<article class="article" id="biomes" data-search="生物群系 Nether biomes 群系 下界 灰烬 炼狱 石英 毒料 枯焦 火山">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 生物群系</div>
+		<div class="article-header"><h1>生物群系</h1><div class="sub">Nether biomes</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>ID</th><th>中文名</th><th>可生成结构</th></tr><tr><td><code>incendium:ash_barrens</code></td><td><strong>灰烬荒原</strong></td><td>禁忌之堡 · 堡垒遗迹</td></tr><tr><td><code>incendium:infernal_dunes</code></td><td><strong>炼狱沙丘</strong></td><td>管道 · 炼狱祭坛 · 下界要塞</td></tr><tr><td><code>incendium:inverted_forest</code></td><td><strong>倒转森林</strong></td><td>下界要塞 · 堡垒遗迹</td></tr><tr><td><code>incendium:quartz_flats</code></td><td><strong>石英平地</strong></td><td>圣所 · 石英厨房 · 石英塔 · 化石</td></tr><tr><td><code>incendium:toxic_heap</code></td><td><strong>毒料堆</strong></td><td>下界反应堆 · 管道 · 下界要塞</td></tr><tr><td><code>incendium:volcanic_deltas</code></td><td><strong>三角洲火山</strong></td><td>反应堆 · 管道 · 要塞 · 堡垒</td></tr><tr><td><code>incendium:weeping_valley</code></td><td><strong>垂泪峡谷</strong></td><td>要塞 · 堡垒 · 化石 · 亡魂</td></tr><tr><td><code>incendium:withered_forest</code></td><td><strong>枯焦森林</strong></td><td>废弃实验室 · 堡垒 · 亡魂</td></tr><tr><td><code>incendium:crimson_forest</code></td><td><strong>绯红森林（原版）</strong></td><td>猪灵村庄</td></tr><tr><td><code>incendium:warped_forest</code></td><td><strong>诡异森林（原版）</strong></td><td>猪灵村庄</td></tr><tr><td><code>incendium:basalt_deltas</code></td><td><strong>玄武岩三角洲（原版）</strong></td><td>下界反应堆 · 管道</td></tr></table></div>
+	</article>
+
+	<article class="article" id="structures" data-search="结构 Structures 结构 禁忌之堡 圣所 炼狱祭坛 猪灵村庄 管道 反应堆">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 结构</div>
+		<div class="article-header"><h1>结构</h1><div class="sub">Structures</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>结构 ID</th><th>中文名</th><th>群系</th><th>要点</th><th>生成</th></tr><tr><td><code>incendium:forbidden_castle</code></td><td><strong>禁忌之堡</strong></td><td>灰烬荒原</td><td>猪灵王宫殿；强攻清剿解锁「征服者」</td><td>weight 5 · 大型集</td></tr><tr><td><code>incendium:sanctum</code></td><td><strong>圣所</strong></td><td>石英平地</td><td>灾厄圣所；金库挖掘疲劳可暗杀守卫解除</td><td>weight 5 · 大型集</td></tr><tr><td><code>incendium:nether_reactor</code></td><td><strong>下界反应堆</strong></td><td>火山/玄武岩/毒料堆</td><td>核废土；搜刮全种类战利品</td><td>weight 3 · 大型集</td></tr><tr><td><code>incendium:pipeline</code></td><td><strong>管道</strong></td><td>沙丘/玄武岩/毒料堆</td><td>烈焰人哨卫与隐秘宝藏</td><td>weight 2 · 小型集</td></tr><tr><td><code>incendium:piglin_village</code></td><td><strong>猪灵村庄</strong></td><td>绯红/诡异森林</td><td>职业分区战利品</td><td>weight 2 · 小型集</td></tr><tr><td><code>incendium:quartz_kitchen</code></td><td><strong>石英厨房</strong></td><td>石英平地</td><td>大厨 Torte 与隐藏宝藏</td><td>weight 2 · 小型集</td></tr><tr><td><code>incendium:abandoned_tower</code></td><td><strong>石英塔</strong></td><td>石英平地</td><td>关押小恶灵</td><td>weight 3 · 小型集</td></tr><tr><td><code>incendium:infernal_altar</code></td><td><strong>炼狱祭坛</strong></td><td>炼狱沙丘</td><td>献祭下界之星 → 炼狱游者</td><td>weight 2 · 小型集</td></tr><tr><td><code>incendium:ruined_lab</code></td><td><strong>废弃实验室</strong></td><td>枯焦森林</td><td>猪灵炼金失控</td><td>weight 4 · 小型集</td></tr></table></div><h3>原版结构群系重定义</h3><ul class="bullets"><li><strong>下界要塞</strong>：倒转森林 / 垂泪峡谷 / 炼狱沙丘 / 三角洲火山 / 毒料堆</li><li><strong>堡垒遗迹</strong>：倒转森林 / 垂泪峡谷 / 灰烬荒原 / 三角洲火山 / 枯焦森林</li><li><strong>下界化石</strong>：垂泪峡谷 / 石英平地</li></ul><p>大型结构集 spacing 30（圣所/禁堡/反应堆）；小型 spacing 20，且对大型组有 exclusion（chunk 10）。原版 nether_complexes：要塞 weight 2 / 堡垒 weight 3，spacing 16。</p>
+	</article>
+
+	<article class="article" id="inferno" data-search="炼狱游者 Hovering Inferno 炼狱游者 Hovering Inferno 下界之星 祭坛 事件 法术">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 炼狱游者</div>
+		<div class="article-header"><h1>炼狱游者</h1><div class="sub">Hovering Inferno</div></div>
+		<div class="infobox"><div class="ib-title">炼狱游者</div><table><tr><td class="k">召唤</td><td class="v">炼狱祭坛献祭<strong>下界之星</strong></td></tr><tr><td class="k">群系</td><td class="v">炼狱沙丘</td></tr><tr><td class="k">法术</td><td class="v">冲刺 · 潜影 · 护盾激光 · 火球 · 烟花 · 气泡 · 蝶形激光 · 召唤 · 最终法术</td></tr><tr><td class="k">机制</td><td class="v">最终阶段<strong>不能离开战场</strong>；击败所有挑战者后重归长眠</td></tr><tr><td class="k">战利品</td><td class="v">炼狱翎毛 · 炼狱之翼 · 火焰风暴 · 焚焰之轨 · 棱镜/死灵盾牌 等</td></tr></table></div><h3>事件进度</h3><div class="wiki-table-wrap"><table class="wiki"><tr><th>键</th><th>标题</th><th>描述</th></tr><tr><td>infernal_dunes.root</td><td>达鲁德火焰风暴</td><td>感受炼狱沙丘的火辣热气</td></tr><tr><td>inferno.root</td><td>余烬之外</td><td>神龛…渴求献祭</td></tr><tr><td>inferno.summon</td><td>升腾自烈焰</td><td>祭坛献祭下界之星召唤炼狱游者</td></tr><tr><td>inferno.run</td><td>跑</td><td>你不可能杀死炼狱，活到最后</td></tr><tr><td>inferno.kill</td><td>沉沦为灰烬</td><td>在最终法术中存活并领取奖励</td></tr><tr><td>inferno.lunatic_mode</td><td>疯癫模式</td><td>无甲活过最终阶段</td></tr><tr><td>inferno.armored_wings</td><td>铸自炼火</td><td>用炼狱翎毛升级鞘翅</td></tr></table></div><h3>系统提示</h3><ul class="bullets"><li>「请返回战场」</li><li>「击败了所有挑战者，重归长眠了」</li><li>「面前没有任何挑战者，回归长眠了」</li><li>「游荡到别处去了」</li></ul>
+	</article>
+
+	<article class="article" id="artifacts" data-search="自定义物品与神器 Items 物品 神器 护盾 小恶灵 炼狱 戒指">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 神器</div>
+		<div class="article-header"><h1>自定义物品与神器</h1><div class="sub">Items</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>键</th><th>中文名</th><th>说明</th></tr><tr><td><code>firestorm</code></td><td><strong>火焰风暴</strong></td><td>光灵箭→闪电攻击；被砂轮使用后粉碎</td></tr><tr><td><code>lunacy_torch</code></td><td><strong>癫狂火炬</strong></td><td></td></tr><tr><td><code>necrotic_shield</code></td><td><strong>死灵盾牌</strong></td><td>受击后致命爆炸反击</td></tr><tr><td><code>prismatic_shield</code></td><td><strong>棱镜护盾</strong></td><td>以光束反射攻击</td></tr><tr><td><code>radiation_shield</code></td><td><strong>辐射盾牌</strong></td><td>格挡后释放辐射</td></tr><tr><td><code>infernal_wings</code></td><td><strong>炼狱之翼</strong></td><td>炼狱之翼；可升级鞘翅</td></tr><tr><td><code>infernal_feather</code></td><td><strong>炼狱翎毛</strong></td><td>炼狱游者掉落；锻造材料</td></tr><tr><td><code>ghastling_egg</code></td><td><strong>小恶灵</strong></td><td></td></tr><tr><td><code>chilling_blade</code></td><td><strong>极寒之刃</strong></td><td>冻彻骨髓</td></tr><tr><td><code>blazing_hatchet</code></td><td><strong>烈焰短斧</strong></td><td>炽烈而强劲的一击</td></tr><tr><td><code>multiplex</code></td><td><strong>十字弩</strong></td><td>短程爆裂箭矢（十字弩）</td></tr><tr><td><code>hefty_pickaxe</code></td><td><strong>重型尖嘴镐</strong></td><td>面向下界的开凿工具</td></tr><tr><td><code>greatsword</code></td><td><strong>牺牲巨剑</strong></td><td></td></tr><tr><td><code>sentrys_wrath</code></td><td><strong>哨卫之怒</strong></td><td>光灵箭→缓慢但更强攻击；有冷却</td></tr><tr><td><code>voltaic_trident</code></td><td><strong>流电三叉戟</strong></td><td>电能；附引雷时不稳定</td></tr><tr><td><code>unstable_powder</code></td><td><strong>不稳定粉末</strong></td><td></td></tr><tr><td><code>scarlet_dagger</code></td><td><strong>猩红匕首</strong></td><td>从击杀目标汲取生命</td></tr><tr><td><code>withersbane</code></td><td><strong>凋灵源刃</strong></td><td>击碎下界不洁力量的古刀</td></tr><tr><td><code>daybreaker</code></td><td><strong>破晓者</strong></td><td>Patron·击杀概率掉金</td></tr><tr><td><code>holy_wrath</code></td><td><strong>圣洁之怒</strong></td><td>Patron·生成螺旋火球</td></tr><tr><td><code>battle_helm</code></td><td><strong>斥候战盔</strong></td><td></td></tr><tr><td><code>warping_witherblade</code></td><td><strong>扭曲之凋灵刃</strong></td><td>Patron·扭曲之凋灵刃</td></tr><tr><td><code>trailblazer</code></td><td><strong>焚焰之轨</strong></td><td>拉弓越久威力越大；光灵箭留下炽热痕迹</td></tr><tr><td><code>ragnarok</code></td><td><strong>诸神黄昏</strong></td><td>拉弓越久闪电越强；不能快速射击</td></tr><tr><td><code>hazmat.helmet</code></td><td><strong>生化防护头盔</strong></td><td></td></tr><tr><td><code>hazmat.chestplate</code></td><td><strong>生化防护胸甲</strong></td><td></td></tr><tr><td><code>hazmat.leggings</code></td><td><strong>生化防护护腿</strong></td><td></td></tr><tr><td><code>hazmat.boots</code></td><td><strong>生化防护靴子</strong></td><td></td></tr><tr><td><code>returning_scroll</code></td><td><strong>回城卷轴</strong></td><td></td></tr><tr><td><code>restless_nature</code></td><td><strong>躁动的本质</strong></td><td></td></tr><tr><td><code>cake</code></td><td><strong>蛋糕糊</strong></td><td></td></tr><tr><td><code>suspicious_brew</code></td><td><strong>迷之酿造</strong></td><td></td></tr><tr><td><code>miners_ale</code></td><td><strong>矿工麦酒</strong></td><td></td></tr><tr><td><code>undying_elixer</code></td><td><strong>不死圣水</strong></td><td></td></tr><tr><td><code>eternal_glowing</code></td><td><strong>Splash Potion of Eternal Glowing</strong></td><td></td></tr><tr><td><code>bad_omen_pot</code></td><td><strong>Potion of Bad Omen</strong></td><td></td></tr><tr><td><code>death_pot</code></td><td><strong>死神药水</strong></td><td></td></tr><tr><td><code>banner_blade</code></td><td><strong>Banner of the Blade</strong></td><td></td></tr><tr><td><code>banner_ominous</code></td><td><strong>Ominous Banner</strong></td><td></td></tr><tr><td><code>banner_poppy</code></td><td><strong>A Poppy&#x27;s Pledge</strong></td><td></td></tr><tr><td><code>banner_sanctum</code></td><td><strong>Sanctum&#x27;s Oath</strong></td><td></td></tr><tr><td><code>piglin_slayer</code></td><td><strong>猪灵杀手</strong></td><td></td></tr><tr><td><code>misc.key</code></td><td><strong>钥匙</strong></td><td></td></tr><tr><td><code>misc.feed</code></td><td><strong>小恶灵食粮</strong></td><td></td></tr><tr><td><code>misc.todo</code></td><td><strong>一周一喂</strong></td><td></td></tr></table></div><h3>药水 / 旗帜（部分）</h3><div class="mini-grid"><div class="mini-item"><div class="t">迷之酿造 / 矿工麦酒</div><div class="d">圣所与村庄</div></div><div class="mini-item"><div class="t">不死圣水 / 死神药水</div><div class="d">高阶药水</div></div><div class="mini-item"><div class="t">不祥之水 / 永久发光</div><div class="d">喷溅类</div></div><div class="mini-item"><div class="t">刀锋之旗 / 不祥旗帜</div><div class="d">旗帜神器</div></div><div class="mini-item"><div class="t">虞美人誓言 / 圣所之誓</div><div class="d">旗帜神器</div></div></div>
+	</article>
+
+	<article class="article" id="mobs" data-search="自定义生物 Mobs 生物 猪灵骑士 圣所守卫 管道哨卫 沙漠烈焰人 不瞑亡魂 炼狱游者">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 生物</div>
+		<div class="article-header"><h1>自定义生物</h1><div class="sub">Mobs</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>键</th><th>中文名</th></tr><tr><td><code>castle.all</code></td><td><strong>生成所有禁堡生物</strong></td></tr><tr><td><code>castle.alchemist</code></td><td><strong>猪灵炼金术士</strong></td></tr><tr><td><code>castle.archer</code></td><td><strong>猪灵弓箭手</strong></td></tr><tr><td><code>castle.blacksmith</code></td><td><strong>猪灵铁匠</strong></td></tr><tr><td><code>castle.paratrooper</code></td><td><strong>猪灵空降兵</strong></td></tr><tr><td><code>castle.pyro</code></td><td><strong>猪灵火术师</strong></td></tr><tr><td><code>castle.scout</code></td><td><strong>猪灵侦察兵</strong></td></tr><tr><td><code>castle.knight</code></td><td><strong>猪灵骑士</strong></td></tr><tr><td><code>castle.knight.all</code></td><td><strong>所有禁堡骑士</strong></td></tr><tr><td><code>sanctum.guardian</code></td><td><strong>圣所守卫</strong></td></tr><tr><td><code>sanctum.illusionist</code></td><td><strong>圣所幻术师</strong></td></tr><tr><td><code>sanctum.cultist</code></td><td><strong>圣所教众</strong></td></tr><tr><td><code>sanctum.inquisitor</code></td><td><strong>圣所审判官</strong></td></tr><tr><td><code>sanctum.apostle</code></td><td><strong>圣所传道徒</strong></td></tr><tr><td><code>sanctum.ravager</code></td><td><strong>圣所劫掠兽</strong></td></tr><tr><td><code>sanctum.protector</code></td><td><strong>圣所保护者</strong></td></tr><tr><td><code>sanctum.ritualist</code></td><td><strong>圣所祭司</strong></td></tr><tr><td><code>pipeline.sentry</code></td><td><strong>管道哨卫</strong></td></tr><tr><td><code>pipeline.guard</code></td><td><strong>管道禁卫</strong></td></tr><tr><td><code>reactor.sentry</code></td><td><strong>恶魂哨兵</strong></td></tr><tr><td><code>reactor.director</code></td><td><strong>辐射总监</strong></td></tr><tr><td><code>misc.dune_blaze</code></td><td><strong>沙漠烈焰人</strong></td></tr><tr><td><code>misc.spirit</code></td><td><strong>不瞑亡魂</strong></td></tr><tr><td><code>misc.toxic</code></td><td><strong>剧毒史莱姆</strong></td></tr><tr><td><code>misc.headless</code></td><td><strong>无头战士</strong></td></tr><tr><td><code>misc.scientist</code></td><td><strong>凋零科学家</strong></td></tr><tr><td><code>quartz.torte</code></td><td><strong>Torte</strong></td></tr><tr><td><code>quartz.brother</code></td><td><strong>老骷髅兄弟</strong></td></tr><tr><td><code>quartz.ghastling</code></td><td><strong>小恶灵</strong></td></tr><tr><td><code>village.brewer</code></td><td><strong>猪村酿造师</strong></td></tr><tr><td><code>village.guard</code></td><td><strong>猪村守卫</strong></td></tr><tr><td><code>village.lumberjack</code></td><td><strong>猪村伐木工</strong></td></tr><tr><td><code>village.miner</code></td><td><strong>猪村矿工</strong></td></tr><tr><td><code>village.civilian</code></td><td><strong>猪灵平民</strong></td></tr><tr><td><code>inferno.inferno</code></td><td><strong>炼狱游者</strong></td></tr><tr><td><code>inferno.minion</code></td><td><strong>炼狱仆从</strong></td></tr></table></div>
+	</article>
+
+	<article class="article" id="advancements" data-search="进度一览 Advancements 进度 事件 沙丘 灰烬 石英 毒料 枯焦 圣所 管道">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 进度</div>
+		<div class="article-header"><h1>进度一览</h1><div class="sub">Advancements</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>键</th><th>标题</th><th>描述</th></tr><tr><td><code>root</code></td><td><strong>Incendium</strong></td><td>探索危机与机遇并存的Incendium下界</td></tr><tr><td><code>infernal_dunes.root</code></td><td><strong>达鲁德火焰风暴</strong></td><td>感受炼狱沙丘的火辣热气</td></tr><tr><td><code>infernal_dunes.dune_blaze</code></td><td><strong>光敏特征</strong></td><td>杀死一个栖息在炼狱沙丘的怪异的沙漠烈焰人</td></tr><tr><td><code>infernal_dunes.border_of_life</code></td><td><strong>生命的边界</strong></td><td>在光与暗的交界处杀死一个沙漠烈焰人，并获得它的两样掉落物</td></tr><tr><td><code>infernal_dunes.inferno.root</code></td><td><strong>余烬之外</strong></td><td>神龛…渴求献祭</td></tr><tr><td><code>infernal_dunes.inferno.summon</code></td><td><strong>升腾自烈焰</strong></td><td>在祭坛处献祭一个下界之星，召唤炼狱游者</td></tr><tr><td><code>infernal_dunes.inferno.run</code></td><td><strong>跑</strong></td><td>你不可能杀死炼狱，活到最后</td></tr><tr><td><code>infernal_dunes.inferno.kill</code></td><td><strong>沉沦为灰烬</strong></td><td>在炼狱的最终法术中存活，并获得你的奖励</td></tr><tr><td><code>infernal_dunes.inferno.lunatic_mode</code></td><td><strong>疯癫模式</strong></td><td>在没有护甲的情况下活过炼狱的最终阶段</td></tr><tr><td><code>infernal_dunes.inferno.armored_wings</code></td><td><strong>铸自炼火</strong></td><td>在锻造台使用炼狱翎毛升级你的鞘翅</td></tr><tr><td><code>ash_barrens.root</code></td><td><strong>尘埃落处</strong></td><td>进入灰烬荒原，</td></tr><tr><td><code>ash_barrens.enter_castle</code></td><td><strong>在猪魔王的宫殿里</strong></td><td>在黄金年代，一位伟大的雄主掌控着这座城堡。但在一系列的背叛与诅咒之后，他被自己的王国所放逐。如今剩下来的只有这些。</td></tr><tr><td><code>ash_barrens.conquer_castle</code></td><td><strong>征服者</strong></td><td>强攻禁堡并杀死每一个在此居住的猪灵</td></tr><tr><td><code>ash_barrens.duel_of_the_fates</code></td><td><strong>宿命对决</strong></td><td>让哨卫自食其果</td></tr><tr><td><code>volcanic_deltas.root</code></td><td><strong>浴火地幔</strong></td><td>进入地势混乱的三角洲火山</td></tr><tr><td><code>volcanic_deltas.hidden_debris</code></td><td><strong>高空作业</strong></td><td>在三角洲火山的高处开采暴露的远古残骸</td></tr><tr><td><code>quartz_flats.root</code></td><td><strong>地狱中的天堂</strong></td><td>不要被石英平地的美丽所蒙蔽，那里很危险</td></tr><tr><td><code>quartz_flats.floor_is_tears</code></td><td><strong>地板是泪水</strong></td><td>到了平地，更要当心那里的熔岩冻海</td></tr><tr><td><code>quartz_flats.ghast_buster</code></td><td><strong>恶魂克星</strong></td><td>在恶魂的主场——熔岩冻海之上，杀掉一个恶魂</td></tr><tr><td><code>quartz_flats.rescue_mission</code></td><td><strong>救援任务</strong></td><td>进入关押小恶灵的石英塔</td></tr><tr><td><code>quartz_flats.failed_mission</code></td><td><strong>任务失败</strong></td><td>进入上古关押已经丧生的小恶灵的石英塔</td></tr><tr><td><code>quartz_flats.special_delivery</code></td><td><strong>“特”送</strong></td><td>拿迅捷，生命恢复，和隐身效果折腾一只恶魂——之后杀死它以获取它的小恶灵</td></tr><tr><td><code>quartz_flats.feed_ghastling</code></td><td><strong>喂食盘中兽</strong></td><td>给小恶灵喂食它最喜爱的怪异食品 - 火焰弹 - 使它开始跟随你</td></tr><tr><td><code>quartz_flats.torte.root</code></td><td><strong>你个山炮！</strong></td><td>杀死大厨Torte并搜刮他的厨房</td></tr><tr><td><code>quartz_flats.torte.kitchen_treasure</code></td><td><strong>厨房至宝</strong></td><td>找到隐藏于石英厨房的宝藏</td></tr><tr><td><code>quartz_flats.sanctum.root</code></td><td><strong>灾厄村民的避难所？</strong></td><td>灾厄村民的圣所恐怕并没有看上去那么神圣...</td></tr><tr><td><code>quartz_flats.sanctum.vault_hunter</code></td><td><strong>宝藏猎人</strong></td><td>潜入圣所金库并暗杀守卫，以消除挖掘疲劳</td></tr><tr><td><code>withered_forest.root</code></td><td><strong>古战场</strong></td><td>进入枯焦森林，猪灵与凋零骷髅的古老战场</td></tr><tr><td><code>withered_forest.kill_spirit</code></td><td><strong>隐现</strong></td><td>杀死一个不瞑亡魂</td></tr><tr><td><code>withered_forest.chain_armor</code></td><td><strong>捉鬼敢死队</strong></td><td>穿上锁链甲并在其庇佑下驱散一个不瞑亡魂</td></tr><tr><td><code>misc.ruined_lab</code></td><td><strong>炼金实验</strong></td><td>猪灵举行的那场事与愿违的实验引发了如今的危险局面</td></tr><tr><td><code>toxic_heap.root</code></td><td><strong>放射性</strong></td><td>进入被称之为毒料堆的核废土</td></tr><tr><td><code>toxic_heap.slime_poison</code></td><td><strong>流毒小鬼</strong></td><td>染上剧毒史莱姆的毒素</td></tr><tr><td><code>toxic_heap.nuclear_fusion</code></td><td><strong>&quot;携带版Alpha&quot;</strong></td><td>搜刮下界反应堆</td></tr><tr><td><code>toxic_heap.mystic_wisdom</code></td><td><strong>神秘智慧</strong></td><td>搜集所有可能在反应堆中出现的战利品</td></tr><tr><td><code>misc.root</code></td><td><strong>怪奇群系</strong></td><td>拜访任意一个Incendium生物群系</td></tr><tr><td><code>misc.soul_searcher</code></td><td><strong>灵魂搜索者</strong></td><td>探索每一个Incendium生物群系</td></tr><tr><td><code>misc.loot_piglin_village</code></td><td><strong>猪灵掠夺者</strong></td><td>从猪灵村庄那盗走一点战利品</td></tr><tr><td><code>infernal_dunes.pipeline.root</code></td><td><strong>管中窥梦</strong></td><td>进入管道，不过要当心凶猛的烈焰人哨卫</td></tr><tr><td><code>infernal_dunes.pipeline.kill_sentry</code></td><td><strong>《这不是一只烈焰》（Ceci n&#x27;est pas un blaze）</strong></td><td>让管道哨卫熄火</td></tr></table></div>
+	</article>
+
+	<article class="article" id="loot" data-search="战利品 Loot 战利品 保险库 反应堆 管道 城堡 圣所">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 战利品</div>
+		<div class="article-header"><h1>战利品</h1><div class="sub">Loot</div></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>来源</th><th>表</th><th>要点</th></tr><tr><td>下界反应堆</td><td>reactor/treasure · junk · waste · office* · office_treasure</td><td>钻石、萤石、哭泣黑曜石、金/铁、品红玻璃彩蛋；成就要求开过全部 5 种</td></tr><tr><td>管道</td><td>pipeline/treasure · common · uncommon · rare · junk</td><td>哭泣黑曜石、石英、红石、铁、烈焰粉 + 隐秘宝藏</td></tr><tr><td>石英厨房</td><td>quartz_flats/kitchen_* · ghastling_food</td><td>金锭、石英矿、铁、火药、钻石；小恶灵食粮</td></tr><tr><td>禁忌之堡</td><td>castle/tower_barrel · king_statue · treasure · entity/knight·scout</td><td>金锭/金块、黑石、酿造、骑士掉落（下界合金碎片 6%、钻石、金）、Pigstep</td></tr><tr><td>圣所</td><td>sanctum/common·lower·junk·potions·brewery·coffin·banners·tax_collector</td><td>药水、酿造、旗帜、棺材</td></tr><tr><td>猪灵村庄</td><td>cvill/blacksmith·butcher·farmer·lumberjack·wood·low·medium·mob/*</td><td>职业分区战利品</td></tr><tr><td>废弃实验室</td><td>lab/treasure·rare·junk·basalt·piglin_loot</td><td>红石/煤/铁块、钻石、远古残骸/下界合金、凋灵骷髅头颅、猪灵杀手剑</td></tr><tr><td>实体掉落</td><td>entity/dune_blaze·withered_skeleton·sentry·spirit·toxic_slime</td><td>沙漠烈焰人、亡魂、哨卫、剧毒史莱姆</td></tr><tr><td>炼狱游者</td><td>artifact/tool/infernal_feather · trailblazer_drop · firestorm_drop · shields</td><td>炼狱翎毛、焚焰之轨、火焰风暴、棱镜/死灵盾牌</td></tr></table></div><p class="muted">系统消息（zh）：「只能装填光灵箭」「被砂轮使用后粉碎了」「还在冷却中」「Patron物品」等。</p>
+	</article>
+
+
+	<article class="article" id="mob-loot" data-search="怪物机制与掉落概率 Mobs &amp; loot rates 怪物 机制 掉落 概率 炼狱游者 哨卫 亡魂 反应堆 管道">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 怪物与掉落</div>
+		<div class="article-header"><h1>怪物机制与掉落概率</h1><div class="sub">Mobs & loot rates</div></div>
+		
+		<h3>自定义怪物机制与掉落</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>生物</th><th>机制要点</th><th>掉落（概率）</th></tr><tr><td>沙漠烈焰人</td><td>栖息炼狱沙丘；光暗交界击杀可得双掉落（进度「生命的边界」）</td><td>红沙 0–2 或 红石 0–2（各 50%）</td></tr><tr><td>不瞑亡魂</td><td>枯焦森林/垂泪峡谷；锁链甲可驱散（「捉鬼敢死队」）</td><td>冰 0–2 必掉；另有附魔之瓶类</td></tr><tr><td>凋零骷髅（枯焦）</td><td>枯焦森林战场</td><td>煤 −1–1 · 骨头 0–2</td></tr><tr><td>管道哨卫</td><td>管道结构；闪电攻击；「无穷力量!!!」被击中</td><td>书 100%；嵌套表：癫狂火炬（100% 若 roll 到该池）</td></tr><tr><td>恶魂哨兵 / 辐射总监</td><td>下界反应堆区域</td><td>反应堆战利品关联</td></tr><tr><td>剧毒史莱姆</td><td>毒料堆；中毒（「流毒小鬼」）</td><td>毒素类掉落</td></tr><tr><td>炼狱游者</td><td>祭坛献祭下界之星召唤；多阶段法术；最终阶段不可离场</td><td>嵌套：炼狱翎毛 / 焚焰之轨 / 火焰风暴 / 棱镜盾 / 死灵盾（artifact 表）</td></tr><tr><td>猪灵骑士 / 侦察兵等</td><td>禁忌之堡驻军</td><td>骑士池：下界合金碎片约 6%、钻石、金锭等</td></tr><tr><td>大厨 Torte</td><td>石英厨房 Boss</td><td>厨房宝藏 / 蛋糕糊</td></tr><tr><td>小恶灵</td><td>石英塔囚徒；喂火焰弹可跟随</td><td>可获得小恶灵（蛋）</td></tr></table></div>
+
+		<h3>结构宝箱概率</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>结构 / 表</th><th>物品</th><th>数量</th><th>概率</th></tr><tr><td>下界反应堆 · treasure</td><td>萤石</td><td>5–16</td><td>25.0%（×3 rolls）</td></tr><tr><td></td><td>金锭</td><td>4–8</td><td>25.0%</td></tr><tr><td></td><td>钻石</td><td>1</td><td>16.7%</td></tr><tr><td></td><td>哭泣的黑曜石</td><td>4–8</td><td>16.7%</td></tr><tr><td></td><td>铁锭</td><td>4–8</td><td>16.7%</td></tr><tr><td>下界反应堆 · 彩蛋池</td><td>品红/紫色染色玻璃</td><td>10–25</td><td>各 40%</td></tr><tr><td></td><td>黑曜石</td><td>1–5</td><td>20%</td></tr><tr><td>下界反应堆 · 神器池</td><td>辐射盾牌</td><td>—</td><td>100%（嵌套表）</td></tr><tr><td>管道 · treasure</td><td>哭泣黑曜石 / 石英 / 红石 / 铁锭</td><td>见数量</td><td>各约 23.5%（×3）</td></tr><tr><td></td><td>烈焰粉</td><td>1</td><td>5.9%</td></tr></table></div>
+		<p class="muted">概率 = weight / 同池总 weight。rolls 为 3 时同池可重复掉落。圣所、村庄、厨房等表结构类似（药水、职业箱、厨房宝箱）。</p>
+	
+	</article>
+	</main>
+</div>
+
+<footer class="wiki-footer">
+	Incendium 下界扩展 Wiki · 仿中文 Minecraft Wiki 版式 · 服务器数据包资料
+</footer>
+
+<script>
+(function () {
+	var sidebar = document.getElementById("wikiSidebar");
+	var toggle = document.getElementById("tocToggle");
+	var links = Array.prototype.slice.call(document.querySelectorAll(".wiki-sidebar a"));
+	var navTargets = links.map(function (a) {
+		var id = a.getAttribute("href");
+		return id && id.charAt(0) === "#" ? document.querySelector(id) : null;
+	});
+	function onScroll() {
+		var y = (document.documentElement.scrollTop || document.body.scrollTop) + 100;
+		var idx = 0;
+		for (var i = 0; i < navTargets.length; i++) {
+			var t = navTargets[i];
+			if (t && !t.classList.contains("hidden-by-search") && t.offsetTop <= y) idx = i;
+		}
+		links.forEach(function (a, i) {
+			a.classList.toggle("active", i === idx);
+			var t = navTargets[i];
+			if (t) a.classList.toggle("dimmed", t.classList.contains("hidden-by-search"));
+		});
+	}
+	window.addEventListener("scroll", onScroll, { passive: true });
+	onScroll();
+	if (toggle && sidebar) {
+		if (window.matchMedia("(max-width: 800px)").matches) sidebar.classList.add("collapsed");
+		toggle.addEventListener("click", function () { sidebar.classList.toggle("collapsed"); });
+	}
+	var box = document.getElementById("searchBox");
+	var btn = document.getElementById("searchBtn");
+	var panel = document.getElementById("searchPanel");
+	var list = document.getElementById("searchList");
+	var meta = document.getElementById("searchMeta");
+	var clearBtn = document.getElementById("searchClear");
+	var emptyBox = document.getElementById("searchEmpty");
+	var allArticles = Array.prototype.slice.call(document.querySelectorAll("main .article"));
+	var timer = null;
+	var lastHits = [];
+	function titleOf(art) {
+		var h = art.querySelector(".article-header h1") || art.querySelector("h1") || art.querySelector("h2");
+		return h ? h.textContent.replace(/\s+/g, " ").trim() : (art.id || "未命名");
+	}
+	function snippetOf(art, q) {
+		var text = (art.textContent || "").replace(/\s+/g, " ");
+		var i = text.toLowerCase().indexOf(q);
+		if (i < 0) return text.slice(0, 80) + (text.length > 80 ? "…" : "");
+		var start = Math.max(0, i - 24);
+		var end = Math.min(text.length, i + q.length + 36);
+		return (start > 0 ? "…" : "") + text.slice(start, end) + (end < text.length ? "…" : "");
+	}
+	var index = allArticles.map(function (art) {
+		var title = titleOf(art);
+		var body = (art.textContent || "").replace(/\s+/g, " ");
+		var data = art.getAttribute("data-search") || "";
+		return { el: art, id: art.id, title: title,
+			hay: (title + " " + data + " " + body).toLowerCase(),
+			titleLower: title.toLowerCase(), dataLower: data.toLowerCase() };
+	});
+	function scoreOf(item, q) {
+		if (item.titleLower.indexOf(q) !== -1) return 3;
+		if (item.dataLower.indexOf(q) !== -1) return 2;
+		if (item.hay.indexOf(q) !== -1) return 1;
+		return 0;
+	}
+	function showAllArticles() {
+		index.forEach(function (it) { it.el.classList.remove("hidden-by-search"); });
+	}
+	function renderPanel(q, hits) {
+		if (!panel || !list || !meta) return;
+		if (!q) { panel.hidden = true; if (emptyBox) emptyBox.hidden = true; list.innerHTML = ""; lastHits = []; return; }
+		if (!hits.length) {
+			panel.hidden = true;
+			if (emptyBox) { emptyBox.hidden = false; emptyBox.textContent = "没有找到「" + q + "」。"; }
+			lastHits = []; return;
+		}
+		if (emptyBox) emptyBox.hidden = true;
+		panel.hidden = false;
+		meta.textContent = "「" + q + "」 · " + hits.length + " 条";
+		list.innerHTML = "";
+		hits.forEach(function (h) {
+			var li = document.createElement("li");
+			var a = document.createElement("a");
+			a.href = "#" + h.item.id; a.textContent = h.item.title; a.title = h.snippet;
+			var sn = document.createElement("div"); sn.className = "sr-snip"; sn.textContent = h.snippet;
+			li.appendChild(a); li.appendChild(sn);
+			a.addEventListener("click", function (e) {
+				e.preventDefault();
+				var el = document.getElementById(h.item.id);
+				if (el) el.scrollIntoView({ block: "start" });
+			});
+			list.appendChild(li);
+		});
+		lastHits = hits;
+	}
+	function updateResultsOnInput() {
+		var q = (box.value || "").trim().toLowerCase().replace(/\s+/g, " ");
+		showAllArticles();
+		if (!q) { renderPanel("", []); onScroll(); return; }
+		var hits = [];
+		index.forEach(function (it) {
+			var s = scoreOf(it, q);
+			if (s > 0) hits.push({ item: it, score: s, snippet: snippetOf(it.el, q) });
+		});
+		hits.sort(function (a, b) {
+			if (b.score !== a.score) return b.score - a.score;
+			return index.indexOf(a.item) - index.indexOf(b.item);
+		});
+		renderPanel(q, hits);
+	}
+	function jumpTo(el) {
+		if (!el) return;
+		el.classList.remove("hidden-by-search");
+		window.scrollTo(0, Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - 72));
+	}
+	function goToResults() {
+		updateResultsOnInput();
+		if (!lastHits.length) {
+			if (emptyBox && !emptyBox.hidden)
+				window.scrollTo(0, Math.max(0, emptyBox.getBoundingClientRect().top + window.pageYOffset - 72));
+			return;
+		}
+		if (panel && !panel.hidden) {
+			window.scrollTo(0, Math.max(0, panel.getBoundingClientRect().top + window.pageYOffset - 72));
+			return;
+		}
+		jumpTo(lastHits[0].item.el);
+	}
+	if (box) {
+		box.addEventListener("input", function () {
+			if (timer) clearTimeout(timer);
+			timer = setTimeout(updateResultsOnInput, 180);
+		});
+		box.addEventListener("keydown", function (e) {
+			if (e.key === "Enter") { e.preventDefault(); if (timer) clearTimeout(timer); goToResults(); }
+			else if (e.key === "Escape") {
+				e.preventDefault(); box.value = "";
+				if (timer) clearTimeout(timer);
+				showAllArticles(); renderPanel("", []); onScroll(); box.blur();
+			}
+		});
+	}
+	if (btn) btn.addEventListener("click", function (e) { e.preventDefault(); if (timer) clearTimeout(timer); goToResults(); });
+	if (clearBtn) clearBtn.addEventListener("click", function () {
+		if (box) box.value = "";
+		if (timer) clearTimeout(timer);
+		showAllArticles(); renderPanel("", []); onScroll();
+		if (box) box.focus();
+	});
+})();
+</script>
+</body>
+</html>
