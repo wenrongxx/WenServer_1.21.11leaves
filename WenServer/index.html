@@ -76,29 +76,42 @@
 	</article>
 
 
-	<article class="article" id="recipes" data-search="合成 配方 工作台 3x3 craft crafting grid">
+	<article class="article" id="recipes" data-search="合成 配方 工作台 锻造台 切石机 熔炉 3x3 craft">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 合成配方</div>
-		<div class="article-header"><h1>合成配方</h1><div class="sub">3×3 台面 · 材质包与配方的关系</div></div>
-		<p>图标缺失时从 <code>1.21.11.jar</code> 与资源包提取，统一放在各站 <code>assets/img/craft/</code>。</p>
-		<p class="craft-note"><strong>WenServer 材质包</strong>只替换物品模型/贴图（含墓石地牢武器、钥匙、药水等），<strong>不定义合成配方</strong>。配方来自各数据包。</p>
-<div class="craft-block">
-  <div class="craft-name">资源包提供图标</div>
+		<div class="article-header"><h1>合成配方</h1><div class="sub">分台界面 · 材质包与配方</div></div>
+		<p>缺失图标从 <code>1.21.11.jar</code> 与资源包提取到各站 <code>assets/img/craft/</code>。</p>
+		<p class="craft-note"><strong>WenServer 材质包</strong>只替换模型/贴图，不定义配方。下列展示资源包图标与工作台界面对照。</p>
+<div class="craft-block station-crafting">
+  <div class="craft-name">木棒（资源包外观）</div>
+  <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">工作台</div>
   <div class="craft-table-wrap">
     <table class="craft-3"><tr><td></td><td><img src="assets/img/craft/oak_planks.png" alt="oak_planks" title="oak_planks"></td><td></td></tr><tr><td></td><td><img src="assets/img/craft/stick.png" alt="stick" title="stick"></td><td></td></tr><tr><td></td><td></td><td></td></tr></table>
     <div class="craft-arrow">→</div>
-    <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_wooden_club.png" alt="木棒（外观）"></div><div>木棒（外观）</div></div>
+    <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_wooden_club.png" alt="木棒"></div><div>木棒</div></div>
   </div>
-  <div class="craft-meta">网格中的木棒结果图标来自服务器资源包 <code>gd/textures/item/maces/mace_wooden_club.png</code>；配方本身在数据包。</div>
+  <div class="craft-meta">结果图标来自资源包物品纹理；配方在数据包。</div>
 </div>
 
-<div class="craft-block">
-  <div class="craft-name">长剑外观示例</div>
+<div class="craft-block station-crafting">
+  <div class="craft-name">铁制长剑（资源包外观）</div>
+  <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">工作台</div>
   <div class="craft-table-wrap">
     <table class="craft-3"><tr><td></td><td><img src="assets/img/craft/iron_ingot.png" alt="iron_ingot" title="iron_ingot"></td><td></td></tr><tr><td></td><td><img src="assets/img/craft/iron_ingot.png" alt="iron_ingot" title="iron_ingot"></td><td></td></tr><tr><td><img src="assets/img/craft/iron_ingot.png" alt="iron_ingot" title="iron_ingot"></td><td><img src="assets/img/craft/stick.png" alt="stick" title="stick"></td><td><img src="assets/img/craft/iron_ingot.png" alt="iron_ingot" title="iron_ingot"></td></tr></table>
     <div class="craft-arrow">→</div>
-    <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_iron_longsword.png" alt="铁制长剑（材质）"></div><div>铁制长剑（材质）</div></div>
+    <div class="craft-result"><div class="slot"><img src="assets/img/craft/gd_iron_longsword.png" alt="铁制长剑"></div><div>铁制长剑</div></div>
   </div>
-  <div class="craft-meta">3×3 配方在数据包；资源包提供铁长剑模型贴图。</div>
+  <div class="craft-meta">工作台 3×3；贴图为资源包 gd 长剑。</div>
+</div>
+
+<div class="craft-block station-crafting">
+  <div class="craft-name">红石比较器（原版物品纹理）</div>
+  <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">工作台</div>
+  <div class="craft-table-wrap">
+    <table class="craft-3"><tr><td></td><td><img src="assets/img/craft/redstone_torch.png" alt="redstone_torch" title="redstone_torch"></td><td></td></tr><tr><td><img src="assets/img/craft/redstone_torch.png" alt="redstone_torch" title="redstone_torch"></td><td><img src="assets/img/craft/quartz.png" alt="quartz" title="quartz"></td><td><img src="assets/img/craft/redstone_torch.png" alt="redstone_torch" title="redstone_torch"></td></tr><tr><td><img src="assets/img/craft/smooth_stone.png" alt="smooth_stone" title="smooth_stone"></td><td><img src="assets/img/craft/smooth_stone.png" alt="smooth_stone" title="smooth_stone"></td><td><img src="assets/img/craft/smooth_stone.png" alt="smooth_stone" title="smooth_stone"></td></tr></table>
+    <div class="craft-arrow">→</div>
+    <div class="craft-result"><div class="slot"><img src="assets/img/craft/comparator.png" alt="红石比较器"></div><div>红石比较器</div></div>
+  </div>
+  <div class="craft-meta">示例：比较器使用 jar 内 <code>item/comparator.png</code> 物品纹理，不用方块面。</div>
 </div>
 
 		<div class="categories">分类：<a href="#recipes">配方</a></div>
