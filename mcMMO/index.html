@@ -24,7 +24,7 @@
 </header>
 
 <div class="wiki-shell" id="top">
-			<aside class="wiki-sidebar" id="wikiSidebar">
+				<aside class="wiki-sidebar" id="wikiSidebar">
 		<div class="sb-title">目录</div>
 		<ul>
 			<li><a href="#overview">概述</a></li>
@@ -96,6 +96,25 @@
 		<div class="breadcrumbs"><a href="#top">首页</a> › 技能升级与机制</div>
 		<div class="article-header"><h1>技能升级与机制</h1><div class="sub">How to level · XP 公式 · 子技能伤害/触发公式</div></div>
 		<div class="hatnote">数值取自源码 <b>experience.yml</b>、<b>advanced.yml</b>、<b>skillranks.yml</b> 与 Java 实现。战斗技能 XP 受攻击冷却与防刷约束。</div>
+		<div class="toc-box"><div class="toc-title">目录</div><ol>
+				<li><span class="toc-num">1</span><a href="#overview">概述</a></li>
+				<li><span class="toc-num">2</span><a href="#levels">等级与模式</a></li>
+				<li><span class="toc-num">3</span><a href="#skills">技能总表</a></li>
+				<li><span class="toc-num">4</span><a href="#skills-leveling">技能升级与机制</a></li>
+				<li><span class="toc-num">5</span><a href="#abilities">超能力</a></li>
+				<li><span class="toc-num">6</span><a href="#subskills">子技能详解</a></li>
+				<li><span class="toc-num">7</span><a href="#antiexploit">防刷与反利用</a></li>
+				<li><span class="toc-num">8</span><a href="#hardcore">Hardcore</a></li>
+				<li><span class="toc-num">9</span><a href="#gameplay">核心玩法</a></li>
+				<li><span class="toc-num">10</span><a href="#party">队伍系统</a></li>
+				<li><span class="toc-num">11</span><a href="#commands">命令</a></li>
+				<li><span class="toc-num">12</span><a href="#config">配置要点</a></li>
+				<li><span class="toc-num">13</span><a href="#xp-papi">经验与 PAPI</a></li>
+				<li><span class="toc-num">14</span><a href="#items-misc">物品与其它</a></li>
+				<li><span class="toc-num">15</span><a href="#perms">权限</a></li>
+				<li><span class="toc-num">16</span><a href="#dev">开发者与环境</a></li>
+				<li><span class="toc-num">17</span><a href="#endgame">满级与终局</a></li>
+			</ol></div>
 
 		<h3 id="xp-formula">通用 XP 计算公式</h3>
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>模式</th><th>升到 level+1 所需 XP</th><th>默认参数</th><th>说明</th></tr><tr><td>LINEAR（默认）</td><td><code>base + level × multiplier</code></td><td>base=1020, multiplier=20</td><td>Retro 下 0→1 级需 1020，10→11 需 1220…</td></tr><tr><td>EXPONENTIAL</td><td><code>multiplier × level^exponent + base</code></td><td>0.1 × level^1.80 + 2000</td><td>后期更陡</td></tr><tr><td>Standard 换算</td><td>标准级 N 的 XP ≈ Retro 级 (N×10+1)…(N×10+10) 之和</td><td>—</td><td>Retro 需求与升级速度均为 Standard 的约 10 倍</td></tr><tr><td>Cumulative Curve</td><td>用力量等级替代单技能等级算下一级</td><td>默认 false</td><td>力量越高，每技能升一级越贵</td></tr><tr><td>结算顺序</td><td>单技能倍率 → Global →（若有）PVP 等</td><td>Global=1.0, PVP=1.0</td><td>再乘防刷/来源倍率（刷怪笼等常为 0）</td></tr><tr><td>力量等级</td><td>Σ 非子技能等级</td><td>分解/冶炼不计入</td><td>Power Level</td></tr></table></div>
