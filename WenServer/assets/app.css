@@ -955,80 +955,81 @@ a.back-home:active {
   object-fit: contain;
 }
 
-/* 3x3 crafting table (MC-wiki style) */
+/* MC-wiki style true 3x3 crafting table (not 1x9) */
 .craft-block {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.85rem;
-  margin: 0.75rem 0 1rem;
-  padding: 0.85rem;
-  background: var(--infobox-bg);
-  border: 1px solid var(--line);
+  align-items: flex-start;
+  gap: 0.75rem 1.25rem;
+  margin: 0.75rem 0 1.1rem;
+  padding: 0.85rem 1rem;
+  background: var(--infobox-bg, #f8f9fa);
+  border: 1px solid var(--line, #a2a9b1);
   border-radius: 8px;
 }
-.craft-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 36px);
-  grid-template-rows: repeat(3, 36px);
-  gap: 2px;
-  padding: 4px;
+.craft-name { font-weight: 700; margin-bottom: 0.45rem; width: 100%; }
+.craft-table-wrap { display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap; }
+/* Force 3 columns x 3 rows */
+table.craft-3 {
+  border-collapse: collapse;
   background: #c6c6c6;
   border: 2px solid #555;
-  image-rendering: pixelated;
+  table-layout: fixed;
+  width: 126px; /* 3*40 + 2*3 borders approx */
 }
-.craft-slot {
-  width: 36px;
-  height: 36px;
+table.craft-3 tr { display: table-row; }
+table.craft-3 td {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  border: 1px solid #777;
   background: #8b8b8b;
-  border-top: 2px solid #373737;
-  border-left: 2px solid #373737;
-  border-right: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.craft-slot img {
-  width: 28px;
-  height: 28px;
-  image-rendering: pixelated;
-}
-.craft-slot .ph {
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.62rem;
-  color: #222;
-  background: #b0b0b0;
-  border: 1px dashed #666;
-  line-height: 1.1;
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #373737;
   text-align: center;
-  padding: 1px;
+  vertical-align: middle;
+  padding: 0;
+  overflow: hidden;
+}
+table.craft-3 img {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+  display: block;
+  margin: 0 auto;
 }
 .craft-arrow {
-  font-size: 1.4rem;
-  color: var(--ink-2);
+  font-size: 1.6rem;
   font-weight: 700;
+  color: var(--ink-2, #54595d);
+  line-height: 1;
 }
 .craft-result {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
-  min-width: 100px;
+  min-width: 88px;
   text-align: center;
   font-weight: 600;
+  font-size: 0.86rem;
 }
-.craft-result img {
-  width: 40px;
-  height: 40px;
-  image-rendering: pixelated;
+.craft-result .slot {
+  width: 48px;
+  height: 48px;
   background: #8b8b8b;
   border: 2px solid #555;
-  padding: 4px;
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #373737;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.craft-meta { font-size: 0.82rem; color: var(--ink-2); max-width: 280px; }
+.craft-result .slot img {
+  width: 36px;
+  height: 36px;
+  image-rendering: pixelated;
+}
+.craft-meta { flex: 1; min-width: 200px; font-size: 0.85rem; color: var(--ink-2, #54595d); }
+.craft-note { font-size: 0.88rem; color: var(--ink-2, #54595d); margin: 0.4rem 0 0.8rem; }
+/* kill leftover 1x9 layout */
+.craft-grid { display: none; }
