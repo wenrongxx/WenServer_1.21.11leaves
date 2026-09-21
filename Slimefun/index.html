@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>粘液科技完全玩法手册 · WenServer</title>
-<meta name="description" content="WenServer 粘液科技全部附属怎么玩：60+ 附属分步操作、产线、魔法、存储、太空。"/>
+<title>粘液科技 Wiki · WenServer</title>
+<meta name="description" content="WenServer 粘液科技中文百科：核心机制、研究、电力、货运、机器人、官方与社区附属、玩法。"/>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
@@ -14,7 +14,7 @@
 <header class="wiki-header">
 	<div class="inner">
 		<img src="assets/pack-icon.png" alt="" class="hub-logo-icon" width="28" height="28" />
-		<a class="wiki-logo" href="../index.html">粘液科技完全手册<span>60+ 附属 · 逐步操作</span></a>
+		<a class="wiki-logo" href="../index.html">粘液科技 Wiki<span>Slimefun 4 · 机制百科</span></a>
 		<button type="button" class="toc-toggle" id="tocToggle">目录</button>
 		<div class="wiki-search">
 			<input type="search" id="searchBox" placeholder="搜索条目…" aria-label="搜索" />
@@ -27,567 +27,349 @@
 		<div class="sb-top"><a class="back-home" href="../index.html">← 返回首页</a></div>
 		<div class="sb-title">目录</div>
 		<ul>
-			<li><a href="#intro">总览</a></li>
-			<li><a href="#core">核心玩法</a></li>
+			<li><a href="#introduction">简介</a></li>
+			<li><a href="#systems">核心系统</a></li>
+			<li><a href="#research">研究</a></li>
+			<li><a href="#materials">材料加工</a></li>
+			<li><a href="#machines">机器与多方块</a></li>
+			<li><a href="#power">电力</a></li>
+			<li><a href="#cargo">货运网络</a></li>
+			<li><a href="#gps">GPS</a></li>
+			<li><a href="#androids">机器人</a></li>
+			<li><a href="#radiation">放射性</a></li>
+			<li><a href="#backpack">背包存储</a></li>
+			<li><a href="#talisman">护身符</a></li>
 			<li><a href="#official">官方附属</a></li>
-			<li><a href="#tools">工具装备</a></li>
-			<li><a href="#tech">机器工业</a></li>
-			<li><a href="#power2">能源反应堆</a></li>
-			<li><a href="#storage">存储物流</a></li>
-			<li><a href="#magic">魔法炼金</a></li>
-			<li><a href="#foodbio">食物生物</a></li>
-			<li><a href="#world">世界太空</a></li>
-			<li><a href="#combat">战争战斗</a></li>
-			<li><a href="#util">工具杂项</a></li>
-			<li><a href="#goals">进度清单</a></li>
-			<li><a href="#faq">FAQ</a></li>
-			<li><a href="#config">本服数值</a></li>
+			<li><a href="#community">社区附属</a></li>
+			<li><a href="#gameplay">玩法指南</a></li>
+			<li><a href="#commands">命令</a></li>
+			<li><a href="#config">本服配置</a></li>
 		</ul>
 	</aside>
 	<main class="wiki-content">
 		<div class="search-panel" id="searchPanel" hidden></div>
 
-		<article class="article" id="intro" data-search="粘液科技 总览 附属 60 官方 社区 目录">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 总览</div>
-			<div class="article-header"><h1>粘液科技完全玩法手册</h1><div class="sub">本服 60+ 附属 · 每条都写「怎么玩」</div></div>
-			<p>WenServer 的粘液生态 = <strong>主体 Slimefun 4</strong> + <strong>官方附属</strong> + <strong>社区附属</strong>（含大量咕咕汉化/中文构建）。本手册按<strong>玩法类型</strong>分组，每条附属给出「你具体怎么操作」。</p>
-			<div class="wiki-table-wrap"><table class="wiki">
-				<tr><th>章节</th><th>覆盖附属</th></tr>
-				<tr><td><a href="#official">官方附属</a></td><td>异域花园、灵魂罐、刷怪笼、背包/宠物、工业、捕捉、木龙头、彩色末影箱、更多装备、环保能源、额外头颅、硬核、幸运方块、矿石块、私人存储、粘液胶、Guizhan 前置</td></tr>
-				<tr><td><a href="#tools">工具装备</a></td><td>粘液匠魂、额外工具、更多工具、迷你方块、粘液修复、至尊研究院、Supreme 装备线、Relics 遗物、FN 放大、村民工具、DyeBench</td></tr>
-				<tr><td><a href="#tech">机器工业</a></td><td>蓬松机器、快捷机器、压缩工艺、动力科技、无尽科技、简单材料生成、SimpleUtils、SmallSpace、Liquid、Quaptics、SFCalc、区块信息</td></tr>
-				<tr><td><a href="#power2">能源</a></td><td>环保能源、工业反应堆、EMC 科技、动力科技发电机</td></tr>
-				<tr><td><a href="#storage">存储</a></td><td>Networks 网络、简易存储、DankTech 无底包、私人存储、彩色末影箱</td></tr>
-				<tr><td><a href="#magic">魔法</a></td><td>炼金术自传、水晶编年史、源之花、Bump、下界乌托邦、灵魂巧匠、药剂扩展、末地科技</td></tr>
-				<tr><td><a href="#foodbio">食物生物</a></td><td>美食家、基因工程、迷狱生机</td></tr>
-				<tr><td><a href="#world">世界太空</a></td><td>星际科技、迷狱生机、迷你方块</td></tr>
-				<tr><td><a href="#combat">战争</a></td><td>战争工艺、导弹科技</td></tr>
-				<tr><td><a href="#util">杂项</a></td><td>自定义、任务、HUD、消音器、计算器、硬核粘液、幸运方块</td></tr>
-			</table></div>
-			<p class="note">先读 <a href="#core">核心玩法</a>（研究/工作台/电力/货运），再进分支章节。每个附属名下是「照着做」步骤。</p>
-			<div class="categories">分类：<a href="#intro">总览</a></div>
-		</article>
+	<article class="article" id="introduction" data-search="粘液科技 Slimefun 简介 科技树 附属 官方 社区">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 简介</div>
+		<div class="article-header"><h1>简介</h1><div class="sub">Slimefun 4 · 2026.07 · 机制百科</div></div>
 
-		<article class="article" id="core" data-search="核心 研究 强化工作台 电力 货运 多方块 自动合成 GPS 背包">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 核心玩法</div>
-			<div class="article-header"><h1>核心玩法（所有附属共用）</h1></div>
-			<h3>解研究</h3>
-			<ol class="steps">
-				<li>指南书分类 → 点锁定物品 → 点「研究」，扣<strong>经验等级</strong>（本服不用游戏币）。</li>
-				<li>1% 会失败，失败重试即可；经验不够先去刷级。</li>
-				<li>推荐顺序：强化工作台 → 粉碎/洗矿/熔炼 → 电路板 → 发电 → 背包 → 货运 → 分支附属。</li>
-			</ol>
-			<h3>强化工作台合成</h3>
-			<ol class="steps">
-				<li>原版台先做出「强化工作台」，放地上右键打开。</li>
-				<li>按指南 3×3 摆格；有序必须位置正确。结果空 = 摆错/没研究/用错材料。</li>
-				<li>多方块机器必须按图搭，<code>/sf cheat</code> 拿不到。</li>
-			</ol>
-			<h3>电力与货运</h3>
-			<ol class="steps">
-				<li>煤发/太阳能 → 粘液电缆 → 机器；中间加电容；万用表看「已储存能源 A/B」。</li>
-				<li>货运节点贴箱子/机器，管理器设频道+过滤；丢 1 个物品测试。网络上限 200。</li>
-				<li>自动合成机放在<strong>箱子正上方</strong>，手持成品<strong>蹲下右键</strong>设配方。</li>
-			</ol>
-			<h3>材料线</h3>
-			<p>原矿 → 粉碎机 → 洗矿/淘金 → 电炉/冶炼炉 → 合金 → 电路板。详细见后文工业附属。</p>
-			<div class="categories">分类：<a href="#core">核心</a></div>
-		</article>
-<article class="article" id="official" data-search="官方附属 异域花园 灵魂罐 刷怪笼 背包 宠物 捕捉 木龙头 末影箱 工业 能源 头颅 私人存储 幸运 矿石块 硬核"><div class="breadcrumbs"><a href="#top">首页</a> › 官方附属</div><div class="article-header"><h1>官方附属</h1><div class="sub">与主体同源生态 · 生存扩展</div></div>
-			<h3>异域花园 ExoticGarden <span class="mc-gray">（官方）</span></h3>
-			<p>打草掉苗，种出奇异果树与灌木，供给美食家与交易。</p>
-			<ol class="steps">
-				<li><strong>用剪刀/手打草方块、高草、蕨类，掉树苗或灌木（树约 22%、灌木约 16%）</strong></li><li><strong>种在泥土上，果树成熟后采果实；灌木直接结果</strong></li><li><strong>围成果园，分区种植；货运自动收</strong></li><li><strong>产物卖给美食家菜谱或玩家</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>樱桃/椰子/柠檬/石榴/火龙果树苗、番茄/葡萄/茶灌木。下界/末地不生成。</p>
+		<p>粘液科技（Slimefun）将 Minecraft 扩展为无需模组的科技树：材料加工、机器、电力、货运、机器人、魔法与大量附属。所有粘液物品带专用标识，需在<strong>强化工作台</strong>等粘液机器中按指南书配方制作，不能用原版合成台「拼样子」完成。</p>
+		<div class="hatnote">本页为<strong>机制百科</strong>（数值、公式、系统规则）。上手步骤见 <a href="#gameplay">玩法指南</a> 专章。</div>
+		<p>WenServer 运行主体 <strong>2026.07</strong> 与数十个<strong>官方附属</strong>、<strong>社区附属</strong>（含咕咕汉化构建）。研究语言 zh-CN。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>分类</th><th>含义</th></tr><tr><td>主体 Slimefun</td><td>指南书、研究、机器、电力、货运、机器人、背包、护身符、放射性</td></tr><tr><td>官方附属</td><td>异域花园、灵魂罐、电力刷怪笼、工业、捕捉、木龙头、能源等（TheBusyBiscuit / Slimefun-Addon-Community 系）</td></tr><tr><td>社区附属</td><td>匠魂、美食家、Networks、无尽科技、魔法、太空、战争等</td></tr></table></div>
+		<ul class="bullets"><li>与 <strong>mcMMO</strong>：技能经验可支撑粘液研究解锁。</li><li>与 <strong>墓石地牢等数据包</strong>：地牢材料进入粉碎/洗矿产线。</li><li>与 <strong>WenServer 材质包</strong>：部分粘液/地牢物品汉化贴图。</li></ul>
+		
+		<div class="categories">分类：<a href="#introduction">简介</a></div>
+	</article>
 
-			<h3>灵魂罐 SoulJars <span class="mc-gray">（官方）</span></h3>
-			<p>击杀生物把灵灌进罐，满 128 做刷怪笼材料。</p>
-			<ol class="steps">
-				<li><strong>做<strong>空灵魂罐</strong>：水/土/气/火/死灵符文 + 灵魂沙×3 + 空罐</strong></li><li><strong>放背包，用<strong>玩家击杀</strong>目标生物开始灌灵（从 1 起累计）</strong></li><li><strong>每种杀满 <strong>128</strong>（本服统一）成满罐</strong></li><li><strong>满罐 + 铁栏×4 + 土符文×4 + 满罐 → <strong>破损刷怪笼</strong></strong></li><li><strong>破损笼拿去电力刷怪笼修复/升级</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>空灵魂罐、满罐、破损刷怪笼。开源 Slimefun-Addon-Community/SoulJars。</p>
+	<article class="article" id="systems" data-search="核心系统 机制 能量 J 研究 机器 方块数据 存储">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 核心系统</div>
+		<div class="article-header"><h1>核心系统</h1><div class="sub">总览 · 子系统关系与全局参数</div></div>
 
-			<h3>电力刷怪笼 ElectricSpawners <span class="mc-gray">（官方）</span></h3>
-			<p>耗电刷指定怪物，可无人在场。</p>
-			<ol class="steps">
-				<li><strong>用 SoulJars 的破损刷怪笼 + 白金/电机/强化笼/炽炎锭/大电容合成<strong>电力刷怪笼</strong></strong></li><li><strong>放置后 GUI 启用，选择生物（本服 25 种）</strong></li><li><strong>供电：<strong>240 J/只</strong>，缓冲 2048 J</strong></li><li><strong>4 格内同型实体上限 <strong>6</strong>，及时清怪/收掉落</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>电力刷怪笼、破损刷怪笼。240J/只 · 缓冲 2048J · 同型 ≤6。</p>
+		<p>粘液由若干耦合子系统组成。理解顺序建议：研究 → 材料加工 → 机器 → 电力 → 物流。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>子系统</th><th>作用</th><th>本服要点</th></tr><tr><td>研究 Research</td><td>用经验等级解锁配方</td><td>失败 1%；死亡不丢</td></tr><tr><td>强化工作台 / 多方块</td><td>执行配方</td><td>多方块必须按图搭建</td></tr><tr><td>能量 Energy</td><td>单位 J，驱动机器</td><td>网络 max-size 200</td></tr><tr><td>货运 Cargo</td><td>自动搬运</td><td>频道 + 过滤；可开可视化</td></tr><tr><td>GPS</td><td>航点与网络复杂度</td><td>航点上限 21</td></tr><tr><td>Android 机器人</td><td>程序化劳作</td><td>故障率 0%</td></tr><tr><td>放射性 Radiation</td><td>核材料危害</td><td>开启，可燃烧玩家</td></tr><tr><td>背包 / 存储</td><td>便携容器</td><td>离线可开背包</td></tr><tr><td>URID / 存储</td><td>方块数据持久化</td><td>本服 MYSQL；按区块加载</td></tr></table></div>
+		<h3>全局参数</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>参数</th><th>值</th></tr><tr><td>语言</td><td>zh-CN</td></tr><tr><td>自动保存</td><td>每 10 分钟</td></tr><tr><td>网络 max-size</td><td>200</td></tr><tr><td>GPS 航点</td><td>21</td></tr><tr><td>辐射更新间隔 / 宽限</td><td>1 / 15</td></tr><tr><td>研究货币解锁</td><td>关闭（用经验）</td></tr></table></div>
+		<p class="muted">方块数据：存储于 <code>block-storage</code>（MYSQL，Base64 值，LOAD_WITH_CHUNK，读 10 / 写 5 线程）。</p>
+		
+		<div class="categories">分类：<a href="#systems">核心系统</a></div>
+	</article>
 
-			<h3>染色背包 DyedBackpacks <span class="mc-gray">（官方）</span></h3>
-			<p>六档染色背包当移动箱子。</p>
-			<ol class="steps">
-				<li><strong>研究并合成小/普通/大/编织/镀金/辐光背包</strong></li><li><strong>右键打开当箱子；染色区分矿袋/农袋</strong></li><li><strong>离线可开（本服），别放共享贵重物</strong></li><li><strong>丢了用 /sf backpack 找回</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>各档背包。六档全开。</p>
+	<article class="article" id="research" data-search="研究 Research 经验 成本 称号 解锁 URID">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 研究</div>
+		<div class="article-header"><h1>研究</h1><div class="sub">经验解锁 · 等级成本 · 称号</div></div>
 
-			<h3>背包宠物 HotbarPets <span class="mc-gray">（官方）</span></h3>
-			<p>见上文快捷栏宠物。</p>
-			<ol class="steps">
-				<li><strong>—</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>—。</p>
+		<p>研究是配方门禁：未解锁则无法合成/使用对应物品。解锁消耗<strong>经验等级</strong>（本服 <code>use-money-unlock: false</code>；若换算游戏币系数 25）。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>规则</th></tr><tr><td>成本字段</td><td><code>cost</code> = 等级；<code>currency-cost</code> = 货币价（≈25×cost）</td></tr><tr><td>本服 cost 分布</td><td>约 1～150 级，多数 &lt;50，均值约 22（Researches.yml）</td></tr><tr><td>研究失败（硬核）</td><td>本服 <strong>1%</strong>（官方默认 10%）</td></tr><tr><td>死亡随机丢研究</td><td>本服关闭</td></tr><tr><td>死亡清空全部</td><td>本服 0%（官方默认 5%）</td></tr><tr><td>创造模式</td><td>免费解锁</td></tr><tr><td>学习动画</td><td>可关；解锁烟花可开</td></tr><tr><td>经验不足</td><td>提示「你没有足够的经验来解锁这个研究」</td></tr><tr><td>未研究使用</td><td>提示「知识还不足以理解…需要先解锁」</td></tr></table></div>
+		<h3>称号（research-ranks）</h3>
+		<p class="mc-gray">小鸡 → 牛牛君 → 蜘蛛 → 村民 → 开拓者 → 童生 → 实习生 → 不合格生 → 学生 → 笨拙学徒 → 学徒 → 熟练学徒 → 法师学徒 → 杰出法师 → 年轻魔术师 → 笨拙魔术师 → 普通魔术师 → 魔术师 → 熟练魔术师 → 特技魔术师 → 惯用魔术师 → 杰出魔术师 → 笨拙巫师 → 巫师 → 普通巫师 → 特技巫师 → 杰出巫师 → 卓越巫师 → 年轻大师 → 笨拙大师 → 实习大师 → 合格大师 → 大师 → 特技大师 → 杰出大师 → 卓越大师 → 精通大师 → <strong>天选之子</strong></p>
+		<p>称号按累计研究进度递进，纯荣誉展示。本服研究组含主体与数十附属（slimefun 258 条 cost 记录，另有 Foxy 41、ExtraGear 32、LiteXpansion 18、美食家 16 等）。</p>
+		
+		<div class="categories">分类：<a href="#research">研究</a></div>
+	</article>
 
-			<h3>怪物捕捉 MobCapturer <span class="mc-gray">（官方）</span></h3>
-			<p>Safari 网式：炮打成蛋，蛋可搬运/保留状态。</p>
-			<ol class="steps">
-				<li><strong>做<strong>生物捕捉炮</strong> + <strong>弹丸</strong></strong></li><li><strong>瞄准生物射击得<strong>生物蛋</strong></strong></li><li><strong>放置蛋复活生物（保留药水/点燃/命名/血量/羊毛色等）</strong></li><li><strong>用于刷怪塔搬迁与农场</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>捕捉炮、弹丸、生物蛋。本服可抓命名怪。</p>
+	<article class="article" id="materials" data-search="材料 矿石 粉碎 洗矿 冶炼 合金 电路板 GEO 矿块">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 材料加工</div>
+		<div class="article-header"><h1>材料加工</h1><div class="sub">矿石倍增 · 合金 · 电子料</div></div>
 
-			<h3>背包宠物 HotbarPets <span class="mc-gray">（官方）</span></h3>
-			<p>快捷栏宠物：挡伤害、掉物资、给药水效果。</p>
-			<ol class="steps">
-				<li><strong>指南做宠物物品，放<strong>快捷栏</strong></strong></li><li><strong>同时携带它的<strong>最爱食物</strong>维持效果</strong></li><li><strong>宠物会消耗食物；持续获得加成</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>宠物、最爱食物。InventoryPets 风。</p>
+		<p>粘液材料链把原版矿扩成多份粉与副产，再合成合金与电路板。下列为机制层说明。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>阶段</th><th>设备类型</th><th>机制</th></tr><tr><td>粉碎</td><td>粉碎机 / 矿研磨机</td><td>1 原矿 → 多份矿粉；本服矿研磨 <code>legacy-ore-grinder: true</code></td></tr><tr><td>洗选</td><td>洗矿机 / 淘金盘 / 洗尘机</td><td>从沙砾/粉再筛金属粒、宝石；本服洗矿洗尘为新版</td></tr><tr><td>熔炼</td><td>电炉 / 冶炼炉（多方块）</td><td>粉 → 锭；多方块批量</td></tr><tr><td>合金</td><td>强化工作台 / 熔炼</td><td>粘液合金、硬化金属、扩展金属锭</td></tr><tr><td>电子</td><td>强化工作台</td><td>基础/高级电路板为机器门槛</td></tr><tr><td>地质</td><td>GEO 矿机 + 矿石块附属</td><td>矿块仅由 GEO 产出，不自然生成；粉碎成尘</td></tr></table></div>
+		<ul class="bullets"><li>地质/扩展资源开关见 <code>resources.yml</code>：油、下界冰、铀、盐、钍、末影精华、星尘陨石、砷、莫扎石、各类矿块等。</li><li>铀/钍涉及 <a href="#radiation">放射性</a>。</li></ul>
+		
+		<div class="categories">分类：<a href="#materials">材料加工</a></div>
+	</article>
 
-			<h3>粘液木龙头 SlimyTreeTaps <span class="mc-gray">（官方）</span></h3>
-			<p>树上取树脂做橡胶/塑料，另有魔法镜传送。</p>
-			<ol class="steps">
-				<li><strong>做<strong>木龙头</strong>，右键原木采<strong>粘性树脂</strong>（标准 12% / 强化 24% / 钻石 32%；刮刀采琥珀 16%）</strong></li><li><strong>橡胶工厂：2 树脂→橡胶（4s）→2 橡胶→生塑料（6s）→1 生塑料→塑料板（10s）</strong></li><li><strong>树脂萃取机自动化：8 原木→1 树脂（16 J/s，II 代 28 J/s）</strong></li><li><strong>琥珀块+青金/末影 → 蓝末影珍珠 → <strong>魔法镜</strong>：右键绑定，放展示框点击传送（耗末影珍珠）</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>木龙头、树脂、橡胶工厂、魔法镜。工厂 6J/s。</p>
+	<article class="article" id="machines" data-search="机器 强化工作台 多方块 自动合成机 冶炼炉 装甲锻造">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 机器与多方块</div>
+		<div class="article-header"><h1>机器与多方块</h1><div class="sub">工作面类型 · 自动合成</div></div>
 
-			<h3>彩色末影箱 ColoredEnderChests <span class="mc-gray">（官方）</span></h3>
-			<p>三染料配色 = 全服共享独立空间（最多 8192 种）。</p>
-			<ol class="steps">
-				<li><strong>用<strong>三种染料</strong>合成彩色末影箱</strong></li><li><strong>同一 RGB 组合 = 所有人共享同一库</strong></li><li><strong>不同颜色隔离；可接货运</strong></li><li><strong>小箱/大箱本服都开</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>彩色末影箱。8192 色组合。</p>
+		<h3>三类工作面</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>类型</th><th>机制</th></tr><tr><td>强化工作台</td><td>3×3 静态配方；有序/无序；只认指南配方</td></tr><tr><td>单方块机器</td><td>进度条、耗电/耗时、输入输出槽</td></tr><tr><td>多方块结构</td><td>原版方块按图搭建；作弊指令无法领取成品</td></tr></table></div>
+		<h3>自动合成机</h3>
+		<ul class="bullets"><li>必须位于<strong>箱子正上方</strong>，否则提示缺少箱子。</li><li>手持目标成品<strong>蹲下右键</strong>写入配方；支持启停与删除。</li><li>配方不可用条件：未解锁研究 / 物品被禁用 / 非可自动合成目标。</li><li>不能用粘液物品去套原版合成机逻辑（会拒绝）。</li></ul>
+		<h3>常见机器角色</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>角色</th><th>例子</th></tr><tr><td>加工</td><td>粉碎、洗矿、电炉、冶炼炉</td></tr><tr><td>装备</td><td>装甲锻造台、压力腔</td></tr><tr><td>食品/杂项</td><td>榨汁机等</td></tr><tr><td>充能</td><td>充电台；<code>/sf charge</code> 直接充满手持</td></tr><tr><td>多方块</td><td>冶炼炉、蒸汽轮机等（附属）</td></tr></table></div>
+		
+		<div class="categories">分类：<a href="#machines">机器与多方块</a></div>
+	</article>
 
-			<h3>更多装备 ExtraGear <span class="mc-gray">（官方）</span></h3>
-			<p>用粘液锭/合金做自带附魔的武器护甲。</p>
-			<ol class="steps">
-				<li><strong>挖粘液金属/合金线</strong></li><li><strong>强化工作台做出装备组（内置附魔）</strong></li><li><strong>与墓石地牢装混搭</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>粘液锭装备。无新机器。</p>
+	<article class="article" id="power" data-search="电力 能量 J 电缆 电容 发电机 万用表">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 电力</div>
+		<div class="article-header"><h1>电力</h1><div class="sub">产电 · 传输 · 缓冲 · 耗电</div></div>
 
-			<h3>环保能源 EcoPower <span class="mc-gray">（官方）</span></h3>
-			<p>蒸汽/风力/月光/高能太阳/避雷针绿电。</p>
-			<ol class="steps">
-				<li><strong>做<strong>钢转子</strong> → 蒸汽轮机多方块（放<strong>水上方 + 岩浆块</strong>）；风力机放室外</strong></li><li><strong>产能：蒸汽 8/12/26 J/s，风 10/22/46 J/s</strong></li><li><strong>月光机仅夜 <strong>256 J/s</strong>；高能太阳能昼夜 <strong>512</strong>；辐射太阳 <strong>1024</strong></strong></li><li><strong>避雷针雷暴单次 512～8192 J；太阳盔给手持/穿戴充能 5 J/次</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>钢转子、蒸汽轮机、风力机、月光机。多方块：水+岩浆块。</p>
+		<p>能量单位习惯称 <strong>J</strong>。拓扑：发电机 → 电缆 → 电容缓冲 → 耗电机器。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>规则</th></tr><tr><td>发电机</td><td>燃料/阳光等转 J；指南可查燃料表</td></tr><tr><td>电缆</td><td>连接成网络；本服网络 max-size <strong>200</strong></td></tr><tr><td>电容</td><td>削峰填谷；万用表显示「已储存的能源: A / B」</td></tr><tr><td>耗电端</td><td>加工机、充电台、货运、机器人、电力刷怪笼等</td></tr><tr><td>可视化</td><td>enable-visualizer: true</td></tr><tr><td>超额物品</td><td>delete-excess-items: false</td></tr></table></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>附属发电参考</th><th>功率</th></tr><tr><td>EcoPower 蒸汽</td><td>8 / 12 / 26 J/s（档位）</td></tr><tr><td>EcoPower 风力</td><td>10 / 22 / 46 J/s</td></tr><tr><td>EcoPower 月光</td><td>256 J/s（仅夜）</td></tr><tr><td>EcoPower 高能太阳 / 辐射太阳</td><td>512 / 1024 J/s</td></tr><tr><td>EcoPower 避雷针</td><td>512～8192 J/雷击</td></tr><tr><td>电力刷怪笼</td><td>240 J/只，缓冲 2048 J</td></tr><tr><td>木龙头橡胶工厂 / 萃取</td><td>6 J/s；萃取 16 或 28 J/s</td></tr></table></div>
+		<p class="muted">更多发电与 EMC/反应堆见 <a href="#community">社区附属</a>。</p>
+		
+		<div class="categories">分类：<a href="#power">电力</a></div>
+	</article>
 
-			<h3>额外头颅 ExtraHeads <span class="mc-gray">（官方）</span></h3>
-			<p>击杀掉头颅，斩首剑提概率。</p>
-			<ol class="steps">
-				<li><strong>打怪掉头颅（掉率由服主 config）</strong></li><li><strong>用<strong>斩首之剑</strong>提概率（默认约 ×1.8）</strong></li><li><strong>装饰/展览/交易</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>头颅、斩首之剑。×1.8 默认。</p>
+	<article class="article" id="cargo" data-search="货运 Cargo 节点 管理器 频道 过滤">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 货运网络</div>
+		<div class="article-header"><h1>货运网络</h1><div class="sub">自动搬运规则</div></div>
 
-			<h3>工业 LiteXpansion <span class="mc-gray">（官方）</span></h3>
-			<p>IC2 风轻工业 + UU 物质合成。</p>
-			<ol class="steps">
-				<li><strong>研究工业机，接电造 UU 物质</strong></li><li><strong>按 uumatter.yml 的 x=UU 做 3×3 配方出货</strong></li><li><strong>与木龙头塑料线串联</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>UU 物质、电机。有 nerf-other-addons 能耗补偿开关。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>组件</th><th>机制</th></tr><tr><td>输入节点</td><td>从容器抽出物品进入网络</td></tr><tr><td>输出节点</td><td>向容器写入</td></tr><tr><td>高级节点</td><td>更细过滤条件</td></tr><tr><td>货运管理器</td><td>频道、过滤器、优先级、可视化</td></tr></table></div>
+		<ul class="bullets"><li>同频道形成物流域；过滤器可白/黑名单物品。</li><li>出口满则可能阻塞（本服不删除超额）。</li><li>可与彩色末影箱、Networks、机器人联用。</li></ul>
+		
+		<div class="categories">分类：<a href="#cargo">货运网络</a></div>
+	</article>
 
-			<h3>幸运方块 SlimefunLuckyBlocks <span class="mc-gray">（官方）</span></h3>
-			<p>多档幸运方块 + 潘多拉魔盒随机事件。</p>
-			<ol class="steps">
-				<li><strong>做幸运 / 超幸运 / 超不幸 / <strong>潘多拉魔盒</strong></strong></li><li><strong>放到安全空地敲碎</strong></li><li><strong>触发好坏随机事件；档位越高偏好运</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>幸运方块、潘多拉魔盒。事件表见指南/wiki。</p>
+	<article class="article" id="gps" data-search="GPS 航点 复杂度 信号 发射机 死亡点">
+		<div class="breadcrumbs"><a href="#top">首页</a> › GPS</div>
+		<div class="article-header"><h1>GPS</h1><div class="sub">航点与网络复杂度</div></div>
 
-			<h3>矿石块 SlimefunOreChunks <span class="mc-gray">（官方）</span></h3>
-			<p>地质矿机专用矿块 → 粉碎成尘。</p>
-			<ol class="steps">
-				<li><strong>用主体 <strong>GEO 矿机</strong>采<strong>矿块</strong>（世界不自然生成）</strong></li><li><strong>进<strong>矿石粉碎机</strong>变矿物尘</strong></li><li><strong>扩产铁/金/铜/锡/银/铝等尘线</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>矿块、GEO 矿机。只出 GEO，不挖到。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>规则</th></tr><tr><td>航点上限</td><td><strong>21</strong>（max-gps-waypoints）</td></tr><tr><td>命名</td><td>支持彩色代码；重名拒绝</td></tr><tr><td>复杂度</td><td>由 GPS 信号发射机累积；设备会要求最低复杂度</td></tr><tr><td>示例消耗</td><td>神秘科技区块加载器约 <strong>7500</strong>/个</td></tr><tr><td>死亡点</td><td>自动记录，便于找回</td></tr><tr><td>公共传送</td><td><code>/sf teleporter</code> 查看他人公开点</td></tr></table></div>
+		<p>复杂度不足时提示未建网络或复杂度不够，需增发射机。</p>
+		
+		<div class="categories">分类：<a href="#gps">GPS</a></div>
+	</article>
 
-			<h3>私人存储 PrivateStorage <span class="mc-gray">（官方）</span></h3>
-			<p>木/铁/钻石/防爆多档私人箱。</p>
-			<ol class="steps">
-				<li><strong>合成对应档箱子放置</strong></li><li><strong>Private：仅放置者可开/拆</strong></li><li><strong>Public：交给领地插件保护</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>私人箱。防抄家。</p>
+	<article class="article" id="androids" data-search="机器人 Android 采矿 伐木 农耕 故障 领地">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 机器人</div>
+		<div class="article-header"><h1>机器人</h1><div class="sub">Android 程序劳作</div></div>
 
-			<h3>硬核粘液 HardcoreSlimefun <span class="mc-gray">（官方）</span></h3>
-			<p>给研究/死亡/机器人加惩罚（本服已调轻）。</p>
-			<ol class="steps">
-				<li><strong>解研究可能 <strong>1%</strong> 失败（官方默认 10%，本服更轻）</strong></li><li><strong>官方默认死亡可掉研究；本服<strong>关闭</strong>随机丢、全清 0%</strong></li><li><strong>机器人故障本服 0%（官方默认 10% / 30s）</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>—。数值以本服 config 为准。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>规则</th></tr><tr><td>类型</td><td>采矿、伐木、农耕、屠宰等循环程序</td></tr><tr><td>耗电</td><td>按程序消耗能量，需接电网</td></tr><tr><td>故障（硬核）</td><td>本服概率 <strong>0%</strong>；官方默认 10%；故障持续 <strong>30s</strong> 自愈</td></tr><tr><td>领地</td><td>无权限领地/地皮自动暂停</td></tr><tr><td>输出</td><td>产物掉落地面/容器，宜接货运</td></tr></table></div>
+		
+		<div class="categories">分类：<a href="#androids">机器人</a></div>
+	</article>
 
-			<h3>粘液胶 SlimeGlue / GuizhanLib <span class="mc-gray">（前置）</span></h3>
-			<p>兼容领地/商店等，咕咕中文附属库。</p>
-			<ol class="steps">
-				<li><strong>保持启用即可，玩家几乎无操作</strong></li><li><strong>排兼容问题时先确认它们在跑</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>—。前置，勿禁用。</p>
-<div class="categories">分类：<a href="#official">官方附属</a></div></article><article class="article" id="tools" data-search="工具 装备 匠魂 额外工具 更多工具 迷你 修复 Supreme 遗物 FN 村民 染色"><div class="breadcrumbs"><a href="#top">首页</a> › 工具装备</div><div class="article-header"><h1>工具装备</h1><div class="sub">社区附属</div></div>
-			<h3>粘液匠魂 SlimeTinker <span class="mc-gray">（社区）</span></h3>
-			<p>匠魂式可组装工具：换部件、上强化、越阶升级。</p>
-			<ol class="steps">
-				<li><strong>做基础粘液工具/武器</strong></li><li><strong>进冶炼炉融金属 → 铸部件（刀刃/手柄等）</strong></li><li><strong>组装成完整工具，按材料特性定手感</strong></li><li><strong>上强化词条（耐久/效率/伤害优先）</strong></li><li><strong>坏了修部件而不是整把重做；可从石质升到下界合金级</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>冶炼炉、铸模、部件、强化槽。开源：Sefiraat/SlimeTinker。</p>
+	<article class="article" id="radiation" data-search="放射性 辐射 铀 钍 燃烧 暴露 防护">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 放射性</div>
+		<div class="article-header"><h1>放射性</h1><div class="sub">核材料危害模型</div></div>
 
-			<h3>额外工具 ExtraTools / 更多工具 MoreTools <span class="mc-gray">（社区）</span></h3>
-			<p>实用工具扩展，含扳手类旋转/改频道。</p>
-			<ol class="steps">
-				<li><strong>指南做工具</strong></li><li><strong>新月锤等可旋转机器方块、改线缆频道（冷却约 0.5s）</strong></li><li><strong>配多方块建造与货运布线</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>新月锤等。MoreTools 含旋转白名单设置。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>本服</th></tr><tr><td>开关</td><td>enable-radiation: true</td></tr><tr><td>更新间隔</td><td>1</td></tr><tr><td>宽限期</td><td>15</td></tr><tr><td>满暴露惩罚</td><td>burn-players-when-radioactive: true，可燃烧</td></tr><tr><td>显示</td><td>动作条「辐射暴露等级：N/100」</td></tr><tr><td>污染源</td><td>铀、钍、核燃料链等</td></tr></table></div>
+		<p>机制上暴露随接触/携带时间累计，脱离后按宽限衰减。防护依赖粘液防护装与隔离存储。</p>
+		
+		<div class="categories">分类：<a href="#radiation">放射性</a></div>
+	</article>
 
-			<h3>迷你方块 MiniBlocks <span class="mc-gray">（社区）</span></h3>
-			<p>微型装饰方块。</p>
-			<ol class="steps">
-				<li><strong>研究装饰分类</strong></li><li><strong>做出迷你方块摆建筑细节</strong></li><li><strong>与创世神/WG 细节建筑配合</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>迷你方块。建筑党向。</p>
+	<article class="article" id="backpack" data-search="背包 存储 染色背包 末影箱 私人 网络 Dank">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 背包与存储</div>
+		<div class="article-header"><h1>背包与存储</h1><div class="sub">容器层级与共享规则</div></div>
 
-			<h3>粘液修复 SlimyRepair <span class="mc-gray">（社区）</span></h3>
-			<p>修粘液物品耐久。</p>
-			<ol class="steps">
-				<li><strong>做修复台/修复材料</strong></li><li><strong>放入受损粘液装备</strong></li><li><strong>消耗材料回耐久</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>修复台。省重做成本。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>容器</th><th>机制</th></tr><tr><td>粘液背包</td><td>多级容量；可染色（染色背包附属六档全开）</td></tr><tr><td>离线打开</td><td>本服 allow-open-when-owner-offline: true</td></tr><tr><td>找回</td><td><code>/sf backpack</code></td></tr><tr><td>彩色末影箱</td><td>3 染料 RGB 组合，最多 8192 独立共享空间</td></tr><tr><td>私人存储</td><td>木/铁/钻石/防爆；Private 仅主人 / Public 交领地</td></tr><tr><td>Networks</td><td>控制器+节点+量子存储（4k～2B）+ 远程 150</td></tr><tr><td>SimpleStorage</td><td>主从链接，范围 5，检查间隔 4 tick</td></tr><tr><td>DankTech2</td><td>多级 Dank/垃圾桶，匹配吸入、溢出作废</td></tr></table></div>
+		
+		<div class="categories">分类：<a href="#backpack">背包与存储</a></div>
+	</article>
 
-			<h3>至尊研究院 Supreme <span class="mc-gray">（社区）</span></h3>
-			<p>100+ 资源与终局装备/生成器/采集线。</p>
-			<ol class="steps">
-				<li><strong>研究资源与装备分类</strong></li><li><strong>堆材料做强化装备/武器/工具</strong></li><li><strong>虚拟花园/水族馆/怪物收集器定时产资源</strong></li><li><strong>石矿机 + 科技生成器扩产（生成器上限 64）</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>大量资源、虚拟设施、石矿机。配置含 weapons/tools/armor/quarry 总开关。</p>
+	<article class="article" id="talisman" data-search="护身符 护符 护身 符 矿工 农夫 触发">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 护身符</div>
+		<div class="article-header"><h1>护身符</h1><div class="sub">概率触发型被动</div></div>
 
-			<h3>克苏尼亚遗物 RelicsOfCthonia <span class="mc-gray">（社区）</span></h3>
-			<p>下界主题遗物收集与清除器。</p>
-			<ol class="steps">
-				<li><strong>探索下界找遗物</strong></li><li><strong>收集/研究遗物效果</strong></li><li><strong>用遗物清除器清理不要的遗物</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>遗物、清除器。Addon Jam 下界向。</p>
+		<p>护身符放物品栏即可参与<strong>概率触发</strong>（本服动作栏提示开启）。触发文案与效果：</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>类型</th><th>触发效果</th></tr><tr><td>铁砧/工匠</td><td>工具本次免损坏</td></tr><tr><td>矿工</td><td>矿物双倍掉落</td></tr><tr><td>农夫 / 猎人</td><td>掉落翻倍</td></tr><tr><td>岩浆 / 水 / 天使</td><td>岩浆获救 / 免溺水 / 信仰之跃免伤</td></tr><tr><td>魔术师</td><td>额外附魔</td></tr></table></div>
+		<p class="muted">非常驻 buff；多枚叠加收益需实测。</p>
+		
+		<div class="categories">分类：<a href="#talisman">护身符</a></div>
+	</article>
 
-			<h3>FN 放大 FNAmplifications <span class="mc-gray">（社区）</span></h3>
-			<p>机器、工具、PvP 等大量放大件。</p>
-			<ol class="steps">
-				<li><strong>研究放大件分类</strong></li><li><strong>做放大模块装到工具/护甲</strong></li><li><strong>PvP 与产线双向强化</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>放大模块。可依赖 SMG/经济。</p>
+	<article class="article" id="official" data-search="官方附属 异域花园 灵魂罐 刷怪笼 背包 宠物 捕捉 木龙头 末影箱 环保 工业 幸运 矿石 私人 硬核">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 官方附属</div>
+		<div class="article-header"><h1>官方附属</h1><div class="sub">TheBusyBiscuit / Slimefun-Addon-Community 系</div></div>
 
-			<h3>村民工具 VillagerUtil <span class="mc-gray">（社区）</span></h3>
-			<p>村民便利：捕捉/转换/管理。</p>
-			<ol class="steps">
-				<li><strong>做村民道具</strong></li><li><strong>用村民魔法/令牌（本服 use-tokens: true）</strong></li><li><strong>搬运、转化职业或存库</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>村民令牌。与交易站配合。</p>
+		<p>官方附属扩展生存内容。下列条目含<strong>机制</strong>与关键合成/数值（来自源码与本服配置）。</p>
+		
+		<h3>异域花园 ExoticGarden</h3>
+		<p>新增植物（果树、灌木、菜肴向产物）。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>掉苗</td><td>破坏草/高草/蕨类等；树约 22%、灌木约 16%（再乘方块掉率）</td></tr><tr><td>生成</td><td>auto-generate-plants: true；下界/末地黑名单</td></tr><tr><td>产物</td><td>奇异果树与灌木，供美食家与交易</td></tr></table></div><p class="muted">开源：Slimefun-Addon-Community/ExoticGarden。</p>
 
-			<h3>染色台 DyeBench <span class="mc-gray">（社区）</span></h3>
-			<p>染料与染色工作台。</p>
-			<ol class="steps">
-				<li><strong>放染色台</strong></li><li><strong>放入染料与目标物</strong></li><li><strong>批量染色/调色</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>染色台。配合彩色背包/末影箱。</p>
-<div class="categories">分类：<a href="#tools">工具装备</a></div></article><article class="article" id="tech" data-search="机器 工业 蓬松 快捷 压缩 动力 无尽 材料生成 简易 液体 量子 计算器 区块"><div class="breadcrumbs"><a href="#top">首页</a> › 机器工业</div><div class="article-header"><h1>机器工业</h1><div class="sub">社区附属</div></div>
-			<h3>蓬松机器 FluffyMachines <span class="mc-gray">（社区）</span></h3>
-			<p>便利机器 + 大桶存储。</p>
-			<ol class="steps">
-				<li><strong>做出 Fluffy 桶/机器</strong></li><li><strong>桶做超大物品堆存</strong></li><li><strong>便利机器补全重复步骤</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>桶、机器。QoL 向。</p>
+		
+		<h3>灵魂罐 SoulJars</h3>
+		<p>把击杀之灵封入罐，用于制作刷怪笼材料。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>空罐合成</td><td>水/土/气/火/死灵符文 + 灵魂沙×3 + 空罐</td></tr><tr><td>充灵</td><td>玩家击杀计数；本服每种生物 <strong>128</strong> 满罐</td></tr><tr><td>破损刷怪笼</td><td>满罐 + 铁栏×4 + 土符文×4 + 满罐</td></tr><tr><td>生物表</td><td>config.mobs 启用列表</td></tr></table></div><p class="muted">开源：Slimefun-Addon-Community/SoulJars。</p>
 
-			<h3>快捷机器 FastMachines <span class="mc-gray">（社区）</span></h3>
-			<p>无序配方批量快速合成机。</p>
-			<ol class="steps">
-				<li><strong>放快捷合成机</strong></li><li><strong>丢入无序配方材料批量做</strong></li><li><strong>省一台台点工作台</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>快捷合成机。适合量产材料。</p>
+		
+		<h3>电力刷怪笼 ElectricSpawners</h3>
+		<p>耗电生成生物，可无人值守。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>能量</td><td><strong>240 J/只</strong>；缓冲 <strong>2048 J</strong></td></tr><tr><td>实体限制</td><td>4 格内同型 ≤ <strong>6</strong></td></tr><tr><td>合成</td><td>破损刷怪笼 + 白金/电机/强化笼/炽炎锭/大电容（以指南为准）</td></tr><tr><td>允许生物</td><td>config.mobs（本服 25 种）</td></tr></table></div><p class="muted">开源：Slimefun-Addon-Community/ElectricSpawners。</p>
 
-			<h3>压缩工艺 CompressionCraft <span class="mc-gray">（社区）</span></h3>
-			<p>物品压缩/解压。</p>
-			<ol class="steps">
-				<li><strong>压缩机把材料压成致密块</strong></li><li><strong>解压机还原</strong></li><li><strong>仓储更省格</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>压缩机、解压机。与仓储网络配合。</p>
+		
+		<h3>染色背包 DyedBackpacks</h3>
+		<p>背包染色变体。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>机制</td><td>背包 + 对应染料/羊毛合成</td></tr><tr><td>档位</td><td>本服 small/normal/large/woven/gilded/radiant 全开</td></tr></table></div>
+		
+		<h3>背包宠物 HotbarPets</h3>
+		<p>快捷栏宠物，提供被动增益。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>机制</td><td>宠物在快捷栏生效；需携带最爱食物维持</td></tr><tr><td>效果</td><td>挡伤害、掉免费物品、药水效果（按宠物）</td></tr></table></div>
+		
+		<h3>怪物捕捉 MobCapturer</h3>
+		<p>Safari 网式捕获与搬运。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>工具</td><td>生物捕捉炮 + 弹丸 → 生物蛋</td></tr><tr><td>保留状态</td><td>药水/点燃/命名/生命/羊毛色等</td></tr><tr><td>配置</td><td>mob-eggs-to-inventory: false；可捕命名怪</td></tr></table></div>
+		
+		<h3>粘液木龙头 SlimyTreeTaps</h3>
+		<p>树脂→橡胶→塑料；琥珀与魔法镜支线。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>产树脂概率</td><td>标准 12% / 强化 24% / 钻石 32%；琥珀 16%</td></tr><tr><td>橡胶工厂</td><td>2 树脂→橡胶 4s；2 橡胶→生塑料 6s；1→塑料板 10s</td></tr><tr><td>萃取机</td><td>8 原木→1 树脂；16 或 28 J/s</td></tr><tr><td>魔法镜</td><td>琥珀块+青金/末影 → 绑定传送，耗末影珍珠</td></tr></table></div>
+		
+		<h3>彩色末影箱 ColoredEnderChests</h3>
+		<p>按颜色隔离的全服共享末影空间。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>配色</td><td>3 染料 → RGB 组合；上限 <strong>8192</strong> 种</td></tr><tr><td>共享</td><td>同色对所有玩家同一空间；可接货运</td></tr><tr><td>箱型</td><td>小/大箱本服皆开</td></tr></table></div>
+		
+		<h3>更多装备 ExtraGear / 额外头颅 ExtraHeads</h3>
+		<p>金属装备扩展与头颅掉落。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>ExtraGear</td><td>粘液锭/合金装备，常带内置附魔</td></tr><tr><td>ExtraHeads</td><td>击杀掉头；斩首之剑约 ×1.8（默认）</td></tr></table></div>
+		
+		<h3>环保能源 EcoPower</h3>
+		<p>可再生发电多方块与高阶太阳/避雷。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>蒸汽</td><td>水上方+岩浆块多方块；8/12/26 J/s</td></tr><tr><td>风力</td><td>室外多方块；10/22/46 J/s</td></tr><tr><td>月光 / 高能太阳 / 辐射太阳</td><td>256（仅夜）/ 512 / 1024 J/s</td></tr><tr><td>避雷针</td><td>雷暴 512～8192 J/次</td></tr><tr><td>太阳盔</td><td>约 5 J/次给手持或穿戴充能</td></tr></table></div>
+		
+		<h3>工业 LiteXpansion</h3>
+		<p>IC2 风轻工业与 UU 物质。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>UU 物质</td><td>专用机器产出；uumatter.yml 以 x 表示 UU</td></tr><tr><td>能耗补偿</td><td>nerf-other-addons 可对其它附属加倍耗电</td></tr></table></div>
+		
+		<h3>幸运方块 SlimefunLuckyBlocks / 矿石块 OreChunks / 私人存储 PrivateStorage</h3>
+		<p>随机事件、GEO 矿块、私人箱。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>幸运方块</td><td>幸运/超幸运/超不幸/潘多拉魔盒档</td></tr><tr><td>矿石块</td><td>GEO 矿机独有产出，世界不生成；粉碎为尘</td></tr><tr><td>私人存储</td><td>多档箱；Private 仅主人，Public 交领地</td></tr></table></div>
+		
+		<h3>硬核粘液 HardcoreSlimefun / 粘液胶 SlimeGlue</h3>
+		<p>难度调节与兼容胶合。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>硬核</td><td>研究失败/死亡丢研究/机器人故障；本服 1% / 无 / 0%</td></tr><tr><td>粘液胶</td><td>改善与领地、商店等插件兼容；GuizhanLib 为中文附属库</td></tr></table></div>
+	
+		<div class="categories">分类：<a href="#official">官方附属</a></div>
+	</article>
 
-			<h3>动力科技 DynaTech <span class="mc-gray">（社区）</span></h3>
-			<p>杂项机器、发电机、蜂巢材料。</p>
-			<ol class="steps">
-				<li><strong>做水力/龙蛋/厨用/星尘发电机</strong></li><li><strong>材料蜂巢产原料；生长舱催熟</strong></li><li><strong>自动厨房做菜；无线输能铺线</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>发电机、生长舱、蜂巢。可联动美食家/异域花园。</p>
+	<article class="article" id="community" data-search="社区附属 匠魂 网络 无尽 动力 EMC 炼金 水晶 美食 基因 下界 末地 战争 Bump 工具 自定义">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 社区附属</div>
+		<div class="article-header"><h1>社区附属</h1><div class="sub">机制条目 · 按主题</div></div>
 
-			<h3>无尽科技 InfinityExpansion <span class="mc-gray">（社区）</span></h3>
-			<p>后期巨量内容：奇点、无尽锭、存储单元。</p>
-			<ol class="steps">
-				<li><strong>石矿机/冶炼扩材料</strong></li><li><strong>奇点构造器：如 3000 铜 → 铜奇点</strong></li><li><strong>做无尽锭与无尽装备</strong></li><li><strong>存储单元挂仓储；生物模拟器产怪</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>奇点构造器、存储单元、无尽锭。终局主线之一。</p>
+		<p>社区附属数量众多。下列按主题给<strong>机制</strong>条目；详细上手步骤见 <a href="#gameplay">玩法指南</a>。</p>
+		
+		<h3>粘液匠魂 SlimeTinker</h3>
+		<p>模组化工具：部件组装、材料特性、强化。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>结构</td><td>刀刃/手柄等部件 + 强化槽</td></tr><tr><td>成长</td><td>可换件保留主体；材料阶（石→下界合金级）</td></tr><tr><td>联动</td><td>可软依赖无尽、战争、动力、工业、末地、网络等</td></tr></table></div><p class="muted">开源 Sefiraat/SlimeTinker。</p>
 
-			<h3>简易材料生成器 SMG <span class="mc-gray">（社区）</span></h3>
-			<p>被动产基础材料。</p>
-			<ol class="steps">
-				<li><strong>放材料生成器</strong></li><li><strong>加升级提高速度/品种</strong></li><li><strong>补全量产缺口</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>生成器。挂机产料。</p>
+		
+		<h3>Networks 网络</h3>
+		<p>AE2/RS 式存储网络。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>拓扑</td><td>控制器 + 相邻节点共享库存</td></tr><tr><td>量子存储</td><td>4k 级至 2B 级档位</td></tr><tr><td>终端</td><td>格子访问/合成；导入导出抓取推送节点</td></tr><tr><td>远程</td><td>约 150 格，可跨维度</td></tr></table></div><p class="muted">开源 Sefiraat/Networks。</p>
 
-			<h3>简易工具 SimpleUtils / SmallSpace / Liquid / Quaptics <span class="mc-gray">（社区）</span></h3>
-			<p>小工具、紧凑机器、液体、光传输。</p>
-			<ol class="steps">
-				<li><strong>按指南做对应小件</strong></li><li><strong>Liquid：罐+管输液体</strong></li><li><strong>Quaptics：透镜/光束传能传物</strong></li><li><strong>SmallSpace：省空间布局</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>罐、管、透镜。偏工程玩法。</p>
+		
+		<h3>DankTech2</h3>
+		<p>便携海量容器。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>机制</td><td>多级 Dank/垃圾桶；槽位匹配吸入</td></tr><tr><td>溢出</td><td>可作废多余物；可货运卸货</td></tr></table></div><p class="muted">开源 Sefiraat/DankTech2。</p>
 
-			<h3>计算器 SFCalc / 区块信息 SfChunkInfo <span class="mc-gray">（社区）</span></h3>
-			<p>算配方材料；扫区块粘液方块量。</p>
-			<ol class="steps">
-				<li><strong>/sfcalc 查看合成所需总材料</strong></li><li><strong>SfChunkInfo 扫区块机器数防卡顿</strong></li><li><strong>大工程前先算料再买料</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>命令。管理与规划向。</p>
-<div class="categories">分类：<a href="#tech">机器工业</a></div></article>
-		<article class="article" id="power2" data-search="能源 反应堆 EMC 环保 发电 无尽 动力">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 能源</div>
-			<div class="article-header"><h1>能源与价值</h1><div class="sub">官方 + 社区</div></div>
-			<h3>环保能源 EcoPower <span class="mc-gray">（官方）</span></h3>
-			<ol class="steps">
-				<li>做<strong>钢转子</strong>；蒸汽轮机多方块放在<strong>水面上方 + 岩浆块</strong>，风力机放开阔室外。</li>
-				<li>产能对照：蒸汽 8/12/26 J/s；风 10/22/46 J/s；月光机仅夜间 256；高能太阳 512；辐射太阳 1024；避雷针雷击 512～8192/次。</li>
-				<li>太阳盔可给手持/穿戴充能（约 5 J/次）。多机并网 + 电容削峰。</li>
-			</ol>
-			<h3>工业反应堆 BetterReactor <span class="mc-gray">（社区）</span></h3>
-			<ol class="steps">
-				<li>研究反应堆线，搭<strong>更写实</strong>的反应堆结构。</li>
-				<li>装燃料棒，监控输出与稳定；注意放射材料防护（见核心/防辐射）。</li>
-				<li>接电网；故障/过热按机器提示处理（服务端可能熔毁机制）。</li>
-			</ol>
-			<h3>EMC 科技 EMCTech <span class="mc-gray">（社区）</span></h3>
-			<ol class="steps">
-				<li>做<strong>分解机</strong>：需要模板；首次把物品转成 EMC 并解锁记录。</li>
-				<li>做<strong>重构机</strong>：花 EMC 取出物品（项目 E 式等价交换）。</li>
-				<li>分 5 档升级吞吐；用 EMC 当「万能货币」平滑产线。</li>
-				<li>注意配置里有黑名单附属与原版 EMC 价表（草方块 1、原木 4 等）。</li>
-			</ol>
-			<p class="muted">动力科技发电机（水力/龙蛋/厨用/星尘）见机器工业章节。</p>
-			<div class="categories">分类：<a href="#power2">能源</a></div>
-		</article>
+		
+		<h3>无尽科技 InfinityExpansion</h3>
+		<p>后期奇点与无尽锭。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>奇点</td><td>大量同类物品凝聚，如 3000 铜 → 铜奇点</td></tr><tr><td>无尽装备</td><td>奇点 + 无尽锭线</td></tr><tr><td>存储单元 / 生物模拟</td><td>超大存储与刷怪模拟</td></tr></table></div><p class="muted">开源 Mooy1/InfinityExpansion。</p>
 
-		<article class="article" id="storage" data-search="存储 Networks 网络 简易存储 Dank 无底 私人 彩色末影箱">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 存储物流</div>
-			<div class="article-header"><h1>存储与物流</h1></div>
-			<h3>Networks 网络 <span class="mc-gray">（社区 · AE2/RS 式）</span></h3>
-			<ol class="steps">
-				<li>放<strong>控制器</strong>，周围接<strong>节点</strong>共享库存。</li>
-				<li>挂<strong>量子存储</strong>（4k～2B 级）扩容；格子终端检索/合成。</li>
-				<li>导入/导出/抓取/推送节点对接机器与箱子。</li>
-				<li>编码器 + 自动合成机做样板合成；远程终端 150 格内跨维度用。</li>
-			</ol>
-			<h3>简易存储 SimpleStorage</h3>
-			<ol class="steps">
-				<li>放主控/网络箱（范围本服 5，检查间隔 4 tick）。</li>
-				<li>链接箱子做单元，主界面统一存取。</li>
-			</ol>
-			<h3>DankTech2 无底存储</h3>
-			<ol class="steps">
-				<li>做 Dank 包 / 垃圾包（多级）。</li>
-				<li>持有自动吸入匹配物品进槽；溢出可作垃圾桶。</li>
-				<li>用货运倒进仓库。</li>
-			</ol>
-			<h3>私人存储 / 彩色末影箱</h3>
-			<p>见 <a href="#official">官方附属</a>：私人箱防开、彩色末影箱分色隔离。</p>
-			<div class="categories">分类：<a href="#storage">存储</a></div>
-		</article>
-<article class="article" id="magic" data-search="魔法 炼金 Alchimia Crystamae 源之花 Bump 下界 灵魂 药剂 末地 TranscEndence"><div class="breadcrumbs"><a href="#top">首页</a> › 魔法炼金</div><div class="article-header"><h1>魔法与炼金</h1><div class="sub">社区附属</div></div>
-			<h3>炼金术自传 AlchimiaVitae <span class="mc-gray">（社区）</span></h3>
-			<p>炼金 + 草药 + 少量魔法：浓缩灵、暗/光植物、华丽锅、神坛。</p>
-			<ol class="steps">
-				<li><strong>击杀收「浓缩灵」</strong></li><li><strong>用灵注入树苗得到暗/光植物</strong></li><li><strong>华丽炼药锅做特殊药水</strong></li><li><strong>神坛演变（强化锭、硬化金属等）</strong></li><li><strong>注入台给工具上词缀：毁灭暴击/自瞄/治疗/自动补种/图腾电池/击退等</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>浓缩灵、暗/光植物、华丽锅、神坛、注入台。开源 Apeiros-46B/AlchimiaVitae。</p>
+		
+		<h3>动力科技 DynaTech</h3>
+		<p>发电机、自动厨、生长舱、材料蜂巢。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>发电</td><td>水力/龙蛋/厨用/星尘等</td></tr><tr><td>自动化</td><td>生长舱催熟、自动厨房、无线输能</td></tr></table></div><p class="muted">开源 ProfElements/DynaTech。</p>
 
-			<h3>水晶编年史 CrystamaeHistoria <span class="mc-gray">（社区）</span></h3>
-			<p>从方块「故事」提取法术，装法杖施放。</p>
-			<ol class="steps">
-				<li><strong>编年面板提取方块故事</strong></li><li><strong>实现祭坛出水晶</strong></li><li><strong>液化池做成 Crystamae</strong></li><li><strong>魔法板组合出法术（约 80 种组合）</strong></li><li><strong>法杖配置器装载，左/右/Shift+点击施法</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>编年面板、祭坛、液化池、魔法板、法杖。可联动 mcMMO/匠魂。</p>
+		
+		<h3>EMC 科技 EMCTech</h3>
+		<p>ProjectE 式等价交换。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>分解机</td><td>需模板；首次记录 EMC</td></tr><tr><td>重构机</td><td>花 EMC 取物</td></tr><tr><td>档位</td><td>5 级吞吐；配置含原版 EMC 价表</td></tr></table></div><p class="muted">开源 Sefiraat 系。</p>
 
-			<h3>源之花 FlowerPower <span class="mc-gray">（社区）</span></h3>
-			<p>花系魔法选项。</p>
-			<ol class="steps">
-				<li><strong>种植/制作魔法花</strong></li><li><strong>用花触发效果或作材料</strong></li><li><strong>进战斗/辅助配装</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>魔法花。偏休闲魔法。</p>
+		
+		<h3>压缩工艺 CompressionCraft / 快捷机器 FastMachines / 简易材料 SMG</h3>
+		<p>压缩、批量无序合成、被动产料。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>压缩</td><td>压缩/解压致密块</td></tr><tr><td>快捷机</td><td>无序配方批量合成</td></tr><tr><td>SMG</td><td>材料生成器被动产出</td></tr></table></div>
+		
+		<h3>炼金术自传 AlchimiaVitae</h3>
+		<p>灵、草药、锅与注入。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>浓缩灵</td><td>击杀获取</td></tr><tr><td>暗/光植物</td><td>灵注入树苗</td></tr><tr><td>华丽锅 / 神坛</td><td>药水与演变（强化锭、硬化金属等）</td></tr><tr><td>注入词缀</td><td>毁灭暴击、自瞄、治疗、自动补种、图腾电池、击退等（config 可关）</td></tr></table></div><p class="muted">开源 Apeiros-46B/AlchimiaVitae。</p>
 
-			<h3>Bump 魔法 <span class="mc-gray">（社区）</span></h3>
-			<p>魔法武器 + 鉴定星级。</p>
-			<ol class="steps">
-				<li><strong>做 Bump 武器</strong></li><li><strong>投射物技能（约 10 tick）</strong></li><li><strong>鉴定仪器看星级（≥100→20 星 … ≥10→1 星）</strong></li><li><strong>低星重做/重鉴</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>鉴定仪、魔法武器。docs.ybw0014.dev 有表。</p>
+		
+		<h3>水晶编年史 CrystamaeHistoria</h3>
+		<p>方块故事 → 法术。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>链路</td><td>编年面板提取故事 → 实现祭坛 → 水晶 → 液化池 → Crystamae</td></tr><tr><td>法术</td><td>魔法板组合（约 80 种）装入法杖</td></tr><tr><td>施法</td><td>左/右/Shift+点击</td></tr></table></div><p class="muted">开源 Sefiraat/CrystamaeHistoria。</p>
 
-			<h3>下界乌托邦 Netheopoiesis <span class="mc-gray">（社区）</span></h3>
-			<p>净化下界使其宜居。</p>
-			<ol class="steps">
-				<li><strong>放「净化种子」</strong></li><li><strong>铺净化土/种植物提高净化值</strong></li><li><strong>解锁睡眠、水、被动怪、末地旅行</strong></li><li><strong>收集 65+ 种子扩建绿洲</strong></li><li><strong>留意玩家怪数量上限配置</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>净化种子、净化土。开源 Sefiraat。</p>
+		
+		<h3>美食家 Gastronomicon</h3>
+		<p>扩展烹饪与完美食物。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>掉落</td><td>草 5%、高草 10%、海草 15%；鱿鱼/守卫者/山羊/鲑鱼 35%</td></tr><tr><td>完美食物</td><td>上限 <strong>25%</strong></td></tr><tr><td>熟练度</td><td>门槛 <strong>256</strong> 可训厨师机器人</td></tr><tr><td>头衔</td><td>0/1/50/100/200 阶</td></tr></table></div>
+		
+		<h3>基因工程 GeneticChickengineering</h3>
+		<p>资源鸡遗传。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>链路</td><td>捕捉网 → 鸡袋 → 基因测序 → 选育隐性 → 资源鸡</td></tr><tr><td>显示</td><td>可写在鸡自定义名</td></tr></table></div>
+		
+		<h3>下界乌托邦 Netheopoiesis / 迷狱生机 WilderNether</h3>
+		<p>下界生态扩展。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>净化</td><td>净化种子 + 净化土提高净化值，解锁水/睡眠/被动怪/末地旅行</td></tr><tr><td>迷狱</td><td>下界新植物、怪掉与食物</td></tr></table></div>
+		
+		<h3>末地科技 TranscEndence / 克苏尼亚遗物 RelicsOfCthonia</h3>
+		<p>末地 quirk 与下界遗物。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>quirps</td><td>粒子产生/凝聚/散布；稳定器；Zot 充能 1000</td></tr><tr><td>达西核心</td><td>力量/吸收/坚韧/饱和/再生等长效</td></tr><tr><td>遗物</td><td>收集与遗物清除器</td></tr></table></div>
+		
+		<h3>战争工艺 SlimefunWarfare / 导弹科技 MissileWarfare</h3>
+		<p>枪械与导弹。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>枪</td><td>自动射击可蹲下；子弹从物品栏或副手（本服 inv）</td></tr><tr><td>硼砂</td><td>破石约 2%</td></tr><tr><td>导弹</td><td>SMALL/HE/LR/AC/防空等：射程 600～1000、威力 3～4.5</td></tr></table></div>
+		
+		<h3>Bump 魔法 / 源之花 / 药剂扩展 / 灵魂巧匠</h3>
+		<p>魔法向扩展。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>Bump</td><td>武器投射物约 10 tick；鉴定星级阈值表</td></tr><tr><td>源之花</td><td>花系魔法选项</td></tr><tr><td>药剂</td><td>新药水</td></tr><tr><td>灵魂巧匠</td><td>捕获/束缚灵体能力</td></tr></table></div>
+		
+		<h3>工具杂项</h3>
+		<p>ExtraTools、MoreTools、迷你方块、修复、至尊 Supreme、FN、村民、染色台、液体、Quaptics、SmallSpace、计算器等。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>MoreTools 新月锤</td><td>旋转机器、改频道；冷却约 500ms</td></tr><tr><td>Supreme</td><td>100+ 资源；虚拟花园/水族馆/怪物收集；石矿机；科技生成器上限 64</td></tr><tr><td>SFCalc / SfChunkInfo</td><td>配方总料计算；区块粘液方块扫描</td></tr><tr><td>SlimyRepair</td><td>粘液装备修复</td></tr><tr><td>VillagerUtil</td><td>村民捕捉/转换，本服耗令牌</td></tr></table></div>
+		
+		<h3>自定义与任务</h3>
+		<p>SlimeCustomizer、SlimefunAdvancements、SlimeHUD、SoundMuffler。</p>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>Customizer</td><td>YAML 定义物品/机器/发电机/电容/掉落/地质/研究</td></tr><tr><td>Advancements</td><td>配置化任务线</td></tr><tr><td>HUD</td><td>WAILA 式方块信息</td></tr><tr><td>SoundMuffler</td><td>消音（ProtocolLib）</td></tr></table></div>
+	
+		<div class="categories">分类：<a href="#community">社区附属</a></div>
+	</article>
 
-			<h3>灵魂巧匠 SpiritsUnchained <span class="mc-gray">（社区）</span></h3>
-			<p>捕捉/束缚灵魂获得能力。</p>
-			<ol class="steps">
-				<li><strong>猎取/捕捉灵体</strong></li><li><strong>束缚成道具</strong></li><li><strong>装备/召唤获得被动主动</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>灵体道具。战斗辅助向。</p>
+	<article class="article" id="gameplay" data-search="玩法 指南 怎么玩 上手 产线 操作 路线">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 玩法指南</div>
+		<div class="article-header"><h1>玩法指南</h1><div class="sub">操作步骤 · 与机制百科对照</div></div>
 
-			<h3>药剂扩展 PotionExpansion <span class="mc-gray">（社区）</span></h3>
-			<p>新药水效果。</p>
-			<ol class="steps">
-				<li><strong>研究药剂分类</strong></li><li><strong>按指南做出扩展药水</strong></li><li><strong>战斗/探索用 buff 瓶</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>新药水。配方以指南为准。</p>
+		<p>本章为<strong>玩法指南</strong>（怎么玩）；机制与数值见上文各百科条目。</p>
+		<h3>上手顺序</h3>
+		<ol class="steps"><li><strong>进服 <code>/sf guide</code> 领指南书</strong></li><li><strong>原版台做强化工作台，右键打开</strong></li><li><strong>解基础研究（经验）→ 做第一把粘液工具</strong></li><li><strong>粉碎 → 洗矿 → 熔炼 → 电路板</strong></li><li><strong>煤发/太阳能 + 电缆 + 电容</strong></li><li><strong>货运节点 + 管理器自动化一条线</strong></li><li><strong>按分支：果园/刷怪/匠魂/魔法/太空</strong></li></ol>
+		<h3>产线模板</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>产线</th><th>步骤</th></tr><tr><td>矿线</td><td>矿箱 → 粉碎 → 洗矿 → 熔炉 → 锭箱</td></tr><tr><td>农场</td><td>漏斗收 → 分拣 → 厨房/仓</td></tr><tr><td>刷怪</td><td>封闭房 → 电力笼 → 杀 → 灵魂/掉落分拣</td></tr><tr><td>树脂</td><td>龙头采 → 橡胶厂 → 塑料板</td></tr></table></div>
+		<h3>关键操作</h3>
+		<ul class="bullets"><li><strong>研究</strong>：指南点锁定项 → 点研究；失败 1% 重试。</li><li><strong>合成</strong>：只在强化工作台摆 3×3；有序看格子。</li><li><strong>多方块</strong>：按图搭，cheat 拿不到。</li><li><strong>自动合成机</strong>：放箱子正上方，手持成品蹲下右键。</li><li><strong>GPS</strong>：设航点攒复杂度，再上区块加载器（≤8，约 7500/个）。</li><li><strong>电力刷怪</strong>：240J/只，清 4 格内同型 ≤6。</li><li><strong>农食</strong>：剪草掉苗种果园；烹饪冲熟练度 256。</li><li><strong>匠魂</strong>：熔金属铸部件，换件不丢强化。</li></ul>
+		<h3>推荐路线</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>阶段</th><th>目标</th></tr><tr><td>①</td><td>强化台 + 基础研究 + 材料机</td></tr><tr><td>②</td><td>电路 + 电力 + 货运</td></tr><tr><td>③</td><td>果园/美食 或 刷怪/灵魂 或 匠魂/战斗</td></tr><tr><td>④</td><td>Networks/奇点/反应堆/太空</td></tr></table></div>
+		<h3>常见问题</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>现象</th><th>处理</th></tr><tr><td>原版台做不出</td><td>必须强化工作台</td></tr><tr><td>研究失败</td><td>1%，重试</td></tr><tr><td>机器不转</td><td>电缆/燃料/网络 200</td></tr><tr><td>自动合成缺箱</td><td>放箱子上方</td></tr><tr><td>辐射燃烧</td><td>离开核材，等宽限</td></tr><tr><td>机器人停</td><td>领地无权限或故障 30s</td></tr></table></div>
+	
+		<div class="categories">分类：<a href="#gameplay">玩法指南</a></div>
+	</article>
 
-			<h3>末地科技 TranscEndence <span class="mc-gray">（社区）</span></h3>
-			<p>末地 quirk 粒子科技 + 超能力核心。</p>
-			<ol class="steps">
-				<li><strong>做粒子机：产生/凝聚/散布 quirps</strong></li><li><strong>稳定器 / Zot 超载器处理不稳定（死亡梗配置在 config）</strong></li><li><strong>达西核心：力量/吸收/坚韧/饱和/再生等永久向效果（有提示句）</strong></li><li><strong>极化器亲和约 40%；Zot 充能 1000</strong></li>
-			</ol>
-			<p class="muted"><strong>关键物：</strong>粒子机、稳定器、达西核心。不稳定会掉命，注意。</p>
-<div class="categories">分类：<a href="#magic">魔法</a></div></article>
-		<article class="article" id="foodbio" data-search="美食家 基因工程 迷狱生机 鸡 烹饪 食物">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 食物生物</div>
-			<div class="article-header"><h1>食物与生物</h1><div class="sub">社区附属</div></div>
-			<h3>美食家 Gastronomicon</h3>
-			<ol class="steps">
-				<li>打草/高草/海草掉种子（5%～15%）；杀鱿鱼/守卫者/山羊/鲑鱼 35% 掉特殊食材。</li>
-				<li>种美食家作物；配合异域花园水果开全菜谱。</li>
-				<li>厨具/灶台按菜谱做菜；概率出<strong>完美食物</strong>（上限 25%）。</li>
-				<li>熟练度到 <strong>256</strong> 可训厨师机器人；头衔：新手 1 / 学徒 50 / 经验 100 / 三星 200。</li>
-			</ol>
-			<h3>基因工程 GeneticChickengineering</h3>
-			<ol class="steps">
-				<li>用<strong>捕捉网</strong>抓鸡进<strong>鸡袋</strong>。</li>
-				<li><strong>基因测序仪</strong>出 DNA，看显/隐性（b/c/d/f/s/w 等）。</li>
-				<li>选育隐性性状，得到<strong>资源鸡</strong>（骨头、圆石、矿物向等）。</li>
-				<li>量产资源鸡挂机收产物；显示在自定义名上（可关）。</li>
-			</ol>
-			<h3>迷狱生机 WilderNether</h3>
-			<ol class="steps">
-				<li>下界探索新植物与怪掉落。</li>
-				<li>新食物/材料进美食家或自用。</li>
-			</ol>
-			<div class="categories">分类：<a href="#foodbio">食物生物</a></div>
-		</article>
+	<article class="article" id="commands" data-search="命令 /sf guide search research charge backpack">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 命令</div>
+		<div class="article-header"><h1>命令</h1><div class="sub">常用与管理</div></div>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>命令</th><th>作用</th></tr><tr><td><code>/sf guide</code> / <code>open_guide</code></td><td>指南书</td></tr><tr><td><code>/sf search / id / stats</code></td><td>搜索、手持 ID、统计</td></tr><tr><td><code>/sf charge</code></td><td>手持充能</td></tr><tr><td><code>/sf versions / teleporter</code></td><td>版本、公共航点</td></tr><tr><td><code>/sf research / backpack / reload</code></td><td>研究、背包、重载（管理）</td></tr><tr><td><code>/sf give / cheat / banitem</code></td><td>给予、作弊、禁用（管理）</td></tr><tr><td><code>/sf timings / cleardata / migrate</code></td><td>性能、清数据、迁移</td></tr></table></div>
+		<div class="categories">分类：<a href="#commands">命令</a></div>
+	</article>
 
-		<article class="article" id="world" data-search="星际 太空 Galactifun 迷狱 下界 乌托邦 迷你方块">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 世界太空</div>
-			<div class="article-header"><h1>世界与太空</h1></div>
-			<h3>星际科技 Galactifun</h3>
-			<ol class="steps">
-				<li>研究航天，造<strong>火箭</strong>与发射设施。</li>
-				<li>准备<strong>密封建筑方块</strong>，到异星盖可居住舱。</li>
-				<li>登陆天体采矿/探索，带样本回主世界做终局材料。</li>
-			</ol>
-			<h3>迷狱生机 / 下界乌托邦</h3>
-			<p>见 <a href="#foodbio">食物生物</a> / <a href="#magic">魔法</a>：一个加下界生态，一个净化下界。</p>
-			<h3>迷你方块</h3>
-			<p>建筑细节见 <a href="#tools">工具装备</a>。</p>
-			<div class="categories">分类：<a href="#world">世界</a></div>
-		</article>
-
-		<article class="article" id="combat" data-search="战争 导弹 枪械 战争工艺 Missile">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 战争战斗</div>
-			<div class="article-header"><h1>战争与战斗</h1><div class="sub">社区附属</div></div>
-			<h3>战争工艺 SlimefunWarfare</h3>
-			<ol class="steps">
-				<li>研究枪械/护甲线，做枪与防弹装。</li>
-				<li>子弹从<strong>物品栏</strong>或副手消耗（本服 use-bullets-from-inv: true；蹲下自动射击开）。</li>
-				<li>注意最小射程开关；能量步枪爆炸默认关。</li>
-				<li>破坏石头掉硼砂约 2%；流星吸引器拉陨石（赛格尼森 25%，冷却约 10 分钟起）。</li>
-			</ol>
-			<h3>导弹科技 MissileWarfare</h3>
-			<ol class="steps">
-				<li>做导弹与发射架（注意 WorldGuard 保护区）。</li>
-				<li>选弹型：小型/HE/远程/防空等（速度、射程 600～1000、威力 3～4.5、精度不同）。</li>
-				<li>瞄准发射，攻城或清怪；冷却与耗材自备。</li>
-			</ol>
-			<p class="muted">配置里导弹分 SMALLMISSILE / HE / LR / AC / ANTIAIR / 标准 / HE 大号等，数值以 config.yml 为准。</p>
-			<div class="categories">分类：<a href="#combat">战争</a></div>
-		</article>
-
-		<article class="article" id="util" data-search="自定义 任务 HUD 消音 计算器 硬核 幸运 修复">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 工具杂项</div>
-			<div class="article-header"><h1>工具与服务器杂项</h1></div>
-			<h3>自定义 SlimeCustomizer</h3>
-			<ol class="steps">
-				<li>服主改 YAML：物品/机器/发电机/电容/掉落/地质/研究/分类。</li>
-				<li>reload 后指南出现自定义分类。</li>
-				<li>玩家当正常附属用。</li>
-			</ol>
-			<h3>任务 SlimefunAdvancements</h3>
-			<ol class="steps">
-				<li>打开进度界面看粘液任务组。</li>
-				<li>按目标做研究/合成/击杀。</li>
-				<li>完成给称号/奖励（服主配）。</li>
-			</ol>
-			<h3>HUD / 消音 / 计算器</h3>
-			<ul class="bullets">
-				<li><strong>SlimeHUD</strong>：看机器方块信息（WAILA）。</li>
-				<li><strong>SoundMuffler</strong>：静音附近噪音（依赖 ProtocolLib）。</li>
-				<li><strong>SFCalc</strong>：算材料总量；<strong>SfChunkInfo</strong>：扫区块粘液块防卡。</li>
-			</ul>
-			<div class="categories">分类：<a href="#util">杂项</a></div>
-		</article>
-
-		<article class="article" id="goals" data-search="进度 清单 目标 毕业">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 进度清单</div>
-			<div class="article-header"><h1>进度清单</h1></div>
-			<div class="wiki-table-wrap"><table class="wiki">
-				<tr><th>阶段</th><th>勾选项</th></tr>
-				<tr><td>启动</td><td>□ 强化工作台 □ 粉碎/洗矿/熔炼 □ 电路板</td></tr>
-				<tr><td>电网</td><td>□ 发电+电容 □ 货运一条线 □ 自动合成 1 配方</td></tr>
-				<tr><td>生存</td><td>□ 果园 □ 灵魂 128 □ 背包分色</td></tr>
-				<tr><td>工业</td><td>□ 压缩/快捷机 □ 材料生成器 □ Networks 或 SimpleStorage</td></tr>
-				<tr><td>魔法</td><td>□ 一坛药 □ 一把鉴定武器 □ 一个注入词缀</td></tr>
-				<tr><td>食物</td><td>□ 完美食物 □ 一只资源鸡</td></tr>
-				<tr><td>战斗</td><td>□ 匠魂主武 □ 或枪械一套</td></tr>
-				<tr><td>终局</td><td>□ 奇点 □ 反应堆 □ 或飞一次太空</td></tr>
-			</table></div>
-			<div class="categories">分类：<a href="#goals">进度</a></div>
-		</article>
-
-		<article class="article" id="faq" data-search="FAQ 常见问题 不能 失败 卡">
-			<div class="breadcrumbs"><a href="#top">首页</a> › FAQ</div>
-			<div class="article-header"><h1>常见问题</h1></div>
-			<div class="wiki-table-wrap"><table class="wiki">
-				<tr><th>问题</th><th>怎么做</th></tr>
-				<tr><td>原版台做不出</td><td>必须强化工作台</td></tr>
-				<tr><td>研究失败</td><td>1% 概率，再点</td></tr>
-				<tr><td>多方块 cheat 没有</td><td>按图搭</td></tr>
-				<tr><td>机器不转</td><td>电缆/燃料/网络 200 上限</td></tr>
-				<tr><td>自动合成缺箱</td><td>机器放箱子正上方</td></tr>
-				<tr><td>配方查不过来</td><td>/sfcalc 算总材料</td></tr>
-				<tr><td>区块太卡</td><td>SfChunkInfo 扫；减加载器（8 上限）</td></tr>
-				<tr><td>物品太多乱</td><td>Networks / Dank / 压缩工艺</td></tr>
-			</table></div>
-			<div class="categories">分类：<a href="#faq">帮助</a></div>
-		</article>
-
-		<article class="article" id="config" data-search="配置 本服 数值">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 本服数值</div>
-			<div class="article-header"><h1>本服关键数值</h1></div>
-			<div class="wiki-table-wrap"><table class="wiki">
-				<tr><th>项</th><th>值</th></tr>
-				<tr><td>研究失败 / 死清</td><td>1% / 0%</td></tr>
-				<tr><td>网络 / GPS / 加载器</td><td>200 / 21 / 8</td></tr>
-				<tr><td>灵魂罐 / 完美食物</td><td>128 / 25%</td></tr>
-				<tr><td>树苗掉率 / 厨师门槛</td><td>22% / 256</td></tr>
-				<tr><td>填充棒 / 海绵棒</td><td>4096 / 16384</td></tr>
-				<tr><td>木龙头树脂</td><td>标准 12 / 强化 24 / 钻石 32%</td></tr>
-				<tr><td>电力刷怪笼</td><td>240 J/只 · 缓冲 2048 · 同型 4 格内 ≤6</td></tr>
-				<tr><td>彩色末影箱</td><td>3 染料 · 最多 8192 色</td></tr>
-				<tr><td>硬核失败/死丢/故障</td><td>1% / 0% / 0%（默认更狠）</td></tr>
-				<tr><td>硼砂掉落</td><td>2%</td></tr>
-				<tr><td>简易存储范围</td><td>5 格</td></tr>
-			</table></div>
-			<div class="categories">分类：<a href="#config">配置</a></div>
-		</article>
+	<article class="article" id="config" data-search="配置 本服 数值 MYSQL 辐射 网络">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 本服配置</div>
+		<div class="article-header"><h1>本服配置</h1><div class="sub">plugins 实机摘要</div></div>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>值</th></tr><tr><td>语言</td><td>zh-CN</td></tr><tr><td>研究失败 / 死丢 / 死清</td><td>1% / 关 / 0%</td></tr><tr><td>网络 / GPS / 加载器</td><td>200 / 21 / 8</td></tr><tr><td>辐射 / 燃烧</td><td>开 / 开</td></tr><tr><td>存储</td><td>MYSQL + LOAD_WITH_CHUNK</td></tr><tr><td>灵魂 / 完美食物 / 厨师</td><td>128 / 25% / 256</td></tr><tr><td>树苗掉率 / 树脂</td><td>22% / 12–32%</td></tr><tr><td>刷怪笼</td><td>240 J · 缓冲 2048 · 同型≤6</td></tr><tr><td>彩色末影箱</td><td>8192 色</td></tr></table></div>
+		<div class="categories">分类：<a href="#config">本服配置</a></div>
+	</article>
 	</main>
 </div>
-<footer class="wiki-footer">粘液科技完全玩法手册 · WenServer 60+ 附属 · 源自 plugins20260922 配置与开源文档</footer>
+<footer class="wiki-footer">
+	粘液科技 Wiki（仿中文 Minecraft Wiki）· 机制条目 + 玩法指南 · 来自 plugins 配置与开源源码
+</footer>
 <script>
 (function () {
 	var sidebar = document.getElementById("wikiSidebar");
