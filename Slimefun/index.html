@@ -80,10 +80,23 @@
 		<div class="article-header"><h1>研究</h1><div class="sub">经验解锁 · 等级成本 · 称号</div></div>
 
 		<p>研究是配方门禁：未解锁则无法合成/使用对应物品。解锁消耗<strong>经验等级</strong>（本服 <code>use-money-unlock: false</code>；若换算游戏币系数 25）。</p>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>规则</th></tr><tr><td>成本字段</td><td><code>cost</code> = 等级；<code>currency-cost</code> = 货币价（≈25×cost）</td></tr><tr><td>本服 cost 分布</td><td>约 1～150 级，多数 &lt;50，均值约 22（Researches.yml）</td></tr><tr><td>研究失败（硬核）</td><td>本服 <strong>1%</strong>（官方默认 10%）</td></tr><tr><td>死亡随机丢研究</td><td>本服关闭</td></tr><tr><td>死亡清空全部</td><td>本服 0%（官方默认 5%）</td></tr><tr><td>创造模式</td><td>免费解锁</td></tr><tr><td>学习动画</td><td>可关；解锁烟花可开</td></tr><tr><td>经验不足</td><td>提示「你没有足够的经验来解锁这个研究」</td></tr><tr><td>未研究使用</td><td>提示「知识还不足以理解…需要先解锁」</td></tr></table></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>规则</th></tr>
+			<tr><td>URID</td><td>整数唯一研究 ID（<code>Research#getID</code>），存于玩家 UUID 档案</td></tr>
+			<tr><td>解锁条件</td><td><code>player.level ≥ cost</code> 时扣 <code>cost</code> 级；创造免费；<code>PlayerProfile.unlockResearch</code></td></tr>
+			<tr><td>cost 本质</td><td>静态等级数，不是实时公式；代码内无「称号档位」加成</td></tr>
+			<tr><td>本服 cost 分布</td><td>约 1～150 级，多数 &lt;50，均值约 22（Researches.yml）</td></tr>
+			<tr><td>货币字段</td><td><code>currency-cost</code> ≈ 25×cost（仅货币解锁时用）</td></tr>
+			<tr><td>研究失败（硬核）</td><td>本服 <strong>1%</strong>（官方默认 10%）</td></tr>
+			<tr><td>死亡随机丢研究</td><td>本服关闭</td></tr>
+			<tr><td>死亡清空全部</td><td>本服 0%（官方默认 5%）</td></tr>
+			<tr><td>永久性</td><td>解锁永久；管理 <code>/sf research</code> 可重置</td></tr>
+			<tr><td>学习动画 / 烟花</td><td>可关 / 可开</td></tr>
+		</table></div>
 		<h3>称号（research-ranks）</h3>
 		<p class="mc-gray">小鸡 → 牛牛君 → 蜘蛛 → 村民 → 开拓者 → 童生 → 实习生 → 不合格生 → 学生 → 笨拙学徒 → 学徒 → 熟练学徒 → 法师学徒 → 杰出法师 → 年轻魔术师 → 笨拙魔术师 → 普通魔术师 → 魔术师 → 熟练魔术师 → 特技魔术师 → 惯用魔术师 → 杰出魔术师 → 笨拙巫师 → 巫师 → 普通巫师 → 特技巫师 → 杰出巫师 → 卓越巫师 → 年轻大师 → 笨拙大师 → 实习大师 → 合格大师 → 大师 → 特技大师 → 杰出大师 → 卓越大师 → 精通大师 → <strong>天选之子</strong></p>
-		<p>称号按累计研究进度递进，纯荣誉展示。本服研究组含主体与数十附属（slimefun 258 条 cost 记录，另有 Foxy 41、ExtraGear 32、LiteXpansion 18、美食家 16 等）。</p>
+		<p>称号按累计研究进度递进，纯荣誉展示。本服研究组含主体与数十附属（slimefun 约 258 条 cost 记录，另有 Foxy 41、ExtraGear 32、LiteXpansion 18、美食家 16 等）。</p>
+		<p class="muted">未研究使用提示「知识还不足以理解…需要先解锁」；经验不足提示「你没有足够的经验来解锁这个研究」。</p>
+
 		
 		<div class="categories">分类：<a href="#research">研究</a></div>
 	</article>
@@ -92,9 +105,27 @@
 		<div class="breadcrumbs"><a href="#top">首页</a> › 材料加工</div>
 		<div class="article-header"><h1>材料加工</h1><div class="sub">矿石倍增 · 合金 · 电子料</div></div>
 
-		<p>粘液材料链把原版矿扩成多份粉与副产，再合成合金与电路板。下列为机制层说明。</p>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>阶段</th><th>设备类型</th><th>机制</th></tr><tr><td>粉碎</td><td>粉碎机 / 矿研磨机</td><td>1 原矿 → 多份矿粉；本服矿研磨 <code>legacy-ore-grinder: true</code></td></tr><tr><td>洗选</td><td>洗矿机 / 淘金盘 / 洗尘机</td><td>从沙砾/粉再筛金属粒、宝石；本服洗矿洗尘为新版</td></tr><tr><td>熔炼</td><td>电炉 / 冶炼炉（多方块）</td><td>粉 → 锭；多方块批量</td></tr><tr><td>合金</td><td>强化工作台 / 熔炼</td><td>粘液合金、硬化金属、扩展金属锭</td></tr><tr><td>电子</td><td>强化工作台</td><td>基础/高级电路板为机器门槛</td></tr><tr><td>地质</td><td>GEO 矿机 + 矿石块附属</td><td>矿块仅由 GEO 产出，不自然生成；粉碎成尘</td></tr></table></div>
-		<ul class="bullets"><li>地质/扩展资源开关见 <code>resources.yml</code>：油、下界冰、铀、盐、钍、末影精华、星尘陨石、砷、莫扎石、各类矿块等。</li><li>铀/钍涉及 <a href="#radiation">放射性</a>。</li></ul>
+		<p>粘液材料链把原版矿扩成多份粉与副产，再合成合金与电路板。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>设备</th><th>1 输入 → 产出（源码比）</th></tr>
+			<tr><td>淘金盘（沙砾）</td><td>随机：燧石/黏土/铁粒/金粒（各约 10–25%）</td></tr>
+			<tr><td>矿石粉碎机</td><td><strong>2 粉</strong></td></tr>
+			<tr><td>洗矿机</td><td>粉 + 副产<strong>石粉</strong>约 25%</td></tr>
+			<tr><td>磨石</td><td>1 粉</td></tr>
+			<tr><td>冶炼 / 锭粉碎</td><td>2 粉 → 2 锭（粉碎+熔 = 双倍完整链）</td></tr>
+		</table></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>阶段</th><th>设备</th><th>机制</th></tr>
+			<tr><td>粉碎</td><td>粉碎机 / 矿研磨机</td><td>本服矿研磨 <code>legacy-ore-grinder: true</code></td></tr>
+			<tr><td>洗选</td><td>洗矿机 / 淘金盘 / 洗尘机</td><td>本服洗矿洗尘为新版</td></tr>
+			<tr><td>熔炼</td><td>电炉 / 冶炼炉</td><td>粉→锭；冶炼炉 9 槽可合金</td></tr>
+			<tr><td>合金</td><td>强化工作台 / 冶炼炉</td><td>粘液合金、硬化金属、扩展金属</td></tr>
+			<tr><td>电子</td><td>强化工作台</td><td>基础/高级电路板</td></tr>
+			<tr><td>地质</td><td>GEO 矿机 + 矿石块</td><td>矿块仅 GEO 产出；粉碎成尘</td></tr>
+		</table></div>
+		<ul class="bullets">
+			<li>地质/扩展资源见 <code>resources.yml</code>：油、下界冰、铀、盐、钍、末影精华、星尘陨石、砷、莫扎石、矿块等。</li>
+			<li>铀/钍涉及放射性。</li>
+		</ul>
+
 		
 		<div class="categories">分类：<a href="#materials">材料加工</a></div>
 	</article>
@@ -104,11 +135,23 @@
 		<div class="article-header"><h1>机器与多方块</h1><div class="sub">工作面类型 · 自动合成</div></div>
 
 		<h3>三类工作面</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>类型</th><th>机制</th></tr><tr><td>强化工作台</td><td>3×3 静态配方；有序/无序；只认指南配方</td></tr><tr><td>单方块机器</td><td>进度条、耗电/耗时、输入输出槽</td></tr><tr><td>多方块结构</td><td>原版方块按图搭建；作弊指令无法领取成品</td></tr></table></div>
-		<h3>自动合成机</h3>
-		<ul class="bullets"><li>必须位于<strong>箱子正上方</strong>，否则提示缺少箱子。</li><li>手持目标成品<strong>蹲下右键</strong>写入配方；支持启停与删除。</li><li>配方不可用条件：未解锁研究 / 物品被禁用 / 非可自动合成目标。</li><li>不能用粘液物品去套原版合成机逻辑（会拒绝）。</li></ul>
-		<h3>常见机器角色</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>角色</th><th>例子</th></tr><tr><td>加工</td><td>粉碎、洗矿、电炉、冶炼炉</td></tr><tr><td>装备</td><td>装甲锻造台、压力腔</td></tr><tr><td>食品/杂项</td><td>榨汁机等</td></tr><tr><td>充能</td><td>充电台；<code>/sf charge</code> 直接充满手持</td></tr><tr><td>多方块</td><td>冶炼炉、蒸汽轮机等（附属）</td></tr></table></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>类型</th><th>机制</th></tr>
+			<tr><td>强化工作台</td><td>3×3 静态配方；有序/无序；只认指南配方</td></tr>
+			<tr><td>单方块机器</td><td>进度条、耗电/耗时、输入输出槽</td></tr>
+			<tr><td>多方块结构</td><td>原版方块按图搭建；作弊无法领取成品</td></tr>
+		</table></div>
+		<h3>自动合成 / 冶炼 / 锻造 / 压力腔</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机器</th><th>机制</th></tr>
+			<tr><td>自动合成机</td><td>绑定配方回放；约 <strong>10–50 J/次</strong>；须放箱子正上方；蹲下右键手持成品写入</td></tr>
+			<tr><td>冶炼炉</td><td>9 槽合金（粉混出特殊锭）；手动或电力变体</td></tr>
+			<tr><td>装甲锻造台</td><td>多方块；板件/零件 → 粘液盔甲</td></tr>
+			<tr><td>压力腔（加热）</td><td>定时高压：黑金石/人造钻石等，数秒高 J</td></tr>
+		</table></div>
+		<ul class="bullets">
+			<li>不能用粘液物品套原版合成机逻辑（会拒绝）。</li>
+			<li><code>/sf charge</code> 可直接充满手持充能物。</li>
+		</ul>
+
 		
 		<div class="categories">分类：<a href="#machines">机器与多方块</a></div>
 	</article>
@@ -117,10 +160,26 @@
 		<div class="breadcrumbs"><a href="#top">首页</a> › 电力</div>
 		<div class="article-header"><h1>电力</h1><div class="sub">产电 · 传输 · 缓冲 · 耗电</div></div>
 
-		<p>能量单位习惯称 <strong>J</strong>。拓扑：发电机 → 电缆 → 电容缓冲 → 耗电机器。</p>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>规则</th></tr><tr><td>发电机</td><td>燃料/阳光等转 J；指南可查燃料表</td></tr><tr><td>电缆</td><td>连接成网络；本服网络 max-size <strong>200</strong></td></tr><tr><td>电容</td><td>削峰填谷；万用表显示「已储存的能源: A / B」</td></tr><tr><td>耗电端</td><td>加工机、充电台、货运、机器人、电力刷怪笼等</td></tr><tr><td>可视化</td><td>enable-visualizer: true</td></tr><tr><td>超额物品</td><td>delete-excess-items: false</td></tr></table></div>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>附属发电参考</th><th>功率</th></tr><tr><td>EcoPower 蒸汽</td><td>8 / 12 / 26 J/s（档位）</td></tr><tr><td>EcoPower 风力</td><td>10 / 22 / 46 J/s</td></tr><tr><td>EcoPower 月光</td><td>256 J/s（仅夜）</td></tr><tr><td>EcoPower 高能太阳 / 辐射太阳</td><td>512 / 1024 J/s</td></tr><tr><td>EcoPower 避雷针</td><td>512～8192 J/雷击</td></tr><tr><td>电力刷怪笼</td><td>240 J/只，缓冲 2048 J</td></tr><tr><td>木龙头橡胶工厂 / 萃取</td><td>6 J/s；萃取 16 或 28 J/s</td></tr></table></div>
-		<p class="muted">更多发电与 EMC/反应堆见 <a href="#community">社区附属</a>。</p>
+		<p>能量单位 <strong>J</strong>。<code>EnergyNet</code> 每 20 tick（1 秒）结算。类型：<code>GENERATOR</code> / <code>CAPACITOR</code> / <code>CONNECTOR</code> / <code>CONSUMER</code>。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>规则</th></tr>
+			<tr><td>连接器</td><td>储 0 J，只做图连接</td></tr>
+			<tr><td>电容档位</td><td>基础 / 进阶 / 水晶 ≈ <strong>32 / 128 / 512 J</strong></td></tr>
+			<tr><td>线损</td><td>无距离损耗；功率不足则机器空转</td></tr>
+			<tr><td>供需</td><td>发电机灌入网络，消费者拉取</td></tr>
+		</table></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>典型发电（J/周期）</th><th>参考</th></tr>
+			<tr><td>煤 / 熔岩 / 生物</td><td>约 32 / 30 / 40</td></tr>
+			<tr><td>太阳能</td><td>约 8–24（随白天/高度）</td></tr>
+			<tr><td>风力</td><td>可变</td></tr>
+			<tr><td>下界之星 / 龙蛋等</td><td>100+</td></tr>
+			<tr><td>EcoPower 蒸汽</td><td>8 / 12 / 26 J/s</td></tr>
+			<tr><td>EcoPower 风力</td><td>10 / 22 / 46 J/s</td></tr>
+			<tr><td>EcoPower 月光 / 高能太阳 / 辐射太阳</td><td>256 / 512 / 1024 J/s</td></tr>
+			<tr><td>EcoPower 避雷针</td><td>512～8192 J/雷击</td></tr>
+			<tr><td>电力刷怪笼</td><td>240 J/只，缓冲 2048</td></tr>
+		</table></div>
+		<p class="muted">万用表：「已储存的能源: A / B」。网络 max-size 200。</p>
+
 		
 		<div class="categories">分类：<a href="#power">电力</a></div>
 	</article>
@@ -129,8 +188,21 @@
 		<div class="breadcrumbs"><a href="#top">首页</a> › 货运网络</div>
 		<div class="article-header"><h1>货运网络</h1><div class="sub">自动搬运规则</div></div>
 
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>组件</th><th>机制</th></tr><tr><td>输入节点</td><td>从容器抽出物品进入网络</td></tr><tr><td>输出节点</td><td>向容器写入</td></tr><tr><td>高级节点</td><td>更细过滤条件</td></tr><tr><td>货运管理器</td><td>频道、过滤器、优先级、可视化</td></tr></table></div>
-		<ul class="bullets"><li>同频道形成物流域；过滤器可白/黑名单物品。</li><li>出口满则可能阻塞（本服不删除超额）。</li><li>可与彩色末影箱、Networks、机器人联用。</li></ul>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>组件</th><th>机制</th></tr>
+			<tr><td>管理器 Manager</td><td>频道与过滤总控</td></tr>
+			<tr><td>连接器</td><td>桥接成图</td></tr>
+			<tr><td>输入 / 输出节点</td><td>抽出 / 写入容器</td></tr>
+			<tr><td>高级节点</td><td>更细过滤条件</td></tr>
+		</table></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>规则</th><th>数值</th></tr>
+			<tr><td>频道</td><td>1–16，同频道同网</td></tr>
+			<tr><td>过滤</td><td>白/黑名单</td></tr>
+			<tr><td>max-size</td><td>单次搬运叠数 1–64</td></tr>
+			<tr><td>周期</td><td>约每 <strong>5 tick</strong>；速度升级缩短</td></tr>
+			<tr><td>路由</td><td>输入抽取 → 有效输出之间<strong>轮询</strong></td></tr>
+			<tr><td>本服</td><td>网络节点 max-size 200；超额不删</td></tr>
+		</table></div>
+
 		
 		<div class="categories">分类：<a href="#cargo">货运网络</a></div>
 	</article>
@@ -139,8 +211,15 @@
 		<div class="breadcrumbs"><a href="#top">首页</a> › GPS</div>
 		<div class="article-header"><h1>GPS</h1><div class="sub">航点与网络复杂度</div></div>
 
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>规则</th></tr><tr><td>航点上限</td><td><strong>21</strong>（max-gps-waypoints）</td></tr><tr><td>命名</td><td>支持彩色代码；重名拒绝</td></tr><tr><td>复杂度</td><td>由 GPS 信号发射机累积；设备会要求最低复杂度</td></tr><tr><td>示例消耗</td><td>神秘科技区块加载器约 <strong>7500</strong>/个</td></tr><tr><td>死亡点</td><td>自动记录，便于找回</td></tr><tr><td>公共传送</td><td><code>/sf teleporter</code> 查看他人公开点</td></tr></table></div>
-		<p>复杂度不足时提示未建网络或复杂度不够，需增发射机。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>规则</th></tr>
+			<tr><td>复杂度公式</td><td>节点相对控制板约 <code>ceil(√(x²+y²+z²) / 50)</code>，逐节点求和</td></tr>
+			<tr><td>发射机</td><td>提高可用复杂度/范围；需视距 LOS</td></tr>
+			<tr><td>航点上限</td><td><strong>21</strong>（本服）</td></tr>
+			<tr><td>命名</td><td>支持彩色代码；重名拒绝</td></tr>
+			<tr><td>设备门槛</td><td>如区块加载器约 <strong>7500</strong>/个</td></tr>
+			<tr><td>死亡点 / 公共传送</td><td>自动记录；<code>/sf teleporter</code></td></tr>
+		</table></div>
+
 		
 		<div class="categories">分类：<a href="#gps">GPS</a></div>
 	</article>
@@ -149,7 +228,16 @@
 		<div class="breadcrumbs"><a href="#top">首页</a> › 机器人</div>
 		<div class="article-header"><h1>机器人</h1><div class="sub">Android 程序劳作</div></div>
 
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>规则</th></tr><tr><td>类型</td><td>采矿、伐木、农耕、屠宰等循环程序</td></tr><tr><td>耗电</td><td>按程序消耗能量，需接电网</td></tr><tr><td>故障（硬核）</td><td>本服概率 <strong>0%</strong>；官方默认 10%；故障持续 <strong>30s</strong> 自愈</td></tr><tr><td>领地</td><td>无权限领地/地皮自动暂停</td></tr><tr><td>输出</td><td>产物掉落地面/容器，宜接货运</td></tr></table></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>规则</th></tr>
+			<tr><td>型号</td><td>Programmable / MK2 / MK3；角色 ALL / MINER / BUTCHER 等</td></tr>
+			<tr><td>动作周期</td><td>约 <strong>5–20 tick</strong>（MK2/3 更快）</td></tr>
+			<tr><td>耗能</td><td>约 <strong>10–25 J/动作</strong>；亦有燃料炉变体</td></tr>
+			<tr><td>动作量</td><td>约 1 格/动作（高阶可更大挖掘模式）</td></tr>
+			<tr><td>输出</td><td>掉入相邻容器/地面</td></tr>
+			<tr><td>故障（硬核）</td><td>本服 <strong>0%</strong>；官方默认 10%；持续 <strong>30s</strong> 自愈</td></tr>
+			<tr><td>领地</td><td>无权限领地/地皮自动暂停</td></tr>
+		</table></div>
+
 		
 		<div class="categories">分类：<a href="#androids">机器人</a></div>
 	</article>
@@ -158,8 +246,15 @@
 		<div class="breadcrumbs"><a href="#top">首页</a> › 放射性</div>
 		<div class="article-header"><h1>放射性</h1><div class="sub">核材料危害模型</div></div>
 
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>本服</th></tr><tr><td>开关</td><td>enable-radiation: true</td></tr><tr><td>更新间隔</td><td>1</td></tr><tr><td>宽限期</td><td>15</td></tr><tr><td>满暴露惩罚</td><td>burn-players-when-radioactive: true，可燃烧</td></tr><tr><td>显示</td><td>动作条「辐射暴露等级：N/100」</td></tr><tr><td>污染源</td><td>铀、钍、核燃料链等</td></tr></table></div>
-		<p>机制上暴露随接触/携带时间累计，脱离后按宽限衰减。防护依赖粘液防护装与隔离存储。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>规则</th></tr>
+			<tr><td>物品档位</td><td>Radioactive：LOW / MEDIUM / HIGH / VERY_DEADLY ≈ 0.25–2.0</td></tr>
+			<tr><td>暴露</td><td>靠近/携带污染源累计，远离后缓慢衰减</td></tr>
+			<tr><td>症状递进</td><td>反胃 → 中毒/虚弱 → 缓慢/凋零（重度）</td></tr>
+			<tr><td>防护服</td><td>每件约 <strong>25%</strong> 减免，全套约 100%</td></tr>
+			<tr><td>宽限</td><td>首次症状前短宽限；本服 grace 15</td></tr>
+			<tr><td>本服</td><td>开启；满暴露可 <strong>燃烧</strong>；动作条 N/100</td></tr>
+		</table></div>
+
 		
 		<div class="categories">分类：<a href="#radiation">放射性</a></div>
 	</article>
@@ -168,7 +263,18 @@
 		<div class="breadcrumbs"><a href="#top">首页</a> › 背包与存储</div>
 		<div class="article-header"><h1>背包与存储</h1><div class="sub">容器层级与共享规则</div></div>
 
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>容器</th><th>机制</th></tr><tr><td>粘液背包</td><td>多级容量；可染色（染色背包附属六档全开）</td></tr><tr><td>离线打开</td><td>本服 allow-open-when-owner-offline: true</td></tr><tr><td>找回</td><td><code>/sf backpack</code></td></tr><tr><td>彩色末影箱</td><td>3 染料 RGB 组合，最多 8192 独立共享空间</td></tr><tr><td>私人存储</td><td>木/铁/钻石/防爆；Private 仅主人 / Public 交领地</td></tr><tr><td>Networks</td><td>控制器+节点+量子存储（4k～2B）+ 远程 150</td></tr><tr><td>SimpleStorage</td><td>主从链接，范围 5，检查间隔 4 tick</td></tr><tr><td>DankTech2</td><td>多级 Dank/垃圾桶，匹配吸入、溢出作废</td></tr></table></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>容器</th><th>机制</th></tr>
+			<tr><td>粘液背包</td><td>槽位约 <strong>9 / 18 / 27</strong>；特殊款 27</td></tr>
+			<tr><td>绑定</td><td>灵魂绑定 UUID 仅主人；未绑定可交易</td></tr>
+			<tr><td>染色背包</td><td>六档本服全开</td></tr>
+			<tr><td>离线打开</td><td>本服允许</td></tr>
+			<tr><td>找回</td><td><code>/sf backpack</code></td></tr>
+			<tr><td>彩色末影箱</td><td>3 染料 RGB，最多 8192 独立共享空间</td></tr>
+			<tr><td>私人存储</td><td>木/铁/钻石/防爆；Private / Public</td></tr>
+			<tr><td>Networks</td><td>量子存储 4k～2B；远程约 150</td></tr>
+			<tr><td>SimpleStorage / Dank</td><td>范围 5、间隔 4 tick；Dank 匹配吸入/溢出作废</td></tr>
+		</table></div>
+
 		
 		<div class="categories">分类：<a href="#backpack">背包与存储</a></div>
 	</article>
@@ -177,9 +283,20 @@
 		<div class="breadcrumbs"><a href="#top">首页</a> › 护身符</div>
 		<div class="article-header"><h1>护身符</h1><div class="sub">概率触发型被动</div></div>
 
-		<p>护身符放物品栏即可参与<strong>概率触发</strong>（本服动作栏提示开启）。触发文案与效果：</p>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>类型</th><th>触发效果</th></tr><tr><td>铁砧/工匠</td><td>工具本次免损坏</td></tr><tr><td>矿工</td><td>矿物双倍掉落</td></tr><tr><td>农夫 / 猎人</td><td>掉落翻倍</td></tr><tr><td>岩浆 / 水 / 天使</td><td>岩浆获救 / 免溺水 / 信仰之跃免伤</td></tr><tr><td>魔术师</td><td>额外附魔</td></tr></table></div>
-		<p class="muted">非常驻 buff；多枚叠加收益需实测。</p>
+		<p>护身符放物品栏，匹配事件时<strong>概率触发</strong>（本服动作栏提示开启）。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值</th></tr>
+			<tr><td>触发概率</td><td>约 <strong>25%</strong></td></tr>
+			<tr><td>冷却</td><td>单枚约 <strong>5–10s</strong></td></tr>
+			<tr><td>消耗型</td><td>触发后销毁</td></tr>
+		</table></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>类型</th><th>触发效果</th></tr>
+			<tr><td>铁砧/工匠</td><td>工具本次免损坏</td></tr>
+			<tr><td>矿工</td><td>矿物双倍掉落</td></tr>
+			<tr><td>农夫 / 猎人</td><td>掉落翻倍</td></tr>
+			<tr><td>岩浆 / 水 / 天使</td><td>岩浆获救 / 免溺水 / 信仰之跃免伤</td></tr>
+			<tr><td>魔术师</td><td>额外附魔</td></tr>
+		</table></div>
+
 		
 		<div class="categories">分类：<a href="#talisman">护身符</a></div>
 	</article>
@@ -368,7 +485,7 @@
 	</main>
 </div>
 <footer class="wiki-footer">
-	粘液科技 Wiki（仿中文 Minecraft Wiki）· 机制条目 + 玩法指南 · 来自 plugins 配置与开源源码
+	粘液科技 Wiki（仿中文 Minecraft Wiki）· 机制条目 + 玩法指南 · plugins 配置 + Slimefun4 源码机制
 </footer>
 <script>
 (function () {
