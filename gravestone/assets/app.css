@@ -1200,3 +1200,17 @@ a.back-home:active {
   font-weight: 600;
   vertical-align: middle;
 }
+
+/* Back-home pinned to top of sidebar */
+.sb-top {
+  margin: 0 0 0.65rem;
+}
+.wiki-sidebar .sb-top .back-home {
+  display: block;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+.wiki-sidebar .sb-title {
+  margin-top: 0;
+}
