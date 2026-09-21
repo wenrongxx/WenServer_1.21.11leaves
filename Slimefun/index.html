@@ -35,9 +35,7 @@
 			<li><a href="#craft">机器与合成</a></li>
 			<li><a href="#power">电力与网络</a></li>
 			<li><a href="#radiation">放射性安全</a></li>
-			<li><a href="#addons">附属总览</a></li>
-			<li><a href="#sa">SA 附属玩法</a></li>
-			<li><a href="#sb">SB 附属玩法</a></li>
+			<li><a href="#addons">粘液科技附属</a></li>
 			<li><a href="#loop">推荐玩法循环</a></li>
 			<li><a href="#commands">命令与权限</a></li>
 			<li><a href="#config">本服配置</a></li>
@@ -55,8 +53,7 @@
 			<div class="hatnote">配套插件：mcMMO（技能）、墓石地牢等数据包。粘液自定义条目由 <strong>SlimeCustomizer</strong> 加载。</div>
 			<div class="mini-grid">
 				<div class="mini-item"><div class="t">S 主体</div><div class="d">指南书 · 研究 · 机器 · 电力 · 货运 · 背包</div></div>
-				<div class="mini-item"><div class="t">SA</div><div class="d">异域花园 · 灵魂罐 · 矿石块 · 电力刷怪笼 · 染色背包 · 幸运方块 · 硬核粘液</div></div>
-				<div class="mini-item"><div class="t">SB</div><div class="d">匠魂 · 美食家 · 神秘科技 · 蓬松机器 · 魔法 Bump · 战争工艺 · 任务/自定义/HUD</div></div>
+				<div class="mini-item"><div class="t">粘液科技附属</div><div class="d">生存（花园/灵魂/刷怪）· 制造（匠魂/美食/机器）· 战斗魔法与任务自定义</div></div>
 				<div class="mini-item"><div class="t">前置</div><div class="d">Slimefun 主体 + SlimeGlue（迁移/胶合）</div></div>
 			</div>
 			<div class="categories">分类：<a href="#intro">简介</a></div>
@@ -83,7 +80,7 @@
 					<div class="detail">煤/太阳能等发电机 → 导电电缆 → 机器；货运节点 + 货运管理器做自动搬运。网络规模上限 200 节点（见配置）。</div>
 				</li>
 			</ol>
-			<p class="note">玩腻了单机式科技树，可以接 <a href="#sa">灵魂罐</a>（刷怪塔副产）与 <a href="#sb">美食家 / 异域花园</a>（农食循环），或 <a href="#sb">粘液匠魂</a> 做工具改造。</p>
+			<p class="note">玩腻了单机式科技树，可以接 <a href="#addons">灵魂罐</a>（刷怪塔副产）与 <a href="#addons">美食家 / 异域花园</a>（农食循环），或 <a href="#addons">粘液匠魂</a> 做工具改造。</p>
 			<div class="categories">分类：<a href="#start">入门</a></div>
 		</article>
 
@@ -175,10 +172,12 @@
 			</ul>
 			<div class="categories">分类：<a href="#radiation">危险品</a></div>
 		</article>
+		<article class="article" id="addons" data-search="粘液科技附属 附属 SA SB 异域花园 灵魂罐 矿石块 电力刷怪笼 染色背包 幸运方块 硬核 匠魂 美食家 神秘科技 蓬松 Bump 战争 HUD SMG 任务 自定义 迷你">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 粘液科技附属</div>
+			<div class="article-header"><h1>粘液科技附属</h1><div class="sub">S 前置 + SA / SB 全部扩展 · 玩法向</div></div>
+			<p>下列附属都依赖 <strong>Slimefun 主体</strong>。文中仍标注原来的 <strong>SA / SB</strong> 标签便于对照服务器 jar 命名，但作为<strong>同一篇</strong>阅读：生存采集、制造烹饪、战斗魔法可以混着玩。</p>
 
-		<article class="article" id="addons" data-search="附属 SA SB 列表 ExoticGarden SoulJars SlimeTinker">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 附属总览</div>
-			<div class="article-header"><h1>附属总览（S / SA / SB）</h1></div>
+			<h3>一览表</h3>
 			<div class="wiki-table-wrap">
 			<table class="wiki">
 				<tr><th>标签</th><th>名称</th><th>玩法一句话</th></tr>
@@ -193,7 +192,6 @@
 				<tr><td>SA</td><td>硬核粘液 HardcoreSlimefun</td><td>研究失败/安卓故障等硬核项</td></tr>
 				<tr><td>SB</td><td>粘液匠魂 SlimeTinker</td><td>工具部件、强化、匠魂风改造</td></tr>
 				<tr><td>SB</td><td>美食家 Gastronomicon</td><td>种植烹饪、完美食物、厨师熟练</td></tr>
-				<tr><td>SB</td><td>异域…（配合美食家）</td><td>部分美食配方依赖异域花园作物</td></tr>
 				<tr><td>SB</td><td>神秘科技 FoxyMachines</td><td>区块加载器、填充棒、幽灵方块</td></tr>
 				<tr><td>SB</td><td>蓬松机器 FluffyMachines</td><td>轻量便利机器</td></tr>
 				<tr><td>SB</td><td>魔法 Bump</td><td>武器投射物、鉴定星级</td></tr>
@@ -205,110 +203,87 @@
 				<tr><td>SB</td><td>迷你方块 MiniBlocks</td><td>迷你装饰方块</td></tr>
 			</table>
 			</div>
-			<div class="categories">分类：<a href="#addons">附属</a></div>
-		</article>
 
-		<article class="article" id="sa" data-search="SA 异域花园 灵魂罐 矿石块 电力刷怪笼 染色背包 幸运方块 硬核">
-			<div class="breadcrumbs"><a href="#top">首页</a> › SA 附属玩法</div>
-			<div class="article-header"><h1>SA 附属玩法</h1><div class="sub">生存向扩展 · 采集 / 刷怪 / 背包 / 硬核</div></div>
-
-			<h3>异域花园 ExoticGarden</h3>
+			<h3>生存与采集（原 SA）</h3>
+			<h4>异域花园 ExoticGarden</h4>
 			<ul class="bullets">
-				<li><strong>核心循环</strong>：破坏草方块/蕨类等掉落<strong>树苗与灌木</strong>（本服掉率：树约 22%、灌木约 16%，可再乘方块本身的破坏掉率）。</li>
-				<li>种植后长成樱桃、椰子、柠檬、苹果、石榴、火龙果等<strong>奇异果树</strong>，以及番茄、葡萄、茶等灌木。</li>
-				<li>产出服务于<strong>美食家</strong>烹饪与杂项材料；下界/末地世界黑名单关闭生成。</li>
-				<li><strong>玩法</strong>：开一块「果园产线」+ 货运收集水果，比零散砍草更稳。</li>
+				<li><strong>核心循环</strong>：破坏草方块/蕨类等掉落<strong>树苗与灌木</strong>（本服掉率：树约 22%、灌木约 16%）。</li>
+				<li>种植后长成樱桃、椰子、柠檬、石榴、火龙果等<strong>奇异果树</strong>，以及番茄、葡萄、茶等灌木。</li>
+				<li>产出服务于<strong>美食家</strong>烹饪；下界/末地黑名单关闭生成。</li>
+				<li><strong>玩法</strong>：开一块果园 + 货运收集水果，比零散砍草更稳。</li>
 			</ul>
-
-			<h3>灵魂罐 SoulJars</h3>
+			<h4>灵魂罐 SoulJars</h4>
 			<ul class="bullets">
-				<li>击杀配置中的怪物后，用<strong>灵魂罐</strong>收集灵魂；每种生物需 <strong>128</strong> 灵魂（本服统一）。</li>
-				<li>装满的罐子可做<strong>刷怪笼/生成相关</strong>材料，也可交易给队友。</li>
-				<li><strong>玩法</strong>：配合刷怪塔/地牢；先专精 2～3 种灵魂（如僵尸、骷髅、苦力怕）再横向扩展。</li>
+				<li>击杀配置中的怪物后用<strong>灵魂罐</strong>收灵魂；每种生物需 <strong>128</strong> 灵魂（本服统一）。</li>
+				<li>装满的罐子可做刷怪/生成相关材料，也可交易。</li>
+				<li><strong>玩法</strong>：配合刷怪塔/地牢；先专精 2～3 种灵魂再横向扩展。</li>
 			</ul>
-
-			<h3>矿石块 OreChunks + 地质资源</h3>
+			<h4>矿石块 OreChunks</h4>
 			<ul class="bullets">
 				<li>铁、金、铜、锡、银、铝、铅、锌、镁、镍、钴等<strong>矿石块</strong>地质资源启用。</li>
-				<li>玩法：地质探矿/矿块粉碎扩产，减少纯靠挖矿的瓶颈。</li>
+				<li><strong>玩法</strong>：探矿/粉碎扩产，缓解纯挖矿瓶颈。</li>
 			</ul>
-
-			<h3>电力刷怪笼 ElectricSpawners</h3>
+			<h4>电力刷怪笼 ElectricSpawners</h4>
 			<ul class="bullets">
-				<li>消耗电力按列表刷怪：僵尸、骷髅、苦力怕、末影人、岩浆怪、守卫者等约 25 种。</li>
-				<li><strong>玩法</strong>：稳定产出灵魂罐材料与战利品；记得接货运与防卡实体。</li>
+				<li>耗电刷列表内怪物（僵尸、骷髅、苦力怕、末影人、岩浆怪、守卫者等约 25 种）。</li>
+				<li><strong>玩法</strong>：稳定产出灵魂罐材料与战利品；接货运、防卡实体。</li>
 			</ul>
-
-			<h3>染色背包 DyedBackpacks</h3>
+			<h4>染色背包 DyedBackpacks</h4>
 			<ul class="bullets">
 				<li>六档全开：小 / 普通 / 大 / 编织 / 镀金 / 辐光。</li>
-				<li>所有者离线时<strong>仍可打开</strong>（本服配置）。适合共用仓库谨慎设置权限。</li>
+				<li>所有者离线时<strong>仍可打开</strong>；共用仓库注意权限。</li>
+			</ul>
+			<h4>幸运方块 · 硬核粘液</h4>
+			<ul class="bullets">
+				<li><strong>幸运方块</strong>：开箱随机奖励。</li>
+				<li><strong>硬核粘液</strong>：研究 1% 失败；死亡不随机丢研究；机器人故障当前 0%。</li>
 			</ul>
 
-			<h3>幸运方块 / 硬核粘液</h3>
+			<h3>制造与烹饪（原 SB）</h3>
+			<h4>粘液匠魂 SlimeTinker</h4>
 			<ul class="bullets">
-				<li><strong>幸运方块</strong>：开箱随机奖励，娱乐与资源补充。</li>
-				<li><strong>硬核粘液</strong>：研究有 1% 失败；死亡不丢研究（已关随机丢）；可给机器人加故障（当前 0%）。</li>
+				<li>粘液工具做成<strong>可组装、可强化</strong>的匠魂风装备：部件、强化槽、材料特性。</li>
+				<li><strong>玩法</strong>：主武器/主镐先堆 1～2 个核心强化，再换部件而不是整把扔掉。</li>
 			</ul>
-			<div class="categories">分类：<a href="#sa">SA</a>｜<a href="#addons">附属</a></div>
-		</article>
-
-		<article class="article" id="sb" data-search="SB 匠魂 美食家 神秘科技 蓬松 Bump 战争 HUD SMG 任务 自定义 迷你">
-			<div class="breadcrumbs"><a href="#top">首页</a> › SB 附属玩法</div>
-			<div class="article-header"><h1>SB 附属玩法</h1><div class="sub">制造 / 烹饪 / 魔法 / 战争 / 工具向</div></div>
-
-			<h3>粘液匠魂 SlimeTinker</h3>
+			<h4>美食家 Gastronomicon</h4>
 			<ul class="bullets">
-				<li>把粘液工具做成<strong>可组装、可强化</strong>的匠魂风装备：部件、强化槽、材料特性。</li>
-				<li><strong>玩法</strong>：先做一把主武器/主镐，堆 1～2 个核心强化，再换部件而不是整把扔掉。</li>
-			</ul>
-
-			<h3>美食家 Gastronomicon</h3>
-			<ul class="bullets">
-				<li>种植/狩猎掉落种子与特殊食材（草丛约 5～15% 掉率；鱿鱼/守卫者/山羊/鲑鱼击杀约 35%）。</li>
-				<li>烹饪有概率做出<strong>完美食物</strong>（上限约 25%）；积累<strong>厨师熟练度</strong>，256 后解锁机器人相关。</li>
+				<li>种植/狩猎掉种子与特殊食材（草丛约 5～15%；鱿鱼/守卫者/山羊/鲑鱼击杀约 35%）。</li>
+				<li>烹饪有概率<strong>完美食物</strong>（上限约 25%）；熟练度 256 解锁厨师机器人相关。</li>
 				<li>厨师头衔：新手 → 学徒（50）→ 经验丰富（100）→ 三星大厨（200）。</li>
-				<li>与<strong>异域花园</strong>联用：不少菜谱要异域水果（本服未禁用该联动）。</li>
+				<li>与<strong>异域花园</strong>联用：不少菜谱要异域水果。</li>
 			</ul>
-
-			<h3>神秘科技 FoxyMachines</h3>
+			<h4>神秘科技 FoxyMachines</h4>
 			<ul class="bullets">
 				<li><strong>区块加载器</strong>：每人最多 <strong>8</strong> 个，每个约需 GPS 复杂度 7500。</li>
-				<li><strong>填充棒</strong>：一次最多 4096 格；白名单树叶/玻璃等，黑名单屏障、刷怪笼、命令方块等。</li>
-				<li><strong>海绵棒</strong>：一次最多清 16384 格，适合大范围平整。</li>
+				<li><strong>填充棒</strong>一次最多 4096 格；<strong>海绵棒</strong>最多清 16384 格。</li>
 				<li>可开幽灵方块与自定义怪物（关掉会改部分配方）。</li>
 			</ul>
-
-			<h3>蓬松机器 FluffyMachines</h3>
+			<h4>蓬松机器 FluffyMachines</h4>
 			<ul class="bullets">
-				<li>偏便利：自动化工序补全、易用机器。适合接在主产线后面做「最后一公里」。</li>
+				<li>偏便利的自动化工序补全，适合接在主产线后面做「最后一公里」。</li>
 			</ul>
 
-			<h3>魔法 Bump</h3>
+			<h3>战斗 · 魔法 · 内容（原 SB）</h3>
+			<h4>魔法 Bump</h4>
 			<ul class="bullets">
-				<li>魔法武器与投射物（投射物持续约 10 粘液 tick）。</li>
-				<li><strong>鉴定系统</strong>：按评分给 1～20 星（阈值如 ≥100→20 星 … ≥10→1 星）。</li>
-				<li>本服语言 zh-CN，研究已开。</li>
+				<li>魔法武器与投射物（约 10 粘液 tick）。</li>
+				<li><strong>鉴定</strong>按评分给 1～20 星（≥100→20 星 … ≥10→1 星）。</li>
 			</ul>
-
-			<h3>战争工艺 SlimefunWarfare</h3>
+			<h4>战争工艺 SlimefunWarfare</h4>
 			<ul class="bullets">
-				<li>战争向装备与材料（如砷、莫扎石等地质资源）。</li>
-				<li><strong>玩法</strong>：适合基地防御与 PvP 前中期过渡装备。</li>
+				<li>战争向装备与材料（砷、莫扎石等），适合基地防御与 PvP 过渡装。</li>
 			</ul>
-
-			<h3>信息、任务与自定义</h3>
+			<h4>信息 · 任务 · 自定义</h4>
 			<ul class="bullets">
 				<li><strong>SlimeHUD</strong>：看机器/方块状态，排障产线必备。</li>
-				<li><strong>SlimefunAdvancements</strong>：自定义粘液任务线，引导玩法目标。</li>
-				<li><strong>SlimeCustomizer</strong>：服主加自定义物品、发电机、机器、生物掉落；参考模板在插件目录。</li>
-				<li><strong>SMG</strong> 简易材料生成器：稳定补基础材料。</li>
-				<li><strong>MiniBlocks</strong>：迷你装饰方块，建筑党向。</li>
+				<li><strong>SlimefunAdvancements</strong>：自定义粘液任务线。</li>
+				<li><strong>SlimeCustomizer</strong>：服主加自定义物品、发电机、机器、生物掉落。</li>
+				<li><strong>SMG</strong> 简易材料生成器；<strong>MiniBlocks</strong> 迷你装饰方块。</li>
 			</ul>
-			<div class="categories">分类：<a href="#sb">SB</a>｜<a href="#addons">附属</a></div>
+			<div class="categories">分类：<a href="#addons">粘液科技附属</a></div>
 		</article>
 
-		<article class="article" id="loop" data-search="循环 产线 推荐 目标 进度 流程">
+<article class="article" id="loop" data-search="循环 产线 推荐 目标 进度 流程">
 			<div class="breadcrumbs"><a href="#top">首页</a> › 推荐玩法循环</div>
 			<div class="article-header"><h1>推荐玩法循环</h1></div>
 			<div class="wiki-table-wrap">
