@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>粘液科技 Wiki · WenServer</title>
-<meta name="description" content="WenServer 粘液科技完整玩法百科：研究、机器、电力货运、机器人、放射性、官方与社区附属。"/>
+<title>粘液科技玩法手册 · WenServer</title>
+<meta name="description" content="WenServer 粘液科技怎么玩：逐步操作指南、产线搭建、机器用法、官方与社区附属玩法。"/>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
@@ -15,7 +15,7 @@
 <header class="wiki-header">
 	<div class="inner">
 		<img src="assets/pack-icon.png" alt="" class="hub-logo-icon" width="28" height="28" />
-		<a class="wiki-logo" href="../index.html">粘液科技 Wiki<span>Slimefun 4 · 完整玩法</span></a>
+		<a class="wiki-logo" href="../index.html">粘液科技玩法手册<span>Slimefun 4 · 怎么玩</span></a>
 		<button type="button" class="toc-toggle" id="tocToggle">目录</button>
 		<div class="wiki-search">
 			<input type="search" id="searchBox" placeholder="搜索条目…" aria-label="搜索" />
@@ -29,607 +29,584 @@
 		<div class="sb-top">
 				<a class="back-home" href="../index.html">← 返回首页</a>
 			</div>
-		<div class="sb-title">目录</div>
+		<div class="sb-title">怎么玩</div>
 		<ul>
-			<li><a href="#intro">简介</a></li>
-			<li><a href="#start">快速入门</a></li>
-			<li><a href="#guidebook">指南书</a></li>
-			<li><a href="#research">研究系统</a></li>
-			<li><a href="#materials">材料与加工</a></li>
-			<li><a href="#craft">机器与多方块</a></li>
-			<li><a href="#power">电力系统</a></li>
-			<li><a href="#cargo">货运网络</a></li>
-			<li><a href="#gps">GPS 与传送</a></li>
-			<li><a href="#androids">机器人</a></li>
-			<li><a href="#radiation">放射性</a></li>
-			<li><a href="#backpack">背包与存储</a></li>
-			<li><a href="#talisman">护身符</a></li>
-			<li><a href="#official">官方附属</a></li>
-			<li><a href="#community">社区附属</a></li>
-			<li><a href="#customizer">自定义内容</a></li>
-			<li><a href="#loop">玩法路线图</a></li>
-			<li><a href="#commands">命令大全</a></li>
-			<li><a href="#config">本服配置</a></li>
+			<li><a href="#intro">这是什么</a></li>
+			<li><a href="#day1">第一天操作</a></li>
+			<li><a href="#research">怎么解锁研究</a></li>
+			<li><a href="#crafting">怎么在工作台合成</a></li>
+			<li><a href="#multiblock">怎么做多方块</a></li>
+			<li><a href="#ore-line">矿石加工线</a></li>
+			<li><a href="#power-line">怎么搭电力</a></li>
+			<li><a href="#cargo-line">怎么配货运</a></li>
+			<li><a href="#auto-craft">自动合成机</a></li>
+			<li><a href="#gps">GPS 航点</a></li>
+			<li><a href="#android">机器人用法</a></li>
+			<li><a href="#backpack">背包用法</a></li>
+			<li><a href="#talisman">护身符怎么用</a></li>
+			<li><a href="#radiation">防辐射操作</a></li>
+			<li><a href="#garden">异域花园种法</a></li>
+			<li><a href="#souls">灵魂罐收集</a></li>
+			<li><a href="#spawner">电力刷怪笼</a></li>
+			<li><a href="#lucky">幸运方块 / 硬核</a></li>
+			<li><a href="#tinker">匠魂怎么改工具</a></li>
+			<li><a href="#food">美食家怎么做出餐</a></li>
+			<li><a href="#foxy">填充棒与加载器</a></li>
+			<li><a href="#bump">Bump 鉴定与武器</a></li>
+			<li><a href="#warfare">战争工艺入门</a></li>
+			<li><a href="#goals">阶段目标清单</a></li>
+			<li><a href="#faq">常见问题</a></li>
+			<li><a href="#commands">命令</a></li>
+			<li><a href="#config">本服数值</a></li>
 		</ul>
 	</aside>
 
 	<main class="wiki-content">
 		<div class="search-panel" id="searchPanel" hidden></div>
 
-		<article class="article" id="intro" data-search="粘液科技 Slimefun 简介 科技树 强化工作台 研究 附属 官方 社区">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 简介</div>
-			<div class="article-header"><h1>粘液科技（Slimefun）</h1><div class="sub">Slimefun 4 · 2026.07 · 完整玩法百科</div></div>
-			<p>粘液科技（Slimefun）把 Minecraft 从「砍树挖矿」扩展成一条完整的<strong>科技树</strong>：用原版材料在<strong>强化工作台</strong>等专属机器里造出粉碎机、发电机、电缆、货运、机器人、魔法装备等。物品通过 NBT 标识，不能用原版合成表「拼样子」做出来——必须在指南书里查看配方，放进粘液机器执行。</p>
-			<div class="hatnote">本服主体版本 <strong>2026.07</strong>，界面语言 <strong>zh-CN</strong>。附属分<strong>官方附属</strong>与<strong>社区附属</strong>两大类，详见 <a href="#official">官方附属</a> / <a href="#community">社区附属</a>。</div>
+		<article class="article" id="intro" data-search="粘液科技 简介 怎么玩 科技树 强化工作台">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 这是什么</div>
+			<div class="article-header"><h1>这是什么，怎么开始玩</h1><div class="sub">Slimefun 4 · 操作手册</div></div>
+			<p>粘液科技给原版加了一整棵<strong>科技树</strong>：新工具、粉碎机、发电机、电缆、货运、机器人、魔法装。所有粘液物品都带专用数据，<strong>不能</strong>用原版工作台「摆个样子」做出来。</p>
 
-			<h3>为什么叫「粘液」科技</h3>
-			<ul class="bullets">
-				<li>早期核心材料与史莱姆有关，且整条工业线围绕「把矿物变成更高纯度材料」展开。</li>
-				<li>玩法主循环是：<strong>采集原料 → 解锁研究 → 机器加工 → 发电/物流自动化 → 更高级机器与装备</strong>。</li>
-				<li>与 mcMMO（技能成长）、墓石地牢（冒险掉落）可叠加：地牢打到的矿与材料可直接进粘液产线。</li>
-			</ul>
-
-			<h3>本页怎么读</h3>
-			<div class="mini-grid">
-				<div class="mini-item"><div class="t">核心系统</div><div class="d">指南书 · 研究 · 机器 · 电力 · 货运 · 机器人 · 背包 · 护身符</div></div>
-				<div class="mini-item"><div class="t">官方附属</div><div class="d">异域花园、灵魂罐、矿石块、电力刷怪笼、染色背包、幸运方块、硬核粘液等</div></div>
-				<div class="mini-item"><div class="t">社区附属</div><div class="d">粘液匠魂、美食家、神秘科技、蓬松机器、Bump 魔法、战争工艺、自定义等</div></div>
-				<div class="mini-item"><div class="t">数值向</div><div class="d">研究经验、掉率、网络上限、故障率等均标注本服配置</div></div>
-			</div>
-			<div class="categories">分类：<a href="#intro">简介</a></div>
-		</article>
-
-		<article class="article" id="start" data-search="入门 新手 开局 起步 强化工作台 电路板 合金">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 快速入门</div>
-			<div class="article-header"><h1>快速入门</h1><div class="sub">从零到第一条自动化产线</div></div>
-
-			<h3>阶段 0：领指南书</h3>
-			<ul class="bullets">
-				<li>首次进服自动获得<strong>粘液科技指南</strong>（本服 <code>receive-on-first-join: true</code>）。丢失可用 <code>/sf guide</code> 补发。</li>
-				<li>右键打开：左侧是分类（基础、工具、机器、电力、货运、魔法、各附属…），右侧是配方与研究状态。</li>
-			</ul>
-
-			<h3>阶段 1：强化工作台（一切的入口）</h3>
+			<h3>你实际上会做的三件事</h3>
 			<ol class="steps">
-				<li><strong>做「强化工作台」</strong>
-					<div class="detail">材料常见为铁砧 + 原版方块组合（以指南为准）。把它当作粘液专用的 3×3 合成台。</div>
+				<li><strong>看指南书 → 点研究</strong>
+					<div class="detail">用经验等级买下配方。不研究就做不出来。</div>
 				</li>
-				<li><strong>认识三种「台子」</strong>
-					<div class="detail"><strong>强化工作台</strong>：静态摆格子配方。<strong>机器</strong>：有进度条、耗电/耗时。<strong>多方块</strong>：按图用原版方块搭出来（如高炉类），作弊 <code>/sf cheat</code> <strong>拿不到</strong>多方块成品。</div>
+				<li><strong>把材料放进粘液机器</strong>
+					<div class="detail">强化工作台摆格子，或把料丢进粉碎机/电炉。</div>
 				</li>
-				<li><strong>解锁「基础」类研究</strong>
-					<div class="detail">经验值解锁（本服<strong>不用游戏币</strong>）。失败率 1%（硬核附属），失败可再试。解锁有烟花与动画。</div>
+				<li><strong>搭一条自动线</strong>
+					<div class="detail">发电机供电，货运搬箱子，最后做出合金、电路板和装备。</div>
 				</li>
 			</ol>
 
-			<h3>阶段 2：第一桶「科技材料」</h3>
-			<div class="wiki-table-wrap">
-			<table class="wiki">
-				<tr><th>步骤</th><th>大致目标</th><th>说明</th></tr>
-				<tr><td>1. 粉碎</td><td>粉碎机 / 手磨</td><td>原版矿 → 矿粉，提高出货量</td></tr>
-				<tr><td>2. 洗矿</td><td>淘金盘 / 洗矿机</td><td>从沙砾/矿粉再筛出副产物（本服矿研磨机为<strong>旧版</strong>逻辑）</td></tr>
-				<tr><td>3. 熔炼</td><td>电炉 / 冶炼炉</td><td>矿粉 → 锭；做<strong>粘液合金</strong>、铜/锡/银等扩展锭</td></tr>
-				<tr><td>4. 电路</td><td>基础/高级电路板</td><td>几乎所有中后期机器的门槛材料</td></tr>
-			</table>
-			</div>
-
-			<h3>阶段 3：电力与自动搬运</h3>
+			<h3>和别的系统怎么接</h3>
 			<ul class="bullets">
-				<li>煤发电机或太阳能 → <strong>粘液电缆</strong> → 机器；中间加<strong>电容器</strong>缓冲。</li>
-				<li><strong>货运节点</strong>贴在箱子/机器上，用<strong>货运管理器</strong>设频道、过滤器、优先级，实现无人值守。</li>
-				<li>网络规模上限 <strong>200</strong> 节点/网络（本服）；可视化可开。</li>
+				<li>墓石地牢、结构宝箱挖到的<strong>矿和杂物</strong>，直接丢进粉碎机/洗矿机扩大收益。</li>
+				<li>mcMMO 刷经验 → 给粘液<strong>解锁研究</strong>用。</li>
+				<li>副属分<strong>官方附属</strong>（花园、灵魂、刷怪笼…）与<strong>社区附属</strong>（匠魂、美食家、神秘科技…），后文按「怎么做」分开写。</li>
 			</ul>
-
-			<h3>阶段 4：选一条支线</h3>
-			<div class="wiki-table-wrap">
-			<table class="wiki">
-				<tr><th>路线</th><th>抓手</th></tr>
-				<tr><td>农业美食</td><td><a href="#official">异域花园</a> 果树 + <a href="#community">美食家</a> 烹饪与完美食物</td></tr>
-				<tr><td>刷怪工业</td><td><a href="#official">电力刷怪笼</a> + <a href="#official">灵魂罐</a></td></tr>
-				<tr><td>工具军火</td><td><a href="#community">粘液匠魂</a> 强化 / <a href="#community">Bump</a> 魔法武器 / 战争工艺</td></tr>
-				<tr><td>超平坦基建</td><td><a href="#community">神秘科技</a> 填充棒、海绵棒、区块加载器</td></tr>
-			</table>
-			</div>
-			<p class="note">详细系统说明从 <a href="#materials">材料与加工</a> 起，数值都尽量对齐游戏内指南与本服 <code>plugins/</code> 配置。</p>
-			<div class="categories">分类：<a href="#start">入门</a></div>
+			<div class="categories">分类：<a href="#intro">入门</a></div>
 		</article>
 
-		<article class="article" id="guidebook" data-search="指南书 搜索 设置 语言 动画 分类">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 指南书</div>
-			<div class="article-header"><h1>指南书</h1><div class="sub">Slimefun 指南 · 查询一切配方的入口</div></div>
-			<div class="wiki-table-wrap">
-			<table class="wiki">
-				<tr><th>操作</th><th>方法</th></tr>
-				<tr><td>获得</td><td>首次进服赠送；<code>/sf guide</code> 或 <code>/sf open_guide</code></td></tr>
-				<tr><td>浏览</td><td>分类页 → 物品页（配方格子、所需机器、研究锁）</td></tr>
-				<tr><td>搜索</td><td>指南内搜索；本服<strong>不在搜索中显示隐藏物品组</strong></td></tr>
-				<tr><td>原版对照</td><td>本服开启原版配方显示（<code>show-vanilla-recipes: true</code>）</td></tr>
-				<tr><td>设置页</td><td>语言切换、解锁动画开关、版本/贡献者/维基链接</td></tr>
-				<tr><td>锁定类别</td><td>提示「需要先解锁类别里的所有物品」——先推主线再开隐藏分支</td></tr>
-			</table>
-			</div>
-			<h3>指南里的特殊图例</h3>
-			<ul class="bullets">
-				<li><strong>机器配方</strong>：该机器所有可用输入/输出。</li>
-				<li><strong>采矿机</strong>：可采出的资源表。</li>
-				<li><strong>发电机</strong>：可用燃料与产能。</li>
-				<li><strong>淘金盘</strong>：可筛出的资源概率向表。</li>
-				<li><strong>攀岩镐</strong>：可攀爬的平面类型。</li>
-			</ul>
-			<p class="mc-gray">语言面板可把界面改成其它语言；<strong>物品 Lore 文本</strong>可能仍跟随资源包/物品定义，不随界面语言变。</p>
-			<div class="categories">分类：<a href="#guidebook">指南</a></div>
+		<article class="article" id="day1" data-search="第一天 开局 起步 新手 前十分钟">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 第一天操作</div>
+			<div class="article-header"><h1>第一天照着做</h1><div class="sub">约 30～60 分钟到达第一条半自动产线</div></div>
+			<ol class="steps">
+				<li><strong>进服收指南书</strong>
+					<div class="detail">首次进入会自动进背包。没有就输入 <code>/sf guide</code>。右键打开，先看「基础」分类。</div>
+				</li>
+				<li><strong>做「强化工作台」</strong>
+					<div class="detail">打开指南 → 基础 → 强化工作台 → 看 3×3 格子里要什么（一般是铁砧 + 铁/木板类）。照格子在<strong>原版工作台</strong>做出这台机器，放地上。</div>
+				</li>
+				<li><strong>右键强化工作台</strong>
+					<div class="detail">打开的是粘液专用界面：仍是 3×3 + 结果槽，但只认指南配方。这时才开始做粘液物品。</div>
+				</li>
+				<li><strong>解「木棍/基础材料」等 1～2 级研究</strong>
+					<div class="detail">指南里带锁图标的研究：点「研究」→ 若显示「你没有足够的经验」，先去挖矿/打怪升几级再来。1% 会失败，失败就再点一次。</div>
+				</li>
+				<li><strong>做出第一把粘液镐或斧</strong>
+					<div class="detail">证明链路通了：研究 → 强化工作台摆格子 → 拿到带粘液 Lore 的工具。</div>
+				</li>
+				<li><strong>准备一台粉碎机</strong>
+					<div class="detail">指南里查「粉碎机」所需电路/合金若还不够，先做手磨或更简单的入门研磨（旧版矿研磨机在本服 <code>legacy-ore-grinder: true</code>，指南里有对应配方说明）。</div>
+				</li>
+			</ol>
+			<p class="note">今天不要急着上核电和机器人。先把「研究 → 工作台 → 一台加工机」跑通，比堆一堆半成品机器有用。</p>
+			<div class="categories">分类：<a href="#day1">开局</a></div>
 		</article>
 
-		<article class="article" id="research" data-search="研究 解锁 经验 等级 称号 失败 成本 学识巨著">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 研究系统</div>
-			<div class="article-header"><h1>研究系统</h1><div class="sub">用经验买下整棵科技树</div></div>
-			<p>粘液物品默认<strong>未研究 = 不可合成/使用</strong>。点指南里的「研究」消耗<strong>经验等级</strong>解锁一整条相关配方。研究不是扣材料，而是扣你的 XP 等级。</p>
+		<article class="article" id="research" data-search="研究 怎么解锁 经验 失败 称号 顺序">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 怎么解锁研究</div>
+			<div class="article-header"><h1>怎么解锁研究</h1></div>
+			<ol class="steps">
+				<li><strong>打开指南书</strong>，进你想做的分类（例如「机器」）。</li>
+				<li><strong>点带锁/「已锁定」的物品</strong>，在详情页找<strong>研究按钮</strong>（会显示需要的等级）。</li>
+				<li><strong>确认自己等级够</strong>：经验栏显示当前等级。不够就先去刷经验（挖矿、地牢、mcMMO 行为）。</li>
+				<li><strong>点研究</strong>。
+					<div class="detail">成功：「成功解锁研究 …」+ 可选烟花/学习动画。<br>
+					失败（本服 <strong>1%</strong>）：「研究失败! 你需要再试一次」——等级还在，再点即可。<br>
+					经验不足：「你没有足够的经验来解锁这个研究」。</div>
+				</li>
+				<li><strong>解锁后再合成</strong>。顺序不对时会提示「你的知识还不足以理解这个物品」。</li>
+			</ol>
 
-			<h3>本服规则（含硬核粘液）</h3>
+			<h3>推荐解锁顺序（省经验）</h3>
 			<div class="wiki-table-wrap">
 			<table class="wiki">
-				<tr><th>项</th><th>数值 / 行为</th></tr>
-				<tr><td>解锁消耗</td><td><strong>经验等级</strong>（<code>use-money-unlock: false</code>）</td></tr>
-				<tr><td>经验→游戏币换算</td><td>25（仅当改用游戏币解锁时生效）</td></tr>
-				<tr><td>创造模式</td><td>免费解锁</td></tr>
-				<tr><td>解锁反馈</td><td>消息「成功解锁研究」+ 可选烟花；学习动画可关</td></tr>
-				<tr><td>研究失败</td><td><strong>1%</strong>，提示「研究失败! 你需要再试一次」</td></tr>
-				<tr><td>死亡随机丢研究</td><td><strong>关闭</strong></td></tr>
-				<tr><td>死亡全清研究</td><td><strong>0%</strong></td></tr>
-				<tr><td>安卓/机器人故障</td><td>概率 <strong>0%</strong>；故障持续 30 秒（若开启）</td></tr>
-				<tr><td>经验不足</td><td>提示「你没有足够的经验来解锁这个研究」</td></tr>
+				<tr><th>顺序</th><th>点什么</th><th>为什么</th></tr>
+				<tr><td>1</td><td>强化工作台相关基础</td><td>没有它后面都点不了</td></tr>
+				<tr><td>2</td><td>粉碎 / 洗矿 / 熔炼</td><td>材料倍增，回本快</td></tr>
+				<tr><td>3</td><td>基础电路板</td><td>几乎全是中后期门槛</td></tr>
+				<tr><td>4</td><td>煤发电机 + 电缆</td><td>进入耗电机器</td></tr>
+				<tr><td>5</td><td>背包 1～2 级</td><td>下矿效率翻倍</td></tr>
+				<tr><td>6</td><td>货运节点</td><td>开始自动化</td></tr>
+				<tr><td>7</td><td>按支线</td><td>果园 / 刷怪 / 匠魂 / 魔法</td></tr>
 			</table>
 			</div>
 
-			<h3>研究费用有多贵</h3>
+			<h3>称号怎么涨</h3>
 			<ul class="bullets">
-				<li>本服 <code>Researches.yml</code> 中研究 <code>cost</code>（等级）大致在 <strong>1～150</strong>，多数 <strong>&lt; 50</strong> 级，平均约 <strong>22</strong> 级。</li>
-				<li>前期基础研究约 1～10 级；中期机器 5～20 级；后期/附属大件可到数十级甚至更高（以指南书实时显示为准）。</li>
-				<li>覆盖分类包括：主体 <code>slimefun</code>，以及异域花园、美食家、神秘科技、Bump、战争工艺、染色背包、电力刷怪笼、自定义等<strong>附属研究组</strong>。</li>
+				<li>解的研究越多称号越高：小鸡 → … → 学徒 → … → 大师 → 天选之子（共 38 档）。</li>
+				<li>称号是荣誉展示，不加属性；冲称号就是冲全研究。</li>
 			</ul>
 
-			<h3>研究称号（38 档）</h3>
-			<p>随研究进度提升称号（<code>research-ranks</code>，纯荣誉展示）：</p>
-			<p class="mc-gray">小鸡 → 牛牛君 → 蜘蛛 → 村民 → 开拓者 → 童生 → 实习生 → 不合格生 → 学生 → 笨拙学徒 → 学徒 → 熟练学徒 → 法师学徒 → 杰出法师 → 年轻魔术师 → 笨拙魔术师 → 普通魔术师 → 魔术师 → 熟练魔术师 → 特技魔术师 → 惯用魔术师 → 杰出魔术师 → 笨拙巫师 → 巫师 → 普通巫师 → 特技巫师 → 杰出巫师 → 卓越巫师 → 年轻大师 → 笨拙大师 → 实习大师 → 合格大师 → 大师 → 特技大师 → 杰出大师 → 卓越大师 → 精通大师 → <strong>天选之子</strong></p>
-
-			<h3>其它研究相关</h3>
+			<h3>本服研究相关硬核项</h3>
 			<ul class="bullets">
-				<li><strong>学识巨著</strong>：不能对自己使用（防刷书）。</li>
-				<li>未解锁时使用物品：「你的知识还不足以理解这个物品。你需要先解锁 …」</li>
-				<li>管理：管理员可用研究重置命令（见 <a href="#commands">命令大全</a>）。</li>
-				<li>硬核粘液可让研究带失败惩罚；本服失败仅要求重试，不扣进度。</li>
+				<li>死亡<strong>不会</strong>掉研究；全清概率 0%。</li>
+				<li>费用用<strong>经验</strong>不是游戏币；多数研究 1～50 级，少数后期更贵。</li>
+				<li>创造模式可免费解（仅创造/管理场景）。</li>
 			</ul>
 			<div class="categories">分类：<a href="#research">研究</a></div>
 		</article>
 
-		<article class="article" id="materials" data-search="材料 矿石 粉碎 洗矿 冶炼 合金 电路板 副产物">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 材料与加工</div>
-			<div class="article-header"><h1>材料与加工</h1><div class="sub">把石头变成电路板的路径</div></div>
-
-			<h3>典型加工链</h3>
-			<div class="wiki-table-wrap">
-			<table class="wiki">
-				<tr><th>链路</th><th>设备</th><th>产物玩法</th></tr>
-				<tr><td>矿石</td><td>粉碎机 / 矿研磨机</td><td>一矿多粉；本服矿研磨机 <code>legacy-ore-grinder: true</code></td></tr>
-				<tr><td>矿粉/沙砾</td><td>洗矿机 / 淘金盘 / 洗尘机</td><td>副产小撮金属、宝石、粘液相关碎料（洗矿/洗尘为新版）</td></tr>
-				<tr><td>合金</td><td>电炉 / 冶炼炉</td><td>粘液锭、硬质合金、铜锡银锌等扩展金属</td></tr>
-				<tr><td>电子</td><td>强化工作台</td><td>基础/高级电路板 → 发电机、机器、机器人</td></tr>
-				<tr><td>地底矿块</td><td>地质资源 / 矿石块附属</td><td>铁、金、铜、锡、银、铝、铅、锌、镁、镍、钴等（见官方附属）</td></tr>
-			</table>
-			</div>
-
-			<h3>资源开关（resources.yml）</h3>
-			<p>本服启用的地质/附属资源包括：</p>
-			<ul class="bullets">
-				<li><strong>主体</strong>：油、下界冰、铀、盐</li>
-				<li><strong>扩展金属/能源</strong>：钍（LIT）、末影精华（Infinity）、星尘陨石（DynaTech）、硼（BetterReactor）</li>
-				<li><strong>简单存储矿</strong>：angelite / proustite / shortite / quartz 水晶</li>
-				<li><strong>战争工艺</strong>：砷、莫扎石</li>
-				<li><strong>自定义</strong>：示例地质 <code>example_geo</code>（SlimeCustomizer）</li>
-			</ul>
-			<p class="note">铀/钍等涉及<a href="#radiation">放射性</a>，操作时注意防护。</p>
-			<div class="categories">分类：<a href="#materials">材料</a></div>
-		</article>
-
-		<article class="article" id="craft" data-search="机器 多方块 强化工作台 冶炼炉 自动合成 装甲锻造 压力腔">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 机器与多方块</div>
-			<div class="article-header"><h1>机器与多方块</h1><div class="sub">三类「工作面」与常用机器角色</div></div>
-
-			<h3>三类工作面</h3>
-			<div class="wiki-table-wrap">
-			<table class="wiki">
-				<tr><th>类型</th><th>交互</th><th>例子</th></tr>
-				<tr><td>强化工作台</td><td>打开界面摆 3×3，点合成</td><td>Enhanced Crafting Table</td></tr>
-				<tr><td>单方块机器</td><td>有进度、可耗电，界面显示输入/输出</td><td>粉碎机、电炉、自动合成机</td></tr>
-				<tr><td>多方块结构</td><td>按指南图用方块「搭」出来</td><td>冶炼炉、高炉类、部分大型产线</td></tr>
-			</table>
-			</div>
-			<p class="warning">作弊模式 <code>/sf cheat</code> <strong>无法</strong>直接获得多方块机器成品——必须按书中结构搭建。这是最常见的新人坑。</p>
-
-			<h3>机器功能分类（玩法角色）</h3>
-			<div class="wiki-table-wrap">
-			<table class="wiki">
-				<tr><th>角色</th><th>干什么</th><th>代表机器</th></tr>
-				<tr><td>加工</td><td>粉、洗、熔、合金</td><td>粉碎机、洗矿机、电炉、冶炼炉</td></tr>
-				<tr><td>发电</td><td>产 J（能量）</td><td>煤发、太阳能、火力/核能（附属）</td></tr>
-				<tr><td>充能</td><td>给工具/喷气背包充电</td><td>充电台、无线充能</td></tr>
-				<tr><td>自动合成</td><td>按设定配方自动从上方箱子取料合成</td><td>自动合成机（蹲下右键设配方）</td></tr>
-				<tr><td>装备锻造</td><td>做粘液盔甲/工具</td><td>装甲锻造台、压力腔</td></tr>
-				<tr><td>食品/杂项</td><td>榨汁、腌制、油等</td><td>榨汁机及附属厨房机器</td></tr>
-				<tr><td>物流</td><td>搬运物品</td><td>货运节点、货运管理器</td></tr>
-			</table>
-			</div>
-
-			<h3>自动合成机要点</h3>
-			<ul class="bullets">
-				<li>必须放在<strong>箱子上方</strong>；缺箱提示「缺少箱子！」。</li>
-				<li>手持目标物品<strong>蹲下右键</strong>设置配方；成功后可左键启停、右键删除。</li>
-				<li>未解锁研究或物品被禁用时，配方不可用。</li>
-				<li>指令 <code>/sf charge</code> 可给手持充能物品充满电。</li>
-			</ul>
-			<div class="categories">分类：<a href="#craft">机器</a></div>
-		</article>
-
-		<article class="article" id="power" data-search="电力 发电机 电缆 电容器 J 能量 缓冲 万用表">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 电力系统</div>
-			<div class="article-header"><h1>电力系统</h1><div class="sub">产电 → 传输 → 缓冲 → 耗电</div></div>
+		<article class="article" id="crafting" data-search="强化工作台 怎么合成 摆格子 配方 手持">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 怎么在工作台合成</div>
+			<div class="article-header"><h1>怎么在强化工作台合成</h1></div>
 			<ol class="steps">
-				<li><strong>发电</strong>
-					<div class="detail">发电机把燃料/阳光转成能量（单位习惯称 <strong>J</strong>）。指南「发电机」图例可查燃料表。</div>
-				</li>
-				<li><strong>传输</strong>
-					<div class="detail">用<strong>粘液电缆</strong>把发电机、电容、机器连成同一网络。注意线缆与节点数量。</div>
-				</li>
-				<li><strong>缓冲</strong>
-					<div class="detail"><strong>电容器</strong>储存能量，避免机器瞬间缺电。自定义电容见 <a href="#customizer">自定义内容</a>。</div>
-				</li>
-				<li><strong>耗电</strong>
-					<div class="detail">加工机、充能台、货运、机器人、电力刷怪笼等都在耗电端。</div>
+				<li>指南里打开目标物品，看<strong>配方图</strong>（3×3 哪一格放什么、数量）。</li>
+				<li><strong>右键强化工作台</strong>打开界面。</li>
+				<li>把材料<strong>按格子摆满</strong>（有序配方必须位置正确；指南写「无序」才可任意摆）。</li>
+				<li>结果槽出现成品 → <strong>点击取出</strong>。材料被消耗。</li>
+				<li>若结果槽空：
+					<div class="detail">① 格子摆错 ② 材料数量不够 ③ 研究未解锁 ④ 你放的是「看起来像」的原版同类物而不是粘液材料。</div>
 				</li>
 			</ol>
-			<h3>网络与诊断</h3>
+			<h3>和原版工作台的区别（必读）</h3>
 			<ul class="bullets">
-				<li>本服网络 <code>max-size: 200</code>；可视化 <code>enable-visualizer: true</code>；多余物品默认不删除。</li>
-				<li><strong>万用表</strong>提示格式：「已储存的能源: 当前 / 容量」。</li>
-				<li>排障顺序：发电是否在跑 → 电缆是否连贯 → 电容是否满/空 → 机器是否断电停工。</li>
+				<li>原版工作台<strong>做不出</strong>粘液装备/机器。指南书上的格子<strong>只在强化工作台有效</strong>。</li>
+				<li>自动合成机等机器「不能用粘液物品去套原版合成」——系统会提示不能在合成机上用 Slimefun 物品合成。</li>
+				<li>多方块机器（冶炼炉等）见下一节，不是点出来的。</li>
 			</ul>
-			<div class="categories">分类：<a href="#power">电力</a></div>
+			<div class="categories">分类：<a href="#crafting">合成</a></div>
 		</article>
 
-		<article class="article" id="cargo" data-search="货运 货运节点 货运管理器 频道 过滤 自动化 物流">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 货运网络</div>
-			<div class="article-header"><h1>货运网络</h1><div class="sub">让产线自己搬箱子</div></div>
-			<h3>组件</h3>
+		<article class="article" id="multiblock" data-search="多方块 冶炼炉 怎么搭 结构 建造">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 怎么做多方块</div>
+			<div class="article-header"><h1>怎么做多方块结构</h1><div class="sub">冶炼炉、高炉类必须「搭」出来</div></div>
+			<ol class="steps">
+				<li>指南点开多方块机器，看<strong>结构示意图</strong>（每层放什么方块）。</li>
+				<li>准备<strong>原版方块</strong>（圆石、铁块、漏斗、箱子等，以图为准）。</li>
+				<li>找平地，按图<strong>一层层摆</strong>，注意朝向与空心/实心。</li>
+				<li>搭完后对<strong>指定核心方块</strong>右键（通常会有完成提示或打开界面）。</li>
+				<li>接口：输入口放漏斗/箱子，出口对上货运节点或箱子。</li>
+			</ol>
+			<p class="warning">在作弊（<code>/sf cheat</code>）里<strong>拿不到</strong>多方块成品——会提示必须按书中建造。创意服也建议先搭一次记住结构。</p>
+			<ul class="bullets">
+				<li>搭错排查：少一层、方块种类不对、朝向反了、被楼梯半砖换了。</li>
+				<li>进阶：冶炼炉链是「矿粉 → 锭」主干；和粉碎机、洗矿机串成线（见 <a href="#ore-line">矿石加工线</a>）。</li>
+			</ul>
+			<div class="categories">分类：<a href="#multiblock">多方块</a></div>
+		</article>
+
+		<article class="article" id="ore-line" data-search="矿石 加工 粉碎 洗矿 冶炼 产线 怎么做 合金 电路">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 矿石加工线</div>
+			<div class="article-header"><h1>矿石加工线怎么搭</h1><div class="sub">从一箱原矿到一箱锭/粉</div></div>
+			<p>目标：挖到的铁、金、铜、锡等<strong>尽量变成更多锭 + 副产</strong>，再做合金和电路板。</p>
+			<ol class="steps">
+				<li><strong>入口箱</strong>：丢原矿、沙砾、矿块。</li>
+				<li><strong>粉碎机/研磨</strong>：原矿 → 矿粉（通常 1 → 多）。本服矿研磨机为旧版逻辑，洗矿/洗尘为新版。</li>
+				<li><strong>洗矿 / 淘金盘</strong>：沙砾或矿粉再筛，出小粒金属、宝石、碎料。</li>
+				<li><strong>电炉或冶炼炉</strong>：粉 → 锭。多方块冶炼炉批量更大。</li>
+				<li><strong>出口箱</strong>：按金属分箱；废料回入口。</li>
+			</ol>
 			<div class="wiki-table-wrap">
 			<table class="wiki">
-				<tr><th>组件</th><th>作用</th></tr>
-				<tr><td>货运节点（输入）</td><td>从容器抽出物品进入网络</td></tr>
-				<tr><td>货运节点（输出）</td><td>向容器塞入物品</td></tr>
-				<tr><td>高级节点</td><td>更细过滤/条件</td></tr>
-				<tr><td>货运管理器</td><td>总控：频道、过滤器、优先级、可视化</td></tr>
+				<tr><th>你要做出</th><th>先走完</th></tr>
+				<tr><td>粘液合金 / 硬质合金</td><td>粉 → 熔 → 按指南配比再熔/再合成</td></tr>
+				<tr><td>基础电路板</td><td>合金 + 红石类 + 指南格子</td></tr>
+				<tr><td>高级电路板</td><td>基础电路板升级，材料见指南</td></tr>
+				<tr><td>更高级发电机</td><td>电路板 + 金属外壳，先研究发电类</td></tr>
 			</table>
 			</div>
-			<h3>玩法模板</h3>
+			<h3>手动党 vs 自动化</h3>
 			<ul class="bullets">
-				<li><strong>矿线</strong>：矿箱 → 粉碎 → 熔炼 → 锭箱；废料回流。</li>
-				<li><strong>农场</strong>：收获箱 → 分拣（种子/作物）→ 美食家厨房或烘焙。</li>
-				<li><strong>刷怪塔</strong>：掉落箱 → 灵魂罐收集区 / 分拣战利品。</li>
-				<li>与 <a href="#gps">GPS</a>、区块加载器（社区附属）联用可做跨基地调拨。</li>
+				<li><strong>手动</strong>：自己开机器界面塞料——前期够用。</li>
+				<li><strong>半自动</strong>：漏斗把入口箱喂到粉碎机，出口漏斗到成品箱。</li>
+				<li><strong>全自动</strong>：见 <a href="#cargo-line">货运</a> + <a href="#auto-craft">自动合成机</a>。</li>
 			</ul>
-			<div class="categories">分类：<a href="#cargo">货运</a></div>
+			<div class="categories">分类：<a href="#ore-line">产线</a></div>
 		</article>
 
-		<article class="article" id="gps" data-search="GPS 航点 传送 复杂度 网络">
-			<div class="breadcrumbs"><a href="#top">首页</a> › GPS 与传送</div>
-			<div class="article-header"><h1>GPS 与传送</h1></div>
+		<article class="article" id="power-line" data-search="电力 发电机 电缆 电容 怎么接 布线">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 怎么搭电力</div>
+			<div class="article-header"><h1>怎么搭电力</h1></div>
+			<ol class="steps">
+				<li><strong>做一台煤发电机</strong>（或太阳能）：指南 → 发电机分类 → 研究 → 强化工作台。</li>
+				<li><strong>放机器</strong>，在燃料口塞煤/木炭（界面或漏斗）。</li>
+				<li><strong>用粘液电缆</strong>从发电机连到要供电的机器。电缆可走地板/墙面，注意别断。</li>
+				<li><strong>中间加电容器</strong>：发电太多时存着，机器高峰时放出。</li>
+				<li><strong>用万用表检查</strong>：手持万用表右键机器/电容，会提示「已储存的能源: A / B」。</li>
+			</ol>
+			<div class="wiki-table-wrap">
+			<table class="wiki">
+				<tr><th>问题</th><th>怎么修</th></tr>
+				<tr><td>机器不转</td><td>是否连电缆？发电机是否还有燃料？电缆中间有没有断档？</td></tr>
+				<tr><td>电容总空</td><td>发电功率 &lt; 耗电：加第二台发电机或升级太阳能</td></tr>
+				<tr><td>电容总满机器仍饿</td><td>线太长/没接到该机器；或同时开太多机</td></tr>
+				<tr><td>网络过大异常</td><td>本服单网络上限 <strong>200</strong>，拆成两片并用货运搬能/料</td></tr>
+			</table>
+			</div>
 			<ul class="bullets">
-				<li>GPS 网络记录<strong>航点</strong>，本服上限 <strong>21</strong> 个。</li>
-				<li>可设公共传送点并用 <code>/sf teleporter</code> 查看他人公共点。</li>
-				<li><strong>GPS 复杂度</strong>会限制高级设备：例如神秘科技每个<strong>区块加载器</strong>约需 <strong>7500</strong> 复杂度。</li>
-				<li>玩法：主城、矿场、刷怪塔、农场各留航点；复杂度攒够再上加载器做离线产线。</li>
+				<li>太阳能适合白天产线；夜晚要电池或煤发互补。</li>
+				<li>核能/放射材料线见 <a href="#radiation">防辐射</a>，不要一上来就堆铀。</li>
+			</ul>
+			<div class="categories">分类：<a href="#power-line">电力</a></div>
+		</article>
+
+		<article class="article" id="cargo-line" data-search="货运 怎么配 频道 过滤 节点 自动搬运">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 怎么配货运</div>
+			<div class="article-header"><h1>怎么配货运网络</h1></div>
+			<ol class="steps">
+				<li><strong>做货运管理器 + 若干货运节点</strong>（输入/输出），放在产线旁，管理器供上电。</li>
+				<li><strong>贴节点</strong>：输入节点贴「有货的箱子/机器出口」；输出节点贴「要收货的箱子/机器入口」。</li>
+				<li><strong>右键管理器</strong>，新建/选择<strong>频道</strong>（同一条产线用同一频道）。</li>
+				<li><strong>给节点设定</strong>：输入端拉出什么、输出端收什么；可加<strong>过滤器</strong>（只让铁粉过、木棍不过等）。</li>
+				<li><strong>空跑测试</strong>：丢 1 个物品进输入箱，看几秒后是否到出口箱。</li>
+				<li><strong>稳定量产</strong>：再把第二条机器接进同频道或新频道。</li>
+			</ol>
+			<h3>三条「照抄」模板</h3>
+			<div class="wiki-table-wrap">
+			<table class="wiki">
+				<tr><th>模板</th><th>输入</th><th>中间</th><th>输出</th></tr>
+				<tr><td>矿线</td><td>矿箱→粉碎</td><td>粉→洗矿→熔炉</td><td>锭箱 + 废料箱</td></tr>
+				<tr><td>农场</td><td>漏斗收田</td><td>分拣种子/果实</td><td>厨房箱 / 种子箱</td></tr>
+				<tr><td>刷怪</td><td>塔下漏斗箱</td><td>过滤灵魂罐材料</td><td>灵魂箱 / 杂物箱</td></tr>
+			</table>
+			</div>
+			<p class="note">本服可视化可开，看不清走线就开可视化；多余物品默认<strong>不删除</strong>，堵了会停——出口一定要有地方去。</p>
+			<div class="categories">分类：<a href="#cargo-line">货运</a></div>
+		</article>
+
+		<article class="article" id="auto-craft" data-search="自动合成机 怎么设置 配方 蹲下 右键 箱子上方">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 自动合成机</div>
+			<div class="article-header"><h1>自动合成机怎么设置</h1></div>
+			<ol class="steps">
+				<li><strong>放一个箱子</strong>当「原料箱」。</li>
+				<li><strong>把自动合成机放在这个箱子正上方</strong>（缺箱会提示：缺少箱子！自动合成机需要被放在一个箱子上方）。</li>
+				<li><strong>手持你想要合成的成品</strong>，<strong>蹲下 + 右键</strong>机器。
+					<div class="detail">提示：「手持你想要合成的物品 蹲下并右键此方块」→ 成功则「成功设置了此机器的合成配方」。</div>
+				</li>
+				<li>若「找不到你手持物品的合成配方」：该物可能不能自动合成，或你拿的不是可合成目标。</li>
+				<li><strong>启动/停止</strong>：对着配方项左键停用/启用；右键删除配方。</li>
+				<li><strong>喂料</strong>：原料箱塞够材料（甚至含粘液材料），机器按配方自动做，成品通常出现在机内/下方容器（与版本有关，用漏斗接走最稳）。</li>
+			</ol>
+			<ul class="bullets">
+				<li>未解锁研究或物品被禁用时配方不可用。</li>
+				<li>不要试图用粘液物品去凑原版合成表——会被拒绝。</li>
+			</ul>
+			<div class="categories">分类：<a href="#auto-craft">自动化</a></div>
+		</article>
+
+		<article class="article" id="gps" data-search="GPS 航点 传送 怎么加 复杂度 信号">
+			<div class="breadcrumbs"><a href="#top">首页</a> › GPS 航点</div>
+			<div class="article-header"><h1>GPS 与传送怎么做</h1></div>
+			<ol class="steps">
+				<li>做 GPS 设备（手持），在基地<strong>设置/添加航点</strong>：会提示「给你的路径点起个名字吧」。</li>
+				<li>命名成功：「成功添加了新的传送点」。重名会拒绝；最多 <strong>21</strong> 个。</li>
+				<li>需要网络强度时，多放 <strong>GPS 信号发射机</strong> 提高复杂度。</li>
+				<li>复杂度不足时：「GPS 网络复杂度不足」——要么没建网络，要么再放发射机。</li>
+				<li>公共点：用 <code>/sf teleporter</code> 看别人公开的点。</li>
+			</ol>
+			<ul class="bullets">
+				<li>死亡会留下死亡点记录（「死亡点 + 时间」），方便捡尸体。</li>
+				<li>区块加载器（社区附属）每个约吃 <strong>7500</strong> 复杂度——先攒网络再上加载器。</li>
 			</ul>
 			<div class="categories">分类：<a href="#gps">GPS</a></div>
 		</article>
 
-		<article class="article" id="androids" data-search="机器人 安卓 采矿 伐木 农耕 故障 领地">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 机器人</div>
-			<div class="article-header"><h1>机器人（Android）</h1><div class="sub">把重复劳动交给可编程方块</div></div>
+		<article class="article" id="android" data-search="机器人 安卓 怎么用 采矿 农耕 故障 领地">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 机器人用法</div>
+			<div class="article-header"><h1>机器人怎么用</h1></div>
+			<ol class="steps">
+				<li>研究并合成<strong>机器人机身 + 程序/部件</strong>（指南「机器人/安卓」分类）。</li>
+				<li>放在目标区域（矿道、农田、畜栏前），<strong>接电</strong>。</li>
+				<li>右键选择行为：采矿、伐木、农耕、屠宰等（以指南程序为准）。</li>
+				<li>设定工作范围与投出方式（往往丢在地上/箱子，上货运收走更稳）。</li>
+				<li>观察一小时：产出是否稳定、是否撞到不可挖方块、是否被领地暂停。</li>
+			</ol>
 			<ul class="bullets">
-				<li>粘液「安卓」按程序做<strong>采矿、伐木、农耕、屠宰</strong>等循环任务，耗电运行。</li>
-				<li>需要先研究并合成机器人部件/机身，再在指南中选行为。</li>
-				<li><strong>故障</strong>（硬核粘液）：本服概率 <strong>0%</strong>；若开启，故障持续约 <strong>30 秒</strong>后恢复。</li>
-				<li><strong>领地限制</strong>：在你没有权限的地皮/领地里机器人会<strong>自动暂停</strong>，避免拆家。</li>
-				<li>与货运联用：机器人采完直接进节点入箱。</li>
+				<li><strong>领地</strong>：无权限区域会「机器人自动暂停」——先要地皮权限。</li>
+				<li><strong>故障</strong>（硬核）：本服概率 0%；若服主调高，故障约 30 秒后自愈。</li>
+				<li>别把机器人和玩家挤在同一格采同一矿脉，收益会乱。</li>
 			</ul>
-			<div class="categories">分类：<a href="#androids">机器人</a></div>
+			<div class="categories">分类：<a href="#android">机器人</a></div>
 		</article>
 
-		<article class="article" id="radiation" data-search="放射性 辐射 铀 钍 燃烧 防护 暴露">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 放射性</div>
-			<div class="article-header"><h1>放射性</h1><div class="sub">铀与核材料的职业危害</div></div>
-			<p>本服 <strong>enable-radiation: true</strong>，且 <strong>burn-players-when-radioactive: true</strong>。携带/靠近高放射材料会累计<strong>辐射暴露</strong>（动作条显示「辐射暴露等级：当前/100」）。</p>
-			<div class="wiki-table-wrap">
-			<table class="wiki">
-				<tr><th>参数</th><th>本服</th></tr>
-				<tr><td>辐射更新间隔</td><td>1</td></tr>
-				<tr><td>宽限期</td><td>15</td></tr>
-				<tr><td>满暴露惩罚</td><td>可导致玩家<strong>燃烧</strong></td></tr>
-			</table>
-			</div>
-			<h3>安全操作</h3>
-			<ul class="bullets">
-				<li>铀、钍及核燃料链放<strong>隔离仓库</strong>，不要贴身放背包。</li>
-				<li>穿粘液防护/蜂套等具备抗性的装备再开反应堆线（见指南防护向物品）。</li>
-				<li>暴露等级升高先离开材料源，利用宽限期恢复。</li>
-			</ul>
-			<div class="categories">分类：<a href="#radiation">危险</a></div>
+		<article class="article" id="backpack" data-search="背包 怎么开 怎么找回 染色 分类">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 背包用法</div>
+			<div class="article-header"><h1>背包怎么用</h1></div>
+			<ol class="steps">
+				<li>合成背包（先研究），拿在手上<strong>右键打开</strong>，可当移动箱子。</li>
+				<li>建议：<strong>矿袋 / 农袋 / 药袋</strong>分开（染色背包六档可染色，好认）。</li>
+				<li>所有者离线时本服仍可打开——别把贵重物放共享背包。</li>
+				<li>丢了：管理员或自己用 <code>/sf backpack</code> 相关命令检索找回。</li>
+			</ol>
+			<div class="categories">分类：<a href="#backpack">背包</a></div>
 		</article>
 
-		<article class="article" id="backpack" data-search="背包 存储 染色背包 末影 便携 清洁 丢弃">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 背包与存储</div>
-			<div class="article-header"><h1>背包与存储</h1></div>
-			<ul class="bullets">
-				<li>主体提供多级<strong>背包</strong>与末影类便携存储；<strong>染色背包附属</strong>开放六档（小/普通/大/编织/镀金/辐光），可染色区分用途。</li>
-				<li>本服：所有者<strong>离线时仍可打开</strong>背包（<code>allow-open-when-owner-offline: true</code>）——共用号慎放贵重品。</li>
-				<li>管理命令可找回丢失背包（<code>/sf backpack</code> 系列）。</li>
-				<li>配套：便携垃圾桶、便携工作台等「便携」研究，减少回基地次数。</li>
-			</ul>
-			<div class="categories">分类：<a href="#backpack">存储</a></div>
-		</article>
-
-		<article class="article" id="talisman" data-search="护身符 护符 矿工 农夫 猎人 岩浆 天使 魔术师">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 护身符</div>
-			<div class="article-header"><h1>护身符（Talisman）</h1><div class="sub">放进背包即生效的被动道具</div></div>
-			<p>护身符放在物品栏即可触发随机增益（本服动作栏提示开启）。典型触发文案：</p>
-			<div class="wiki-table-wrap">
-			<table class="wiki">
-				<tr><th>类型</th><th>效果（触发时）</th></tr>
-				<tr><td>铁砧 / 工匠</td><td>工具免于损坏（本次）</td></tr>
-				<tr><td>矿工</td><td>矿物双倍掉落</td></tr>
-				<tr><td>农夫 / 猎人</td><td>掉落翻倍</td></tr>
-				<tr><td>岩浆</td><td>从岩浆中获救</td></tr>
-				<tr><td>水</td><td>免于溺水</td></tr>
-				<tr><td>天使</td><td>信仰之跃不受伤害</td></tr>
-				<tr><td>魔术师</td><td>赠送额外附魔</td></tr>
-			</table>
-			</div>
-			<p class="muted">触发有概率，非每秒常驻。多护身符叠放请自行试验收益（社区攻略常见配装：矿工+农夫下矿/下田）。</p>
+		<article class="article" id="talisman" data-search="护身符 护符 怎么触发 放哪 矿工 农夫">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 护身符怎么用</div>
+			<div class="article-header"><h1>护身符怎么用</h1></div>
+			<ol class="steps">
+				<li>合成护身符后<strong>放进物品栏</strong>即可（不需要手持）。</li>
+				<li>进行对应行为：挖矿、收菜、打猎、坠落、进岩浆……触发时会弹动作栏提示（本服开启 actionbar）。</li>
+				<li>常见搭配：下矿带「矿工」，种田带「农夫/猎人」，探险带「岩浆/水/天使」。</li>
+			</ol>
+			<p class="muted">触发是<strong>概率性</strong>的，不是每块必双倍。多枚可叠放，自己实测收益。</p>
 			<div class="categories">分类：<a href="#talisman">饰品</a></div>
 		</article>
 
-		<article class="article" id="official" data-search="官方附属 异域花园 灵魂罐 矿石块 电力刷怪笼 染色背包 幸运方块 硬核粘液 粘液胶 ExoticGarden SoulJars">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 官方附属</div>
-			<div class="article-header"><h1>官方附属</h1><div class="sub">与主体同源/官方维护 · 生存扩展</div></div>
-			<p>下列插件属<strong>官方附属</strong>。它们直接扩展采集、刷怪、背包与硬核难度，和主体研究树相连。</p>
-
-			<h3>异域花园 ExoticGarden</h3>
-			<div class="wiki-table-wrap">
-			<table class="wiki">
-				<tr><th>机制</th><th>本服数值 / 行为</th></tr>
-				<tr><td>砍草/蕨掉苗</td><td>树苗类约 <strong>22%</strong>，灌木约 <strong>16%</strong>（再乘方块本身破坏掉率）</td></tr>
-				<tr><td>可掉内容</td><td>樱桃、椰子、柠檬、酸橙、桃、梨、李、石榴、火龙果、苹果橡木等果树苗；番茄、葡萄、茶、辣椒、洋葱、玉米等灌木</td></tr>
-				<tr><td>世界限制</td><td>下界 / 末地<strong>黑名单</strong>，主世界生长</td></tr>
-				<tr><td>自动生成</td><td><code>auto-generate-plants: true</code></td></tr>
-			</table>
-			</div>
-			<ul class="bullets">
-				<li><strong>玩法</strong>：开果园产线，水果供<a href="#community">美食家</a>烹饪；也可出售稀有水果给队友。</li>
-				<li>与美食家联动配方默认<strong>启用</strong>（未禁 exotic garden recipes）。</li>
-			</ul>
-
-			<h3>灵魂罐 SoulJars</h3>
-			<ul class="bullets">
-				<li>击杀目标生物后用灵魂罐吸取灵魂；本服几乎所有生物统一 <strong>128 灵魂 / 罐</strong>。</li>
-				<li>支持列表极广：从蝙蝠、蜜蜂到远古守卫者、劫掠兽、村民、凋灵骷髅等。</li>
-				<li><strong>玩法</strong>：刷怪塔稳定供灵；满罐用于生成/交易/合成向材料。建议先垄断 2～3 种高价值灵。</li>
-			</ul>
-
-			<h3>矿石块 SlimefunOreChunks</h3>
-			<ul class="bullets">
-				<li>启用铁、金、铜、锡、银、铝、铅、锌、镁、镍、钴等<strong>矿石块</strong>地质资源。</li>
-				<li><strong>玩法</strong>：地质探矿 + 粉碎扩产，减少「全靠手挖」瓶颈。</li>
-			</ul>
-
-			<h3>电力刷怪笼 ElectricSpawners</h3>
-			<ul class="bullets">
-				<li>耗电刷指定怪物（本服 25 种）：僵尸、骷髅、苦力怕、末影人、末影螨、岩浆怪、守卫者、马、铁傀儡、村民、女巫、凋灵骷髅等。</li>
-				<li><strong>玩法</strong>：灵魂罐材料站；务必接货运清掉落，控制实体上限。</li>
-			</ul>
-
-			<h3>染色背包 DyedBackpacks</h3>
-			<ul class="bullets">
-				<li>六档全开：small / normal / large / woven / gilded / radiant，均可染色。</li>
-				<li>离线可开（见 <a href="#backpack">背包</a>）。用颜色做「矿袋 / 农袋 / 药袋」。</li>
-			</ul>
-
-			<h3>幸运方块 SlimefunLuckyBlocks</h3>
-			<ul class="bullets">
-				<li>开启随机奖励，偏娱乐与补资源；可搭配活动战利品池。</li>
-			</ul>
-
-			<h3>硬核粘液 HardcoreSlimefun</h3>
-			<div class="wiki-table-wrap">
-			<table class="wiki">
-				<tr><th>开关</th><th>本服</th><th>效果</th></tr>
-				<tr><td>研究失败 1%</td><td>开</td><td>解锁可能失败，需重试</td></tr>
-				<tr><td>死亡丢随机研究</td><td>关</td><td>死亡不掉研究</td></tr>
-				<tr><td>死亡清空全部研究</td><td>0%</td><td>不会一夜清零</td></tr>
-				<tr><td>机器人故障</td><td>0%（持续 30s）</td><td>可由服主调高增加硬核感</td></tr>
-			</table>
-			</div>
-
-			<h3>粘液胶 SlimeGlue</h3>
-			<ul class="bullets">
-				<li>前置/迁移辅助工具，保证附属与主体数据贴合；玩家侧几乎无操作。</li>
-			</ul>
-			<div class="categories">分类：<a href="#official">官方附属</a></div>
+		<article class="article" id="radiation" data-search="辐射 放射性 铀 怎么防 燃烧 暴露">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 防辐射操作</div>
+			<div class="article-header"><h1>防辐射操作</h1></div>
+			<ol class="steps">
+				<li>搞<strong>铀、钍、核燃料</strong>之前，先做防护向防具（指南防护/蜂套类）。</li>
+				<li>材料放<strong>隔离箱</strong>，用货运/漏斗转移，少放玩家背包。</li>
+				<li>看动作条：「辐射暴露等级：N/100」。上升就离开材料，利用宽限期（本服 15）。</li>
+				<li>本服高暴露会<strong>燃烧玩家</strong>——别抱一堆铀挂机。</li>
+			</ol>
+			<div class="categories">分类：<a href="#radiation">安全</a></div>
 		</article>
 
-		<article class="article" id="community" data-search="社区附属 匠魂 美食家 神秘科技 蓬松 Bump 战争工艺 SlimeTinker Gastronomicon FoxyMachines FluffyMachines">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 社区附属</div>
-			<div class="article-header"><h1>社区附属</h1><div class="sub">玩家社区开发 · 制造 / 烹饪 / 魔法 / 战争 / 工具</div></div>
-			<p>下列为<strong>社区附属</strong>，不少由中文社区（如咕咕汉化/开发）维护。与官方附属互补，提供更深的装备成长与生活玩法。</p>
-
-			<h3>粘液匠魂 SlimeTinker</h3>
+		<article class="article" id="garden" data-search="异域花园 怎么种 果树 灌木 掉苗 剪草">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 异域花园种法</div>
+			<div class="article-header"><h1>异域花园怎么种</h1><div class="sub">官方附属 · ExoticGarden</div></div>
+			<ol class="steps">
+				<li><strong>剪草取苗</strong>：打草方块/蕨类等，概率掉树苗或灌木（本服树约 22%、灌木约 16%）。把草场当「苗圃」用剪刀/手打一圈。</li>
+				<li><strong>种下</strong>：和原版树苗一样种在土上，果树会长成带果实的树；灌木直接结果。</li>
+				<li><strong>采收</strong>：右键/破坏果实或产物，进箱子。</li>
+				<li><strong>扩规模</strong>：围一块果园，不同品种分区；货运自动收。</li>
+				<li><strong>用处</strong>：卖给队友、做装饰、供给<a href="#food">美食家</a>菜谱（本服异域菜谱<strong>开启</strong>）。</li>
+			</ol>
 			<ul class="bullets">
-				<li>把粘液工具武器做成<strong>部件组装 + 强化槽</strong>的匠魂式成长：换部件保留进度，堆强化改变手感。</li>
-				<li><strong>玩法</strong>：先定「主武器 + 主镐」两件毕业装，强化优先耐久/挖掘速度/伤害一类核心词条，再补功能词条。</li>
-				<li>与主体工具研究共用解锁经济，后期省大量替换成本。</li>
+				<li>下界/末地黑名单：别去地狱种。</li>
+				<li>想要稀有苗：多剪草 + 高草/蕨类（掉率更高）。</li>
 			</ul>
-
-			<h3>美食家 Gastronomicon</h3>
-			<div class="wiki-table-wrap">
-			<table class="wiki">
-				<tr><th>机制</th><th>本服数值</th></tr>
-				<tr><td>草/草丛掉种子</td><td>草与短草 5%，高草与大型蕨 10%；灰化土 3%、泥土 1%、草方块 4%、菌丝 5%、海草 <strong>15%</strong></td></tr>
-				<tr><td>击杀掉食材</td><td>鱿鱼 / 守卫者 / 山羊 / 鲑鱼 各 <strong>35%</strong></td></tr>
-				<tr><td>完美食物概率</td><td>上限 <strong>25%</strong></td></tr>
-				<tr><td>厨师熟练门槛</td><td><strong>256</strong>（训练机器人 / 写入档案）</td></tr>
-				<tr><td>头衔</td><td>0 不是厨师 · 1 新手 · 50 学徒 · 100 经验丰富 · 200 三星大厨</td></tr>
-				<tr><td>异域花园菜谱</td><td>默认<strong>启用</strong></td></tr>
-				<tr><td>DynaTech 培育仓</td><td>联动<strong>关闭</strong></td></tr>
-			</table>
-			</div>
-			<ul class="bullets">
-				<li><strong>玩法</strong>：采集种子 → 果园/菜园 → 厨具烹饪出带 buff 的完美食物；冲熟练度解锁厨师机器人自动化出餐。</li>
-			</ul>
-
-			<h3>神秘科技 FoxyMachines</h3>
-			<ul class="bullets">
-				<li><strong>区块加载器</strong>：每人最多 <strong>8</strong> 个；每个约需 GPS 复杂度 <strong>7500</strong>。</li>
-				<li><strong>填充棒</strong>：单次最多 <strong>4096</strong> 格。白名单强制允许：树叶、玻璃类；黑名单禁止：屏障、刷怪笼、命令方块、结构方块、拼图。其它需「是方块 + 完全遮光 + 不在黑名单」。</li>
-				<li><strong>海绵棒</strong>：单次最多 <strong>16384</strong> 格，大范围清空。</li>
-				<li><strong>幽灵方块</strong>可开（本服 true）；<strong>自定义怪物</strong>可开（会改部分配方）。</li>
-				<li><strong>任务</strong>：从约 50 种生物列表随机指派目标。</li>
-				<li><strong>不可破坏符文</strong>可设黑名单（示例禁 Infinity 筛子三件套）。</li>
-			</ul>
-
-			<h3>蓬松机器 FluffyMachines</h3>
-			<ul class="bullets">
-				<li>偏「便利补全」：缩短重复步骤的轻量机器，适合接在主产线末端。</li>
-			</ul>
-
-			<h3>魔法 Bump</h3>
-			<ul class="bullets">
-				<li>魔法武器与投射物，投射物在途时间约 <strong>10</strong> 粘液 tick。</li>
-				<li><strong>鉴定星级</strong>（总评 → 星）：≥100 → 20 星；98 → 10；96 → 9；92 → 8；88 → 7；82 → 6；74 → 5；64 → 4；48 → 3；30 → 2；10 → 1。</li>
-				<li>本服语言 zh-CN，附属研究已开。</li>
-			</ul>
-
-			<h3>战争工艺 SlimefunWarfare</h3>
-			<ul class="bullets">
-				<li>军火、防护与战争向材料（砷、莫扎石等地质资源）。</li>
-				<li><strong>玩法</strong>：基地防御、掠夺战、与墓石地牢装备互补的过渡装。</li>
-			</ul>
-
-			<h3>工具与界面</h3>
-			<ul class="bullets">
-				<li><strong>SlimeHUD</strong>：查看机器/方块状态，排产线必备。</li>
-				<li><strong>SMG 简易材料生成器</strong>：稳定产出基础材料，缓解卡科技。</li>
-				<li><strong>MiniBlocks</strong>：迷你装饰方块，建筑向。</li>
-				<li><strong>SlimefunAdvancements</strong>：自定义任务进度，给中期目标。</li>
-			</ul>
-			<div class="categories">分类：<a href="#community">社区附属</a></div>
+			<div class="categories">分类：<a href="#garden">官方附属</a></div>
 		</article>
 
-		<article class="article" id="customizer" data-search="SlimeCustomizer 自定义 物品 机器 发电机 电容 生物掉落 任务">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 自定义内容</div>
-			<div class="article-header"><h1>自定义内容（SlimeCustomizer）</h1><div class="sub">服主配置的物品与机器</div></div>
-			<p>本服装有 <strong>SlimeCustomizer</strong>，可用 YAML 添加自定义粘液物品、发电机、机器、电容、生物掉落、地质资源与研究。当前目录里以<strong>示例模板</strong>为主，可按文档扩成服内活动物品。</p>
-			<div class="wiki-table-wrap">
-			<table class="wiki">
-				<tr><th>配置文件</th><th>能自定义什么</th></tr>
-				<tr><td>items.yml</td><td>物品名/Lore/图标、研究、9 格配方（可混 VANILLA + SLIMEFUN）</td></tr>
-				<tr><td>machines.yml</td><td>耗电机器 + 多条输入输出与耗时</td></tr>
-				<tr><td>generators.yml</td><td>发电机产能/缓冲与燃料配方</td></tr>
-				<tr><td>solar-generators.yml</td><td>日/夜不同功率太阳能</td></tr>
-				<tr><td>material-generators.yml</td><td>按 tick 产出材料</td></tr>
-				<tr><td>capacitors.yml</td><td>自定义容量电容</td></tr>
-				<tr><td>mob-drops.yml</td><td>生物掉落自定义物</td></tr>
-				<tr><td>geo-resources.yml</td><td>群系/维度地质资源</td></tr>
-				<tr><td>categories.yml / researches.yml</td><td>指南分类与研究</td></tr>
-			</table>
-			</div>
-			<p class="note">分类类型支持普通、嵌套父子、季节性（按月）、锁定分类。需求环境见 <code>sc-addon.yml</code>（依赖 Slimefun，MC 版本字段）。详细语法可参考中文附属维基（配置内链接）。</p>
-			<div class="categories">分类：<a href="#customizer">自定义</a></div>
+		<article class="article" id="souls" data-search="灵魂罐 怎么收集 128 刷怪 塔">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 灵魂罐收集</div>
+			<div class="article-header"><h1>灵魂罐怎么收集</h1><div class="sub">官方附属 · SoulJars</div></div>
+			<ol class="steps">
+				<li>做<strong>灵魂罐</strong>（空罐），带在身上。</li>
+				<li>击杀配置中的生物（僵尸、骷髅、苦力怕、末影人等绝大多数），灵魂计入罐中。</li>
+				<li>目标：每种生物攒到 <strong>128</strong>（本服统一）即可视为「一满罐」向用途。</li>
+				<li>量产：接<a href="#spawner">电力刷怪笼</a>或传统刷怪塔，杀完开罐收。</li>
+				<li>满罐拿去合成/交易/做生成向材料（见指南对应格子）。</li>
+			</ol>
+			<ul class="bullets">
+				<li>先专精 2～3 种（如僵尸、骷髅、苦力怕）再横向铺，避免一堆 60/128 的半罐。</li>
+				<li>村民、远古守卫者等稀有灵更值钱，但来源少。</li>
+			</ul>
+			<div class="categories">分类：<a href="#souls">官方附属</a></div>
 		</article>
 
-		<article class="article" id="loop" data-search="路线图 进度 循环 目标 后期 毕业 产线">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 玩法路线图</div>
-			<div class="article-header"><h1>玩法路线图</h1></div>
-			<div class="wiki-table-wrap">
-			<table class="wiki">
-				<tr><th>阶段</th><th>目标</th><th>验收</th></tr>
-				<tr><td>1 生存</td><td>指南 + 强化工作台 + 基础研究</td><td>能做出第一把粘液工具</td></tr>
-				<tr><td>2 材料</td><td>粉碎/洗矿/电炉</td><td>批量粘液合金与电路板</td></tr>
-				<tr><td>3 电气</td><td>发电 + 电缆 + 电容</td><td>机器不停工</td></tr>
-				<tr><td>4 物流</td><td>货运网络</td><td>矿线/农场无人值守</td></tr>
-				<tr><td>5 生活线</td><td>异域果园 + 美食家</td><td>稳定完美食物与厨师头衔</td></tr>
-				<tr><td>6 战斗线</td><td>匠魂 / Bump / 战争工艺</td><td>一套可下地牢的装等</td></tr>
-				<tr><td>7 工业</td><td>机器人 + 灵魂罐 + 电力刷怪笼</td><td>自给自足的掉落经济</td></tr>
-				<tr><td>8 基建</td><td>填充棒/加载器/自定义目标</td><td>大型基地与任务毕业</td></tr>
-			</table>
-			</div>
-			<p class="note">多人建议分工：电力物流 / 农食 / 战斗装备；研究仍按个人经验解锁，称号到「天选之子」是长期目标。</p>
-			<div class="categories">分类：<a href="#loop">玩法</a></div>
+		<article class="article" id="spawner" data-search="电力刷怪笼 怎么用 刷怪 耗电">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 电力刷怪笼</div>
+			<div class="article-header"><h1>电力刷怪笼怎么用</h1><div class="sub">官方附属 · ElectricSpawners</div></div>
+			<ol class="steps">
+				<li>研究并合成刷怪笼机器，放在<strong>封闭杀怪室</strong>（防跑怪）。</li>
+				<li>选择要刷的生物（本服 25 种：僵尸、骷髅、苦力怕、末影人、岩浆怪、守卫者、村民、女巫、凋灵骷髅…）。</li>
+				<li><strong>接电</strong>（这是耗电大户，和货运一起上）。</li>
+				<li>杀怪方式：手动、全自动击杀脚本/装置、或机器人。</li>
+				<li>掉落进漏斗箱 → 货运分拣 → 灵魂罐/战利品箱。</li>
+			</ol>
+			<ul class="bullets">
+				<li>注意实体上限与卡顿；及时清掉落。</li>
+				<li>和灵魂罐是天然一对：刷怪 = 收灵。</li>
+			</ul>
+			<div class="categories">分类：<a href="#spawner">官方附属</a></div>
 		</article>
 
-		<article class="article" id="commands" data-search="命令 指令 /sf 权限 give research backpack charge timings">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 命令大全</div>
-			<div class="article-header"><h1>命令大全</h1><div class="sub">摘自本服 messages.yml 说明</div></div>
+		<article class="article" id="lucky" data-search="幸运方块 硬核粘液 怎么玩 失败">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 幸运方块 / 硬核</div>
+			<div class="article-header"><h1>幸运方块与硬核怎么玩</h1><div class="sub">官方附属</div></div>
+			<h3>幸运方块</h3>
+			<ol class="steps">
+				<li>获取幸运方块（活动/合成/商店，以服务器当时开放为准）。</li>
+				<li>放到安全空地再开（避免惊喜爆炸殃及基地）。</li>
+				<li>拾取奖励；垃圾可丢，大奖进库。</li>
+			</ol>
+			<h3>硬核粘液</h3>
+			<ul class="bullets">
+				<li>解研究时有 <strong>1%</strong> 失败——等级还在，重试即可。</li>
+				<li>本服死亡不掉研究；机器人故障 0%。</li>
+				<li>若服主提高故障率：机器人停 30 秒自愈，别以为坏了拆掉。</li>
+			</ul>
+			<div class="categories">分类：<a href="#lucky">官方附属</a></div>
+		</article>
+
+		<article class="article" id="tinker" data-search="匠魂 SlimeTinker 怎么改造 部件 强化 工具">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 匠魂怎么改工具</div>
+			<div class="article-header"><h1>粘液匠魂怎么改工具</h1><div class="sub">社区附属 · SlimeTinker</div></div>
+			<ol class="steps">
+				<li>先做一件<strong>可组装的粘液工具/武器</strong>（指南匠魂分类）。</li>
+				<li>在对应工作台打开<strong>部件/强化界面</strong>。</li>
+				<li>换<strong>部件</strong>（刀刃、手柄等）改变基础属性；材料不同特性不同。</li>
+				<li>上<strong>强化</strong>（强化槽）：优先耐久/效率/伤害类核心词条，再补功能词条。</li>
+				<li>损坏后修部件而不是整把重做——这是匠魂线的核心省钱点。</li>
+			</ol>
+			<ul class="bullets">
+				<li>建议只精养「主镐 + 主武器」两件，其它用粘液普通工具过渡。</li>
+				<li>和主体工具研究并行：研究解锁底子，匠魂负责中后期个性化。</li>
+			</ul>
+			<div class="categories">分类：<a href="#tinker">社区附属</a></div>
+		</article>
+
+		<article class="article" id="food" data-search="美食家 怎么做菜 完美食物 熟练度 厨师 种子">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 美食家怎么做出餐</div>
+			<div class="article-header"><h1>美食家怎么做出餐</h1><div class="sub">社区附属 · Gastronomicon</div></div>
+			<ol class="steps">
+				<li><strong>搞种子</strong>：打草/草丛（本服约 5%，高草/大蕨 10%，海草 15%）；或杀鱿鱼/守卫者/山羊/鲑鱼（35%）拿特殊食材。</li>
+				<li><strong>种下</strong>美食家作物（配合<a href="#garden">异域花园</a>水果更全）。</li>
+				<li>按指南做<strong>厨具/灶台</strong>类机器，把材料按菜谱放入。</li>
+				<li>出餐：有概率<strong>完美食物</strong>（本服上限 25%）——属性更好，优先卖/自用。</li>
+				<li><strong>刷熟练度</strong>：反复做同类菜，积累到 <strong>256</strong> 可训练厨师机器人并写入档案。</li>
+				<li><strong>头衔</strong>：新手(1) → 学徒(50) → 经验丰富(100) → 三星大厨(200)。</li>
+			</ol>
+			<ul class="bullets">
+				<li>先选 2～3 道<strong>便宜菜</strong>刷熟练，再上豪华菜。</li>
+				<li>异域花园菜谱默认开着；DynaTech 培育仓联动是关的。</li>
+			</ul>
+			<div class="categories">分类：<a href="#food">社区附属</a></div>
+		</article>
+
+		<article class="article" id="foxy" data-search="填充棒 海绵棒 区块加载器 怎么用 神秘科技">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 填充棒与加载器</div>
+			<div class="article-header"><h1>填充棒 / 海绵棒 / 加载器</h1><div class="sub">社区附属 · FoxyMachines</div></div>
+			<h3>填充棒（盖楼/铺地）</h3>
+			<ol class="steps">
+				<li>手持填充棒，设置/选择要放的方块（需符合规则）。</li>
+				<li>框选或指向区域使用；单次最多 <strong>4096</strong> 格。</li>
+				<li>规则：白名单（树叶、玻璃类）直接可；否则须是<strong>完全遮光方块</strong>且不在黑名单（屏障、刷怪笼、命令方块、结构方块、拼图）。</li>
+			</ol>
+			<h3>海绵棒（清场）</h3>
+			<ul class="bullets">
+				<li>单次最多清 <strong>16384</strong> 格。先备份再在主世界清山/填海。</li>
+			</ul>
+			<h3>区块加载器（离线产线）</h3>
+			<ol class="steps">
+				<li>先造 GPS 网络把<strong>复杂度</strong>攒到需求（每个约 <strong>7500</strong>）。</li>
+				<li>放置加载器，选择要加载的区块。</li>
+				<li>注意本服每玩家上限 <strong>8</strong> 个。</li>
+			</ol>
+			<div class="categories">分类：<a href="#foxy">社区附属</a></div>
+		</article>
+
+		<article class="article" id="bump" data-search="Bump 魔法 武器 鉴定 星 投射物">
+			<div class="breadcrumbs"><a href="#top">首页</a> › Bump 鉴定与武器</div>
+			<div class="article-header"><h1>Bump 武器与鉴定</h1><div class="sub">社区附属 · 魔法</div></div>
+			<ol class="steps">
+				<li>做 Bump 武器（指南魔法/武器分类），注意需要<strong>研究</strong>。</li>
+				<li>战斗中多用<strong>投射物/法杖类</strong>技能（投射物在途约 10 粘液 tick）。</li>
+				<li>对装备做<strong>鉴定</strong>，按总评得星：
+					<div class="detail">≥100 → 20 星；98→10；96→9；92→8；88→7；82→6；74→5；64→4；48→3；30→2；≥10→1。</div>
+				</li>
+				<li>低星可再做/再鉴，高星留档自用或上架。</li>
+			</ol>
+			<div class="categories">分类：<a href="#bump">社区附属</a></div>
+		</article>
+
+		<article class="article" id="warfare" data-search="战争工艺 军火 防御 怎么玩">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 战争工艺入门</div>
+			<div class="article-header"><h1>战争工艺怎么玩</h1><div class="sub">社区附属 · SlimefunWarfare</div></div>
+			<ol class="steps">
+				<li>研究军火/防护线，做过渡武器与防具。</li>
+				<li>搭配砷、莫扎石等地质材料扩产（见材料/地质资源）。</li>
+				<li>用于基地防御、掠夺战；和墓石地牢特殊武器<strong>互补</strong>而非替代。</li>
+			</ol>
+			<div class="categories">分类：<a href="#warfare">社区附属</a></div>
+		</article>
+
+		<article class="article" id="goals" data-search="目标 清单 阶段 毕业 路线图">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 阶段目标清单</div>
+			<div class="article-header"><h1>阶段目标清单</h1><div class="sub">做完打勾，就知道在玩什么进度</div></div>
 			<div class="wiki-table-wrap">
 			<table class="wiki">
-				<tr><th>命令</th><th>作用</th></tr>
-				<tr><td><code>/sf</code> / <code>/slimefun</code></td><td>帮助</td></tr>
-				<tr><td><code>/sf guide</code></td><td>获取指南书</td></tr>
+				<tr><th>阶段</th><th>要完成的操作</th></tr>
+				<tr><td>① 启动</td><td>□ 强化工作台 □ 解 3 个基础研究 □ 第一把粘液工具</td></tr>
+				<tr><td>② 材料</td><td>□ 粉碎机 □ 洗矿/淘金 □ 熔出第一箱锭</td></tr>
+				<tr><td>③ 电子</td><td>□ 基础电路板 □ 高级电路板</td></tr>
+				<tr><td>④ 电力</td><td>□ 煤发/太阳能 □ 电容 □ 万用表会看</td></tr>
+				<tr><td>⑤ 自动</td><td>□ 货运矿线 □ 自动合成机设过 1 个配方</td></tr>
+				<tr><td>⑥ 生活</td><td>□ 果园 5 种树 □ 做出 1 道完美食物 □ 厨师头衔≥学徒</td></tr>
+				<tr><td>⑦ 战斗</td><td>□ 匠魂主镐/主武器 □ 或 Bump 鉴定≥5 星</td></tr>
+				<tr><td>⑧ 工业</td><td>□ 灵魂罐满 128×1 □ 电力刷怪笼在跑 □ 机器人采矿半天</td></tr>
+				<tr><td>⑨ 基建</td><td>□ GPS 复杂度够加载器 □ 填充棒盖完主建筑 □ 称号到大师+</td></tr>
+			</table>
+			</div>
+			<div class="categories">分类：<a href="#goals">进度</a></div>
+		</article>
+
+		<article class="article" id="faq" data-search="常见问题 FAQ 不了 失败 不能 合成 不转">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 常见问题</div>
+			<div class="article-header"><h1>常见问题</h1></div>
+			<div class="wiki-table-wrap">
+			<table class="wiki">
+				<tr><th>现象</th><th>原因 / 怎么办</th></tr>
+				<tr><td>工作台结果槽是空的</td><td>摆格错、研究没解、用错材料。回指南核对每一格</td></tr>
+				<tr><td>原版合成台做不出来</td><td>正常。必须强化工作台</td></tr>
+				<tr><td>「知识还不足以理解」</td><td>先解研究再合成</td></tr>
+				<tr><td>「没有足够经验」</td><td>去刷等级；本服不用游戏币</td></tr>
+				<tr><td>研究失败了</td><td>1% 概率。经验还在，重点一次</td></tr>
+				<tr><td>多方块 cheat 拿不到</td><td>设计如此，必须按图搭</td></tr>
+				<tr><td>机器不工作</td><td>见 <a href="#power-line">电力</a>：电缆、燃料、网络 200 上限</td></tr>
+				<tr><td>自动合成机说缺箱子</td><td>把机器放在箱子正上方</td></tr>
+				<tr><td>自动合成设不了配方</td><td>手持成品蹲下右键；或该物不支持自动合成</td></tr>
+				<tr><td>GPS 复杂度不足</td><td>放更多 GPS 信号发射机，或先别上加载器</td></tr>
+				<tr><td>机器人突然停</td><td>多半进了无权限领地；或故障 30s</td></tr>
+				<tr><td>自己开始燃烧</td><td>辐射满。丢掉铀/钍，离开并等宽限恢复</td></tr>
+				<tr><td>剪草不掉苗</td><td>概率问题；多剪高草/蕨类</td></tr>
+				<tr><td>完美食物出不来</td><td>上限 25%。多做，或先堆熟练度</td></tr>
+			</table>
+			</div>
+			<div class="categories">分类：<a href="#faq">帮助</a></div>
+		</article>
+
+		<article class="article" id="commands" data-search="命令 指令 /sf guide research charge">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 命令</div>
+			<div class="article-header"><h1>常用命令</h1></div>
+			<div class="wiki-table-wrap">
+			<table class="wiki">
+				<tr><th>命令</th><th>你拿它做什么</th></tr>
+				<tr><td><code>/sf guide</code></td><td>补发指南书</td></tr>
 				<tr><td><code>/sf open_guide</code></td><td>直接打开指南</td></tr>
-				<tr><td><code>/sf search &lt;名&gt;</code></td><td>搜索粘液物品</td></tr>
-				<tr><td><code>/sf id</code></td><td>查看手持物品的 Slimefun ID</td></tr>
-				<tr><td><code>/sf give</code> / <code>/sf cheat</code></td><td>给予/作弊拿物品（多方块仍需自建）</td></tr>
-				<tr><td><code>/sf stats</code></td><td>玩家统计数据</td></tr>
-				<tr><td><code>/sf versions</code></td><td>运行环境与附属版本</td></tr>
-				<tr><td><code>/sf teleporter</code></td><td>查看他人公共传送点</td></tr>
-				<tr><td><code>/sf research</code></td><td>解锁/重置研究（管理）</td></tr>
-				<tr><td><code>/sf backpack</code></td><td>找回丢失背包</td></tr>
-				<tr><td><code>/sf charge</code></td><td>手持充能</td></tr>
-				<tr><td><code>/sf banitem</code> / <code>/sf unbanitem</code></td><td>禁用/启用物品</td></tr>
-				<tr><td><code>/sf cleardata</code></td><td>清理世界方块/石油数据（需 confirm）</td></tr>
-				<tr><td><code>/sf blockdata</code></td><td>操作粘液方块数据</td></tr>
-				<tr><td><code>/sf timings</code></td><td>Slimefun 与附属性能报告</td></tr>
-				<tr><td><code>/sf reload</code></td><td>重载配置</td></tr>
-				<tr><td><code>/sf migrate</code></td><td>旧数据迁移（需 confirm）</td></tr>
-				<tr><td><code>/sf debug</code></td><td>开发者调试</td></tr>
+				<tr><td><code>/sf search &lt;名&gt;</code></td><td>搜物品名</td></tr>
+				<tr><td><code>/sf id</code></td><td>看手持粘液 ID</td></tr>
+				<tr><td><code>/sf charge</code></td><td>给手持充能物充满</td></tr>
+				<tr><td><code>/sf stats</code></td><td>看自己数据</td></tr>
+				<tr><td><code>/sf teleporter</code></td><td>公共航点</td></tr>
+				<tr><td><code>/sf versions</code></td><td>报 bug 时贴版本</td></tr>
+				<tr><td><code>/sf backpack</code></td><td>找回背包（管理）</td></tr>
+				<tr><td><code>/sf research</code></td><td>重置/解锁研究（管理）</td></tr>
+				<tr><td><code>/sf reload</code></td><td>重载配置（管理）</td></tr>
 			</table>
 			</div>
-			<p class="muted">权限节点请服主用权限插件按需开放；普通玩家优先记 guide / search / stats / charge。</p>
 			<div class="categories">分类：<a href="#commands">命令</a></div>
 		</article>
 
-		<article class="article" id="config" data-search="配置 config 选项 本服 数值 网络上限 GPS">
-			<div class="breadcrumbs"><a href="#top">首页</a> › 本服配置</div>
-			<div class="article-header"><h1>本服配置一览</h1><div class="sub">plugins20260922 实机配置摘要</div></div>
+		<article class="article" id="config" data-search="配置 本服 数值 掉率 上限">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 本服数值</div>
+			<div class="article-header"><h1>本服关键数值</h1></div>
 			<div class="wiki-table-wrap">
 			<table class="wiki">
-				<tr><th>模块</th><th>配置项</th><th>值</th></tr>
-				<tr><td>主体</td><td>language / translations</td><td>zh-CN / 开</td></tr>
-				<tr><td>主体</td><td>radiation / burn</td><td>开 / 开</td></tr>
-				<tr><td>主体</td><td>research money unlock</td><td>关（用经验）</td></tr>
-				<tr><td>主体</td><td>networks.max-size</td><td>200</td></tr>
-				<tr><td>主体</td><td>max-gps-waypoints</td><td>21</td></tr>
-				<tr><td>主体</td><td>legacy-ore-grinder / washer</td><td>true / false</td></tr>
-				<tr><td>主体</td><td>backpack offline open</td><td>允许</td></tr>
-				<tr><td>硬核</td><td>research fail / death reset</td><td>1% / 0%</td></tr>
-				<tr><td>异域花园</td><td>tree / bush drop</td><td>22% / 16%</td></tr>
-				<tr><td>灵魂罐</td><td>souls-required</td><td>128（各生物）</td></tr>
-				<tr><td>电力刷怪笼</td><td>可刷种类</td><td>25</td></tr>
-				<tr><td>染色背包</td><td>档位</td><td>6 档全开</td></tr>
-				<tr><td>神秘科技</td><td>chunk loaders / GPS</td><td>8 / 7500</td></tr>
-				<tr><td>神秘科技</td><td>fill / sponge wand</td><td>4096 / 16384</td></tr>
-				<tr><td>美食家</td><td>perfect food / proficiency</td><td>25% / 256</td></tr>
-				<tr><td>Bump</td><td>appraise stars</td><td>10～20 星阈值见附属</td></tr>
+				<tr><th>项</th><th>值</th></tr>
+				<tr><td>研究失败 / 死清</td><td>1% / 0%</td></tr>
+				<tr><td>研究费用</td><td>经验等级（常见 1～50）</td></tr>
+				<tr><td>电力网络上限</td><td>200</td></tr>
+				<tr><td>GPS 航点</td><td>21</td></tr>
+				<tr><td>辐射 / 燃烧</td><td>开 / 开</td></tr>
+				<tr><td>树苗 / 灌木掉率</td><td>22% / 16%</td></tr>
+				<tr><td>灵魂罐</td><td>128 / 生物</td></tr>
+				<tr><td>完美食物 / 厨师门槛</td><td>25% / 256</td></tr>
+				<tr><td>区块加载器 / 复杂度</td><td>8 / 7500</td></tr>
+				<tr><td>填充 / 海绵棒</td><td>4096 / 16384</td></tr>
 			</table>
 			</div>
-			<p class="note">附属更新后请以游戏内指南书与最新 <code>plugins/*/config.yml</code> 为准。</p>
 			<div class="categories">分类：<a href="#config">配置</a></div>
 		</article>
 
@@ -637,7 +614,7 @@
 </div>
 
 <footer class="wiki-footer">
-	粘液科技 Wiki（仿中文 Minecraft Wiki）· 玩法完整版 · 配置来自 WenServer plugins 目录
+	粘液科技玩法手册（仿中文 Minecraft Wiki）· 逐步操作 · WenServer plugins 配置
 </footer>
 
 <script>
