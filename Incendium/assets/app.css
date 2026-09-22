@@ -887,7 +887,7 @@ article.article {
 }
 
 /* tables: full display on narrow/wiki content */
-.wiki-content { overflow-x: hidden; }
+.wiki-content { overflow-x: clip; }
 
 .wiki-table-wrap {
   overflow-x: auto;
@@ -1213,4 +1213,51 @@ a.back-home:active {
 }
 .wiki-sidebar .sb-title {
   margin-top: 0;
+}
+
+/* —— Sidebar sticky fix (TOC stays visible on long pages) —— */
+.wiki-shell {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+.wiki-sidebar {
+  position: sticky;
+  top: 3.1rem;
+  align-self: flex-start;
+  width: var(--sidebar-w);
+  flex: 0 0 var(--sidebar-w);
+  max-height: calc(100vh - 3.6rem);
+  height: fit-content;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 5;
+}
+.wiki-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: clip;
+}
+.wiki-shell > .wiki-content { width: auto; }
+/* group titles in long TOC */
+.wiki-sidebar .sb-title {
+  margin-top: 0.85rem;
+  border-top: 1px solid var(--line-soft);
+  padding-top: 0.55rem;
+}
+.wiki-sidebar .sb-title:first-of-type {
+  margin-top: 0.35rem;
+  border-top: none;
+  padding-top: 0;
+}
+@media (max-width: 800px) {
+  .wiki-shell { display: block; }
+  .wiki-sidebar {
+    width: auto;
+    flex: none;
+    position: sticky;
+    top: 3.1rem;
+    max-height: 45vh;
+    z-index: 30;
+  }
 }
