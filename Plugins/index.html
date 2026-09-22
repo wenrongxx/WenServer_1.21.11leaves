@@ -40,6 +40,7 @@
 			<li><a href="#dominion">领地</a></li>
 			<li><a href="#tabui">TAB 侧栏</a></li>
 			<li><a href="#veinminer">连锁挖矿</a></li>
+			<li><a href="#miscadmin">管理杂项</a></li>
 		</ul>
 	</aside>
 	<main class="wiki-content">
@@ -401,6 +402,73 @@
 				<li>工具挖不动的方块连锁也不掉（除非关 needCorrectTool）。</li>
 			</ul>
 			<div class="categories">分类：<a href="#veinminer">采集</a></div>
+		</article>
+
+		<article class="article" id="miscadmin" data-search="备份 排行榜 每日奖励 DeluxeMenus 菜单 SeedGuard SeedShield 种子 PlugManX InvSee ISeeYou 音乐 McMmoView">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 管理与杂项</div>
+			<div class="article-header"><h1>管理与杂项插件</h1><div class="sub">备份 · 榜单 · 菜单 · 防泄露 · 小工具</div></div>
+
+			<h3>AdvancedBackups 备份</h3>
+			<p>自动备份世界的保险柜，可定时/手动打包，坏档可按快照恢复。</p>
+			<ol class="steps">
+				<li>放入 <code>plugins/</code> 后开服生成配置。</li>
+				<li>立刻备一份：<code>/backup start</code>。</li>
+				<li>出事 <code>/backup snapshot</code> 看点，再按说明恢复。</li>
+				<li>改配置 <code>/backup reload-config</code>；链乱了 <code>/backup reset-chain</code>。</li>
+			</ol>
+			<p class="muted">权限 <code>advancedbackups.backup</code>；备份目录别和世界挤爆同一块盘。</p>
+
+			<h3>AsLeaderBoard 排行榜</h3>
+			<p>钱/击杀/死亡/时长 Top 榜，聊天或箱子 GUI 展示。</p>
+			<ol class="steps">
+				<li>需要 Vault（钱）+ PlaceholderAPI。</li>
+				<li>玩家 <code>/leaderboard</code>（<code>/lb</code>）、<code>/baltop</code>。</li>
+				<li>GUI 条目改 <code>gui-items.yml</code>，聊天格式改 <code>chat-formats.yml</code>。</li>
+				<li><code>/leaderboard reload</code> 重载。</li>
+			</ol>
+			<p class="muted">没经济插件时金钱榜会一直空；默认命令冷却约 3 秒。</p>
+
+			<h3>DailyRewards 每日奖励</h3>
+			<p>每日抽一次礼包（物品 + 控制台命令）。</p>
+			<ol class="steps">
+				<li>玩家 <code>/daily</code> 领取；可配置上线自动领。</li>
+				<li>午夜本地重置；管理 <code>/daily give</code> / <code>reset</code> / <code>reload</code>。</li>
+				<li>奖励池在 <code>config.yml</code> 的 <code>rewards</code> 权重里改。</li>
+			</ol>
+			<p class="muted">不依赖 Vault；用 <code>eco give</code> 发钱时要保证经济插件在。</p>
+
+			<h3>DeluxeMenus 菜单</h3>
+			<p>YAML 拼箱子菜单：主城导航、商店入口、每日签到等。</p>
+			<ol class="steps">
+				<li>菜单文件放 <code>gui_menus/</code>。</li>
+				<li>打开：<code>/dm open &lt;菜单&gt;</code>。</li>
+				<li>权限 <code>deluxemenus.menu.&lt;id&gt;</code> 或 <code>deluxemenus.open</code>。</li>
+				<li>改完用 <code>/dm reload</code>。</li>
+			</ol>
+			<p class="muted">占位符依赖 PlaceholderAPI 等 softdepend；缺前置时菜单可能空白。</p>
+
+			<h3>SeedGuard + SeedShield 防看种子</h3>
+			<p>防止玩家用世界种子算遗迹/拆家。Guard 堵 <code>/seed</code> 等；Shield 给结构盐加密，爆破工具对不上。</p>
+			<ol class="steps">
+				<li>两个都装；Shield 建议 <code>load: STARTUP</code> 尽早加载。</li>
+				<li>Guard：设 <code>fake-seed.mode</code>（推荐 <code>per_player_stable</code>）并<strong>立刻改 salt</strong>。</li>
+				<li>Shield：配置 <code>secret-key</code> 与 <code>enabled-worlds</code>。</li>
+				<li>管理绕过：<code>seedguard.bypass</code>。</li>
+			</ol>
+			<p class="warning">删掉/更换 <code>secret-key</code> 会<strong>重排全部结构</strong>，等于换了一张新世界地形分布，务必备份密钥。</p>
+
+			<h3>其它小工具</h3>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>插件</th><th>玩家用途</th></tr>
+				<tr><td>PlugManX</td><td>不重启装卸插件：<code>/plugman</code>（<code>/plm</code>）</td></tr>
+				<tr><td>InvSeePlusPlus</td><td><code>/invsee</code> <code>/endersee</code> 查看/调整玩家背包</td></tr>
+				<tr><td>ISeeYou</td><td>把玩家行为录成 <code>.mcpr</code>（需 CommandAPI）</td></tr>
+				<tr><td>XaeroSharePlugin</td><td>向指定好友分享 Xaero 路点</td></tr>
+				<tr><td>ZMusic</td><td><code>/zm</code> 播放音乐</td></tr>
+				<tr><td>McMmoView</td><td>mcMMO 技能 GUI：<code>/mcMmoView</code>（<code>/mmv</code>）</td></tr>
+				<tr><td>Dechantments</td><td>负面附魔系统（对应原版正面附魔）</td></tr>
+			</table></div>
+			<div class="categories">分类：<a href="#miscadmin">管理杂项</a></div>
 		</article>
 
 			</main>
