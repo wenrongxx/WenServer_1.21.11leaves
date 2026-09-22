@@ -985,3 +985,135 @@ a.back-home:active {
   background: #fff;
   object-fit: contain;
 }
+
+/* 3x3 crafting table (MC-wiki style) */
+.craft-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0.75rem 0 1rem;
+  padding: 0.85rem;
+  background: var(--infobox-bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.craft-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 36px);
+  grid-template-rows: repeat(3, 36px);
+  gap: 2px;
+  padding: 4px;
+  background: #c6c6c6;
+  border: 2px solid #555;
+  image-rendering: pixelated;
+}
+.craft-slot {
+  width: 36px;
+  height: 36px;
+  background: #8b8b8b;
+  border-top: 2px solid #373737;
+  border-left: 2px solid #373737;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.craft-slot img {
+  width: 28px;
+  height: 28px;
+  image-rendering: pixelated;
+}
+.craft-slot .ph {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  color: #222;
+  background: #b0b0b0;
+  border: 1px dashed #666;
+  line-height: 1.1;
+  text-align: center;
+  padding: 1px;
+}
+.craft-arrow {
+  font-size: 1.4rem;
+  color: var(--ink-2);
+  font-weight: 700;
+}
+.craft-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 100px;
+  text-align: center;
+  font-weight: 600;
+}
+.craft-result img {
+  width: 40px;
+  height: 40px;
+  image-rendering: pixelated;
+  background: #8b8b8b;
+  border: 2px solid #555;
+  padding: 4px;
+}
+.craft-meta { font-size: 0.82rem; color: var(--ink-2); max-width: 280px; }
+
+/* QQ group callout */
+.qq-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 0.85rem;
+  margin: 0.85rem 0 1.1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #e6b800;
+  background: linear-gradient(180deg, #fff8d6 0%, #ffe9a8 100%);
+  color: #4a3800;
+  font-size: 0.95rem;
+}
+.qq-label {
+  font-weight: 800;
+  background: #f5a623;
+  color: #1a1a1a;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+.qq-link {
+  display: inline-block;
+  font-weight: 700;
+  color: #fff !important;
+  background: #12b7f5;
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  text-decoration: none !important;
+  box-shadow: 0 1px 0 #0a7ea4;
+}
+.qq-link:link, .qq-link:visited, .qq-link:hover, .qq-link:active, .qq-link:focus {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+.qq-link:hover { background: #0ea5d9; }
+.qq-tip { color: #6b5a20; font-size: 0.85rem; }
+.qq-chip {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: #12b7f5;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-decoration: none !important;
+}
+.qq-chip:link, .qq-chip:visited, .qq-chip:hover, .qq-chip:active, .qq-chip:focus {
+  color: #fff !important;
+  text-decoration: none !important;
+}
