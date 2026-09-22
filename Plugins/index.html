@@ -37,6 +37,9 @@
 			<li><a href="#authme">AuthMe</a></li>
 			<li><a href="#enchantpacks">自定义附魔</a></li>
 			<li><a href="#voicechat">语音</a></li>
+			<li><a href="#dominion">领地</a></li>
+			<li><a href="#tabui">TAB 侧栏</a></li>
+			<li><a href="#veinminer">连锁挖矿</a></li>
 		</ul>
 	</aside>
 	<main class="wiki-content">
@@ -319,6 +322,85 @@
 				<li>入群 ≠ 全球对讲；无 listen/speak 会单向或全哑。</li>
 			</ul>
 			<div class="categories">分类：<a href="#voicechat">语音</a></div>
+		</article>
+
+		<article class="article" id="dominion" data-search="Dominion 领地 标地 trust flag 保护 /dom">
+			<div class="breadcrumbs"><a href="#top">首页</a> › Dominion</div>
+			<div class="article-header"><h1>Dominion 领地</h1><div class="sub">圈地 · 成员 · 权限标志</div></div>
+			<p>中文领地插件。用 <code>/dominion</code> 或 <code>/dom</code> 打开菜单，圈地后保护建筑不被拆、箱不被偷。</p>
+			<h3>怎么标一块地</h3>
+			<ol class="steps">
+				<li><strong>快速圈地</strong><div class="detail"><code>/dom</code> →「创建领地」→ 以你为中心自动圈一块。</div></li>
+				<li><strong>或两点框选</strong><div class="detail">选第一点 → 选第二点（同世界）→ 创建。适合矩形基地。</div></li>
+				<li><strong>起名</strong><div class="detail">不能含空格和 <code>. § &amp; ~ ,</code>。可能扣钱（接经济时）。</div></li>
+				<li><strong>注意上限</strong><div class="detail">领地数量、长宽高、Y 范围有上限；不能与别的领地/出生点重叠。子领地须在父领地内。</div></li>
+			</ol>
+			<h3>成员与权限（flag）</h3>
+			<ul class="bullets">
+				<li><strong>添加成员</strong>：好友可进领地；再配「成员权限」或权限组（如「朋友」开箱+开门）。</li>
+				<li><strong>访客</strong>：没加的人只吃访客权限——建议关 break / place / chest。</li>
+				<li><strong>环境 flag</strong>：关苦力怕炸、TNT、火焰蔓延、怪物生成等。</li>
+				<li>删除/转让要二次确认，不可撤销。</li>
+			</ul>
+			<p class="muted">命令参数以 <code>/dom</code> 补全为准。</p>
+			<div class="categories">分类：<a href="#dominion">领地</a></div>
+		</article>
+
+		<article class="article" id="tabui" data-search="TAB ScoreboardPL 侧边栏 tab 列表 前缀">
+			<div class="breadcrumbs"><a href="#top">首页</a> › TAB · 侧边栏</div>
+			<div class="article-header"><h1>TAB · ScoreboardPL</h1><div class="sub">Tab 列表与侧边栏</div></div>
+			<p><strong>TAB</strong> 管按 Tab 的玩家列表、头顶名、Ping；<strong>ScoreboardPL</strong> 管右侧侧边栏。本服 TAB 里侧栏关着，避免叠两层。</p>
+			<h3>玩家会看到什么</h3>
+			<ul class="bullets">
+				<li>Tab 顶/底横幅 + 玩家列表 + Ping；头顶名字按权限组排序。</li>
+				<li>侧栏：名、等级、血量、食物、钱、坐标、时间、在线/TPS 等。</li>
+				<li><code>/scoreboard toggle</code>（别名 <code>sb</code>）开关侧栏。</li>
+			</ul>
+			<h3>管理怎么配</h3>
+			<ol class="steps">
+				<li><strong>TAB</strong><div class="detail">改 header-footer 文案；sorting-types 的组名要与 LuckPerms 组一致。</div></li>
+				<li><strong>ScoreboardPL</strong><div class="detail">改 title、lines（最多 <strong>15</strong> 行）；支持 <code>%vault_*</code>、<code>%luckperms_*</code> 等占位符。</div></li>
+				<li><strong>时区</strong><div class="detail">建议改成 <code>Asia/Shanghai</code>。</div></li>
+				<li><strong>重载</strong><div class="detail"><code>/tab reload</code> · <code>/scoreboard reload</code>。</div></li>
+			</ol>
+			<h3>常见坑</h3>
+			<ul class="bullets">
+				<li>没装 Vault/LuckPerms 时占位符显示成原字面量。</li>
+				<li>侧栏超过 15 行会截断；两插件都开侧栏会重叠。</li>
+			</ul>
+			<div class="categories">分类：<a href="#tabui">界面</a></div>
+		</article>
+
+		<article class="article" id="veinminer" data-search="Veinminer 连锁挖矿 矿脉 maxChain 潜行">
+			<div class="breadcrumbs"><a href="#top">首页</a> › Veinminer</div>
+			<div class="article-header"><h1>Veinminer 连锁挖矿</h1><div class="sub">挖一块 · 整条矿脉碎</div></div>
+			<p>挖矿脉里任意一块，相连同类方块一起碎。另有附魔附属「连锁采矿」。</p>
+			<h3>怎么挖</h3>
+			<ol class="steps">
+				<li>对矿脉<strong>正常挖掘</strong>其中一块（默认原版矿）。</li>
+				<li>条件满足时整条一起碎、一起掉。</li>
+				<li>默认<strong>不用潜行</strong>；若服主开了 <code>mustSneak</code> 则须按住潜行。</li>
+				<li>工具要挖得动（默认 <code>needCorrectTool</code>：镐挖矿、斧砍原木）。</li>
+			</ol>
+			<h3>命令与默认限制</h3>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>命令</th><th>作用</th></tr>
+				<tr><td><code>/veinminer blocks add|remove</code></td><td>改可连锁方块表</td></tr>
+				<tr><td><code>/veinminer groups</code></td><td>按组限制方块+工具</td></tr>
+				<tr><td><code>/veinminer settings</code></td><td>全局开关与数值</td></tr>
+				<tr><td><code>/veinminer toggle</code></td><td>全服开/关</td></tr>
+			</table></div>
+			<ul class="bullets">
+				<li><code>maxChain</code> 默认约 <strong>100</strong> 块/次；冷却约 20 刻。</li>
+				<li>耐久按块扣；可配每块饥饿。</li>
+				<li>附魔版开着时，没有「连锁采矿」附魔的工具<strong>不会</strong>连锁。</li>
+			</ul>
+			<h3>常见坑</h3>
+			<ul class="bullets">
+				<li>大矿脉一次掉太多会卡，调低 maxChain。</li>
+				<li>工具挖不动的方块连锁也不掉（除非关 needCorrectTool）。</li>
+			</ul>
+			<div class="categories">分类：<a href="#veinminer">采集</a></div>
 		</article>
 
 			</main>
