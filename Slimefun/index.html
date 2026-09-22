@@ -38,6 +38,9 @@
 			<li><a href="#androids">机器人</a></li>
 			<li><a href="#radiation">放射性</a></li>
 			<li><a href="#backpack">背包存储</a></li>
+			<li><a href="#networks">Networks</a></li>
+			<li><a href="#danktech">DankTech2</a></li>
+			<li><a href="#simplestorage">简易存储</a></li>
 			<li><a href="#talisman">护身符</a></li>
 			<li><a href="#official">官方附属</a></li>
 			<li><a href="#community">社区附属</a></li>
@@ -690,7 +693,137 @@
 		<div class="categories">分类：<a href="#community">社区附属</a></div>
 	</article>
 
-	<article class="article" id="gameplay" data-search="玩法 指南 怎么玩 上手 产线 操作 路线">
+	<article class="article" id="networks" data-search="Networks 网络 量子存储 控制器 网格 远程 电容 自动合成 Purger">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 社区附属 › Networks</div>
+		<div class="article-header"><h1>Networks 网络存储</h1><div class="sub">AE2/RS 式有线网络 · Sefiraat</div></div>
+		<p>Networks 提供粘液内网络化存储：控制器组网、格子总览、量子海量仓与自动合成。可与货运并存。</p>
+
+		<h3>材料链</h3>
+		<div class="wiki-table-wrap"><table class="wiki">
+			<tr><th>材料</th><th>用途</th></tr>
+			<tr><td>合成绿宝石碎片</td><td>基础电子料</td></tr>
+			<tr><td>光学玻璃 / 光缆 / 光星 / 放射光星</td><td>传输与高阶节点</td></tr>
+			<tr><td>收缩底座 · 简单/高级纳米机器人</td><td>节点模块</td></tr>
+			<tr><td>AI 核心 → 赋能 → 纯化 AI 核心</td><td>智能节点</td></tr>
+			<tr><td>跨界存在</td><td>跨维度远程</td></tr>
+		</table></div>
+
+		<h3>节点与工具一览</h3>
+		<div class="wiki-table-wrap"><table class="wiki">
+			<tr><th>类别</th><th>物品</th></tr>
+			<tr><td>核心</td><td>控制器、桥（×8）、监视器</td></tr>
+			<tr><td>物流</td><td>导入（9 货运槽）、导出、抓取、推送、Control X/V、吸尘、原版抓取/推送</td></tr>
+			<tr><td>无线</td><td>无线发射/接收、净化器 Purger</td></tr>
+			<tr><td>存取</td><td>网格、合成网格、单元（双箱 54 槽）、贪婪方块</td></tr>
+			<tr><td>量子</td><td>量子工作台、量子存储 1–8、电容 1–4、电源口 1–2、功率显示</td></tr>
+			<tr><td>合成</td><td>配方编码器、自动合成机 / 暂存型 Withholding</td></tr>
+			<tr><td>工具</td><td>合成蓝图、探针、远程 4 档、蜡笔、配置器、无线配置器、耙 1–3、管理调试器</td></tr>
+		</table></div>
+
+		<h3>量子存储容量</h3>
+		<div class="wiki-table-wrap"><table class="wiki">
+			<tr><th>档</th><th>单物品容量</th></tr>
+			<tr><td>1–4</td><td>4,096 · 32,768 · 262,144 · 2,097,152</td></tr>
+			<tr><td>5–8</td><td>16,777,216 · 134,217,728 · 1,073,741,824 · <code>Integer.MAX_VALUE</code></td></tr>
+		</table></div>
+		<p>量子工作台按 TYPE 合成；可开 <strong>void_excess</strong>（默认开）丢弃溢出。黑名单：空气、耐久 &lt;0、潜影盒、量子物品。</p>
+
+		<h3>能量与自动化</h3>
+		<div class="wiki-table-wrap"><table class="wiki">
+			<tr><th>项</th><th>数值</th></tr>
+			<tr><td>电容 1–4</td><td>1,000 / 10,000 / 100,000 / 1,000,000 J</td></tr>
+			<tr><td>电源口</td><td>输出 500 / 2,000 J</td></tr>
+			<tr><td>自动合成</td><td><strong>64 J/次</strong>；Withholding 版 <strong>128 J</strong> 且可扣留一组</td></tr>
+			<tr><td>无线传输</td><td>500 J/次，每 2 tick</td></tr>
+			<tr><td>净化器</td><td>tick_rate 1–10（默认 1）；匹配堆清零</td></tr>
+			<tr><td>耙 1–3</td><td>250 / 1,000 / 9,999</td></tr>
+		</table></div>
+
+		<h3>远程与取存规则</h3>
+		<div class="wiki-table-wrap"><table class="wiki">
+			<tr><th>规则</th><th>说明</th></tr>
+			<tr><td>远程范围</td><td><strong>150 / 500 / 0</strong>（同维不限）/ <strong>−1</strong> 跨维</td></tr>
+			<tr><td>远程条件</td><td>区块已加载 + 已绑定网络网格</td></tr>
+			<tr><td>取出顺序</td><td>单元 → Withholding 合成器 → 贪婪 → 桶（工业存储经监视器）</td></tr>
+			<tr><td>放入顺序</td><td>贪婪 → 桶 → 单元</td></tr>
+			<tr><td>控制器</td><td><strong>每网络仅 1 个</strong>；会并成双根的放置被取消</td></tr>
+			<tr><td>配方</td><td>强化工作台；量子经量子台；电容用 9× 上一档 + 更大粘液电容升级；<strong>无研究树</strong></td></tr>
+		</table></div>
+		<p class="muted">源：<a href="https://github.com/Sefiraat/Networks">Sefiraat/Networks</a>（NetworkQuantumStorage / NetworkRemote / NetworkSlimefunItems 等）。</p>
+		<div class="categories">分类：<a href="#networks">存储</a>｜<a href="#community">社区附属</a></div>
+	</article>
+
+	<article class="article" id="danktech" data-search="DankTech 无底 垃圾桶 Dank Pack Trash 便携 自动捡">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 社区附属 › DankTech2</div>
+		<div class="article-header"><h1>DankTech2 无底存储</h1><div class="sub">便携海量包与垃圾桶 · Sefiraat</div></div>
+		<p>Dank 包把「一种物品一堆」做成可携带过滤仓；Trash 包只作废不存。</p>
+
+		<h3>物品构成</h3>
+		<div class="wiki-table-wrap"><table class="wiki">
+			<tr><th>组件</th><th>说明</th></tr>
+			<tr><td>Dank 单元 T1–T★</td><td>铁→金→铁块→金块→钻石→绿宝石→钻石块→绿宝石块→下界之星环包上一档；T1 含人造钻石核</td></tr>
+			<tr><td>Dank 合成机</td><td>8 强化板 + 彩虹符文；可设各类包配方</td></tr>
+			<tr><td>Dank 卸货机</td><td>8×Cell-4 + 漏斗；向货运吐货</td></tr>
+			<tr><td>Dank 包 1–9 / 垃圾包 1–9</td><td>8× 对应单元围下界合金块/锭；升级用 8× 下一档单元 + 上一包</td></tr>
+		</table></div>
+
+		<h3>容量表（每槽上限）</h3>
+		<div class="wiki-table-wrap"><table class="wiki">
+			<tr><th>包档</th><th>槽位</th><th>每槽上限</th></tr>
+			<tr><td>1–3</td><td>1 / 2 / 3</td><td>256 / 1,024 / 2,048</td></tr>
+			<tr><td>4–6</td><td>4 / 5 / 6</td><td>4,096 / 8,192 / 16,384</td></tr>
+			<tr><td>7–9</td><td>7 / 8 / 9</td><td>65,536 / 524,288 / <code>Integer.MAX_VALUE</code></td></tr>
+			<tr><td>垃圾包</td><td>档×2（2–18）</td><td>不存，只作废匹配物</td></tr>
+		</table></div>
+		<p>本服 <code>capacity_per_slot</code> 可改 1…MAX。</p>
+
+		<h3>操作与边界</h3>
+		<ul class="bullets">
+			<li><strong>自动捡拾</strong>：匹配物品入对应槽；超上限<strong>作废</strong>（红尘提示）；垃圾包作废用琥珀尘提示。</li>
+			<li>包须<strong>不可堆叠</strong>；实例数据在 PDC（id=毫秒时间戳 + 9 组物品/数量）。</li>
+			<li>潜行+左键切换槽；潜行+右键<strong>放置方块</strong>（数量&gt;1、纯方块无 meta、目标空气、0.5³ 无实体、有权限；<strong>总是留 1</strong>）。</li>
+			<li>卸货机：每槽留 1，向货运吐出至多一组；9 个分槽开关。</li>
+			<li>复制/删档检测可清零包；黑名单世界不自动捡。</li>
+		</ul>
+		<p class="muted">源：<a href="https://github.com/Sefiraat/DankTech2">Sefiraat/DankTech2</a>（Materials / Packs / PickupListener）。</p>
+		<div class="categories">分类：<a href="#danktech">存储</a>｜<a href="#community">社区附属</a></div>
+	</article>
+
+	<article class="article" id="simplestorage" data-search="SimpleStorage 简易存储 分页 网络箱 端力机 末影合成器">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 社区附属 › SimpleStorage</div>
+		<div class="article-header"><h1>SimpleStorage 简易存储</h1><div class="sub">分页巨箱 + 网络箱 · ybw0014</div></div>
+		<p>分页大箱 + 金属/模具产线 + 网络箱聚合。本服 <code>network-range: 5</code>，检查间隔 4 粘液 tick。</p>
+
+		<h3>箱体层级</h3>
+		<div class="wiki-table-wrap"><table class="wiki">
+			<tr><th>箱</th><th>页×45</th><th>总槽</th></tr>
+			<tr><td>铁</td><td>2</td><td>90</td></tr>
+			<tr><td>金</td><td>4</td><td>180</td></tr>
+			<tr><td>钻石 / 物品单元</td><td>6</td><td>270</td></tr>
+			<tr><td>网络箱</td><td colspan="2">主箱：聚合范围内物品单元（+桶升级目标）</td></tr>
+		</table></div>
+		<p>合成链：铁（铁块+基础核心）→ 金（24k 金+强化核心）→ 钻石（钻石块+高级核心+强化铀）→ 物品单元（末影合成器）→ 网络（复合板+显示面板+通信方块+钻石箱）。</p>
+
+		<h3>加工机</h3>
+		<div class="wiki-table-wrap"><table class="wiki">
+			<tr><th>机器</th><th>能量</th><th>速率</th></tr>
+			<tr><td>模具压机</td><td>缓 16,384 · 4,096/次</td><td>速度 1；扎马克→模具 20/30/40s</td></tr>
+			<tr><td>金属压机</td><td>缓 32,768 · 8,192/次</td><td>模具+4 合金→板 20/40/60/120s</td></tr>
+			<tr><td>末影合成器</td><td>缓约 131,072 · 32,768/次</td><td>钻石箱→物品单元 <strong>300s</strong>；矿块 2→1 循环 5s</td></tr>
+		</table></div>
+
+		<h3>材料体系</h3>
+		<ul class="bullets">
+			<li>宝石：Angelite / Proustite / Shortite / Clear Quartz。</li>
+			<li>矿块循环：Chromite ↔ Bastnaesite ↔ Antimony ↔ Rhenium → 粉 → 锭。</li>
+			<li>合金：Electrum、Cupronickel、Pewter、Nickel Super、Zamak 1–3、Nisil、Nicrosil 及强化型；板材多种 + 复合板。</li>
+			<li>模具 基础/强化/高级；热电偶；箱核心 基础/强化/高级；通信方块、显示面板；桶升级（工业/蓬松桶）。</li>
+		</ul>
+		<p class="muted">源：<a href="https://github.com/ybw0014/SimpleStorage">ybw0014/SimpleStorage</a>。无作废逻辑：满箱直接停收。</p>
+		<div class="categories">分类：<a href="#simplestorage">存储</a>｜<a href="#community">社区附属</a></div>
+	</article>
+
+		<article class="article" id="gameplay" data-search="玩法 指南 怎么玩 上手 产线 操作 路线">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 玩法指南</div>
 		<div class="article-header"><h1>玩法指南</h1><div class="sub">操作步骤 · 与机制百科对照</div></div>
 
