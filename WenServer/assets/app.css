@@ -1286,3 +1286,44 @@ a.back-home:active {
   text-decoration: none !important;
 }
 .wiki-header .site-home:hover { filter: brightness(1.1); }
+
+/* 返回官网 — header pill */
+.wiki-header .inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+.wiki-header .site-home {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 0.35rem 0 0.5rem;
+  padding: 0.35rem 0.9rem !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #f0c85a 0%, #e0b13a 45%, #c49220 100%) !important;
+  color: #1a1a1a !important;
+  font-weight: 800 !important;
+  font-size: 0.88rem !important;
+  letter-spacing: 0.02em;
+  text-decoration: none !important;
+  border: 1px solid #f6e3a8 !important;
+  box-shadow: 0 2px 0 #8a6514, 0 4px 12px rgba(224, 177, 58, 0.35) !important;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+.wiki-header .site-home:link,
+.wiki-header .site-home:visited,
+.wiki-header .site-home:hover,
+.wiki-header .site-home:active,
+.wiki-header .site-home:focus {
+  color: #1a1a1a !important;
+  text-decoration: none !important;
+}
+.wiki-header .site-home:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+@media (max-width: 640px) {
+  .wiki-header .site-home { padding: 0.28rem 0.6rem !important; font-size: 0.78rem !important; }
+}
