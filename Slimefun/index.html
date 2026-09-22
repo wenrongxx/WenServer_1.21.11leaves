@@ -275,6 +275,31 @@
 			<tr><td>SimpleStorage / Dank</td><td>范围 5、间隔 4 tick；Dank 匹配吸入/溢出作废</td></tr>
 		</table></div>
 
+		<h4>Networks 源码参数</h4>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>值</th></tr>
+			<tr><td>单元格</td><td>54 槽（双箱）；导入缓冲 9 货运槽</td></tr>
+			<tr><td>量子存储档</td><td>4,096 / 32,768 / 262,144 / 2,097,152 / 16,777,216 / 134,217,728 / 1,073,741,824 / <code>Integer.MAX_VALUE</code>（单物品）</td></tr>
+			<tr><td>远程范围</td><td>150 / 500 / 0（同维不限）/ −1（跨维）</td></tr>
+			<tr><td>刻度</td><td>量子节点按粘液 tick 刷新；可选作废超额</td></tr>
+		</table></div>
+		<p class="muted">开源：<a href="https://github.com/Sefiraat/Networks">Sefiraat/Networks</a>。图：控制器 + 桥/格/监视器；网格/合成网格覆盖全网物品。</p>
+		<h4>DankTech2 源码参数</h4>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>值</th></tr>
+			<tr><td>Dank 槽位上限（档 1–9）</td><td>256 / 1,024 / 2,048 / 4,096 / 8,192 / 16,384 / 65,536 / 524,288 / <code>Integer.MAX_VALUE</code></td></tr>
+			<tr><td>垃圾桶槽</td><td>档×2（2–18），只作废不存</td></tr>
+			<tr><td>行为</td><td>匹配吸入槽位、溢出作废；取出 1/组/背；货运卸货；从包放置</td></tr>
+		</table></div>
+		<p class="muted">开源：<a href="https://github.com/Sefiraat/DankTech2">Sefiraat/DankTech2</a>。</p>
+		<h4>SimpleStorage 源码参数</h4>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>容器</th><th>槽位</th></tr>
+			<tr><td>铁</td><td>2×45 = <strong>90</strong></td></tr>
+			<tr><td>金</td><td>4×45 = <strong>180</strong></td></tr>
+			<tr><td>钻石 / 物品单元</td><td>6×45 = <strong>270</strong></td></tr>
+			<tr><td>网络箱范围 / 刷新</td><td>5 格；4 粘液 tick</td></tr>
+		</table></div>
+		<p class="muted">开源：<a href="https://github.com/ybw0014/SimpleStorage">ybw0014/SimpleStorage</a>。主从：网络箱暴露多页箱与物品单元。</p>
+
+
 		
 		<div class="categories">分类：<a href="#backpack">背包与存储</a></div>
 	</article>
@@ -446,6 +471,37 @@
 		<h3>自定义与任务</h3>
 		<p>SlimeCustomizer、SlimefunAdvancements、SlimeHUD、SoundMuffler。</p>
 <div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>Customizer</td><td>YAML 定义物品/机器/发电机/电容/掉落/地质/研究</td></tr><tr><td>Advancements</td><td>配置化任务线</td></tr><tr><td>HUD</td><td>WAILA 式方块信息</td></tr><tr><td>SoundMuffler</td><td>消音（ProtocolLib）</td></tr></table></div>
+
+		<h4>匠魂源码参数</h4>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>规则</th></tr>
+			<tr><td>组成</td><td>工具 = 刃 + 绑定 + 杆；盔甲 = 板 + 衬垫 + 链环；金属×部件各一种特性</td></tr>
+			<tr><td>晋升阶</td><td>工具 石→金→铁→钻石→下界合金；甲 皮→锁链→铁→钻石→下界合金</td></tr>
+			<tr><td>强化槽</td><td>随等级解锁</td></tr>
+			<tr><td>特性例</td><td>魔钢「易燃」(等级×5)% 燃烧；虚空 +150% 伤（末地 +250%）；铁链环 −10% 甲耗 / +10% 玩家经验</td></tr>
+			<tr><td>强化合金刃 / 铜板</td><td>3×3 挖掘；受伤 +25% 但甲经验 +20%</td></tr>
+			<tr><td>耐久</td><td>可随时换件保留等级/强化；工具不碎，坏到停工待修</td></tr>
+		</table></div>
+		<p class="muted">开源：<a href="https://github.com/Sefiraat/SlimeTinker">Sefiraat/SlimeTinker</a>。</p>
+
+		<h4>美食家源码参数</h4>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>值</th></tr>
+			<tr><td>完美食物概率</td><td><code>min(熟练度/864, 0.25)</code>，上限本服 25%</td></tr>
+			<tr><td>熟练度</td><td>每道菜<strong>手动制作</strong> +1</td></tr>
+			<tr><td>厨师机器人门槛</td><td>256（电厨自动化）</td></tr>
+			<tr><td>头衔</td><td>0 / 1 / 50 / 100 / 200</td></tr>
+			<tr><td>种子掉率</td><td>草 0.05 · 高草 0.10 · 泥土 0.01 · 海草 0.15</td></tr>
+		</table></div>
+		<p class="muted">开源：<a href="https://github.com/SchnTgaiSpock/Gastronomicon">SchnTgaiSpock/Gastronomicon</a>。</p>
+		<h4>基因工程源码参数</h4>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>值</th></tr>
+			<tr><td>基因座</td><td>6 位 <strong>B C D F S W</strong>；D=显性(AA/Aa)，r=隐性(aa)</td></tr>
+			<tr><td>鸡种</td><td>64 种，阶 0–6（羽毛 DDDDDD … 下界合金 rrrrrr）</td></tr>
+			<tr><td>产出条件</td><td>≥1 对<strong>纯合隐性</strong>(aa)；杂合对减速</td></tr>
+			<tr><td>捕捉</td><td>max-mutation 2 个杂合基因；mutation-rate 30% 隐性等位</td></tr>
+			<tr><td>资源计时</td><td>基础 <strong>14s</strong>；失败率 0%；痛苦 2%/0.5s（约 6 分力竭）</td></tr>
+		</table></div>
+		<p class="muted">开源：<a href="https://github.com/ybw0014/GeneticChickengineering-Reborn">ybw0014/GeneticChickengineering-Reborn</a>。</p>
+
 	
 		<div class="categories">分类：<a href="#community">社区附属</a></div>
 	</article>
@@ -485,7 +541,7 @@
 	</main>
 </div>
 <footer class="wiki-footer">
-	粘液科技 Wiki（仿中文 Minecraft Wiki）· 机制条目 + 玩法指南 · plugins 配置 + Slimefun4 源码机制
+	粘液科技 Wiki（仿中文 Minecraft Wiki）· 机制条目 + 玩法指南 · 源码机制分批合入
 </footer>
 <script>
 (function () {
