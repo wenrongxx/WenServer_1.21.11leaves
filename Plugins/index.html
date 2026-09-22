@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>服务器插件 Wiki · WenServer</title>
+<meta name="description" content="WenServer 常用服务端插件百科：Essentials、LuckPerms、商店、保护、附魔、语音等。"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/app.css" />
+</head>
+<body>
+<header class="wiki-header">
+	<div class="inner">
+		<img src="assets/pack-icon.png" alt="" class="hub-logo-icon" width="28" height="28" />
+		<a class="wiki-logo" href="../index.html">服务器插件 Wiki<span>非粘液 · 玩法与管理</span></a>
+		<button type="button" class="toc-toggle" id="tocToggle">目录</button>
+		<div class="wiki-search">
+			<input type="search" id="searchBox" placeholder="搜索条目…" aria-label="搜索" />
+			<button type="button" id="searchBtn">搜索</button>
+		</div>
+	</div>
+</header>
+<div class="wiki-shell" id="top">
+	<aside class="wiki-sidebar" id="wikiSidebar">
+		<div class="sb-top"><a class="back-home" href="../index.html">← 返回首页</a></div>
+		<div class="sb-title">目录</div>
+		<ul id="tocList">
+			<li><a href="#intro">简介</a></li>
+			<li><a href="#essentials">EssentialsX</a></li>
+			<li><a href="#luckperms">LuckPerms</a></li>
+			<li><a href="#coreprotect">CoreProtect</a></li>
+		</ul>
+	</aside>
+	<main class="wiki-content">
+		<div class="search-panel" id="searchPanel" hidden></div>
+		<article class="article" id="intro" data-search="服务器插件 简介 Essentials LuckPerms CoreProtect">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 简介</div>
+			<div class="article-header"><h1>服务器插件</h1><div class="sub">非粘液科技 · 玩法与管理百科</div></div>
+			<p>本站在粘液科技 Wiki 之外，整理 WenServer 的<strong>常用服务端插件</strong>：传送与经济、权限、防破坏、商店、附魔、语音等。每篇含机制、命令表与「怎么用」步骤。</p>
+			<div class="categories">分类：<a href="#intro">简介</a></div>
+		</article>
+<article class="article" id="essentials" data-search="Essentials 传送 home tpa warp 经济 pay 经济">
+			<div class="breadcrumbs"><a href="#top">首页</a> › EssentialsX</div>
+			<div class="article-header"><h1>EssentialsX</h1><div class="sub">传送 · 家 · 经济 · 基础命令</div></div>
+			<p>生存服的「生活工具箱」：设家、传送请求、公共传送点、转账记账、牌子商店。没装它很多基础命令都不存在。</p>
+			<h3>机制与命令</h3>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>场景</th><th>命令</th><th>要点</th></tr>
+				<tr><td>家</td><td><code>/sethome [名]</code> · <code>/home [名]</code> · <code>/delhome</code> · <code>/renamehome</code></td><td>多家要权限节点 + 数量节点</td></tr>
+				<tr><td>传送请求</td><td><code>/tpa</code> <code>/tpahere</code> <code>/tpaccept</code> <code>/tpdeny</code> <code>/tpauto</code> <code>/tpacancel</code></td><td>默认 120 秒超时，最多 5 条排队</td></tr>
+				<tr><td>强传 / 返回</td><td><code>/tp</code> <code>/tphere</code> <code>/back</code> <code>/spawn</code></td><td>可配延迟与冷却</td></tr>
+				<tr><td>公共点</td><td><code>/setwarp</code> <code>/warp</code> <code>/delwarp</code> <code>/warpinfo</code></td><td>可按 warp 分权限</td></tr>
+				<tr><td>经济</td><td><code>/balance</code> <code>/pay</code> <code>/eco give|take|set|reset</code> <code>/balancetop</code></td><td>可接 Vault 外部经济</td></tr>
+				<tr><td>商店</td><td><code>/worth</code> <code>/sell</code> <code>/setworth</code>；牌子 <code>[Buy]/[Sell]/[Trade]</code></td><td>扣款走 Vault</td></tr>
+			</table></div>
+			<p class="muted">家上限默认：普通 <strong>3</strong> / VIP <strong>5</strong> / 管理 <strong>10</strong>；无限用 <code>essentials.sethome.multiple.unlimited</code>。</p>
+			<h3>怎么用（新手）</h3>
+			<ol class="steps">
+				<li><strong>安家</strong><div class="detail">站好位置输入 <code>/sethome</code>。要第二个家就命名：<code>/sethome 矿洞</code>。</div></li>
+				<li><strong>回家 / 回死亡点</strong><div class="detail"><code>/home</code> 或 <code>/home 矿洞</code>；死了用 <code>/back</code>。</div></li>
+				<li><strong>找朋友</strong><div class="detail"><code>/tpa 朋友名</code>，对方输 <code>/tpaccept</code>。拒绝用 <code>/tpdeny</code>。</div></li>
+				<li><strong>设公共传送</strong><div class="detail">管理员 <code>/setwarp 商城</code>，玩家 <code>/warp 商城</code>。</div></li>
+				<li><strong>用钱</strong><div class="detail">看余额 <code>/balance</code>；转账 <code>/pay 对方 50</code>；管理发钱 <code>/eco give 玩家 100</code>。</div></li>
+			</ol>
+			<h3>常见坑</h3>
+			<ul class="bullets">
+				<li>多家要<strong>同时</strong>有 <code>essentials.sethome.multiple</code> 和 <code>...multiple.等级</code>，少一个仍只能 1 个家。</li>
+				<li>Warp 默认人人能去；要按点限权再开 <code>per-warp-permission</code>。</li>
+				<li><code>/pay</code> 有最低金额；透支要 <code>essentials.eco.loan</code>。</li>
+				<li>别的插件也占了同名命令时，看 <code>overridden-commands</code>。</li>
+			</ul>
+			<div class="categories">分类：<a href="#essentials">EssentialsX</a></div>
+		</article>
+
+		<article class="article" id="luckperms" data-search="LuckPerms 权限 group track meta 前缀 parent">
+			<div class="breadcrumbs"><a href="#top">首页</a> › LuckPerms</div>
+			<div class="article-header"><h1>LuckPerms</h1><div class="sub">权限与用户组</div></div>
+			<p>权限总管：谁能用什么命令、显示什么前缀、属于哪一组。Bungee/Velocity 跨服也可用。</p>
+			<h3>核心概念</h3>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>概念</th><th>含义</th></tr>
+				<tr><td>权限节点</td><td>字符串，true / false / 未设；<code>*</code> 通配</td></tr>
+				<tr><td>Group</td><td>权限打包；用 parent 继承（组套组、人挂组）</td></tr>
+				<tr><td>Track</td><td>只做<strong>升降级轨道</strong>（promote），不负责继承</td></tr>
+				<tr><td>Meta</td><td>前缀/后缀/自定义键值</td></tr>
+			</table></div>
+			<h3>常用命令</h3>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>任务</th><th>命令</th></tr>
+				<tr><td>授权限</td><td><code>/lp user|group &lt;名&gt; permission set &lt;节点&gt; true|false</code>（另有 unset / check）</td></tr>
+				<tr><td>挂组</td><td><code>... parent add|remove|set &lt;组&gt;</code></td></tr>
+				<tr><td>前缀</td><td><code>... meta setprefix 100 "&amp;a[VIP]"</code></td></tr>
+				<tr><td>升降级</td><td><code>/lp user &lt;人&gt; promote|demote &lt;track&gt;</code></td></tr>
+				<tr><td>建轨道</td><td><code>/lp createtrack staff</code> → <code>lp track staff append helper</code></td></tr>
+				<tr><td>调试</td><td><code>/lp verbose record &lt;人&gt;</code> → 让他执行 → <code>paste</code></td></tr>
+			</table></div>
+			<h3>怎么用（服主）</h3>
+			<ol class="steps">
+				<li><strong>先给自己管理</strong><div class="detail">控制台：<code>lp user 你的ID permission set luckperms.* true</code>（装好后默认没人有 LP 权限）。</div></li>
+				<li><strong>建组</strong><div class="detail"><code>lp createtrack staff</code>；<code>lp track staff append helper</code> 再 <code>append mod</code>。</div></li>
+				<li><strong>给 VIP 多家</strong><div class="detail"><code>lp group vip permission set essentials.sethome.multiple true</code> 以及 <code>...multiple.vip true</code>。</div></li>
+				<li><strong>加前缀</strong><div class="detail"><code>lp group vip meta addprefix 100 "&amp;6[VIP]"</code>（数字大者优先显示）。</div></li>
+				<li><strong>加人 / 升级</strong><div class="detail"><code>lp user 张三 parent add vip</code>；升级 <code>lp user 张三 promote staff</code>。</div></li>
+			</ol>
+			<h3>常见坑</h3>
+			<ul class="bullets">
+				<li>Track 只管升降级；真正给权限靠 <strong>parent 继承</strong>。</li>
+				<li>时长大小写敏感：<code>1M</code> 是一月，<code>1m</code> 是一分钟。</li>
+				<li>前缀数字越大越优先；多组冲突看 <code>setweight</code>。</li>
+			</ul>
+			<div class="categories">分类：<a href="#luckperms">LuckPerms</a></div>
+		</article>
+
+		<article class="article" id="coreprotect" data-search="CoreProtect 回滚 查证 防破坏 inspect rollback 熊孩子">
+			<div class="breadcrumbs"><a href="#top">首页</a> › CoreProtect</div>
+			<div class="article-header"><h1>CoreProtect</h1><div class="sub">查证与回滚</div></div>
+			<p>方块「监控 + 撤销」：谁挖了什么、箱子里少了啥，可查可回滚。反破坏神器。</p>
+			<h3>命令一览</h3>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>命令</th><th>作用</th></tr>
+				<tr><td><code>/co inspect</code>（<code>/co i</code>）</td><td>手查模式：点方块看改动</td></tr>
+				<tr><td><code>/co lookup</code>（<code>/co l</code>）</td><td>只查不改；默认<strong>全服</strong>范围</td></tr>
+				<tr><td><code>/co rollback</code>（<code>/co rb</code>）</td><td>回滚</td></tr>
+				<tr><td><code>/co restore</code>（<code>/co rs</code>）</td><td>恢复（撤销回滚）</td></tr>
+				<tr><td><code>/co undo</code></td><td>反着做上一次 rb/rs</td></tr>
+				<tr><td><code>/co near</code></td><td>等于 <code>r:5</code></td></tr>
+				<tr><td><code>/co purge t:30d</code></td><td>清旧日志</td></tr>
+			</table></div>
+			<p><strong>时间</strong> <code>t:30s/5m/7h/2d/1w</code>，可组合 <code>5d2h</code>、区间 <code>1h-2h</code>。<br>
+			<strong>过滤</strong> <code>u:玩家</code> · <code>r:10</code>（回滚默认半径 10）/ <code>r:#global</code> / <code>r:#worldedit</code> · <code>a:+block|-block|container|kill|command|sign</code> · <code>i:物品</code> · <code>e:生物</code> · <code>f:文本</code>。<br>
+			<strong>附加</strong> <code>#preview</code> · <code>#count</code> · <code>#summary</code> · 翻页 <code>/co l 2</code>。</p>
+			<h3>怎么用（管理员）</h3>
+			<ol class="steps">
+				<li><strong>手查</strong><div class="detail"><code>/co i</code> 后左键可疑方块，看谁改的。</div></li>
+				<li><strong>查失窃</strong><div class="detail"><code>/co lookup u:可疑ID t:1d a:-block i:diamond_ore</code>。箱内要用 <code>a:container</code>。</div></li>
+				<li><strong>处理熊孩子</strong><div class="detail">先 <code>/co rollback u:熊孩子 t:2h r:20 #preview</code> 预览。</div></li>
+				<li><strong>真回滚</strong><div class="detail">确认后去掉 <code>#preview</code>。回多了 <code>/co undo</code> 或 <code>/co restore</code>。</div></li>
+				<li><strong>清理</strong><div class="detail">定期 <code>/co purge t:30d</code>，防日志占满磁盘。</div></li>
+			</ol>
+			<h3>常见坑</h3>
+			<ul class="bullets">
+				<li>lookup 默认<strong>全服</strong>；rollback 默认身边 <strong>10</strong> 格。不写 <code>r:</code> 易查爆或回错范围。</li>
+				<li>务必先 <code>#preview</code>；<code>r:#global</code> 要极谨慎。</li>
+				<li>时间必须带单位（<code>t:1</code> 不合法）。</li>
+				<li>箱内物品用 <code>a:container</code>，不能只查 <code>a:block</code>。</li>
+			</ul>
+			<div class="categories">分类：<a href="#coreprotect">CoreProtect</a></div>
+		</article>
+
+			</main>
+</div>
+<footer class="wiki-footer">服务器插件 Wiki（仿中文 Minecraft Wiki）· WenServer</footer>
+<script>
+(function () {
+	var sidebar = document.getElementById("wikiSidebar");
+	var toggle = document.getElementById("tocToggle");
+	var links = Array.prototype.slice.call(document.querySelectorAll(".wiki-sidebar a"));
+	var navTargets = links.map(function (a) {
+		var id = a.getAttribute("href");
+		return id && id.charAt(0) === "#" ? document.querySelector(id) : null;
+	});
+	function onScroll() {
+		var y = (document.documentElement.scrollTop || document.body.scrollTop) + 100;
+		var idx = 0;
+		for (var i = 0; i < navTargets.length; i++) {
+			var t = navTargets[i];
+			if (t && !t.classList.contains("hidden-by-search") && t.offsetTop <= y) idx = i;
+		}
+		links.forEach(function (a, i) {
+			a.classList.toggle("active", i === idx);
+			var t = navTargets[i];
+			if (t) a.classList.toggle("dimmed", t.classList.contains("hidden-by-search"));
+		});
+	}
+	window.addEventListener("scroll", onScroll, { passive: true });
+	onScroll();
+	if (toggle && sidebar) {
+		if (window.matchMedia("(max-width: 800px)").matches) sidebar.classList.add("collapsed");
+		toggle.addEventListener("click", function () { sidebar.classList.toggle("collapsed"); });
+	}
+	var box = document.getElementById("searchBox");
+	var panel = document.getElementById("searchPanel");
+	var articles = Array.prototype.slice.call(document.querySelectorAll("article.article"));
+	function runSearch() {
+		var q = (box.value || "").trim().toLowerCase();
+		if (!panel) return;
+		if (!q) { panel.hidden = true; panel.innerHTML = ""; return; }
+		var hits = [];
+		articles.forEach(function (art) {
+			var text = (art.getAttribute("data-search") || "") + " " + art.textContent;
+			if (text.toLowerCase().indexOf(q) !== -1) {
+				var h = art.querySelector("h1");
+				hits.push({ id: art.id, title: h ? h.textContent : art.id });
+			}
+		});
+		panel.hidden = false;
+		panel.innerHTML = hits.length
+			? '<div class="search-hint">结果 '+hits.length+'</div>' + hits.map(function (h) {
+				return '<div class="search-hit"><a href="#'+h.id+'">'+h.title+'</a></div>';
+			}).join("")
+			: '<div class="search-hint">无匹配</div>';
+	}
+	if (box) box.addEventListener("input", runSearch);
+})();
+</script>
+</body>
+</html>
