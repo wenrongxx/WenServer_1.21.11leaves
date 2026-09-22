@@ -1327,3 +1327,61 @@ a.back-home:active {
 @media (max-width: 640px) {
   .wiki-header .site-home { padding: 0.28rem 0.6rem !important; font-size: 0.78rem !important; }
 }
+
+/* ===== site-home (返回官网) + visited link fix ===== */
+.wiki-header .inner { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.8rem; }
+.wiki-header a.site-home,
+.wiki-header .site-home {
+  display: inline-flex !important;
+  visibility: visible !important;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: 0.5rem;
+  padding: 0.35rem 0.95rem !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #f0c85a 0%, #e0b13a 50%, #c49220 100%) !important;
+  color: #1a1a1a !important;
+  font-weight: 800 !important;
+  font-size: 0.9rem !important;
+  text-decoration: none !important;
+  border: 1px solid #f6e3a8 !important;
+  box-shadow: 0 2px 0 #8a6514, 0 4px 14px rgba(224, 177, 58, 0.35) !important;
+  white-space: nowrap;
+}
+.wiki-header a.site-home:link,
+.wiki-header a.site-home:visited,
+.wiki-header a.site-home:hover,
+.wiki-header a.site-home:active,
+.wiki-header .site-home:link,
+.wiki-header .site-home:visited,
+.wiki-header .site-home:hover,
+.wiki-header .site-home:active {
+  color: #1a1a1a !important;
+  text-decoration: none !important;
+  background: linear-gradient(180deg, #f0c85a 0%, #e0b13a 50%, #c49220 100%) !important;
+}
+.wiki-header .site-home:hover { filter: brightness(1.08); }
+
+/* anti-purple: keep link colors after visit */
+a, a:link, a:visited { color: var(--link, #0645ad); }
+a:hover { text-decoration: underline; }
+.wiki-header .wiki-logo,
+.wiki-header .wiki-logo:visited { color: inherit !important; text-decoration: none !important; }
+.wiki-sidebar a, .wiki-sidebar a:visited { color: var(--link, #0645ad); text-decoration: none; }
+.bullets a, .breadcrumbs a, .categories a, .wiki-table-wrap a {
+  color: var(--link, #0645ad);
+}
+.bullets a:visited, .breadcrumbs a:visited, .categories a:visited, .wiki-table-wrap a:visited {
+  color: var(--link, #0645ad);
+}
+.hub-card, .hub-card:link, .hub-card:visited {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+.hub-card .hub-go, .hub-card .hub-go:visited { color: var(--link, #0645ad) !important; }
+.hub-grid a, .hub-grid a:visited { color: inherit; }
+.back-home, .back-home:visited {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+.qq-link:visited, .qq-chip:visited { color: #fff !important; }
