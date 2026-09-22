@@ -34,6 +34,9 @@
 			<li><a href="#quickshop">QuickShop</a></li>
 			<li><a href="#chestshop">ChestShop</a></li>
 			<li><a href="#bluemap">BlueMap</a></li>
+			<li><a href="#authme">AuthMe</a></li>
+			<li><a href="#enchantpacks">自定义附魔</a></li>
+			<li><a href="#voicechat">语音</a></li>
 		</ul>
 	</aside>
 	<main class="wiki-content">
@@ -224,6 +227,98 @@
 				<li>关「实时玩家」标记可保护行踪。</li>
 			</ul>
 			<div class="categories">分类：<a href="#bluemap">地图</a></div>
+		</article>
+
+		<article class="article" id="authme" data-search="AuthMe 登录 注册 密码 email totp 防盗">
+			<div class="breadcrumbs"><a href="#top">首页</a> › AuthMe</div>
+			<div class="article-header"><h1>AuthMe</h1><div class="sub">登录 · 注册 · 防盗号</div></div>
+			<p>进服先验证身份。未登录时不能聊天、不能动、强制生存；注册登录后才恢复完整权限。支持邮箱找回与二步验证。</p>
+			<h3>命令</h3>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>场景</th><th>命令</th></tr>
+				<tr><td>注册</td><td><code>/register 密码 确认密码</code>（<code>/reg</code>）</td></tr>
+				<tr><td>登录</td><td><code>/login 密码</code>（<code>/l</code> <code>/log</code>）</td></tr>
+				<tr><td>改密</td><td><code>/changepassword 旧 新</code>（<code>/cp</code>）</td></tr>
+				<tr><td>注销 / 退出</td><td><code>/unregister 密码</code> · <code>/logout</code></td></tr>
+				<tr><td>邮箱找回</td><td><code>/email show|add|change|recover|code|setpassword|confirm</code></td></tr>
+				<tr><td>二步验证</td><td><code>/totp code|add|confirm|remove</code>（<code>/2fa</code>）</td></tr>
+				<tr><td>管理</td><td><code>/authme register|unregister|forcelogin|password</code> 等</td></tr>
+			</table></div>
+			<h3>怎么用（新手）</h3>
+			<ol class="steps">
+				<li><strong>首次进服</strong><div class="detail"><code>/register 你的密码 再输一遍</code>，两次必须一致。</div></li>
+				<li><strong>以后每次</strong><div class="detail"><code>/login 密码</code> 后才能玩。</div></li>
+				<li><strong>绑邮箱</strong><div class="detail"><code>/email add 邮箱</code> 后 <code>/email confirm</code>；丢号用 <code>/email recover</code>。</div></li>
+				<li><strong>改密</strong><div class="detail"><code>/cp 旧密码 新密码</code>。</div></li>
+				<li><strong>可选 2FA</strong><div class="detail"><code>/totp add</code> 绑定验证器。</div></li>
+			</ol>
+			<h3>常见坑</h3>
+			<ul class="bullets">
+				<li>密码两次不一致会拒注；特殊字符看服规。</li>
+				<li>默认禁止多开小号；AntiBot 可临时拦新号。</li>
+				<li>忘密优先邮箱找回，再找管理重置。</li>
+			</ul>
+			<div class="categories">分类：<a href="#authme">账号</a></div>
+		</article>
+
+		<article class="article" id="enchantpacks" data-search="ExcellentEnchants AdvanceEnchantmentX 附魔 enchanter 自定义附魔">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 自定义附魔</div>
+			<div class="article-header"><h1>自定义附魔</h1><div class="sub">ExcellentEnchants · AdvanceEnchantmentX</div></div>
+			<p>两套自定义附魔：杰出附魔偏原版扩展；高级附魔是中文 GUI 附魔台。可叠出很强装备，注意平衡。</p>
+			<h3>ExcellentEnchants</h3>
+			<ul class="bullets">
+				<li>75+ 附魔；来源：附魔台、村民、战利品、钓鱼、怪装。</li>
+				<li>品质：普通 / 勇者 / 史诗 / 神话。</li>
+				<li>命令：<code>/book</code> · <code>/randombook</code> · <code>/givefuel</code> · <code>/disenchant</code>。</li>
+				<li>依赖前置 <code>nightcore</code>。</li>
+			</ul>
+			<h3>AdvanceEnchantmentX</h3>
+			<ul class="bullets">
+				<li><code>/enchanter</code> 打开 GUI；普通约 40%/10 级经验，神级约 1%/75 级。</li>
+				<li>每件默认最多 <strong>5</strong> 条自定义附魔。</li>
+				<li>武器：闪电打击、生命窃取、流血、处决、连击。</li>
+				<li>镐：范围挖掘 3×3/5×5/6×6、矿脉挖掘、自动熔炼。</li>
+				<li>甲：荆棘增强、冰/火光环、减伤；特殊：传送打击、陨石打击、时间扭曲、神之模式。</li>
+			</ul>
+			<h3>怎么用</h3>
+			<ol class="steps">
+				<li>手持装备 → <code>/enchanter</code>，或走附魔台/村民书。</li>
+				<li>看清品质与经验花费再确认。</li>
+				<li>管理发书：<code>/book 玩家 附魔名 等级</code>；拆解 <code>/disenchant</code>。</li>
+			</ol>
+			<h3>常见坑</h3>
+			<ul class="bullets">
+				<li>神之模式、陨石打击、时间扭曲、6×6 范围挖掘极易超模，PVP 建议限制。</li>
+				<li>两套同装会叠词条；村民/钓鱼也能出自定义书。</li>
+			</ul>
+			<div class="categories">分类：<a href="#enchantpacks">附魔</a></div>
+		</article>
+
+		<article class="article" id="voicechat" data-search="SimpleVoiceChat 语音 voicechat 群组 按键说话">
+			<div class="breadcrumbs"><a href="#top">首页</a> › SimpleVoiceChat</div>
+			<div class="article-header"><h1>SimpleVoiceChat</h1><div class="sub">游戏内语音</div></div>
+			<p>附近玩家语音，可开群组开黑。<strong>客户端必须装同版本 mod</strong> 才能听/说。</p>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>项</th><th>说明</th></tr>
+				<tr><td>命令</td><td><code>/voicechat</code></td></tr>
+				<tr><td>权限</td><td><code>voicechat.listen</code> / <code>speak</code> / <code>groups</code> / <code>admin</code></td></tr>
+				<tr><td>群组</td><td>与附近语音是两套音量/范围</td></tr>
+				<tr><td>说话</td><td>默认按键说话（客户端绑 PTT）</td></tr>
+			</table></div>
+			<h3>怎么用</h3>
+			<ol class="steps">
+				<li>安装客户端 Simple Voice Chat mod。</li>
+				<li>进服 <code>/voicechat</code> 测试。</li>
+				<li>按键设置里绑定说话键，按住说话。</li>
+				<li>开黑：创建/加入语音群组。</li>
+				<li>没声：查 mod 版本、权限、UDP 防火墙、静音。</li>
+			</ol>
+			<h3>常见坑</h3>
+			<ul class="bullets">
+				<li>只装服务端没装客户端 mod = 完全听不到。</li>
+				<li>入群 ≠ 全球对讲；无 listen/speak 会单向或全哑。</li>
+			</ul>
+			<div class="categories">分类：<a href="#voicechat">语音</a></div>
 		</article>
 
 			</main>
