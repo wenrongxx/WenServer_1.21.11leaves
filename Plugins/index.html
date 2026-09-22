@@ -31,8 +31,7 @@
 			<li><a href="#essentials">EssentialsX</a></li>
 			<li><a href="#luckperms">LuckPerms</a></li>
 			<li><a href="#coreprotect">CoreProtect</a></li>
-			<li><a href="#quickshop">QuickShop</a></li>
-			<li><a href="#chestshop">ChestShop</a></li>
+			<li><a href="#shops">商店（箱/牌）</a></li>
 			<li><a href="#bluemap">BlueMap</a></li>
 			<li><a href="#authme">AuthMe</a></li>
 			<li><a href="#enchantpacks">附魔概述</a></li>
@@ -160,57 +159,48 @@
 			<div class="categories">分类：<a href="#coreprotect">CoreProtect</a></div>
 		</article>
 
-		<article class="article" id="quickshop" data-search="QuickShop 箱子商店 qs create 买卖 税">
-			<div class="breadcrumbs"><a href="#top">首页</a> › QuickShop-Hikari</div>
-			<div class="article-header"><h1>QuickShop-Hikari</h1><div class="sub">箱子商店</div></div>
-			<p>对着箱子开「自助收银店」：设定商品、买价/卖价，顾客点箱子交易。适合主城摆摊。</p>
-			<h3>怎么开店</h3>
-			<ol class="steps">
-				<li><strong>放箱子</strong><div class="detail">在你有权建造的地方放一个箱子。</div></li>
-				<li><strong>手持商品建店</strong><div class="detail">手里拿着要卖的东西，对箱子输入：<code>/qs create &lt;数量&gt; &lt;买价&gt; &lt;卖价&gt;</code>。只卖不收写卖价 0（如只出售：<code>B 10 : S 0</code> 写法按插件提示）。</div></li>
-				<li><strong>把货放进箱子</strong><div class="detail">库存就是箱子里的物品。箱上可显示虚拟展示物。</div></li>
-				<li><strong>顾客怎么买</strong><div class="detail">左键看信息；右键购买；潜行右键向你出售（是否开放看配置）。</div></li>
-				<li><strong>日常管理</strong><div class="detail"><code>/qs price</code> 改价 · <code>/qs info</code> 库存 · <code>/qs remove</code> 拆店 · <code>/qs setowner</code> 让店 · <code>/qs unlimited</code> 无限货（管理）。</div></li>
-			</ol>
-			<p class="muted">建店费、税率、每人店数在 <code>config</code> 配；大服建议 MySQL。</p>
-			<h3>常见坑</h3>
-			<ul class="bullets">
-				<li>领地未放行 → 开不了店或交易失败。</li>
-				<li>买价/卖价写反会亏本。</li>
-				<li>与 ChestShop 同装容易抢箱子事件，建议只用一个。</li>
-				<li>税收到手 ≠ 牌面价。</li>
-			</ul>
-			<div class="categories">分类：<a href="#quickshop">商店</a></div>
-		</article>
+				<article class="article" id="shops" data-search="商店 QuickShop ChestShop qs 牌子 买卖 税 店">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 商店</div>
+			<div class="article-header"><h1>商店</h1><div class="sub">QuickShop-Hikari 箱子店 · ChestShop 牌子店</div></div>
+			<p>两套商店：<strong>QuickShop</strong> 对箱子开店；<strong>ChestShop</strong> 用告示牌开店。同装会抢事件，建议只用一套。</p>
 
-		<article class="article" id="chestshop" data-search="ChestShop 牌子商店 告示牌 B S 买卖">
-			<div class="breadcrumbs"><a href="#top">首页</a> › ChestShop</div>
-			<div class="article-header"><h1>ChestShop</h1><div class="sub">牌子商店</div></div>
-			<p>经典「告示牌 + 箱子」商店。牌子写清买卖价，玩家点牌子交易。</p>
-			<h3>牌子四行怎么写</h3>
+			<h3>QuickShop-Hikari 箱子商店</h3>
+			<p><strong>店型：</strong>① 出售店（店→玩家）② 收购店（玩家→店）③ 双向店（双箱或买卖并存）。支持 NBT/附魔/药水精确匹配、无限店、店名/描述、展示物。</p>
 			<div class="wiki-table-wrap"><table class="wiki">
-				<tr><th>行</th><th>内容</th></tr>
-				<tr><td>第 1 行</td><td>物品名（可留空 = 手持物品）</td></tr>
-				<tr><td>第 2 行</td><td>数量（如 16）</td></tr>
-				<tr><td>第 3 行</td><td><code>B 购价 : S 售价</code></td></tr>
-				<tr><td>第 4 行</td><td>店主名（有效玩家 ID）</td></tr>
+				<tr><th>命令</th><th>作用</th></tr>
+				<tr><td><code>/qs create &lt;价格&gt;</code></td><td>注视箱子建店；手持商品确认</td></tr>
+				<tr><td><code>/qs buy</code> / <code>/qs setprice</code></td><td>设为收购 / 改价</td></tr>
+				<tr><td><code>/qs price</code> · <code>/qs info</code> · <code>/qs remove</code></td><td>改价 · 看库存 · 拆店</td></tr>
+				<tr><td><code>/qs setowner</code> · <code>/qs staff</code></td><td>转让店主 · 店员</td></tr>
+				<tr><td><code>/qs name</code> · <code>/qs desc</code> · <code>/qs silent</code> · <code>/qs find</code> · <code>/qs about</code></td><td>店名 · 简介 · 静音 · 查找 · 信息</td></tr>
+				<tr><td><code>/qs unlimited</code> · <code>/qs taxaccount</code> · <code>/qs range</code></td><td>无限货 · 税户 · 范围（管理）</td></tr>
+				<tr><td><code>/qs clear</code> · <code>/qs purge</code> · <code>/qs reload</code> · <code>/qs backup</code></td><td>清空 · 清理 · 重载 · 备份（管理）</td></tr>
 			</table></div>
-			<h3>怎么用</h3>
-			<ol class="steps">
-				<li><strong>放箱子</strong>在牌子旁边/后面，手持续商品。</li>
-				<li><strong>插牌</strong>按上表写满四行，创建成功会有提示。</li>
-				<li><strong>进货</strong>把商品放进箱子。</li>
-				<li><strong>交易</strong>右键买、左键卖（以本服配置为准）。</li>
-				<li><strong>权限</strong><code>ChestShop.shop.create</code> / <code>.buy</code> / <code>.sell</code>；管理 <code>ChestShop.Admin</code>。</li>
-			</ol>
-			<h3>常见坑</h3>
-			<ul class="bullets">
-				<li>物品名或行数写错会拒建；第 4 行必须是真实玩家名。</li>
-				<li>领地锁箱子却没给插件权限 → 交易失败。</li>
-				<li>到手金额被税扣掉，和牌子价不一致。</li>
-				<li>与 QuickShop 同装冲突高，二选一。</li>
-			</ul>
-			<div class="categories">分类：<a href="#chestshop">商店</a></div>
+			<p><strong>交易：</strong>左键买、右键卖（可配置）；交互冷却默认约 <strong>0.1s</strong> 防刷。库存不足拒售；收购需你背包有货。</p>
+			<p><strong>费用：</strong>建店费、交易税、最低/最高价、价格单位在 config；税进 <code>tax-account</code>。每玩家店数/每店交易量有上限。</p>
+			<p><strong>权限：</strong><code>quickshop.quickshop</code> · <code>create</code> · <code>buy</code> · <code>sell</code> · <code>others</code> · <code>admin</code> · <code>bypass</code> · <code>free</code> · <code>notax</code>。</p>
+			<p class="muted">存储 H2/MySQL；可接 WorldGuard/GriefPrevention/Dominion；改 jar 后勿用 <code>/qs reload</code> 热替换，易崩。</p>
+
+			<h3>ChestShop 牌子商店</h3>
+			<p><strong>牌四行写法：</strong>（贴在箱子上/旁）</p>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>行</th><th>内容</th><th>示例</th></tr>
+				<tr><td>1</td><td>店主名，或 <code>Admin Shop</code></td><td>Steve / Admin Shop</td></tr>
+				<tr><td>2</td><td>数量（可写 B/S 表示买/卖）</td><td><code>1</code> 或 <code>B 1</code></td></tr>
+				<tr><td>3</td><td>单价；<code>B 5</code> 买 · <code>S 5</code> 卖 · <code>B 5:5 S</code> 双向</td><td><code>B 5:5 S</code></td></tr>
+				<tr><td>4</td><td>物品名/ID（<code>/iteminfo</code> 查询）</td><td>DIAMOND</td></tr>
+			</table></div>
+			<p><strong>店型：</strong>Buy（玩家买）· Sell（玩家卖）· Admin Shop（无限，需管理权限）。双向用 <code>B x:y S</code>。</p>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>命令</th><th>作用</th></tr>
+				<tr><td><code>/iteminfo</code></td><td>查物品 ID</td></tr>
+				<tr><td><code>/shopinfo</code>（<code>/shop</code>）</td><td>看指向的店</td></tr>
+				<tr><td><code>/csaccess</code></td><td>切换「可开箱却不能交易」</td></tr>
+				<tr><td><code>/csgive</code> · <code>/csmetrics</code> · <code>/csversion</code></td><td>代建店 · 统计 · 版本（管理）</td></tr>
+			</table></div>
+			<p><strong>权限要点：</strong><code>ChestShop.shop.create|buy|sell</code> · <code>create.buy|create.sell</code> · <code>shop.buy.(id)</code> · <code>shop.sell.(id)</code> · <code>admin|mod</code> · <code>nofee</code> 免建店费 · <code>notax.buy</code>/<code>notax.sell</code> 免税。</p>
+			<p><strong>费用与限制：</strong>建店费 + 成交税；交互冷却防刷；默认有开箱权也不能交易（防掏空店主）；创造模式默认禁止交易；NBT 不匹配报无货。经济走 Vault。</p>
+			<div class="categories">分类：<a href="#shops">商店</a></div>
 		</article>
 
 		<article class="article" id="bluemap" data-search="BlueMap 地图 3D 网页 8100 render">
@@ -304,15 +294,16 @@
 			<div class="breadcrumbs"><a href="#top">首页</a> › 自定义附魔</div>
 			<div class="article-header"><h1>自定义附魔大全</h1><div class="sub">每一本附魔书 · AdvanceEnchantmentX 为主</div></div>
 			<p>本服自定义附魔以 <strong>AdvanceEnchantmentX</strong>（中文 GUI）为主，辅以 <strong>ExcellentEnchants</strong>。每件默认最多 <strong>5</strong> 条自定义附魔，可发光。</p>
-			<h3>品质与花费</h3>
+			<p class="muted">下表为 AdvanceEnchantmentX 的抽取品质与经验花费，属「附魔台机制」，不随每本附魔书变化。</p>
+			<h3>抽取品质与花费</h3>
 			<div class="wiki-table-wrap"><table class="wiki">
 				<tr><th>品质</th><th>颜色</th><th>出现率</th><th>经验花费</th></tr>
 				<tr><td>普通</td><td>白色</td><td>40.0%</td><td>10 级经验</td></tr><tr><td>非普通</td><td>绿色</td><td>25.0%</td><td>20 级经验</td></tr><tr><td>稀有</td><td>蓝色</td><td>15.0%</td><td>30 级经验</td></tr><tr><td>史诗</td><td>紫色</td><td>10.0%</td><td>40 级经验</td></tr><tr><td>传说</td><td>金色</td><td>6.0%</td><td>50 级经验</td></tr><tr><td>神话</td><td>浅紫色</td><td>3.0%</td><td>60 级经验</td></tr><tr><td>神级</td><td>深红色加粗</td><td>1.0%</td><td>75 级经验</td></tr>
 			</table></div>
 			<h3>AdvanceEnchantmentX 全附魔表</h3>
 			<div class="wiki-table-wrap"><table class="wiki">
-				<tr><th>附魔名</th><th>部位</th><th>品质</th><th>最高等级</th><th>效果与数值</th></tr>
-				<tr><td><strong>glow</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>普通</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>非普通</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>稀有</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>史诗</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>传说</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>神话</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>神级</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>闪电打击</strong></td><td>武器</td><td>稀有</td><td>3</td><td>命中概率感电并追加伤害<br><span class='muted'>伤害/级 +2；基础触发 5%，每级 +2%</span></td></tr><tr><td><strong>生命窃取</strong></td><td>武器</td><td>史诗</td><td>5</td><td>命中回复生命<br><span class='muted'>基础回血 1.0，每级 +0.5</span></td></tr><tr><td><strong>流血</strong></td><td>武器</td><td>非普通</td><td>3</td><td>命中使目标流血<br><span class='muted'>持续 60t，每跳 1.0 伤/级</span></td></tr><tr><td><strong>处决</strong></td><td>武器</td><td>传说</td><td>1</td><td>低血量目标处决增伤<br><span class='muted'>阈值 30% 血时伤害 ×1.5，仅 1 级</span></td></tr><tr><td><strong>连击</strong></td><td>武器</td><td>稀有</td><td>5</td><td>连续命中叠加伤害<br><span class='muted'>每击 +0.5，40t 重置</span></td></tr><tr><td><strong>击退控制</strong></td><td>武器</td><td>普通</td><td>2</td><td>减少自身被击退<br><span class='muted'>减退 ×0.2/级</span></td></tr><tr><td><strong>闪烁</strong></td><td>武器</td><td>史诗</td><td>3</td><td>短距闪现类位移<br><span class='muted'>见游戏内说明</span></td></tr><tr><td><strong>冲击波</strong></td><td>武器</td><td>传说</td><td>2</td><td>命中产生击退波<br><span class='muted'>见游戏内说明</span></td></tr><tr><td><strong>风暴烈焰</strong></td><td>武器</td><td>神话</td><td>2</td><td>火焰风暴范围伤害<br><span class='muted'>神话级高伤附魔</span></td></tr><tr><td><strong>范围挖掘3x3</strong></td><td>镐</td><td>稀有</td><td>1</td><td>一次挖 3×3<br><span class='muted'>1 级</span></td></tr><tr><td><strong>范围挖掘5x5</strong></td><td>镐</td><td>史诗</td><td>1</td><td>一次挖 5×5<br><span class='muted'>1 级</span></td></tr><tr><td><strong>范围挖掘6x6</strong></td><td>镐</td><td>传说</td><td>1</td><td>一次挖 6×6（超模）<br><span class='muted'>1 级，建议限权</span></td></tr><tr><td><strong>矿脉挖掘</strong></td><td>镐</td><td>稀有</td><td>1</td><td>连锁整条矿脉<br><span class='muted'>最多 64 块/次</span></td></tr><tr><td><strong>自动熔炼</strong></td><td>镐</td><td>非普通</td><td>1</td><td>挖矿自动烧成锭<br><span class='muted'>1 级</span></td></tr><tr><td><strong>透视感知</strong></td><td>镐</td><td>史诗</td><td>1</td><td>短暂看见周围矿<br><span class='muted'>1 级</span></td></tr><tr><td><strong>急速加成</strong></td><td>镐</td><td>普通</td><td>3</td><td>挖矿短加速<br><span class='muted'>每级效果，持续 5s</span></td></tr><tr><td><strong>荆棘增强</strong></td><td>甲</td><td>稀有</td><td>3</td><td>反伤<br><span class='muted'>基础 10%，每级 +5%</span></td></tr><tr><td><strong>冰冻光环</strong></td><td>甲</td><td>史诗</td><td>2</td><td>冰冻周围敌人<br><span class='muted'>史诗</span></td></tr><tr><td><strong>火焰光环</strong></td><td>甲</td><td>史诗</td><td>2</td><td>灼烧周围敌人<br><span class='muted'>见配置</span></td></tr><tr><td><strong>生命恢复</strong></td><td>?</td><td>传说</td><td>3</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>抗击退</strong></td><td>?</td><td>非普通</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>伤害减免</strong></td><td>甲</td><td>神话</td><td>4</td><td>百分比减伤<br><span class='muted'>见配置</span></td></tr><tr><td><strong>狂暴模式</strong></td><td>?</td><td>史诗</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>隐身爆发</strong></td><td>?</td><td>传说</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>速度加成</strong></td><td>?</td><td>普通</td><td>2</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>跳跃加成</strong></td><td>?</td><td>普通</td><td>2</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>无摔落伤害</strong></td><td>?</td><td>史诗</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>冲刺</strong></td><td>?</td><td>传说</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>爆裂箭</strong></td><td>?</td><td>稀有</td><td>3</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>闪电箭</strong></td><td>?</td><td>史诗</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>毒箭</strong></td><td>?</td><td>非普通</td><td>3</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>穿透箭</strong></td><td>?</td><td>稀有</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>传送打击</strong></td><td>特殊</td><td>神话</td><td>1</td><td>攻击附带位移打击<br><span class='muted'>慎用</span></td></tr><tr><td><strong>陨石打击</strong></td><td>特殊</td><td>神级</td><td>1</td><td>召唤陨石（超模）<br><span class='muted'>慎用/禁用</span></td></tr><tr><td><strong>时间扭曲</strong></td><td>特殊</td><td>神级</td><td>1</td><td>改变时间流速（超模）<br><span class='muted'>慎用/禁用</span></td></tr><tr><td><strong>神之模式</strong></td><td>特殊</td><td>神级</td><td>1</td><td>无敌向爆发（超模）<br><span class='muted'>慎用/禁用</span></td></tr>
+				<tr><th>附魔名</th><th>部位</th><th>最高等级</th><th>效果与数值</th></tr>
+				<tr><td><strong>glow</strong></td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>普通</strong></td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>非普通</strong></td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>稀有</strong></td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>史诗</strong></td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>传说</strong></td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>神话</strong></td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>神级</strong></td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>闪电打击</strong></td><td>武器</td><td>3</td><td>命中概率感电并追加伤害<br><span class='muted'>伤害/级 +2；基础触发 5%，每级 +2%</span></td></tr><tr><td><strong>生命窃取</strong></td><td>武器</td><td>5</td><td>命中回复生命<br><span class='muted'>基础回血 1.0，每级 +0.5</span></td></tr><tr><td><strong>流血</strong></td><td>武器</td><td>3</td><td>命中使目标流血<br><span class='muted'>持续 60t，每跳 1.0 伤/级</span></td></tr><tr><td><strong>处决</strong></td><td>武器</td><td>1</td><td>低血量目标处决增伤<br><span class='muted'>阈值 30% 血时伤害 ×1.5，仅 1 级</span></td></tr><tr><td><strong>连击</strong></td><td>武器</td><td>5</td><td>连续命中叠加伤害<br><span class='muted'>每击 +0.5，40t 重置</span></td></tr><tr><td><strong>击退控制</strong></td><td>武器</td><td>2</td><td>减少自身被击退<br><span class='muted'>减退 ×0.2/级</span></td></tr><tr><td><strong>闪烁</strong></td><td>武器</td><td>3</td><td>短距闪现类位移<br><span class='muted'>见游戏内说明</span></td></tr><tr><td><strong>冲击波</strong></td><td>武器</td><td>2</td><td>命中产生击退波<br><span class='muted'>见游戏内说明</span></td></tr><tr><td><strong>风暴烈焰</strong></td><td>武器</td><td>2</td><td>火焰风暴范围伤害<br><span class='muted'>神话级高伤附魔</span></td></tr><tr><td><strong>范围挖掘3x3</strong></td><td>镐</td><td>1</td><td>一次挖 3×3<br><span class='muted'>1 级</span></td></tr><tr><td><strong>范围挖掘5x5</strong></td><td>镐</td><td>1</td><td>一次挖 5×5<br><span class='muted'>1 级</span></td></tr><tr><td><strong>范围挖掘6x6</strong></td><td>镐</td><td>1</td><td>一次挖 6×6（超模）<br><span class='muted'>1 级，建议限权</span></td></tr><tr><td><strong>矿脉挖掘</strong></td><td>镐</td><td>1</td><td>连锁整条矿脉<br><span class='muted'>最多 64 块/次</span></td></tr><tr><td><strong>自动熔炼</strong></td><td>镐</td><td>1</td><td>挖矿自动烧成锭<br><span class='muted'>1 级</span></td></tr><tr><td><strong>透视感知</strong></td><td>镐</td><td>1</td><td>短暂看见周围矿<br><span class='muted'>1 级</span></td></tr><tr><td><strong>急速加成</strong></td><td>镐</td><td>3</td><td>挖矿短加速<br><span class='muted'>每级效果，持续 5s</span></td></tr><tr><td><strong>荆棘增强</strong></td><td>甲</td><td>3</td><td>反伤<br><span class='muted'>基础 10%，每级 +5%</span></td></tr><tr><td><strong>冰冻光环</strong></td><td>甲</td><td>2</td><td>冰冻周围敌人<br><span class='muted'>史诗</span></td></tr><tr><td><strong>火焰光环</strong></td><td>甲</td><td>2</td><td>灼烧周围敌人<br><span class='muted'>见配置</span></td></tr><tr><td><strong>生命恢复</strong></td><td>?</td><td>3</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>抗击退</strong></td><td>?</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>伤害减免</strong></td><td>甲</td><td>4</td><td>百分比减伤<br><span class='muted'>见配置</span></td></tr><tr><td><strong>狂暴模式</strong></td><td>?</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>隐身爆发</strong></td><td>?</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>速度加成</strong></td><td>?</td><td>2</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>跳跃加成</strong></td><td>?</td><td>2</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>无摔落伤害</strong></td><td>?</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>冲刺</strong></td><td>?</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>爆裂箭</strong></td><td>?</td><td>3</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>闪电箭</strong></td><td>?</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>毒箭</strong></td><td>?</td><td>3</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>穿透箭</strong></td><td>?</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>传送打击</strong></td><td>特殊</td><td>1</td><td>攻击附带位移打击<br><span class='muted'>慎用</span></td></tr><tr><td><strong>陨石打击</strong></td><td>特殊</td><td>1</td><td>召唤陨石（超模）<br><span class='muted'>慎用/禁用</span></td></tr><tr><td><strong>时间扭曲</strong></td><td>特殊</td><td>1</td><td>改变时间流速（超模）<br><span class='muted'>慎用/禁用</span></td></tr><tr><td><strong>神之模式</strong></td><td>特殊</td><td>1</td><td>无敌向爆发（超模）<br><span class='muted'>慎用/禁用</span></td></tr>
 			</table></div>
 			<p class="muted">数据来自本服 <code>AdvanceEnchantmentX config.yml</code>。神级/传说附魔（神之模式、陨石打击、时间扭曲、6×6 范围挖掘等）极易超模，PVP 建议禁用。</p>
 			<h3>ExcellentEnchants（75+）</h3>
@@ -353,25 +344,49 @@
 			<div class="categories">分类：<a href="#voicechat">语音</a></div>
 		</article>
 
-		<article class="article" id="dominion" data-search="Dominion 领地 标地 trust flag 保护 /dom">
+				<article class="article" id="dominion" data-search="Dominion 领地 标地 claim trust flag unclaim ban 旗标">
 			<div class="breadcrumbs"><a href="#top">首页</a> › Dominion</div>
-			<div class="article-header"><h1>Dominion 领地</h1><div class="sub">圈地 · 成员 · 权限标志</div></div>
-			<p>中文领地插件。用 <code>/dominion</code> 或 <code>/dom</code> 打开菜单，圈地后保护建筑不被拆、箱不被偷。</p>
-			<h3>怎么标一块地</h3>
+			<div class="article-header"><h1>Dominion 领地</h1><div class="sub">完整命令与旗标</div></div>
+			<p>圈地保护建筑与箱子。<code>/dom</code> 或 <code>/dominion</code>。权限 <code>dominion.default</code> / <code>dominion.admin</code>。</p>
+
+			<h3>完整命令</h3>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>命令</th><th>作用</th></tr>
+				<tr><td><code>/dominion claim [名称]</code></td><td>创建领地（自动圈或两点框选）</td></tr>
+				<tr><td><code>/dominion unclaim</code> / <code>remove</code></td><td>取消圈地 / 删除领地（需确认）</td></tr>
+				<tr><td><code>/dominion info</code></td><td>查看当前/指定领地</td></tr>
+				<tr><td><code>/dominion trust &lt;玩家&gt;</code> / <code>untrust</code></td><td>信任 / 移除信任</td></tr>
+				<tr><td><code>/dominion flag &lt;旗标&gt; [true|false]</code></td><td>开关权限旗标</td></tr>
+				<tr><td><code>/dominion flags</code> / <code>list</code></td><td>查看领地与旗标列表</td></tr>
+				<tr><td><code>/dominion rename</code> · <code>sethome</code> · <code>home</code> · <code>spawn</code></td><td>改名 · 设家 · 回家 · 传送</td></tr>
+				<tr><td><code>/dominion ban</code> / <code>unban &lt;玩家&gt;</code></td><td>领地封禁 / 解封</td></tr>
+				<tr><td><code>/dominion reload</code> · <code>help</code> · <code>version</code></td><td>重载 · 帮助 · 版本</td></tr>
+			</table></div>
+
+			<h3>完整旗标（flags）</h3>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>旗标</th><th>控制什么</th></tr>
+				<tr><td><code>build</code></td><td>放置/破坏方块</td></tr>
+				<tr><td><code>pvp</code></td><td>玩家伤害</td></tr>
+				<tr><td><code>firespread</code> · <code>flow</code> · <code>liquid</code> · <code>spread</code></td><td>火焰蔓延 / 液体流动 / 液体 / 蔓延</td></tr>
+				<tr><td><code>use</code> · <code>interact</code></td><td>方块使用 / 交互</td></tr>
+				<tr><td><code>container</code> · <code>hoppers</code></td><td>开箱 / 漏斗</td></tr>
+				<tr><td><code>tnt</code> · <code>explosion</code></td><td>TNT / 爆炸</td></tr>
+				<tr><td><code>animals</code> · <code>monsters</code></td><td>动物 / 怪物生成</td></tr>
+				<tr><td><code>teleport</code> · <code>walk</code></td><td>非成员传送 / 行走进入</td></tr>
+				<tr><td><code>sethome</code> · <code>bed</code> · <code>portal</code></td><td>设家 / 床 / 传送门</td></tr>
+				<tr><td><code>redstone</code></td><td>红石</td></tr>
+			</table></div>
+
+			<h3>怎么完整保护一块地</h3>
 			<ol class="steps">
-				<li><strong>快速圈地</strong><div class="detail"><code>/dom</code> →「创建领地」→ 以你为中心自动圈一块。</div></li>
-				<li><strong>或两点框选</strong><div class="detail">选第一点 → 选第二点（同世界）→ 创建。适合矩形基地。</div></li>
-				<li><strong>起名</strong><div class="detail">不能含空格和 <code>. § &amp; ~ ,</code>。可能扣钱（接经济时）。</div></li>
-				<li><strong>注意上限</strong><div class="detail">领地数量、长宽高、Y 范围有上限；不能与别的领地/出生点重叠。子领地须在父领地内。</div></li>
+				<li><strong>创建</strong><div class="detail"><code>/dom claim 家</code> 自动圈地，或两点框选。名称禁空格与 <code>. § &amp; ~ ,</code>。</div></li>
+				<li><strong>加人</strong><div class="detail"><code>/dom trust 好友</code>；踢人 <code>untrust</code>。也可 GUI 成员列表 + 权限组。</div></li>
+				<li><strong>关旗标</strong><div class="detail">访客关 <code>build</code>/<code>container</code>/<code>use</code>；环境关 <code>tnt</code>/<code>explosion</code>/<code>firespread</code>。</div></li>
+				<li><strong>封禁捣乱者</strong><div class="detail"><code>/dom ban 玩家</code>；解除 <code>unban</code>。</div></li>
+				<li><strong>确认信息</strong><div class="detail"><code>/dom info</code> 看范围、成员、旗标。</div></li>
 			</ol>
-			<h3>成员与权限（flag）</h3>
-			<ul class="bullets">
-				<li><strong>添加成员</strong>：好友可进领地；再配「成员权限」或权限组（如「朋友」开箱+开门）。</li>
-				<li><strong>访客</strong>：没加的人只吃访客权限——建议关 break / place / chest。</li>
-				<li><strong>环境 flag</strong>：关苦力怕炸、TNT、火焰蔓延、怪物生成等。</li>
-				<li>删除/转让要二次确认，不可撤销。</li>
-			</ul>
-			<p class="muted">命令参数以 <code>/dom</code> 补全为准。</p>
+			<p class="muted">删除/转让需二次确认；不能与其它领地/出生点重叠；面积与数量上限见 config。命令别名以 <code>/dom help</code> 补全为准。</p>
 			<div class="categories">分类：<a href="#dominion">领地</a></div>
 		</article>
 
