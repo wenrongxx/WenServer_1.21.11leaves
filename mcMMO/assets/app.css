@@ -1263,10 +1263,10 @@ a.back-home:active {
 }
 
 .wiki-header .inner .site-home,
+
 .wiki-header .site-home {
   display: inline-flex !important;
   align-items: center;
-  flex: 0 0 auto;
   margin-left: 0.5rem;
   padding: 0.3rem 0.75rem !important;
   border-radius: 999px !important;
@@ -1279,16 +1279,10 @@ a.back-home:active {
   box-shadow: 0 1px 0 #8a6514 !important;
   white-space: nowrap;
 }
-.wiki-header .site-home:link,
-.wiki-header .site-home:visited,
-.wiki-header .site-home:hover,
-.wiki-header .site-home:active,
+.wiki-header .site-home:link, .wiki-header .site-home:visited,
+.wiki-header .site-home:hover, .wiki-header .site-home:active,
 .wiki-header .site-home:focus {
   color: #1a1a1a !important;
   text-decoration: none !important;
-  background: linear-gradient(180deg, #f0c85a, #c49220) !important;
 }
 .wiki-header .site-home:hover { filter: brightness(1.1); }
-@media (max-width: 560px) {
-  .wiki-header .site-home { margin-left: 0.25rem; padding: 0.25rem 0.55rem !important; font-size: 0.75rem !important; }
-}
