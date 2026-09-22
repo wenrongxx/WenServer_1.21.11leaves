@@ -797,26 +797,12 @@
 			<tr><td>配方</td><td>强化工作台；量子经量子台；电容用 9× 上一档 + 更大粘液电容升级；<strong>无研究树</strong></td></tr>
 		</table></div>
 		<p class="muted">源：<a href="https://github.com/Sefiraat/Networks">Sefiraat/Networks</a>（NetworkQuantumStorage / NetworkRemote / NetworkSlimefunItems 等）。</p>
-		
-		<h3>零基础怎么用 Networks 大仓库</h3>
-		<p><strong>这个附属是什么：</strong>像 AE2 那样的「联网箱子」：放一台控制器，周围挂很多格子仓，再用一个「网格」统一查、统一取。</p>
-		<p><strong>你先要有：</strong>较多铁/金/电子料；会用强化工作台。建议家里已有一堆乱箱子再上这个。</p>
-		<ol class="steps"><li><strong>做「控制器」</strong><div class="detail">整个网络的主脑。放哪，网络就在哪。记住：<strong>一个网络只能有一个控制器</strong>。</div></li><li><strong>做「桥」扩展范围</strong><div class="detail">控制器不够大时，用桥把网络铺开。</div></li><li><strong>挂「单元」当箱子</strong><div class="detail">单元像双箱（54 格）。想更大就做「量子存储」（一格放 4096 个到几乎无限）。</div></li><li><strong>放「网格」</strong><div class="detail">网格是你的检索窗口：打字搜物品、拿东西、放东西。</div></li><li><strong>学习「导入/导出」</strong><div class="detail">Import 从普通箱子吸进网络；Export 往机器/箱子里吐。自动产线全靠它。</div></li><li><strong>自动合成</strong><div class="detail">「配方编码器」记住一个合成，「自动合成机」花 64 J 自动做。</div></li><li><strong>远程</strong><div class="detail">远程器四档：150 格 / 500 格 / 同维度不限 / 跨维度。要先绑定网格。</div></li><li><strong>别做的事</strong><div class="detail">别放两个控制器「合网」（会被拒绝）；量子仓记得看是否开着「丢弃溢出」。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>起网</strong>：做控制器放好（每网络仅 1 个），周围接<strong>桥</strong>扩图。</li>
-			<li><strong>挂仓</strong>：放 Cell（54 槽）或贪婪方块/桶；需要海量再上量子台做量子存储 1–8。</li>
-			<li><strong>开格子</strong>：放 Grid / 合成网格，检索与合成一体。</li>
-			<li><strong>进出货</strong>：Import（9 槽）贴源箱，Export/Grabber/Pusher 对接机器；可与粘液货运互连。</li>
-			<li><strong>自动合成</strong>：配方编码器写样板 → 自动合成机 64 J/次（Withholding 128 J 可扣留一组）。</li>
-			<li><strong>无线与远程</strong>：无线发射 500 J/2t；远程四档 150/500/同维不限/跨维——先绑定网络网格且区块加载。</li>
-			<li><strong>扩容升级</strong>：电容 1→4 用 9× 上一档；量子存储在量子工作台按 TYPE 升。</li>
-			<li><strong>清理</strong>：Purger 设过滤把垃圾堆清零；量子可开 void_excess 丢溢出。</li>
-			<li><strong>取存习惯</strong>：取出走 Cell→Withholding→贪婪→桶；放入走贪婪→桶→Cell。</li>
-		</ol>
-
-		<div class="categories">分类：<a href="#networks">存储</a>｜<a href="#community">社区附属</a></div>
+		<h3>怎么玩：从一堆箱子到联网仓库</h3>
+		<p>控制器联网后，所有仓变成一个「大超市」：统一搜、统一拿，还能自动合成。类似 AE2/应用能源。</p>
+		<p><strong>开始前你要有：</strong>较多铁/金/电子料；强化工作台；家里已有一堆乱箱子。</p>
+		<ol class="steps"><li><strong>做控制器</strong><div class="detail">网络主脑，放在仓库中间。一个网络<strong>只能有一个</strong>控制器。</div></li><li><strong>用桥铺范围</strong><div class="detail">控制器覆盖不够时，用桥把网络往外接。</div></li><li><strong>挂单元当箱子</strong><div class="detail">「单元」像双箱（54 格）。不够用就做「量子存储」（4096 个起，一直到几乎无限）。</div></li><li><strong>放网格</strong><div class="detail">网格=检索窗口：打字搜物品、存取。日常你只开这个界面。</div></li><li><strong>学会导入/导出</strong><div class="detail">Import 从普通箱子吸进网；Export 往机器吐。以后矿线、农场全靠它。</div></li><li><strong>自动合成（进阶）</strong><div class="detail">配方编码器记住配方 → 自动合成机 64 J/次自动做（Withholding 128 J 可扣留一组）。</div></li><li><strong>远程器</strong><div class="detail">四档：150 / 500 / 同维不限 / 跨维。要先在网格绑定，且区块加载。</div></li><li><strong>清理垃圾</strong><div class="detail">Purger 设过滤把垃圾清零；量子仓可开「丢弃溢出」防堵。</div></li><li><strong>取存习惯</strong><div class="detail">取出：单元 → 扣留合成器 → 贪婪 → 桶。放入：贪婪 → 桶 → 单元。</div></li></ol>
+		<p class="note">别放两个控制器试图合网（会被取消放置）。工业存储单元可用监视器接入。</p>
+分类：<a href="#networks">存储</a>｜<a href="#community">社区附属</a></div>
 	</article>
 
 	
@@ -853,25 +839,12 @@
 			<li>复制/删档检测可清零包；黑名单世界不自动捡。</li>
 		</ul>
 		<p class="muted">源：<a href="https://github.com/Sefiraat/DankTech2">Sefiraat/DankTech2</a>（Materials / Packs / PickupListener）。</p>
-		
-		<h3>零基础怎么用无底包</h3>
-		<p><strong>这个附属是什么：</strong>能装海量同一种物品的「背包外挂」。挖 10 万圆石也能自动进包；垃圾包则边捡边销毁垃圾。</p>
-		<p><strong>你先要有：</strong>合成材料（越高阶要越多贵重环）；准备去长时间挖矿。</p>
-		<ol class="steps"><li><strong>先做 T1「Dank 单元」</strong><div class="detail">指南搜 Dank Cell。用 8 个单元围一圈下界合金块，做出<strong>Dank 包 1</strong>。</div></li><li><strong>理解槽位</strong><div class="detail">包 1 只有 1 个槽，但这个槽能塞 256 个同种物品。包档越高：槽越多、每槽上限越大（包 9 可到「无限」）。</div></li><li><strong>指定装什么</strong><div class="detail">潜行 + 左键切换槽。把圆石放进槽里，以后圆石自动进这个槽。</div></li><li><strong>下矿试试</strong><div class="detail">挖圆石会自动吸入。满了会「作废」多余——所以贵重矿用高槽上限的包。</div></li><li><strong>垃圾包</strong><div class="detail">只销毁、不保存。打怪掉的腐肉、种子可以设成垃圾自动消失。</div></li><li><strong>放方块</strong><div class="detail">潜行 + 右键从包里放方块（会留 1 个），铺路垫脚很方便。</div></li><li><strong>回家卸货</strong><div class="detail">「Dank 卸货机」接货运，把包里的东西倒进大仓库。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>做 T1 Dank 单元</strong>（人造钻石核 + 铁圈）→ 用 8× 单元围下界合金块做 <strong>Dank 包 1</strong>。</li>
-			<li><strong>升级</strong>：8× 下一档单元 + 上一包 → 包 2…9；垃圾包用下界合金锭合成。</li>
-			<li><strong>设定槽</strong>：潜行+左键轮选槽；把目标物品放入对应槽（匹配自动吸）。</li>
-			<li><strong>下矿</strong>：包放身上自动捡匹配物；超上限会<strong>作废</strong>（红尘提示）——高价值矿别开太高阶垃圾包混装。</li>
-			<li><strong>垃圾包</strong>：只作废不存，清场用琥珀尘提示。</li>
-			<li><strong>放方块</strong>：潜行+右键从包放置纯方块（总是留 1）；适合垫脚/铺路。</li>
-			<li><strong>回库</strong>：Dank 卸货机（留 1/槽）接货运倒进仓库。</li>
-			<li><strong>安全</strong>：包必须不可堆叠；复制检测会清零实例——别拿来历不明包。</li>
-		</ol>
-
-		<div class="categories">分类：<a href="#danktech">存储</a>｜<a href="#community">社区附属</a></div>
+		<h3>怎么玩：无底下矿</h3>
+		<p>一种物品能塞几十万甚至无限的便携包；垃圾包则边捡边销毁。</p>
+		<p><strong>开始前你要有：</strong>能合成高阶环/锭；准备长时间挖矿。</p>
+		<ol class="steps"><li><strong>做 T1 Dank 单元</strong><div class="detail">指南搜 Dank Cell；8 个单元围下界合金块 = Dank 包 1。</div></li><li><strong>理解槽位与上限</strong><div class="detail">包 1 只有 1 槽但能装 256 个同种物品。档位升高：槽更多、单槽上限更大（包 9 接近无限）。</div></li><li><strong>指定槽装什么</strong><div class="detail">潜行+左键切换槽；把圆石放进槽，之后圆石自动吸进该槽。</div></li><li><strong>下矿试手感</strong><div class="detail">挖矿自动吸入。满了会作废多余（红尘提示）——贵重矿用高上限档。</div></li><li><strong>垃圾包清杂物</strong><div class="detail">腐肉/种子等设成垃圾，自动作废（琥珀尘提示）。</div></li><li><strong>从包里放方块</strong><div class="detail">潜行+右键放纯方块（会留 1），铺路垫脚很方便。</div></li><li><strong>回家卸货</strong><div class="detail">Dank 卸货机（每槽留 1）接货运，倒进大仓库。</div></li></ol>
+		<p class="note">包必须不可堆叠。来历不明的包可能被防复制检测清零，别乱捡。</p>
+分类：<a href="#danktech">存储</a>｜<a href="#community">社区附属</a></div>
 	</article>
 
 	
@@ -906,18 +879,12 @@
 			<li>模具 基础/强化/高级；热电偶；箱核心 基础/强化/高级；通信方块、显示面板；桶升级（工业/蓬松桶）。</li>
 		</ul>
 		<p class="muted">源：<a href="https://github.com/ybw0014/SimpleStorage">ybw0014/SimpleStorage</a>。无作废逻辑：满箱直接停收。</p>
-		<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>材料线</strong>：矿块循环（铬↔铈↔锑↔铼）→ 粉 → 锭；扎马克→模具（模具压机 20/30/40s）。</li>
-			<li><strong>压板</strong>：金属压机：模具+4 合金 → 板（20/40/60/120s）。</li>
-			<li><strong>做箱</strong>：铁（铁块+基础核心）→ 金（24k 金+强化核心）→ 钻石（钻石块+高级核心+强化铀）。</li>
-			<li><strong>物品单元</strong>：末影合成器：钻石箱 + 能量 300s。</li>
-			<li><strong>网络箱</strong>：复合板+显示面板+通信方块+钻石箱；放中间，5 格内自动聚合物品单元（+桶升级目标）。</li>
-			<li><strong>管理</strong>：满箱停收（无作废）；大仓用网络箱 + 周围摆物品单元。</li>
-		</ol>
-
-		<div class="categories">分类：<a href="#simplestorage">存储</a>｜<a href="#community">社区附属</a></div>
+		<h3>怎么玩：分页巨箱到网络箱</h3>
+		<p>一页 45 格的「巨箱」，铁 2 页到钻石 6 页；网络箱把周围单元聚成一口大仓。</p>
+		<p><strong>开始前你要有：</strong>金属与模具产线；电力。</p>
+		<ol class="steps"><li><strong>先跑材料</strong><div class="detail">矿块循环（铬↔铈↔锑↔铼）→ 粉 → 锭。</div></li><li><strong>做模具</strong><div class="detail">模具压机：扎马克→模具，20/30/40 秒。</div></li><li><strong>压板</strong><div class="detail">金属压机：模具+4 合金 → 板，20/40/60/120 秒。</div></li><li><strong>升级箱子</strong><div class="detail">铁（铁块+基础核心）→ 金（24k 金+强化核心）→ 钻石（钻石块+高级核心+强化铀）。</div></li><li><strong>物品单元</strong><div class="detail">末影合成器：钻石箱 + 能量 300 秒 = 物品单元（6 页 270 格）。</div></li><li><strong>网络箱</strong><div class="detail">复合板+显示面板+通信方块+钻石箱。放中间，5 格内自动聚合物品单元。</div></li><li><strong>日常用法</strong><div class="detail">找东西开网络箱；满箱会停收（没有作废），所以别让产线堵死。</div></li></ol>
+		<p class="note">本服范围 5、检查间隔 4 粘液 tick。大仓=网络箱+周围一圈物品单元。</p>
+分类：<a href="#simplestorage">存储</a>｜<a href="#community">社区附属</a></div>
 	</article>
 
 		
@@ -964,24 +931,12 @@
 			<li>改造台 · 修理台 · 换件台</li>
 		</ul>
 		<p class="muted">源：<a href="https://github.com/Sefiraat/SlimeTinker">Sefiraat/SlimeTinker</a>（TinkersMaterialsCore + 材料包）。</p>
-		
-		<h3>零基础怎么做匠魂工具</h3>
-		<p><strong>这个附属是什么：</strong>工具可以拆成「刀头+绑定+杆」自己拼，换零件、上强化，像搭积木一样做镐和剑。</p>
-		<p><strong>你先要有：</strong>强化工作台、一些金属、熔炉。建议主体材料线已经能出锭。</p>
-		<ol class="steps"><li><strong>先摆好四件套台子</strong><div class="detail">工作台、工具台、盔甲台、匠魂冶炼炉。都在指南「粘液匠魂」分类。</div></li><li><strong>熔一锅金属</strong><div class="detail">把铁/金/钻石等丢进冶炼炉熔成液体。</div></li><li><strong>浇铸零件</strong><div class="detail">用<strong>铸模</strong>浇出：镐头、工具杆、剑刃等。绑定和衬垫在工作台直接做。</div></li><li><strong>拼一把镐</strong><div class="detail">镐头 + 绑定 + 杆 = 镐。放在工具台拼。</div></li><li><strong>认识特性</strong><div class="detail">不同金属的零件有不同隐藏特性（挖得快、自动熔炼等）。指南/材料表里写着。</div></li><li><strong>升级阶段</strong><div class="detail">这把工具会从「石质」阶段一路升到「下界合金」阶段，每升一阶解锁更多强化槽。</div></li><li><strong>上强化</strong><div class="detail">改造台上加「时运类、急迫、伤害」等词条。可与原版附魔叠加。</div></li><li><strong>坏了怎么办</strong><div class="detail">工具用到坏会「停工」而不是消失。去修理台 + 修理套件 + 同种金属修。</div></li><li><strong>换件省钱</strong><div class="detail">想换刀头材质？换件台换掉，等级和强化<strong>保留</strong>。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>开局</strong>：做工作台、工具台、匠魂冶炼炉；先铸<strong>石质</strong>头/杆/绑定拼镐。</li>
-			<li><strong>选金属</strong>：看特性（自动熔、3×3、虚空伤等）决定刀刃材料；绑定/衬垫在工作台做。</li>
-			<li><strong>晋升</strong>：用到升级（石→金→铁→钻石→下界合金）开强化槽；盔甲皮→链→铁→钻→下界。</li>
-			<li><strong>强化</strong>：改造台上掉落/急迫/伤害/耐久/经验词；可与原版附魔叠加。</li>
-			<li><strong>换件</strong>：换件台换头/杆不丢等级与强化——坏了修件。</li>
-			<li><strong>修理</strong>：工具不碎只会停工；修理台 + 修理套件 + 同种金属。</li>
-			<li><strong>毕业目标</strong>：一把下界合金主武 + 一把主镐 + 一套主甲。</li>
-		</ol>
-
-		<div class="categories">分类：<a href="#slimetinker">工具</a>｜<a href="#community">社区附属</a></div>
+		<h3>怎么玩：自己拼一把会成长的镐</h3>
+		<p>工具=刀头+绑定+杆，盔甲=板+衬垫+锁环。换件、上强化、阶段晋升，像搭积木。</p>
+		<p><strong>开始前你要有：</strong>强化工作台、金属锭、熔炉。主体材料线已通更好。</p>
+		<ol class="steps"><li><strong>摆好四件台子</strong><div class="detail">工作台、工具台、盔甲台、匠魂冶炼炉（指南「粘液匠魂」）。</div></li><li><strong>熔金属</strong><div class="detail">金属丢进匠魂冶炼炉熔成液体。</div></li><li><strong>浇铸零件</strong><div class="detail">用铸模浇镐头、杆、剑刃等。绑定/衬垫在工作台直接做。</div></li><li><strong>拼第一把镐</strong><div class="detail">镐头+绑定+杆，在工具台合成。你已有成品。</div></li><li><strong>看金属特性</strong><div class="detail">不同金属的零件有不同特性（自动熔炼、3×3 挖掘等）。查材料表再选。</div></li><li><strong>升阶段</strong><div class="detail">使用中会从石质阶升到下界合金阶，每升阶开强化槽。</div></li><li><strong>上强化</strong><div class="detail">改造台加时运类/急迫/伤害/耐久/经验词；可与原版附魔叠加。</div></li><li><strong>坏了怎么修</strong><div class="detail">工具用坏只是停工。修理台+修理套件+同种金属。</div></li><li><strong>换件省钱</strong><div class="detail">换件台换刀头/杆，等级与强化保留。</div></li></ol>
+		<p class="note">建议只精养「一把主镐+一把主武」。毕业：下界合金阶 + 你想要的强化组合。</p>
+分类：<a href="#slimetinker">工具</a>｜<a href="#community">社区附属</a></div>
 	</article>
 
 	
@@ -1022,25 +977,12 @@
 			<tr><td>研究</td><td>「高级料理」32 点（键位自 645750）</td></tr>
 		</table></div>
 		<p class="muted">源：<a href="https://github.com/SchnTgaiSpock/Gastronomicon">SchnTgaiSpock/Gastronomicon</a>。</p>
-		
-		<h3>零基础怎么做菜</h3>
-		<p><strong>这个附属是什么：</strong>大量新菜谱和「完美食物」（更强的版本）。和异域花园是好搭档。</p>
-		<p><strong>你先要有：</strong>小麦/胡萝卜等基础作物；有炉子和碗。玩过原版烹饪就够。</p>
-		<ol class="steps"><li><strong>先弄种子</strong><div class="detail">打草有小概率掉美食家种子；杀鱿鱼、山羊、鲑鱼等掉特殊食材。</div></li><li><strong>种一小块菜园</strong><div class="detail">和种小麦一样种下。异域花园的水果能让菜谱更全。</div></li><li><strong>做「烹饪工作台」</strong><div class="detail">这是主要的菜台，9 格摆材料，不耗电。</div></li><li><strong>跟着指南做第一道菜</strong><div class="detail">挑材料最少的菜。成功出餐。</div></li><li><strong>认识「熟练度」</strong><div class="detail">你每手动做一道<strong>那种菜</strong>，它的熟练度 +1。熟练越高，出「完美食物」概率越高（最高 25%）。</div></li><li><strong>完美食物更强</strong><div class="detail">完美版的回血/经验/增益大约 ×1.25，药水类效果还会 +1 级。慢慢把常吃的菜刷高。</div></li><li><strong>进阶台子</strong><div class="detail">磨坊磨粉；发酵罐要水；多眼灶分低温/中温/高温；冰箱做冷菜。电厨要等你熟练度到 256 训「厨师机器人」才自动化。</div></li><li><strong>头衔</strong><div class="detail">做多了会有「新手厨师 → 学徒 → 经验丰富 → 三星大厨」称号。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>搞种子</strong>：打草/高草/海草；杀鱿鱼/守卫者/山羊/鲑鱼（35%）拿特殊料。</li>
-			<li><strong>园子</strong>：配合异域花园水果开全菜谱。</li>
-			<li><strong>台子</strong>：烹饪工作台（免费 9 格）→ 磨坊磨粉 → 发酵罐（备水）→ 多眼灶看温度 → 冰箱冷却。</li>
-			<li><strong>刷熟练</strong>：反复手动做同一道菜，每道 +1。</li>
-			<li><strong>冲完美</strong>：完美概率 = min(熟练/864, 25%)；完美版治疗/XP 等 ×1.25，药水 +1 级。</li>
-			<li><strong>自动化</strong>：熟练 256 后训<strong>厨师机器人</strong>，电厨 60/speed 秒出餐。</li>
-			<li><strong>渔获</strong>：渔网 240/speed 秒；狩猎陷阱触发约 60–180s。</li>
-			<li><strong>头衔</strong>：1/50/100/200 四档展示。</li>
-		</ol>
-
-		<div class="categories">分类：<a href="#gastronomicon">食物</a>｜<a href="#community">社区附属</a></div>
+		<h3>怎么玩：从煮菜到完美食物</h3>
+		<p>大量新菜谱。熟练做同一道菜会提高「完美食物」概率（更强版本，上限 25%）。</p>
+		<p><strong>开始前你要有：</strong>基础农作物、炉子、碗。玩过原版烹饪即可。</p>
+		<ol class="steps"><li><strong>弄种子和食材</strong><div class="detail">打草掉种子（约 5～15%）；杀鱿鱼/山羊/鲑鱼等掉特殊食材（约 35%）。</div></li><li><strong>种菜园</strong><div class="detail">和种小麦一样。配合异域花园水果，菜谱更全。</div></li><li><strong>做烹饪工作台</strong><div class="detail">9 格摆材料，不耗电。是你主要的菜台。</div></li><li><strong>做第一道最便宜的菜</strong><div class="detail">看指南挑材料最少的。成功出餐。</div></li><li><strong>理解熟练度</strong><div class="detail">每手动做一次<strong>那道菜</strong>+1。熟练/864 就是完美概率，封顶 25%。</div></li><li><strong>完美食物强在哪</strong><div class="detail">回血/经验/增益约 ×1.25；药水类 +1 级。常吃的菜优先刷高。</div></li><li><strong>进阶台子</strong><div class="detail">磨坊磨粉；发酵罐要水；多眼灶分低/中/高温；冰箱做冷菜。</div></li><li><strong>自动化</strong><div class="detail">熟练 256 后训「厨师机器人」，电厨 60/speed 秒出餐。</div></li><li><strong>副业</strong><div class="detail">渔网 240/speed 秒收鱼；狩猎陷阱约 60～180 秒触发一次。</div></li></ol>
+		<p class="note">头衔：0 不是厨师 / 1 新手 / 50 学徒 / 100 经验 / 200 三星大厨。</p>
+分类：<a href="#gastronomicon">食物</a>｜<a href="#community">社区附属</a></div>
 	</article>
 
 	
@@ -1082,25 +1024,12 @@
 			<li>本服：突变位 2 · 突变率 30% · 失败率 0% · 基础 14s · 痛苦 2%/0.5s（约 6 分力竭）。</li>
 		</ul>
 		<p class="muted">源：<a href="https://github.com/ybw0014/GeneticChickengineering-Reborn">ybw0014/GeneticChickengineering-Reborn</a>。</p>
-		
-		<h3>零基础怎么养资源鸡</h3>
-		<p><strong>这个附属是什么：</strong>鸡有「基因」，配种能配出下金蛋（真的出金子、钻石、下界合金）的鸡。</p>
-		<p><strong>你先要有：</strong>小麦喂鸡、抓鸡工具、一些电力（测序仪要电）。比纯农业烧脑一点。</p>
-		<ol class="steps"><li><strong>做「鸡网」抓野生鸡</strong><div class="detail">右键鸡 → 变成「口袋鸡」带着走。</div></li><li><strong>做「基因测序仪」</strong><div class="detail">通电后把鸡放进去，约 30 秒出 DNA 报告（像 BBCCddffssww 这样的字母串）。</div></li><li><strong>看懂字母</strong><div class="detail">大写 B = 基因显性，小写 b = 隐性。一共有 6 组字母（b c d f s w）。全隐性的鸡（全小写）产稀有资源。</div></li><li><strong>配种</strong><div class="detail">「私笼」放两只成鸡，约 60 秒出小鸡。小鸡基因是父母各抽一半组合出来的。</div></li><li><strong>怎么配出想要的</strong><div class="detail">想稳定出钻石鸡？就让「钻石相关」的隐性基因越来越多：把带该隐性的鸡反复配，直到一对都是纯隐性（aa）。</div></li><li><strong>开始产资源</strong><div class="detail">满足条件后，鸡会定时掉资源。越稀有（阶 0 下界合金）越慢；越纯（DNA 强度高）越快。</div></li><li><strong>兴奋舱加速</strong><div class="detail">把鸡放进去提速，越高级的舱越快（耗电也越高）。</div></li><li><strong>照顾它们</strong><div class="detail">鸡会累、会「痛苦」。用小麦/甜菜/西瓜/南瓜喂；生病用康复舱（喂种子治疗）。</div></li><li><strong>从容易的开始</strong><div class="detail">先养 63 号「羽毛鸡」、47 号「圆石鸡」练手，再冲 0 号下界合金鸡。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>捕鸡</strong>：鸡网抓野生 → 口袋鸡。</li>
-			<li><strong>测序</strong>：基因测序仪 30s 显 DNA（12 字符如 BBCCddffSSww）。</li>
-			<li><strong>配种</strong>：私笼 60s 两成体→幼体；每亲各抽一等位。要隐性产物就堆 <strong>aa</strong> 对。</li>
-			<li><strong>看出货</strong>：资源时间 =(14+tier−2×强度)/速度。纯 T0 约 2–14s，T6 约 20s。</li>
-			<li><strong>兴奋舱加速</strong>：250/5/1 → 强化 1000/10/2 → 终极 5000/50/10。</li>
-			<li><strong>护理</strong>：痛苦 2%/0.5s 会疲劳（约 6 分力竭）；康复舱种子治疗 0.25 HP/个；喂小麦/甜菜/西瓜/南瓜。</li>
-			<li><strong>生长舱</strong>（默认关）：60s + 整组种子 → 成体。</li>
-			<li><strong>目标鸡</strong>：先 63 羽毛、47 圆石等量产，再冲 0 下界合金 / 1 钻石（全隐 T6）。</li>
-		</ol>
-
-		<div class="categories">分类：<a href="#geneticchick">生物</a>｜<a href="#community">社区附属</a></div>
+		<h3>怎么玩：配出下钻石的鸡</h3>
+		<p>鸡有 6 组基因，孟德尔遗传。全隐性的鸡产稀有资源（钻石、下界合金…共 64 种）。</p>
+		<p><strong>开始前你要有：</strong>小麦喂鸡、鸡网、电力（测序仪）。比纯农业费脑，但极能产。</p>
+		<ol class="steps"><li><strong>鸡网抓野生鸡</strong><div class="detail">右键鸡 → 口袋鸡，随身带走。</div></li><li><strong>测序仪读 DNA</strong><div class="detail">通电放入鸡，约 30 秒出 12 字符报告，如 BBCCddffSSww。</div></li><li><strong>看懂字母</strong><div class="detail">大写=显性，小写=隐性；6 组是 b c d f s w。全小写（全隐性）才稳定产稀有。</div></li><li><strong>私笼配种</strong><div class="detail">放两只成鸡，约 60 秒出小鸡。子代基因=父母各抽一等位组合。</div></li><li><strong>怎么配想要的</strong><div class="detail">目标资源对应某组隐性。把带该隐性的鸡反复互配，直到一对都是纯隐性（aa），产量才稳定。</div></li><li><strong>开始收资源</strong><div class="detail">满足条件后定时掉落。阶 0（下界合金）最慢，DNA 纯度越高越快。</div></li><li><strong>时间怎么算</strong><div class="detail">约 (14+阶−2×纯度)/速度 秒一次。兴奋舱能加速（250/5/1 → 终极 5000/50/10）。</div></li><li><strong>照顾健康</strong><div class="detail">会累、会痛苦（约 2%/0.5s）。喂小麦/甜菜/西瓜/南瓜；康复舱用种子治疗（0.25 HP/个）。</div></li><li><strong>练手目标</strong><div class="detail">先 63 羽毛鸡、47 圆石鸡，再冲 0 下界合金鸡、1 钻石鸡。</div></li></ol>
+		<p class="note">生长舱默认关着。鸡的健康 0–4：低于 0.5 力竭、低于 2 疲劳，先治再配。</p>
+分类：<a href="#geneticchick">生物</a>｜<a href="#community">社区附属</a></div>
 	</article>
 
 		
@@ -1160,24 +1089,12 @@
 			<li>树/农场生长、动力基岩、物品更新器、齿轮变形器、高级铁砧、无尽工作台、附魔/去附魔、高阶 GEO、生物数据注入、模拟室、筛子底座；虚空/无尽电容。</li>
 			<li>无尽装备附魔可极高（如锋利 20 / 抢夺 10）。</li>
 		</ul>
-		
-		<h3>零基础怎么看无尽科技</h3>
-		<p><strong>这个附属是什么：</strong>粘液的「终局 DLC」：超级矿机、超级发电机、「奇点」压几千个金属成一个、无尽装备。数字会很大，是后期目标。</p>
-		<p><strong>你先要有：</strong>完整电力网、Networks 或大箱子、粉碎机产线。中期玩家再进。</p>
-		<ol class="steps"><li><strong>先看石矿机</strong><div class="detail">它自动产矿物，但要吃很多电（基础 360 J/t）。先确保电网撑得住。</div></li><li><strong>发电升级</strong><div class="detail">水力 9 J/s 一路到无尽面板 90,000 J/s。功率不够就别开大矿机。</div></li><li><strong>存东西</strong><div class="detail">「存储单元」从 6400 升到 16 亿。用「存储锻造台」升级时<strong>不丢物品</strong>。</div></li><li><strong>理解「奇点」</strong><div class="detail">比如「铜奇点」要 2400 个铜锭压成 1 个。压缩圆石 5 级 = 59,049 圆石。这是「量变到质变」。</div></li><li><strong>做无尽锭</strong><div class="detail">攒齐奇点和材料，在无尽工作台做。然后做无尽装备（附魔可以到锋利 20 这种夸张数值）。</div></li><li><strong>反应堆</strong><div class="detail">1 个无尽锭能烧约 1 天现实时间，发 180,000 J/s。终极能源。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>攒材料</strong>：石矿机四阶扩产（基础→无尽）；配合工业 UU 与粉碎线。</li>
-			<li><strong>发电阶梯</strong>：水力 9 J/s → 地热 90 → 太阳 180 → 天体 750 → 虚空板 3600 → 无尽板 90000；终局无尽反应堆 180000 J/s。</li>
-			<li><strong>存储</strong>：存储锻造台把单元升到无尽 1.6e9（保留物品）。</li>
-			<li><strong>奇点</strong>：金属锭 2400 / 原版 640–1280 / 下界合金 160 / 无尽锭 160；奇点构造器 1/t，无尽构造器 32/t。</li>
-			<li><strong>虚空线</strong>：虚空采集 960t→碎片；无尽虚空采集快 32 倍。</li>
-			<li><strong>合成器</strong>：资源合成器 1e6 J/次做合金包与面板。</li>
-			<li><strong>毕业</strong>：无尽锭 + 奇点做无尽装备（附魔可到锋利 20）；模拟室挂生物资源。</li>
-		</ol>
-
-		<div class="categories">分类：<a href="#infinityexp">工业</a>｜<a href="#community">社区附属</a></div>
+		<h3>怎么玩：终局无尽线</h3>
+		<p>超级矿机、超级发电、「奇点」把几千金属压成一个、无尽装备。数字夸张，是后期 DCL。</p>
+		<p><strong>开始前你要有：</strong>完整电力、大仓库（Networks 更好）、粉碎产线。中期后再进。</p>
+		<ol class="steps"><li><strong>先评估电力</strong><div class="detail">石矿机基础就要 360 J/t。电不够就先升级发电（水力→地热→太阳→虚空板）。</div></li><li><strong>矿机四阶</strong><div class="detail">基础→进阶→虚空→无尽：速度 1/2/4/16，耗电 360 到 23040 J/t。矿几率与回退圆石见机制表。</div></li><li><strong>存储升级</strong><div class="detail">单元 6400→16 亿。存储锻造台升级<strong>不丢物品</strong>。</div></li><li><strong>搞懂奇点</strong><div class="detail">铜奇点=2400 铜锭；金/铁=1280；钻石类=640；下界合金=160。压缩圆石 5 级=59049。</div></li><li><strong>造奇点</strong><div class="detail">奇点构造器 1/t（无尽构造器 32/t）。慢慢压。</div></li><li><strong>做无尽锭与装备</strong><div class="detail">奇点+材料在无尽工作台做无尽锭；装备附魔可到锋利 20 级这种数值。</div></li><li><strong>终极电</strong><div class="detail">无尽反应堆：180000 J/s，1 无尽锭烧约 1 天。</div></li></ol>
+		<p class="note">资源合成器一次 1e6 J，做合金包与面板。虚空采集：960t 出 1 碎片。</p>
+分类：<a href="#infinityexp">工业</a>｜<a href="#community">社区附属</a></div>
 	</article>
 
 	
@@ -1194,20 +1111,12 @@
 			<tr><td>自动厨房</td><td>512 缓冲 · 16 J/次（联动 KITCHEN）</td></tr>
 		</table></div>
 		<p>含生长舱催熟、无线输能、材料蜂巢等。开源 <code>ProfElements/DynaTech</code>。</p>
-		
-		<h3>零基础怎么用动力科技</h3>
-		<ol class="steps"><li><strong>先用厨用发电机</strong><div class="detail">烧食物发电，便宜。</div></li><li><strong>星尘发大电</strong><div class="detail">1 星尘烧 32 刻，1024 J/t。</div></li><li><strong>自动厨房做菜</strong><div class="detail">16 J 做一道，省得手点。</div></li><li><strong>生长舱催熟</strong><div class="detail">加速作物。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>发电</strong>：厨用（甜菜→南瓜派燃料阶）→ 星尘 1024 J/t（1 星尘 32t）→ 龙蛋 32 J/t（蛋在上）。</li>
-			<li><strong>削片</strong>：丢耐久物发电 8 J/t。</li>
-			<li><strong>产线</strong>：材料蜂巢产原料；生长舱催熟；自动厨房 16 J/次做菜。</li>
-			<li><strong>无线输能</strong>铺线减电缆。</li>
-			<li><strong>与美食家</strong>：电厨/自动厨房联动出餐。</li>
-		</ol>
-
-		<div class="categories">分类：<a href="#dynatech2">能源</a>｜<a href="#community">社区附属</a></div>
+		<h3>怎么玩：动力科技补产线</h3>
+		<p>杂项发电机+自动厨房+生长舱，把生活线补全。</p>
+		<p><strong>开始前你要有：</strong>金属与电力基础。</p>
+		<ol class="steps"><li><strong>厨用发电机起步</strong><div class="detail">烧食物阶（甜菜→南瓜派）发电，16 J/t。便宜好用。</div></li><li><strong>星尘发大电</strong><div class="detail">1 星尘烧 32 刻，1024 J/t，缓冲约 3.2 万。</div></li><li><strong>龙蛋/削片</strong><div class="detail">蛋在上 32 J/t；丢耐久物削片 8 J/t。</div></li><li><strong>自动厨房</strong><div class="detail">16 J/一道，做菜不手点。</div></li><li><strong>生长舱</strong><div class="detail">催熟作物；材料蜂巢产原料。</div></li></ol>
+		<p class="note">和美食家联用最划算。</p>
+分类：<a href="#dynatech2">能源</a>｜<a href="#community">社区附属</a></div>
 	</article>
 
 	
@@ -1223,20 +1132,12 @@
 			<tr><td>基准</td><td>泥土 1 · 原木 4 · 末影珠 8 · 红石/煤 16 · 铁/金/铜 32 · 基础电路 1024 · 钻石 1028 · 下界合金 4096 · 下界之星 16384 · 龙蛋 32768</td></tr>
 		</table></div>
 		<p>尘 4→块、块压 1→块。开源 <code>Sefiraat/EMCTech</code>。</p>
-		
-		<h3>零基础怎么用 EMC</h3>
-		<ol class="steps"><li><strong>分解机存 EMC</strong><div class="detail">把物品变 EMC（并记住它的价）。</div></li><li><strong>物化机取物</strong><div class="detail">花 EMC 取回已记住的物品。</div></li><li><strong>像银行</strong><div class="detail">便宜货存一堆，高价货随时取。合成新品会抬价（×1.1）。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>分解机</strong>：先做模板；把物品转 EMC 并首次<strong>记录价</strong>。</li>
-			<li><strong>物化机</strong>：花 EMC 取出已记录物品；Mk1–5 越快容量越大（1k→10M）。</li>
-			<li><strong>定价</strong>：合成价 =(Σ输入×1.1)/产量；合理刷合成品抬 EMC。</li>
-			<li><strong>扩产</strong>：泥土 1、原木 4 起步；钻石 1028、下界合金 4096 做高价锚。</li>
-			<li><strong>注意</strong>：能耗随 EMC 涨（分解 EMC/10，物化 EMC）；10M 封顶。</li>
-		</ol>
-
-		<div class="categories">分类：<a href="#emctech2">能源</a>｜<a href="#community">社区附属</a></div>
+		<h3>怎么玩：把物资存成 EMC</h3>
+		<p>物品→EMC→再取出。像银行，适合调节库存。</p>
+		<p><strong>开始前你要有：</strong>强化工作台与一定材料量。</p>
+		<ol class="steps"><li><strong>做分解机</strong><div class="detail">要模板。把物品转成 EMC，并<strong>第一次记录价格</strong>。</div></li><li><strong>做物化机</strong><div class="detail">花 EMC 取回已记录物品。Mk1–5 越高档越快越大（1k→10M）。</div></li><li><strong>看定价</strong><div class="detail">合成价=(Σ输入×1.1)/产量。合理做高价合成抬 EMC。</div></li><li><strong>实战用法</strong><div class="detail">泥土/原木当零钱（1/4）；钻石 1028、下界合金 4096 当大额。</div></li><li><strong>注意耗电</strong><div class="detail">分解约 EMC/10，物化约 EMC，都封顶 10M。</div></li></ol>
+		<p class="note">尘 4 合块、块压 1 合块，方便堆 EMC。</p>
+分类：<a href="#emctech2">能源</a>｜<a href="#community">社区附属</a></div>
 	</article>
 
 		
@@ -1247,25 +1148,12 @@
 		<p>增加奇异果树、灌木与菜肴向产物；与美食家联动。</p>
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>机制 / 数值</th></tr><tr><td>掉苗</td><td>破坏草/高草/蕨等；树约 <strong>22%</strong>、灌木约 <strong>16%</strong>（再乘方块破坏掉率）</td></tr><tr><td>配置 grass-drops</td><td>本服全开：麦种、橡树苗、樱桃/李/桃/橘/石榴/火龙果/椰子/酸橙/苹果橡木等；番茄/葡萄/茶/洋葱/玉米/辣椒/生菜/卷心菜/大蒜/菠萝/蔓越莓/黑莓/接骨木/红茶藨子/芥末等灌木</td></tr><tr><td>生成</td><td>auto-generate-plants: true；世界黑名单 world_nether / world_the_end</td></tr><tr><td>几率配置</td><td>TREE 22 / BUSH 16</td></tr><tr><td>玩法链</td><td>剪草采苗 → 果园 → 果实进美食家菜谱或交易</td></tr></table></div>
 		<p class="muted">开源 Slimefun-Addon-Community/ExoticGarden。</p>
-		
-		<h3>零基础怎么做果园</h3>
-		<p><strong>这个附属是什么：</strong>在草地/树苗里加了一堆水果树和蔬菜灌木。剪草可能掉「树苗」「灌木苗」，种下去就能反复收获水果。给美食家做菜，或卖给玩家。</p>
-		<p><strong>你先要有：</strong>剪刀（或空手）、泥土、一点耐心。不用机器、不用研究也能玩。</p>
-		<ol class="steps"><li><strong>准备一块地</strong><div class="detail">找平坦草地，挖 3～5 格宽的垄，方便走动采摘。不用围栏也行，后期再自动化。</div></li><li><strong>去「剪草」拿苗</strong><div class="detail">对着<strong>草方块、短草、高草、蕨</strong>挥剪刀或手打。破坏后有机会掉树苗或灌木苗（本服树约 22%、灌木约 16%）。高草掉率更划算，优先打高草。</div></li><li><strong>看懂苗的名字</strong><div class="detail">例如「樱桃树苗」「葡萄灌木」。树苗会长成树；灌木直接结果。名字带水果的都是有用的。</div></li><li><strong>种下</strong><div class="detail">和原版树苗一样：土上右键/对着地种下。树苗之间隔 2～3 格，免得挤在一起。</div></li><li><strong>等长大</strong><div class="detail">树要长一会儿；灌木更快。别在树苗期用斧砍掉。</div></li><li><strong>收获</strong><div class="detail">树上的果实方块可以摘/打掉；灌木上的果实同理。掉进背包就成功了。</div></li><li><strong>做第二块田</strong><div class="detail">把收获的果子拿去做菜（见美食家）或卖钱。想要稀有水果就回去继续剪高草。</div></li></ol>
-		<p><strong>新手常见问题：</strong>「剪了半天不掉？」→ 用剪刀去打<strong>高草/大型蕨</strong>；下界/末地不会长这些植物。</p>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>清出草场当苗圃</strong>：用剪刀或空手大量打草方块、短草/高草、蕨/大型蕨。树苗与灌木按掉率出现（本服树约 22%、灌木约 16%）。高草/大型蕨更值得刷。</li>
-			<li><strong>分品种种下</strong>：果树苗当原版树苗种在泥土/草上；灌木直接种。建议按品种分区插告示牌（樱桃、椰子、柠檬、石榴、火龙果…；番茄、葡萄、茶…）。</li>
-			<li><strong>成熟与采收</strong>：果树长大后果实可摘（右键/破坏果实方块）；灌木直接结果。注意别用斧连根砍掉树苗期。</li>
-			<li><strong>扩产</strong>：一块 9×9～16×16 果园 + 漏斗/货运收果实箱；需要稀有苗就继续剪高草。</li>
-			<li><strong>用处</strong>：① 卖给美食家玩家做菜；② 自用进美食家菜谱（本服异域菜谱<strong>开启</strong>）；③ 装饰基地。</li>
-			<li><strong>注意</strong>：下界/末地黑名单，别拿去地狱种；掉率已叠乘方块本身破坏掉落，草方块掉率低于高草。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#exotic">异域花园 ExoticGarden</a></div>
+		<h3>怎么玩：果园从剪草到结果</h3>
+		<p>在草地里剪出树苗/灌木苗，种成水果树和菜。这是最轻松的入门支线，不用机器也能玩。</p>
+		<p><strong>开始前你要有：</strong>剪刀（或空手）、泥土。不需要研究和电力。</p>
+		<ol class="steps"><li><strong>准备一小块地</strong><div class="detail">找平坦草地挖 2～3 条垄，方便来回采摘。前期不用围栏。</div></li><li><strong>去剪草拿苗</strong><div class="detail">对着草方块、短草、高草、蕨挥剪刀或手。破坏后有概率掉树苗或灌木苗（本服树约 22%、灌木约 16%）。<strong>高草和大型蕨更值得多打</strong>，普通短草掉率低。</div></li><li><strong>认识苗的名字</strong><div class="detail">「樱桃树苗」「椰子树苗」会长成树；「葡萄灌木」「番茄灌木」直接结果。名字里带吃的都有用。</div></li><li><strong>种下</strong><div class="detail">和原版树苗一样种在土上。树与树隔 2～3 格，太密会挤。灌木可稍密。</div></li><li><strong>等待长大</strong><div class="detail">树苗要长一段时间；灌木更快。树苗期别用斧砍。</div></li><li><strong>采摘</strong><div class="detail">树上的果实方块打掉/摘下进背包；灌木上的果实同理。这就是你的第一批产品。</div></li><li><strong>扩大与出售</strong><div class="detail">做第二块田；水果可以卖给美食家玩家，或自己做菜（见美食家）。想要稀有苗就回去剪高草。</div></li><li><strong>后期自动化</strong><div class="detail">产量大了以后，用漏斗/货运接掉落，变成无人值守果园。</div></li></ol>
+		<p class="note">新手问题：「剪了半天不掉？」→ 去打高草/大型蕨。下界和末地不会长这些植物，别拿去地狱种。</p>
+分类：<a href="#exotic">异域花园 ExoticGarden</a></div>
 	</article>
 
 	<article class="article" id="souljars" data-search="灵魂罐 SoulJars 空罐 128 破损刷怪笼 符文">
@@ -1274,25 +1162,12 @@
 
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>机制 / 数值</th></tr><tr><td>空灵魂罐</td><td>水/土/气/火/死灵符文 + 灵魂沙×3 + 空罐</td></tr><tr><td>充灵</td><td>玩家击杀累计；本服每种生物 <strong>128</strong> 满罐</td></tr><tr><td>破损刷怪笼</td><td>满罐×2 + 铁栏×4 + 土符文×4</td></tr><tr><td>生物表</td><td>config.mobs 列表启用（蝠、蜜蜂…村民、凋灵骷髅等）</td></tr><tr><td>用途</td><td>电力刷怪笼修复/升级；交易；生成向合成</td></tr></table></div>
 		<p class="muted">开源 Slimefun-Addon-Community/SoulJars。</p>
-		
-		<h3>零基础怎么攒灵魂</h3>
-		<p><strong>这个附属是什么：</strong>把怪物的「灵魂」灌进罐子。灌满一罐，就能做出电力刷怪笼需要的零件。相当于「杀怪存档」。</p>
-		<p><strong>你先要有：</strong>能打过的怪（鸡、羊、僵尸都行）、一点合成材料。建议已能做出强化工作台。</p>
-		<ol class="steps"><li><strong>先看指南配方</strong><div class="detail">指南搜「空灵魂罐」。记下要哪几种<strong>符文</strong>和灵魂沙。符文在指南「魔法/基础」里找合成。</div></li><li><strong>做出 2～3 个空灵魂罐</strong><div class="detail">罐子要占背包格。多做几个，换着灌。</div></li><li><strong>把空罐放背包</strong><div class="detail">不用手持。只要在你的物品栏里，击杀就会开始往里灌。</div></li><li><strong>亲手击杀怪物</strong><div class="detail">用你的剑/斧打最后一击。被你打死的怪才计数。</div></li><li><strong>看进度</strong><div class="detail">罐子会显示灌了多少。本服每种生物要 <strong>128</strong> 只才满。鸡、僵尸这种好杀的先灌满。</div></li><li><strong>做「破损刷怪笼」</strong><div class="detail">满罐×2 + 铁栏×4 + 土符文×4（以指南为准）。这东西是电力刷怪笼的「心脏」。</div></li><li><strong>用掉或卖掉</strong><div class="detail">自己做刷怪笼，或卖给要自动化刷怪的玩家。</div></li></ol>
-		<p><strong>新手建议：</strong>先只灌 1 种（比如僵尸），别 20 种都攒一点。128 是很长的数字，专精比摊开快。</p>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>做空灵魂罐</strong>：水/土/气/火/死灵五类符文 + 灵魂沙×3 + 空罐（按指南格子）。多做几罐备用。</li>
-			<li><strong>放背包开始充灵</strong>：用<strong>玩家击杀</strong>（不是摔死/烧死也算击杀归属）打目标怪；罐从 1 计数往上累。</li>
-			<li><strong>打满 128</strong>：本服每种生物统一 128。满罐有明显进度。建议先垄断僵尸/骷髅/苦力怕。</li>
-			<li><strong>合成破损刷怪笼</strong>：满罐×2 + 铁栏×4 + 土符文×4。</li>
-			<li><strong>交给电力刷怪笼</strong>：修复/升级后量产；或卖给队友。</li>
-			<li><strong>量产路径</strong>：传统刷怪塔或电力刷怪笼击杀 → 灵魂罐在身 → 货运收战利品。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#souljars">灵魂罐 SoulJars</a></div>
+		<h3>怎么玩：从空罐到满罐</h3>
+		<p>把怪物的灵灌进罐子。灌满一罐（本服 128 只同种怪）就能做出电力刷怪笼的零件。相当于「用击杀存档」。</p>
+		<p><strong>开始前你要有：</strong>能打过的怪、强化工作台、一点合成材料（符文+灵魂沙）。</p>
+		<ol class="steps"><li><strong>在指南搜「空灵魂罐」</strong><div class="detail">记下配方要的<strong>符文</strong>种类（水/土/气/火/死灵等）和灵魂沙数量。符文若没解锁，先去解对应研究。</div></li><li><strong>做出 2～3 个空罐</strong><div class="detail">一罐只装一种生物的灵，多做几个换着灌。</div></li><li><strong>罐子放背包即可</strong><div class="detail">不用拿在手上。只要在你的物品栏，击杀就会开始灌。</div></li><li><strong>亲手击杀计数</strong><div class="detail">最好你打出最后一击。被陷阱/摔死/别人抢怪可能不算你的。</div></li><li><strong>盯着一种怪刷满 128</strong><div class="detail">本服每种生物都是 128。鸡、僵尸、骷髅好杀，先灌满一种，别摊开 20 种各 10 个。</div></li><li><strong>做「破损刷怪笼」</strong><div class="detail">满罐×2 + 铁栏×4 + 土符文×4（以指南为准）。</div></li><li><strong>用掉或卖掉</strong><div class="detail">自己接电力刷怪笼，或卖给要自动化的玩家。</div></li></ol>
+		<p class="note">建议：第一个罐选僵尸或骷髅。128 很长，专精比摊开快得多。满罐时会有明确的满进度显示。</p>
+分类：<a href="#souljars">灵魂罐 SoulJars</a></div>
 	</article>
 
 	<article class="article" id="espawners" data-search="电力刷怪笼 ElectricSpawners 240J 实体上限">
@@ -1301,25 +1176,12 @@
 
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>机制 / 数值</th></tr><tr><td>合成</td><td>破损刷怪笼 + 白金/电机/强化笼/炽炎锭 3/大电容（以指南为准）</td></tr><tr><td>能量</td><td><strong>240 J/只</strong>；缓冲 <strong>2048 J</strong></td></tr><tr><td>实体限制</td><td>4 格内同型 ≤ <strong>6</strong></td></tr><tr><td>允许生物</td><td>本服 25 种：僵尸、骷髅、苦力怕、末影人、末影螨、岩浆怪、守卫者、马、铁傀儡、哞菇、豹猫、猪、兔、羊、蠹虫、史莱姆、蜘蛛、鱿鱼、村民、凋灵骷髅、女巫、狼、牛、洞穴蜘蛛、烈焰人等（以 config.mobs 为准）</td></tr><tr><td>玩法</td><td>封闭杀怪室 + 漏斗 + 货运；接灵魂罐</td></tr></table></div>
 		<p class="muted">开源 Slimefun-Addon-Community/ElectricSpawners。</p>
-		
-		<h3>零基础怎么开刷怪塔</h3>
-		<p><strong>这个附属是什么：</strong>通电就会刷怪的笼子。配合灵魂罐，变成「自动杀怪收灵魂」工厂。</p>
-		<p><strong>你先要有：</strong>破损刷怪笼（灵魂罐做）、电力（煤发电机+电缆）、一个封闭小房间。</p>
-		<ol class="steps"><li><strong>搭一个 3×3 的杀怪小房间</strong><div class="detail">石头墙，留一个 1 格的小口让你能砍怪。门关好，防止怪跑出来。</div></li><li><strong>放电力刷怪笼</strong><div class="detail">在房间里面。右键打开界面，选要刷的怪（本服允许列表约 25 种）。</div></li><li><strong>接电</strong><div class="detail">这笼子很耗电：约 <strong>240 J 才刷 1 只</strong>。用电缆从发电机拉过来；最好加一个电容。</div></li><li><strong>放漏斗收东西</strong><div class="detail">地板下漏斗 → 箱子。怪掉的肉、骨头、装备自动进箱。</div></li><li><strong>开刷</strong><div class="detail">怪开始出现。你在小口砍；或者以后上全自动杀怪。</div></li><li><strong>控制数量</strong><div class="detail">同一位置同种怪不要太多（4 格内最多约 6 只）。多了会卡，及时杀。</div></li><li><strong>连灵魂罐</strong><div class="detail">背包放灵魂罐，你杀的怪同时灌灵魂。这是两条线一起走。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>先备破损刷怪笼</strong>（灵魂罐线）。</li>
-			<li><strong>合成电力刷怪笼</strong>：破损笼 + 白金/粘液电机/强化笼/炽炎锭×3/大电容（以指南为准）。</li>
-			<li><strong>建封闭杀怪室</strong>：石砖小房 + 一格击杀口或全自动杀怪装置；防跑怪与卡实体。</li>
-			<li><strong>放置并 GUI 启用</strong>，选择生物（本服 25 种）。</li>
-			<li><strong>接电</strong>：240 J/只，缓冲 2048——建议专线 + 电容，不要与重机共网打空。</li>
-			<li><strong>清怪与收集</strong>：4 格内同型 ≤6，及时杀/收；漏斗箱 → 货运 → 灵魂/掉落分拣。</li>
-			<li><strong>挂机</strong>：可与区块加载器联用做离线产灵。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#espawners">电力刷怪笼 ElectricSpawners</a></div>
+		<h3>怎么玩：开一间电刷房</h3>
+		<p>通电就刷怪的笼子。配合灵魂罐，变成「自动出怪 + 收灵魂」工厂。</p>
+		<p><strong>开始前你要有：</strong>破损刷怪笼（灵魂罐做）、煤发电机+电缆、封闭小房间。</p>
+		<ol class="steps"><li><strong>搭杀怪室</strong><div class="detail">用石头围一个 3×3 左右小房间，留 1 格小口方便你砍怪，其余全封死。</div></li><li><strong>放笼并选怪</strong><div class="detail">电力刷怪笼放在房间里，右键界面选本服允许的生物（约 25 种）。</div></li><li><strong>拉电</strong><div class="detail">约 240 J 才刷一只，缓冲 2048 J。电缆接发电机，建议加电容，否则一停一刷。</div></li><li><strong>漏斗收掉落</strong><div class="detail">地板下漏斗 → 箱子。肉、骨头、装备自动进箱。</div></li><li><strong>开刷与击杀</strong><div class="detail">怪会持续出现。你在小口砍；记住 4 格内同种怪上限约 6，多了要及时杀。</div></li><li><strong>同时灌灵魂</strong><div class="detail">背包放灵魂罐，你杀的同计灵魂。两条线一起涨。</div></li><li><strong>以后再自动化</strong><div class="detail">用自动杀怪装置+货运，变成无人车间。</div></li></ol>
+		<p class="note">注意实体数量与卡顿；掉落箱满了要清，否则漏斗会堵。</p>
+分类：<a href="#espawners">电力刷怪笼 ElectricSpawners</a></div>
 	</article>
 
 	<article class="article" id="backpacks2" data-search="染色背包 热键宠物 捕捉 私人存储">
@@ -1334,23 +1196,12 @@
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>机制 / 数值</th></tr><tr><td>工具</td><td>捕捉炮 + 弹丸 → 生物蛋</td></tr><tr><td>保留状态</td><td>药水/点燃/命名/血量/羊毛色</td></tr><tr><td>配置</td><td>蛋进背包 false；可捕命名怪 true</td></tr></table></div>
 		<h3>私人存储 PrivateStorage</h3>
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>机制 / 数值</th></tr><tr><td>档</td><td>木/铁/钻石/防爆</td></tr><tr><td>Private</td><td>仅放置者开/拆</td></tr><tr><td>Public</td><td>交领地插件保护</td></tr></table></div>
-		
-		<h3>零基础怎么用背包与保护</h3>
-		<p><strong>这个附属是什么：</strong>更大的移动箱子（背包）、快捷栏小宠物、抓怪的「精灵球」、只能自己开的箱子。</p>
-		<ol class="steps"><li><strong>做小背包</strong><div class="detail">指南搜背包，按格子做。先用最小的，够装矿。</div></li><li><strong>染色分用途</strong><div class="detail">一种颜色一个用途：红=矿、绿=农、蓝=药。染色背包附属支持六档容量。</div></li><li><strong>右键打开使用</strong><div class="detail">和箱子一样放东西。本服离线时也能打开——所以别把全部家当放一个没保护的背包里。</div></li><li><strong>做私人箱当仓库</strong><div class="detail">放在家里。Private 模式只有你能开；Public 模式交给领地插件保护。</div></li><li><strong>宠物怎么用</strong><div class="detail">做「热键宠物」放<strong>快捷栏</strong>（最下面那一排）。同时带上它爱吃的「最爱食物」，效果才会持续。</div></li><li><strong>抓怪怎么用</strong><div class="detail">做捕捉炮和弹丸。对准怪物射击 → 得到生物蛋。蛋可以带走再放出来（会保留名字和状态）。搬家专用。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>染色背包</strong>：做基础背包再染色；按用途分色（矿袋/农袋/药袋）。小→辐光容量递增，本服六档全开。</li>
-			<li><strong>使用</strong>：手持右键开；本服离线也可开——贵重物别放共享位置。</li>
-			<li><strong>丢失</strong>：用 <code>/sf backpack</code> 检索找回。</li>
-			<li><strong>热键宠物</strong>：做宠物放快捷栏，同时带<strong>最爱食物</strong>；食物耗尽效果停。适合下矿/战斗常驻。</li>
-			<li><strong>捕捉炮</strong>：做炮+弹丸，射击目标得生物蛋；蛋可搬运后放置，保留药水/命名/血量等。本服可抓命名怪。</li>
-			<li><strong>私人箱</strong>：木→铁→钻石→防爆升级；Private 仅自己开，Public 交领地。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#backpacks2">背包 · 宠物 · 捕捉 · 私人箱</a></div>
+		<h3>怎么玩：背包装东西、箱保护、抓怪搬家</h3>
+		<p>四种小功能：更大的移动背包、快捷栏宠物、抓怪蛋、只能自己开的私人箱。</p>
+		<p><strong>开始前你要有：</strong>强化工作台；做背包/保护箱的金属材料。</p>
+		<ol class="steps"><li><strong>先做最小的背包</strong><div class="detail">指南搜背包，按格子做。够装一趟能矿即可。</div></li><li><strong>用颜色分用途</strong><div class="detail">一种颜色一个用途（红=矿、绿=农、蓝=药）。染色背包六档容量，后期换大的。</div></li><li><strong>右键打开背包</strong><div class="detail">用法和箱子一样。本服离线也能打开——贵重物别全放一个没保护的背包。</div></li><li><strong>家里放私人箱</strong><div class="detail">Private：只有你能开/拆。Public：交给领地插件。升级顺序木→铁→钻石→防爆。</div></li><li><strong>宠物放快捷栏</strong><div class="detail">宠物物品放在屏幕最下一排快捷栏，再带上它写明的「最爱食物」，效果才持续。</div></li><li><strong>抓怪当搬家</strong><div class="detail">捕捉炮装弹丸，对怪射击 → 生物蛋。蛋可带走再放出，保留名字/血量等状态。</div></li><li><strong>丢了背包</strong><div class="detail">用 <code>/sf backpack</code> 找回（管理员或按权限）。</div></li></ol>
+		<p class="note">新手建议：只做 1 个小背包 + 1 个私人箱就足够前期。宠物等你稳定后再上。</p>
+分类：<a href="#backpacks2">背包 · 宠物 · 捕捉 · 私人箱</a></div>
 	</article>
 
 	<article class="article" id="ecopower" data-search="环保能源 EcoPower 蒸汽 风力 太阳 避雷">
@@ -1359,25 +1210,12 @@
 
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机型</th><th>功率 / 条件</th></tr><tr><td>蒸汽轮机</td><td>8/12/26 J/s；多方块<strong>水面上方+岩浆块</strong></td></tr><tr><td>风力</td><td>10/22/46 J/s；室外</td></tr><tr><td>月光</td><td>256 J/s；仅夜</td></tr><tr><td>高能太阳 / 辐射太阳</td><td>512 / 1024 J/s</td></tr><tr><td>避雷针</td><td>512～8192 J/雷击</td></tr><tr><td>太阳盔</td><td>约 5 J/次给手持/穿戴</td></tr><tr><td>钢转子</td><td>多方块核心材料</td></tr></table></div>
 		<p class="muted">开源 Slimefun-Addon-Community/EcoPower。</p>
-		
-		<h3>零基础怎么上绿电</h3>
-		<p><strong>这个附属是什么：</strong>风力、蒸汽、太阳能等「环保发电」。比煤发电机更省燃料。</p>
-		<p><strong>你先要有：</strong>能合成多方块的材料；已会拉电缆。</p>
-		<ol class="steps"><li><strong>先做「钢转子」</strong><div class="detail">这是蒸汽/风力的核心零件。指南搜得到。</div></li><li><strong>蒸汽轮机怎么摆</strong><div class="detail">按指南图搭<strong>多方块</strong>：必须放在<strong>水面上方</strong>，下面有<strong>岩浆块</strong>。摆错不工作。</div></li><li><strong>读懂功率</strong><div class="detail">蒸汽三档 8/12/26 J 每秒；风力 10/22/46。数字越大机器越快。</div></li><li><strong>风力放哪</strong><div class="detail">室外空旷处。没有墙挡着更好。</div></li><li><strong>日夜搭配</strong><div class="detail">太阳能白天跑；「月光机」只在晚上跑（256 J/s）。两台连一起就是 24 小时电。</div></li><li><strong>接进你的电网</strong><div class="detail">电缆汇到同一网络，加电容。用万用表看是不是在充。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>钢转子</strong>做核心件，再做蒸汽轮机多方块。</li>
-			<li><strong>蒸汽</strong>：必须搭在<strong>水面上方 + 岩浆块</strong>结构上（按指南图）；三档 8/12/26 J/s。</li>
-			<li><strong>风力</strong>：放开阔室外，10/22/46 J/s；适合山顶/海面。</li>
-			<li><strong>月光</strong>：只在晚上 256 J/s，可与白天太阳能拼 24h 电网。</li>
-			<li><strong>高能/辐射太阳</strong>：512 / 1024 J/s，贵但稳；避雷针雷暴单次 512～8192，宜当峰值补电。</li>
-			<li><strong>太阳盔</strong>：给手持/穿戴充能（约 5 J/次），探险党实用。</li>
-			<li><strong>并网</strong>：绿电机 → 电缆 → 电容削峰 → 耗电机器；万用表核对 A/B。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#ecopower">环保能源 EcoPower</a></div>
+		<h3>怎么玩：上绿电</h3>
+		<p>用风、蒸汽、太阳发电，比烧煤省燃料。</p>
+		<p><strong>开始前你要有：</strong>能搭多方块的材料；已会拉电缆。建议主体已出金属。</p>
+		<ol class="steps"><li><strong>先做「钢转子」</strong><div class="detail">蒸汽/风力的核心零件，指南搜得到。</div></li><li><strong>蒸汽轮机怎么搭</strong><div class="detail">按指南图摆多方块：位置必须在<strong>水面上方</strong>，正下方有<strong>岩浆块</strong>。摆错机器不启动。</div></li><li><strong>看懂功率</strong><div class="detail">蒸汽三档 8 / 12 / 26 J 每秒；风力 10 / 22 / 46。数字大=给电快。</div></li><li><strong>风力放室外</strong><div class="detail">空旷处更好，不要塞在屋里。</div></li><li><strong>日夜组合</strong><div class="detail">太阳能只在白天；月光机只在夜里（256 J/s）。两台并网就是 24 小时电。</div></li><li><strong>高阶太阳/避雷针</strong><div class="detail">高能太阳 512、辐射太阳 1024 J/s；避雷针雷暴时一次 512～8192，当峰值补电。</div></li><li><strong>接进电网</strong><div class="detail">电缆汇到你的网络，中间加电容。万用表右键看「已储存的能源」。</div></li></ol>
+		<p class="note">多方块机器 cheat 拿不到成品，必须按图用原版方块搭。</p>
+分类：<a href="#ecopower">环保能源 EcoPower</a></div>
 	</article>
 
 	<article class="article" id="official-misc" data-search="工业 ExtraGear 头颅 幸运 矿石块 木龙头 彩色末影箱 硬核 粘液胶">
@@ -1392,24 +1230,12 @@
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>机制 / 数值</th></tr><tr><td>幸运方块</td><td>幸运/超幸运/超不幸/潘多拉魔盒</td></tr><tr><td>矿石块</td><td>GEO 矿机产出，世界不生成；粉碎成尘</td></tr><tr><td>木龙头</td><td>树脂 12/24/32%；琥珀 16%；橡胶厂 6J/s；魔法镜传送</td></tr></table></div>
 		<h3>彩色末影箱 · 硬核 · 粘液胶</h3>
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>机制 / 数值</th></tr><tr><td>彩色末影箱</td><td>3 染料 RGB，最多 8192 共享空间</td></tr><tr><td>硬核粘液</td><td>本服失败 1% / 死丢关 / 故障 0%</td></tr><tr><td>SlimeGlue / GuizhanLib</td><td>兼容与中文附属库前置</td></tr></table></div>
-		
-		<h3>零基础杂项速查</h3>
-		<ol class="steps"><li><strong>工业 UU</strong><div class="detail">回收机→废料→UU 物质→合成奇怪材料。工业风。</div></li><li><strong>木龙头采橡胶</strong><div class="detail">挂在原木上等树脂，做塑料。魔法镜做传送点。</div></li><li><strong>彩色末影箱</strong><div class="detail">3 个染料定颜色，同色全服共享——当公共银行。</div></li><li><strong>幸运方块</strong><div class="detail">敲了有随机奖励，娱乐。</div></li><li><strong>矿石块</strong><div class="detail">GEO 矿机产的，粉碎变粉。</div></li><li><strong>更多装备/头颅</strong><div class="detail">装备收集和杀怪掉头。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>工业 LiteXpansion</strong>：回收机扫废料 → 物质合成器做 UU → UU 合成机出货（默认约 35 配方）。配套 MFE/MFSU 与多档太阳。</li>
-			<li><strong>ExtraGear</strong>：用粘液锭做内置附魔装备，和墓石地牢装互补。</li>
-			<li><strong>ExtraHeads</strong>：挂斩首剑刷头；做博物馆墙或卖钱。</li>
-			<li><strong>幸运方块</strong>：放空地开；潘多拉魔盒风险更高。活动向。</li>
-			<li><strong>矿石块</strong>：GEO 矿机出矿块 → 粉碎成尘 → 熔炼，扩产金属。</li>
-			<li><strong>木龙头</strong>：挂原木采树脂（12/24/32%）→ 橡胶厂 2 树脂→橡胶 4s → 塑料链；刮刀琥珀 16% → 魔法镜绑定传送。</li>
-			<li><strong>彩色末影箱</strong>：3 染料定色；同色全服共享。用颜色当「公共银行」或「私人库」。</li>
-			<li><strong>硬核粘液</strong>：解研究时预留重试；本服死亡安全。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#official-misc">其它官方附属</a></div>
+		<h3>怎么玩：其它官方附属速成</h3>
+		<p>工业 UU、木龙头、彩色末影箱、幸运方块、矿石块、装备头颅。</p>
+		<p><strong>开始前你要有：</strong>主体材料线已通。</p>
+		<ol class="steps"><li><strong>工业 UU</strong><div class="detail">回收机→废料→物质合成器→UU 合成机。约 35 种 UU 配方。</div></li><li><strong>木龙头</strong><div class="detail">挂原木采树脂（12/24/32%）→ 橡胶厂 2 树脂 4s→橡胶 → 塑料。刮刀琥珀 16% → 魔法镜传送。</div></li><li><strong>彩色末影箱</strong><div class="detail">3 染料定色，同色全服共享。当公共银行或私人色库。</div></li><li><strong>幸运方块</strong><div class="detail">空地敲；潘多拉风险高。</div></li><li><strong>矿石块</strong><div class="detail">GEO 矿机产出→粉碎成尘。</div></li><li><strong>装备与头颅</strong><div class="detail">ExtraGear 做装；斩首剑刷头装饰。</div></li></ol>
+		<p class="note">硬核粘液开着时研究会 1% 失败，多点一次即可。</p>
+分类：<a href="#official-misc">其它官方附属</a></div>
 	</article>
 
 	<article class="article" id="alchemy" data-search="炼金术自传 AlchimiaVitae 浓缩灵 注入 神坛">
@@ -1419,24 +1245,12 @@
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值</th></tr><tr><td>浓缩灵</td><td>击杀约 <strong>1/3</strong> 得 1；凋灵 1–15；凋灵骷髅 1–5；经验 ×3（龙 ×1）</td></tr><tr><td>注入</td><td>共 9：近战 2 / 远程 4 / 胸甲 1 / 杖 1 / 锄 1；每件 1；图腾电池上限 8</td></tr><tr><td>毁灭暴击</td><td>甲 1–5 阶；效果 1/4–1/8</td></tr><tr><td>幻影暴击</td><td>1/4 概率 dmg^1.15×5/8</td></tr><tr><td>强力 / 挥发</td><td>速度 ×2；产量 force×3（force&lt;0.3 则 ×2）</td></tr><tr><td>神坛演变</td><td>强化×2 · 硬化×2 · 钢×8 · 大马士革×8 · 压缩碳×1</td></tr></table></div>
 		<p>链路：击杀收灵 → 注入树苗得暗/光植物 → 华丽锅药水 → 神坛演变 → 注入台词缀。</p>
 		<p class="muted">开源 Apeiros-46B/AlchimiaVitae。</p>
-		
-		<h3>零基础怎么玩炼金</h3>
-		<p><strong>这个附属是什么：</strong>杀怪掉「浓缩灵」，拿灵种魔法植物、煮药、给装备「注入」特殊词缀。</p>
-		<p><strong>你先要有：</strong>能稳定刷怪；会用强化工作台；最好有灵魂罐经验。</p>
-		<ol class="steps"><li><strong>收集浓缩灵</strong><div class="detail">击杀怪物约 3 次掉 1 个。打凋灵/凋灵骷髅掉得多。经验也会变成 3 倍。</div></li><li><strong>种魔法植物</strong><div class="detail">拿灵注入树苗，长出「暗之植物 / 光之植物」。这是炼金草药。</div></li><li><strong>用「华丽锅」煮药</strong><div class="detail">比原版酿造台更高级的药水。配方看指南。</div></li><li><strong>「神坛」做特殊材料</strong><div class="detail">把金属/材料放上去演变：强化锭、钢、大马士革等，产量有倍数。</div></li><li><strong>给装备「注入」</strong><div class="detail">注入台把「毁灭暴击、治疗、自动补种」这类词缀打到工具/武器/胸甲上。一件装备只能注入 1 个。</div></li><li><strong>选词缀的思路</strong><div class="detail">镐选「自动补种」、胸甲选「治疗/图腾」、剑选「暴击/强力」。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>收浓缩灵</strong>：击杀约 1/3 概率；刷凋灵/凋灵骷髅高产（1–15 / 1–5）。</li>
-			<li><strong>种暗/光植物</strong>：灵注入树苗，得到炼金草药。</li>
-			<li><strong>华丽锅</strong>：配草药做特殊药水。</li>
-			<li><strong>神坛演变</strong>：强化锭×2、硬化×2、钢×8、大马士革×8、压缩碳×1 等。</li>
-			<li><strong>注入词缀</strong>（每件 1 个）：毁灭暴击、幻影暴击、自瞄、强力、挥发、治疗、自动补种、图腾电池（上限 8）、击退——按装备槽位选。</li>
-			<li><strong>战斗向</strong>：幻影暴击 1/4 触发；强力速度 ×2 适合追击。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#alchemy">炼金术自传 AlchimiaVitae</a></div>
+		<h3>怎么玩：杀怪炼金与装备注入</h3>
+		<p>击杀掉「浓缩灵」→ 种魔法植物 → 煮药/演变材料 → 给装备打词缀。</p>
+		<p><strong>开始前你要有：</strong>稳定刷怪能力；强化工作台。最好已有灵魂罐经验。</p>
+		<ol class="steps"><li><strong>刷浓缩灵</strong><div class="detail">击杀约 1/3 掉 1 个；凋灵 1–15、凋灵骷髅 1–5 更肥。经验也 ×3。</div></li><li><strong>种暗/光植物</strong><div class="detail">灵注入树苗，得到炼金草药。</div></li><li><strong>华丽锅煮药</strong><div class="detail">比原版酿造台更强的药水。</div></li><li><strong>神坛演变</strong><div class="detail">强化锭×2、硬化×2、钢×8、大马士革×8、压缩碳×1 等。</div></li><li><strong>注入词缀</strong><div class="detail">注入台给工具/武器/胸甲加毁灭暴击、治疗、自动补种、图腾电池（上限 8）、击退等。一件只能 1 个词缀。</div></li><li><strong>怎么选词缀</strong><div class="detail">镐：自动补种；甲：治疗/图腾；剑：暴击/强力。</div></li></ol>
+		<p class="note">幻影暴击约 1/4 概率；强力给速度 ×2。可按 config 开关某些注入。</p>
+分类：<a href="#alchemy">炼金术自传 AlchimiaVitae</a></div>
 	</article>
 
 	<article class="article" id="crystamae" data-search="水晶编年史 CrystamaeHistoria 法术 法杖 故事">
@@ -1446,24 +1260,12 @@
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值</th></tr><tr><td>法术组合</td><td>约 <strong>80</strong> 种；液化池按故事类型 top-3（需 3 种不同）无序匹配</td></tr><tr><td>法杖</td><td>阶 1/2/3；装 4 技（左/右/Shift 左/Shift 右）</td></tr><tr><td>Crysta 价</td><td>普通 1 · 独特 2 · 罕见 3 · 稀有 10 · 史诗 25 · 神话 50；9 种故事类型</td></tr><tr><td>施法</td><td>火球 1 · 治疗 10 · 传送 5（CD 20/阶）；可乘法杖阶</td></tr><tr><td>惰性板</td><td>10 元素 + 10 人类 + 10 哲学</td></tr></table></div>
 		<p>链路：编年面板提取故事 → 实现祭坛 → 水晶 → 液化池 → Crystamae → 魔法板 → 法杖。</p>
 		<p class="muted">开源 Sefiraat/CrystamaeHistoria。</p>
-		
-		<h3>零基础怎么搓法术</h3>
-		<p><strong>这个附属是什么：</strong>每个方块都有「故事」，提取故事做成法术，装在法杖上放火球、治疗、传送。</p>
-		<p><strong>你先要有：</strong>一些电力、不同种类的方块（要「读」它们）、战斗或辅助需求。</p>
-		<ol class="steps"><li><strong>做「编年面板」</strong><div class="detail">对着不同方块使用，提取出「故事」。不同方块故事类型不同（共 9 种）。</div></li><li><strong>「实现祭坛」出水晶</strong><div class="detail">把故事变成水晶。</div></li><li><strong>液化成 Crystamae</strong><div class="detail">水晶液化池里变成施法材料。</div></li><li><strong>做魔法板</strong><div class="detail">惰性板要 10 元素 + 10 人类 + 10 哲学故事。</div></li><li><strong>组合出法术</strong><div class="detail">在液化池按「故事类型前三名」匹配（约 80 种组合）。无序，试试就懂。</div></li><li><strong>装进法杖</strong><div class="detail">法杖配置器装 4 个法术：左键/右键/Shift+左/Shift+右。</div></li><li><strong>注意消耗</strong><div class="detail">火球 1 Crysta、传送 5、治疗 10。高阶杖更强也更省。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>采故事</strong>：编年面板对着方块提取 Story（9 种类型）。</li>
-			<li><strong>实现祭坛</strong>出水晶；液化池做成 Crystamae。</li>
-			<li><strong>喂惰性板</strong>：10 元素 + 10 人类 + 10 哲学。</li>
-			<li><strong>配法术</strong>：池内 top-3 故事类型组合（约 80 种）；无序匹配。</li>
-			<li><strong>装杖</strong>：法杖配置器装 4 技；左/右/Shift 左/Shift 右施放。</li>
-			<li><strong>控蓝</strong>：火球 1 / 传送 5（CD）/ 治疗 10 Crysta；高阶杖可乘阶。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#crystamae">水晶编年史 CrystamaeHistoria</a></div>
+		<h3>怎么玩：从方块故事到法术</h3>
+		<p>读方块的「故事」→ 做成法术 → 装法杖施放。</p>
+		<p><strong>开始前你要有：</strong>电力；不同种类方块（要「读」）；战斗/辅助需求。</p>
+		<ol class="steps"><li><strong>做编年面板</strong><div class="detail">对着不同方块提取故事。共 9 种故事类型。</div></li><li><strong>实现祭坛</strong><div class="detail">故事→水晶。</div></li><li><strong>液化</strong><div class="detail">水晶→Crystamae（施法材料）。</div></li><li><strong>做魔法板</strong><div class="detail">惰性板：10 元素 + 10 人类 + 10 哲学故事。</div></li><li><strong>组合法术</strong><div class="detail">液化池按故事类型前三匹配（约 80 种），无序。多试。</div></li><li><strong>装法杖</strong><div class="detail">配置器装 4 技：左键/右键/Shift+左/Shift+右。</div></li><li><strong>控消耗</strong><div class="detail">火球 1、传送 5（有 CD）、治疗 10 Crysta。</div></li></ol>
+		<p class="note">法杖 1/2/3 阶，高阶更强。</p>
+分类：<a href="#crystamae">水晶编年史 CrystamaeHistoria</a></div>
 	</article>
 
 	<article class="article" id="foxy" data-search="神秘科技 FoxyMachines 填充棒 加载器 祭坛 首领">
@@ -1472,22 +1274,12 @@
 
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>数值</th></tr><tr><td>填充棒</td><td>4096 格；0.4 充能/格；总充能 1000；白名单树叶/玻璃；黑名单屏障/刷怪笼等</td></tr><tr><td>海绵棒</td><td>16384 格；0.24/格；总充能 2000</td></tr><tr><td>区块加载器</td><td>每人 8；GPS 7500×已放置</td></tr><tr><td>祭坛掉落</td><td>材料 75%（×2 约 33%）；岩浆 50%；血 33%</td></tr><tr><td>首领</td><td>仙子女王 800 HP/28 攻/箭 24；无头骑士 28 攻/箭 22/雷 12.4+1.72；狱犬 30 HP/26 攻</td></tr></table></div>
 		<p class="muted">开源 GallowsDove/FoxyMachines。幽灵方块与自定义怪本服开。</p>
-		
-		<h3>零基础怎么用神秘科技</h3>
-		<p><strong>这个附属是什么：</strong>大范围建造工具（填充棒）、离线加载区块、献祭打 Boss。</p>
-		<ol class="steps"><li><strong>填充棒铺地</strong><div class="detail">手持填充棒选方块，一次最多 4096 格。允许树叶/玻璃和遮光方块；屏障、刷怪笼等禁。</div></li><li><strong>海绵棒清场</strong><div class="detail">一次最多 16384 格。大工程前备份。</div></li><li><strong>区块加载器</strong><div class="detail">让产线离线也转。每人最多 8 个；每个要 GPS 罍杂度 7500。先铺 GPS 发射机。</div></li><li><strong>祭坛 Boss</strong><div class="detail">献祭材料召唤仙子女王、无头骑士等。打赢有稀有掉落。</div></li><li><strong>强化/法杖类武器</strong><div class="detail">电系杖、弓、力场罩等，战斗向。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>基建</strong>：填充棒铺地/盖墙（≤4096）；海绵棒清场（≤16384）。</li>
-			<li><strong>加载器</strong>：GPS 复杂度攒到 7500×数量，每人 ≤8。</li>
-			<li><strong>祭坛 Boss</strong>：献祭出仙子女王/无头骑士等，打材料与独特掉落。</li>
-			<li><strong>强化台/法杖弓</strong>：做电系武器与力场穹顶。</li>
-			<li><strong>任务怪</strong>：从 quest-mobs 随机指定击杀目标做任务。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#foxy">神秘科技 FoxyMachines</a></div>
+		<h3>怎么玩：填充棒、加载器与 Boss</h3>
+		<p>大范围建造+离线产线+献祭打首领。</p>
+		<p><strong>开始前你要有：</strong>GPS 网络（加载器用）；战斗装备（Boss）。</p>
+		<ol class="steps"><li><strong>填充棒</strong><div class="detail">选方块后一次最多 4096 格。允许树叶/玻璃等；屏障/刷怪笼/命令方块禁。</div></li><li><strong>海绵棒</strong><div class="detail">一次最多清 16384 格。大工程先备份。</div></li><li><strong>区块加载器</strong><div class="detail">离线也转产线。每人 ≤8；每个要 GPS 复杂度 7500。先铺发射机攒复杂度。</div></li><li><strong>祭坛 Boss</strong><div class="detail">献祭召唤仙子女王/无头骑士等，打稀有掉落。备好装备。</div></li><li><strong>电杖/力场</strong><div class="detail">战斗向装备，按指南做。</div></li><li><strong>任务怪</strong><div class="detail">从任务生物列表随机指定击杀目标。</div></li></ol>
+		<p class="note">填充棒 0.4 充能/格；海绵 0.24/格。</p>
+分类：<a href="#foxy">神秘科技 FoxyMachines</a></div>
 	</article>
 
 	<article class="article" id="fluffy" data-search="蓬松机器 FluffyMachines 桶 自动台">
@@ -1497,21 +1289,12 @@
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>Fluffy 桶</th><th>默认容量</th></tr><tr><td>迷你 / 小 / 中</td><td>172,800 · 17,280,000 · 34,560,000</td></tr><tr><td>大 / 特大 / 巨大</td><td>69,120,000 · 138,240,000 · 276,480,000</td></tr><tr><td>无底</td><td>1,728,000,000</td></tr></table></div>
 		<p>机器：自动合成/装甲锻造/魔法工作台/远古祭坛/锯台、铸造炉+超热炉、智慧工厂、高阶充能台、去附魔、尘制造/回收、传送垫、曲柄发电机。</p>
 		<p class="muted">源 jsDelivr · FluffyMachines（Barrel.java）。</p>
-		
-		<h3>零基础怎么用蓬松桶和便利机</h3>
-		<ol class="steps"><li><strong>Fluffy 桶</strong><div class="detail">一种物品装几十万到 17 亿。适合存圆石、土。</div></li><li><strong>便利自动台</strong><div class="detail">自动合成、锯台等，省得一直手动点工作台。</div></li><li><strong>传送垫</strong><div class="detail">在家里和矿区间放传送垫，跑图省时间。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>Fluffy 桶</strong>：迷你→无底堆一种物品；配合仓储网络。</li>
-			<li><strong>自动台</strong>：自动合成/装甲锻造/魔法工作台/远古祭坛/锯台省手动。</li>
-			<li><strong>铸造炉+超热炉</strong>做金属；智慧工厂串产线。</li>
-			<li><strong>传送垫</strong>做基地内快速移动；曲柄发电机应急电。</li>
-			<li><strong>高级充能台</strong>给工具批量充电。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#fluffy">蓬松机器 FluffyMachines</a></div>
+		<h3>怎么玩：大桶与便利机</h3>
+		<p>超大桶存一种物品；一堆省手点的自动台。</p>
+		<p><strong>开始前你要有：</strong>基础电力与金属。</p>
+		<ol class="steps"><li><strong>Fluffy 桶</strong><div class="detail">迷你 17 万 → 无底 17 亿。存圆石/土专用。</div></li><li><strong>自动台</strong><div class="detail">自动合成/装甲锻造/魔法台/锯台等。</div></li><li><strong>铸造炉+超热炉</strong><div class="detail">做金属链。</div></li><li><strong>传送垫</strong><div class="detail">基地↔矿区快速移动。</div></li><li><strong>高级充能台</strong><div class="detail">批量给工具充电。</div></li></ol>
+		<p class="note">桶容量可在 Items.yml 改。</p>
+分类：<a href="#fluffy">蓬松机器 FluffyMachines</a></div>
 	</article>
 
 	<article class="article" id="compress" data-search="压缩工艺 CompressionCraft 8:1 六级">
@@ -1520,20 +1303,12 @@
 
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>机制 / 数值</th></tr><tr><td>压缩比</td><td>每级 <strong>8:1</strong>：8→64→512→4,096→32,768→262,144</td></tr><tr><td>机器</td><td>6 压缩 + 6 解压；速度 1–6；约 50–300 J/s</td></tr><tr><td>其它</td><td>宝石压缩/解压、史莱姆压缩</td></tr></table></div>
 		<p class="muted">源 jsDelivr · CompressionCraft。</p>
-		
-		<h3>零基础怎么压缩物品</h3>
-		<ol class="steps"><li><strong>放 8 个原料</strong><div class="detail">压缩机把 8 个压成 1 个「致密」块。可再压，最高 6 级。</div></li><li><strong>需要时解压</strong><div class="detail">解压机还原。出远门前把石头压起来省背包。</div></li><li><strong>耗电</strong><div class="detail">约 50～300 J/s，越高阶越费电。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>压缩</strong>：8 个原料 → 1 个致密块，可叠 6 级到 262,144 当量。</li>
-			<li><strong>解压</strong>：随时还原；机速 1–6，耗电 50–300 J/s。</li>
-			<li><strong>仓储</strong>：远征前把圆石/土压成高级块塞包。</li>
-			<li><strong>宝石/史莱姆</strong>专用压缩机处理对应材料。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#compress">压缩工艺 CompressionCraft</a></div>
+		<h3>怎么玩：8 合 1 层层压</h3>
+		<p>把大量低级材料压成致密块，省空间；要用时再解压。</p>
+		<p><strong>开始前你要有：</strong>电力。任何阶段都能用。</p>
+		<ol class="steps"><li><strong>放 8 个原料</strong><div class="detail">压缩机 8→1，可叠到 6 级（262144 当量）。</div></li><li><strong>需要时解压</strong><div class="detail">解压机随时还原。</div></li><li><strong>耗电</strong><div class="detail">约 50～300 J/s，越高阶越费。</div></li></ol>
+		<p class="note">出远门带压缩块最省背包。</p>
+分类：<a href="#compress">压缩工艺 CompressionCraft</a></div>
 	</article>
 
 	<article class="article" id="warfare2" data-search="战争工艺 导弹科技 枪械 爆炸">
@@ -1545,23 +1320,12 @@
 		<h3>MissileWarfare</h3>
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>爆炸 power</th><th>Bukkit createExplosion</th></tr><tr><td>小型/小型HE</td><td>3 / 3.5</td></tr><tr><td>标准/HE</td><td>4.5 / 5</td></tr><tr><td>进阶/进阶HE</td><td>4 / 6</td></tr><tr><td>ICBM / 开山</td><td>10 / 14</td></tr><tr><td>子母/毒气/防空</td><td>弹 2 · 半径 6 · 拦截 0.6</td></tr></table></div>
 		<p class="muted">开源 Seggan/SlimefunWarfare、koiboi-dev/MissileWarfare。硼砂破石 2%。</p>
-		
-		<h3>零基础怎么用枪和导弹</h3>
-		<p><strong>你先要有：</strong>铁/火药等军火材料；PvP 或打地牢需求。</p>
-		<ol class="steps"><li><strong>做第一把枪</strong><div class="detail">手枪/左轮好做。记得配子弹。</div></li><li><strong>子弹从哪扣</strong><div class="detail">本服从物品栏扣。金弹伤害 2 倍，TNT 弹 2.75 倍。</div></li><li><strong>会走位用射程</strong><div class="detail">霰弹近距离猛；狙击 130 格远但 CD 长。</div></li><li><strong>能量步枪</strong><div class="detail">要充电（2500 容量、5/发），配核电。</div></li><li><strong>导弹是攻城的</strong><div class="detail">看爆炸 power：开山导弹 14 最大。别在自己家用。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>选枪</strong>：近战局手枪/左轮/霰弹；远程狙击 130 射程；火力压制机枪 CD 0.15。</li>
-			<li><strong>子弹</strong>：本服从<strong>物品栏</strong>扣；金弹 2×、TNT 2.75× 伤害。</li>
-			<li><strong>能量步枪</strong>：2500 充能、5/发；配核电。</li>
-			<li><strong>产弹</strong>：压弹 16 J/s、液化 64、Boominator 1024 等。</li>
-			<li><strong>导弹</strong>：选型看 power（开山 14 最大）；注意领地保护；子母/毒气/防空各司其职。</li>
-			<li><strong>硼砂</strong>：破石 2% 副产可卖。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#warfare2">战争工艺 · 导弹科技</a></div>
+		<h3>怎么玩：枪与导弹</h3>
+		<p>枪是日常 PvP/清怪；导弹是攻城玩具，破坏力大。</p>
+		<p><strong>开始前你要有：</strong>铁/火药等；战斗需求。导弹注意领地。</p>
+		<ol class="steps"><li><strong>先做手枪/左轮</strong><div class="detail">便宜好用。配子弹。</div></li><li><strong>子弹从物品栏扣</strong><div class="detail">本服配置如此。铁弹 0.75×、金弹 2×、TNT 弹 2.75× 伤害。</div></li><li><strong>按场景选枪</strong><div class="detail">近距霰弹；中距突击/机枪；远距狙击 130 格。</div></li><li><strong>能量步枪</strong><div class="detail">2500 充能、5/发，配核电。</div></li><li><strong>导弹看 power</strong><div class="detail">开山 14 最大。别在家门口试。</div></li></ol>
+		<p class="note">硼砂破石约 2% 副产。蹲下自动射击可开。</p>
+分类：<a href="#warfare2">战争工艺 · 导弹科技</a></div>
 	</article>
 
 	<article class="article" id="supreme" data-search="至尊研究院 Supreme 资源 发电 电容">
@@ -1570,21 +1334,12 @@
 
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>数值</th></tr><tr><td>规模</td><td>100+ 资源 · 12 发电机 · 5 电容</td></tr><tr><td>电容</td><td>奥鲁姆 1e6 · 钛 4e6 · 振金 1.6e4 · 荆金 1e6 · 至尊 1.6e7</td></tr><tr><td>发电</td><td>基础 2.5k–7.5k · 流明 75k · 荆金 1e6 · 至尊 2e6</td></tr><tr><td>怪物发电</td><td>50 / 200 / 800</td></tr><tr><td>科技突变</td><td>T1 20–25% → T3 80–100%</td></tr><tr><td>科技生成器</td><td>基座 1800；上限 64；虚拟花园/水族馆/收集 15</td></tr></table></div>
 		<p class="muted">开源 RelativoBR/Supreme。</p>
-		
-		<h3>零基础怎么玩至尊</h3>
-		<ol class="steps"><li><strong>先跑资源设施</strong><div class="detail">虚拟花园/水族馆/收集器定时给你材料，适合挂机。</div></li><li><strong>石矿机补矿</strong><div class="detail">和无尽矿机类似但入门级。</div></li><li><strong>堆材料做装备</strong><div class="detail">100+ 资源慢慢铺；目标是至尊装和高发电。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>开资源线</strong>：100+ 材料分层；虚拟花园/水族馆/怪物收集器定时产。</li>
-			<li><strong>石矿机</strong>扩基础矿物；科技生成器（基座 1800、上限 64）产科技料。</li>
-			<li><strong>发电</strong>：基础→流明 75k→荆金 1e6→至尊 2e6；电容装到 1.6e7。</li>
-			<li><strong>突变</strong>：T1 20–25% → T3 80–100% 赌稀有。</li>
-			<li><strong>装备</strong>：weapons/tools/armor 全开时优先一套至尊装。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#supreme">至尊研究院 Supreme</a></div>
+		<h3>怎么玩：至尊资源帝国</h3>
+		<p>100+ 材料、虚拟农场/水族馆、高发电，堆出至尊装备。</p>
+		<p><strong>开始前你要有：</strong>已有完整电力与仓储。后期内容。</p>
+		<ol class="steps"><li><strong>先跑虚拟设施</strong><div class="detail">虚拟花园/水族馆/怪物收集器定时给料，适合挂机。</div></li><li><strong>石矿机补矿</strong><div class="detail">入门级自动矿。</div></li><li><strong>科技生成器</strong><div class="detail">基座 1800、上限 64；突变 T1 20–25% → T3 80–100%。</div></li><li><strong>发电与电容</strong><div class="detail">流明 75k → 荆金 1e6 → 至尊 2e6；电容到 1.6e7。</div></li><li><strong>做装备</strong><div class="detail">weapons/tools/armor 开启时优先一套至尊装。</div></li></ol>
+		<p class="note">材料多，建议配合 Networks 与 SFCalc 算料。</p>
+分类：<a href="#supreme">至尊研究院 Supreme</a></div>
 	</article>
 
 	<article class="article" id="netherw" data-search="下界乌托邦 迷狱生机 克苏尼亚遗物">
@@ -1598,21 +1353,12 @@
 		<h3>RelicsOfCthonia</h3>
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>机制 / 数值</th></tr><tr><td>遗物</td><td><strong>33</strong>：普通/罕见/稀有各 7 · 史诗/传说各 6</td></tr><tr><td>获取</td><td>猪灵易物按稀有度；部分可使用；清除器可关提示</td></tr></table></div>
 		<p class="muted">源 jsDelivr · 三仓。</p>
-		
-		<h3>零基础怎么净化下界 / 收集遗物</h3>
-		<ol class="steps"><li><strong>下界乌托邦：放净化种子</strong><div class="detail">在下界种下，周围净化值开始涨。</div></li><li><strong>看阈值解锁</strong><div class="detail">250 睡觉 → 500 水 → … → 1500 末地蛋糕。慢慢铺净化土和植物。</div></li><li><strong>收种子</strong><div class="detail">可繁殖种子约 65 种，收集向。</div></li><li><strong>迷狱：打新怪采新植物</strong><div class="detail">收获掉落率 0.3；魂镰挖秘密植物×3。</div></li><li><strong>遗物：和猪灵易物</strong><div class="detail">33 件遗物按稀有度出。不要的用清除器处理。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>下界乌托邦</strong>：放净化种子 → 铺净化土/种植物刷净化值。</li>
-			<li><strong>按阈值解锁</strong>：睡眠 250 → 水/再生 500 → 猪灵 750 → 疣猪兽 900 → 再生 II/III 1500/2500 → 末地蛋糕 1500。</li>
-			<li><strong>收集 65+ 种子</strong>繁殖绿洲；开被动怪与商人。</li>
-			<li><strong>迷狱</strong>：收获掉落 0.3；魂镰挖秘密×3；种子权重 1000/100/10/1。</li>
-			<li><strong>遗物</strong>：猪灵易物按稀有度凑 33 件；用遗物清除器清垃圾。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#netherw">下界生态 · 遗物</a></div>
+		<h3>怎么玩：净化下界与收遗物</h3>
+		<p>在下界种净化种子改环境；采迷狱植物；和猪灵换遗物。</p>
+		<p><strong>开始前你要有：</strong>能进下界生存；战斗与采集基础。</p>
+		<ol class="steps"><li><strong>种净化种子</strong><div class="detail">下界放置后，周围净化值上涨。</div></li><li><strong>按阈值解锁</strong><div class="detail">250 睡 → 500 水/再生 → 750 猪灵 → 900 疣猪兽 → 1500 末地蛋糕 → 2500 再生 III。</div></li><li><strong>铺净化土与植物</strong><div class="detail">扩绿洲；收 65+ 种种子。</div></li><li><strong>迷狱采集</strong><div class="detail">收获掉落率 0.3；魂镰挖秘密植物×3。权重：普通 1000 / 罕见 100 / 稀有 10 / 秘密 1。</div></li><li><strong>遗物 33 件</strong><div class="detail">猪灵易物按稀有度出。垃圾用清除器。</div></li></ol>
+		<p class="note">本服下界生物上限已调（见配置），人多时注意。</p>
+分类：<a href="#netherw">下界生态 · 遗物</a></div>
 	</article>
 
 	<article class="article" id="space" data-search="星际科技 Galactifun 行星 火箭 密封">
@@ -1622,23 +1368,12 @@
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>数值</th></tr><tr><td>天体</td><td>9：地球、地球轨道、月球、火星、金星、欧罗巴、木卫一、土卫二、土卫六</td></tr><tr><td>氧气密封</td><td>封闭体积洪泛；超级风扇 +15% 范围；64 J/t + 氧气罐；开放/超大失败</td></tr><tr><td>密封检测上限</td><td>300000</td></tr><tr><td>外星人</td><td>2 tick；每玩家/世界 8；水蛭吞物 50%</td></tr><tr><td>自动门</td><td>范围 2；禁基岩/屏障/命令方块等</td></tr><tr><td>本服</td><td>地球名 world；行星世界禁下界门</td></tr></table></div>
 		<p>火箭 + 宇航服 + 密封舱 + 外星生态（ClayTech/Galacticraft 风）。</p>
 		<p class="muted">源 jsDelivr · Galactifun。</p>
-		
-		<h3>零基础怎么上太空</h3>
-		<p><strong>你先要有：</strong>大量资源、电力、密封材料。是后期内容。</p>
-		<ol class="steps"><li><strong>造火箭</strong><div class="detail">指南搜火箭与发射台。</div></li><li><strong>备宇航服</strong><div class="detail">太空有伤害，先穿好。</div></li><li><strong>建密封舱</strong><div class="detail">氧气密封机对「封闭」空间充氧：要耗 64 J/t + 氧气罐。漏风会失败。</div></li><li><strong>选星球飞</strong><div class="detail">9 个天体：月球、火星、金星等。每星资源不同。</div></li><li><strong>小心外星人</strong><div class="detail">每玩家限 8 只；水蛭会吞你物品。</div></li><li><strong>把资源带回家</strong><div class="detail">异星材料是终局合成用的。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>航天线</strong>：做火箭与发射台；备宇航服。</li>
-			<li><strong>密封舱</strong>：氧气密封机对<strong>封闭</strong>体积洪泛填充（超级风扇 +15% 范围）；64 J/t + 氧气罐。开放会失败。</li>
-			<li><strong>选星</strong>：月球/火星/金星…9 天体；本服行星世界禁下界门。</li>
-			<li><strong>防外星人</strong>：每玩家/世界限 8；水蛭会吞物 50%。</li>
-			<li><strong>自动门</strong>：范围 2 感应；大密封检测可到 300000。</li>
-			<li><strong>收益</strong>：异星矿与样本带回主世界做终局材料。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#space">星际科技 Galactifun</a></div>
+		<h3>怎么玩：飞第一次太空</h3>
+		<p>造火箭、密封舱，去月球/火星挖稀有。</p>
+		<p><strong>开始前你要有：</strong>大量资源、电力、密封材料。后期内容。</p>
+		<ol class="steps"><li><strong>造火箭与发射台</strong><div class="detail">指南搜火箭。</div></li><li><strong>备宇航服</strong><div class="detail">太空有伤害。</div></li><li><strong>建密封舱</strong><div class="detail">氧气密封机对封闭空间充氧：64 J/t + 氧气罐。漏风失败。</div></li><li><strong>选星出发</strong><div class="detail">9 天体：月球、火星、金星、欧罗巴等，资源不同。</div></li><li><strong>防外星人</strong><div class="detail">每玩家限 8；水蛭会吞物（50%）。</div></li><li><strong>带资源回家</strong><div class="detail">异星材料供终局合成。</div></li></ol>
+		<p class="note">本服行星世界禁下界门。密封检测可扩到 300000 范围。</p>
+分类：<a href="#space">星际科技 Galactifun</a></div>
 	</article>
 
 	<article class="article" id="magic2" data-search="Bump 源之花 药剂 灵魂巧匠 末地科技">
@@ -1653,22 +1388,12 @@
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>机制 / 数值</th></tr><tr><td>灵循环</td><td>tick-rate 2；全服 40；每玩家 4；自然生成 10s（灵盔/灵镜）</td></tr><tr><td>行为</td><td>敌对可乱翻背包/伤害；刷怪笼可释灵；仅生存</td></tr></table></div>
 		<h3>末地科技 TranscEndence</h3>
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>机制 / 数值</th></tr><tr><td>quirp</td><td>振荡器 128 J · 1/10t · 仅末地；四向 25/25/25/25（极化 40/40/10/10）</td></tr><tr><td>散布/超载</td><td>678 J/t；Zot 1000；超载 1024 J/步；同旋 1:1 / 异旋 16:1</td></tr><tr><td>达西</td><td>力量 III · 吸收 V · 坚韧/抗性 IV · 饱和 I · 再生 II（level−1）</td></tr></table></div>
-		
-		<h3>零基础怎么玩魔法杂项</h3>
-		<ol class="steps"><li><strong>Bump 武器</strong><div class="detail">做魔法剑/弓。技能扣<strong>饥饿</strong>不扣魔力。饱食度要够。</div></li><li><strong>鉴定冲星</strong><div class="detail">用鉴定仪看星级，低星就重做。目标 20 星。</div></li><li><strong>药剂「洞察」</strong><div class="detail">喝下 120 秒内半径 10 显示矿物——下矿神技。</div></li><li><strong>灵魂巧匠</strong><div class="detail">戴灵盔等刷「灵魂」实体；敌对灵会捣乱背包，尽快收服或清除。</div></li><li><strong>末地科技</strong><div class="detail">在末地刷 quirp 粒子 → 凝结 → Zot 充能 1000 → 超载 → 达西核心（永久向 buff）。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>Bump</strong>：做魔法武器，技能扣饥饿（剑 5、光弓 10）；魂剑最低饱食 2。</li>
-			<li><strong>鉴定</strong>：冲 20 星（≥100 总评）；低星重做。</li>
-			<li><strong>源之花</strong>：种魔法花做效果/材料。</li>
-			<li><strong>药剂</strong>：洞察 120s 半径 10 探矿；先下矿再喝。</li>
-			<li><strong>灵魂巧匠</strong>：灵盔/灵镜触发自然灵（10s）；每人 4、全服 40；敌对灵会乱背包——清灵或禁用。</li>
-			<li><strong>末地科技</strong>：振荡器刷 quirp（仅末地）→ 散布器凝结 → Zot 1000 充能 → 超载器（同旋 1:1）→ 达西核心长效 buff。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#magic2">魔法其它附属</a></div>
+		<h3>怎么玩：魔法武器与末地 buff</h3>
+		<p>Bump 扣饥饿的魔法武器、鉴定星级、探矿药、灵魂、末地达西。</p>
+		<p><strong>开始前你要有：</strong>战斗装备；末地科技要先能去末地。</p>
+		<ol class="steps"><li><strong>Bump 做武器</strong><div class="detail">技能吃<strong>饥饿</strong>不吃魔力。剑技约 5 饥饿、光弓 10。饱食度要够。</div></li><li><strong>魂剑</strong><div class="detail">最低饱食 2；食物→HP 1:1。</div></li><li><strong>鉴定冲星</strong><div class="detail">鉴定仪打分，目标 20 星（总评 ≥100）。低星重做。</div></li><li><strong>洞察药剂</strong><div class="detail">120 秒、半径 10 显示矿物。下矿前喝。</div></li><li><strong>灵魂巧匠</strong><div class="detail">灵盔/灵镜引来灵魂（10s 一只；每玩家 4）。敌对灵会翻背包，尽快收。</div></li><li><strong>末地科技</strong><div class="detail">末地刷 quirp → 凝结 → Zot 充 1000 → 超载器（同旋 1:1）→ 达西核心长效 buff。</div></li></ol>
+		<p class="note">达西效果如力量 III、吸收 V（实际生效 level−1）。</p>
+分类：<a href="#magic2">魔法其它附属</a></div>
 	</article>
 
 	<article class="article" id="tools2" data-search="额外工具 更多工具 迷你 修复 快捷 SMG">
@@ -1676,22 +1401,12 @@
 		<div class="article-header"><h1>工具杂项附属</h1><div class="sub">社区附属 · 工具</div></div>
 
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>附属</th><th>机制</th></tr><tr><td>ExtraTools</td><td>实用工具集（config 仅 auto-update）</td></tr><tr><td>MoreTools 新月锤</td><td>冷却 500ms；可旋转/改货运信道；白名单 PLAYER_WALL_HEAD</td></tr><tr><td>MiniBlocks</td><td>迷你装饰方块</td></tr><tr><td>SlimyRepair</td><td>粘液装备修复台</td></tr><tr><td>FastMachines</td><td>tick-rate 5–600（本服 10）；用能开关改配方；可不要求研究；批量无序合成</td></tr><tr><td>SMG</td><td>被动材料生成器</td></tr><tr><td>SimpleUtils</td><td>筛物品概率 20%</td></tr></table></div>
-		
-		<h3>零基础工具杂项怎么用</h3>
-		<ol class="steps"><li><strong>新月锤</strong><div class="detail">右键机器方块可旋转/拆；对着货运节点可改频道。冷却 0.5 秒。</div></li><li><strong>FastMachines</strong><div class="detail">一次做很多无序合成材料。本服约 0.5 秒一轮。</div></li><li><strong>SMG 材料生成器</strong><div class="detail">放着不管，慢慢产基础材料。</div></li><li><strong>SlimyRepair</strong><div class="detail">粘液装备坏了拿去修，别丢。</div></li><li><strong>MiniBlocks</strong><div class="detail">小装饰方块，建筑用。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>ExtraTools / MoreTools</strong>：指南做实用件；新月锤 500ms 冷却旋转机器、改货运信道。</li>
-			<li><strong>MiniBlocks</strong>：做迷你块做建筑细节。</li>
-			<li><strong>SlimyRepair</strong>：修粘液装省重做。</li>
-			<li><strong>FastMachines</strong>：批量无序合成（本服 10t 一跳）；关用能会改配方。</li>
-			<li><strong>SMG</strong>：放材料生成器挂机补料。</li>
-			<li><strong>SimpleUtils</strong>：筛子 20% 概率出物品。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#tools2">工具杂项附属</a></div>
+		<h3>怎么玩：实用工具怎么用</h3>
+		<p>扳手旋转/改频道、批量合成机、挂机产料、修装备、装饰块。</p>
+		<p><strong>开始前你要有：</strong>基础材料即可。</p>
+		<ol class="steps"><li><strong>新月锤</strong><div class="detail">右键机器可旋转/拆；点货运节点改频道。冷却 0.5 秒。</div></li><li><strong>FastMachines</strong><div class="detail">无序配方批量做。本服约 10t 一轮。关用能会改配方。</div></li><li><strong>SMG</strong><div class="detail">放材料生成器，挂机产基础料。</div></li><li><strong>SlimyRepair</strong><div class="detail">粘液装备坏了拿去修，别扔。</div></li><li><strong>MiniBlocks / SimpleUtils</strong><div class="detail">小装饰块；筛子 20% 概率。</div></li></ol>
+		<p class="note">ExtraTools 是另一套实用件，按指南拿。</p>
+分类：<a href="#tools2">工具杂项附属</a></div>
 	</article>
 
 	<article class="article" id="util2" data-search="自定义 任务 HUD 消音 计算器 村民 液体 量子 小世界">
@@ -1699,24 +1414,12 @@
 		<div class="article-header"><h1>服务与自定义</h1><div class="sub">社区附属 · 服务器工具</div></div>
 
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>机制</th></tr><tr><td>SlimeCustomizer</td><td>YAML 自定义物品/机器/发电机/电容/掉落/地质/研究/分类</td></tr><tr><td>SlimefunAdvancements</td><td>配置化粘液任务线</td></tr><tr><td>SlimeHUD</td><td>WAILA 式方块信息</td></tr><tr><td>SoundMuffler</td><td>消音（ProtocolLib）</td></tr><tr><td>SFCalc</td><td>配方总材料计算；可配置文案</td></tr><tr><td>SfChunkInfo</td><td>扫区块粘液方块量</td></tr><tr><td>VillagerUtil</td><td>村民便利；本服 use-tokens: true</td></tr><tr><td>Liquid</td><td>液体存储/传输（细节少）</td></tr><tr><td>Quaptics</td><td>光/量子传输（command /quaptics）</td></tr><tr><td>SmallSpace</td><td>半径 29,999,983；y&lt;0 需 1.18.2+</td></tr></table></div>
-		
-		<h3>零基础服务工具</h3>
-		<ol class="steps"><li><strong>任务</strong><div class="detail">打开进度界面，按目标玩，有引导。</div></li><li><strong>SFCalc</strong><div class="detail">输入物品名，告诉你要准备多少总材料——大合成前先算。</div></li><li><strong>HUD</strong><div class="detail">看机器状态。</div></li><li><strong>消音器</strong><div class="detail">机器吵就放一个。</div></li><li><strong>村民工具</strong><div class="detail">本服用令牌搬村民。</div></li></ol>
-<h3>详细玩法</h3>
-
-		<ol class="steps">
-			<li><strong>SlimeCustomizer</strong>（服主）：改 YAML 加物品/机器/发电机；reload 后指南出现。</li>
-			<li><strong>任务</strong>：打开进度界面按组做粘液目标。</li>
-			<li><strong>SlimeHUD</strong>：看方块状态排产线。</li>
-			<li><strong>SoundMuffler</strong>：放消音器静音噪音机。</li>
-			<li><strong>SFCalc</strong>：算成品总材料再开料单。</li>
-			<li><strong>SfChunkInfo</strong>：扫区块防机器卡服。</li>
-			<li><strong>VillagerUtil</strong>：用令牌搬/转村民。</li>
-			<li><strong>Liquid / Quaptics / SmallSpace</strong>：液体罐管、光传能、小世界（半径极大）。</li>
-		</ol>
-
-
-		<div class="categories">分类：<a href="#util2">服务与自定义</a></div>
+		<h3>怎么玩：服务与自定义</h3>
+		<p>任务、算料、看机器、消音、村民、液体/光/小世界。</p>
+		<p><strong>开始前你要有：</strong>无特殊前置。</p>
+		<ol class="steps"><li><strong>任务</strong><div class="detail">打开进度界面，按目标玩，当新手引导。</div></li><li><strong>SFCalc</strong><div class="detail">输入物品名算总材料——大合成前必用。</div></li><li><strong>SlimeHUD / 消音器</strong><div class="detail">看机器状态；机器吵就静音。</div></li><li><strong>VillagerUtil</strong><div class="detail">本服村民魔法要令牌。</div></li><li><strong>液体/Quaptics/SmallSpace</strong><div class="detail">罐管输液；光传能传物；小世界超大半径。</div></li><li><strong>SlimeCustomizer（服主）</strong><div class="detail">YAML 自定义物品机器，reload 后进指南。</div></li></ol>
+		<p class="note">新手优先用任务和 SFCalc，其它按需。</p>
+分类：<a href="#util2">服务与自定义</a></div>
 	</article>
 
 		<article class="article" id="gameplay" data-search="玩法 指南 怎么玩 上手 产线 操作 路线">
