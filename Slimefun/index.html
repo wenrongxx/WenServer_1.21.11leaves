@@ -607,6 +607,35 @@
 		</table></div>
 		<p class="muted">开源：<a href="https://github.com/RelativoBR/Supreme">RelativoBR/Supreme</a>。</p>
 
+		
+		<h4>下界乌托邦 · 迷狱生机（本服 config）</h4>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>值</th></tr>
+			<tr><td>生物/玩家上限</td><td>水环境 15 · 水动物 5 · 水敌对 10 · 陆环境 5 · 陆动物/敌对各 10 · 村民 5 · 猪灵商 1 · 流浪商 1</td></tr>
+			<tr><td>净化/结晶蔓延 · 植物生长</td><td>倍率均为 <strong>1</strong></td></tr>
+			<tr><td>迷狱收获</td><td>掉落率 <strong>0.3</strong>；权重 普通 1000 · 罕见 100 · 稀有 10 · 秘密 1；魂镰秘密 ×3</td></tr>
+		</table></div>
+		<h4>星际科技 Galactifun（本服 config）</h4>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>值</th></tr>
+			<tr><td>地球世界名</td><td><code>world</code></td></tr>
+			<tr><td>行星世界下界门</td><td>禁止</td></tr>
+			<tr><td>外星人</td><td>2 tick 循环；每玩家/世界最多 8；水蛭吞物 50%</td></tr>
+			<tr><td>密封检测</td><td><code>sealed-command-max-range</code> 300000</td></tr>
+			<tr><td>自动门</td><td>范围 2；禁基岩/蛋糕/屏障/命令方块等</td></tr>
+		</table></div>
+		<h4>快捷机器 · 新月锤 · 灵魂巧匠 · 杂项</h4>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>值</th></tr>
+			<tr><td>FastMachines</td><td><code>tick-rate</code> 5–600（本服 10 MCt）；用能开关改配方；可不要求粘液研究</td></tr>
+			<tr><td>MoreTools 新月锤</td><td>冷却 <strong>500ms</strong>；可旋转/改货运信道；旋转白名单默认 PLAYER_WALL_HEAD</td></tr>
+			<tr><td>SpiritsUnchained</td><td>tick-rate 2；全服灵上限 40；每玩家 4；自然生成间隔 10s（需灵盔/灵镜）；可乱翻背包/伤害；刷怪笼可释灵；仅生存</td></tr>
+			<tr><td>药剂「洞察」</td><td>时长 120s · 探矿半径 10</td></tr>
+			<tr><td>SmallSpace</td><td>生成半径 29,999,983；y&lt;0 需 1.18.2+</td></tr>
+			<tr><td>SimpleUtils 筛</td><td>sieve-item-chance 20%</td></tr>
+			<tr><td>VillagerUtil</td><td>村民魔法消耗令牌（use-tokens: true）</td></tr>
+			<tr><td>LiteXpansion</td><td>nerf-other-addons: false（不加倍它附属能耗）</td></tr>
+			<tr><td>克苏尼亚遗物</td><td>遗物清除器提示可关</td></tr>
+			<tr><td>压缩工艺 / 蓬松 / 迷你 / 修复 / 源之花 / SMG</td><td>config 仅 auto-update，细节见指南</td></tr>
+		</table></div>
+
 		<div class="categories">分类：<a href="#community">社区附属</a></div>
 	</article>
 
@@ -645,7 +674,7 @@
 	</main>
 </div>
 <footer class="wiki-footer">
-	粘液科技 Wiki（仿中文 Minecraft Wiki）· 机制条目 + 玩法指南 · 附属源码机制 5 批已合入
+	粘液科技 Wiki（仿中文 Minecraft Wiki）· 机制条目 + 玩法指南 · 源码/配置 6 批已合入
 </footer>
 <script>
 (function () {
