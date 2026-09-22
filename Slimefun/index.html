@@ -44,6 +44,9 @@
 			<li><a href="#slimetinker">粘液匠魂</a></li>
 			<li><a href="#gastronomicon">美食家</a></li>
 			<li><a href="#geneticchick">基因工程</a></li>
+			<li><a href="#infinityexp">无尽科技</a></li>
+			<li><a href="#dynatech2">动力科技</a></li>
+			<li><a href="#emctech2">EMC 科技</a></li>
 			<li><a href="#talisman">护身符</a></li>
 			<li><a href="#official">官方附属</a></li>
 			<li><a href="#community">社区附属</a></li>
@@ -951,6 +954,96 @@
 		</ul>
 		<p class="muted">源：<a href="https://github.com/ybw0014/GeneticChickengineering-Reborn">ybw0014/GeneticChickengineering-Reborn</a>。</p>
 		<div class="categories">分类：<a href="#geneticchick">生物</a>｜<a href="#community">社区附属</a></div>
+	</article>
+
+		<article class="article" id="infinityexp" data-search="无尽科技 InfinityExpansion 奇点 存储单元 石矿机 反应堆 无尽锭">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 社区附属 › 无尽科技</div>
+		<div class="article-header"><h1>无尽科技 InfinityExpansion</h1><div class="sub">奇点 · 无尽装备 · 终局工业</div></div>
+		<p>后期扩展：海量矿机与发电、奇点凝聚、无尽锭与无尽装备、生物模拟。源码基于 <code>JustAHuman-xD/InfinityExpansion</code> 镜像。</p>
+
+		<h3>奇点配方</h3>
+		<div class="wiki-table-wrap"><table class="wiki">
+			<tr><th>奇点</th><th>输入</th><th>数量</th></tr>
+			<tr><td>铜/锌/锡/铝/银/镁/铅</td><td>对应粘液锭</td><td><strong>2,400</strong></td></tr>
+			<tr><td>金 / 铁</td><td>金锭 / 铁锭</td><td>1,280 × vanilla-economy-scale</td></tr>
+			<tr><td>钻石/绿宝/煤/石英</td><td>同名原版</td><td>640 × scale</td></tr>
+			<tr><td>红石 / 青金</td><td>同名</td><td>1,280 × scale</td></tr>
+			<tr><td>下界合金</td><td>下界合金锭</td><td>160 × scale</td></tr>
+			<tr><td>无限</td><td>无尽锭</td><td>160</td></tr>
+			<tr><td>元奇点</td><td colspan="2">时运 / 大地 / 金属 / 魔法</td></tr>
+		</table></div>
+		<p>压缩圆石 1–5 级 = 9 / 81 / 243 / 6,561 / 59,049 圆石。</p>
+
+		<h3>存储单元</h3>
+		<div class="wiki-table-wrap"><table class="wiki">
+			<tr><th>档</th><th>容量</th></tr>
+			<tr><td>基础 / 进阶 / 强化</td><td>6,400 · 25,600 · 102,400</td></tr>
+			<tr><td>虚空 / 无尽</td><td>409,600 · <strong>1,600,000,000</strong></td></tr>
+		</table></div>
+		<p>存储锻造台升级可保留物品。</p>
+
+		<h3>石矿机</h3>
+		<div class="wiki-table-wrap"><table class="wiki">
+			<tr><th>阶</th><th>速度</th><th>J/t</th><th>矿 1/n</th><th>圆石回退</th></tr>
+			<tr><td>基础</td><td>1</td><td>360</td><td>5</td><td>1</td></tr>
+			<tr><td>进阶</td><td>2</td><td>1,440</td><td>4</td><td>12</td></tr>
+			<tr><td>虚空</td><td>4</td><td>5,760</td><td>3</td><td>4</td></tr>
+			<tr><td>无尽</td><td>16</td><td>23,040</td><td>2</td><td>16</td></tr>
+		</table></div>
+		<p>原版产出 ×scale×½（向上取整）。基础：煤×4、铁矿、金矿、青金×4、绿宝、钻石、红石×4；进阶为熔炼后产物且含下界合金×1；虚空×2 + 筛矿×6 + 24k 金×4；无尽时煤/青金/红石/石英×64、粘液锭×16、下界合金×8、24k 金×16。</p>
+
+		<h3>发电（J/s · 缓冲）</h3>
+		<div class="wiki-table-wrap"><table class="wiki">
+			<tr><th>机型</th><th>功率 · 缓冲</th></tr>
+			<tr><td>水力 / 强化水力</td><td>9·900 · 45·4,500</td></tr>
+			<tr><td>地热 / 强化地热</td><td>90·9,000 · 450·45,000（下界 ×2）</td></tr>
+			<tr><td>基础/进阶太阳</td><td>15·1,500 · 180·18,000</td></tr>
+			<tr><td>天体 / 虚空面板</td><td>750·75,000 · 3,600·360,000</td></tr>
+			<tr><td>无尽面板</td><td><strong>90,000</strong>·9,000,000</td></tr>
+			<tr><td>无尽反应堆</td><td><strong>180,000</strong>·40,000,000；1 无尽锭 86,400t（~1 天）；1 虚空锭 14,400t</td></tr>
+		</table></div>
+
+		<h3>其它机器</h3>
+		<ul class="bullets">
+			<li>奇点构造器 1·120J/t；无尽构造器 32·1200J/t。</li>
+			<li>虚空采集 1·120（960t→1 虚空碎片）；无尽虚空采集 32·1200。</li>
+			<li>资源合成器 1,000,000 J/次 → 强化合金 32 / 红石合金 32 / 压缩碳 16 / 炽炎锭3×4 / 电磁体 32 / 太阳能板 64。</li>
+			<li>石材厂 180J/t · 极寒冷冻 2·120 · 排尘 4·300 · 铀提取 1·360 · 解压 4·90。</li>
+			<li>树/农场生长、动力基岩、物品更新器、齿轮变形器、高级铁砧、无尽工作台、附魔/去附魔、高阶 GEO、生物数据注入、模拟室、筛子底座；虚空/无尽电容。</li>
+			<li>无尽装备附魔可极高（如锋利 20 / 抢夺 10）。</li>
+		</ul>
+		<div class="categories">分类：<a href="#infinityexp">工业</a>｜<a href="#community">社区附属</a></div>
+	</article>
+
+	<article class="article" id="dynatech2" data-search="动力科技 DynaTech 发电机 龙蛋 星尘 厨用 自动厨房 生长舱">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 社区附属 › 动力科技</div>
+		<div class="article-header"><h1>动力科技 DynaTech</h1><div class="sub">杂项发电与自动化 · ProfElements</div></div>
+		<p>本条数值来自既往源码摘录与本服 jar；jsDelivr 无该仓，未再扩表。</p>
+		<div class="wiki-table-wrap"><table class="wiki">
+			<tr><th>发电机</th><th>功率 / 缓冲</th></tr>
+			<tr><td>龙蛋</td><td>32 J/tick · 512（蛋在上方）</td></tr>
+			<tr><td>厨用</td><td>燃料 2/4/6/10/18/24/36 tick · 16 J/t · 256</td></tr>
+			<tr><td>星尘</td><td>1 星尘=32t · 1024 J/t · 32676</td></tr>
+			<tr><td>削片</td><td>耐久物 8 J/t · 256</td></tr>
+			<tr><td>自动厨房</td><td>512 缓冲 · 16 J/次（联动 KITCHEN）</td></tr>
+		</table></div>
+		<p>含生长舱催熟、无线输能、材料蜂巢等。开源 <code>ProfElements/DynaTech</code>。</p>
+		<div class="categories">分类：<a href="#dynatech2">能源</a>｜<a href="#community">社区附属</a></div>
+	</article>
+
+	<article class="article" id="emctech2" data-search="EMC 科技 分解 物化 等价交换 UU">
+		<div class="breadcrumbs"><a href="#top">首页</a> › 社区附属 › EMC 科技</div>
+		<div class="article-header"><h1>EMC 科技</h1><div class="sub">等价交换 · Sefiraat</div></div>
+		<p>jsDelivr 无源；下列为既往源码摘录 + 本服 emc-values.yml。</p>
+		<div class="wiki-table-wrap"><table class="wiki">
+			<tr><th>项</th><th>值</th></tr>
+			<tr><td>分解/物化 Mk1–5</td><td>5/4/3/2/1 tick · 容量 1k/10k/100k/1M/10M</td></tr>
+			<tr><td>能耗</td><td>分解 max(min(EMC/10,10M),1)；物化 max(min(EMC,10M),1)</td></tr>
+			<tr><td>合成 EMC</td><td>(Σ输入×1.1)/产量；变体取 min</td></tr>
+			<tr><td>基准</td><td>泥土 1 · 原木 4 · 末影珠 8 · 红石/煤 16 · 铁/金/铜 32 · 基础电路 1024 · 钻石 1028 · 下界合金 4096 · 下界之星 16384 · 龙蛋 32768</td></tr>
+		</table></div>
+		<p>尘 4→块、块压 1→块。开源 <code>Sefiraat/EMCTech</code>。</p>
+		<div class="categories">分类：<a href="#emctech2">能源</a>｜<a href="#community">社区附属</a></div>
 	</article>
 
 		<article class="article" id="gameplay" data-search="玩法 指南 怎么玩 上手 产线 操作 路线">
