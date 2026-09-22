@@ -35,7 +35,8 @@
 			<li><a href="#chestshop">ChestShop</a></li>
 			<li><a href="#bluemap">BlueMap</a></li>
 			<li><a href="#authme">AuthMe</a></li>
-			<li><a href="#enchantpacks">自定义附魔</a></li>
+			<li><a href="#enchantpacks">附魔概述</a></li>
+			<li><a href="#enchantbooks">附魔大全</a></li>
 			<li><a href="#voicechat">语音</a></li>
 			<li><a href="#dominion">领地</a></li>
 			<li><a href="#tabui">TAB 侧栏</a></li>
@@ -65,7 +66,7 @@
 				<tr><td>经济</td><td><code>/balance</code> <code>/pay</code> <code>/eco give|take|set|reset</code> <code>/balancetop</code></td><td>可接 Vault 外部经济</td></tr>
 				<tr><td>商店</td><td><code>/worth</code> <code>/sell</code> <code>/setworth</code>；牌子 <code>[Buy]/[Sell]/[Trade]</code></td><td>扣款走 Vault</td></tr>
 			</table></div>
-			<p class="muted">家上限默认：普通 <strong>3</strong> / VIP <strong>5</strong> / 管理 <strong>10</strong>；无限用 <code>essentials.sethome.multiple.unlimited</code>。</p>
+			<p class="muted">家上限默认：普通 <strong>3</strong> / VIP <strong>5</strong> / 管理 <strong>10</strong>；无限用 <code>essentials.sethome.multiple.unlimited</code>。TPA 默认 120 秒超时、最多 5 条排队；传送可配延迟与冷却；改配置后 <code>/essentials reload</code>。别名前缀 <code>~</code>；OP 名色可配；经济走内建或 Vault。</p>
 			<h3>怎么用（新手）</h3>
 			<ol class="steps">
 				<li><strong>安家</strong><div class="detail">站好位置输入 <code>/sethome</code>。要第二个家就命名：<code>/sethome 矿洞</code>。</div></li>
@@ -298,6 +299,33 @@
 			<div class="categories">分类：<a href="#enchantpacks">附魔</a></div>
 		</article>
 
+		
+		<article class="article" id="enchantbooks" data-search="附魔书 附魔大全 闪电打击 生命窃取 范围挖掘 AdvanceEnchantmentX ExcellentEnchants">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 自定义附魔</div>
+			<div class="article-header"><h1>自定义附魔大全</h1><div class="sub">每一本附魔书 · AdvanceEnchantmentX 为主</div></div>
+			<p>本服自定义附魔以 <strong>AdvanceEnchantmentX</strong>（中文 GUI）为主，辅以 <strong>ExcellentEnchants</strong>。每件默认最多 <strong>5</strong> 条自定义附魔，可发光。</p>
+			<h3>品质与花费</h3>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>品质</th><th>颜色</th><th>出现率</th><th>经验花费</th></tr>
+				<tr><td>普通</td><td>白色</td><td>40.0%</td><td>10 级经验</td></tr><tr><td>非普通</td><td>绿色</td><td>25.0%</td><td>20 级经验</td></tr><tr><td>稀有</td><td>蓝色</td><td>15.0%</td><td>30 级经验</td></tr><tr><td>史诗</td><td>紫色</td><td>10.0%</td><td>40 级经验</td></tr><tr><td>传说</td><td>金色</td><td>6.0%</td><td>50 级经验</td></tr><tr><td>神话</td><td>浅紫色</td><td>3.0%</td><td>60 级经验</td></tr><tr><td>神级</td><td>深红色加粗</td><td>1.0%</td><td>75 级经验</td></tr>
+			</table></div>
+			<h3>AdvanceEnchantmentX 全附魔表</h3>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>附魔名</th><th>部位</th><th>品质</th><th>最高等级</th><th>效果与数值</th></tr>
+				<tr><td><strong>glow</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>普通</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>非普通</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>稀有</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>史诗</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>传说</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>神话</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>神级</strong></td><td>?</td><td>?</td><td>—</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>闪电打击</strong></td><td>武器</td><td>稀有</td><td>3</td><td>命中概率感电并追加伤害<br><span class='muted'>伤害/级 +2；基础触发 5%，每级 +2%</span></td></tr><tr><td><strong>生命窃取</strong></td><td>武器</td><td>史诗</td><td>5</td><td>命中回复生命<br><span class='muted'>基础回血 1.0，每级 +0.5</span></td></tr><tr><td><strong>流血</strong></td><td>武器</td><td>非普通</td><td>3</td><td>命中使目标流血<br><span class='muted'>持续 60t，每跳 1.0 伤/级</span></td></tr><tr><td><strong>处决</strong></td><td>武器</td><td>传说</td><td>1</td><td>低血量目标处决增伤<br><span class='muted'>阈值 30% 血时伤害 ×1.5，仅 1 级</span></td></tr><tr><td><strong>连击</strong></td><td>武器</td><td>稀有</td><td>5</td><td>连续命中叠加伤害<br><span class='muted'>每击 +0.5，40t 重置</span></td></tr><tr><td><strong>击退控制</strong></td><td>武器</td><td>普通</td><td>2</td><td>减少自身被击退<br><span class='muted'>减退 ×0.2/级</span></td></tr><tr><td><strong>闪烁</strong></td><td>武器</td><td>史诗</td><td>3</td><td>短距闪现类位移<br><span class='muted'>见游戏内说明</span></td></tr><tr><td><strong>冲击波</strong></td><td>武器</td><td>传说</td><td>2</td><td>命中产生击退波<br><span class='muted'>见游戏内说明</span></td></tr><tr><td><strong>风暴烈焰</strong></td><td>武器</td><td>神话</td><td>2</td><td>火焰风暴范围伤害<br><span class='muted'>神话级高伤附魔</span></td></tr><tr><td><strong>范围挖掘3x3</strong></td><td>镐</td><td>稀有</td><td>1</td><td>一次挖 3×3<br><span class='muted'>1 级</span></td></tr><tr><td><strong>范围挖掘5x5</strong></td><td>镐</td><td>史诗</td><td>1</td><td>一次挖 5×5<br><span class='muted'>1 级</span></td></tr><tr><td><strong>范围挖掘6x6</strong></td><td>镐</td><td>传说</td><td>1</td><td>一次挖 6×6（超模）<br><span class='muted'>1 级，建议限权</span></td></tr><tr><td><strong>矿脉挖掘</strong></td><td>镐</td><td>稀有</td><td>1</td><td>连锁整条矿脉<br><span class='muted'>最多 64 块/次</span></td></tr><tr><td><strong>自动熔炼</strong></td><td>镐</td><td>非普通</td><td>1</td><td>挖矿自动烧成锭<br><span class='muted'>1 级</span></td></tr><tr><td><strong>透视感知</strong></td><td>镐</td><td>史诗</td><td>1</td><td>短暂看见周围矿<br><span class='muted'>1 级</span></td></tr><tr><td><strong>急速加成</strong></td><td>镐</td><td>普通</td><td>3</td><td>挖矿短加速<br><span class='muted'>每级效果，持续 5s</span></td></tr><tr><td><strong>荆棘增强</strong></td><td>甲</td><td>稀有</td><td>3</td><td>反伤<br><span class='muted'>基础 10%，每级 +5%</span></td></tr><tr><td><strong>冰冻光环</strong></td><td>甲</td><td>史诗</td><td>2</td><td>冰冻周围敌人<br><span class='muted'>史诗</span></td></tr><tr><td><strong>火焰光环</strong></td><td>甲</td><td>史诗</td><td>2</td><td>灼烧周围敌人<br><span class='muted'>见配置</span></td></tr><tr><td><strong>生命恢复</strong></td><td>?</td><td>传说</td><td>3</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>抗击退</strong></td><td>?</td><td>非普通</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>伤害减免</strong></td><td>甲</td><td>神话</td><td>4</td><td>百分比减伤<br><span class='muted'>见配置</span></td></tr><tr><td><strong>狂暴模式</strong></td><td>?</td><td>史诗</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>隐身爆发</strong></td><td>?</td><td>传说</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>速度加成</strong></td><td>?</td><td>普通</td><td>2</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>跳跃加成</strong></td><td>?</td><td>普通</td><td>2</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>无摔落伤害</strong></td><td>?</td><td>史诗</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>冲刺</strong></td><td>?</td><td>传说</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>爆裂箭</strong></td><td>?</td><td>稀有</td><td>3</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>闪电箭</strong></td><td>?</td><td>史诗</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>毒箭</strong></td><td>?</td><td>非普通</td><td>3</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>穿透箭</strong></td><td>?</td><td>稀有</td><td>1</td><td>见游戏内<br><span class='muted'></span></td></tr><tr><td><strong>传送打击</strong></td><td>特殊</td><td>神话</td><td>1</td><td>攻击附带位移打击<br><span class='muted'>慎用</span></td></tr><tr><td><strong>陨石打击</strong></td><td>特殊</td><td>神级</td><td>1</td><td>召唤陨石（超模）<br><span class='muted'>慎用/禁用</span></td></tr><tr><td><strong>时间扭曲</strong></td><td>特殊</td><td>神级</td><td>1</td><td>改变时间流速（超模）<br><span class='muted'>慎用/禁用</span></td></tr><tr><td><strong>神之模式</strong></td><td>特殊</td><td>神级</td><td>1</td><td>无敌向爆发（超模）<br><span class='muted'>慎用/禁用</span></td></tr>
+			</table></div>
+			<p class="muted">数据来自本服 <code>AdvanceEnchantmentX config.yml</code>。神级/传说附魔（神之模式、陨石打击、时间扭曲、6×6 范围挖掘等）极易超模，PVP 建议禁用。</p>
+			<h3>ExcellentEnchants（75+）</h3>
+			<p>ExcellentEnchants 共 75+ 条原版风附魔，品质普通/勇者/史诗/神话，可从附魔台、村民、战利品、钓鱼、怪装获得；管理命令 /book /randombook /disenchant /givefuel。具体词条以游戏内 GUI 列表为准。 管理发书：<code>/book 玩家 附魔 等级</code>；随机书 <code>/randombook</code>；拆解 <code>/disenchant</code>。</p>
+			<h3>怎么获得附魔书</h3>
+			<ol class="steps">
+				<li><strong>附魔台 / 铁砧 / 村民 / 钓鱼 / 怪装</strong>：杰出附魔会塞进这些途径。</li>
+				<li><strong>GUI 附魔台</strong>：<code>/enchanter</code>，按品质花经验抽取（普通 40% → 神级 1%）。</li>
+				<li><strong>管理发放</strong>：<code>/book</code> 精确指定附魔与等级。</li>
+			</ol>
+			<div class="categories">分类：<a href="#enchantbooks">附魔</a></div>
+		</article>
+
 		<article class="article" id="voicechat" data-search="SimpleVoiceChat 语音 voicechat 群组 按键说话">
 			<div class="breadcrumbs"><a href="#top">首页</a> › SimpleVoiceChat</div>
 			<div class="article-header"><h1>SimpleVoiceChat</h1><div class="sub">游戏内语音</div></div>
@@ -380,7 +408,7 @@
 			<ol class="steps">
 				<li>对矿脉<strong>正常挖掘</strong>其中一块（默认原版矿）。</li>
 				<li>条件满足时整条一起碎、一起掉。</li>
-				<li>默认<strong>不用潜行</strong>；若服主开了 <code>mustSneak</code> 则须按住潜行。</li>
+				<li>本服<strong>必须蹲下（潜行）</strong>才会连锁挖矿（<code>mustSneak</code>）。</li>
 				<li>工具要挖得动（默认 <code>needCorrectTool</code>：镐挖矿、斧砍原木）。</li>
 			</ol>
 			<h3>命令与默认限制</h3>
