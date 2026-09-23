@@ -799,6 +799,74 @@
 				});
 			}
 		});
+
+	/* ===== float nav: home + collapsible TOC ===== */
+	(function () {
+		if (document.getElementById("floatNav")) return;
+		var nav = document.createElement("div");
+		nav.className = "float-nav";
+		nav.id = "floatNav";
+		nav.innerHTML = '<a class="float-home" href="../index.html">\u2190 \u8fd4\u56de\u9996\u9875</a>' +
+			'<button type="button" class="float-toc" id="floatToc" aria-expanded="false">\u76ee\u5f55</button>';
+		document.body.appendChild(nav);
+		var panel = document.createElement("div");
+		panel.className = "float-toc-panel";
+		panel.id = "floatTocPanel";
+		panel.hidden = true;
+		var html = "";
+		var sb = document.getElementById("wikiSidebar");
+		if (sb) {
+			var titles = sb.querySelectorAll(".sb-title");
+			var lists = sb.querySelectorAll("ul, ol");
+			var used = {};
+			for (var i = 0; i < lists.length; i++) {
+				var t = titles[i] ? titles[i].textContent.trim() : "\u7ae0\u8282";
+				if (!used[t]) { html += '<div class="ftp-title">' + t + "</div>"; used[t] = 1; }
+				var as = lists[i].querySelectorAll("a");
+				for (var j = 0; j < as.length; j++) {
+					html += '<a href="' + as[j].getAttribute("href") + '">' + as[j].textContent.trim() + "</a>";
+				}
+			}
+			if (!html) {
+				var links = sb.querySelectorAll("a");
+				for (var k = 0; k < links.length; k++) {
+					if (links[k].classList.contains("back-home")) continue;
+					html += '<a href="' + links[k].getAttribute("href") + '">' + links[k].textContent.trim() + "</a>";
+				}
+			}
+		}
+		var boxes = document.querySelectorAll(".toc-box");
+		for (var b = 0; b < boxes.length; b++) {
+			var bl = boxes[b].querySelectorAll("a");
+			if (!bl.length) continue;
+			if (html) html += '<div class="ftp-title">\u672c\u6587\u76ee\u5f55</div>';
+			for (var m = 0; m < bl.length; m++) {
+				html += '<a href="' + bl[m].getAttribute("href") + '">' + bl[m].textContent.trim() + "</a>";
+			}
+		}
+		if (!html) html = '<div class="ftp-title">\u6682\u65e0\u76ee\u5f55</div>';
+		panel.innerHTML = html;
+		document.body.appendChild(panel);
+		var btn = document.getElementById("floatToc");
+		btn.addEventListener("click", function () {
+			var open = panel.hidden;
+			panel.hidden = !open;
+			btn.setAttribute("aria-expanded", open ? "true" : "false");
+		});
+		panel.addEventListener("click", function (e) {
+			if (e.target.tagName === "A") {
+				panel.hidden = true;
+				btn.setAttribute("aria-expanded", "false");
+			}
+		});
+		document.addEventListener("click", function (e) {
+			if (!panel.hidden && !panel.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
+				panel.hidden = true;
+				btn.setAttribute("aria-expanded", "false");
+			}
+		});
+	})();
+
 </script>
 </body>
 </html>
