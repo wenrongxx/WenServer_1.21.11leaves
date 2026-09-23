@@ -1477,3 +1477,32 @@ a:hover { text-decoration: underline; }
     top: 3.1rem;
   }
 }
+
+/* ===== TOC button controls both sidebar and in-page toc-box ===== */
+.wiki-sidebar.collapsed ol,
+.wiki-sidebar.collapsed .toc-box ol,
+.toc-box.collapsed ol {
+  display: none !important;
+}
+.toc-box .toc-title {
+  cursor: pointer;
+  user-select: none;
+}
+.toc-box .toc-title::after {
+  content: " ▾";
+  font-size: 0.75em;
+  opacity: 0.6;
+}
+.toc-box.collapsed .toc-title::after {
+  content: " ▸";
+}
+.toc-box.collapsed {
+  padding-bottom: 0.5rem;
+}
+/* mobile: start with toc-box collapsed so chapters don't stick on screen */
+@media (max-width: 800px) {
+  .toc-box ol { display: none; }
+  .toc-box.open ol { display: block; }
+  .toc-box.open .toc-title::after { content: " ▾"; }
+  .toc-box:not(.open) .toc-title::after { content: " ▸"; }
+}
