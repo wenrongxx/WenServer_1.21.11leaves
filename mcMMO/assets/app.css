@@ -1455,3 +1455,25 @@ a:hover { text-decoration: underline; }
     box-shadow: 0 1px 0 var(--line-soft, #e0e0e0);
   }
 }
+
+/* collapsed sidebar: hide titles + lists, keep back-home */
+.wiki-sidebar.collapsed .sb-title,
+.wiki-sidebar.collapsed ul {
+  display: none !important;
+}
+.wiki-sidebar.collapsed {
+  max-height: none;
+  overflow: visible;
+  border-bottom: none;
+}
+@media (max-width: 800px) {
+  .wiki-sidebar {
+    position: static !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  .wiki-sidebar .sb-top {
+    position: sticky;
+    top: 3.1rem;
+  }
+}
