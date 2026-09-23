@@ -1571,3 +1571,23 @@ a:hover { color: #0645ad; }
     max-height: 55vh;
   }
 }
+
+/* ===== float-nav fix: panel above buttons; mobile hide big buttons ===== */
+.float-toc-panel {
+  z-index: 210 !important;
+  top: 52px !important;
+}
+.float-nav { z-index: 205 !important; }
+/* sidebar back-home must not cover TOC list */
+.wiki-sidebar .sb-top {
+  position: relative !important;
+  top: auto !important;
+  z-index: 1 !important;
+  background: transparent !important;
+}
+@media (max-width: 800px) {
+  .float-nav,
+  .float-toc-panel {
+    display: none !important;
+  }
+}
