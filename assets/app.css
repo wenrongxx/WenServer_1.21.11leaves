@@ -1591,3 +1591,37 @@ a:hover { color: #0645ad; }
     display: none !important;
   }
 }
+
+/* ===== desktop sidebar home pin / mobile float-only ===== */
+@media (min-width: 801px) {
+  .wiki-sidebar .sb-top {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 5 !important;
+    background: var(--sidebar, #f6f7f9) !important;
+    padding-top: 0.35rem !important;
+    padding-bottom: 0.35rem !important;
+  }
+  .float-nav,
+  .float-toc-panel {
+    display: none !important;
+  }
+}
+@media (max-width: 800px) {
+  .float-nav {
+    display: flex !important;
+  }
+  .float-toc-panel:not([hidden]) {
+    display: block !important;
+  }
+  .float-toc-panel[hidden] {
+    display: none !important;
+  }
+  .toc-toggle {
+    display: none !important;
+  }
+  .wiki-sidebar .sb-top {
+    position: relative !important;
+    top: auto !important;
+  }
+}
