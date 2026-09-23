@@ -1389,3 +1389,43 @@ a:hover { color: #0645ad; }
   }
   .qq-chip { font-size: 0.7rem !important; padding: 0.12rem 0.45rem !important; }
 }
+
+/* ===== sticky back-home + header safety ===== */
+.wiki-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.wiki-sidebar .sb-top {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  margin: 0 0 0.55rem;
+  padding: 0.25rem 0 0.35rem;
+  background: var(--sidebar, #fff);
+}
+.wiki-sidebar .sb-top .back-home {
+  display: block;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+@media (max-width: 720px) {
+  .wiki-header {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+  }
+  .wiki-sidebar {
+    position: sticky;
+    top: 3.2rem;
+    z-index: 40;
+    max-height: 38vh;
+    overflow-y: auto;
+  }
+  .wiki-sidebar .sb-top {
+    top: 0;
+    background: var(--sidebar, #fff);
+    box-shadow: 0 1px 0 var(--line-soft, #e0e0e0);
+  }
+}
