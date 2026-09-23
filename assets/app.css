@@ -1429,3 +1429,19 @@ a:hover { color: #0645ad; }
     box-shadow: 0 1px 0 var(--line-soft, #e0e0e0);
   }
 }
+
+/* hub header: no dead chrome, no overlay */
+.hub-body .wiki-header {
+  position: relative;
+  z-index: 1;
+}
+.hub-body .chip.plain {
+  cursor: default;
+  border-style: solid;
+  background: #f8f9fa;
+  color: #54595d;
+}
+.hub-body .chip.plain:hover { color: #54595d; }
+.wiki-header .site-home {
+  text-decoration: none !important;
+}
