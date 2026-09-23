@@ -1506,3 +1506,78 @@ a:hover { text-decoration: underline; }
   .toc-box.open .toc-title::after { content: " ▾"; }
   .toc-box:not(.open) .toc-title::after { content: " ▸"; }
 }
+
+/* ===== float nav: sticky home + collapsible TOC ===== */
+.float-nav {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 200;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.float-nav a.float-home,
+.float-nav button.float-toc {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--line, #d0d7de);
+  background: #fff;
+  color: var(--link, #0645ad) !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  cursor: pointer;
+  line-height: 1.2;
+}
+.float-nav a.float-home:link,
+.float-nav a.float-home:visited,
+.float-nav a.float-home:hover,
+.float-nav a.float-home:focus,
+.float-nav a.float-home:active { color: var(--link, #0645ad) !important; text-decoration: none !important; }
+.float-nav a.float-home:hover,
+.float-nav button.float-toc:hover { filter: brightness(1.05); background: #f0f6ff; }
+.float-nav button.float-toc[aria-expanded="true"] { background: #d9e6f7; }
+.float-toc-panel {
+  position: fixed;
+  top: 52px;
+  right: 10px;
+  z-index: 199;
+  width: min(320px, calc(100vw - 20px));
+  max-height: min(70vh, 520px);
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid var(--line, #d0d7de);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.16);
+  padding: 0.6rem 0.75rem;
+}
+.float-toc-panel[hidden] { display: none !important; }
+.float-toc-panel .ftp-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted, #666);
+  margin: 0.35rem 0 0.25rem;
+}
+.float-toc-panel a {
+  display: block;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  color: var(--link, #0645ad) !important;
+  text-decoration: none !important;
+  font-size: 0.9rem;
+}
+.float-toc-panel a:hover { background: #eaf3ff; }
+@media (max-width: 800px) {
+  .float-nav { top: auto; bottom: 14px; right: 12px; }
+  .float-toc-panel {
+    top: auto;
+    bottom: 60px;
+    right: 12px;
+    max-height: 55vh;
+  }
+}
