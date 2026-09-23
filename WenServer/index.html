@@ -111,7 +111,13 @@
 	onScroll();
 	if (toggle && sidebar) {
 		if (window.matchMedia("(max-width: 800px)").matches) sidebar.classList.add("collapsed");
-		toggle.addEventListener("click", function () { sidebar.classList.toggle("collapsed"); });
+		toggle.addEventListener("click", function () {
+			var nowOpen = sidebar.classList.toggle("collapsed") === false;
+			document.querySelectorAll(".toc-box").forEach(function (tb) {
+				tb.classList.toggle("collapsed", !nowOpen);
+				tb.classList.toggle("open", nowOpen);
+			});
+		});
 	}
 	var box = document.getElementById("searchBox");
 	var btn = document.getElementById("searchBtn");
@@ -234,6 +240,22 @@
 		if (box) box.focus();
 	});
 })();
+
+		/* toc-box sync init */
+		document.querySelectorAll(".toc-box").forEach(function (tb) {
+			if (window.matchMedia("(max-width: 800px)").matches) {
+				tb.classList.add("collapsed");
+			} else {
+				tb.classList.add("open");
+			}
+			var title = tb.querySelector(".toc-title");
+			if (title) {
+				title.addEventListener("click", function () {
+					var open = tb.classList.toggle("open");
+					tb.classList.toggle("collapsed", !open);
+				});
+			}
+		});
 </script>
 </body>
 </html>
