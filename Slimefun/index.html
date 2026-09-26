@@ -122,7 +122,9 @@
 
 			<li><a href="#community">社区附属总览</a></li>
 
-			<li><a href="#networks">Networks</a></li>
+			<li><a href="#networks2">Networks</a></li>
+
+			<li><a href="#networks2">Networks</a></li>
 
 			<li><a href="#danktech">DankTech2</a></li>
 
@@ -1218,6 +1220,54 @@
 		
 		
 		
+		
+		<article class="article" id="networks2" data-search="Networks 网络 存储 量子 格子 合成 货运 电容 遥控 蓝图">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 社区附属 › Networks</div>
+			<div class="article-header">
+				<h2>Networks 网络 · 全节点详解</h2>
+				<div class="sub">Build 105 · 物品存储与搬运网络，与货运用协同</div>
+			</div>
+
+			<div class="infobox"><div class="ib-title">Networks</div><table>
+				<tr><td class="k">插件</td><td class="v">Networks（社区附属，Sefiraat）</td></tr>
+				<tr><td class="k">定位</td><td class="v">物品网络：存 / 取 / 运 / 自动合成</td></tr>
+				<tr><td class="k">节点数</td><td class="v"><strong>23</strong> 种</td></tr>
+				<tr><td class="k">存储上限</td><td class="v">量子存储 4k → <strong>20 亿</strong>/物品</td></tr>
+				<tr><td class="k">依赖</td><td class="v">Slimefun；兼容 InfinityExpansion 桶、WildChests 等</td></tr>
+				<tr><td class="k">命令</td><td class="v"><code>/networks</code></td></tr>
+			</table></div>
+
+			<h3>一、全部节点一览</h3>
+			<div class="wiki-table-wrap"><table class="wiki"><tr><th>节点</th><th>类别</th><th>作用</th></tr><tr><td>网络控制器</td><td>核心</td><td>网络大脑，所有节点连到它</td></tr><tr><td>网络格 / 合成格</td><td>存取</td><td>全网物品 GUI；合成格可直接用网内材料合成原版+粘液物品</td></tr><tr><td>网络桥</td><td>连接</td><td>廉价延长网络</td></tr><tr><td>网络单元</td><td>存储</td><td>单格存双箱量，适合少而杂的物品</td></tr><tr><td>量子存储</td><td>存储</td><td>单物品海量仓：4k → 20 亿，适合量产物资</td></tr><tr><td>网络监视器</td><td>连接</td><td>暴露相连容器（含外壳卡、无尽桶等）给网络</td></tr><tr><td>网络导入器</td><td>输入</td><td>9 格，货运用；定时吸入网络</td></tr><tr><td>网络导出器</td><td>输出</td><td>模板物品，从网络抽出供货运用</td></tr><tr><td>网络抓取器</td><td>输入</td><td>吸相邻粘液机器输出入网</td></tr><tr><td>网络推送器</td><td>输出</td><td>按模板推进相邻粘液机器输入槽</td></tr><tr><td>网络电容</td><td>电力</td><td>接电网储电，供网络内设备用</td></tr><tr><td>电力显示器</td><td>电力</td><td>查看网络总电量</td></tr><tr><td>电力输出口</td><td>电力</td><td>把网络电输出给相邻电网设备</td></tr><tr><td>网络发射器</td><td>无线</td><td>按模板把物品发给绑定接收器</td></tr><tr><td>网络接收器</td><td>无线</td><td>接收物品并入本网</td></tr><tr><td>网络编码器</td><td>合成</td><td>把配方写入空白蓝图</td></tr><tr><td>自动合成器</td><td>合成</td><td>按蓝图用网内材料自动合成回网</td></tr><tr><td>保留型自动合成器</td><td>合成</td><td>同上但产物留在机内（一叠）供取用</td></tr><tr><td>网络遥控器</td><td>远程</td><td>绑定格子无线访问：150/500/无限/跨维度</td></tr><tr><td>网络净化器</td><td>清理</td><td>按模板取出并销毁物品（慎用）</td></tr><tr><td>网络蜡笔</td><td>工具</td><td>开关机器粒子提示</td></tr><tr><td>网络配置器</td><td>工具</td><td>复制/粘贴节点设置</td></tr><tr><td>网络探测器</td><td>工具</td><td>查看控制器连的全部方块与内容摘要</td></tr></table></div>
+
+			<h3>二、核心玩法</h3>
+			<ul class="bullets">
+				<li><strong>存储</strong>：网络单元存杂项，量子存储堆单品（矿物/圆石）</li>
+				<li><strong>存取</strong>：网络格看全网；合成格直接用网内材料合成</li>
+				<li><strong>货运协同</strong>：导入器/导出器做货运用 ↔ 网络桥</li>
+				<li><strong>机器对接</strong>：抓取器吸产物、推送器喂原料</li>
+				<li><strong>自动合成</strong>：编码器写蓝图 → 自动合成器按蓝图产；保留型可备货</li>
+				<li><strong>无线</strong>：发射器+接收器跨区传物；遥控器远程开格子</li>
+			</ul>
+
+			<h3>三、电力</h3>
+			<ul class="bullets">
+				<li>网络电容从电网吃电存起来，网络内设备共用</li>
+				<li>电力显示器看总量；输出口可反哺电网</li>
+			</ul>
+
+			<h3>四、实用建议</h3>
+			<ul class="bullets">
+				<li>起步：控制器 + 网络格 + 几个网络单元</li>
+				<li>量产物资（矿物/方块）上<strong>量子存储</strong>，杂项用单元</li>
+				<li>机器产线接<strong>抓取器</strong>自动入网</li>
+				<li>自动合成器 + 蓝图做备货（如线、红石）</li>
+				<li>净化器会销毁物品，配置模板要小心</li>
+			</ul>
+
+			<p class="muted">数据来源：Sefiraat/Networks Build 105 README + plugin.yml。详见 <a href="https://sefiraat.dev">sefiraat.dev</a>。</p>
+		</article>
+
 		<article class="article" id="backpacks2b" data-search="染色背包 DyedBackpacks 背包宠物 HotbarPets 怪物捕捉 MobCapturer 灵魂网 蛋">
 			<div class="breadcrumbs"><a href="#top">首页</a> › 官方附属 › 背包与捕捉</div>
 			<div class="article-header">
