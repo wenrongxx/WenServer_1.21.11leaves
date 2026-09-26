@@ -2685,13 +2685,7 @@
 		</table></div>
 
 		<h3>一、箱体层级</h3>
-		{tbl(["箱", "页数", "每页槽", "总槽", "说明"], [
-			["铁箱 Iron Chest", "2", "45", "90", "入门巨箱"],
-			["金箱 Gold Chest", "4", "45", "180", "中型仓库"],
-			["钻石箱 Diamond Chest", "6", "45", "270", "单箱上限"],
-			["物品单元 Inventory Cell", "6", "45", "270", "给网络箱聚合用的「分机」"],
-			["网络箱 Network Chest", "—", "—", "聚合", "主箱：打开范围内全部物品单元"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>箱</th><th>页数</th><th>每页槽</th><th>总槽</th><th>说明</th></tr><tr><td>铁箱 Iron Chest</td><td>2</td><td>45</td><td>90</td><td>入门巨箱</td></tr><tr><td>金箱 Gold Chest</td><td>4</td><td>45</td><td>180</td><td>中型仓库</td></tr><tr><td>钻石箱 Diamond Chest</td><td>6</td><td>45</td><td>270</td><td>单箱上限</td></tr><tr><td>物品单元 Inventory Cell</td><td>6</td><td>45</td><td>270</td><td>给网络箱聚合用的「分机」</td></tr><tr><td>网络箱 Network Chest</td><td>—</td><td>—</td><td>聚合</td><td>主箱：打开范围内全部物品单元</td></tr></table></div>
 		<ul class="bullets">
 			<li>物品单元放在网络箱<strong>水平 5 格内</strong>（可配）才会被看到</li>
 			<li>每 <strong>4</strong> 粘液 tick 重扫一次（可配；调大减负但响应变慢）</li>
@@ -2700,24 +2694,24 @@
 
 		<h3>二、合成路线（增强工作台）</h3>
 		<p>核心链：铁箱 → 金箱 → 钻石箱 →（末影合成器）物品单元；网络箱另需通信/面板件。</p>
-		{craft("铁箱 · 芯料示意（铁块环 + 核心）", "增强工作台", [
-			["iron_block","iron_block","iron_block"],
-			["iron_block","smooth_stone","iron_block"],
-			["iron_block","iron_block","iron_block"],
-		])}
-		{craft("金箱 · 芯料示意（24k 金环 + 强化核心）", "增强工作台", [
-			["gold_12k","gold_12k","gold_12k"],
-			["gold_12k","gold_block","gold_12k"],
-			["gold_12k","gold_12k","gold_12k"],
-		])}
+		<div class="craft-block station-crafting">
+  <div class="craft-name">铁箱 · 芯料示意（铁块环 + 核心） <span class="craft-badge">有序</span></div>
+  <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">增强工作台</div>
+  <div class="craft-table-wrap">
+    <table class="craft-3"><tr><td><img src="assets/img/craft/iron_block.png" alt="iron_block" title="iron_block"></td><td><img src="assets/img/craft/iron_block.png" alt="iron_block" title="iron_block"></td><td><img src="assets/img/craft/iron_block.png" alt="iron_block" title="iron_block"></td></tr><tr><td><img src="assets/img/craft/iron_block.png" alt="iron_block" title="iron_block"></td><td><img src="assets/img/craft/smooth_stone.png" alt="smooth_stone" title="smooth_stone"></td><td><img src="assets/img/craft/iron_block.png" alt="iron_block" title="iron_block"></td></tr><tr><td><img src="assets/img/craft/iron_block.png" alt="iron_block" title="iron_block"></td><td><img src="assets/img/craft/iron_block.png" alt="iron_block" title="iron_block"></td><td><img src="assets/img/craft/iron_block.png" alt="iron_block" title="iron_block"></td></tr></table>
+  </div>
+</div>
+		<div class="craft-block station-crafting">
+  <div class="craft-name">金箱 · 芯料示意（24k 金环 + 强化核心） <span class="craft-badge">有序</span></div>
+  <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">增强工作台</div>
+  <div class="craft-table-wrap">
+    <table class="craft-3"><tr><td><img src="assets/img/craft/gold_12k.png" alt="gold_12k" title="gold_12k"></td><td><img src="assets/img/craft/gold_12k.png" alt="gold_12k" title="gold_12k"></td><td><img src="assets/img/craft/gold_12k.png" alt="gold_12k" title="gold_12k"></td></tr><tr><td><img src="assets/img/craft/gold_12k.png" alt="gold_12k" title="gold_12k"></td><td><img src="assets/img/craft/gold_block.png" alt="gold_block" title="gold_block"></td><td><img src="assets/img/craft/gold_12k.png" alt="gold_12k" title="gold_12k"></td></tr><tr><td><img src="assets/img/craft/gold_12k.png" alt="gold_12k" title="gold_12k"></td><td><img src="assets/img/craft/gold_12k.png" alt="gold_12k" title="gold_12k"></td><td><img src="assets/img/craft/gold_12k.png" alt="gold_12k" title="gold_12k"></td></tr></table>
+  </div>
+</div>
 		<p class="muted">合成链摘要：铁（铁块+基础核心）→ 金（24k 金+强化核心）→ 钻石（钻石块+高级核心+强化铀）→ 物品单元（末影合成器，约 <strong>300s</strong>）→ 网络箱（复合板+显示面板+通信方块+钻石箱）。</p>
 
 		<h3>三、加工机器</h3>
-		{tbl(["机器", "缓冲", "每次耗电", "工时", "用途"], [
-			["模具压机", "16,384 J", "4,096 J", "扎马克→模具 20/30/40s", "造模具（基础/强化/高级）"],
-			["金属压机", "32,768 J", "8,192 J", "模具+4 合金→板 20/40/60/120s", "轧金属板"],
-			["末影合成器", "约 131,072 J", "32,768 J", "钻石箱→单元 300s；矿块 2→1 循环 5s", "单元与矿块循环"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机器</th><th>缓冲</th><th>每次耗电</th><th>工时</th><th>用途</th></tr><tr><td>模具压机</td><td>16,384 J</td><td>4,096 J</td><td>扎马克→模具 20/30/40s</td><td>造模具（基础/强化/高级）</td></tr><tr><td>金属压机</td><td>32,768 J</td><td>8,192 J</td><td>模具+4 合金→板 20/40/60/120s</td><td>轧金属板</td></tr><tr><td>末影合成器</td><td>约 131,072 J</td><td>32,768 J</td><td>钻石箱→单元 300s；矿块 2→1 循环 5s</td><td>单元与矿块循环</td></tr></table></div>
 
 		<h3>四、材料体系</h3>
 		<ul class="bullets">
@@ -2757,33 +2751,13 @@
 		</table></div>
 
 		<h3>一、成长公式</h3>
-		{tbl(["项", "规则"], [
-			["每级经验", "100 × 1.3^(等级-1)（约）"],
-			["升级奖励", "+1 强化槽；检查晋升与修理"],
-			["工具晋升", "金 3 / 铁 6 / 钻石 8 / 下界合金 10 级"],
-			["盔甲晋升", "锁链 3 / 铁 6 / 钻石 8 / 下界合金 10 级"],
-			["最高", "约 11 级后停止晋升"],
-			["耐久", "工具不碎，坏到停工；修理台+同种修理套件"],
-			["换件", "换件台随时换部件，<strong>保留等级与强化</strong>"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>规则</th></tr><tr><td>每级经验</td><td>100 × 1.3^(等级-1)（约）</td></tr><tr><td>升级奖励</td><td>+1 强化槽；检查晋升与修理</td></tr><tr><td>工具晋升</td><td>金 3 / 铁 6 / 钻石 8 / 下界合金 10 级</td></tr><tr><td>盔甲晋升</td><td>锁链 3 / 铁 6 / 钻石 8 / 下界合金 10 级</td></tr><tr><td>最高</td><td>约 11 级后停止晋升</td></tr><tr><td>耐久</td><td>工具不碎，坏到停工；修理台+同种修理套件</td></tr><tr><td>换件</td><td>换件台随时换部件，<strong>保留等级与强化</strong></td></tr></table></div>
 
 		<h3>二、结构</h3>
-		{tbl(["类型", "部件"], [
-			["工具（5）", "锹/镐/斧/锄/剑 = 头 + 绑定 + 杆"],
-			["盔甲（4）", "盔/甲/腿/靴 = 板 + 衬垫 + 锁环"],
-			["熔炼量（粒=1）", "锭 9 · 矿 18 · 块 81 · 粉/宝石 9 · 铸模 18 · 套件 27"],
-			["部件耗料", "锹/杆 9 · 锄/剑/锁环 18 · 镐/斧 27 · 盔 45 · 靴 36 · 甲 63 · 腿 54"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>类型</th><th>部件</th></tr><tr><td>工具（5）</td><td>锹/镐/斧/锄/剑 = 头 + 绑定 + 杆</td></tr><tr><td>盔甲（4）</td><td>盔/甲/腿/靴 = 板 + 衬垫 + 锁环</td></tr><tr><td>熔炼量（粒=1）</td><td>锭 9 · 矿 18 · 块 81 · 粉/宝石 9 · 铸模 18 · 套件 27</td></tr><tr><td>部件耗料</td><td>锹/杆 9 · 锄/剑/锁环 18 · 镐/斧 27 · 盔 45 · 靴 36 · 甲 63 · 腿 54</td></tr></table></div>
 
 		<h3>三、强化（改造台）</h3>
-		{tbl(["强化", "效果", "各级进度成本"], [
-			["红石", "急迫", "128/256/384/512/1024"],
-			["青金", "掉落 +10%/级", "128/256/384/512/1024"],
-			["石英", "伤害 +20%/级", "128/256/384/512/1024"],
-			["钻石", "反伤 +10%/级", "64/128/256/512"],
-			["绿宝石", "工具经验 +1/武器 +10%", "256/512/1024/2048"],
-			["强化板", "跳耐久 +10%/级，<strong>L10 不碎</strong>", "1×10 级"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>强化</th><th>效果</th><th>各级进度成本</th></tr><tr><td>红石</td><td>急迫</td><td>128/256/384/512/1024</td></tr><tr><td>青金</td><td>掉落 +10%/级</td><td>128/256/384/512/1024</td></tr><tr><td>石英</td><td>伤害 +20%/级</td><td>128/256/384/512/1024</td></tr><tr><td>钻石</td><td>反伤 +10%/级</td><td>64/128/256/512</td></tr><tr><td>绿宝石</td><td>工具经验 +1/武器 +10%</td><td>256/512/1024/2048</td></tr><tr><td>强化板</td><td>跳耐久 +10%/级，<strong>L10 不碎</strong></td><td>1×10 级</td></tr></table></div>
 		<ul class="bullets">
 			<li>铜特性：导电把经验给玩家；银：升级送 1（或 3）随机附魔</li>
 			<li>例：魔钢易燃 等级×5% 燃烧；虚空 +150% 伤（末地 +250%）</li>
@@ -2826,28 +2800,10 @@
 		</table></div>
 
 		<h3>一、完美食物与熟练度</h3>
-		{tbl(["参数", "值", "说明"], [
-			["完美概率", "clamp(熟练/864, 0, 0.25)", "216 熟练封顶 25%"],
-			["完美概率上限", "0.25", "config perfect-food-max-chance"],
-			["熟练度门槛", "256", "训练厨师机器人 / 计入玩家档案"],
-			["头衔 0", "不是厨师", "初始"],
-			["头衔 1", "新手厨师", "1 点熟练"],
-			["头衔 50", "学徒厨师", ""],
-			["头衔 100", "经验丰富的厨师", ""],
-			["头衔 200", "三星大厨", "顶级称号"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>参数</th><th>值</th><th>说明</th></tr><tr><td>完美概率</td><td>clamp(熟练/864, 0, 0.25)</td><td>216 熟练封顶 25%</td></tr><tr><td>完美概率上限</td><td>0.25</td><td>config perfect-food-max-chance</td></tr><tr><td>熟练度门槛</td><td>256</td><td>训练厨师机器人 / 计入玩家档案</td></tr><tr><td>头衔 0</td><td>不是厨师</td><td>初始</td></tr><tr><td>头衔 1</td><td>新手厨师</td><td>1 点熟练</td></tr><tr><td>头衔 50</td><td>学徒厨师</td><td></td></tr><tr><td>头衔 100</td><td>经验丰富的厨师</td><td></td></tr><tr><td>头衔 200</td><td>三星大厨</td><td>顶级称号</td></tr></table></div>
 
 		<h3>二、种子与掉落</h3>
-		{tbl(["来源", "概率"], [
-			["草 / 蕨", "0.05"],
-			["高草 / 大型蕨", "0.10"],
-			["灰化土 / 缠根泥土", "0.03"],
-			["泥土", "0.01"],
-			["草方块", "0.04"],
-			["菌丝", "0.05"],
-			["海草", "0.15"],
-			["鱿鱼 / 守卫者 / 山羊 / 鲑鱼", "0.35"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>来源</th><th>概率</th></tr><tr><td>草 / 蕨</td><td>0.05</td></tr><tr><td>高草 / 大型蕨</td><td>0.10</td></tr><tr><td>灰化土 / 缠根泥土</td><td>0.03</td></tr><tr><td>泥土</td><td>0.01</td></tr><tr><td>草方块</td><td>0.04</td></tr><tr><td>菌丝</td><td>0.05</td></tr><tr><td>海草</td><td>0.15</td></tr><tr><td>鱿鱼 / 守卫者 / 山羊 / 鲑鱼</td><td>0.35</td></tr></table></div>
 		<ul class="bullets">
 			<li>破坏方块掉种子、击杀生物掉食材，可关指定世界</li>
 			<li>异域花园配方开关 <code>disable-exotic-garden-recipes</code></li>
@@ -2879,28 +2835,14 @@
 		</table></div>
 
 		<h3>一、遗传模型</h3>
-		{tbl(["项", "规则"], [
-			["配对态", "0=bb 隐性 · 1=杂合 · 3=BB 显性"],
-			["类型 id", "显隐 6 位编码 0–63"],
-			["阶 tier", "隐性基因个数 0–6"],
-			["DNA 强度", "纯合显性个数（纯度）"],
-			["遗传", "双亲各抽等位 → 子代；测序解锁图鉴"],
-			["产出条件", "≥1 对纯合隐性"],
-			["产出时间", "(14 + tier − 2×强度) / 速度 秒"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>规则</th></tr><tr><td>配对态</td><td>0=bb 隐性 · 1=杂合 · 3=BB 显性</td></tr><tr><td>类型 id</td><td>显隐 6 位编码 0–63</td></tr><tr><td>阶 tier</td><td>隐性基因个数 0–6</td></tr><tr><td>DNA 强度</td><td>纯合显性个数（纯度）</td></tr><tr><td>遗传</td><td>双亲各抽等位 → 子代；测序解锁图鉴</td></tr><tr><td>产出条件</td><td>≥1 对纯合隐性</td></tr><tr><td>产出时间</td><td>(14 + tier − 2×强度) / 速度 秒</td></tr></table></div>
 
 		<h3>二、产品 id 0–63（节选全列）</h3>
 		<p class="muted">0 下界合金 · 1 钻石 · 2 末地石 · 3 黑石 · 4 海晶晶 · 5 灵魂土 · 6 菌光体 · 7 金 · 8 海晶碎片 · 9 烈焰棒 · 10 石英 · 11 下界岩 · 12 灵魂沙 · 13 玻璃 · 14 青金 · 15 煤 · 16 经验 · 17 恶魂泪 · 18 玄武岩 · 19 铁 · 20 末影珠 · 21 铁粉 · 22 金粉 · 23 线 · 24 幻翼膜 · 25 银粉 · 26 锌粉 · 27 皮革 · 28 蛋糕 · 29 糖 · 30 海绵 · 31 骨头 · 32 绿宝石 · 33 硫酸盐 · 34 哭泣黑曜石 · 35 黑曜石 · 36 下界疣 · 37 铜粉 · 38 镁粉 · 39 闪长岩 · 40 岩浆膏 · 41 岩浆 · 42 锡粉 · 43 安山岩 · 44 雪球 · 45 沙砾 · 46 冰 · 47 圆石 · 48 萤石粉 · 49 红石 · 50 仙人掌 · 51 花岗岩 · 52 铝粉 · 53 黏土 · 54 橡木原木 · 55 泥土 · 56 铅粉 · 57 火药 · 58 海带 · 59 燧石 · 60 粘液球 · 61 沙 · 62 水 · 63 羽毛</p>
 		<p>命名蛋：水 / 岩浆 / 金 / 铁 / 青金 / 经验 / 下界合金。</p>
 
 		<h3>三、机器</h3>
-		{tbl(["机器", "缓冲 / J/t / 速度", "功能"], [
-			["基因测序仪", "180 / 3 / 1", "30s 显 DNA"],
-			["兴奋舱", "250 / 5 / 1", "强化 1000/10/2 · 终极 5000/50/10"],
-			["私笼", "30 / 1 / 1", "60s：2 成体 → 幼体"],
-			["康复舱", "30 / 2 / 1", "种子治疗 0.25 HP/个；耗时 heal-rate×种子"],
-			["生长舱", "200 / 20 / 1", "默认关；60s + 整组种子 → 成体"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机器</th><th>缓冲 / J/t / 速度</th><th>功能</th></tr><tr><td>基因测序仪</td><td>180 / 3 / 1</td><td>30s 显 DNA</td></tr><tr><td>兴奋舱</td><td>250 / 5 / 1</td><td>强化 1000/10/2 · 终极 5000/50/10</td></tr><tr><td>私笼</td><td>30 / 1 / 1</td><td>60s：2 成体 → 幼体</td></tr><tr><td>康复舱</td><td>30 / 2 / 1</td><td>种子治疗 0.25 HP/个；耗时 heal-rate×种子</td></tr><tr><td>生长舱</td><td>200 / 20 / 1</td><td>默认关；60s + 整组种子 → 成体</td></tr></table></div>
 
 		<h3>四、状态与配置</h3>
 		<ul class="bullets">
@@ -2935,14 +2877,7 @@
 		</table></div>
 
 		<h3>一、奇点（Singularity）</h3>
-		{tbl(["奇点", "输入", "数量"], [
-			["铜/锌/锡/铝/银/镁/铅", "对应粘液锭", "3,000"],
-			["金 / 铁", "金锭 / 铁锭", "2,000"],
-			["煤/红石/青金/石英", "同名原版", "1,500"],
-			["钻石 / 绿宝", "同名原版", "500"],
-			["下界合金", "下界合金锭", "200"],
-			["无限", "无尽锭", "100"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>奇点</th><th>输入</th><th>数量</th></tr><tr><td>铜/锌/锡/铝/银/镁/铅</td><td>对应粘液锭</td><td>3,000</td></tr><tr><td>金 / 铁</td><td>金锭 / 铁锭</td><td>2,000</td></tr><tr><td>煤/红石/青金/石英</td><td>同名原版</td><td>1,500</td></tr><tr><td>钻石 / 绿宝</td><td>同名原版</td><td>500</td></tr><tr><td>下界合金</td><td>下界合金锭</td><td>200</td></tr><tr><td>无限</td><td>无尽锭</td><td>100</td></tr></table></div>
 		<ul class="bullets">
 			<li>元奇点：时运 / 大地 / 金属 / 魔法</li>
 			<li>压缩圆石 1–5 级 = 9 / 81 / 243 / 6,561 / 59,049 原圆石</li>
@@ -2950,22 +2885,11 @@
 		</ul>
 
 		<h3>二、存储单元</h3>
-		{tbl(["档", "容量"], [
-			["基础", "6,400"],
-			["进阶", "25,600"],
-			["强化", "102,400"],
-			["虚空", "409,600"],
-			["无尽", "1,600,000,000"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>档</th><th>容量</th></tr><tr><td>基础</td><td>6,400</td></tr><tr><td>进阶</td><td>25,600</td></tr><tr><td>强化</td><td>102,400</td></tr><tr><td>虚空</td><td>409,600</td></tr><tr><td>无尽</td><td>1,600,000,000</td></tr></table></div>
 		<p class="muted">存储锻造台升级可保留物品。</p>
 
 		<h3>三、石矿机</h3>
-		{tbl(["阶", "速度", "J/t", "矿 1/n", "圆石回退"], [
-			["基础", "1", "360", "5", "1"],
-			["进阶", "2", "1,440", "4", "12"],
-			["虚空", "4", "5,760", "3", "4"],
-			["无尽", "16", "23,040", "2", "16"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>阶</th><th>速度</th><th>J/t</th><th>矿 1/n</th><th>圆石回退</th></tr><tr><td>基础</td><td>1</td><td>360</td><td>5</td><td>1</td></tr><tr><td>进阶</td><td>2</td><td>1,440</td><td>4</td><td>12</td></tr><tr><td>虚空</td><td>4</td><td>5,760</td><td>3</td><td>4</td></tr><tr><td>无尽</td><td>16</td><td>23,040</td><td>2</td><td>16</td></tr></table></div>
 		<ul class="bullets">
 			<li>原版产出 ×scale×½（向上取整）</li>
 			<li>基础：煤×4、铁/金矿、青金×4、绿宝、钻石、红石×4</li>
@@ -2974,14 +2898,7 @@
 		</ul>
 
 		<h3>四、发电（J/s · 缓冲）</h3>
-		{tbl(["机型", "功率 · 缓冲"], [
-			["水力 / 强化水力", "9·900 / 45·4,500"],
-			["地热 / 强化地热", "90·9,000 / 450·45,000（下界 ×2）"],
-			["基础 / 进阶太阳", "15·1,500 / 180·18,000"],
-			["天体 / 虚空面板", "750·75,000 / 3,600·360,000"],
-			["无尽面板", "90,000 · 9,000,000"],
-			["无尽反应堆", "180,000 · 40,000,000"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机型</th><th>功率 · 缓冲</th></tr><tr><td>水力 / 强化水力</td><td>9·900 / 45·4,500</td></tr><tr><td>地热 / 强化地热</td><td>90·9,000 / 450·45,000（下界 ×2）</td></tr><tr><td>基础 / 进阶太阳</td><td>15·1,500 / 180·18,000</td></tr><tr><td>天体 / 虚空面板</td><td>750·75,000 / 3,600·360,000</td></tr><tr><td>无尽面板</td><td>90,000 · 9,000,000</td></tr><tr><td>无尽反应堆</td><td>180,000 · 40,000,000</td></tr></table></div>
 		<ul class="bullets">
 			<li>1 无尽锭烧 86,400t（约 1 天）；1 虚空锭 14,400t</li>
 			<li>奇点构造器 1·120J/t；无尽构造器 32·1200J/t</li>
@@ -3014,15 +2931,7 @@
 		</table></div>
 
 		<h3>一、发电机</h3>
-		{tbl(["机型", "功率", "缓冲", "条件"], [
-			["水力 / 强化水力", "16 / 64 J/t", "64 / 256", "水流"],
-			["风车 / 风力涡轮", "16–64 / 64–256 J/t", "256 / 1,024", "随高度/暴露"],
-			["龙蛋磨 / 蛋涡轮", "16 / 64 J/t", "64 / 256", "蛋放上方"],
-			["厨用发电机", "8 J/s", "256", "烧饥饿值（食物阶）"],
-			["星尘反应堆", "1,024 J/s", "32,768", "1 星尘 = 32t；粉来自陨石"],
-			["削片发电机", "8 J/耐久", "256", "丢耐久物"],
-			["自动厨房 / 合成厨", "16 J/s", "—", "联动 KITCHEN 菜谱"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机型</th><th>功率</th><th>缓冲</th><th>条件</th></tr><tr><td>水力 / 强化水力</td><td>16 / 64 J/t</td><td>64 / 256</td><td>水流</td></tr><tr><td>风车 / 风力涡轮</td><td>16–64 / 64–256 J/t</td><td>256 / 1,024</td><td>随高度/暴露</td></tr><tr><td>龙蛋磨 / 蛋涡轮</td><td>16 / 64 J/t</td><td>64 / 256</td><td>蛋放上方</td></tr><tr><td>厨用发电机</td><td>8 J/s</td><td>256</td><td>烧饥饿值（食物阶）</td></tr><tr><td>星尘反应堆</td><td>1,024 J/s</td><td>32,768</td><td>1 星尘 = 32t；粉来自陨石</td></tr><tr><td>削片发电机</td><td>8 J/耐久</td><td>256</td><td>丢耐久物</td></tr><tr><td>自动厨房 / 合成厨</td><td>16 J/s</td><td>—</td><td>联动 KITCHEN 菜谱</td></tr></table></div>
 
 		<h3>二、自动化</h3>
 		<ul class="bullets">
@@ -3057,28 +2966,14 @@
 		</table></div>
 
 		<h3>一、分解 / 物化</h3>
-		{tbl(["机器", "速度（tick）", "容量", "能耗"], [
-			["分解 Mk1–5", "5 → 1", "1k → 10M", "max(min(EMC/10, 10M), 1)"],
-			["物化 Mk1–5", "5 → 1", "1k → 10M", "max(min(EMC, 10M), 1)"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机器</th><th>速度（tick）</th><th>容量</th><th>能耗</th></tr><tr><td>分解 Mk1–5</td><td>5 → 1</td><td>1k → 10M</td><td>max(min(EMC/10, 10M), 1)</td></tr><tr><td>物化 Mk1–5</td><td>5 → 1</td><td>1k → 10M</td><td>max(min(EMC, 10M), 1)</td></tr></table></div>
 		<ul class="bullets">
 			<li>合成定价：<code>(Σ输入 × 1.1) / 产量</code>；变体取 min</li>
 			<li>尘 4→块；块压 1→块，方便堆 EMC</li>
 		</ul>
 
 		<h3>二、基准 EMC（节选）</h3>
-		{tbl(["物品", "EMC"], [
-			["泥土", "1"],
-			["原木", "4"],
-			["末影珠", "8"],
-			["红石 / 煤", "16"],
-			["铁 / 金 / 铜", "32"],
-			["基础电路", "1,024"],
-			["钻石", "1,028"],
-			["下界合金", "4,096"],
-			["下界之星", "16,384"],
-			["龙蛋", "32,768"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>物品</th><th>EMC</th></tr><tr><td>泥土</td><td>1</td></tr><tr><td>原木</td><td>4</td></tr><tr><td>末影珠</td><td>8</td></tr><tr><td>红石 / 煤</td><td>16</td></tr><tr><td>铁 / 金 / 铜</td><td>32</td></tr><tr><td>基础电路</td><td>1,024</td></tr><tr><td>钻石</td><td>1,028</td></tr><tr><td>下界合金</td><td>4,096</td></tr><tr><td>下界之星</td><td>16,384</td></tr><tr><td>龙蛋</td><td>32,768</td></tr></table></div>
 		<p class="muted">完整表见本服 <code>emc-values</code>；泥土/原木当零钱，钻石/下界合金当大额。</p>
 
 		<h3>三、实用建议</h3>
@@ -3106,17 +3001,7 @@
 		</table></div>
 
 		<h3>一、注入词缀（注入祭坛，装备居中）</h3>
-		{tbl(["注入", "数值"], [
-			["毁灭暴击", "仅暴击：甲伤 +1–5；25% 缓 II 15t；25% 虚弱 II 10t；12.5% 挖掘疲劳 IV 5t"],
-			["幻影暴击", "25% 额外伤 = 最终伤^1.15 × 5/8，无视护甲"],
-			["强力 Forceful", "箭速 ×2"],
-			["挥发 Volatility", "弓力 ≥0.95 大火球（产量 force×3）；≥0.3 火球 ×3；否则小火球 ×2"],
-			["真瞄 True Aim", "箭无重力"],
-			["治疗 Healing", "瞬间治疗等级 = floor(箭伤/5)"],
-			["图腾电池", "胸甲存 ≤8 图腾（穿甲潜行+右键）"],
-			["击退 Knockback", "击退增强"],
-			["自动补种", "锄类自动补种"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>注入</th><th>数值</th></tr><tr><td>毁灭暴击</td><td>仅暴击：甲伤 +1–5；25% 缓 II 15t；25% 虚弱 II 10t；12.5% 挖掘疲劳 IV 5t</td></tr><tr><td>幻影暴击</td><td>25% 额外伤 = 最终伤^1.15 × 5/8，无视护甲</td></tr><tr><td>强力 Forceful</td><td>箭速 ×2</td></tr><tr><td>挥发 Volatility</td><td>弓力 ≥0.95 大火球（产量 force×3）；≥0.3 火球 ×3；否则小火球 ×2</td></tr><tr><td>真瞄 True Aim</td><td>箭无重力</td></tr><tr><td>治疗 Healing</td><td>瞬间治疗等级 = floor(箭伤/5)</td></tr><tr><td>图腾电池</td><td>胸甲存 ≤8 图腾（穿甲潜行+右键）</td></tr><tr><td>击退 Knockback</td><td>击退增强</td></tr><tr><td>自动补种</td><td>锄类自动补种</td></tr></table></div>
 		<ul class="bullets">
 			<li>仅金/铁/钻石/下界工具可注入；一物一词缀</li>
 			<li>暴击类要真暴击（下落攻击）</li>
@@ -3124,10 +3009,7 @@
 		</ul>
 
 		<h3>二、华丽锅药水</h3>
-		{tbl(["药", "效果"], [
-			["仁慈酿 Benevolent Brew", "抗性 I / 急迫 II / 再生 II / 速度 II / 跳跃 II — 各 6000t（5 分钟）"],
-			["恶意合剂 Malevolent", "虚弱 III 6000t · 缓 II 3000t · 毒 II 600t · 失明 I 1200t"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>药</th><th>效果</th></tr><tr><td>仁慈酿 Benevolent Brew</td><td>抗性 I / 急迫 II / 再生 II / 速度 II / 跳跃 II — 各 6000t（5 分钟）</td></tr><tr><td>恶意合剂 Malevolent</td><td>虚弱 III 6000t · 缓 II 3000t · 毒 II 600t · 失明 I 1200t</td></tr></table></div>
 
 		<h3>三、材料与演变</h3>
 		<ul class="bullets">
@@ -3165,21 +3047,10 @@
 
 		<h3>一、链路</h3>
 		<p>编年面板读故事 → 实现祭坛出水晶 → 液化池造法术/充能 → 魔法板 → 法杖施放。</p>
-		{tbl(["阶段", "机制"], [
-			["编年面板", "按面板阶每 tick 千分率抽故事（约 T1 2.5% / T2 5%）"],
-			["实现祭坛", "故事 → 水晶"],
-			["液化池", "按故事型 top-3 无序匹配配方；也给板充 Crysta"],
-			["魔法板", "惰性板 = 10 元素 + 10 人类 + 10 哲学"],
-			["法杖 1/2/3 阶", "装 4 板：左 / 右 / Shift左 / Shift右"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>阶段</th><th>机制</th></tr><tr><td>编年面板</td><td>按面板阶每 tick 千分率抽故事（约 T1 2.5% / T2 5%）</td></tr><tr><td>实现祭坛</td><td>故事 → 水晶</td></tr><tr><td>液化池</td><td>按故事型 top-3 无序匹配配方；也给板充 Crysta</td></tr><tr><td>魔法板</td><td>惰性板 = 10 元素 + 10 人类 + 10 哲学</td></tr><tr><td>法杖 1/2/3 阶</td><td>装 4 板：左 / 右 / Shift左 / Shift右</td></tr></table></div>
 
 		<h3>二、法术示例（消耗 = Crysta）</h3>
-		{tbl(["法术", "CD", "范围", "消耗", "效果"], [
-			["火球 Fireball", "0.5s", "—", "1", "伤 1 · 火焰 80t"],
-			["治疗", "—", "—", "10", "治疗向"],
-			["传送 Teleport", "20s/阶", "—", "5", "位移"],
-			["贤者之石", "10s", "50", "5", "5% 稀有 / 35% 罕见 / 60% 普通方块转化"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>法术</th><th>CD</th><th>范围</th><th>消耗</th><th>效果</th></tr><tr><td>火球 Fireball</td><td>0.5s</td><td>—</td><td>1</td><td>伤 1 · 火焰 80t</td></tr><tr><td>治疗</td><td>—</td><td>—</td><td>10</td><td>治疗向</td></tr><tr><td>传送 Teleport</td><td>20s/阶</td><td>—</td><td>5</td><td>位移</td></tr><tr><td>贤者之石</td><td>10s</td><td>50</td><td>5</td><td>5% 稀有 / 35% 罕见 / 60% 普通方块转化</td></tr></table></div>
 		<ul class="bullets">
 			<li>配方 = 液化池：阶 1–5 + 3 种故事型（例：火球 T1 = 元素+人类+天界）</li>
 			<li>板是耗材充能，不是永久附魔；液化池边放备用 Crysta</li>
@@ -3220,18 +3091,10 @@
 		</table></div>
 
 		<h3>一、建造工具</h3>
-		{tbl(["工具", "数值"], [
-			["填充棒", "≤4096 格；0.4 充能/格；总充能 1000；白名单树叶/玻璃；禁屏障/刷怪笼等"],
-			["海绵棒", "≤16384 格；0.24/格；总充能 2000"],
-			["区块加载器", "每人 ≤8；每个 GPS 复杂度 7500"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>工具</th><th>数值</th></tr><tr><td>填充棒</td><td>≤4096 格；0.4 充能/格；总充能 1000；白名单树叶/玻璃；禁屏障/刷怪笼等</td></tr><tr><td>海绵棒</td><td>≤16384 格；0.24/格；总充能 2000</td></tr><tr><td>区块加载器</td><td>每人 ≤8；每个 GPS 复杂度 7500</td></tr></table></div>
 
 		<h3>二、祭坛与首领</h3>
-		{tbl(["首领", "属性"], [
-			["仙子女王", "800 HP · 28 攻 · 箭 24"],
-			["无头骑士", "28 攻 · 箭 22 · 雷 12.4+1.72"],
-			["狱犬", "30 HP · 26 攻"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>首领</th><th>属性</th></tr><tr><td>仙子女王</td><td>800 HP · 28 攻 · 箭 24</td></tr><tr><td>无头骑士</td><td>28 攻 · 箭 22 · 雷 12.4+1.72</td></tr><tr><td>狱犬</td><td>30 HP · 26 攻</td></tr></table></div>
 		<ul class="bullets">
 			<li>献祭掉落：材料 75%（×2 约 33%）；岩浆 50%；血 33%</li>
 			<li>幽灵方块与自定义怪本服开启</li>
@@ -3261,13 +3124,7 @@
 		</table></div>
 
 		<h3>一、自动合成机</h3>
-		{tbl(["机器", "功能"], [
-			["自动工作台", "自动跑原版 3×3 配方"],
-			["自动护甲锻造台", "自动跑护甲锻造配方"],
-			["自动魔法工作台", "自动跑魔法工作台配方"],
-			["自动远古祭坛", "自动跑远古祭坛配方"],
-			["自动台锯", "自动跑台锯配方"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机器</th><th>功能</th></tr><tr><td>自动工作台</td><td>自动跑原版 3×3 配方</td></tr><tr><td>自动护甲锻造台</td><td>自动跑护甲锻造配方</td></tr><tr><td>自动魔法工作台</td><td>自动跑魔法工作台配方</td></tr><tr><td>自动远古祭坛</td><td>自动跑远古祭坛配方</td></tr><tr><td>自动台锯</td><td>自动跑台锯配方</td></tr></table></div>
 		<ul class="bullets">
 			<li>适合挂货运/网络，把「手动点合成」变成产线</li>
 			<li>自动工作台等：128 J/t · 缓冲 384 J；配方用<strong>关键物品</strong>钉住；每种原料需 ≥2</li>
@@ -3275,28 +3132,10 @@
 		</ul>
 
 		<h3>二、农业与搬运</h3>
-		{tbl(["物品", "数值/机制"], [
-			["洒水器", "电力；半径 <strong>2</strong> 格催熟作物"],
-			["浇水壶", "手动加速植物/树生长"],
-			["背包装载器", "玩家背包 → 背包（粘液背包）"],
-			["背包卸载器", "背包 → 玩家背包"],
-			["末影箱取出/放入节点", "末影箱 ↔ 箱子；<strong>不</strong>做堆叠（交给货运）"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>物品</th><th>数值/机制</th></tr><tr><td>洒水器</td><td>电力；半径 <strong>2</strong> 格催熟作物</td></tr><tr><td>浇水壶</td><td>手动加速植物/树生长</td></tr><tr><td>背包装载器</td><td>玩家背包 → 背包（粘液背包）</td></tr><tr><td>背包卸载器</td><td>背包 → 玩家背包</td></tr><tr><td>末影箱取出/放入节点</td><td>末影箱 ↔ 箱子；<strong>不</strong>做堆叠（交给货运）</td></tr></table></div>
 
 		<h3>三、工具与消耗</h3>
-		{tbl(["物品", "数值/机制"], [
-			["升级爆破镐/锹", "前方 <strong>5</strong> 连（默认爆破为绕身 2）；可触发 mcMMO 经验"],
-			["升级伐木斧", "相连原木 2 格范围；适合金合欢/丛林怪树"],
-			["镰刀", "一次挥砍 <strong>5</strong> 株作物"],
-			["扳手", "快速拆货运/电缆组件"],
-			["Paxel", "镐+斧+锹三合一"],
-			["螺旋桨帽", "潜行上升"],
-			["防火符文", "丢在物品上防火烧"],
-			["推车 Dolly", "连箱子内容一起搬走再放下"],
-			["传送垫 + 配置器", "短距传送"],
-			["备用电梯板", "箱子 GUI 式电梯（静音时可用）"],
-			["便携充电器", "多档手持充能"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>物品</th><th>数值/机制</th></tr><tr><td>升级爆破镐/锹</td><td>前方 <strong>5</strong> 连（默认爆破为绕身 2）；可触发 mcMMO 经验</td></tr><tr><td>升级伐木斧</td><td>相连原木 2 格范围；适合金合欢/丛林怪树</td></tr><tr><td>镰刀</td><td>一次挥砍 <strong>5</strong> 株作物</td></tr><tr><td>扳手</td><td>快速拆货运/电缆组件</td></tr><tr><td>Paxel</td><td>镐+斧+锹三合一</td></tr><tr><td>螺旋桨帽</td><td>潜行上升</td></tr><tr><td>防火符文</td><td>丢在物品上防火烧</td></tr><tr><td>推车 Dolly</td><td>连箱子内容一起搬走再放下</td></tr><tr><td>传送垫 + 配置器</td><td>短距传送</td></tr><tr><td>备用电梯板</td><td>箱子 GUI 式电梯（静音时可用）</td></tr><tr><td>便携充电器</td><td>多档手持充能</td></tr></table></div>
 
 		<h3>四、发电机与仓储</h3>
 		<ul class="bullets">
@@ -3333,14 +3172,7 @@
 		</table></div>
 
 		<h3>一、机器档位</h3>
-		{tbl(["档", "缓冲 J", "耗能 J/次", "速度", "出货工时"], [
-			["T1", "250", "25", "1×", "8s"],
-			["T2", "500", "50", "2×", "16s"],
-			["T3", "750", "75", "3×", "24s"],
-			["T4", "1,000", "100", "4×", "32s"],
-			["T5", "1,250", "125", "5×", "40s"],
-			["T6", "1,500", "150", "6×", "48s"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>档</th><th>缓冲 J</th><th>耗能 J/次</th><th>速度</th><th>出货工时</th></tr><tr><td>T1</td><td>250</td><td>25</td><td>1×</td><td>8s</td></tr><tr><td>T2</td><td>500</td><td>50</td><td>2×</td><td>16s</td></tr><tr><td>T3</td><td>750</td><td>75</td><td>3×</td><td>24s</td></tr><tr><td>T4</td><td>1,000</td><td>100</td><td>4×</td><td>32s</td></tr><tr><td>T5</td><td>1,250</td><td>125</td><td>5×</td><td>40s</td></tr><tr><td>T6</td><td>1,500</td><td>150</td><td>6×</td><td>48s</td></tr></table></div>
 		<ul class="bullets">
 			<li>压缩机 T1–T6 + 解压机 T1–T6（解压 I 由压缩 I 造）</li>
 			<li>能量按<strong>次</strong>计，缓冲=一次即可</li>
@@ -3372,24 +3204,8 @@
 		</table></div>
 
 		<h3>一、枪械（伤害为心）</h3>
-		{tbl(["枪", "射程", "伤害", "冷却"], [
-			["手枪 Pistol", "10", "3", "0.5s"],
-			["左轮 Revolver", "10", "3", "0.3s"],
-			["机枪 Machine Gun", "30（近限 5）", "3", "0.15s"],
-			["加特林 Minigun", "40（近限 5）", "4", "无"],
-			["步枪 Rifle", "40（近限 5）", "4", "0.75s"],
-			["霰弹 Shotgun", "25（近限 5）", "6.5", "1.25s"],
-			["突击步枪", "50（近限 3）", "6.5", "0.3s"],
-			["狙击 Sniper", "130（近限 50）", "11", "8s"],
-			["能量枪 Energy Rifle", "100", "10", "0.2s · 5J/发 · 缓 2500J"],
-		])}
-		{tbl(["弹头", "伤害倍率"], [
-			["铁弹", "×0.75"],
-			["铅弹", "×1"],
-			["贫铀弹 DU", "×1.5（点燃）"],
-			["金弹", "×2"],
-			["三硝基弹", "×2.75（点燃）"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>枪</th><th>射程</th><th>伤害</th><th>冷却</th></tr><tr><td>手枪 Pistol</td><td>10</td><td>3</td><td>0.5s</td></tr><tr><td>左轮 Revolver</td><td>10</td><td>3</td><td>0.3s</td></tr><tr><td>机枪 Machine Gun</td><td>30（近限 5）</td><td>3</td><td>0.15s</td></tr><tr><td>加特林 Minigun</td><td>40（近限 5）</td><td>4</td><td>无</td></tr><tr><td>步枪 Rifle</td><td>40（近限 5）</td><td>4</td><td>0.75s</td></tr><tr><td>霰弹 Shotgun</td><td>25（近限 5）</td><td>6.5</td><td>1.25s</td></tr><tr><td>突击步枪</td><td>50（近限 3）</td><td>6.5</td><td>0.3s</td></tr><tr><td>狙击 Sniper</td><td>130（近限 50）</td><td>11</td><td>8s</td></tr><tr><td>能量枪 Energy Rifle</td><td>100</td><td>10</td><td>0.2s · 5J/发 · 缓 2500J</td></tr></table></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>弹头</th><th>伤害倍率</th></tr><tr><td>铁弹</td><td>×0.75</td></tr><tr><td>铅弹</td><td>×1</td></tr><tr><td>贫铀弹 DU</td><td>×1.5（点燃）</td></tr><tr><td>金弹</td><td>×2</td></tr><tr><td>三硝基弹</td><td>×2.75（点燃）</td></tr></table></div>
 		<ul class="bullets">
 			<li>近战：能量刃 13–14 + 火焰 5；锇剑 10；战斧 9 / 1.6 攻速</li>
 			<li>动力甲：5J/s 充能、每件缓冲 1000J；硼砂自石头 2% 掉</li>
@@ -3398,23 +3214,7 @@
 		</ul>
 
 		<h3>二、导弹全表（config）</h3>
-		{tbl(["型号", "速度", "射程", "威力", "精度"], [
-			["SMALLMISSILE", "2", "750", "3", "100"],
-			["SMALLMISSILEHE", "1", "600", "3.5", "120"],
-			["SMALLMISSILELR", "2", "900", "3", "100"],
-			["SMALLMISSILEAC", "2", "700", "3", "60"],
-			["ANTIAIR / ANTIELYTRA", "5–6", "600–700", "4", "0"],
-			["MISSILE / HE", "2–2.5", "1000", "4.5–5", "80–100"],
-			["MISSILELR", "2.5", "1500", "4.5", "80"],
-			["MISSILEAC", "2.5", "1250", "4.5", "16"],
-			["MISSILEAPONE / TWO / THR", "2–4", "1550–1850", "3.5–4.5", "40/20/10"],
-			["MISSILEGAS", "3", "1600", "0.5", "80"],
-			["MISSILEEXCAV", "0.5", "100", "14", "50"],
-			["MISSILESTICK", "4", "1600", "1", "70"],
-			["MISSILEICBM", "5", "<strong>7000</strong>", "10", "50"],
-			["MISSILECLUSTER / NAPALM", "3–3.5", "1600", "2–4", "80–90"],
-			["MISSILEADV 系", "3.5–4.5", "2000–2500", "4–6", "20–40"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>型号</th><th>速度</th><th>射程</th><th>威力</th><th>精度</th></tr><tr><td>SMALLMISSILE</td><td>2</td><td>750</td><td>3</td><td>100</td></tr><tr><td>SMALLMISSILEHE</td><td>1</td><td>600</td><td>3.5</td><td>120</td></tr><tr><td>SMALLMISSILELR</td><td>2</td><td>900</td><td>3</td><td>100</td></tr><tr><td>SMALLMISSILEAC</td><td>2</td><td>700</td><td>3</td><td>60</td></tr><tr><td>ANTIAIR / ANTIELYTRA</td><td>5–6</td><td>600–700</td><td>4</td><td>0</td></tr><tr><td>MISSILE / HE</td><td>2–2.5</td><td>1000</td><td>4.5–5</td><td>80–100</td></tr><tr><td>MISSILELR</td><td>2.5</td><td>1500</td><td>4.5</td><td>80</td></tr><tr><td>MISSILEAC</td><td>2.5</td><td>1250</td><td>4.5</td><td>16</td></tr><tr><td>MISSILEAPONE / TWO / THR</td><td>2–4</td><td>1550–1850</td><td>3.5–4.5</td><td>40/20/10</td></tr><tr><td>MISSILEGAS</td><td>3</td><td>1600</td><td>0.5</td><td>80</td></tr><tr><td>MISSILEEXCAV</td><td>0.5</td><td>100</td><td>14</td><td>50</td></tr><tr><td>MISSILESTICK</td><td>4</td><td>1600</td><td>1</td><td>70</td></tr><tr><td>MISSILEICBM</td><td>5</td><td><strong>7000</strong></td><td>10</td><td>50</td></tr><tr><td>MISSILECLUSTER / NAPALM</td><td>3–3.5</td><td>1600</td><td>2–4</td><td>80–90</td></tr><tr><td>MISSILEADV 系</td><td>3.5–4.5</td><td>2000–2500</td><td>4–6</td><td>20–40</td></tr></table></div>
 
 		<h3>三、实用建议</h3>
 		<ul class="bullets">
@@ -3450,19 +3250,8 @@
 		</ul>
 
 		<h3>二、电容与发电</h3>
-		{tbl(["电容", "容量 (J)"], [
-			["Aurum", "1,000,000"],
-			["Titanium", "4,000,000"],
-			["Adamantium", "16,000,000"],
-			["Thornium", "100,000,000"],
-			["Supreme", "1,600,000,000"],
-		])}
-		{tbl(["发电机", "功率", "缓冲"], [
-			["基础", "2,500 J/s", "5,000"],
-			["高级", "25,000 J/s", "50,000"],
-			["Thornium", "1,000,000 J/s", "6,000,000"],
-			["Supreme", "2,000,000 J/s", "12,000,000"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>电容</th><th>容量 (J)</th></tr><tr><td>Aurum</td><td>1,000,000</td></tr><tr><td>Titanium</td><td>4,000,000</td></tr><tr><td>Adamantium</td><td>16,000,000</td></tr><tr><td>Thornium</td><td>100,000,000</td></tr><tr><td>Supreme</td><td>1,600,000,000</td></tr></table></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>发电机</th><th>功率</th><th>缓冲</th></tr><tr><td>基础</td><td>2,500 J/s</td><td>5,000</td></tr><tr><td>高级</td><td>25,000 J/s</td><td>50,000</td></tr><tr><td>Thornium</td><td>1,000,000 J/s</td><td>6,000,000</td></tr><tr><td>Supreme</td><td>2,000,000 J/s</td><td>12,000,000</td></tr></table></div>
 
 		<h3>三、矿机（输出可配，单矿机 ≤12 物品）</h3>
 		<ul class="bullets">
@@ -3473,11 +3262,7 @@
 		</ul>
 
 		<h3>四、装备档与终局面板</h3>
-		{tbl(["档", "说明"], [
-			["钛 / 金 / 精金", "基础三线"],
-			["Thornium", "进阶"],
-			["Magic / Rare / Epic / Legendary / Supreme", "高稀有"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>档</th><th>说明</th></tr><tr><td>钛 / 金 / 精金</td><td>基础三线</td></tr><tr><td>Thornium</td><td>进阶</td></tr><tr><td>Magic / Rare / Epic / Legendary / Supreme</td><td>高稀有</td></tr></table></div>
 		<ul class="bullets">
 			<li>Supreme 剑：锋利 50 · 抢夺 20 · 火焰 20 · 经验修补 20（不可破坏）</li>
 			<li>Supreme 甲：保护 50 · 各元素保 50 · 荆棘 20 · 耐久 50 · 修补 20</li>
@@ -3509,17 +3294,7 @@
 		</table></div>
 
 		<h3>一、净化阈值</h3>
-		{tbl(["净化值", "解锁"], [
-			["250", "下界睡床"],
-			["500", "放水 · 再生 I · 岩浆怪/猪灵替换"],
-			["750", "友好猪灵"],
-			["900", "友好疣猪兽"],
-			["1000", "烈焰人/僵尸猪灵替换 · 粒子 I"],
-			["1500", "末地蛋糕 · 疣猪兽替换 · 再生 II · 流浪商人"],
-			["2000", "猪灵蛮兵/恶魂/凋灵骷髅替换 · 粒子 II"],
-			["2500", "再生 III"],
-			["3000", "粒子 III"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>净化值</th><th>解锁</th></tr><tr><td>250</td><td>下界睡床</td></tr><tr><td>500</td><td>放水 · 再生 I · 岩浆怪/猪灵替换</td></tr><tr><td>750</td><td>友好猪灵</td></tr><tr><td>900</td><td>友好疣猪兽</td></tr><tr><td>1000</td><td>烈焰人/僵尸猪灵替换 · 粒子 I</td></tr><tr><td>1500</td><td>末地蛋糕 · 疣猪兽替换 · 再生 II · 流浪商人</td></tr><tr><td>2000</td><td>猪灵蛮兵/恶魂/凋灵骷髅替换 · 粒子 II</td></tr><tr><td>2500</td><td>再生 III</td></tr><tr><td>3000</td><td>粒子 III</td></tr></table></div>
 		<ul class="bullets">
 			<li>方块演化：下界岩 → 净化土 → 贪婪土 → 下界泥土 → 下界草 → 各群系 crux（丛林/海滩/沙漠/雪原/石山/沼泽/晶化）</li>
 			<li>晶化 crux 独有：蔓延到岩浆/圆石/石头/黑曜石</li>
@@ -3534,13 +3309,7 @@
 		</ul>
 
 		<h3>三、遗物 33 件</h3>
-		{tbl(["稀有度", "件数", "代表"], [
-			["普通", "7", "克苏尼亚珍珠（传 70 格）· 渔袋 · 治疗药 · 皮盔 · 蘑菇 · 大理石 · 苦难之戒"],
-			["罕见", "7", "陈酿 · 蓝萤石 · 代币 · 灰莓 · 粉盐 · 骷髅帽 · 坦桑石块"],
-			["稀有", "7", "烈焰灰 · 蔚蓝宝石 · 交叉剑 · 金罐 · 公牛号角 · 婚戒 · 陶罐"],
-			["史诗", "6", "力量瓶 · 狂热盔 · 无瑕水宝 · 光明珠 · 雷电瓶 · 英勇护符"],
-			["传说", "6", "索伦之眼（100×60×100 显形）· 釉珠 · 岩浆臂铠 · 神秘全息 · 蓝宝石戒 · 普罗米修斯头骨"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>稀有度</th><th>件数</th><th>代表</th></tr><tr><td>普通</td><td>7</td><td>克苏尼亚珍珠（传 70 格）· 渔袋 · 治疗药 · 皮盔 · 蘑菇 · 大理石 · 苦难之戒</td></tr><tr><td>罕见</td><td>7</td><td>陈酿 · 蓝萤石 · 代币 · 灰莓 · 粉盐 · 骷髅帽 · 坦桑石块</td></tr><tr><td>稀有</td><td>7</td><td>烈焰灰 · 蔚蓝宝石 · 交叉剑 · 金罐 · 公牛号角 · 婚戒 · 陶罐</td></tr><tr><td>史诗</td><td>6</td><td>力量瓶 · 狂热盔 · 无瑕水宝 · 光明珠 · 雷电瓶 · 英勇护符</td></tr><tr><td>传说</td><td>6</td><td>索伦之眼（100×60×100 显形）· 釉珠 · 岩浆臂铠 · 神秘全息 · 蓝宝石戒 · 普罗米修斯头骨</td></tr></table></div>
 		<ul class="bullets">
 			<li>掉落源：16 种下界方块 + 下界生物；每次掉落掷 1–99% 条件</li>
 			<li>猪灵易物按稀有度给奖；<code>relic-settings.yml</code> 可改（删了会随机重生模板）</li>
@@ -3573,25 +3342,10 @@
 		</table></div>
 
 		<h3>一、天体与环境</h3>
-		{tbl(["天体", "大气/危害", "重力"], [
-			["地球 / 地球轨道", "—", "1.0"],
-			["月球", "真空", "0.165"],
-			["火星", "压 0.006 · 寒冷 2", "3.711 m/s²"],
-			["金星", "压 93 · CO₂ 96.5% · 热 10", "—"],
-			["木卫一 Io", "真空 + 热 5 + 辐射 3", "1.796"],
-			["欧罗巴 Europa", "永夜", "1.315"],
-			["土卫六 Titan", "压 1.5 · 寒冷 6 · N₂ 97%", "1.352"],
-			["土卫二 Enceladus", "—", "—"],
-			["木星/土星", "不可登陆气态巨行星", "24.79（木）"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>天体</th><th>大气/危害</th><th>重力</th></tr><tr><td>地球 / 地球轨道</td><td>—</td><td>1.0</td></tr><tr><td>月球</td><td>真空</td><td>0.165</td></tr><tr><td>火星</td><td>压 0.006 · 寒冷 2</td><td>3.711 m/s²</td></tr><tr><td>金星</td><td>压 93 · CO₂ 96.5% · 热 10</td><td>—</td></tr><tr><td>木卫一 Io</td><td>真空 + 热 5 + 辐射 3</td><td>1.796</td></tr><tr><td>欧罗巴 Europa</td><td>永夜</td><td>1.315</td></tr><tr><td>土卫六 Titan</td><td>压 1.5 · 寒冷 6 · N₂ 97%</td><td>1.352</td></tr><tr><td>土卫二 Enceladus</td><td>—</td><td>—</td></tr><tr><td>木星/土星</td><td>不可登陆气态巨行星</td><td>24.79（木）</td></tr></table></div>
 
 		<h3>二、火箭与宇航</h3>
-		{tbl(["火箭", "燃料", "货舱"], [
-			["化学 T1", "10", "9"],
-			["化学 T2", "100", "18"],
-			["化学 T3", "500", "36"],
-			["离子火箭", "500", "18（要聚变堆+离子引擎）"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>火箭</th><th>燃料</th><th>货舱</th></tr><tr><td>化学 T1</td><td>10</td><td>9</td></tr><tr><td>化学 T2</td><td>100</td><td>18</td></tr><tr><td>化学 T3</td><td>500</td><td>36</td></tr><tr><td>离子火箭</td><td>500</td><td>18（要聚变堆+离子引擎）</td></tr></table></div>
 		<ul class="bullets">
 			<li>宇航服：盔 3/0 · 甲 3/3600（氧）· 裤 2/0 · 靴 2/0</li>
 			<li>氧气充装 100 J/s（容 200）；服升级 200 J/s（容 400）</li>
@@ -3632,14 +3386,7 @@
 		</table></div>
 
 		<h3>一、Bump 武器（饥饿消耗）</h3>
-		{tbl(["武器", "饥饿", "效果"], [
-			["恶魔剑 Devil Sword", "5", "20 发小火球"],
-			["天空剑 Sky Sword", "5", "击飞 (0,3,0) + 防摔标记"],
-			["天魔剑 Sky-Devil", "5", "3 龙息（每 100t）+ 速度 IV/抗性 IV 300t"],
-			["凋灵骷髅弓", "5", "凋灵向"],
-			["光弓 Light Bow", "<strong>10</strong>", "落点 10 道雷 · 射程 200"],
-			["魂剑 Soul Sword", "—", "食物→HP 1:1；最低饱食 2"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>武器</th><th>饥饿</th><th>效果</th></tr><tr><td>恶魔剑 Devil Sword</td><td>5</td><td>20 发小火球</td></tr><tr><td>天空剑 Sky Sword</td><td>5</td><td>击飞 (0,3,0) + 防摔标记</td></tr><tr><td>天魔剑 Sky-Devil</td><td>5</td><td>3 龙息（每 100t）+ 速度 IV/抗性 IV 300t</td></tr><tr><td>凋灵骷髅弓</td><td>5</td><td>凋灵向</td></tr><tr><td>光弓 Light Bow</td><td><strong>10</strong></td><td>落点 10 道雷 · 射程 200</td></tr><tr><td>魂剑 Soul Sword</td><td>—</td><td>食物→HP 1:1；最低饱食 2</td></tr></table></div>
 		<ul class="bullets">
 			<li>鉴定星级阈值：100→20★ · 98→10★ · 96→9★ … 10→1★</li>
 			<li>属性范围：攻伤 0–30（权重 40）· 攻速 −3…10 · 移速 −0.4…0.6</li>
@@ -3649,13 +3396,7 @@
 		</ul>
 
 		<h3>二、其它魔法件</h3>
-		{tbl(["附属", "机制 / 数值"], [
-			["药剂 PotionExpansion", "洞察药水 120s · 探矿半径 10"],
-			["源之花 FlowerPower", "花系魔法选项"],
-			["灵魂巧匠 SpiritsUnchained", "tick-rate 2 · 全服 40 · 每玩家 4 · 自然生成 10s；敌对灵翻背包"],
-			["末地科技 TranscEndence", "quirp 128J·1/10t 仅末地；四向 25×4（极化 40/40/10/10）；散布/超载 678 J/t；Zot 1000；超载 1024 J/步；同旋 1:1 / 异旋 16:1"],
-			["达西核心", "力量 III · 吸收 V · 坚韧/抗性 IV · 饱和 I · 再生 II（生效 level−1）"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>附属</th><th>机制 / 数值</th></tr><tr><td>药剂 PotionExpansion</td><td>洞察药水 120s · 探矿半径 10</td></tr><tr><td>源之花 FlowerPower</td><td>花系魔法选项</td></tr><tr><td>灵魂巧匠 SpiritsUnchained</td><td>tick-rate 2 · 全服 40 · 每玩家 4 · 自然生成 10s；敌对灵翻背包</td></tr><tr><td>末地科技 TranscEndence</td><td>quirp 128J·1/10t 仅末地；四向 25×4（极化 40/40/10/10）；散布/超载 678 J/t；Zot 1000；超载 1024 J/步；同旋 1:1 / 异旋 16:1</td></tr><tr><td>达西核心</td><td>力量 III · 吸收 V · 坚韧/抗性 IV · 饱和 I · 再生 II（生效 level−1）</td></tr></table></div>
 
 		<h3>三、实用建议</h3>
 		<ul class="bullets">
@@ -3681,15 +3422,7 @@
 		</table></div>
 
 		<h3>一、ExtraTools 机器（缓冲 256，圆石机 512）</h3>
-		{tbl(["机器", "功率 / 速度", "机制"], [
-			["锤 Hammer", "手动", "石→砾石；砾石/土→沙；矿→粉；下界岩→灵魂沙"],
-			["金变机 Gold Transmuter", "9 J/t · 1×", "4K→4 粒 … 24K→<strong>49</strong> 粒；24K 块↔金块 7s；锭→粉 2s"],
-			["电动堆肥 I/II", "9 / 25 J/t", "8 树叶→土；4 石→下界岩；2 沙→灵魂沙；4 小麦→疣"],
-			["圆石发电机", "32 J/个", "2 tick 一产；要 3 矿工机器人+炽炎 3"],
-			["汽化器", "16 J/t", "水桶→4 盐；岩浆桶→<strong>16</strong> 硫酸盐；岩浆块→硫酸盐"],
-			["混凝土厂", "8 J/t", "8 粉→8 混凝土 4s · 16 色"],
-			["粉碎机 Pulverizer", "25 J/t · 4×", "石/砾/土→沙；下界岩→灵魂沙"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机器</th><th>功率 / 速度</th><th>机制</th></tr><tr><td>锤 Hammer</td><td>手动</td><td>石→砾石；砾石/土→沙；矿→粉；下界岩→灵魂沙</td></tr><tr><td>金变机 Gold Transmuter</td><td>9 J/t · 1×</td><td>4K→4 粒 … 24K→<strong>49</strong> 粒；24K 块↔金块 7s；锭→粉 2s</td></tr><tr><td>电动堆肥 I/II</td><td>9 / 25 J/t</td><td>8 树叶→土；4 石→下界岩；2 沙→灵魂沙；4 小麦→疣</td></tr><tr><td>圆石发电机</td><td>32 J/个</td><td>2 tick 一产；要 3 矿工机器人+炽炎 3</td></tr><tr><td>汽化器</td><td>16 J/t</td><td>水桶→4 盐；岩浆桶→<strong>16</strong> 硫酸盐；岩浆块→硫酸盐</td></tr><tr><td>混凝土厂</td><td>8 J/t</td><td>8 粉→8 混凝土 4s · 16 色</td></tr><tr><td>粉碎机 Pulverizer</td><td>25 J/t · 4×</td><td>石/砾/土→沙；下界岩→灵魂沙</td></tr></table></div>
 
 		<h3>二、其它工具</h3>
 		<ul class="bullets">
@@ -3725,18 +3458,7 @@
 		</table></div>
 
 		<h3>一、一览</h3>
-		{tbl(["附属", "机制 / 数值"], [
-			["SlimeCustomizer", "YAML 自定义物品/机器/发电机/电容/掉落/地质/研究/分类；机配方 2 入 2 出"],
-			["SlimefunAdvancements", "配置化粘液任务线"],
-			["SlimeHUD", "WAILA 方块信息（货运/电量/进度）；tick-rate 10"],
-			["SFCalc", "<code>/sfcalc</code> 递归算总材料"],
-			["SoundMuffler", "消音方块（ProtocolLib）"],
-			["SfChunkInfo", "<code>/sfc</code> 扫区块粘液方块量"],
-			["VillagerUtil", "村民便利；本服令牌制"],
-			["Liquid", "液体存储/传输"],
-			["Quaptics", "光/量子传输（<code>/quaptics</code>）"],
-			["SmallSpace", "小世界半径 29,999,983；y&lt;0 需 1.18.2+"],
-		])}
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>附属</th><th>机制 / 数值</th></tr><tr><td>SlimeCustomizer</td><td>YAML 自定义物品/机器/发电机/电容/掉落/地质/研究/分类；机配方 2 入 2 出</td></tr><tr><td>SlimefunAdvancements</td><td>配置化粘液任务线</td></tr><tr><td>SlimeHUD</td><td>WAILA 方块信息（货运/电量/进度）；tick-rate 10</td></tr><tr><td>SFCalc</td><td><code>/sfcalc</code> 递归算总材料</td></tr><tr><td>SoundMuffler</td><td>消音方块（ProtocolLib）</td></tr><tr><td>SfChunkInfo</td><td><code>/sfc</code> 扫区块粘液方块量</td></tr><tr><td>VillagerUtil</td><td>村民便利；本服令牌制</td></tr><tr><td>Liquid</td><td>液体存储/传输</td></tr><tr><td>Quaptics</td><td>光/量子传输（<code>/quaptics</code>）</td></tr><tr><td>SmallSpace</td><td>小世界半径 29,999,983；y&lt;0 需 1.18.2+</td></tr></table></div>
 
 		<h3>二、实用建议</h3>
 		<ul class="bullets">
