@@ -90,6 +90,8 @@
 
 			<li><a href="#exotic">异域花园</a></li>
 
+			<li><a href="#espawners2">电力刷怪笼</a></li>
+
 			<li><a href="#treetaps2">粘液木龙头</a></li>
 
 			<li><a href="#souljars2">灵魂罐</a></li>
@@ -1206,6 +1208,60 @@
 		
 		
 		
+		
+		<article class="article" id="espawners2" data-search="电力刷怪笼 ElectricSpawners 强化刷怪笼 刷怪 240J 生物">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 官方附属 › 电力刷怪笼</div>
+			<div class="article-header">
+				<h2>电力刷怪笼 ElectricSpawners · 全机制</h2>
+				<div class="sub">Build 5 · 通电刷怪，240 J/只，同种生物上限 6</div>
+			</div>
+
+			<div class="infobox"><div class="ib-title">电力刷怪笼</div><table>
+				<tr><td class="k">插件</td><td class="v">ElectricSpawners（官方附属）</td></tr>
+				<tr><td class="k">生物数</td><td class="v"><strong>27</strong> 种（config 可增删）</td></tr>
+				<tr><td class="k">耗电</td><td class="v"><strong>240 J / 只</strong>（ENERGY_CONSUMPTION）</td></tr>
+				<tr><td class="k">容量</td><td class="v">2048 J 缓冲</td></tr>
+				<tr><td class="k">实体上限</td><td class="v">周围 4 格同种生物 &gt; 6 时停刷</td></tr>
+				<tr><td class="k">刷怪间隔</td><td class="v">每 <strong>3 tick</strong> 尝试一次（约 0.15s）</td></tr>
+				<tr><td class="k">研究</td><td class="v">Powered Spawners 4820 · 30 点</td></tr>
+			</table></div>
+
+			<h3>一、工作机制</h3>
+			<ul class="bullets">
+				<li>放置后默认<strong>关闭</strong>，点 GUI 中心按钮开启（火药=关 / 红石=开）</li>
+				<li>每 3 tick 检查：已开启、电量 ≥ 240 J、周围 4×4×4 内同种生物 ≤ 6</li>
+				<li>满足则扣除 <strong>240 J</strong>，在刷怪笼上方 1.5 格生成 1 只对应生物</li>
+				<li>同种生物超过 6 只（含）则本 tick 不刷，防止爆怪</li>
+				<li>货运用不了（无输入输出槽），只能当纯刷怪机</li>
+			</ul>
+
+			<h3>二、合成配方</h3>
+			<div class="craft-block station-crafting">
+  <div class="craft-name">电力刷怪笼（每种生物一件）<span class="craft-badge">有序</span></div>
+  <div class="craft-station"><img class="st-ico" src="assets/img/craft/ui_crafting_table.png" alt="">增强工作台</div>
+  <div class="craft-table-wrap">
+    <table class="craft-3"><tr><td></td><td><img src="assets/img/craft/gold_ingot.png" alt="gold_ingot.png" title="gold_ingot.png"></td><td></td></tr><tr><td><img src="assets/img/craft/iron_ingot.png" alt="iron_ingot.png" title="iron_ingot.png"></td><td><img src="assets/img/craft/spawner.png" alt="spawner.png" title="spawner.png"></td><td><img src="assets/img/craft/iron_ingot.png" alt="iron_ingot.png" title="iron_ingot.png"></td></tr><tr><td><img src="assets/img/craft/diamond.png" alt="diamond.png" title="diamond.png"></td><td><img src="assets/img/craft/gold_ingot.png" alt="gold_ingot.png" title="gold_ingot.png"></td><td><img src="assets/img/craft/diamond.png" alt="diamond.png" title="diamond.png"></td></tr></table>
+    <div class="craft-arrow">→</div>
+    <div class="craft-result"><div class="slot"><img src="assets/img/craft/spawner.png" alt="电力刷怪笼"></div><div>电力刷怪笼</div></div>
+  </div>
+  <div class="craft-meta">上：钚×2（两侧留空）；中：电机 + <strong>强化刷怪笼（对应生物）</strong> + 电机；下：炽烈锭×2 + 大型电容。中心刷怪笼的 Type 决定产物生物。</div>
+</div>
+
+			<h3>三、全生物表（27 种）</h3>
+			<div class="wiki-table-wrap"><table class="wiki"><tr><th>#</th><th>生物</th><th>类型 ID</th></tr><tr><td>1</td><td>烈焰人</td><td><code>BLAZE</code></td></tr><tr><td>2</td><td>洞穴蜘蛛</td><td><code>CAVE_SPIDER</code></td></tr><tr><td>3</td><td>鸡</td><td><code>CHICKEN</code></td></tr><tr><td>4</td><td>牛</td><td><code>COW</code></td></tr><tr><td>5</td><td>苦力怕</td><td><code>CREEPER</code></td></tr><tr><td>6</td><td>末影人</td><td><code>ENDERMAN</code></td></tr><tr><td>7</td><td>末影螨</td><td><code>ENDERMITE</code></td></tr><tr><td>8</td><td>恶魂</td><td><code>GHAST</code></td></tr><tr><td>9</td><td>守卫者</td><td><code>GUARDIAN</code></td></tr><tr><td>10</td><td>马</td><td><code>HORSE</code></td></tr><tr><td>11</td><td>铁傀儡</td><td><code>IRON_GOLEM</code></td></tr><tr><td>12</td><td>岩浆怪</td><td><code>MAGMA_CUBE</code></td></tr><tr><td>13</td><td>哞菇</td><td><code>MUSHROOM_COW</code></td></tr><tr><td>14</td><td>豹猫</td><td><code>OCELOT</code></td></tr><tr><td>15</td><td>猪</td><td><code>PIG</code></td></tr><tr><td>16</td><td>兔子</td><td><code>RABBIT</code></td></tr><tr><td>17</td><td>羊</td><td><code>SHEEP</code></td></tr><tr><td>18</td><td>蠹虫</td><td><code>SILVERFISH</code></td></tr><tr><td>19</td><td>骷髅</td><td><code>SKELETON</code></td></tr><tr><td>20</td><td>史莱姆</td><td><code>SLIME</code></td></tr><tr><td>21</td><td>蜘蛛</td><td><code>SPIDER</code></td></tr><tr><td>22</td><td>鱿鱼</td><td><code>SQUID</code></td></tr><tr><td>23</td><td>村民</td><td><code>VILLAGER</code></td></tr><tr><td>24</td><td>凋灵骷髅</td><td><code>WITHER_SKELETON</code></td></tr><tr><td>25</td><td>女巫</td><td><code>WITCH</code></td></tr><tr><td>26</td><td>狼</td><td><code>WOLF</code></td></tr><tr><td>27</td><td>僵尸</td><td><code>ZOMBIE</code></td></tr></table></div>
+
+			<h3>四、实用建议</h3>
+			<ul class="bullets">
+				<li>核心材料是<strong>强化刷怪笼</strong>（对应生物），先走灵魂罐/破损刷怪笼线</li>
+				<li>240 J/只，刷怪快耗电大，配大电容和稳定电源</li>
+				<li>周围同种超 6 只就停刷，接漏斗/传送带及时清走掉落</li>
+				<li>默认关闭，放置后记得点中心按钮开启</li>
+				<li>研究 <strong>Powered Spawners（30）</strong>后才能用全套</li>
+			</ul>
+
+			<p class="muted">数据来源：ElectricSpawners Build 5 源码 ElectricSpawner.java + config.yml（27 生物，ENERGY_CONSUMPTION=240，cap=6）。</p>
+		</article>
+
 		<article class="article" id="treetaps2" data-search="木龙头 SlimyTreeTaps 树脂 琥珀 橡胶 塑料 魔法镜 刮刀">
 			<div class="breadcrumbs"><a href="#top">首页</a> › 官方附属 › 粘液木龙头</div>
 			<div class="article-header">
