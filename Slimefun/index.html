@@ -100,6 +100,8 @@
 
 			<li><a href="#luckyblocks">幸运方块</a></li>
 
+			<li><a href="#orechunks">矿石块</a></li>
+
 			<li><a href="#official-misc">其它官方</a></li>
 
 		</ul>
@@ -862,7 +864,7 @@
 
 		<p>随机事件、GEO 矿块、私人箱。</p>
 
-<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>幸运方块</td><td><a href="#luckyblocks">幸运/超幸运/超不幸/潘多拉</a> · 51 事件全概率表</td></tr><tr><td>矿石块</td><td>GEO 矿机独有产出，世界不生成；粉碎为尘</td></tr><tr><td>私人存储</td><td>多档箱；Private 仅主人，Public 交领地</td></tr></table></div>
+<div class="wiki-table-wrap"><table class="wiki"><tr><th>机制</th><th>数值 / 规则</th></tr><tr><td>幸运方块</td><td><a href="#luckyblocks">幸运/超幸运/超不幸/潘多拉</a> · 51 事件全概率表</td></tr><tr><td>矿石块</td><td><a href="#orechunks">11 种矿物 · GEO 供给公式</a></td></tr><tr><td>私人存储</td><td>多档箱；Private 仅主人，Public 交领地</td></tr></table></div>
 
 		
 
@@ -1199,6 +1201,72 @@
 			<p class="muted">数据来源：SlimefunLuckyBlocks Build 4 源码（SlimefunLuckyBlocks.java / LuckyBlock.java / 各 Surprise 类）。本服未改动默认事件表。</p>
 		</article>
 
+		
+		<article class="article" id="orechunks" data-search="矿石块 OreChunks GEO 矿机 粉尘 冶炼 铁 金 铜 锡 银 铝 铅 锌 镁 镍 钴">
+			<div class="breadcrumbs"><a href="#top">首页</a> › 官方附属 › 矿石块</div>
+			<div class="article-header">
+				<h2>矿石块 SlimefunOreChunks · 全矿物数据</h2>
+				<div class="sub">Build 1 (zh-CN) · GEO 矿机专属产出，世界不生成</div>
+			</div>
+
+			<div class="infobox"><div class="ib-title">矿石块</div><table>
+				<tr><td class="k">插件</td><td class="v">SlimefunOreChunks（官方附属，中文构建）</td></tr>
+				<tr><td class="k">矿物数</td><td class="v">11 种矿石块</td></tr>
+				<tr><td class="k">获取</td><td class="v">仅 <strong>GEO 矿机</strong>（GEOMiner）；世界不生成、不可合成</td></tr>
+				<tr><td class="k">处理</td><td class="v">矿石粉碎机 → 粉尘（9 种）；冶炼炉 → 锭（镍/钴 2 种）</td></tr>
+				<tr><td class="k">世界</td><td class="v">仅主世界（NORMAL）有供给；下界/末地 = 0</td></tr>
+				<tr><td class="k">偏差</td><td class="v">getMaxDeviation = 6</td></tr>
+			</table></div>
+
+			<h3>一、获取方式</h3>
+			<p>矿石块<strong>不能合成、世界不生成</strong>，只能用 <strong>GEO 矿机</strong>（多方块：钻头 + 矿机控制单元 + 电力）在区块内开采。每个区块对每种矿石有独立的<strong>供给量</strong>，开一点少一点。</p>
+
+			<h3>二、GEO 供给量公式</h3>
+			<p>源码 <code>OreResource.getDefaultSupply()</code>：仅主世界有矿，供给量在区间内<strong>均匀随机</strong>：</p>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>参数</th><th>值</th></tr>
+				<tr><td>公式</td><td><code>nextInt(放大系数×2, 18 + 放大系数×4)</code>（左闭右开）</td></tr>
+				<tr><td>世界</td><td>主世界 NORMAL 才 &gt; 0；下界/末地 <strong>0</strong></td></tr>
+				<tr><td>最大偏差</td><td>6（GEOResource.getMaxDeviation）</td></tr>
+			</table></div>
+
+			<h3>三、11 种矿石块全表</h3>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>#</th><th>矿石块</th><th>放大系数</th><th>每区块供给</th><th>处理产物</th><th>加工台</th></tr>
+				<tr><td>1</td><td>铁矿石块</td><td>4</td><td class="p-prob"><strong>8–33</strong></td><td>铁粉 ×1</td><td>矿石粉碎机</td></tr>
+				<tr><td>2</td><td>金矿石块</td><td>2</td><td class="p-prob"><strong>4–25</strong></td><td>金粉 ×1</td><td>矿石粉碎机</td></tr>
+				<tr><td>3</td><td>铜矿石块</td><td>5</td><td class="p-prob"><strong>10–37</strong></td><td>铜粉 ×1</td><td>矿石粉碎机</td></tr>
+				<tr><td>4</td><td>锡矿石块</td><td>3</td><td class="p-prob"><strong>6–29</strong></td><td>锡粉 ×1</td><td>矿石粉碎机</td></tr>
+				<tr><td>5</td><td>银矿石块</td><td>2</td><td class="p-prob"><strong>4–25</strong></td><td>银粉 ×1</td><td>矿石粉碎机</td></tr>
+				<tr><td>6</td><td>铝矿石块</td><td>4</td><td class="p-prob"><strong>8–33</strong></td><td>铝粉 ×1</td><td>矿石粉碎机</td></tr>
+				<tr><td>7</td><td>铅矿石块</td><td>2</td><td class="p-prob"><strong>4–25</strong></td><td>铅粉 ×1</td><td>矿石粉碎机</td></tr>
+				<tr><td>8</td><td>锌矿石块</td><td>3</td><td class="p-prob"><strong>6–29</strong></td><td>锌粉 ×1</td><td>矿石粉碎机</td></tr>
+				<tr><td>9</td><td>镁矿石块</td><td>4</td><td class="p-prob"><strong>8–33</strong></td><td>镁粉 ×1</td><td>矿石粉碎机</td></tr>
+				<tr><td>10</td><td>镍矿石块</td><td>2</td><td class="p-prob"><strong>4–25</strong></td><td><strong>镍锭 ×1</strong></td><td><strong>冶炼炉</strong></td></tr>
+				<tr><td>11</td><td>钴矿石块</td><td>1</td><td class="p-prob"><strong>2–21</strong></td><td><strong>钴锭 ×1</strong></td><td><strong>冶炼炉</strong></td></tr>
+			</table></div>
+			<p class="muted">供给区间 = [放大系数×2, 18+放大系数×4)。例：铁（系数4）→ [8, 34) 即 8–33；钴（系数1）→ [2, 22) 即 2–21。</p>
+
+			<h3>四、加工流程</h3>
+			<div class="wiki-table-wrap"><table class="wiki">
+				<tr><th>流程</th><th>机器</th><th>输入 → 输出</th></tr>
+				<tr><td>粉碎</td><td>矿石粉碎机（多方块）</td><td>9 种矿石块 → 对应<strong>粉尘 ×1</strong>（铁/金/铜/锡/银/铝/铅/锌/镁）</td></tr>
+				<tr><td>冶炼</td><td>冶炼炉</td><td>镍矿石块 → <strong>镍锭</strong>；钴矿石块 → <strong>钴锭</strong>（这两种不产粉尘）</td></tr>
+			</table></div>
+			<p class="muted">粉尘再进电力炉/冶炼炉烧成锭，或进其它粘液机器做合金。镍/钴矿石块直接冶炼，跳过粉碎步骤。</p>
+
+			<h3>五、实用建议</h3>
+			<ul class="bullets">
+				<li><strong>铜最多</strong>（系数5，10–37/区块），缺铜先刷铜</li>
+				<li><strong>钴最稀</strong>（系数1，2–21/区块），是后期合金瓶颈</li>
+				<li>矿石块只在<strong>主世界</strong>有供给，去下界/末地挖是 0</li>
+				<li>世界不生成矿石块，别找矿脉，直接上 GEO 矿机</li>
+				<li>镍/钴走<strong>冶炼炉</strong>出锭，其余 9 种走<strong>粉碎机</strong>出粉尘</li>
+			</ul>
+
+			<p class="muted">数据来源：SlimefunOreChunks Build 1 (zh-CN, ybw0014) 源码 OreChunks.java / OreResource.java。本服未改动默认供给公式。</p>
+		</article>
+
 		<article class="article" id="official-misc" data-search="工业 ExtraGear 头颅 幸运 矿石块 木龙头 彩色末影箱 硬核 粘液胶">
 
 		<div class="breadcrumbs"><a href="#top">首页</a> › 官方附属 › 其它官方</div>
@@ -1217,7 +1285,7 @@
 
 		<h3>幸运方块 · 矿石块 · 木龙头</h3>
 
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>机制 / 数值</th></tr><tr><td>幸运方块</td><td><a href="#luckyblocks">四档方块 · 51 事件全概率</a></td></tr><tr><td>矿石块</td><td>GEO 矿机产出，世界不生成；粉碎成尘</td></tr><tr><td>木龙头</td><td>树脂 12/24/32%；琥珀 16%；橡胶厂 6J/s；魔法镜传送</td></tr></table></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>机制 / 数值</th></tr><tr><td>幸运方块</td><td><a href="#luckyblocks">四档方块 · 51 事件全概率</a></td></tr><tr><td>矿石块</td><td><a href="#orechunks">11 种矿物全表</a></td></tr><tr><td>木龙头</td><td>树脂 12/24/32%；琥珀 16%；橡胶厂 6J/s；魔法镜传送</td></tr></table></div>
 
 		<h3>彩色末影箱 · 硬核 · 粘液胶</h3>
 
@@ -1229,7 +1297,7 @@
 
 		<p><strong>开始前你要有：</strong>主体材料线已通。</p>
 
-		<ol class="steps"><li><strong>工业 UU</strong><div class="detail">回收机→废料→物质合成器→UU 合成机。约 35 种 UU 配方。</div></li><li><strong>木龙头</strong><div class="detail">挂原木采树脂（12/24/32%）→ 橡胶厂 2 树脂 4s→橡胶 → 塑料。刮刀琥珀 16% → 魔法镜传送。</div></li><li><strong>彩色末影箱</strong><div class="detail">3 染料定色，同色全服共享。当公共银行或私人色库。</div></li><li><strong>幸运方块</strong><div class="detail"><a href="#luckyblocks">全事件概率表</a>；空地敲；潘多拉风险高。</div></li><li><strong>矿石块</strong><div class="detail">GEO 矿机产出→粉碎成尘。</div></li><li><strong>装备与头颅</strong><div class="detail">ExtraGear 做装；斩首剑刷头装饰。</div></li></ol>
+		<ol class="steps"><li><strong>工业 UU</strong><div class="detail">回收机→废料→物质合成器→UU 合成机。约 35 种 UU 配方。</div></li><li><strong>木龙头</strong><div class="detail">挂原木采树脂（12/24/32%）→ 橡胶厂 2 树脂 4s→橡胶 → 塑料。刮刀琥珀 16% → 魔法镜传送。</div></li><li><strong>彩色末影箱</strong><div class="detail">3 染料定色，同色全服共享。当公共银行或私人色库。</div></li><li><strong>幸运方块</strong><div class="detail"><a href="#luckyblocks">全事件概率表</a>；空地敲；潘多拉风险高。</div></li><li><strong>矿石块</strong><div class="detail"><a href="#orechunks">全矿物数据</a>；GEO 矿机产出→粉碎成尘。</div></li><li><strong>装备与头颅</strong><div class="detail">ExtraGear 做装；斩首剑刷头装饰。</div></li></ol>
 
 		<p class="note">硬核粘液开着时研究会 1% 失败，多点一次即可。</p>
 
