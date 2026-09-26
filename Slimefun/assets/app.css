@@ -1635,3 +1635,8 @@ a:hover { text-decoration: underline; }
     top: auto !important;
   }
 }
+
+/* lucky blocks probability column */
+.p-prob { white-space: nowrap; font-size: 0.88rem; }
+.p-prob strong { color: var(--accent, #0b57d0); }
+.wiki .p-prob { width: 7.5em; }
