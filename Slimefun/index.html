@@ -214,46 +214,39 @@
 
 		<p class="muted">数据来源：Slimefun 2026.07 config.yml + 本服实机摘要。</p>
 	</article>
-		<article class="article" id="research" data-search="研究 经验 解锁 URID 称号 失败 金币">
+		<article class="article" id="research" data-search="研究 经验 解锁 URID 称号 cost">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 研究</div>
 		<div class="article-header">
 			<h2>研究 · 经验解锁与称号</h2>
-			<div class="sub">Research · URID 门禁 · 本服失败率 1%</div>
+			<div class="sub">固定等级成本 1–60 · 本服称号 39 档</div>
 		</div>
 
 		<div class="infobox"><div class="ib-title">研究系统</div><table>
 			<tr><td class="k">作用</td><td class="v">未解锁则无法合成 / 使用对应粘液物品</td></tr>
-			<tr><td class="k">解锁消耗</td><td class="v"><strong>经验等级</strong>（本服 <code>use-money-unlock: false</code>）</td></tr>
-			<tr><td class="k">游戏币换算</td><td class="v"><code>currency-cost-convert-rate: 25.0</code>（1 级 = 25 币）</td></tr>
+			<tr><td class="k">解锁消耗</td><td class="v"><strong>经验等级</strong>；源码固定 cost，无随机公式</td></tr>
+			<tr><td class="k">cost 范围</td><td class="v"><strong>1–60</strong> 级（ResearchSetup）</td></tr>
+			<tr><td class="k">失败机制</td><td class="v">源码<strong>无</strong>失败随机；本服实机摘要记 1%（可能附加设定）</td></tr>
 			<tr><td class="k">创造模式</td><td class="v"><code>free-in-creative-mode: true</code> 免费</td></tr>
-			<tr><td class="k">本服失败率</td><td class="v"><strong>1%</strong>（失败不扣级 / 不死丢）</td></tr>
+			<tr><td class="k">游戏币</td><td class="v"><code>use-money-unlock: false</code>；换算 25.0 币/级</td></tr>
 		</table></div>
 
 		<h3>一、解锁机制</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>规则</th></tr><tr><td>URID</td><td>整数唯一研究 ID（Research#getID），存于玩家 UUID 档案</td></tr><tr><td>解锁条件</td><td>player.level ≥ cost 时扣 cost 级；PlayerProfile.unlockResearch</td></tr><tr><td>cost 本质</td><td>静态等级数，不是实时公式；无「称号档位」加成</td></tr><tr><td>本服 cost 分布</td><td>约 1 ～ 150</td></tr><tr><td>学习动画</td><td>enable-learning-animation（可关）；解锁烟花 enable-fireworks</td></tr><tr><td>信息延迟</td><td>URID info-delay 3000ms</td></tr></table></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>规则</th></tr><tr><td>URID</td><td>整数唯一研究 ID，存于玩家 UUID 档案</td></tr><tr><td>canUnlock</td><td>player.getLevel() ≥ cost 时扣 cost 级</td></tr><tr><td>覆盖</td><td>Researches.yml 可改 &lt;ns&gt;.&lt;key&gt;.cost</td></tr><tr><td>动画 / 烟花</td><td>disable-learning-animation / enable-fireworks</td></tr><tr><td>本服称号档</td><td>research-ranks 共 39 档（见下）</td></tr></table></div>
 
-		<h3>二、本服研究称号（按累计解锁数）</h3>
+		<h3>二、cost 档位示例（ResearchSetup）</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>cost</th><th>示例</th></tr><tr><td>1–2</td><td>手杖 · 便携工作台 · 幸运饼干</td></tr><tr><td>3–6</td><td>护甲 · 团块 · 磨石 · 急救</td></tr><tr><td>8–15</td><td>电力 · 钢铁 · 背包(15) · 电容 T1(25)</td></tr><tr><td>16–25</td><td>护符(14–22) · 货运基础(30) · GPS(28)</td></tr><tr><td>26–35</td><td>强化甲(26) · 传送台(42) · 核反应堆(48)</td></tr><tr><td>36–50</td><td>全息(36) · 可编程机器人(50)</td></tr><tr><td>60</td><td>高级/强化机器人 · 下界之星反应堆 · 灵魂绑定符文</td></tr></table></div>
+
+		<h3>三、本服研究称号（39 档）</h3>
 		<div class="wiki-table-wrap"><table class="wiki"><tr><th>段</th><th>称号</th></tr><tr><td>0–4</td><td>小鸡 · 牛牛君 · 蜘蛛 · 村民 · 开拓者</td></tr><tr><td>5–9</td><td>童生 · 实习生 · 不合格生 · 学生 · 笨拙学徒</td></tr><tr><td>10–14</td><td>学徒 · 熟练学徒 · 法师学徒 · 杰出法师 · 年轻魔术师</td></tr><tr><td>15–19</td><td>笨拙魔术师 · 普通魔术师 · 魔术师 · 熟练魔术师 · 特技魔术师</td></tr><tr><td>20–24</td><td>惯用魔术师 · 杰出魔术师 · 笨拙巫师 · 巫师 · 普通巫师</td></tr><tr><td>25–29</td><td>特技巫师 · 杰出巫师 · 卓越巫师 · 年轻大师 · 笨拙大师</td></tr><tr><td>30–34</td><td>实习大师 · 合格大师 · 大师 · 特技大师 · 杰出大师</td></tr><tr><td>35–38</td><td>卓越大师 · 精通大师 · 天选之子</td></tr></table></div>
-		<p class="muted">完整列表见 <code>research-ranks</code>（本服 39 档）。</p>
-
-		<h3>三、研究分类（指南书）</h3>
-		<ul class="bullets">
-			<li>材料与合金：矿石倍增、钢铁时代、高级合金、碳、人造钻石…</li>
-			<li>电力与工具：电池、太阳能、喷气背包、多用工具、元素法杖…</li>
-			<li>魔法与护符：常见护符、农夫/矿工/猎人、魔术师、战士…</li>
-			<li>机器与多方块：冶炼炉、装甲锻造、压力舱、魔法工作台…</li>
-			<li>放射性：铀、防护服、核材料…</li>
-		</ul>
 
 		<h3>四、实用建议</h3>
 		<ul class="bullets">
-			<li>先解锁「矿石倍增 / 钢铁时代 / 电池」三条起步线</li>
-			<li>经验不够就去刷怪/挖矿；创造测试免费</li>
-			<li>失败 1% 本服几乎无感，正常点解锁即可</li>
-			<li>换算游戏币时 1 级 ≈ 25 币（本服未启用）</li>
+			<li>起步解锁：矿石倍增 / 钢铁时代 / 电池</li>
+			<li>高 cost（50–60）留给机器人与核线</li>
+			<li>创造测试免费；正式服备足等级</li>
 		</ul>
 
-		<p class="muted">数据来源：Slimefun 2026.07 config.yml（researches / research-ranks）+ ResearchSetup。</p>
+		<p class="muted">数据来源：Research.java / ResearchSetup.java + 本服 config research-ranks。</p>
 	</article>
 		<article class="article" id="materials" data-search="材料加工 矿石倍增 粉碎 洗矿 合金 冶炼 电路板 碳 人造钻石">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 材料加工</div>
@@ -370,169 +363,179 @@
 
 		<p class="muted">数据来源：Slimefun 2026.07 EnergyNet + 发电机实现 + 本服 config。</p>
 	</article>
-		<article class="article" id="cargo" data-search="货运 管理器 连接器 输入 输出 频道 过滤 速度升级">
+		<article class="article" id="cargo" data-search="货运 管理器 连接器 输入 输出 频道 过滤 轮询">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 货运网络</div>
 		<div class="article-header">
 			<h2>货运网络 · 自动搬运全规则</h2>
-			<div class="sub">频道 1–16 · 速度升级 · 过滤器</div>
+			<div class="sub">频道 0–15（GUI 1–16）· 半径 5 · 200 节点</div>
 		</div>
 
 		<div class="infobox"><div class="ib-title">货运系统</div><table>
 			<tr><td class="k">作用</td><td class="v">在容器/机器之间自动搬物品</td></tr>
-			<tr><td class="k">频道</td><td class="v"><strong>1–16</strong>，同频道同网</td></tr>
-			<tr><td class="k">周期</td><td class="v">约每 <strong>5 tick</strong>；速度升级缩短</td></tr>
-			<tr><td class="k">网络上限</td><td class="v">max-size <strong>200</strong>；超额不删</td></tr>
-			<tr><td class="k">可视化</td><td class="v"><code>enable-visualizer: true</code></td></tr>
+			<tr><td class="k">频道</td><td class="v">0–15（GUI 显示 1–16）+ 频道 16 = ChestTerminal</td></tr>
+			<tr><td class="k">网络半径</td><td class="v">管理器周围 <strong>5</strong> 格</td></tr>
+			<tr><td class="k">节点上限</td><td class="v">max-size <strong>200</strong>（超额不删）</td></tr>
+			<tr><td class="k">tick</td><td class="v">cargo-ticker-delay 0（每网络 tick）；全局 custom-ticker-delay 10</td></tr>
 		</table></div>
 
 		<h3>一、组件</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>组件</th><th>机制</th></tr><tr><td>管理器 Manager</td><td>频道与过滤总控</td></tr><tr><td>连接器</td><td>桥接成图</td></tr><tr><td>输入节点</td><td>从容器抽出</td></tr><tr><td>输出节点</td><td>写入容器</td></tr><tr><td>高级输入/输出</td><td>更细过滤条件（名称/lore/数量）</td></tr><tr><td>速度升级</td><td>缩短搬运周期</td></tr></table></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>组件</th><th>ID</th><th>过滤</th><th>作用</th></tr><tr><td>管理器</td><td>CARGO_MANAGER</td><td>—</td><td>调节器，每网 1 个</td></tr><tr><td>连接节点</td><td>CARGO_NODE</td><td>无</td><td>桥接</td></tr><tr><td>输入节点</td><td>CARGO_NODE_INPUT</td><td>有</td><td>从容器抽出</td></tr><tr><td>输出节点</td><td>CARGO_NODE_OUTPUT</td><td>无</td><td>写入容器</td></tr><tr><td>高级输出</td><td>CARGO_NODE_OUTPUT_ADVANCED</td><td>有</td><td>精细过滤</td></tr></table></div>
 
 		<h3>二、搬运规则</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>数值 / 规则</th></tr><tr><td>频道</td><td>1–16；不同频道隔离</td></tr><tr><td>过滤</td><td>白名单 / 黑名单</td></tr><tr><td>max-size</td><td>单次搬运叠数 1–64</td></tr><tr><td>周期</td><td>约每 5 tick；升级可加速</td></tr><tr><td>路由</td><td>输入抽取 → 有效输出之间</td></tr><tr><td>轮询</td><td>网络节点内循环</td></tr><tr><td>超额</td><td>delete-excess-items: false（不删）</td></tr></table></div>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>规则</th></tr><tr><td>单次搬运</td><td>输入节点整叠（≤64）</td></tr><tr><td>过滤槽</td><td>9 格（19–21 / 28–30 / 37–39）</td></tr><tr><td>模式</td><td>白名单（默认）/ 黑名单；可含 Lore</td></tr><tr><td>空表</td><td>空白名单=全拒；空黑名单=全放</td></tr><tr><td>轮询</td><td>每输入可开关 round-robin</td></tr><tr><td>智能填充</td><td>每输入可开关（关则跳过已满叠）</td></tr><tr><td>炉子路由</td><td>燃料→槽1、可烧→槽0；输出→槽2</td></tr><tr><td>酿造台</td><td>药水→0–2、烈焰粉→4、其它→3</td></tr></table></div>
 
 		<h3>三、实用建议</h3>
 		<ul class="bullets">
-			<li>一频道一产线：矿物/作物/杂物分开</li>
-			<li>高级节点做「只导出某物品」的精细线</li>
-			<li>卡顿先看网络节点数（≤200）和速度升级</li>
-			<li>配合可视化线缆排查路由</li>
+			<li>管理器放中心，节点保持 5 格内</li>
+			<li>一频道一产线；高级输出做「只导出某物」</li>
+			<li>轮询关掉可稳定单路；智能填充防堵死</li>
+			<li>网络可视化排查路由；节点数盯 200</li>
 		</ul>
 
-		<p class="muted">数据来源：Slimefun 2026.07 config networks + Cargo 网络实现。</p>
+		<p class="muted">数据来源：CargoNet / CargoNetworkTask / ItemFilter / AbstractCargoNode。</p>
 	</article>
-		<article class="article" id="gps" data-search="GPS 航点 复杂度 发射机 传送 控制板 电梯">
+		<article class="article" id="gps" data-search="GPS 航点 复杂度 发射机 传送 时间 电梯">
 		<div class="breadcrumbs"><a href="#top">首页</a> › GPS</div>
 		<div class="article-header">
-			<h2>GPS · 航点与网络复杂度</h2>
-			<div class="sub">航点上限 21 · 复杂度公式</div>
+			<h2>GPS · 复杂度与传送</h2>
+			<div class="sub">4 档发射机 · 航点 ≤21 · 传送时间公式</div>
 		</div>
 
 		<div class="infobox"><div class="ib-title">GPS 网络</div><table>
-			<tr><td class="k">用途</td><td class="v">航点、传送、网络复杂度（供加载器等）</td></tr>
-			<tr><td class="k">航点上限</td><td class="v">本服 <code>max-gps-waypoints: 21</code></td></tr>
-			<tr><td class="k">复杂度公式</td><td class="v">节点相对控制板约 <code>ceil(√(x²+y²+z²) / 50)</code>，逐节点求和</td></tr>
-			<tr><td class="k">设备门槛示例</td><td class="v">区块加载器约 7500 / 个（附属）</td></tr>
+			<tr><td class="k">复杂度</td><td class="v">Σ multiplier(Yᵢ)，对在线发射机求和</td></tr>
+			<tr><td class="k">航点</td><td class="v">GUI 21 格；代码上限约 <strong>19</strong>；本服 config 21</td></tr>
+			<tr><td class="k">发射机供能</td><td class="v">断电则离线，不计复杂度</td></tr>
 		</table></div>
 
-		<h3>一、机制</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>规则</th></tr><tr><td>复杂度</td><td>ceil(√(x²+y²+z²) / 50) 逐节点求和</td></tr><tr><td>发射机</td><td>提高可用复杂度/范围；需视距 LOS</td></tr><tr><td>航点</td><td>命名支持彩色代码；重名拒绝</td></tr><tr><td>死亡点</td><td>自动记录</td></tr><tr><td>公共传送</td><td>/sf teleporter</td></tr><tr><td>电梯板</td><td>传送板；另有备用电梯（附属）</td></tr></table></div>
+		<h3>一、发射机档位</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>档</th><th>复杂度公式</th><th>耗电 J/t</th><th>容量 J</th></tr><tr><td>T1 GPS Transmitter</td><td>Y</td><td>1</td><td>16</td></tr><tr><td>T2</td><td>Y×4 + 100</td><td>3</td><td>64</td></tr><tr><td>T3</td><td>Y×16 + 500</td><td>11</td><td>256</td></tr><tr><td>T4</td><td>Y×64 + 2100</td><td>43</td><td>1,024</td></tr></table></div>
+		<p class="muted">Y = 发射机高度（≥0）；容量 = 4 &lt;&lt; (2×档)。</p>
 
-		<h3>二、实用建议</h3>
+		<h3>二、传送时间</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>条件</th><th>公式</th></tr><tr><td>复杂度 &lt; 100</td><td>time = 100（×0.5s = 50s）</td></tr><tr><td>否则</td><td>speed = 50000 + 复杂度²；time = max(1, min(4×dist²/speed, 40))</td></tr><tr><td>dist² 上限</td><td>同维 1e8 / 跨维 1.5e8</td></tr><tr><td>进度</td><td>每 10t；移动 &gt;2 格取消</td></tr><tr><td>落地</td><td>抗性提升 600t（共享板）</td></tr></table></div>
+
+		<h3>三、其它</h3>
 		<ul class="bullets">
-			<li>大基地先铺发射机，把复杂度池撑大</li>
-			<li>航点命名用颜色区分矿区/基地/下界</li>
-			<li>附属设备（加载器等）吃复杂度，先算预算</li>
+			<li>电梯板：纵向楼层传送（研究 28）</li>
+			<li>航点命名支持彩色；重名拒绝</li>
+			<li>附属设备（区块加载器等）吃复杂度预算</li>
 		</ul>
 
-		<p class="muted">数据来源：Slimefun 2026.07 GPS 复杂度实现 + config。</p>
+		<p class="muted">数据来源：GPSNetwork / TeleportationManager / GPSTransmitter。</p>
 	</article>
-		<article class="article" id="androids" data-search="机器人 Android 矿工 屠夫 农夫 程序 MK2 MK3 故障">
+		<article class="article" id="androids" data-search="机器人 Android 矿工 农夫 伐木 渔夫 燃料 脚本 MK1 MK2 MK3">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 机器人</div>
 		<div class="article-header">
-			<h2>机器人 · Android 程序劳作</h2>
-			<div class="sub">Programmable / MK2 / MK3 · 本服故障 0%</div>
+			<h2>机器人 · Android 脚本劳作</h2>
+			<div class="sub">燃料驱动（非电力）· 脚本 54 段 · 0% 故障</div>
 		</div>
 
 		<div class="infobox"><div class="ib-title">Android</div><table>
-			<tr><td class="k">型号</td><td class="v">Programmable / MK2 / MK3</td></tr>
-			<tr><td class="k">角色</td><td class="v">ALL / MINER / BUTCHER / FARMER / FISHER / WOODCUTTER 等</td></tr>
-			<tr><td class="k">动作周期</td><td class="v">约 <strong>5–20 tick</strong>（MK2/3 更快）</td></tr>
-			<tr><td class="k">耗能</td><td class="v">约 <strong>10–25 J/动作</strong>；亦有燃料炉变体</td></tr>
-			<tr><td class="k">故障</td><td class="v">本服 <strong>0%</strong>；官方默认 10%；持续 30s 自愈</td></tr>
+			<tr><td class="k">动力</td><td class="v"><strong>燃料</strong>（非 EnergyNet）；每 tick 耗 1 燃料值</td></tr>
+			<tr><td class="k">动作节拍</td><td class="v">custom-ticker-delay <strong>10 tick</strong>（0.5s）</td></tr>
+			<tr><td class="k">脚本</td><td class="v">最多 <strong>54</strong> 段；默认 START-TURN_LEFT-REPEAT</td></tr>
+			<tr><td class="k">故障</td><td class="v"><strong>0%</strong>（无效指令仅告警）</td></tr>
+			<tr><td class="k">输出 / 燃料槽</td><td class="v">6 输出槽（20–22,29–31）；燃料槽 43</td></tr>
 		</table></div>
 
-		<h3>一、机制</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>规则</th></tr><tr><td>型号</td><td>Programmable / MK2 / MK3；角色 ALL / MINER / BUTCHER 等</td></tr><tr><td>动作周期</td><td>约 5–20 tick（MK2/3 更快）</td></tr><tr><td>耗能</td><td>约 10–25 J/动作；燃料炉变体烧物品</td></tr><tr><td>动作量</td><td>约 1 格/动作（高阶可更大挖掘模式）</td></tr><tr><td>输出</td><td>掉入相邻容器 / 地面</td></tr><tr><td>领地</td><td>无权限领地/地皮自动暂停</td></tr></table></div>
+		<h3>一、型号与燃料</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>档</th><th>燃料类型</th><th>燃料值（tick/单位）</th></tr><tr><td>MK1 Programmable</td><td>固体</td><td>煤块 80 · 烈焰棒 45 · 干海带 70 · 煤/木炭 8 · 竹 1 · 原木 2 · 木板 1</td></tr><tr><td>MK2</td><td>液体</td><td>岩浆桶 100 · 石油桶 200 · 燃料桶 500</td></tr><tr><td>MK3</td><td>核燃料</td><td>铀 2,500 · 镎 1,200 · 强化铀 3,000</td></tr></table></div>
 
-		<h3>二、实用建议</h3>
+		<h3>二、角色（指令门控）</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>角色</th><th>指令 / 说明</th></tr><tr><td>MINER</td><td>dig / moveAndDig</td></tr><tr><td>FARMER</td><td>farm；MK2 = ADVANCED_FARMER（可收异域花园）</td></tr><tr><td>WOODCUTTER</td><td>chopTree</td></tr><tr><td>FIGHTER</td><td>attack</td></tr><tr><td>FISHERMAN</td><td>fish</td></tr><tr><td>NONE</td><td>通用脚本</td></tr></table></div>
+
+		<h3>三、实用建议</h3>
 		<ul class="bullets">
-			<li>矿工放矿区、屠夫放刷怪塔下；接口对准箱子</li>
-			<li>供电用电缆接电网；燃料型备燃料</li>
-			<li>本服故障 0%，可长期挂机</li>
+			<li>MK1 用煤块起步；量产上 MK2 液体 / MK3 核燃料</li>
+			<li>脚本用 START-…-REPEAT 循环；接口对准箱子</li>
+			<li>领地无权限会自动暂停</li>
 		</ul>
 
-		<p class="muted">数据来源：Slimefun 2026.07 Android 实现。</p>
+		<p class="muted">数据来源：ProgrammableAndroid / AndroidType / config custom-ticker-delay。</p>
 	</article>
-		<article class="article" id="radiation" data-search="放射性 辐射 铀 防护服 中毒 污染">
+		<article class="article" id="radiation" data-search="放射性 辐射 铀 防护服 中毒 暴露 钚">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 放射性</div>
 		<div class="article-header">
-			<h2>放射性 · 核材料危害模型</h2>
-			<div class="sub">本服开启 · 宽限 15s · 可燃烧</div>
+			<h2>放射性 · 暴露与症状</h2>
+			<div class="sub">暴露公式 · 症状阈值 · 全套防护 100%</div>
 		</div>
 
 		<div class="infobox"><div class="ib-title">放射性</div><table>
 			<tr><td class="k">开关</td><td class="v"><code>enable-radiation: true</code></td></tr>
-			<tr><td class="k">更新间隔</td><td class="v">1（t）</td></tr>
-			<tr><td class="k">宽限</td><td class="v"><code>radiation-grace-period: 15</code></td></tr>
-			<tr><td class="k">燃烧</td><td class="v"><code>burn-players-when-radioactive: true</code></td></tr>
-			<tr><td class="k">提示</td><td class="v">动作条 N/100</td></tr>
+			<tr><td class="k">更新</td><td class="v">radiation-update-interval <strong>1</strong> tick</td></tr>
+			<tr><td class="k">宽限</td><td class="v">radiation-grace-period <strong>15</strong> s（死亡后）</td></tr>
+			<tr><td class="k">燃烧</td><td class="v">burn-players-when-radioactive: true</td></tr>
+			<tr><td class="k">上限</td><td class="v">暴露 <strong>100</strong></td></tr>
 		</table></div>
 
-		<h3>一、机制</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>项</th><th>规则</th></tr><tr><td>物品档位</td><td>Radioactive：LOW / MEDIUM / HIGH / VERY_DEADLY ≈ 0.25–2.0</td></tr><tr><td>暴露</td><td>靠近/携带污染源累计，远离后缓慢衰减</td></tr><tr><td>症状递进</td><td>反胃 → 中毒/虚弱 → 缓慢/凋零（重度）</td></tr><tr><td>防护服</td><td>每件约 25% 减免，全套约 100%</td></tr><tr><td>宽限</td><td>首次症状前短宽限；本服 grace 15</td></tr><tr><td>重度</td><td>可燃烧；动作条 N/100</td></tr></table></div>
+		<h3>一、暴露公式</h3>
+		<p><code>exposure += Σ (物品数量 × 档位暴露系数)</code> 每 1t；无核物品时 <strong>−1/t</strong> 衰减。</p>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>档位</th><th>系数/t</th><th>颜色</th><th>示例</th></tr><tr><td>LOW</td><td>1</td><td>黄</td><td>小铀</td></tr><tr><td>MODERATE</td><td>2</td><td>黄</td><td>小铀块 / 下界冰</td></tr><tr><td>HIGH</td><td>3</td><td>金</td><td>铀 / 炽炎锭 / 镎</td></tr><tr><td>VERY_HIGH</td><td>5</td><td>红</td><td>炽炎 2&3 / 浓缩下界冰 / 钚 / 强化铀</td></tr><tr><td>VERY_DEADLY</td><td>10</td><td>暗红</td><td>极高毒</td></tr></table></div>
 
-		<h3>二、实用建议</h3>
+		<h3>二、症状阈值</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>暴露 ≥</th><th>效果</th><th>等级</th></tr><tr><td>10</td><td>缓慢</td><td>III</td></tr><tr><td>25</td><td>凋零</td><td>I</td></tr><tr><td>50</td><td>失明</td><td>V</td></tr><tr><td>75</td><td>凋零</td><td>IV</td></tr><tr><td>100</td><td>瞬间伤害</td><td>L (49)</td></tr></table></div>
+
+		<h3>三、防护</h3>
 		<ul class="bullets">
-			<li>碰铀/核材料先穿防护服</li>
-			<li>远离污染源等待衰减；症状分阶段处理</li>
-			<li>仓储核材料用防爆箱，别贴身带</li>
+			<li><strong>防护服全套</strong>（潜水盔 + 防护胸/腿/靴）= <strong>100% 免疫</strong>（二元，非百分比减免）</li>
+			<li>创造 / 观察者免疫；蜂群伤害也挡</li>
+			<li>症状持续 = interval×20+20 tick</li>
 		</ul>
 
-		<p class="muted">数据来源：Slimefun 2026.07 config radiation + 危害实现。</p>
+		<p class="muted">数据来源：RadiationTask / Radioactivity / RadiationSymptom / HazmatArmorPiece。</p>
 	</article>
-		<article class="article" id="backpack" data-search="背包 存储 灵魂绑定 染色 私人 末影箱">
+		<article class="article" id="backpack" data-search="背包 槽位 灵魂绑定 末影背包 嵌套">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 背包与存储</div>
 		<div class="article-header">
-			<h2>背包与存储 · 容器层级</h2>
-			<div class="sub">粘液背包 / 灵魂绑定 / 私人箱 / 末影箱</div>
+			<h2>背包与存储 · 槽位与绑定</h2>
+			<div class="sub">9→54 槽 · 灵魂绑定 36 · 禁止嵌套</div>
 		</div>
 
 		<div class="infobox"><div class="ib-title">背包系统</div><table>
-			<tr><td class="k">粘液背包</td><td class="v">槽位约 9 / 18 / 27；特殊款 27 绑定</td></tr>
-			<tr><td class="k">灵魂绑定</td><td class="v">UUID 仅主人；未绑定可交易</td></tr>
+			<tr><td class="k">核心规则</td><td class="v">无潜影盒入包；无包中包；每包实例独立</td></tr>
+			<tr><td class="k">灵魂绑定</td><td class="v">死亡保留；UUID 专属</td></tr>
 			<tr><td class="k">离线打开</td><td class="v">本服 <code>allow-open-when-owner-offline: true</code></td></tr>
 			<tr><td class="k">找回</td><td class="v"><code>/sf backpack</code></td></tr>
 		</table></div>
 
-		<h3>一、容器层级</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>容器</th><th>机制</th></tr><tr><td>粘液背包</td><td>槽位约 9 / 18 / 27；特殊款 27 绑定</td></tr><tr><td>灵魂绑定</td><td>UUID 仅主人；未绑定可交易</td></tr><tr><td>染色背包</td><td>六档本服全开（附属）</td></tr><tr><td>离线打开</td><td>本服允许</td></tr><tr><td>找回</td><td>/sf backpack</td></tr><tr><td>彩色末影箱</td><td>3 染料 RGB，最多 8192 独立共享空间</td></tr><tr><td>私人存储</td><td>木/铁/钻石/防爆；Private / Public</td></tr><tr><td>Networks 量子存储</td><td>4k～2B；远程约 150</td></tr><tr><td>SimpleStorage / Dank</td><td>范围 5、间隔 4 tick；Dank 匹配吸入/溢出作废</td></tr></table></div>
+		<h3>一、本体背包</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>背包</th><th>槽位</th><th>灵魂绑定</th><th>研究 cost</th></tr><tr><td>小背包</td><td>9</td><td>否</td><td>15</td></tr><tr><td>中背包</td><td>18</td><td>否</td><td>15</td></tr><tr><td>大背包</td><td>27</td><td>否</td><td>15</td></tr><tr><td>编织背包</td><td>36</td><td>否</td><td>19</td></tr><tr><td>鎏金背包</td><td>45</td><td>否</td><td>22</td></tr><tr><td>辉光背包</td><td>54</td><td>否</td><td>25</td></tr><tr><td>灵魂绑定背包</td><td><strong>36</strong></td><td>是</td><td>22</td></tr><tr><td>末影背包</td><td>（末影箱）</td><td>—</td><td>4</td></tr></table></div>
 
-		<h3>二、实用建议</h3>
+		<h3>二、规则</h3>
 		<ul class="bullets">
-			<li>常用背包绑灵魂绑定，防丢防偷</li>
-			<li>共享仓库用彩色末影箱分区</li>
-			<li>大量物品走 Networks / SimpleStorage / Dank</li>
+			<li>禁止嵌套：包里不能放包/潜影盒</li>
+			<li>DistinctiveItem：每包独立，需 lore 相同才能叠</li>
+			<li>核心无「共享背包」（附属功能）</li>
+			<li>彩色末影箱 / 私人箱 / Networks / Dank 见附属章</li>
 		</ul>
 
-		<p class="muted">数据来源：Slimefun 2026.07 backpack + 本服 config。</p>
+		<p class="muted">数据来源：SlimefunBackpack / SlimefunItemSetup + 本服 config backpack。</p>
 	</article>
-		<article class="article" id="talisman" data-search="护符 护身符 触发 概率 矿工 农夫 猎人 魔术师">
+		<article class="article" id="talisman" data-search="护符 触发 概率 矿工 农夫 猎人 末影护符">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 护身符</div>
 		<div class="article-header">
-			<h2>护身符 · 概率触发型被动</h2>
-			<div class="sub">放物品栏 · 本服动作栏提示</div>
+			<h2>护身符 · 触发概率全表</h2>
+			<div class="sub">物品栏触发 · 末影变体 · 各有概率与冷却</div>
 		</div>
 
 		<div class="infobox"><div class="ib-title">护身符</div><table>
-			<tr><td class="k">位置</td><td class="v">放<strong>物品栏</strong>（不是装备栏）</td></tr>
-			<tr><td class="k">触发</td><td class="v">匹配事件时<strong>概率触发</strong></td></tr>
-			<tr><td class="k">触发概率</td><td class="v">约 <strong>25%</strong></td></tr>
-			<tr><td class="k">冷却</td><td class="v">单枚约 <strong>5–10s</strong></td></tr>
-			<tr><td class="k">提示</td><td class="v">本服动作栏提示 <code>use-actionbar: true</code></td></tr>
+			<tr><td class="k">位置</td><td class="v">物品栏（末影变体可在末影箱）</td></tr>
+			<tr><td class="k">触发</td><td class="v"><code>nextInt(100) ≤ chance</code> 则成功</td></tr>
+			<tr><td class="k">去重</td><td class="v">已有同效果则跳过</td></tr>
+			<tr><td class="k">末影变体</td><td class="v">全系有 Ender 版；研究 28</td></tr>
 		</table></div>
 
-		<h3>一、类型与效果</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>类型</th><th>触发效果</th></tr><tr><td>铁砧 / 工匠</td><td>工具本次免损坏</td></tr><tr><td>矿工</td><td>矿物双倍掉落</td></tr><tr><td>农夫 / 猎人</td><td>掉落翻倍</td></tr><tr><td>岩浆 / 水 / 天使</td><td>岩浆获救 / 免溺水 / 信仰之跃免伤</td></tr><tr><td>魔术师</td><td>额外附魔</td></tr><tr><td>战士 / 骑士</td><td>战斗向增益</td></tr><tr><td>旅行者 / 智者 / 旋风</td><td>位移 / 经验 / 旋风向</td></tr><tr><td>消防员</td><td>抗火</td></tr><tr><td>洞穴人</td><td>洞穴向</td></tr><tr><td>消耗型</td><td>触发后销毁</td></tr></table></div>
+		<h3>一、全表</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>护符</th><th>概率</th><th>消耗</th><th>取消事件</th><th>效果</th></tr><tr><td>铁砧 Anvil</td><td>100%</td><td>是</td><td>否</td><td>改名折扣</td></tr><tr><td>矿工 Miner</td><td>20%</td><td>否</td><td>否</td><td>额外掉落</td></tr><tr><td>农夫 Farmer</td><td>20%</td><td>否</td><td>否</td><td>额外作物</td></tr><tr><td>猎人 Hunter</td><td>20%</td><td>否</td><td>否</td><td>额外生物掉落</td></tr><tr><td>岩浆行者</td><td>100%</td><td>是</td><td>是</td><td>抗火 3600t IV</td></tr><tr><td>水呼吸</td><td>100%</td><td>是</td><td>是</td><td>水下呼吸 3600t IV</td></tr><tr><td>天使 Angel</td><td>75%</td><td>否</td><td>是</td><td>取消摔伤</td></tr><tr><td>消防员</td><td>100%</td><td>是</td><td>是</td><td>抗火 3600t IV</td></tr><tr><td>旅行者</td><td>60%</td><td>否</td><td>否</td><td>速度 3600t II</td></tr><tr><td>战士 Warrior</td><td>100%</td><td>是</td><td>是</td><td>力量 3600t II</td></tr><tr><td>骑士 Knight</td><td>30%</td><td>是</td><td>是</td><td>再生 100t III</td></tr><tr><td>洞穴人 Caveman</td><td>50%</td><td>否</td><td>否</td><td>急迫 800t II</td></tr><tr><td>智者 Wise</td><td>20%</td><td>否</td><td>否</td><td>经验加成</td></tr><tr><td>旋风 Whirlwind</td><td>60%</td><td>否</td><td>是</td><td>弹射物偏转</td></tr><tr><td>巫师 Wizard</td><td>60%</td><td>否</td><td>否</td><td>随机传送</td></tr><tr><td>魔术师</td><td>特殊</td><td>—</td><td>—</td><td>MagicianTalisman</td></tr></table></div>
 
 		<h3>二、实用建议</h3>
 		<ul class="bullets">
-			<li>下矿带矿工+工匠；耕种带农夫；战斗带战士/魔术师</li>
-			<li>同名护符冷却独立；多放几枚提高覆盖率</li>
-			<li>消耗型注意别触发在低价值时刻</li>
+			<li>下矿：矿工 + 工匠；耕种：农夫；战斗：战士/骑士</li>
+			<li>100% 消耗型（岩浆/水/消防）留应急</li>
+			<li>末影变体占末影箱，背包更干净</li>
 		</ul>
 
-		<p class="muted">数据来源：Slimefun 2026.07 Talisman 实现 + 本服 config talismans。</p>
+		<p class="muted">数据来源：Talisman.java / MagicianTalisman / SlimefunItemSetup。</p>
 	</article>
 		<article class="article" id="official" data-search="官方附属 异域花园 灵魂罐 刷怪笼 背包 宠物 捕捉 木龙头 末影箱 环保 工业 幸运 矿石 私人 硬核">
 
