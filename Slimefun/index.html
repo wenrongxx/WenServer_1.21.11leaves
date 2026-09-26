@@ -248,120 +248,111 @@
 
 		<p class="muted">数据来源：Research.java / ResearchSetup.java + 本服 config research-ranks。</p>
 	</article>
-		<article class="article" id="materials" data-search="材料加工 矿石倍增 粉碎 洗矿 合金 冶炼 电路板 碳 人造钻石">
+		<article class="article" id="materials" data-search="材料 矿石倍增 粉碎 洗矿 淘金 合金 冶炼 碳 电路板 压力舱">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 材料加工</div>
 		<div class="article-header">
-			<h2>材料加工 · 矿石倍增与合金</h2>
-			<div class="sub">粉碎 / 洗选 / 冶炼 / 合成 · 全链数值</div>
+			<h2>材料加工 · 矿石倍增与合金全表</h2>
+			<div class="sub">粉碎 ×2 · 洗矿 1/9 · 冶炼合金精确配比</div>
 		</div>
 
 		<div class="infobox"><div class="ib-title">材料链</div><table>
-			<tr><td class="k">核心思路</td><td class="v">原版矿 → 粉（×2）→ 锭 → 合金 / 电路板</td></tr>
-			<tr><td class="k">本服洗矿</td><td class="v">新版（<code>legacy-ore-washer: false</code>）</td></tr>
-			<tr><td class="k">本服碎矿</td><td class="v">旧版（<code>legacy-ore-grinder: true</code>）</td></tr>
-			<tr><td class="k">除尘</td><td class="v">新版（<code>legacy-dust-washer: false</code>）</td></tr>
+			<tr><td class="k">核心思路</td><td class="v">矿 → 粉（×2）→ 锭 → 合金 / 电路 / 碳链</td></tr>
+			<tr><td class="k">本服开关</td><td class="v">洗矿新版 · 除尘新版 · 碎矿旧版</td></tr>
+			<tr><td class="k">倍增</td><td class="v">Ore Crusher <code>double-ores: true</code></td></tr>
 		</table></div>
 
-		<h3>一、设备产出比</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>设备</th><th>输入 → 产出</th><th>备注</th></tr><tr><td>淘金盘（沙砾）</td><td>随机：燧石 / 黏土 / 铁粒 / 金粒</td><td>各约 10–25%</td></tr><tr><td>矿石粉碎机</td><td>1 矿 → 2 粉</td><td>倍增核心</td></tr><tr><td>矿研磨机</td><td>1 矿 → 2 粉（legacy）</td><td>本服开启</td></tr><tr><td>洗矿机</td><td>粉 → 粉 + 副产石粉</td><td>约 25% 副产</td></tr><tr><td>磨石</td><td>1 → 1 粉</td><td>粗磨</td></tr><tr><td>冶炼 / 电炉</td><td>粉 → 锭</td><td>1:1</td></tr><tr><td>锭粉碎</td><td>锭 → 2 粉</td><td>回退倍增</td></tr><tr><td>完整双倍链</td><td>矿→2粉→2锭</td><td>粉碎+熔</td></tr></table></div>
+		<h3>一、矿石粉碎机（多方块）</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>输入</th><th>产出（倍增开 / 关）</th></tr><tr><td>铁矿 / 粗铁 / 铜矿</td><td>对应粉 2 / 1</td></tr><tr><td>金矿 / 粗金</td><td>金粉 2 / 1</td></tr><tr><td>煤矿</td><td>煤 2 / 1</td></tr><tr><td>青金石矿</td><td>青金 14 / 7</td></tr><tr><td>红石矿</td><td>红石 8 / 4</td></tr><tr><td>钻石 / 绿宝 / 下界石英矿</td><td>2 / 1</td></tr><tr><td>下界金矿 / 镶金黑石</td><td>金粒 8 / 4</td></tr><tr><td>黑石 ×8 / 圆石 ×8 / 深板岩 ×8</td><td>红沙 1 / 沙 1 / 沙 1</td></tr><tr><td>砾石 / 岩浆块</td><td>沙 / 硫酸盐</td></tr><tr><td>碳 → 煤×8；压缩碳 → 碳×4</td><td>碳链回退</td></tr><tr><td>筛矿 → 粉碎矿</td><td>下一级</td></tr><tr><td>4K 金 → 1 粉 … 24K 金 → 6 粉</td><td>按开数</td></tr></table></div>
 
-		<h3>二、关键合金与材料</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>材料</th><th>配方要点</th><th>用途</th></tr><tr><td>钢 Steel</td><td>铁 + 煤炭炉/电炉路线</td><td>板、推进器、基础结构</td></tr><tr><td>大马士革钢</td><td>钢 + 碳路线</td><td>装甲 / 工具</td></tr><tr><td>杜拉铝 Duralumin</td><td>铝 + 铜系</td><td>轻型合金</td></tr><tr><td>焊锡 Solder</td><td>锡 + 铅系</td><td>电子料</td></tr><tr><td>科林斯青铜</td><td>铜系高级</td><td>装饰/部件</td></tr><tr><td>强化合金</td><td>多合金 + 碳压</td><td>强化板 / 甲</td></tr><tr><td>红石合金</td><td>红石 + 合金</td><td>电子</td></tr><tr><td>人造钻石/绿宝/蓝晶</td><td>压力腔碳链</td><td>高级核心</td></tr><tr><td>Carbonado 黑钻</td><td>压缩碳 → 碳块 → 碳晶 → Carbonado</td><td>终局碳</td></tr></table></div>
+		<h3>二、洗矿机 / 淘金盘</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>设备</th><th>产出</th></tr><tr><td>洗矿机：筛矿</td><td>1 随机粉（铁/金/铜/锡/锌/铝/镁/铅/银，各 1/9）+ 石块副产</td></tr><tr><td>洗矿机：沙 ×2 / 粉碎矿</td><td>盐 / 纯净矿簇</td></tr><tr><td>淘金盘（砾石）</td><td>燧石 40 · 筛矿 35 · 黏土球 20 · 铁粒 5（权重）</td></tr><tr><td>下界淘金盘（灵魂沙/土）</td><td>石英 50 · 金粒 25 · 疣 10 · 烈焰粉 8 · 萤石粉 5 · 恶魂泪 2</td></tr></table></div>
 
-		<h3>三、电路与碳链</h3>
+		<h3>三、冶炼炉合金（精确配比）</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>合金</th><th>原料（计数）</th></tr><tr><td>钢 Steel</td><td>铁粉 1 + 碳 1 + 铁锭 1</td></tr><tr><td>大马士革钢</td><td>钢 1 + 铁粉 1 + 碳 1 + 铁锭 1</td></tr><tr><td>硬化金属</td><td>大马士革 1 + 杜拉铝 1 + 压缩碳 1 + 铝青铜 1</td></tr><tr><td>强化合金</td><td>大马士革+硬化+科林斯青铜+焊锡+比隆+24K金（各 1）</td></tr><tr><td>青铜</td><td>铜粉 + 锡粉 + 铜锭</td></tr><tr><td>杜拉铝</td><td>铝粉 + 铜粉 + 铝锭</td></tr><tr><td>比隆 Billon</td><td>银粉 + 铜粉 + 银锭</td></tr><tr><td>黄铜</td><td>铜粉 + 锌粉 + 铜锭</td></tr><tr><td>铝黄铜</td><td>铝粉 + 黄铜 + 铝锭</td></tr><tr><td>铝青铜</td><td>铝粉 + 青铜 + 铝锭</td></tr><tr><td>科林斯青铜</td><td>银粉 + 金粉 + 铜粉 + 青铜</td></tr><tr><td>焊锡 Solder</td><td>铅粉 + 锡粉 + 铅锭</td></tr><tr><td>镍 / 钴</td><td>铁粉+铁锭+铜粉 / 铁粉+铜粉+镍</td></tr><tr><td>人造蓝晶/绿宝</td><td>铝粉+玻璃+玻板+铝锭+青金 / 蓝晶+铝粉+铝锭+玻板</td></tr><tr><td>粗 Carbonado</td><td>人造钻石 + 碳晶 + 玻板</td></tr><tr><td>硅铁 / 鎏金铁</td><td>铁锭+铁粉+硅 / 24K金+铁粉</td></tr><tr><td>红石合金</td><td>红石+红石块+硅铁+硬化金属</td></tr></table></div>
+
+		<h3>四、压力腔 / 压缩机 / 电路</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机器</th><th>配方</th></tr><tr><td>压力腔</td><td>碳晶 → 人造钻石；粗 Carbonado → Carbonado</td></tr><tr><td>压缩机</td><td>8 煤→碳；4 碳→压缩碳；8 钢→钢板；8 强化合金→强化板</td></tr><tr><td>压缩机内置</td><td>4 石块→圆石；8 燧石→圆石；8 煤块→9 碳；4 木炭→煤</td></tr><tr><td>增强工作台</td><td>8 压缩碳+燧石→碳晶；6 青金块+2 红石块+基础电路→高级电路</td></tr><tr><td>基础电路板</td><td>铁傀儡掉落</td></tr></table></div>
+
+		<h3>五、实用建议</h3>
 		<ul class="bullets">
-			<li><strong>基础电路板</strong>：红石 + 金/铜系 + 绝缘</li>
-			<li><strong>高级电路板</strong>：基础板 + 金 24K / 硅 / 电磁</li>
-			<li><strong>碳</strong>：煤 → 粉 → 压缩碳 → 碳块 → 碳晶 → Carbonado</li>
-			<li><strong>硅</strong>：石英/沙系；连通高级电子料</li>
-			<li><strong>钢板 / 钢推进器</strong>：喷气背包与能量件前置</li>
+			<li>入门三件套：粉碎机 + 洗矿机 + 冶炼炉</li>
+			<li>要双倍就粉碎再熔；青金/红石粉碎收益最高</li>
+			<li>强化合金是强化板/装甲门禁，按 6 料配方提前囤</li>
+			<li>碳链（煤→碳→压缩碳→碳晶→Carbonado）贯穿终局</li>
 		</ul>
 
-		<h3>四、实用建议</h3>
-		<ul class="bullets">
-			<li>入门三件套：粉碎机 + 冶炼 + 淘金盘</li>
-			<li>要双倍矿就走「粉碎→熔」，不要只熔原矿</li>
-			<li>碳链提前囤：压缩碳是多条终局线的门槛</li>
-			<li>合金前先看指南配方表，粉的种类很细</li>
-		</ul>
-
-		<p class="muted">数据来源：Slimefun 2026.07 指南配方 + config legacy 开关。</p>
+		<p class="muted">数据来源：OreCrusher / OreWasher / GoldPan / NetherGoldPan / SlimefunItemSetup 合金段。</p>
 	</article>
-		<article class="article" id="machines" data-search="机器 多方块 强化工作台 冶炼炉 装甲锻造 压力舱 自动合成">
+		<article class="article" id="machines" data-search="机器 多方块 增强工作台 冶炼炉 压力腔 电炉 电磨 自动合成">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 机器与多方块</div>
 		<div class="article-header">
-			<h2>机器与多方块 · 工作面全解</h2>
-			<div class="sub">三类工作面 · 自动合成 · 结构搭建</div>
+			<h2>机器与多方块 · 结构与电力表</h2>
+			<div class="sub">多方块原版方块图 · 电力机 J/t 与速度</div>
 		</div>
 
 		<div class="infobox"><div class="ib-title">机器系统</div><table>
-			<tr><td class="k">工作面</td><td class="v">强化工作台 · 单方块机器 · 多方块结构</td></tr>
-			<tr><td class="k">配方来源</td><td class="v">只认指南书配方；原版合成台不能「拼样子」</td></tr>
-			<tr><td class="k">多方块</td><td class="v">原版方块按图搭建；作弊无法领取成品</td></tr>
-			<tr><td class="k">自动合成</td><td class="v">绑定配方回放；约 10–50 J/次</td></tr>
+			<tr><td class="k">工作面</td><td class="v">增强工作台 · 多方块 · 电力单方块</td></tr>
+			<tr><td class="k">配方来源</td><td class="v">只认指南配方；增强台需 9 格精确匹配</td></tr>
+			<tr><td class="k">多方块</td><td class="v">原版方块按图；缺一不可用</td></tr>
 		</table></div>
 
-		<h3>一、三类工作面</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>类型</th><th>机制</th></tr><tr><td>强化工作台</td><td>3×3 静态配方；有序 / 无序；只认指南配方</td></tr><tr><td>单方块机器</td><td>进度条、耗电/耗时、输入输出槽</td></tr><tr><td>多方块结构</td><td>原版方块按图搭建；缺一块不能用</td></tr></table></div>
+		<h3>一、多方块结构（中心 = 交互块）</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机器</th><th>结构（3×3 要点）</th></tr><tr><td>增强工作台</td><td>上：工作台；下：发射器</td></tr><tr><td>装甲锻造台</td><td>上：铁砧；下：发射器（朝上）</td></tr><tr><td>磨石</td><td>上：橡木栅栏；下：发射器</td></tr><tr><td>矿石粉碎机</td><td>上：下界砖栅栏；中：铁栏+发射器+铁栏</td></tr><tr><td>洗矿机</td><td>发射器 / 橡木栅栏 / 炼药锅 三层</td></tr><tr><td>冶炼炉</td><td>下界砖栅栏 / 下界砖+发射器+下界砖 / 打火石（下方火，10% 耗）</td></tr><tr><td>压缩机</td><td>下界砖栅栏 / 活塞+发射器+活塞</td></tr><tr><td>压力腔</td><td>平滑石台阶+发射器+台阶 / 活塞+玻璃+活塞 / 活塞+炼药锅+活塞</td></tr><tr><td>自动淘金机</td><td>橡木活板门 / 炼药锅（用淘金盘表，1s）</td></tr></table></div>
 
-		<h3>二、核心机器</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机器</th><th>机制 / 数值</th></tr><tr><td>自动合成机</td><td>绑定配方回放；约 10–50 J/次；须放箱子正上方；蹲下右键手持成品写入</td></tr><tr><td>冶炼炉</td><td>9 槽合金（粉混出特殊锭）；手动或电力变体</td></tr><tr><td>装甲锻造台</td><td>多方块；板件/零件 → 粘液盔甲</td></tr><tr><td>加热压力腔</td><td>定时高压：黑金石 / 人造钻石等；数秒高 J</td></tr><tr><td>压力腔</td><td>常压碳链：压缩碳 / 碳块 / 人造宝石</td></tr><tr><td>魔法工作台</td><td>附魔书/魔法件配方</td></tr><tr><td>电炉 / 电磨 / 电洗</td><td>电力版加工件，速度/耗电更高</td></tr><tr><td>自动冶炼 / 自动锻造 / 自动压力</td><td>产线回放对应台子</td></tr></table></div>
+		<h3>二、电力机器（容量 / J/t / 速度）</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>机器 T1/T2/T3</th><th>容量 J</th><th>J/t</th><th>速度</th></tr><tr><td>电炉</td><td>64/128/128</td><td>2/3/5</td><td>1/2/4</td></tr><tr><td>电力淘金</td><td>128/128/512</td><td>1/2/7</td><td>1/3/10</td></tr><tr><td>电力洗尘</td><td>128/128/512</td><td>3/5/15</td><td>1/2/10</td></tr><tr><td>电力铸锭</td><td>256/256/512</td><td>4/7/20</td><td>1/2/8</td></tr><tr><td>电力碎矿</td><td>128/512/1024</td><td>6/15/45</td><td>1/4/10</td></tr><tr><td>电力坩埚</td><td>1024×3</td><td>24/40/60</td><td>1/2/4</td></tr><tr><td>加热压力腔 I/II</td><td>128/256</td><td>5/22</td><td>1/5</td></tr><tr><td>电力压粉/压力/冶炼</td><td>512/256–1024/512–1024</td><td>7 / 8–20 / 10–20</td><td>1 / 1–3 / 1–2</td></tr><tr><td>碳压机 I/II/III</td><td>256/512/512</td><td>10/25/90</td><td>1/3/15</td></tr><tr><td>自动铁砧 I/II</td><td>128/256</td><td>12/16</td><td>修 10/25 耐久</td></tr><tr><td>自动附魔/去附魔</td><td>128–1024</td><td>9–24</td><td>1/3</td></tr><tr><td>冷冻机 I/II/III</td><td>256×3</td><td>9/15/21</td><td>1/2/3</td></tr><tr><td>食物制造/堆肥</td><td>256–512</td><td>7–26</td><td>1–10</td></tr><tr><td>充能台 / 经验收集</td><td>128 / 1024</td><td>10 / 10</td><td>1 / —</td></tr></table></div>
 
-		<h3>三、多方块结构（要点）</h3>
+		<h3>三、加热压力腔关键配方</h3>
 		<ul class="bullets">
-			<li><strong>冶炼炉</strong>：炉体 + 出料口等按指南图；缺砖无法运行</li>
-			<li><strong>装甲锻造台</strong>：底座 + 臂架；做护甲/武器</li>
-			<li><strong>压力腔 / 加热压力腔</strong>：腔体 + 阀门；碳与宝石线</li>
-			<li>搭建后用指南/探测确认结构识别成功</li>
+			<li>镁粉 + 盐 → 硫酸镁</li>
+			<li>石油桶 → 塑料板</li>
+			<li>24K金 + 铀 → 炽炎锭 → +Carbonado → 炽炎 2 → +下界之星 → 炽炎 3</li>
+			<li>钚 + 铀 → 强化铀；浓缩下界冰 → 8 冷却棒</li>
 		</ul>
 
 		<h3>四、实用建议</h3>
 		<ul class="bullets">
-			<li>先强化工作台，再粉碎/冶炼，最后上自动合成机</li>
-			<li>自动合成机要「正上方箱子」+ 成品写入，别只放材料</li>
-			<li>多方块用原版方块，按图放；拆除后需重搭</li>
-			<li>电力机器注意电网功率，功率不足会空转</li>
+			<li>先摆多方块再点交互块；缺方块不会识别</li>
+			<li>电力机从 T1 起步，T3 看电网功率</li>
+			<li>自动合成机/炉子接口对箱子，写入成品配方</li>
 		</ul>
 
-		<p class="muted">数据来源：Slimefun 2026.07 机器实现 + 指南多方块图。</p>
+		<p class="muted">数据来源：MultiBlockMachine 构造 + SlimefunItemSetup 电力机段 + CarbonPress / HeatedPressureChamber。</p>
 	</article>
-		<article class="article" id="power" data-search="电力 发电机 电容 能量 J 连接器 太阳能 风力 煤炭 熔岩">
+		<article class="article" id="power" data-search="电力 发电机 煤炭 熔岩 生物 太阳能 核反应堆 电容 能量调节器">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 电力</div>
 		<div class="article-header">
-			<h2>电力 · 产电 / 传输 / 缓冲</h2>
-			<div class="sub">单位 J · EnergyNet 每 20 tick 结算</div>
+			<h2>电力 · 发电机与电容全表</h2>
+			<div class="sub">单位 J · 连接半径 6 · 单调节器/网</div>
 		</div>
 
 		<div class="infobox"><div class="ib-title">能量网络</div><table>
-			<tr><td class="k">单位</td><td class="v">J（焦耳）</td></tr>
-			<tr><td class="k">结算</td><td class="v">EnergyNet 每 <strong>20 tick</strong>（1 秒）</td></tr>
-			<tr><td class="k">节点类型</td><td class="v">GENERATOR / CAPACITOR / CONNECTOR / CONSUMER</td></tr>
-			<tr><td class="k">线损</td><td class="v"><strong>无</strong>距离损耗；功率不足则机器空转</td></tr>
-			<tr><td class="k">本服网络上限</td><td class="v">max-size <strong>200</strong>；超额不删</td></tr>
+			<tr><td class="k">单位</td><td class="v">J；燃料秒 ×2 = 粘液 tick</td></tr>
+			<tr><td class="k">结算</td><td class="v">每粘液 tick（1 真秒 = 2 tick）</td></tr>
+			<tr><td class="k">连接半径</td><td class="v">Connector <strong>6</strong> 格</td></tr>
+			<tr><td class="k">调节器</td><td class="v">每网<strong>恰好 1 个</strong> Energy Regulator</td></tr>
+			<tr><td class="k">流向</td><td class="v">发电 → 填满消费者 → 剩余进电容/发电机缓存</td></tr>
 		</table></div>
 
-		<h3>一、节点规则</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>类型</th><th>机制</th></tr><tr><td>连接器</td><td>储 0 J，只做图连接</td></tr><tr><td>电容</td><td>缓冲能量；档位 基础/进阶/水晶 ≈ 32 / 128 / 512 J</td></tr><tr><td>发电机</td><td>向网络灌入功率</td></tr><tr><td>消费者</td><td>从网络拉取；不足则空转不报错</td></tr></table></div>
+		<h3>一、燃料发电机</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>发电机</th><th>容量</th><th>J/t</th><th>燃料（秒 → 总 J = 秒×2×J/t）</th></tr><tr><td>煤炭 I</td><td>64</td><td>8</td><td>煤/木炭 8s · 煤块 80s · 烈焰棒 12s · 干海带块 20s · 船 5s · 原木 4s · 板/按钮/栅栏 1s</td></tr><tr><td>煤炭 II</td><td>256</td><td>15</td><td>同上燃料</td></tr><tr><td>熔岩 I</td><td>512</td><td>10</td><td>岩浆桶 40s（还桶）</td></tr><tr><td>熔岩 II</td><td>1,024</td><td>20</td><td>同上</td></tr><tr><td>生物反应堆</td><td>128</td><td>4</td><td>腐肉/骨/线/蘑菇/藤/仙人掌 2s · 西瓜块 27s · 小麦/胡萝卜/苹果 3s · 紫颂果 8s · 蜜蜜块 40s</td></tr><tr><td>燃烧反应堆</td><td>256</td><td>12</td><td>石油桶 30s · 燃料桶 90s</td></tr><tr><td>镁发电机</td><td>128</td><td>18</td><td>硫酸镁 20s</td></tr><tr><td>核反应堆</td><td><strong>16,384</strong></td><td><strong>250</strong></td><td>铀→镎→钚链（冷却棒）</td></tr><tr><td>下界之星反应堆</td><td><strong>32,768</strong></td><td><strong>512</strong></td><td>强化铀 + 下界之星</td></tr></table></div>
 
-		<h3>二、典型发电（参考值）</h3>
-		<div class="wiki-table-wrap"><table class="wiki"><tr><th>发电机</th><th>功率 / 周期产出</th><th>条件</th></tr><tr><td>煤炭发电机</td><td>约 32 J/煤</td><td>烧煤</td></tr><tr><td>熔岩发电机</td><td>约 30 J/岩浆桶</td><td>烧岩浆</td></tr><tr><td>生物质发电机</td><td>约 40 J</td><td>有机物</td></tr><tr><td>太阳能板</td><td>约 8–24 J/t</td><td>随白天 / 高度</td></tr><tr><td>风力发电机</td><td>可变</td><td>高度 / 露天</td></tr><tr><td>下界之星反应堆</td><td>高功率</td><td>下界之星</td></tr><tr><td>高级 / 水晶 / 元素</td><td>更高档</td><td>后期</td></tr></table></div>
+		<h3>二、太阳能（天光 15 · 白天 0–12300 或 23850–24000 · 无风暴）</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>板</th><th>白天 J/t</th><th>夜间 J/t</th><th>容量</th></tr><tr><td>太阳能 I</td><td>2</td><td>0</td><td>0</td></tr><tr><td>太阳能 II</td><td>8</td><td>0</td><td>0</td></tr><tr><td>太阳能 III</td><td>32</td><td>0</td><td>0</td></tr><tr><td>太阳能 IV</td><td><strong>128</strong></td><td><strong>64</strong></td><td>0</td></tr></table></div>
+		<p class="muted">其它维度默认 0；可配 <code>other-dimensions-use-night-energy</code> 用夜间功率。</p>
 
-		<h3>三、配电要点</h3>
-		<ul class="bullets">
-			<li>发电机 → 电容（缓冲）→ 消费者；连接器只延长图</li>
-			<li>线无损，但网络节点数受 max-size 约束</li>
-			<li>太阳能看高度与时段；风力看暴露面</li>
-			<li>机器空转 = 功率不够，不是线断了</li>
-		</ul>
+		<h3>三、电容</h3>
+		<div class="wiki-table-wrap"><table class="wiki"><tr><th>档</th><th>容量 J</th></tr><tr><td>小型</td><td>128</td></tr><tr><td>中型</td><td>512</td></tr><tr><td>大型</td><td>1,024</td></tr><tr><td>巨大型</td><td>8,192</td></tr><tr><td>Carbonado 包边</td><td>65,536</td></tr><tr><td>充能型</td><td>524,288</td></tr></table></div>
 
 		<h3>四、实用建议</h3>
 		<ul class="bullets">
-			<li>起步煤炭/熔岩；中期太阳能+风力</li>
-			<li>每个机房放 1 个电容，防峰谷</li>
-			<li>扩容先加电容再加发电机</li>
+			<li>每网放 1 个调节器；连接器半径 6 铺图</li>
+			<li>起步煤炭 I + 小电容；中期熔岩/燃烧反应堆</li>
+			<li>太阳能 IV 白天 128 夜 64，顶主网</li>
+			<li>核反应堆 250 J/t / 16k 缓冲是后期主电源</li>
 		</ul>
 
-		<p class="muted">数据来源：Slimefun 2026.07 EnergyNet + 发电机实现 + 本服 config。</p>
+		<p class="muted">数据来源：AGenerator / MachineFuel / SolarGenerator / SlimefunItemSetup 电容段 / EnergyNet。</p>
 	</article>
 		<article class="article" id="cargo" data-search="货运 管理器 连接器 输入 输出 频道 过滤 轮询">
 		<div class="breadcrumbs"><a href="#top">首页</a> › 货运网络</div>
